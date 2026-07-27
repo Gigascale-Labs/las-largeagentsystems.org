@@ -24,7 +24,7 @@ export default function SourcesPage() {
             Sources
           </p>
           <h1 className="mt-4 max-w-2xl font-serif text-3xl font-semibold leading-tight md:text-4xl">
-            Cross-tabulate the canon.
+            Survey the field.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
             We have catalogued a variety of papers on LAS through community

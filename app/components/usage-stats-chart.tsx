@@ -203,7 +203,7 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
             {USAGE_STATS_SERIES.map((series) => (
               <Line
                 key={series.id}
-                type="monotone"
+                type="linear"
                 dataKey={series.id}
                 name={series.label}
                 stroke={series.colorVar}
