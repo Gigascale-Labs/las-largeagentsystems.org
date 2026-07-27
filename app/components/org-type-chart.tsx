@@ -23,6 +23,14 @@ const TYPE_COLOR_VARS: Record<(typeof ORG_TYPES)[number], string> = {
 
 const CHART_START_YEAR = 2020;
 
+const DISPLAYED_TYPES = ORG_TYPES.filter(
+  (t) =>
+    t !== "Academic Programme/Lab" &&
+    t !== "Funder" &&
+    t !== "Other" &&
+    t !== "Research Nonprofit",
+);
+
 export function OrgTypeChart({ data }: { data: OrgTypeTimeline | null }) {
   if (!data || data.points.length === 0) {
     return (
@@ -94,7 +102,7 @@ export function OrgTypeChart({ data }: { data: OrgTypeTimeline | null }) {
               }}
             />
             <Legend wrapperStyle={{ fontSize: 12, paddingTop: 16 }} />
-            {ORG_TYPES.map((type, i) => (
+            {DISPLAYED_TYPES.map((type, i) => (
               <Bar
                 key={type}
                 dataKey={type}
@@ -104,15 +112,14 @@ export function OrgTypeChart({ data }: { data: OrgTypeTimeline | null }) {
                 stroke="var(--background)"
                 strokeWidth={2}
                 maxBarSize={24}
-                radius={i === ORG_TYPES.length - 1 ? [4, 4, 0, 0] : undefined}
+                radius={i === DISPLAYED_TYPES.length - 1 ? [4, 4, 0, 0] : undefined}
               />
             ))}
           </BarChart>
         </ResponsiveContainer>
       </div>
       <p className="mt-3 text-xs text-muted">
-        Cumulative count of catalogued organizations by type, carrying
-        forward founding-year totals from before {CHART_START_YEAR}.
+        Cumulative count of catalogued organizations by type.
         {data.excludedFromTimelineCount > 0 && (
           <>
             {" "}

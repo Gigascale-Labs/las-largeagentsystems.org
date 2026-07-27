@@ -29,11 +29,11 @@ export async function GrowthChart() {
         <UsageStatsChart data={usageStats} />
 
         <h3 className="mt-16 max-w-2xl font-serif text-xl font-semibold leading-tight md:text-2xl">
-          More and more agents are entering human systems.
+          Live deployments are also accelerating
         </h3>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat duis aute irure dolor.
+          Startups implementing large agent systems and agent infrastructure
+          are growing in number.
         </p>
 
         <OrgTypeChart data={orgTypeTimeline} />
