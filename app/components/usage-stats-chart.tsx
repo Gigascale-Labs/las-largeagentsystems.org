@@ -162,7 +162,10 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
         ))}
       </div>
 
-      <div className="mt-4 h-[400px] w-full border border-rule bg-background p-4 md:p-8">
+      <p className="mt-4 text-xs text-muted">
+        Growth index, log scale (100 = start of range)
+      </p>
+      <div className="mt-2 h-[400px] w-full border border-rule bg-background p-4 md:p-8">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
             <CartesianGrid stroke="var(--rule)" vertical={false} />
@@ -182,14 +185,8 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
               tickLine={false}
               axisLine={false}
               fontSize={12}
+              width={56}
               tickFormatter={(value: number) => value.toLocaleString()}
-              label={{
-                value: "Growth index, log scale (start of range = 100)",
-                angle: -90,
-                position: "insideLeft",
-                fontSize: 11,
-                fill: "var(--muted)",
-              }}
             />
             <Tooltip
               contentStyle={{

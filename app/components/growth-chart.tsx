@@ -1,9 +1,13 @@
+import { getOrgTypeTimeline } from "@/lib/org-map";
 import { getUsageStatsData } from "@/lib/usage-stats";
-import { SpreadChart } from "./spread-chart";
+import { OrgTypeChart } from "./org-type-chart";
 import { UsageStatsChart } from "./usage-stats-chart";
 
 export async function GrowthChart() {
-  const usageStats = await getUsageStatsData();
+  const [usageStats, orgTypeTimeline] = await Promise.all([
+    getUsageStatsData(),
+    getOrgTypeTimeline(),
+  ]);
 
   return (
     <section
@@ -32,7 +36,7 @@ export async function GrowthChart() {
           nisi ut aliquip ex ea commodo consequat duis aute irure dolor.
         </p>
 
-        <SpreadChart />
+        <OrgTypeChart data={orgTypeTimeline} />
       </div>
     </section>
   );
