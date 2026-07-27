@@ -262,7 +262,7 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
                         key={series.id}
                         className="whitespace-nowrap border-b border-rule/50 px-2 py-1 text-right font-mono tabular-nums"
                       >
-                        {v != null ? v.toLocaleString() : "—"}
+                        {v != null ? v.toLocaleString() : "-"}
                       </td>
                     );
                   })}

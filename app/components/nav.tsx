@@ -22,7 +22,7 @@ export function Nav() {
             </Link>
           ))}
           <Link
-            href="/sources"
+            href="/survey"
             className="shrink-0 transition-colors hover:text-foreground"
           >
             Survey

@@ -28,7 +28,7 @@ export function OpenQuestions() {
               <div>
                 <p className="text-lg leading-relaxed">{question}</p>
                 <p className="mt-2 text-sm italic text-muted">
-                  Excerpt from paper — placeholder.
+                  Excerpt from paper - placeholder.
                 </p>
               </div>
             </li>

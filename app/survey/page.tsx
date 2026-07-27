@@ -7,9 +7,9 @@ import { ContributeForm } from "../components/contribute-form";
 import { getCanonEntries } from "@/lib/canon-data";
 
 export const metadata: Metadata = {
-  title: "Sources — LargeAgentSystems.org",
+  title: "Sources - LargeAgentSystems.org",
   description:
-    "Cross-tabulate the LAS paper canon by system type, threat model, focus area, and more — find the gaps in the corpus.",
+    "Cross-tabulate the LAS paper canon by system type, threat model, focus area, and more - find the gaps in the corpus.",
 };
 
 export default function SourcesPage() {

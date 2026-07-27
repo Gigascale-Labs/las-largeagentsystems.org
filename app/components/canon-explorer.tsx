@@ -219,7 +219,7 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
       <div className="mt-12">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
           {activeCell
-            ? `${filtered.length} paper${filtered.length === 1 ? "" : "s"} — ${activeCell.row} × ${activeCell.col}`
+            ? `${filtered.length} paper${filtered.length === 1 ? "" : "s"} - ${activeCell.row} × ${activeCell.col}`
             : `All ${filtered.length} papers`}
         </p>
         <div className="mt-4 overflow-x-auto">
