@@ -51,7 +51,7 @@ export function Disciplines() {
                 <strong className="font-semibold text-foreground">
                   {axis.label}
                 </strong>{" "}
-                — {axis.detail}
+                - {axis.detail}
               </li>
             ))}
           </ol>

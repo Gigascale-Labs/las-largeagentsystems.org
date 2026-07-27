@@ -53,13 +53,13 @@ export async function submitSource(
     console.error("Failed to submit to Airtable Pending Queue:", err);
     return {
       status: "error",
-      message: "Something went wrong submitting this — please try again.",
+      message: "Something went wrong submitting this - please try again.",
     };
   }
 
   return {
     status: "success",
     message:
-      "Thanks — this is queued for review. A maintainer will tag it and merge it into the canon if it fits.",
+      "Thanks - this is queued for review. A maintainer will tag it and merge it into the canon if it fits.",
   };
 }

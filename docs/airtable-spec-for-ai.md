@@ -19,8 +19,8 @@ do, plus one still-unverified end-to-end run.
 | Airtable-hosted form (secondary entry point) | https://airtable.com/apps8rBIORsmE7ij8/pagBBh0fev2iJbqNR/form |
 
 **Two intake paths, both write into Pending Queue:**
-1. **Site form** (`/sources`) — `app/components/contribute-form.tsx` →
-   `app/sources/actions.ts` → `lib/submission-store.ts`, which `POST`s
+1. **Site form** (`/survey`) — `app/components/contribute-form.tsx` →
+   `app/survey/actions.ts` → `lib/submission-store.ts`, which `POST`s
    directly to the Pending Queue table via Airtable's REST API. Primary
    path. Sets `status: "pending"` itself.
 2. **Airtable-hosted form** — secondary/backup. Only captures `url` +
@@ -39,7 +39,7 @@ only if the JSON is missing, empty, or unparseable — don't delete the CSV
 from `data/las-canon.csv` since the one-time seed on 2026-07-20 — nothing
 pushes CSV edits back to Airtable. Found and fixed once, by hand:
 - 3 stale rows (Moltbook, Habermolt, Mirofish — all "live deployment" sites,
-  git-history-confirmed as deliberately removed from the CSV; the `/sources`
+  git-history-confirmed as deliberately removed from the CSV; the `/survey`
   page excludes live deployments on purpose) deleted from Airtable so the
   row count matches the CSV's 42.
 - `institutions` backfilled for 41/42 rows from the CSV (Airtable didn't

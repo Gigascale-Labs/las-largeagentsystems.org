@@ -59,7 +59,7 @@ export function QuantityQuality() {
               <ul className="mt-5 space-y-3 text-sm leading-relaxed text-foreground/80">
                 {card.bullets.map((bullet) => (
                   <li key={bullet} className="flex gap-2">
-                    <span className="text-accent">—</span>
+                    <span className="text-accent">-</span>
                     <span>{bullet}</span>
                   </li>
                 ))}
