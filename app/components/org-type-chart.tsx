@@ -1,10 +1,10 @@
 "use client";
 
 import {
+  Bar,
+  BarChart,
   CartesianGrid,
   Legend,
-  Line,
-  LineChart,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -20,6 +20,8 @@ const TYPE_COLOR_VARS: Record<(typeof ORG_TYPES)[number], string> = {
   Funder: "var(--chart-5)",
   Other: "var(--chart-6)",
 };
+
+const CHART_START_YEAR = 2020;
 
 export function OrgTypeChart({ data }: { data: OrgTypeTimeline | null }) {
   if (!data || data.points.length === 0) {
@@ -39,26 +41,42 @@ export function OrgTypeChart({ data }: { data: OrgTypeTimeline | null }) {
     );
   }
 
-  const chartData = data.points.map((p) => ({ year: p.year, ...p.counts }));
+  const chartData = data.points
+    .filter((p) => p.year >= CHART_START_YEAR)
+    .map((p) => ({ year: String(p.year), ...p.counts }));
+
+  if (chartData.length === 0) {
+    return (
+      <div className="mt-12 border border-rule bg-background p-8 text-sm text-muted">
+        No organization data is available from {CHART_START_YEAR} onward.{" "}
+        <a
+          href={ORG_MAP_SOURCE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline decoration-muted/40 underline-offset-4 hover:text-foreground"
+        >
+          View the source data directly
+        </a>
+        .
+      </div>
+    );
+  }
 
   return (
     <div className="mt-12">
       <p className="mb-2 text-xs text-muted">
-        Organizations, cumulative by founding year
+        Organizations, cumulative by type, {CHART_START_YEAR}–present
       </p>
       <div className="h-[360px] w-full border border-rule bg-background p-4 md:p-8">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
+          <BarChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
             <CartesianGrid stroke="var(--rule)" vertical={false} />
             <XAxis
               dataKey="year"
-              type="number"
-              domain={["dataMin", "dataMax"]}
               stroke="var(--muted)"
               tickLine={false}
               axisLine={{ stroke: "var(--rule)" }}
               fontSize={12}
-              tickFormatter={(value: number) => String(value)}
             />
             <YAxis
               stroke="var(--muted)"
@@ -76,26 +94,25 @@ export function OrgTypeChart({ data }: { data: OrgTypeTimeline | null }) {
               }}
             />
             <Legend wrapperStyle={{ fontSize: 12, paddingTop: 16 }} />
-            {ORG_TYPES.map((type) => (
-              <Line
+            {ORG_TYPES.map((type, i) => (
+              <Bar
                 key={type}
-                type="linear"
                 dataKey={type}
                 name={type}
-                stroke={TYPE_COLOR_VARS[type]}
+                stackId="orgs"
+                fill={TYPE_COLOR_VARS[type]}
+                stroke="var(--background)"
                 strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                dot={{ r: 4, strokeWidth: 0 }}
-                activeDot={{ r: 5 }}
+                maxBarSize={24}
+                radius={i === ORG_TYPES.length - 1 ? [4, 4, 0, 0] : undefined}
               />
             ))}
-          </LineChart>
+          </BarChart>
         </ResponsiveContainer>
       </div>
       <p className="mt-3 text-xs text-muted">
-        Cumulative count of catalogued organizations by type, by founding
-        year.
+        Cumulative count of catalogued organizations by type, carrying
+        forward founding-year totals from before {CHART_START_YEAR}.
         {data.excludedFromTimelineCount > 0 && (
           <>
             {" "}
