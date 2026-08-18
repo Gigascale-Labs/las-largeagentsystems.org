@@ -7,7 +7,6 @@ import { QuantityQuality } from "./components/quantity-quality";
 import { ThreatModels } from "./components/threat-models";
 import { Disciplines } from "./components/disciplines";
 import { FocusAreas } from "./components/focus-areas";
-import { OpenQuestions } from "./components/open-questions";
 import { Barriers } from "./components/barriers";
 import { ResearchAgendas } from "./components/research-agendas";
 import { OrgsMap } from "./components/orgs-map";
@@ -44,7 +43,6 @@ export default function Home() {
           title="Take action."
           description="In the face of potentially irreversible risks, the time to start working on large agent systems is now. We highlight some pressing open problems and barriers the field faces in the near-term."
         />
-        <OpenQuestions />
         <Barriers />
 
         <Join />
