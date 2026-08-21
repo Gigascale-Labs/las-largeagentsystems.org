@@ -1,9 +1,8 @@
 /**
- * Tests for the checks that stand between a public form and this server's
- * network. Run with `npm test`.
+ * Tests for the checks between a public form and this server's network.
  *
- * No network: everything here is either pure address arithmetic or a stubbed
- * `fetch`.
+ * Run with `npm test`. No network: every case is either address arithmetic or
+ * a stubbed `fetch`.
  */
 
 import assert from "node:assert/strict";
@@ -65,7 +64,7 @@ describe("IPv6 classification", () => {
   });
 
   it("looks through IPv4-mapped and tunnelled forms", () => {
-    // The classic bypass: a private v4 address wearing an v6 costume.
+    // A private v4 address inside a v6 one.
     assert.equal(isPublicIPv6("::ffff:127.0.0.1"), false);
     assert.equal(isPublicIPv6("::ffff:169.254.169.254"), false);
     assert.equal(isPublicIPv6("::ffff:7f00:1"), false);
@@ -105,7 +104,7 @@ describe("assertPublicUrl", () => {
   });
 
   it("rejects non-standard ports", async () => {
-    // Otherwise a public hostname pointed at :6379 reaches internal services.
+    // A public hostname pointed at :6379 would reach internal services.
     await assert.rejects(() => assertPublicUrl("http://example.com:6379/"), BlockedUrlError);
   });
 
@@ -155,7 +154,7 @@ describe("safeFetch", () => {
   });
 
   it("blocks a redirect that points at a private address", async () => {
-    // The case a blocklist on the submitted URL alone would miss.
+    // The case a check on the submitted URL alone would miss.
     globalThis.fetch = mock.fn(async () =>
       stubResponse("", { status: 302, headers: { location: "http://169.254.169.254/" } }),
     ) as typeof fetch;
@@ -207,7 +206,7 @@ describe("sanitizing stored text", () => {
   });
 
   it("strips markup after decoding entities", () => {
-    // Decoding alone would turn this back into a live tag.
+    // Decoding alone would leave a live tag.
     assert.equal(
       sanitizeHtmlText("&lt;script&gt;alert(1)&lt;/script&gt;Title", 100),
       "alert(1) Title",
