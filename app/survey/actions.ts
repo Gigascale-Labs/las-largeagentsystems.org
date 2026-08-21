@@ -14,18 +14,17 @@ export interface ContributeState {
 /**
  * Accepts a submission from the contribute form.
  *
- * This is a public POST endpoint. It is reachable directly, not only through
- * the form, and it is meant to be open -- anyone may contribute a source, with
- * no account. So nothing that arrives here is trusted: every field is length-
- * capped and stripped of invisible and control characters before storage, and
- * the URL is checked against the rules in lib/safe-fetch.ts before this server
- * makes any request to it.
+ * This is a public POST endpoint, reachable directly and not only through the
+ * form. It is meant to be open: anyone may contribute a source, with no
+ * account. So nothing arriving here is trusted. Every field is length-capped
+ * and stripped of invisible and control characters before storage, and the URL
+ * is checked (lib/safe-fetch.ts) before the server requests it.
  */
 export async function submitSource(
   _prevState: ContributeState,
   formData: FormData,
 ): Promise<ContributeState> {
-  // Cap before doing anything else: an oversized field should cost nothing.
+  // Cap first. An oversized field then costs nothing.
   const rawUrl = sanitizeText(String(formData.get("url") ?? ""), FIELD_LIMITS.url);
   const note = sanitizeText(String(formData.get("note") ?? ""), FIELD_LIMITS.note);
   const submittedBy = sanitizeText(
@@ -40,8 +39,8 @@ export async function submitSource(
     if (err instanceof BlockedUrlError) {
       console.warn("Contribute form rejected a URL:", err.message);
     }
-    // One message for every rejection. A specific reason ("resolves to a
-    // private address") would turn this form into a network scanner.
+    // One message for every rejection. A specific reason would turn this
+    // form into a network scanner.
     return {
       status: "error",
       message: "Enter a valid, publicly reachable http(s) URL.",

@@ -1,31 +1,29 @@
 /**
  * Outbound fetch for URLs supplied by the public.
  *
- * The contribute form takes a URL from anyone and the server fetches it. That
- * makes this server the attacker's HTTP client: without a check, a submitted
- * URL can reach anything the server can reach -- cloud instance metadata on
+ * The contribute form takes a URL from anyone, and the server fetches it. That
+ * makes this server the submitter's HTTP client. Without a check, a submitted
+ * URL reaches anything the server can reach: cloud instance metadata on
  * 169.254.169.254, an admin service on localhost, a database inside the VPC.
  *
- * What this does about it:
+ * The rules:
  *
- *   - only http and https, and only on their standard ports;
- *   - no credentials embedded in the URL;
- *   - the hostname is resolved, and *every* address it resolves to must be a
- *     public one (checking every address matters: an attacker's DNS can return
- *     one public and one private address);
- *   - redirects are followed by hand, and every hop is checked the same way,
- *     because a public URL is free to redirect to a private one;
- *   - the body is read with a byte cap and a timeout, so a huge or slow
- *     response cannot exhaust the server.
+ *   - http and https only, on their standard ports;
+ *   - no credentials in the URL;
+ *   - the hostname is resolved, and every address it resolves to must be
+ *     public (every address, because a hostile resolver answers with one
+ *     public and one private address);
+ *   - redirects are followed by hand, and each hop is checked again, because a
+ *     public URL can redirect to a private one;
+ *   - the body is read with a byte cap and a timeout.
  *
- * Known limit: between the DNS check and the connection, an attacker who
- * controls their own DNS can change the answer (DNS rebinding). Closing that
- * needs the check inside the socket layer. Two things bound it here: the fetch
- * only ever reads a title and summary, and nothing fetched is returned to the
- * submitter -- it goes to a queue a human reads.
+ * One gap: between the DNS check and the connection, an attacker who controls
+ * their own DNS can change the answer. Closing that needs the check inside the
+ * socket layer. Two things limit it here: the fetch only reads a title and a
+ * summary, and nothing fetched is returned to the submitter.
  *
- * Requires the Node.js runtime (node:dns). That is the default for App Router
- * routes; `app/survey/page.tsx` states it explicitly.
+ * Needs the Node.js runtime for node:dns. That is the default for App Router
+ * routes, and app/survey/page.tsx states it.
  */
 
 import { lookup } from "node:dns/promises";
@@ -58,7 +56,7 @@ export interface SafeFetchResult {
   truncated: boolean;
 }
 
-/** True only for addresses that are routable on the public internet. */
+/** True only for addresses routable on the public internet. */
 export function isPublicIPv4(address: string): boolean {
   const parts = address.split(".").map(Number);
   if (parts.length !== 4 || parts.some((n) => !Number.isInteger(n) || n < 0 || n > 255)) {
@@ -151,7 +149,7 @@ export function isPublicAddress(address: string): boolean {
 }
 
 /**
- * Parse and check one URL, including what its hostname resolves to.
+ * Check one URL, including where its hostname points.
  * Throws BlockedUrlError with a reason that is safe to log.
  */
 export async function assertPublicUrl(raw: string): Promise<URL> {
@@ -175,8 +173,7 @@ export async function assertPublicUrl(raw: string): Promise<URL> {
   const hostname = url.hostname.replace(/^\[|\]$/g, "");
   if (!hostname) throw new BlockedUrlError("no hostname");
 
-  // A literal IP needs no lookup, and must not get one: resolving it would
-  // just hand back the same address.
+  // A literal IP needs no lookup.
   if (isIP(hostname)) {
     if (!isPublicAddress(hostname)) {
       throw new BlockedUrlError("address is not on the public internet");
@@ -184,7 +181,7 @@ export async function assertPublicUrl(raw: string): Promise<URL> {
     return url;
   }
 
-  // Names that only exist inside a network, before spending a DNS query.
+  // Names that only exist inside a network. Checked before spending a query.
   if (/\.(local|internal|localdomain|home\.arpa)$/i.test(hostname) || hostname === "localhost") {
     throw new BlockedUrlError("hostname is internal-only");
   }
@@ -197,7 +194,7 @@ export async function assertPublicUrl(raw: string): Promise<URL> {
   }
   if (!addresses.length) throw new BlockedUrlError("hostname does not resolve");
 
-  // Every answer must be public, not just the first one.
+  // Every answer must be public, not just the first.
   const blocked = addresses.find((a) => !isPublicAddress(a.address));
   if (blocked) {
     throw new BlockedUrlError("hostname resolves to a non-public address");
@@ -238,9 +235,7 @@ async function readCapped(
   return { body: new TextDecoder().decode(Buffer.concat(chunks)), truncated };
 }
 
-/**
- * Fetch a public URL, checking the destination at every redirect.
- */
+/** Fetch a public URL, checking the destination at every redirect. */
 export async function safeFetch(
   raw: string,
   options: SafeFetchOptions = {},
@@ -261,15 +256,15 @@ export async function safeFetch(
     for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
       const response = await fetch(target.toString(), {
         signal: controller.signal,
-        redirect: "manual", // hand-followed, so every hop gets checked
+        redirect: "manual", // followed by hand, so every hop is checked
         headers: { "User-Agent": userAgent, Accept: allowedContentTypes.join(", ") },
       });
 
       if (response.status >= 300 && response.status < 400) {
         const location = response.headers.get("location");
         if (!location) throw new BlockedUrlError("redirect without a location");
-        // Re-checked from scratch: this is the hop a blocklist on the original
-        // URL would miss.
+        // Checked again from scratch. This is the hop a check on the
+        // original URL alone would miss.
         target = await assertPublicUrl(new URL(location, target).toString());
         continue;
       }

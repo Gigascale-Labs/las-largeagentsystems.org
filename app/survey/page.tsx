@@ -8,8 +8,8 @@ import { getCanonEntries } from "@/lib/canon-data";
 
 /**
  * The contribute form's server action resolves DNS to check where a submitted
- * URL points (lib/safe-fetch.ts), which needs the Node.js runtime. That is the
- * default, and stating it here keeps it from being changed by accident.
+ * URL points (lib/safe-fetch.ts). That needs the Node.js runtime. Node is the
+ * default; stating it here keeps it from changing by accident.
  */
 export const runtime = "nodejs";
 

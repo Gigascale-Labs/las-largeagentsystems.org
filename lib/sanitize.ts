@@ -1,18 +1,16 @@
 /**
- * Text cleaning for anything that arrives from outside this site: what a
+ * Text cleaning for anything that comes from outside this site: what a
  * submitter types, and what the server reads back from a third-party page.
  *
- * React escapes on render, so this is not the XSS defence -- it stops junk from
- * being *stored*. Once a value is in Airtable it is read by a human reviewer,
- * copied into the canon, and exported to CSV, and none of those places escape
- * anything.
+ * React escapes on render, so this is not the XSS defence. It stops junk from
+ * being stored. Once a value is in Airtable, a reviewer reads it, copies it
+ * into the canon, and exports it to CSV. None of those places escape anything.
  */
 
 /**
- * Characters that render as nothing but are still read by whatever consumes the
- * text: zero-width spaces, bidirectional overrides that can reverse how a title
- * displays, and the Unicode Tags block, which hides instructions inside text
- * that looks ordinary.
+ * Characters that render as nothing but are still read: zero-width spaces,
+ * bidirectional overrides that reverse how a title displays, and the Unicode
+ * Tags block, which hides instructions inside ordinary-looking text.
  */
 const INVISIBLE =
   /[\u200B-\u200F\u202A-\u202E\u2060-\u2064\u2066-\u2069\uFEFF]|[\u{E0000}-\u{E007F}]/gu;
@@ -36,15 +34,12 @@ export function decodeAndStripTags(value: string): string {
     /&(?:amp|lt|gt|quot|#39|apos|nbsp);/g,
     (entity) => HTML_ENTITIES[entity] ?? entity,
   );
-  // Decoding turns "&lt;script&gt;" back into a real tag, so tags are stripped
-  // after decoding, never before.
+  // Decoding turns "&lt;script&gt;" back into a real tag, so strip tags after
+  // decoding, never before.
   return decoded.replace(/<[^>]*>/g, " ");
 }
 
-/**
- * Clean a value for storage: no invisible or control characters, single spaces,
- * trimmed, and no longer than `maxChars`.
- */
+/** Clean a value for storage, and cap it at `maxChars`. */
 export function sanitizeText(
   value: string | null | undefined,
   maxChars: number,

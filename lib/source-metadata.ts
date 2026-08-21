@@ -1,12 +1,12 @@
 /**
- * Best-effort metadata lookup for a contribute-a-source submission. Never
- * throws -- a failed or partial fetch just means a reviewer fills in more by
- * hand, per Task F's don't-force-fit rule.
+ * Metadata lookup for a contribute-a-source submission.
  *
- * The URL comes from the public, so every request goes through `safeFetch`,
- * which keeps this server from being used to reach addresses it should not
+ * Never throws. A failed or partial fetch means a reviewer fills in more by
+ * hand, which is the intended fallback.
+ *
+ * The URL comes from the public, so every request goes through `safeFetch`
  * (see lib/safe-fetch.ts). Everything read back is third-party text, so it is
- * sanitized and length-capped before it goes anywhere.
+ * cleaned and length-capped before it goes anywhere.
  */
 
 import { safeFetch, BlockedUrlError } from "./safe-fetch";
@@ -82,9 +82,8 @@ export async function fetchSourceMetadata(rawUrl: string): Promise<FetchedMetada
   try {
     const url = new URL(rawUrl);
 
-    // arXiv has an API, so use it rather than scraping the abstract page. The
-    // ID is matched against arXiv's own format, so nothing else can be
-    // smuggled into the query.
+    // arXiv has an API, so use it instead of scraping the abstract page. The
+    // ID must match arXiv's own format, so nothing else reaches the query.
     const arxivId = /(^|\.)arxiv\.org$/i.test(url.hostname)
       ? url.pathname.match(/\/abs\/(\d{4}\.\d{4,5})(v\d+)?$/)?.[1]
       : undefined;
@@ -93,8 +92,8 @@ export async function fetchSourceMetadata(rawUrl: string): Promise<FetchedMetada
       ? await fetchArxivMetadata(arxivId)
       : await fetchGenericMetadata(url.toString());
   } catch (err) {
-    // A blocked URL is worth seeing in the logs; it means someone pointed the
-    // form somewhere it should not go, or a site is misbehaving.
+    // A blocked URL belongs in the log: someone pointed the form somewhere it
+    // should not go, or a site is misbehaving.
     if (err instanceof BlockedUrlError) {
       console.warn("Metadata lookup blocked:", err.message);
     }
