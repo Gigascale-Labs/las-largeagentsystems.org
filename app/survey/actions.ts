@@ -1,6 +1,8 @@
 "use server";
 
 import type { PendingSubmission } from "@/lib/canon-schema";
+import { assertPublicUrl, BlockedUrlError } from "@/lib/safe-fetch";
+import { FIELD_LIMITS, sanitizeText } from "@/lib/sanitize";
 import { fetchSourceMetadata } from "@/lib/source-metadata";
 import { addPendingSubmission } from "@/lib/submission-store";
 
@@ -9,22 +11,41 @@ export interface ContributeState {
   message: string;
 }
 
+/**
+ * Accepts a submission from the contribute form.
+ *
+ * This is a public POST endpoint. It is reachable directly, not only through
+ * the form, and it is meant to be open -- anyone may contribute a source, with
+ * no account. So nothing that arrives here is trusted: every field is length-
+ * capped and stripped of invisible and control characters before storage, and
+ * the URL is checked against the rules in lib/safe-fetch.ts before this server
+ * makes any request to it.
+ */
 export async function submitSource(
   _prevState: ContributeState,
   formData: FormData,
 ): Promise<ContributeState> {
-  const rawUrl = String(formData.get("url") ?? "").trim();
-  const note = String(formData.get("note") ?? "").trim();
-  const submittedBy = String(formData.get("submittedBy") ?? "").trim();
+  // Cap before doing anything else: an oversized field should cost nothing.
+  const rawUrl = sanitizeText(String(formData.get("url") ?? ""), FIELD_LIMITS.url);
+  const note = sanitizeText(String(formData.get("note") ?? ""), FIELD_LIMITS.note);
+  const submittedBy = sanitizeText(
+    String(formData.get("submittedBy") ?? ""),
+    FIELD_LIMITS.submittedBy,
+  );
 
   let url: URL;
   try {
-    url = new URL(rawUrl);
-    if (url.protocol !== "http:" && url.protocol !== "https:") {
-      throw new Error("unsupported protocol");
+    url = await assertPublicUrl(rawUrl);
+  } catch (err) {
+    if (err instanceof BlockedUrlError) {
+      console.warn("Contribute form rejected a URL:", err.message);
     }
-  } catch {
-    return { status: "error", message: "Enter a valid http(s) URL." };
+    // One message for every rejection. A specific reason ("resolves to a
+    // private address") would turn this form into a network scanner.
+    return {
+      status: "error",
+      message: "Enter a valid, publicly reachable http(s) URL.",
+    };
   }
 
   const metadata = await fetchSourceMetadata(url.toString());
@@ -34,13 +55,13 @@ export async function submitSource(
   // would put low-confidence tags in front of a reviewer as if they were
   // real ones. A human assigns these during review.
   const submission: PendingSubmission = {
-    title: metadata.title || url.toString(),
+    title: sanitizeText(metadata.title || url.toString(), FIELD_LIMITS.title),
     itemType: "webpage",
-    creators: metadata.creators,
-    date: metadata.date,
+    creators: sanitizeText(metadata.creators, FIELD_LIMITS.creators),
+    date: sanitizeText(metadata.date, FIELD_LIMITS.date),
     url: url.toString(),
     tags: "",
-    summary: metadata.summary,
+    summary: sanitizeText(metadata.summary, FIELD_LIMITS.summary),
     tag_confidence: "summary-only",
     submitted_by: submittedBy || "anonymous",
     submitter_note: note || undefined,

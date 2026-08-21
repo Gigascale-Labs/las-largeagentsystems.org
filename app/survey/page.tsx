@@ -6,6 +6,13 @@ import { CanonExplorer } from "../components/canon-explorer";
 import { ContributeForm } from "../components/contribute-form";
 import { getCanonEntries } from "@/lib/canon-data";
 
+/**
+ * The contribute form's server action resolves DNS to check where a submitted
+ * URL points (lib/safe-fetch.ts), which needs the Node.js runtime. That is the
+ * default, and stating it here keeps it from being changed by accident.
+ */
+export const runtime = "nodejs";
+
 export const metadata: Metadata = {
   title: "Sources - LargeAgentSystems.org",
   description:

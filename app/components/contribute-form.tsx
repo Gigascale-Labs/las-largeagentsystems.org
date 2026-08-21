@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { submitSource, type ContributeState } from "@/app/survey/actions";
+import { FIELD_LIMITS } from "@/lib/sanitize";
 
 const initialContributeState: ContributeState = { status: "idle", message: "" };
 
@@ -36,6 +37,7 @@ export function ContributeForm() {
           name="url"
           type="url"
           required
+          maxLength={FIELD_LIMITS.url}
           placeholder="https://arxiv.org/abs/..."
           className="mt-2 w-full border-b border-rule bg-transparent py-2 text-base text-foreground outline-none focus:border-accent"
         />
@@ -52,6 +54,7 @@ export function ContributeForm() {
           id="note"
           name="note"
           rows={3}
+          maxLength={FIELD_LIMITS.note}
           placeholder="Why does this belong in the canon?"
           className="mt-2 w-full resize-none border-b border-rule bg-transparent py-2 text-base text-foreground outline-none focus:border-accent"
         />
@@ -68,6 +71,7 @@ export function ContributeForm() {
           id="submittedBy"
           name="submittedBy"
           type="text"
+          maxLength={FIELD_LIMITS.submittedBy}
           placeholder="So we can follow up if needed"
           className="mt-2 w-full border-b border-rule bg-transparent py-2 text-base text-foreground outline-none focus:border-accent"
         />

@@ -1,8 +1,16 @@
 /**
  * Best-effort metadata lookup for a contribute-a-source submission. Never
- * throws — a failed or partial fetch just means a reviewer fills in more
- * by hand, per Task F's don't-force-fit rule.
+ * throws -- a failed or partial fetch just means a reviewer fills in more by
+ * hand, per Task F's don't-force-fit rule.
+ *
+ * The URL comes from the public, so every request goes through `safeFetch`,
+ * which keeps this server from being used to reach addresses it should not
+ * (see lib/safe-fetch.ts). Everything read back is third-party text, so it is
+ * sanitized and length-capped before it goes anywhere.
  */
+
+import { safeFetch, BlockedUrlError } from "./safe-fetch";
+import { FIELD_LIMITS, sanitizeHtmlText, sanitizeText } from "./sanitize";
 
 export interface FetchedMetadata {
   title: string;
@@ -13,57 +21,9 @@ export interface FetchedMetadata {
 
 const EMPTY: FetchedMetadata = { title: "", creators: "", date: "", summary: "" };
 
-// Blocks the obvious literal-IP/hostname SSRF targets. Not a defense
-// against DNS rebinding — this endpoint only ever extracts a title/summary
-// from the response, and every submission sits in a human-reviewed queue
-// before anything is public, which bounds the blast radius of a miss here.
-const BLOCKED_HOSTNAME_PATTERNS = [
-  /^localhost$/i,
-  /^127\./,
-  /^0\.0\.0\.0$/,
-  /^\[?::1\]?$/,
-  /^10\./,
-  /^172\.(1[6-9]|2\d|3[0-1])\./,
-  /^192\.168\./,
-  /^169\.254\./,
-];
-
-function isFetchableUrl(raw: string): URL | null {
-  let parsed: URL;
-  try {
-    parsed = new URL(raw);
-  } catch {
-    return null;
-  }
-  if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return null;
-  if (BLOCKED_HOSTNAME_PATTERNS.some((p) => p.test(parsed.hostname))) return null;
-  return parsed;
-}
-
-async function fetchWithTimeout(url: string, timeoutMs: number): Promise<Response> {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    return await fetch(url, {
-      signal: controller.signal,
-      redirect: "follow",
-      headers: { "User-Agent": "largeagentsystems.org-contribute-bot" },
-    });
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
-function cleanText(value: string): string {
-  return value
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/\s+/g, " ")
-    .trim();
-}
+const TIMEOUT_MS = 8000;
+const MAX_HTML_BYTES = 512 * 1024;
+const MAX_XML_BYTES = 256 * 1024;
 
 function extractMetaContent(html: string, key: string): string | undefined {
   const tag = html.match(
@@ -73,56 +33,71 @@ function extractMetaContent(html: string, key: string): string | undefined {
 }
 
 async function fetchArxivMetadata(arxivId: string): Promise<FetchedMetadata> {
-  const res = await fetchWithTimeout(
+  const { body } = await safeFetch(
     `https://export.arxiv.org/api/query?id_list=${encodeURIComponent(arxivId)}`,
-    8000,
+    {
+      timeoutMs: TIMEOUT_MS,
+      maxBytes: MAX_XML_BYTES,
+      allowedContentTypes: ["application/atom+xml", "application/xml", "text/xml"],
+    },
   );
-  const xml = await res.text();
 
-  const entry = xml.match(/<entry>([\s\S]*?)<\/entry>/)?.[1] ?? "";
+  const entry = body.match(/<entry>([\s\S]*?)<\/entry>/)?.[1] ?? "";
   const title = entry.match(/<title>([\s\S]*?)<\/title>/)?.[1];
   const summary = entry.match(/<summary>([\s\S]*?)<\/summary>/)?.[1];
   const published = entry.match(/<published>(\d{4})/)?.[1];
-  const authors = [...entry.matchAll(/<author>\s*<name>([\s\S]*?)<\/name>/g)].map(
-    (m) => cleanText(m[1]),
+  const authors = [...entry.matchAll(/<author>\s*<name>([\s\S]*?)<\/name>/g)].map((m) =>
+    sanitizeHtmlText(m[1], 120),
   );
 
   return {
-    title: title ? cleanText(title) : "",
-    creators: authors.join("; "),
-    date: published ?? "",
-    summary: summary ? cleanText(summary) : "",
+    title: sanitizeHtmlText(title, FIELD_LIMITS.title),
+    creators: sanitizeText(authors.filter(Boolean).join("; "), FIELD_LIMITS.creators),
+    date: /^\d{4}$/.test(published ?? "") ? (published as string) : "",
+    summary: sanitizeHtmlText(summary, FIELD_LIMITS.summary),
   };
 }
 
 async function fetchGenericMetadata(url: string): Promise<FetchedMetadata> {
-  const res = await fetchWithTimeout(url, 8000);
-  const html = (await res.text()).slice(0, 200_000);
+  const { body } = await safeFetch(url, {
+    timeoutMs: TIMEOUT_MS,
+    maxBytes: MAX_HTML_BYTES,
+    allowedContentTypes: ["text/html", "application/xhtml+xml"],
+  });
 
-  const titleTag = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1];
-  const ogTitle = extractMetaContent(html, "og:title");
+  const titleTag = body.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1];
+  const ogTitle = extractMetaContent(body, "og:title");
   const ogDescription =
-    extractMetaContent(html, "og:description") ?? extractMetaContent(html, "description");
+    extractMetaContent(body, "og:description") ?? extractMetaContent(body, "description");
 
   return {
-    title: cleanText(ogTitle ?? titleTag ?? ""),
+    title: sanitizeHtmlText(ogTitle ?? titleTag ?? "", FIELD_LIMITS.title),
     creators: "",
     date: "",
-    summary: cleanText(ogDescription ?? ""),
+    summary: sanitizeHtmlText(ogDescription ?? "", FIELD_LIMITS.summary),
   };
 }
 
 export async function fetchSourceMetadata(rawUrl: string): Promise<FetchedMetadata> {
-  const url = isFetchableUrl(rawUrl);
-  if (!url) return EMPTY;
-
   try {
-    const arxivId = url.hostname.includes("arxiv.org")
-      ? url.pathname.match(/\/abs\/([0-9]{4}\.[0-9]{4,5}(v\d+)?)/)?.[1]
+    const url = new URL(rawUrl);
+
+    // arXiv has an API, so use it rather than scraping the abstract page. The
+    // ID is matched against arXiv's own format, so nothing else can be
+    // smuggled into the query.
+    const arxivId = /(^|\.)arxiv\.org$/i.test(url.hostname)
+      ? url.pathname.match(/\/abs\/(\d{4}\.\d{4,5})(v\d+)?$/)?.[1]
       : undefined;
 
-    return arxivId ? await fetchArxivMetadata(arxivId) : await fetchGenericMetadata(url.toString());
-  } catch {
+    return arxivId
+      ? await fetchArxivMetadata(arxivId)
+      : await fetchGenericMetadata(url.toString());
+  } catch (err) {
+    // A blocked URL is worth seeing in the logs; it means someone pointed the
+    // form somewhere it should not go, or a site is misbehaving.
+    if (err instanceof BlockedUrlError) {
+      console.warn("Metadata lookup blocked:", err.message);
+    }
     return EMPTY;
   }
 }
