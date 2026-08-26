@@ -1,0 +1,47 @@
+name: Daily LAS New Papers Sync
+
+on:
+  schedule:
+    # 09:00 UTC daily -- las-new-papers' own pipeline starts at 07:23 UTC and
+    # takes up to ~30 minutes on a backfill day, so this leaves it well over an
+    # hour to commit data/feed.xml and the day files before we read them.
+    - cron: '0 9 * * *'
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Sync papers feed
+        run: node scripts/sync-las-new-papers.mjs
+
+      - name: Check for changes
+        id: check
+        run: |
+          if [ -n "$(git status --porcelain data/las-new-papers.json)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push if changed
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "las-new-papers-sync[bot]"
+          git config user.email "bot@largeagentsystems.org"
+          git add data/las-new-papers.json
+          DAYS=$(jq 'length' data/las-new-papers.json)
+          PAPERS=$(jq '[.[].papers | length] | add // 0' data/las-new-papers.json)
+          git commit -m "chore: sync papers from las-new-papers ($DAYS days, $PAPERS papers) [skip ci]"
+          git push

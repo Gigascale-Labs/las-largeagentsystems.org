@@ -9,6 +9,7 @@
     "lint": "eslint",
     "sync:airtable": "node scripts/sync-airtable.mjs",
     "sync:las-conferences-events": "node scripts/sync-las-conferences-events.mjs",
+    "sync:las-new-papers": "node scripts/sync-las-new-papers.mjs",
     "test": "node --test --experimental-strip-types tests/*.test.mts"
   },
   "dependencies": {

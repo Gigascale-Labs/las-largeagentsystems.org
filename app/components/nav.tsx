@@ -34,6 +34,12 @@ export function Nav() {
             Events
           </Link>
           <Link
+            href="/papers"
+            className="shrink-0 transition-colors hover:text-foreground"
+          >
+            Papers
+          </Link>
+          <Link
             href="/#join"
             className="shrink-0 border border-foreground px-3 py-1.5 text-foreground transition-colors hover:border-accent hover:text-accent"
           >
