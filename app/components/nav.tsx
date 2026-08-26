@@ -39,12 +39,6 @@ export function Nav() {
           >
             Papers
           </Link>
-          <Link
-            href="/#join"
-            className="shrink-0 border border-foreground px-3 py-1.5 text-foreground transition-colors hover:border-accent hover:text-accent"
-          >
-            Join now
-          </Link>
         </nav>
       </div>
     </header>
