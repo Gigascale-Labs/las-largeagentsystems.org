@@ -67,7 +67,8 @@ const ORDINAL = "(?:st|nd|rd|th)";
 
 /**
  * What can sit between two day numbers. A dash of any width joins a range;
- * "or" and "and" offer two days, and rule 5 takes the first.
+ * "or" and "and" offer two days. Either way the first day is the start and
+ * the second is the end -- see daySpan for why the end takes the later day.
  */
 const CONNECTOR =
   "(?:\\s*[-\\u2010-\\u2015]\\s*|\\s+(?:or|and|to|through)\\s+)";
@@ -160,13 +161,6 @@ interface DateSpan {
   to: number;
 }
 
-/** "or" and "and" name two candidate days, not a range. */
-function isAlternation(connector: string | undefined): boolean {
-  if (!connector) return false;
-  const word = connector.trim().toLowerCase();
-  return word === "or" || word === "and";
-}
-
 function eachMatch(
   pattern: RegExp,
   text: string,
@@ -192,7 +186,13 @@ function daySpan(
   const start = utcDay(year, monthIndex, firstDay);
   if (!start) return null;
   let end = start;
-  if (secondDay !== undefined && !isAlternation(connector)) {
+  // The second day extends the end however it was written: a range
+  // ("11-12"), both days ("2 and 3"), or a choice ("11 or 12"). The start is
+  // the first day in every case, and the end decides one thing only --
+  // whether the event has finished. "2 and 3 December" runs on both days, and
+  // "11 or 12 December" may turn out to be the 12th, so ending either on the
+  // first day would file it as past while it was still to come.
+  if (secondDay !== undefined) {
     const last = utcDay(year, monthIndex, secondDay);
     // A range that runs backwards is not a range this parser understands.
     // Keep the first day rather than invent an end before the start.

@@ -62,7 +62,7 @@ const FIXTURES: Fixture[] = [
   {
     dates: "Wednesday, 2 and Thursday, 3 December 2026",
     start: "2026-12-02",
-    end: "2026-12-02",
+    end: "2026-12-03",
     source: "event",
     precision: "day",
   },
@@ -71,7 +71,7 @@ const FIXTURES: Fixture[] = [
   {
     dates: "December 11 or 12, 2026",
     start: "2026-12-11",
-    end: "2026-12-11",
+    end: "2026-12-12",
     source: "event",
     precision: "day",
   },
@@ -203,7 +203,7 @@ const FIXTURES: Fixture[] = [
     dates:
       "Submission Deadline: August 29, 2026 (AoE); Workshop: December 12 or 13, 2026",
     start: "2026-12-12",
-    end: "2026-12-12",
+    end: "2026-12-13",
     source: "event",
     precision: "day",
   },
@@ -387,17 +387,21 @@ describe("parseEventDates: the rules that decide which date wins", () => {
     assert.equal(day(parsed.start), "2026-05-30");
   });
 
-  it("takes the first day of 'D or D' and of 'D and D'", () => {
-    for (const [text, expected] of [
-      ["December 11 or 12, 2026", "2026-12-11"],
-      ["Wednesday, 2 and Thursday, 3 December 2026", "2026-12-02"],
+  it("starts on the first day of 'D or D' and 'D and D', ends on the second", () => {
+    // The start is the first day either way. The end is the later day,
+    // because it decides only whether the event has finished: "2 and 3
+    // December" runs on both days, and "11 or 12 December" may turn out to
+    // be the 12th. Ending on the first would file either as past while it
+    // was still to come.
+    for (const [text, start, end] of [
+      ["December 11 or 12, 2026", "2026-12-11", "2026-12-12"],
+      ["Wednesday, 2 and Thursday, 3 December 2026", "2026-12-02", "2026-12-03"],
     ] as const) {
       const parsed = parseEventDates(text);
       assert.equal(parsed.kind, "dated");
       if (parsed.kind !== "dated") return;
-      assert.equal(day(parsed.start), expected);
-      // Not a range, so the end is the same day.
-      assert.equal(day(parsed.end), expected);
+      assert.equal(day(parsed.start), start);
+      assert.equal(day(parsed.end), end);
     }
   });
 
