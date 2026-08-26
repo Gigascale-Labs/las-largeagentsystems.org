@@ -2,12 +2,20 @@ import type { Metadata } from "next";
 import { Nav } from "../components/nav";
 import { Footer } from "../components/footer";
 import { EventsList } from "../components/events-list";
-import { getEvents } from "@/lib/events-data";
+import { FeedButton } from "../components/feed-button";
+import { EVENTS_FEED_URL, getEvents } from "@/lib/events-data";
 
 export const metadata: Metadata = {
   title: "Events - LargeAgentSystems.org",
   description:
     "Workshops, conferences, and CFPs relevant to large-scale multi-agent systems, found by weekly automated search and independently checked before listing.",
+  alternates: {
+    // Feed autodiscovery: a reader pointed at /events finds the Atom feed
+    // from this link without being told the URL.
+    types: {
+      "application/atom+xml": EVENTS_FEED_URL,
+    },
+  },
 };
 
 export default function EventsPage() {
@@ -22,9 +30,12 @@ export default function EventsPage() {
       <Nav />
       <main className="flex-1 px-6 py-24 md:px-12">
         <div className="mx-auto max-w-6xl">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
-            Events
-          </p>
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+              Events
+            </p>
+            <FeedButton href="/events/feed.xml" />
+          </div>
           <h1 className="mt-4 max-w-2xl font-serif text-3xl font-semibold leading-tight md:text-4xl">
             Workshops &amp; conferences.
           </h1>

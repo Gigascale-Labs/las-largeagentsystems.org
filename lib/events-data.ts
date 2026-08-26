@@ -7,6 +7,14 @@ import { join } from "path";
 import { sanitizeText } from "./sanitize.ts";
 import type { Event } from "./events-schema";
 
+/**
+ * Absolute URLs, because a feed reader has no page to resolve a relative one
+ * against. Kept here so the page, its metadata and the feed route cannot
+ * disagree about where they live.
+ */
+export const EVENTS_PAGE_URL = "https://largeagentsystems.org/events";
+export const EVENTS_FEED_URL = "https://largeagentsystems.org/events/feed.xml";
+
 const EVENTS_JSON_PATH = join(
   process.cwd(),
   "data",

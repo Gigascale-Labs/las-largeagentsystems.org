@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nav } from "../components/nav";
 import { Footer } from "../components/footer";
 import { PapersList } from "../components/papers-list";
+import { FeedButton } from "../components/feed-button";
 import {
   getPaperDays,
   PAPERS_FEED_URL,
@@ -42,9 +43,12 @@ export default function PapersPage() {
       <Nav />
       <main className="flex-1 px-6 py-24 md:px-12">
         <div className="mx-auto max-w-6xl">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
-            Papers
-          </p>
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+              Papers
+            </p>
+            <FeedButton href="/papers/feed.xml" />
+          </div>
           <h1 className="mt-4 max-w-2xl font-serif text-3xl font-semibold leading-tight md:text-4xl">
             Daily arXiv scrape.
           </h1>
@@ -71,11 +75,7 @@ export default function PapersPage() {
             >
               Gigascale-Labs/las-new-papers
             </a>
-            . The same days go out as an{" "}
-            <a href="/papers/feed.xml" className="text-accent hover:underline">
-              Atom feed
-            </a>
-            .
+            . The same days go out as an Atom feed.
           </p>
 
           {s.kept > 0 && (

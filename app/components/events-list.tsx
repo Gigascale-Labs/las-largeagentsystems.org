@@ -80,7 +80,24 @@ export function EventsList({ events }: { events: Event[] }) {
       </p>
 
       <div className="mt-4 overflow-x-auto">
-        <table className="w-full min-w-[48rem] border-collapse text-sm">
+        {/*
+          table-fixed with an explicit colgroup, because the automatic layout
+          gave the wrong answer: `whitespace-nowrap` on Dates made that column
+          claim whatever width its longest string needed, and Name — which
+          carries the title and the description — got whatever was left. Fixed
+          layout takes the widths below and ignores content, so a long date or
+          a long single-word location can no longer squeeze the title column.
+          Location and Organizer wrap on any character (`break-words`) so an
+          unbroken string cannot spill outside its cell.
+        */}
+        <table className="w-full min-w-[48rem] table-fixed border-collapse text-sm">
+          <colgroup>
+            <col className="w-[42%]" />
+            <col className="w-[9%]" />
+            <col className="w-[15%]" />
+            <col className="w-[17%]" />
+            <col className="w-[17%]" />
+          </colgroup>
           <thead>
             <tr className="border-b border-rule text-left font-mono text-[10px] font-normal uppercase tracking-widest text-muted">
               <th className="py-2 pr-4 font-normal">Name</th>
@@ -108,21 +125,23 @@ export function EventsList({ events }: { events: Event[] }) {
                     </span>
                   )}
                   {event.description && (
-                    <p className="mt-1 max-w-md text-foreground/70">
+                    <p className="mt-1 text-foreground/70">
                       {event.description}
                     </p>
                   )}
                 </td>
-                <td className="py-3 pr-4 whitespace-nowrap text-foreground/70">
+                <td className="py-3 pr-4 text-foreground/70">
                   {EVENT_TYPE_LABELS[event.event_type] ?? event.event_type}
                 </td>
-                <td className="py-3 pr-4 whitespace-nowrap text-foreground/70">
+                <td className="py-3 pr-4 text-foreground/70">
                   {event.dates || "—"}
                 </td>
-                <td className="py-3 pr-4 text-foreground/70">
+                <td className="py-3 pr-4 break-words text-foreground/70">
                   {event.location || "—"}
                 </td>
-                <td className="py-3 text-foreground/70">{event.organizer}</td>
+                <td className="py-3 break-words text-foreground/70">
+                  {event.organizer}
+                </td>
               </tr>
             ))}
           </tbody>
