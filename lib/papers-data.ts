@@ -140,3 +140,59 @@ export function countQuestions(days: PaperDay[]): number {
     0,
   );
 }
+
+/** Smallest, largest and median of a list. `null` when the list is empty. */
+export type Spread = { min: number; max: number; median: number } | null;
+
+function spread(values: number[]): Spread {
+  if (values.length === 0) return null;
+  const sorted = [...values].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return {
+    min: sorted[0],
+    max: sorted[sorted.length - 1],
+    median:
+      sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid],
+  };
+}
+
+export type PapersSummary = {
+  days: number;
+  oldest: string;
+  newest: string;
+  fetched: number;
+  screened: number;
+  relevant: number;
+  kept: number;
+  questions: number;
+  keptPerDay: Spread;
+  questionsPerPaper: Spread;
+};
+
+/**
+ * The numbers the page states about itself, totalled from the days on file.
+ *
+ * Computed rather than written down: the sync caps at 60 days, so every one
+ * of these moves. `fetched`, `screened` and `relevant` are the pipeline's own
+ * per-run records, carried through the sync untouched; `kept`, `questions`
+ * and both spreads are counted here from the papers actually held.
+ */
+export function summarisePapers(days: PaperDay[]): PapersSummary {
+  const total = (key: "fetched" | "screened" | "relevant") =>
+    days.reduce((sum, day) => sum + (day.counts?.[key] ?? 0), 0);
+
+  return {
+    days: days.length,
+    oldest: getOldestDate(days),
+    newest: days.length ? days[0].date : "",
+    fetched: total("fetched"),
+    screened: total("screened"),
+    relevant: total("relevant"),
+    kept: countPapers(days),
+    questions: countQuestions(days),
+    keptPerDay: spread(days.map((day) => day.papers.length)),
+    questionsPerPaper: spread(
+      days.flatMap((day) => day.papers.map((p) => p.open_questions.length)),
+    ),
+  };
+}

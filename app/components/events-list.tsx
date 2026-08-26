@@ -70,7 +70,8 @@ export function EventsList({ events }: { events: Event[] }) {
             checked={showUnverified}
             onChange={(e) => resetToFirstPage(setShowUnverified)(e.target.checked)}
           />
-          Show unverified (possibly relevant, not independently confirmed)
+          Show unconfirmed (page blocked automated access, so existence was
+          not checked)
         </label>
       </div>
 

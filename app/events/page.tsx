@@ -12,6 +12,10 @@ export const metadata: Metadata = {
 
 export default function EventsPage() {
   const events = getEvents();
+  const confirmed = events.filter(
+    (event) => event.verification_status === "verified",
+  ).length;
+  const unconfirmed = events.length - confirmed;
 
   return (
     <div className="flex flex-1 flex-col">
@@ -25,6 +29,14 @@ export default function EventsPage() {
             Workshops &amp; conferences.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
+            {events.length > 0 ? (
+              <>
+                {events.length} events, {confirmed} confirmed and{" "}
+                {unconfirmed} unconfirmed.
+              </>
+            ) : (
+              <>No events are on file yet.</>
+            )}{" "}
             Found by a weekly automated web search (
             <a
               href="https://github.com/Gigascale-Labs/las-conferences"
@@ -34,15 +46,17 @@ export default function EventsPage() {
             >
               Gigascale-Labs/las-conferences
             </a>
-            ) for workshops, conferences, and CFPs connected to the
+            ) for workshops, conferences and calls for papers on the
             large-scale, systemic framing of multi-agent systems this site
-            studies — not multi-agent systems research in general. Each
-            candidate is independently checked before appearing here: its
-            page is fetched and confirmed to actually mention the event.
-            Items marked &ldquo;Unverified&rdquo; matched the relevance and
-            reputability bar but couldn&apos;t be fetched to confirm (the
-            site blocked automated access) — possibly real, just not
-            checked.
+            studies, not multi-agent systems research in general.
+          </p>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
+            Confirmed means the event&apos;s own page was fetched and found to
+            name it. The {unconfirmed} marked Unverified met the relevance and
+            reputability bar, but their pages blocked automated access, so the
+            event was never confirmed to exist. Not checked for any event:
+            whether its dates, location and deadlines are still current. Read
+            them from the organiser&apos;s page before relying on them.
           </p>
 
           <div className="mt-12">

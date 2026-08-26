@@ -127,8 +127,9 @@ function DaySection({ day }: { day: PaperDay }) {
 
       {day.papers.length === 0 ? (
         <p className="mt-4 max-w-2xl border border-rule px-5 py-4 text-sm leading-relaxed text-foreground/70">
-          Nothing passed the screen on this day. That is a normal outcome, not
-          a failure.
+          0 papers kept. {day.counts?.screened ?? "?"} screened,{" "}
+          {day.counts?.relevant ?? "?"} judged relevant, none cleared the
+          judge&apos;s gates.
         </p>
       ) : (
         <div className="mt-4 space-y-4">
@@ -166,7 +167,7 @@ export function PapersList({ days }: { days: PaperDay[] }) {
               >
                 <span>{day.date}</span>
                 <span className="tabular-nums text-muted/60">
-                  {day.papers.length || "—"}
+                  {day.papers.length}
                 </span>
               </a>
             </li>
