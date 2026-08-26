@@ -3,6 +3,7 @@ import { Nav } from "../components/nav";
 import { Footer } from "../components/footer";
 import { PapersList } from "../components/papers-list";
 import { FeedButton } from "../components/feed-button";
+import { TABLE_HEAD_ROW, TABLE_ROW, TABLE_WRAP } from "@/lib/table-styles";
 import {
   getPaperDays,
   PAPERS_FEED_URL,
@@ -79,31 +80,33 @@ export default function PapersPage() {
           </p>
 
           {s.kept > 0 && (
-            <table className="mt-8 w-full max-w-md border-collapse text-sm">
-              <caption className="sr-only">
-                Papers at each pipeline stage, totalled over {s.days} days
-              </caption>
-              <thead>
-                <tr className="border-b border-rule text-left">
-                  <th scope="col" className="py-2 pr-4 font-medium">
-                    Stage
-                  </th>
-                  <th scope="col" className="py-2 text-right font-medium">
-                    Papers
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {funnel.map(([stage, n]) => (
-                  <tr key={stage} className="border-b border-rule/60">
-                    <td className="py-2 pr-4 text-foreground/70">{stage}</td>
-                    <td className="py-2 text-right font-mono tabular-nums">
-                      {NUM.format(n)}
-                    </td>
+            <div className={`mt-8 max-w-md ${TABLE_WRAP}`}>
+              <table className="w-full border-collapse text-sm">
+                <caption className="sr-only">
+                  Papers at each pipeline stage, totalled over {s.days} days
+                </caption>
+                <thead>
+                  <tr className={TABLE_HEAD_ROW}>
+                    <th scope="col" className="px-3 py-2">
+                      Stage
+                    </th>
+                    <th scope="col" className="px-3 py-2 text-right">
+                      Papers
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {funnel.map(([stage, n]) => (
+                    <tr key={stage} className={TABLE_ROW}>
+                      <td className="px-3 py-2 text-foreground/70">{stage}</td>
+                      <td className="px-3 py-2 text-right font-mono tabular-nums">
+                        {NUM.format(n)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           )}
 
           {s.keptPerDay && s.questionsPerPaper && (

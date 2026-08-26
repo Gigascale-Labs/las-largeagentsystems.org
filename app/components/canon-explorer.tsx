@@ -10,6 +10,7 @@ import {
   THREAT_MODELS,
   type CanonEntry,
 } from "@/lib/canon-schema";
+import { TABLE_HEAD_ROW, TABLE_ROW, TABLE_WRAP } from "@/lib/table-styles";
 
 type DimensionKey =
   | "system_type"
@@ -295,20 +296,20 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
             ? `${filtered.length} paper${filtered.length === 1 ? "" : "s"} - ${activeCell.row} × ${activeCell.col}`
             : `All ${filtered.length} papers`}
         </p>
-        <div className="mt-4 overflow-x-auto">
+        <div className={`mt-4 ${TABLE_WRAP}`}>
           <table className="w-full min-w-[40rem] border-collapse text-sm">
             <thead>
-              <tr className="border-b border-rule text-left font-mono text-[10px] font-normal uppercase tracking-widest text-muted">
-                <th className="py-2 pr-4 font-normal">Title</th>
-                <th className="py-2 pr-4 font-normal">Creators</th>
-                <th className="py-2 pr-4 font-normal">Date</th>
-                <th className="py-2 font-normal">Tags</th>
+              <tr className={TABLE_HEAD_ROW}>
+                <th className="px-3 py-2 font-normal">Title</th>
+                <th className="px-3 py-2 font-normal">Creators</th>
+                <th className="px-3 py-2 font-normal">Date</th>
+                <th className="px-3 py-2 font-normal">Tags</th>
               </tr>
             </thead>
             <tbody>
               {paginated.map((entry) => (
-                <tr key={entry.url} className="border-b border-rule align-top">
-                  <td className="py-3 pr-4">
+                <tr key={entry.url} className={TABLE_ROW}>
+                  <td className="px-3 py-3">
                     <a
                       href={entry.url}
                       target="_blank"
@@ -318,13 +319,13 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
                       {entry.title}
                     </a>
                   </td>
-                  <td className="py-3 pr-4 text-foreground/70">
+                  <td className="px-3 py-3 text-foreground/70">
                     {entry.creators}
                   </td>
-                  <td className="py-3 pr-4 whitespace-nowrap text-foreground/70">
+                  <td className="px-3 py-3 whitespace-nowrap text-foreground/70">
                     {entry.date}
                   </td>
-                  <td className="py-3 text-foreground/70">{entry.tags}</td>
+                  <td className="px-3 py-3 text-foreground/70">{entry.tags}</td>
                 </tr>
               ))}
             </tbody>

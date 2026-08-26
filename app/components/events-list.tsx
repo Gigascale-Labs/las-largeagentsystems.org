@@ -2,6 +2,7 @@
 
 import { useCallback, useMemo, useState, useSyncExternalStore } from "react";
 import type { Event, EventType } from "@/lib/events-schema";
+import { TABLE_HEAD_ROW, TABLE_ROW, TABLE_WRAP } from "@/lib/table-styles";
 import {
   localDayAsUtc,
   orderEventsByDate,
@@ -191,7 +192,7 @@ export function EventsList({
         {ordered.length} event{ordered.length === 1 ? "" : "s"}
       </p>
 
-      <div className="mt-4 overflow-x-auto">
+      <div className={`mt-4 ${TABLE_WRAP}`}>
         {/*
           table-fixed with an explicit colgroup, because the automatic layout
           gave the wrong answer: `whitespace-nowrap` on Dates made that column
@@ -211,12 +212,12 @@ export function EventsList({
             <col className="w-[17%]" />
           </colgroup>
           <thead>
-            <tr className="border-b border-rule text-left font-mono text-[10px] font-normal uppercase tracking-widest text-muted">
-              <th className="py-2 pr-4 font-normal">Name</th>
-              <th className="py-2 pr-4 font-normal">Type</th>
-              <th className="py-2 pr-4 font-normal">Dates</th>
-              <th className="py-2 pr-4 font-normal">Location</th>
-              <th className="py-2 font-normal">Organizer</th>
+            <tr className={TABLE_HEAD_ROW}>
+              <th className="px-3 py-2 font-normal">Name</th>
+              <th className="px-3 py-2 font-normal">Type</th>
+              <th className="px-3 py-2 font-normal">Dates</th>
+              <th className="px-3 py-2 font-normal">Location</th>
+              <th className="px-3 py-2 font-normal">Organizer</th>
             </tr>
           </thead>
           {runs.map((run) => (
@@ -235,8 +236,8 @@ export function EventsList({
               {run.entries.map(({ item: event, parsed }) => {
                 const qualifiers = dateQualifiers(parsed);
                 return (
-                  <tr key={event.id} className="border-b border-rule align-top">
-                    <td className="py-3 pr-4">
+                  <tr key={event.id} className={TABLE_ROW}>
+                    <td className="px-3 py-3">
                       <a
                         href={event.url}
                         target="_blank"
@@ -256,10 +257,10 @@ export function EventsList({
                         </p>
                       )}
                     </td>
-                    <td className="py-3 pr-4 text-foreground/70">
+                    <td className="px-3 py-3 text-foreground/70">
                       {EVENT_TYPE_LABELS[event.event_type] ?? event.event_type}
                     </td>
-                    <td className="py-3 pr-4 text-foreground/70">
+                    <td className="px-3 py-3 text-foreground/70">
                       {/* The source's own words stay. The qualifiers below
                           describe how this row was sorted; they do not
                           replace what the organiser stated. */}
@@ -273,10 +274,10 @@ export function EventsList({
                         </span>
                       ))}
                     </td>
-                    <td className="py-3 pr-4 break-words text-foreground/70">
+                    <td className="px-3 py-3 break-words text-foreground/70">
                       {event.location || "—"}
                     </td>
-                    <td className="py-3 break-words text-foreground/70">
+                    <td className="px-3 py-3 break-words text-foreground/70">
                       {event.organizer}
                     </td>
                   </tr>
