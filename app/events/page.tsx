@@ -18,6 +18,19 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * The day this page was prerendered, UTC, as YYYY-MM-DD.
+ *
+ * Module scope, so it is read once during the static build and not per
+ * render. `EventsList` uses it for its first render on both sides of the
+ * hydration boundary. It cannot be computed inside that client component:
+ * the client bundle would run `new Date()` in the browser, which is a
+ * different day from the one baked into the prerendered HTML whenever a
+ * reader arrives after the build, and React would report a mismatch. The
+ * component swaps in the reader's real day from a `useEffect` instead.
+ */
+const BUILD_DATE = new Date().toISOString().slice(0, 10);
+
 export default function EventsPage() {
   const events = getEvents();
   const confirmed = events.filter(
@@ -69,9 +82,17 @@ export default function EventsPage() {
             whether its dates, location and deadlines are still current. Read
             them from the organiser&apos;s page before relying on them.
           </p>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
+            Order is read from each event&apos;s own dates text, which is free
+            form and has no start or end field behind it. An event still
+            running today is listed as current, not past. Where the only date
+            stated is a deadline, or only a month, the Dates column says so.
+            Events that state no date are listed last, in the order they were
+            found.
+          </p>
 
           <div className="mt-12">
-            <EventsList events={events} />
+            <EventsList events={events} buildDate={BUILD_DATE} />
           </div>
         </div>
       </main>

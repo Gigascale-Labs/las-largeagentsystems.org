@@ -1,7 +1,15 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState, useSyncExternalStore } from "react";
 import type { Event, EventType } from "@/lib/events-schema";
+import {
+  localDayAsUtc,
+  orderEventsByDate,
+  startOfUtcDay,
+  type EventGroup,
+  type OrderedEvent,
+  type ParsedEventDate,
+} from "@/lib/event-dates";
 
 const EVENT_TYPE_LABELS: Record<EventType, string> = {
   workshop: "Workshop",
@@ -9,12 +17,100 @@ const EVENT_TYPE_LABELS: Record<EventType, string> = {
   cfp: "CFP",
 };
 
+const EVENT_GROUP_LABELS: Record<EventGroup, string> = {
+  upcoming: "Upcoming & current",
+  past: "Past",
+  undated: "Date not stated",
+};
+
 const PAGE_SIZE = 15;
 
-export function EventsList({ events }: { events: Event[] }) {
+/**
+ * Names a sort date that is not an exact event date, so a reader is not
+ * misled. Two cases: the date is a deadline, because the source stated no
+ * event date; and only a month was stated, so the day is this parser's, not
+ * the organiser's. Both can apply to one event. Neither replaces the raw
+ * string — they say how the row was placed, nothing more.
+ */
+function dateQualifiers(parsed: ParsedEventDate): string[] {
+  if (parsed.kind !== "dated") return [];
+  const notes: string[] = [];
+  if (parsed.source === "deadline") notes.push("Sorted by deadline");
+  if (parsed.precision === "month") notes.push("Day not stated");
+  return notes;
+}
+
+/**
+ * A run of neighbouring rows in the same group. Pagination cuts the ordered
+ * list at a fixed size, so a page can start in the middle of a group or hold
+ * parts of three. One run per contiguous stretch gives every stretch its own
+ * heading, including the one a page opens on.
+ */
+interface GroupRun {
+  group: EventGroup;
+  entries: OrderedEvent<Event>[];
+}
+
+function toRuns(entries: OrderedEvent<Event>[]): GroupRun[] {
+  const runs: GroupRun[] = [];
+  for (const entry of entries) {
+    const last = runs[runs.length - 1];
+    if (last && last.group === entry.group) last.entries.push(entry);
+    else runs.push({ group: entry.group, entries: [entry] });
+  }
+  return runs;
+}
+
+/**
+ * The clock is the external store. Nothing pushes updates to it, so there is
+ * nothing to unsubscribe from: the day is read once, after hydration.
+ */
+const NO_UPDATES = () => () => {};
+
+/**
+ * The reader's own day, in milliseconds. A number, not a Date, because
+ * `useSyncExternalStore` compares snapshots by identity and would loop on a
+ * fresh object; the same day always reads as the same number.
+ */
+function readClientDay(): number {
+  return localDayAsUtc(new Date()).getTime();
+}
+
+/**
+ * `buildDate` is the day of the static prerender, as YYYY-MM-DD. It is the
+ * first render on the server and the first render in the browser, which is
+ * what keeps hydration in step — the two sides must agree before React can
+ * attach. React then reads the clock and re-renders, so a page built on
+ * Monday still splits upcoming from past correctly on Friday.
+ *
+ * `useSyncExternalStore` and not `useEffect` + `setState`: this Next version
+ * ships the React Compiler's `react-hooks/set-state-in-effect` rule as an
+ * error, and it rejects setting state synchronously in an effect. This hook
+ * is React's own answer for a value the server and the client disagree
+ * about — it renders the server snapshot during hydration and swaps in the
+ * client one straight after.
+ */
+export function EventsList({
+  events,
+  buildDate,
+}: {
+  events: Event[];
+  buildDate: string;
+}) {
   const [typeFilter, setTypeFilter] = useState<EventType | "all">("all");
   const [showUnverified, setShowUnverified] = useState(false);
   const [page, setPage] = useState(1);
+
+  const readBuildDay = useCallback(
+    () => startOfUtcDay(buildDate).getTime(),
+    [buildDate],
+  );
+  const todayMs = useSyncExternalStore(
+    NO_UPDATES,
+    readClientDay,
+    readBuildDay,
+  );
+  const today = useMemo(() => new Date(todayMs), [todayMs]);
 
   const filtered = useMemo(() => {
     return events.filter((event) => {
@@ -24,11 +120,27 @@ export function EventsList({ events }: { events: Event[] }) {
     });
   }, [events, typeFilter, showUnverified]);
 
-  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const ordered = useMemo(
+    () => orderEventsByDate(filtered, (event) => event.dates, today),
+    [filtered, today],
+  );
+
+  const groupCounts = useMemo(() => {
+    const counts: Record<EventGroup, number> = {
+      upcoming: 0,
+      past: 0,
+      undated: 0,
+    };
+    for (const entry of ordered) counts[entry.group] += 1;
+    return counts;
+  }, [ordered]);
+
+  const totalPages = Math.max(1, Math.ceil(ordered.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
-  const paginated = filtered.slice(
-    (currentPage - 1) * PAGE_SIZE,
-    currentPage * PAGE_SIZE,
+  // Paginate the ordered list, not each group, so page size stays fixed and
+  // the reading order never changes with the page break.
+  const runs = toRuns(
+    ordered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
   );
 
   function resetToFirstPage<T>(setter: (value: T) => void) {
@@ -76,7 +188,7 @@ export function EventsList({ events }: { events: Event[] }) {
       </div>
 
       <p className="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-muted">
-        {filtered.length} event{filtered.length === 1 ? "" : "s"}
+        {ordered.length} event{ordered.length === 1 ? "" : "s"}
       </p>
 
       <div className="mt-4 overflow-x-auto">
@@ -107,44 +219,71 @@ export function EventsList({ events }: { events: Event[] }) {
               <th className="py-2 font-normal">Organizer</th>
             </tr>
           </thead>
-          <tbody>
-            {paginated.map((event) => (
-              <tr key={event.id} className="border-b border-rule align-top">
-                <td className="py-3 pr-4">
-                  <a
-                    href={event.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-serif text-base font-semibold transition-colors hover:text-accent"
-                  >
-                    {event.name}
-                  </a>
-                  {event.verification_status === "blocked" && (
-                    <span className="ml-2 inline-block border border-accent px-1.5 py-0.5 align-middle font-mono text-[9px] uppercase tracking-widest text-accent">
-                      Unverified
-                    </span>
-                  )}
-                  {event.description && (
-                    <p className="mt-1 text-foreground/70">
-                      {event.description}
-                    </p>
-                  )}
-                </td>
-                <td className="py-3 pr-4 text-foreground/70">
-                  {EVENT_TYPE_LABELS[event.event_type] ?? event.event_type}
-                </td>
-                <td className="py-3 pr-4 text-foreground/70">
-                  {event.dates || "—"}
-                </td>
-                <td className="py-3 pr-4 break-words text-foreground/70">
-                  {event.location || "—"}
-                </td>
-                <td className="py-3 break-words text-foreground/70">
-                  {event.organizer}
-                </td>
+          {runs.map((run) => (
+            // One tbody per run, so the heading is the group's own row header
+            // rather than a row a screen reader reads as an event.
+            <tbody key={`${run.group}-${run.entries[0].item.id}`}>
+              <tr>
+                <th
+                  scope="rowgroup"
+                  colSpan={5}
+                  className="border-b border-rule pb-2 pt-8 text-left font-mono text-xs font-normal uppercase tracking-[0.2em] text-muted"
+                >
+                  {EVENT_GROUP_LABELS[run.group]} — {groupCounts[run.group]}
+                </th>
               </tr>
-            ))}
-          </tbody>
+              {run.entries.map(({ item: event, parsed }) => {
+                const qualifiers = dateQualifiers(parsed);
+                return (
+                  <tr key={event.id} className="border-b border-rule align-top">
+                    <td className="py-3 pr-4">
+                      <a
+                        href={event.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-serif text-base font-semibold transition-colors hover:text-accent"
+                      >
+                        {event.name}
+                      </a>
+                      {event.verification_status === "blocked" && (
+                        <span className="ml-2 inline-block border border-accent px-1.5 py-0.5 align-middle font-mono text-[9px] uppercase tracking-widest text-accent">
+                          Unverified
+                        </span>
+                      )}
+                      {event.description && (
+                        <p className="mt-1 text-foreground/70">
+                          {event.description}
+                        </p>
+                      )}
+                    </td>
+                    <td className="py-3 pr-4 text-foreground/70">
+                      {EVENT_TYPE_LABELS[event.event_type] ?? event.event_type}
+                    </td>
+                    <td className="py-3 pr-4 text-foreground/70">
+                      {/* The source's own words stay. The qualifiers below
+                          describe how this row was sorted; they do not
+                          replace what the organiser stated. */}
+                      {event.dates || "—"}
+                      {qualifiers.map((note) => (
+                        <span
+                          key={note}
+                          className="mt-1 block font-mono text-[9px] uppercase tracking-widest text-muted"
+                        >
+                          {note}
+                        </span>
+                      ))}
+                    </td>
+                    <td className="py-3 pr-4 break-words text-foreground/70">
+                      {event.location || "—"}
+                    </td>
+                    <td className="py-3 break-words text-foreground/70">
+                      {event.organizer}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          ))}
         </table>
       </div>
 
