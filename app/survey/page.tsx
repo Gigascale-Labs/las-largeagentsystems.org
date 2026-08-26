@@ -60,8 +60,7 @@ export default function SourcesPage() {
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
               Please submit relevant papers. We are looking to grow the list
-              to a thorough coverage of the area, to help identify gaps and
-              introduce new researchers.
+              to a thorough coverage.
             </p>
             <div className="mt-10">
               <ContributeForm />
