@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "sync:airtable": "node scripts/sync-airtable.mjs",
+    "sync:las-conferences-events": "node scripts/sync-las-conferences-events.mjs",
     "test": "node --test --experimental-strip-types tests/*.test.mts"
   },
   "dependencies": {

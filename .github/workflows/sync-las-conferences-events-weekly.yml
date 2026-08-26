@@ -1,0 +1,45 @@
+name: Weekly LAS Conferences Sync
+
+on:
+  schedule:
+    # Monday 21:00 UTC -- 1h after las-conferences' own Monday 20:00 UTC run,
+    # so its commit (data/discoveries.db, docs/events.json) has landed first.
+    - cron: '0 21 * * 1'
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Sync events feed
+        run: node scripts/sync-las-conferences-events.mjs
+
+      - name: Check for changes
+        id: check
+        run: |
+          if [ -n "$(git status --porcelain data/las-conferences-events.json)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push if changed
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "las-conferences-sync[bot]"
+          git config user.email "bot@largeagentsystems.org"
+          git add data/las-conferences-events.json
+          COUNT=$(jq 'length' data/las-conferences-events.json)
+          git commit -m "chore: sync events from las-conferences ($COUNT events) [skip ci]"
+          git push
