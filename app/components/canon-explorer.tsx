@@ -45,11 +45,74 @@ function valuesFor(entry: CanonEntry, key: DimensionKey): string[] {
   return entry[key] ?? [];
 }
 
+/**
+ * Four steps, so a reader can tell them apart at a glance. The key beneath
+ * the table names each one; a shaded cell with no key is a colour with no
+ * meaning.
+ */
+const SHADES: { label: string; className: string }[] = [
+  { label: "0", className: "" },
+  { label: "1", className: "bg-accent/15" },
+  { label: "2–3", className: "bg-accent/35" },
+  { label: "4+", className: "bg-accent/60" },
+];
+
 function shade(count: number): string {
-  if (count === 0) return "";
-  if (count === 1) return "bg-accent/15";
-  if (count <= 3) return "bg-accent/35";
-  return "bg-accent/60";
+  if (count === 0) return SHADES[0].className;
+  if (count === 1) return SHADES[1].className;
+  if (count <= 3) return SHADES[2].className;
+  return SHADES[3].className;
+}
+
+/**
+ * One axis of the cross-table, as a row of buttons.
+ *
+ * `other` is the dimension the opposite axis holds. Choosing it swaps the two
+ * rather than putting one dimension on both axes, which would cross a
+ * dimension with itself.
+ */
+function AxisPicker({
+  legend,
+  selected,
+  other,
+  onSelect,
+}: {
+  legend: string;
+  selected: DimensionKey;
+  other: DimensionKey;
+  onSelect: (key: DimensionKey) => void;
+}) {
+  return (
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+      <span className="w-20 shrink-0 font-mono text-xs uppercase tracking-[0.2em] text-muted">
+        {legend}
+      </span>
+      {DIMENSION_KEYS.map((key) => {
+        const isSelected = key === selected;
+        const swaps = key === other;
+        return (
+          <button
+            key={key}
+            type="button"
+            aria-pressed={isSelected}
+            title={
+              swaps
+                ? `Swap: ${DIMENSION_LABELS[key]} moves to ${legend.toLowerCase()}`
+                : undefined
+            }
+            onClick={() => onSelect(key)}
+            className={`border px-2.5 py-1 font-mono text-[11px] uppercase tracking-widest transition-colors ${
+              isSelected
+                ? "border-accent bg-accent/10 font-semibold text-accent"
+                : "border-rule text-muted hover:border-accent hover:text-accent"
+            }`}
+          >
+            {DIMENSION_LABELS[key]}
+          </button>
+        );
+      })}
+    </div>
+  );
 }
 
 export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
@@ -114,47 +177,39 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
 
   return (
     <div>
-      <div className="flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-xs uppercase tracking-[0.2em] text-muted">
-        <label className="flex items-center gap-2">
-          Rows
-          <select
-            value={dimA}
-            onChange={(e) => selectDimA(e.target.value as DimensionKey)}
-            className="border border-rule bg-background px-2 py-1 text-xs normal-case tracking-normal text-foreground"
-          >
-            {DIMENSION_KEYS.map((key) => (
-              <option key={key} value={key}>
-                {DIMENSION_LABELS[key]}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="flex items-center gap-2">
-          Columns
-          <select
-            value={dimB}
-            onChange={(e) => selectDimB(e.target.value as DimensionKey)}
-            className="border border-rule bg-background px-2 py-1 text-xs normal-case tracking-normal text-foreground"
-          >
-            {DIMENSION_KEYS.map((key) => (
-              <option key={key} value={key}>
-                {DIMENSION_LABELS[key]}
-              </option>
-            ))}
-          </select>
-        </label>
-        {activeCell && (
-          <button
-            onClick={() => {
-              setActiveCell(null);
-              setPage(1);
-            }}
-            className="normal-case tracking-normal text-accent hover:underline"
-          >
-            Clear selection ×
-          </button>
-        )}
+      {/*
+        Both axes as visible buttons rather than <select>. Six dimensions per
+        axis is small enough to show at once, and a dropdown hid what the
+        table can be crossed against until it was opened. Picking the
+        dimension the other axis already holds swaps the two, which the
+        title says on the button that would do it.
+      */}
+      <div className="flex flex-col gap-3">
+        <AxisPicker
+          legend="Rows"
+          selected={dimA}
+          other={dimB}
+          onSelect={selectDimA}
+        />
+        <AxisPicker
+          legend="Columns"
+          selected={dimB}
+          other={dimA}
+          onSelect={selectDimB}
+        />
       </div>
+
+      {activeCell && (
+        <button
+          onClick={() => {
+            setActiveCell(null);
+            setPage(1);
+          }}
+          className="mt-4 font-mono text-xs text-accent hover:underline"
+        >
+          Clear selection ×
+        </button>
+      )}
 
       <div className="mt-6 overflow-x-auto">
         <table className="border-collapse text-sm">
@@ -195,7 +250,8 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
                       <button
                         onClick={() => toggleCell(row, col)}
                         disabled={n === 0}
-                        className={`h-10 w-10 text-sm transition-colors ${
+                        aria-label={`${row} × ${col}: ${n} paper${n === 1 ? "" : "s"}`}
+                        className={`h-10 w-10 text-sm tabular-nums transition-colors ${
                           isActive
                             ? "font-semibold ring-2 ring-inset ring-accent"
                             : ""
@@ -214,6 +270,23 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/*
+        The key. The cells carry a colour scale, and a scale with no key is a
+        colour a reader has to guess at.
+      */}
+      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[10px] uppercase tracking-widest text-muted">
+        <span>Papers per pair</span>
+        {SHADES.map((step) => (
+          <span key={step.label} className="flex items-center gap-1.5">
+            <span
+              aria-hidden="true"
+              className={`inline-block h-3 w-3 border border-rule ${step.className}`}
+            />
+            {step.label}
+          </span>
+        ))}
       </div>
 
       <div className="mt-12">
