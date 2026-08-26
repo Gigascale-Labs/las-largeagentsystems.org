@@ -113,6 +113,9 @@ export function OrgTypeChart({ data }: { data: OrgTypeTimeline | null }) {
                 strokeWidth={2}
                 maxBarSize={24}
                 radius={i === DISPLAYED_TYPES.length - 1 ? [4, 4, 0, 0] : undefined}
+                // Same reasoning as usage-stats-chart.tsx's Line: don't
+                // animate bars in on mount, so counts are correct immediately.
+                isAnimationActive={false}
               />
             ))}
           </BarChart>

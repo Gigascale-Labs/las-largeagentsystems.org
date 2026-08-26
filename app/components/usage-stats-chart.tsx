@@ -210,6 +210,11 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
                 dot={{ r: 4, strokeWidth: 0 }}
                 activeDot={{ r: 5 }}
                 connectNulls={false}
+                // Recharts' default ~1.5s draw-in animation means a line
+                // that's already in view on page load (or reached by a quick
+                // scroll) briefly renders as half-drawn -- looks like the
+                // data hasn't loaded rather than an animation still playing.
+                isAnimationActive={false}
               />
             ))}
           </LineChart>
