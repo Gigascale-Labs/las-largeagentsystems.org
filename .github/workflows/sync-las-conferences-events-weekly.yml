@@ -2,9 +2,9 @@ name: Weekly LAS Conferences Sync
 
 on:
   schedule:
-    # Monday 21:00 UTC -- 1h after las-conferences' own Monday 20:00 UTC run,
+    # Monday 22:00 UTC -- 2h after las-conferences' own Monday 20:00 UTC run,
     # so its commit (data/discoveries.db, docs/events.json) has landed first.
-    - cron: '0 21 * * 1'
+    - cron: '0 22 * * 1'
   # Allow manual trigger
   workflow_dispatch:
 
