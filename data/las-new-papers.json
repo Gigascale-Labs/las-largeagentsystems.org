@@ -18,7 +18,7 @@
           "Abhishek Banerjee"
         ],
         "url": "https://arxiv.org/abs/2608.24851",
-        "one_sentence": "Models social learning where sender credibility comes from a drift-diffusion decision process rather than fixed priors. Finds moderate transmission speeds correction while strong transmission can lock populations into wrong consensus.",
+        "one_sentence": "Models social learning where sender credibility comes from a drift-diffusion decision process rather than fixed priors. Finds moderate transmission speeds correction. Finds strong transmission can lock populations into wrong consensus.",
         "nearest_anchor_id": "2506.12078",
         "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
         "open_questions": [
@@ -200,7 +200,7 @@
           "Nicolas Maudet"
         ],
         "url": "https://arxiv.org/abs/2608.24400",
-        "one_sentence": "Studies fair allocation with tree-structured hierarchies of agents, proposing multilevel envy-based fairness notions. Shows a Multilevel Weighted Round Robin algorithm guarantees some but not all adapted notions.",
+        "one_sentence": "Studies fair allocation with tree-structured hierarchies of agents, proposing multilevel envy-based fairness notions. Shows a Multilevel Weighted Round Robin algorithm guarantees some but not all of the adapted notions.",
         "nearest_anchor_id": "2509.10147",
         "nearest_anchor_title": "Virtual Agent Economies",
         "open_questions": [
@@ -256,7 +256,7 @@
           "Luo Huan"
         ],
         "url": "https://arxiv.org/abs/2608.24215",
-        "one_sentence": "Ports the Agentopia generative-agent social simulation to a single consumer GPU using a quantized 8B model. Introduces memory compression and activity-block adaptations and reports basic run statistics over ~150 system-weeks.",
+        "one_sentence": "Ports the Agentopia generative-agent social simulation to a single consumer GPU using a quantized 8B model. Introduces memory compression and activity-block adaptations and reports basic run statistics over about 150 system-weeks.",
         "nearest_anchor_id": "2409.10568",
         "nearest_anchor_title": "On the limits of agency in agent-based models",
         "open_questions": [
@@ -290,7 +290,7 @@
           "Chuan Xiao"
         ],
         "url": "https://arxiv.org/abs/2608.22884",
-        "one_sentence": "Introduces an audit method that predicts before execution whether a social mechanism (reciprocity, consensus, punishment, gossip) survives as an LLM agent population grows.Controlled experiments show a single structural term can determine scale-failure, and predictions held across different code and model families.",
+        "one_sentence": "Introduces an audit method that predicts before execution whether a social mechanism (reciprocity, consensus, punishment, gossip) survives as an LLM agent population grows. Controlled experiments show a single structural term can determine scale-failure. Predictions held across different code and model families.",
         "nearest_anchor_id": "2409.02822",
         "nearest_anchor_title": "AI agents can coordinate beyond human scale",
         "open_questions": [
@@ -315,7 +315,7 @@
           "James Evans"
         ],
         "url": "https://arxiv.org/abs/2608.23867",
-        "one_sentence": "Proposes AgentLance, a repeated bidding market with VCG-style payments and hierarchical delegation for allocating tasks among LLM agents with private costs.It shows the market matches agents to specializations and outperforms centralized orchestration baselines, then corrects observed market failures.",
+        "one_sentence": "Proposes AgentLance, a repeated bidding market with VCG-style payments and hierarchical delegation for allocating tasks among LLM agents with private costs. It shows the market matches agents to specializations and outperforms centralized orchestration baselines. It then corrects observed market failures.",
         "nearest_anchor_id": "2509.10147",
         "nearest_anchor_title": "Virtual Agent Economies",
         "open_questions": [
@@ -338,7 +338,7 @@
           "Damian Ruck"
         ],
         "url": "https://arxiv.org/abs/2608.23906",
-        "one_sentence": "Proposes a framework linking hazard analysis, component testing, and probabilistic system modelling to trace AI model behavior to system-level risk.Applied to a payment settlement system, it shows adversarial LLM trading inputs alter systemic resilience and increase cascading bank failures under widespread AI adoption.",
+        "one_sentence": "Proposes a framework linking hazard analysis, component testing, and probabilistic system modelling to trace AI model behavior to system-level risk. Applied to a payment settlement system, it shows adversarial LLM trading inputs alter systemic resilience. It finds these inputs increase cascading bank failures under widespread AI adoption.",
         "nearest_anchor_id": "2512.16856",
         "nearest_anchor_title": "Distributional AGI Safety",
         "open_questions": [
@@ -358,7 +358,7 @@
           "Yu Ma"
         ],
         "url": "https://arxiv.org/abs/2608.22697",
-        "one_sentence": "Randomizes hotel listing order across 5,000 AI agent shopping sessions and compares four LLMs to human field data on position effects.Finds AI agents inspect more listings, show weak non-monotonic position effects, and converge on the same undominated choice regardless of model.",
+        "one_sentence": "Randomizes hotel listing order across 5,000 AI agent shopping sessions and compares four LLMs to human field data on position effects. Finds AI agents inspect more listings and show weak non-monotonic position effects. Finds AI agents converge on the same undominated choice regardless of model.",
         "nearest_anchor_id": "2602.16136",
         "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
         "open_questions": [
@@ -378,7 +378,7 @@
           "Ajitesh Srivastava"
         ],
         "url": "https://arxiv.org/abs/2608.23835",
-        "one_sentence": "Reframes counterfactual GNN explanation as intervention design, using greedy local search for actionable node-level changes and a DNF coverage formulation for network-level intervention selection under budget.Tested on synthetic graphs and real suicide-risk networks, it produces interpretable, budget-constrained intervention rules.",
+        "one_sentence": "Reframes counterfactual GNN explanation as intervention design, using greedy local search for actionable node-level changes. It uses a DNF coverage formulation for network-level intervention selection under budget. Tested on synthetic graphs and real suicide-risk networks, it produces interpretable, budget-constrained intervention rules.",
         "nearest_anchor_id": "2409.10568",
         "nearest_anchor_title": "On the limits of agency in agent-based models",
         "open_questions": [
@@ -399,7 +399,7 @@
           "Varun Rai"
         ],
         "url": "https://arxiv.org/abs/2608.23796",
-        "one_sentence": "Builds a dynamic structural model of household solar adoption incorporating forward-looking decisions, return on investment, and neighbor influence.Estimated on Austin household data, it simulates counterfactual rebate policies, finding short limited-time rebates outperform prolonged programs.",
+        "one_sentence": "Builds a dynamic structural model of household solar adoption incorporating forward-looking decisions, return on investment, and neighbor influence. Estimates the model on Austin household data and simulates counterfactual rebate policies. Finds short limited-time rebates outperform prolonged programs.",
         "nearest_anchor_id": "2409.10568",
         "nearest_anchor_title": "On the limits of agency in agent-based models",
         "open_questions": [
@@ -418,7 +418,7 @@
           "Samir Passi"
         ],
         "url": "https://arxiv.org/abs/2608.23642",
-        "one_sentence": "A position paper arguing current AI agent design impedes human oversight and erodes overseer skills through extended automation use.It proposes design affordances and organizational protocols to support critical judgement and counteract skill atrophy.",
+        "one_sentence": "A position paper argues current AI agent design impedes human oversight and erodes overseer skills through extended automation use. It proposes design affordances to support critical judgement. It proposes organizational protocols to counteract skill atrophy.",
         "nearest_anchor_id": "2603.23471",
         "nearest_anchor_title": "Regulating AI Agents",
         "open_questions": [
@@ -540,7 +540,7 @@
           "Kevin Zielincki"
         ],
         "url": "https://arxiv.org/abs/2608.21274",
-        "one_sentence": "Uses an 8.5-million-user Netflix experiment to measure how recommendation quality shifts consumption across popularity tiers.Finds improved recommendations diffuse consumption from superstar titles toward middle-tail titles rather than polarizing it.",
+        "one_sentence": "Uses an 8.5-million-user Netflix experiment to measure how recommendation quality shifts consumption across popularity tiers. Finds improved recommendations diffuse consumption from superstar titles toward middle-tail titles rather than polarizing it.",
         "nearest_anchor_id": "2411.11581",
         "nearest_anchor_title": "OASIS: Open Agent Social Interaction Simulations with One Million Agents",
         "open_questions": [
@@ -560,7 +560,7 @@
           "Kathleen M. Carley"
         ],
         "url": "https://arxiv.org/abs/2608.20649",
-        "one_sentence": "Presents a multi-criteria framework evaluating sociotechnical interventions on effectiveness, feasibility, cost, and acceptance.Surveys 39 researchers rating 40 misinformation interventions across these criteria, finding tradeoffs between effectiveness and feasibility.",
+        "one_sentence": "Presents a multi-criteria framework evaluating sociotechnical interventions on effectiveness, feasibility, cost, and acceptance. Surveys 39 researchers rating 40 misinformation interventions across these criteria, finding tradeoffs between effectiveness and feasibility.",
         "nearest_anchor_id": "2605.24413",
         "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
         "open_questions": [
@@ -597,7 +597,7 @@
           "Jacob Eisenstein"
         ],
         "url": "https://arxiv.org/abs/2608.20316",
-        "one_sentence": "Casts model routing with costly value estimation as a Pandora's Box problem and studies both a centralized router and a decentralized bidding market of specialists.",
+        "one_sentence": "Casts model routing with costly value estimation as a Pandora's Box problem. Studies both a centralized router and a decentralized bidding market of specialists.",
         "nearest_anchor_id": "2605.24413",
         "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
         "open_questions": [
@@ -616,7 +616,7 @@
           "Narcis Marincat"
         ],
         "url": "https://arxiv.org/abs/2608.20054",
-        "one_sentence": "Trains four-cell societies of language-model agents sharing one adapter and shows that restricting each cell's evidence visibility increases the chance of a compositionally generalizing communication interface.",
+        "one_sentence": "Trains four-cell societies of language-model agents that share one adapter. Shows that restricting each cell's evidence visibility increases the chance of a compositionally generalizing communication interface.",
         "nearest_anchor_id": "2602.16136",
         "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
         "open_questions": [
@@ -637,7 +637,7 @@
           "Edith Cheuk Han Ngai"
         ],
         "url": "https://arxiv.org/abs/2608.19701",
-        "one_sentence": "Identifies correlated provenance among memories written by different agents as a source of false majorities and proposes a framework estimating effective independent evidence before arbitration.",
+        "one_sentence": "Identifies correlated provenance among memories written by different agents as a source of false majorities. Proposes a framework that estimates effective independent evidence before arbitration.",
         "nearest_anchor_id": "2602.16136",
         "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
         "open_questions": [
@@ -656,7 +656,7 @@
           "Hirozumi Yamaguchi"
         ],
         "url": "https://arxiv.org/abs/2608.19778",
-        "one_sentence": "Fine-tunes a language-model pedestrian agent policy so that simulated destination composition matches aggregate mobile-network origin-destination flows, using iterative proportional fitting and resampled training data.",
+        "one_sentence": "Fine-tunes a language-model pedestrian agent policy so that simulated destination composition matches aggregate mobile-network origin-destination flows. Uses iterative proportional fitting and resampled training data.",
         "nearest_anchor_id": "2502.08691",
         "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
         "open_questions": [
@@ -675,7 +675,7 @@
           "Haiyue Zhang"
         ],
         "url": "https://arxiv.org/abs/2608.19760",
-        "one_sentence": "Audits step-level credit signals for LLM agents against counterfactual replay ground truth and finds none identifies causally pivotal steps better than chance.",
+        "one_sentence": "Audits step-level credit signals for LLM agents against counterfactual replay ground truth. Finds that none identifies causally pivotal steps better than chance.",
         "nearest_anchor_id": "2408.02784",
         "nearest_anchor_title": "LLM economicus? Mapping the Behavioral Biases of LLMs via Utility Theory",
         "open_questions": [
@@ -693,7 +693,7 @@
           "Sahil Sharma"
         ],
         "url": "https://arxiv.org/abs/2608.20231",
-        "one_sentence": "Models a post-AGI economy where corporations own producing-and-consuming AI/robot agent populations, using a von Neumann expanding-economy framework.\nDerives closed-economy demand closure, growth-rate decoupling from human demography, and a golden-rule theorem showing human ownership share decays exponentially unless growth stays below the machine economy's expansion frontier.\nCharacterizes three terminal regimes (rentier post-scarcity, full circular decoupling, socialized ownership) and the policy instruments that select among them.",
+        "one_sentence": "Models a post-AGI economy where corporations own producing-and-consuming AI/robot agent populations, using a von Neumann expanding-economy framework. Derives closed-economy demand closure and growth-rate decoupling from human demography. Proves a golden-rule theorem showing human ownership share decays exponentially unless growth stays below the machine economy's expansion frontier, and characterizes three terminal regimes (rentier post-scarcity, full circular decoupling, socialized ownership) along with the policy instruments that select among them.",
         "nearest_anchor_id": "2501.16946",
         "nearest_anchor_title": "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development",
         "open_questions": [
@@ -714,7 +714,7 @@
           "M-Tahar Kechadi"
         ],
         "url": "https://arxiv.org/abs/2608.20290",
-        "one_sentence": "Audits per-problem gain/loss statistics used to claim LLM self-improvement against measured null baselines and shows seven measurement artifacts that invert reported findings.",
+        "one_sentence": "Audits per-problem gain/loss statistics used to claim LLM self-improvement against measured null baselines. Shows seven measurement artifacts that invert the reported findings.",
         "nearest_anchor_id": "2602.16136",
         "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
         "open_questions": [
@@ -736,7 +736,7 @@
           "Jiawei Zhou"
         ],
         "url": "https://arxiv.org/abs/2608.20274",
-        "one_sentence": "Compares task-level versus subtask-level and text versus code skill induction for cross-task transfer among LLM agents and proposes a skill utility score predicting transfer success.",
+        "one_sentence": "Compares task-level versus subtask-level and text versus code skill induction for cross-task transfer among LLM agents. Proposes a skill utility score that predicts transfer success.",
         "nearest_anchor_id": "2508.16279",
         "nearest_anchor_title": "AgentScope 1.0: A Developer-Centric Framework for Building Agentic Applications",
         "open_questions": [
