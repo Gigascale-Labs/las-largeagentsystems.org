@@ -59,8 +59,7 @@ export default function EventsPage() {
               Gigascale-Labs/las-conferences
             </a>
             ) for workshops, conferences and calls for papers on the
-            large-scale, systemic framing of multi-agent systems this site
-            studies.
+            large-scale, systemic framing of multi-agent systems.
           </p>
 
           <div className="mt-12">
