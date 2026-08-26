@@ -33,10 +33,6 @@ const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
 export default function EventsPage() {
   const events = getEvents();
-  const confirmed = events.filter(
-    (event) => event.verification_status === "verified",
-  ).length;
-  const unconfirmed = events.length - confirmed;
 
   return (
     <div className="flex flex-1 flex-col">
@@ -53,14 +49,6 @@ export default function EventsPage() {
             Workshops &amp; conferences.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
-            {events.length > 0 ? (
-              <>
-                {events.length} events, {confirmed} confirmed and{" "}
-                {unconfirmed} unconfirmed.
-              </>
-            ) : (
-              <>No events are on file yet.</>
-            )}{" "}
             Found by a weekly automated web search (
             <a
               href="https://github.com/Gigascale-Labs/las-conferences"
@@ -72,23 +60,7 @@ export default function EventsPage() {
             </a>
             ) for workshops, conferences and calls for papers on the
             large-scale, systemic framing of multi-agent systems this site
-            studies, not multi-agent systems research in general.
-          </p>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
-            Confirmed means the event&apos;s own page was fetched and found to
-            name it. The {unconfirmed} marked Unverified met the relevance and
-            reputability bar, but their pages blocked automated access, so the
-            event was never confirmed to exist. Not checked for any event:
-            whether its dates, location and deadlines are still current. Read
-            them from the organiser&apos;s page before relying on them.
-          </p>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
-            Order is read from each event&apos;s own dates text, which is free
-            form and has no start or end field behind it. An event still
-            running today is listed as current, not past. Where the only date
-            stated is a deadline, or only a month, the Dates column says so.
-            Events that state no date are listed last, in the order they were
-            found.
+            studies.
           </p>
 
           <div className="mt-12">
