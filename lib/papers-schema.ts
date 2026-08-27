@@ -56,3 +56,11 @@ export interface PaperDay {
    * a day arXiv did not publish at all (weekends) may be absent entirely. */
   papers: Paper[];
 }
+
+/** One day as the papers-per-day chart plots it. See `keptPerDaySeries`. */
+export interface KeptPerDayPoint {
+  /** "YYYY-MM-DD". */
+  date: string;
+  /** Papers kept that day. A day the pipeline ran and kept none is 0. */
+  kept: number;
+}

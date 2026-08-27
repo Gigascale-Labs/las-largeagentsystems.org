@@ -13,7 +13,7 @@
  * in light mode, slightly lighter in dark. Both stay well under the contrast
  * of the text above them, so nothing overlays two elements in one colour.
  *
- * Kept as strings rather than a <Table> component: the three tables differ in
+ * Kept as strings rather than a <Table> component: the two tables differ in
  * width, column layout and cell content, and only the borders should be
  * shared.
  */

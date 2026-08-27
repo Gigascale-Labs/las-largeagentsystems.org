@@ -5,7 +5,7 @@ import { join } from "path";
 // (tests/papers-data.test.mts), which needs it to resolve the import —
 // tsconfig's allowImportingTsExtensions exists for exactly this case.
 import { sanitizeText } from "./sanitize.ts";
-import type { Paper, PaperDay } from "./papers-schema";
+import type { KeptPerDayPoint, Paper, PaperDay } from "./papers-schema";
 
 const PAPERS_JSON_PATH = join(process.cwd(), "data", "las-new-papers.json");
 
@@ -139,6 +139,23 @@ export function countQuestions(days: PaperDay[]): number {
       ),
     0,
   );
+}
+
+/**
+ * Papers kept on each day held, oldest first — the order a time axis reads
+ * in. `getPaperDays` returns days newest first, which is the order the page
+ * lists them; a chart reversing that in the component would put the newest
+ * day on the left.
+ *
+ * Days the pipeline did not run are absent from the data and stay absent
+ * here: arXiv announces nothing on some days, and one bar per day on file is
+ * a count of days the pipeline read, not a calendar. A day it ran and kept
+ * nothing is a real zero and is plotted.
+ */
+export function keptPerDaySeries(days: PaperDay[]): KeptPerDayPoint[] {
+  return days
+    .map((day) => ({ date: day.date, kept: day.papers.length }))
+    .reverse();
 }
 
 /** Smallest, largest and median of a list. `null` when the list is empty. */

@@ -15,6 +15,7 @@ import {
   countQuestions,
   getOldestDate,
   getPaperDays,
+  keptPerDaySeries,
 } from "../lib/papers-data.ts";
 import type { Paper, PaperDay } from "../lib/papers-schema.ts";
 
@@ -214,5 +215,51 @@ describe("day helpers", () => {
     const days = getPaperDays(filePath);
     assert.equal(countPapers(days), 2);
     assert.equal(countQuestions(days), 3);
+  });
+});
+
+describe("keptPerDaySeries", () => {
+  it("reverses newest-first days into oldest-first points", () => {
+    writeDays([
+      baseDay({ date: "2026-08-25", papers: [basePaper(), basePaper()] }),
+      baseDay({ date: "2026-08-24", papers: [basePaper()] }),
+    ]);
+    assert.deepEqual(keptPerDaySeries(getPaperDays(filePath)), [
+      { date: "2026-08-24", kept: 1 },
+      { date: "2026-08-25", kept: 2 },
+    ]);
+  });
+
+  it("keeps a day that kept nothing as a zero", () => {
+    writeDays([baseDay({ date: "2026-08-22", papers: [] })]);
+    assert.deepEqual(keptPerDaySeries(getPaperDays(filePath)), [
+      { date: "2026-08-22", kept: 0 },
+    ]);
+  });
+
+  it("counts the papers held, not the day's own kept count", () => {
+    // `counts.kept` is the pipeline's record of its run; the chart plots what
+    // the page can actually show. They match in practice and must not be
+    // assumed to.
+    writeDays([
+      baseDay({ date: "2026-08-25", counts: { kept: 99 }, papers: [basePaper()] }),
+    ]);
+    assert.deepEqual(keptPerDaySeries(getPaperDays(filePath)), [
+      { date: "2026-08-25", kept: 1 },
+    ]);
+  });
+
+  it("returns [] with no days", () => {
+    assert.deepEqual(keptPerDaySeries([]), []);
+  });
+
+  it("does not mutate the order of the days it is given", () => {
+    writeDays([baseDay({ date: "2026-08-25" }), baseDay({ date: "2026-08-24" })]);
+    const days = getPaperDays(filePath);
+    keptPerDaySeries(days);
+    assert.deepEqual(
+      days.map((day) => day.date),
+      ["2026-08-25", "2026-08-24"],
+    );
   });
 });
