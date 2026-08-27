@@ -49,17 +49,8 @@ export default function EventsPage() {
             Workshops &amp; conferences.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
-            Found by a weekly automated web search (
-            <a
-              href="https://github.com/Gigascale-Labs/las-conferences"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:underline"
-            >
-              Gigascale-Labs/las-conferences
-            </a>
-            ) for workshops, conferences and calls for papers on the
-            large-scale, systemic framing of multi-agent systems.
+            Weekly web scrape for workshops, conferences and calls for papers
+            on large agent systems.
           </p>
 
           <div className="mt-12">

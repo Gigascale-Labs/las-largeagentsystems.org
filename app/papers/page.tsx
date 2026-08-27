@@ -3,12 +3,12 @@ import { Nav } from "../components/nav";
 import { Footer } from "../components/footer";
 import { PapersList } from "../components/papers-list";
 import { FeedButton } from "../components/feed-button";
-import { TABLE_HEAD_ROW, TABLE_ROW, TABLE_WRAP } from "@/lib/table-styles";
+import { PapersPerDayChart } from "../components/papers-per-day-chart";
 import {
   getPaperDays,
+  keptPerDaySeries,
   PAPERS_FEED_URL,
   PAPERS_SOURCE_REPO_URL,
-  summarisePapers,
 } from "@/lib/papers-data";
 
 export const metadata: Metadata = {
@@ -24,20 +24,9 @@ export const metadata: Metadata = {
   },
 };
 
-const NUM = new Intl.NumberFormat("en-GB");
-
 export default function PapersPage() {
   const days = getPaperDays();
-  const s = summarisePapers(days);
-
-  // The funnel, as the pipeline's own run records report it. Four parallel
-  // rows, so a table rather than a sentence.
-  const funnel: Array<[string, number]> = [
-    ["Fetched from arXiv", s.fetched],
-    ["Screened", s.screened],
-    ["Judged relevant", s.relevant],
-    ["Kept, shown below", s.kept],
-  ];
+  const keptPerDay = keptPerDaySeries(days);
 
   return (
     <div className="flex flex-1 flex-col">
@@ -54,79 +43,10 @@ export default function PapersPage() {
             Daily arXiv scrape.
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
-            {s.kept > 0 ? (
-              <>
-                {NUM.format(s.kept)} papers from {s.days} day
-                {s.days === 1 ? "" : "s"}, {s.oldest} to {s.newest}, with{" "}
-                {NUM.format(s.questions)} open questions.
-              </>
-            ) : (
-              <>No papers are on file yet.</>
-            )}{" "}
-            Every new paper in seven arXiv lists is read each day. Those
-            matching the large-scale, systemic framing of multi-agent systems
-            this site studies are kept, with the questions each leaves open.
-            The pipeline is{" "}
-            <a
-              href={PAPERS_SOURCE_REPO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:underline"
-            >
-              Gigascale-Labs/las-new-papers
-            </a>
-            . The same days go out as an Atom feed.
-          </p>
-
-          {s.kept > 0 && (
-            <div className={`mt-8 max-w-md ${TABLE_WRAP}`}>
-              <table className="w-full border-collapse text-sm">
-                <caption className="sr-only">
-                  Papers at each pipeline stage, totalled over {s.days} days
-                </caption>
-                <thead>
-                  <tr className={TABLE_HEAD_ROW}>
-                    <th scope="col" className="px-3 py-2">
-                      Stage
-                    </th>
-                    <th scope="col" className="px-3 py-2 text-right">
-                      Papers
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {funnel.map(([stage, n]) => (
-                    <tr key={stage} className={TABLE_ROW}>
-                      <td className="px-3 py-2 text-foreground/70">{stage}</td>
-                      <td className="px-3 py-2 text-right font-mono tabular-nums">
-                        {NUM.format(n)}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-
-          {s.keptPerDay && s.questionsPerPaper && (
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground/70">
-              Papers per day: {s.keptPerDay.min} to {s.keptPerDay.max}, median{" "}
-              {s.keptPerDay.median} (n = {s.days} days). Questions per paper:{" "}
-              {s.questionsPerPaper.min} to {s.questionsPerPaper.max}, median{" "}
-              {s.questionsPerPaper.median} (n = {NUM.format(s.kept)} papers).
-              arXiv announces no new submissions on Friday or Saturday, so
-              some days hold none.
-            </p>
-          )}
-
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground/70">
-            Written by a model, not checked by a person: every summary and
-            every open question. Not checked at all: the papers the screen
-            rejected, and the full text of any paper — the pipeline reads
-            abstracts only. Whether a kept paper is worth reading is not
-            measured here; reading it is the test.
-          </p>
+          <PapersPerDayChart
+            points={keptPerDay}
+            sourceUrl={PAPERS_SOURCE_REPO_URL}
+          />
 
           <div className="mt-12">
             <PapersList days={days} />
