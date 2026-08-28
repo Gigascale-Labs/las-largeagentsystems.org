@@ -22,7 +22,7 @@ export function Join() {
           rel="noopener noreferrer"
           className="mt-10 inline-block bg-foreground px-8 py-3.5 text-sm font-medium uppercase tracking-wide text-background transition-colors hover:bg-accent"
         >
-          Request an invite
+          Request to join
         </a>
       </div>
     </section>
