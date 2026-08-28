@@ -4,7 +4,7 @@ import { Nav } from "../components/nav";
 import { Footer } from "../components/footer";
 import { CanonExplorer } from "../components/canon-explorer";
 import { ContributeForm } from "../components/contribute-form";
-import { getCanonEntries } from "@/lib/canon-data";
+import { getCanonEntries, getTransferEntries } from "@/lib/canon-data";
 
 /**
  * The contribute form's server action resolves DNS to check where a submitted
@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 export default function SourcesPage() {
   const entries = getCanonEntries();
+  const transferEntries = getTransferEntries();
 
   return (
     <div className="flex flex-1 flex-col">
@@ -50,6 +51,28 @@ export default function SourcesPage() {
           <div className="mt-12">
             <CanonExplorer entries={entries} />
           </div>
+
+          {transferEntries.length > 0 && (
+            <div className="mt-24 border-t-2 border-accent pt-10">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
+                Transfer
+              </p>
+              <h2 className="mt-4 max-w-2xl font-serif text-3xl font-semibold leading-tight md:text-4xl">
+                Methods that transfer.
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
+                These sources do not study AI agents. Each studies a human or
+                pre-AI system - a market, an institution, a crowd - or a
+                research method. We keep them because their findings and
+                methods carry over to populations of agents. Participant mix
+                is empty throughout: neither pure-AI nor mixed human+AI
+                describes them.
+              </p>
+              <div className="mt-12">
+                <CanonExplorer entries={transferEntries} />
+              </div>
+            </div>
+          )}
 
           <div className="mt-24 border-t-2 border-accent pt-10">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">

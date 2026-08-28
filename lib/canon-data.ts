@@ -1,6 +1,6 @@
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
-import { parseCSV } from "./csv";
+import { parseCSV } from "./csv.ts";
 import type { CanonEntry } from "./canon-schema";
 
 const AIRTABLE_JSON_PATH = join(
@@ -9,6 +9,7 @@ const AIRTABLE_JSON_PATH = join(
   "las-canon.airtable.json",
 );
 const CSV_PATH = join(process.cwd(), "data", "las-canon.csv");
+const TRANSFER_CSV_PATH = join(process.cwd(), "data", "las-transfer.csv");
 
 const MULTI_VALUE_COLUMNS = [
   "system_type",
@@ -27,8 +28,8 @@ function splitMultiValue(value: string): string[] {
     .filter(Boolean);
 }
 
-function getCanonEntriesFromCsv(): CanonEntry[] {
-  const text = readFileSync(CSV_PATH, "utf8");
+function readEntriesCsv(path: string): CanonEntry[] {
+  const text = readFileSync(path, "utf8");
   const rows = parseCSV(text);
   const header = rows[0];
 
@@ -45,6 +46,10 @@ function getCanonEntriesFromCsv(): CanonEntry[] {
 
     return entry as unknown as CanonEntry;
   });
+}
+
+function getCanonEntriesFromCsv(): CanonEntry[] {
+  return readEntriesCsv(CSV_PATH);
 }
 
 /** Reads the Airtable-synced Canon table, or null if it's missing/empty/unparseable. */
@@ -68,4 +73,22 @@ function getCanonEntriesFromAirtableJson(): CanonEntry[] | null {
  */
 export function getCanonEntries(): CanonEntry[] {
   return getCanonEntriesFromAirtableJson() ?? getCanonEntriesFromCsv();
+}
+
+/**
+ * Reads the transfer corpus: sources whose object of study is a human or
+ * pre-AI system, or a research method, kept for the transfer of their
+ * findings and methods to agent populations. Held as a static CSV rather
+ * than in Airtable, because it is a fixed curated list rather than a
+ * growing intake. Same columns as the canon CSV, so the same parser and the
+ * same CanonExplorer render it. Returns [] if the file is missing.
+ * Server-only (uses `fs`).
+ */
+export function getTransferEntries(): CanonEntry[] {
+  if (!existsSync(TRANSFER_CSV_PATH)) return [];
+  try {
+    return readEntriesCsv(TRANSFER_CSV_PATH);
+  } catch {
+    return [];
+  }
 }
