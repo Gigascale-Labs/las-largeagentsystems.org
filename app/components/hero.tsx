@@ -29,7 +29,7 @@ export function Hero() {
             href="#problem"
             className="border border-foreground px-5 py-2.5 text-sm font-medium uppercase tracking-wide transition-colors hover:border-accent hover:text-accent"
           >
-            Read our framing
+            The problem
           </a>
           <a
             href="#join"
