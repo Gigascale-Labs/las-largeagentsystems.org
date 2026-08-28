@@ -1,5 +1,143 @@
 [
   {
+    "date": "2026-08-27",
+    "counts": {
+      "fetched": 215,
+      "unseen": 215,
+      "screened": 200,
+      "relevant": 12,
+      "kept": 6,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2608.26849",
+        "title": "LiveSim: Simulating Environment-Shaped Users in Multi-Agent Live-Stream Ecosystems",
+        "authors": [
+          "Jiaqi Xu",
+          "Yiran Qiao",
+          "Jing Chen",
+          "Qiwei Zhong",
+          "Xiang Ao",
+          "Xueqi Cheng"
+        ],
+        "url": "https://arxiv.org/abs/2608.26849",
+        "one_sentence": "Presents LiveSim, an LLM framework that simulates live-stream users as editable behavioral hypotheses refined through trajectory comparisons. Accumulates environment-behavior patterns in a collective memory to support ecosystem-level analysis of risk evolution and platform interventions.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Does a simulator that refines user hypotheses from observed trajectories transfer to platforms other than live streaming, such as social feeds or marketplaces?",
+          "How much of the reported fidelity gain comes from the collective behavioral memory versus the per-user hypothesis editing?",
+          "Do platform interventions tested in the simulation produce the same effect sizes when applied on a live platform?",
+          "Which aggregate signals from interaction logs are enough to detect risk evolution without access to individual user profiles?",
+          "Does the collective behavioral memory cause simulated users to converge to a monoculture of behavior over long runs?"
+        ]
+      },
+      {
+        "arxiv_id": "2608.26896",
+        "title": "AI agents in Algorithmic Electricity Markets: On the Emergence of Tacit Collusion",
+        "authors": [
+          "Jakub Seredyński",
+          "Georgios Tsaousoglou"
+        ],
+        "url": "https://arxiv.org/abs/2608.26896",
+        "one_sentence": "Models strategic electricity market bidding as a repeated game with imperfect monitoring, using multi-agent reinforcement learning to represent participants. Proposes multi-dimensional criteria beyond profit-vs-Nash comparisons and finds cases where agents learn supra-competitive outcomes consistent with tacit collusion, without being instructed to collude.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Do the tacit collusion outcomes persist when the number of participants in the electricity market rises beyond the small oligopoly modelled here?",
+          "Which market design changes, such as bid disclosure rules or price caps, reduce supra-competitive outcomes among learning-based bidding agents?",
+          "Do the proposed multi-dimensional collusion criteria detect tacit collusion in real bidding data from operating electricity markets?",
+          "Do agents driven by large language models rather than reinforcement learning reach the same supra-competitive outcomes in repeated electricity market bidding?",
+          "How does the imperfect public monitoring assumption change the results if agents observe more or less about rivals' actions?"
+        ]
+      },
+      {
+        "arxiv_id": "2608.27382",
+        "title": "Token-Level Advertising",
+        "authors": [
+          "Hanbing Liu",
+          "Bowei Zhang",
+          "Changyuan Yu",
+          "Yinyu Ye",
+          "Qi Qi"
+        ],
+        "url": "https://arxiv.org/abs/2608.27382",
+        "one_sentence": "Proposes LAMA, a token-level advertising auction where advertisers report continuation values that shape a platform's generation via a latent mixture. Proves Markov dominant-strategy incentive compatibility and individual rationality, near-optimal KL-regularized welfare, and reports gains in welfare and revenue on commercial-search query experiments.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "LAMA is tested on commercial-search query splits only; how does token-level advertising behave on other query populations, such as advice-seeking or health queries?",
+          "The mechanism assumes advertisers report local continuation values truthfully under Markov DSIC; what happens when many advertisers bid strategically through a learned bidding agent instead?",
+          "Response quality is reported as maintained at the user-facing level; does repeated token-level advertiser influence shift user beliefs or choices over multiple interactions?",
+          "Token-level advertising embeds advertiser influence into generation with no predefined slot; can a third party detect and measure the amount of paid influence in an output from the text alone?",
+          "How does platform welfare and revenue under LAMA distribute across advertisers of different budget sizes?",
+          "LAMA is evaluated as a single platform mechanism; what happens to welfare and price levels when several competing generative platforms run token-level auctions over the same advertiser pool?"
+        ]
+      },
+      {
+        "arxiv_id": "2608.27187",
+        "title": "When Interference Graphs Evolve: Doubly Robust Estimation of Dynamic Peer Effects",
+        "authors": [
+          "Xiaojing Du"
+        ],
+        "url": "https://arxiv.org/abs/2608.27187",
+        "one_sentence": "Introduces a controlled contrast framework separating own-treatment, peer-exposure, and network-evolution effects when interaction graphs change over time. Develops the DynaNet-DR doubly robust estimator, consistent if either outcome regression or propensity model is correct, tested on semi-synthetic and MathOverflow data.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Does the DynaNet-DR estimator recover peer effects when the network summary is not sufficient, or when unmeasured confounders drive both edge formation and outcomes?",
+          "How do the summary-indexed contrasts compare against estimands defined by explicit counterfactual edge generation?",
+          "Do peer-effect estimates on evolving graphs hold for populations of AI agents, where interaction graphs change faster than in human forums?",
+          "Which choices of clipping threshold and finite-sample stabilization control the bias-variance trade-off of the estimator?",
+          "Does the estimator remain consistent when the weak dependence assumption fails, for example under strong network-wide cascades?"
+        ]
+      },
+      {
+        "arxiv_id": "2608.26626",
+        "title": "Risks and Controls for Multi-Agent Systems: an analytical framework for deployment of AI agents across organisational boundaries",
+        "authors": [
+          "Alistair Reid",
+          "Simon O'Callaghan",
+          "Dustin Venini",
+          "Liam Carroll",
+          "Tiberio Caetano"
+        ],
+        "url": "https://arxiv.org/abs/2608.26626",
+        "one_sentence": "Proposes a framework of deployment tiers (singular, federated, open) for reasoning about risks and controls when AI agents from different organizations interact. Identifies failure modes and controls per tier, and flags governance gaps where no single actor can act.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Which failure modes actually appear when agents from different organisations interact under only voluntary shared standards? The framework names failure modes per governance tier but reports no measurements.",
+          "Can the three governance tiers be distinguished from observable interaction logs alone, without knowing who deploys each agent?",
+          "Which controls listed for federated and open environments reduce failure rates when applied, and by how much?",
+          "Where no actor is positioned to apply a control, what collective action mechanism gets organisations to adopt it voluntarily?",
+          "How do organisations deploying agents across their perimeter today distribute across the three tiers?"
+        ]
+      },
+      {
+        "arxiv_id": "2608.26696",
+        "title": "Five Primitives for Governing Autonomous AI Agents at Runtime",
+        "authors": [
+          "Jiten Oswal",
+          "John Cadeddu"
+        ],
+        "url": "https://arxiv.org/abs/2608.26696",
+        "one_sentence": "Argues agent governance is a runtime problem and derives five primitives (discovery, identity, governance, attestation, supply chain) for mediating agent actions. Describes an implementation with policy mediation, per-tenant authorization, and a signed action ledger, four of five primitives built in private pilots.",
+        "nearest_anchor_id": "2603.23471",
+        "nearest_anchor_title": "Regulating AI Agents",
+        "open_questions": [
+          "How much latency does a runtime enforcement point on the critical path add per agent action, and how does the overhead scale with the number of agents?",
+          "Does fail-closed mediation turn availability incidents into denial cascades across a population of interdependent agents?",
+          "How can a per-tenant action vocabulary stay complete when agents select actions by model and attempt actions not enumerated in advance?",
+          "What does the fifth primitive, supply chain, add once it is integrated into the request path, given it is currently separate tooling?",
+          "Do the five primitives cover the governance failures seen in enterprise agent deployments other than the authors' own, or is the decomposition specific to their codebase?",
+          "Can a third party detect policy violations from a hash-linked signed ledger alone, without access to the agents or the vendor?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-08-26",
     "counts": {
       "fetched": 229,
