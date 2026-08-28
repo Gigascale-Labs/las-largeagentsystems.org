@@ -62,7 +62,7 @@ export function ResearchAgendas() {
           Research Agendas
         </p>
         <h2 className="mt-4 max-w-2xl font-serif text-3xl font-semibold leading-tight md:text-4xl">
-          Groups in the area.
+          Groups.
         </h2>
 
         <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">

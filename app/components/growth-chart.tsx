@@ -29,7 +29,7 @@ export async function GrowthChart() {
         <UsageStatsChart data={usageStats} />
 
         <h3 className="mt-16 max-w-2xl font-serif text-xl font-semibold leading-tight md:text-2xl">
-          Live deployments are also accelerating.
+          Live deployments are growing in number.
         </h3>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/80 md:text-lg">
           The number of companies implementing large agent systems and agent
