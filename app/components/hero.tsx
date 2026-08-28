@@ -9,7 +9,7 @@ export function Hero() {
           LargeAgentSystems.org
         </p>
         <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-          For AI to go well, we need a new science of billion-scale systems.
+          For AI to go well, we need a new science of large agent systems.
         </h1>
         <p className="mt-8 max-w-xl text-lg leading-relaxed text-foreground/80">
           As millions of AI agents permeate human economies, societies, and
