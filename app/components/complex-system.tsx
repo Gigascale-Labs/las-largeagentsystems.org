@@ -35,8 +35,6 @@ export function ComplexSystem() {
             Despite warning shots on MoltBook, OpenAI was not prepared for
             unwanted agent cooperation. Even after shutting down the first
             emergent noticeboard, OpenAI did not detect its recurrence.
-          </p>
-          <p>
             Moreover, multi-agent systems safety does not necessarily
             transfer to swarms and web-scale interactions. Expense and
             mismatched assumptions of system observability prevent a clean
