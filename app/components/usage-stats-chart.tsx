@@ -36,7 +36,7 @@ const RANGE_PRESETS: RangePreset[] = [
   { id: "all", label: "All", months: null, granularity: "monthly" },
 ];
 
-const DEFAULT_RANGE_ID = "2y";
+const DEFAULT_RANGE_ID = "1m";
 
 function bucketKey(date: string, granularity: Granularity): string {
   return granularity === "daily" ? date : date.slice(0, 7);
@@ -117,8 +117,13 @@ function computeView(rows: UsageStatsData["rows"], preset: RangePreset) {
 
 export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
   const [rangeId, setRangeId] = useState(DEFAULT_RANGE_ID);
-  const [showTable, setShowTable] = useState(false);
-  const preset = RANGE_PRESETS.find((p) => p.id === rangeId) ?? RANGE_PRESETS[4];
+  const [showTable, setShowTable] = useState(true);
+  // Fall back to the default preset, not a fixed index: the two would drift
+  // apart the next time RANGE_PRESETS is reordered.
+  const preset =
+    RANGE_PRESETS.find((p) => p.id === rangeId) ??
+    RANGE_PRESETS.find((p) => p.id === DEFAULT_RANGE_ID) ??
+    RANGE_PRESETS[0];
 
   const { chartData, tableRows } = useMemo(
     () => computeView(data?.rows ?? [], preset),
@@ -288,7 +293,8 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
         >
           Gigascale-Labs/las-usage-stats
         </a>
-        , scraped daily.
+        , scraped daily. That repo holds one scraper per source and the raw
+        CSV this chart reads, so you can check how every number is collected.
       </p>
     </div>
   );
