@@ -24,7 +24,17 @@ export function Footer() {
           </p>
         </div>
         <p className="text-background/40">
-          © {new Date().getFullYear()} Gigascale Labs. All rights reserved.
+          {new Date().getFullYear()} Gigascale Labs. Published under an MIT
+          licence on{" "}
+          <a
+            href="https://github.com/Gigascale-Labs/las-largeagentsystems.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-background/30 underline-offset-4 hover:text-background"
+          >
+            GitHub
+          </a>
+          .
         </p>
       </div>
     </footer>
