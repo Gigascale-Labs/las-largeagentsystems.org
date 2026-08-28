@@ -183,8 +183,7 @@ export function EventsList({
             checked={showUnverified}
             onChange={(e) => resetToFirstPage(setShowUnverified)(e.target.checked)}
           />
-          Show unconfirmed (page blocked automated access, so existence was
-          not checked)
+          Show unconfirmed (page blocked automated access)
         </label>
       </div>
 
@@ -228,7 +227,7 @@ export function EventsList({
                 <th
                   scope="rowgroup"
                   colSpan={5}
-                  className="border-b border-rule pb-2 pt-8 text-left font-mono text-xs font-normal uppercase tracking-[0.2em] text-muted"
+                  className="border-b border-rule px-3 pb-2 pt-8 text-left font-mono text-xs font-normal uppercase tracking-[0.2em] text-muted"
                 >
                   {EVENT_GROUP_LABELS[run.group]} — {groupCounts[run.group]}
                 </th>
