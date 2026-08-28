@@ -17,18 +17,34 @@ export function ComplexSystem() {
           <p>
             Human systems were designed for humans. Large-scale changes to
             the participant mix on large systems has historically led to
-            sudden, unforeseen, severe systemic failures - including the
-            GFC, the 2010 Flash Crash, and political polarisation, partially
-            attributed to foreign interference using bot farms.
+            sudden, severe systemic failures - including the GFC, the 2010
+            Flash Crash, and US political polarisation induced. With agentic
+            AI, these changes could be catastrophic. A humanity disempowered
+            by its tools may be unable to meaningfully change course when
+            economic incentives turn against it. A rapid concentration of
+            power could upend social contracts, leading to prolonged
+            instability and diminishing the world&apos;s ability to respond
+            to other threats. Alternative threat models focus on collections
+            of distributed agents developing emergent capabilities, similar
+            to the OpenAI Hacks, or even superintelligence.
           </p>
           <p>
-            In the age of agentic AI, those changes could be catastrophic. A
-            humanity disempowered by its tools may be unable to meaningfully
-            change course when economic incentives turn against it. A rapid
-            concentration of power could upend social contracts, leading to
-            prolonged instability and diminishing the world&apos;s ability
-            to respond to other threats. A collection of distributed agents
-            could develop superintelligence, with unknowable consequences.
+            Safety lacks the methods and awareness to deal with large,
+            distributed systems of agents like those seen in the OpenAI Hack.
+            Despite warning shots on MoltBook, OpenAI was not prepared for
+            unwanted agent cooperation. Even after shutting down the first
+            emergent noticeboard, OpenAI did not detect its recurrence.
+          </p>
+          <p>
+            Moreover, multi-agent systems safety does not necessarily
+            transfer to swarms and web-scale interactions. Expense and
+            mismatched assumptions of system observability prevent a clean
+            application of existing methods at emerging agentic scale.
+          </p>
+          <p>
+            Meanwhile, agentic infrastructure and live deployments continue
+            to grow, creating an abundance of unmonitored interactions and
+            unmitigated risks.
           </p>
         </div>
       </div>
