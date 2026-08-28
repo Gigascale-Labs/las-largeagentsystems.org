@@ -16,7 +16,7 @@ import {
   USAGE_STATS_SOURCE_URL,
   type UsageStatsData,
 } from "@/lib/usage-stats";
-import { logAxisTicks } from "@/lib/log-axis-ticks";
+import { logAxis } from "@/lib/log-axis-ticks";
 
 type Granularity = "daily" | "monthly";
 
@@ -131,7 +131,7 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
     [data, preset],
   );
 
-  const yTicks = useMemo(() => {
+  const yAxis = useMemo(() => {
     const values: number[] = [];
     for (const point of chartData) {
       for (const series of USAGE_STATS_SERIES) {
@@ -139,9 +139,12 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
         if (typeof v === "number" && v > 0) values.push(v);
       }
     }
-    if (values.length === 0) return undefined;
-    const ticks = logAxisTicks(Math.min(...values), Math.max(...values));
-    return ticks.length > 0 ? ticks : undefined;
+    if (values.length === 0) return { ticks: undefined, domain: undefined };
+    const axis = logAxis(Math.min(...values), Math.max(...values));
+    return {
+      ticks: axis.ticks.length > 0 ? axis.ticks : undefined,
+      domain: axis.domain,
+    };
   }, [chartData]);
 
   if (!data || data.rows.length === 0) {
@@ -198,8 +201,8 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
             />
             <YAxis
               scale="log"
-              domain={["auto", "auto"]}
-              ticks={yTicks}
+              domain={yAxis.domain ?? ["auto", "auto"]}
+              ticks={yAxis.ticks}
               allowDataOverflow
               stroke="var(--muted)"
               tickLine={false}
