@@ -13,12 +13,16 @@ export function Hero() {
         </h1>
         <p className="mt-8 max-w-xl text-lg leading-relaxed text-foreground/80">
           As millions of AI agents permeate human economies, societies, and
-          cultures, systemic risks from instability, inequality, and
-          disempowerment are growing. Meeting these challenges demands a
-          concerted cross-disciplinary effort. We&apos;re bringing together
-          people working towards pro-human outcomes as the world transitions
-          to large-scale, mixed systems of humans and AI, which we call,
-          &ldquo;large agent systems.&rdquo;
+          cultures, systemic risks from instability, inequality, emergent
+          capabilities, and disempowerment are growing. Meeting these
+          challenges demands a concerted cross-disciplinary effort, drawing on
+          social sciences, computer science, and AI safety in equal measure.
+          We&apos;ve put together this resource to summarise approaches and
+          challenges in the safe transition to large-scale, possibly mixed
+          systems of humans and AI. We refer to the hybrid and AI-only systems
+          as &ldquo;large agent systems&rdquo;, to distinguish them from the
+          typically small-scale, centralised, or closed systems studied in
+          multi-agent systems research.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <a
