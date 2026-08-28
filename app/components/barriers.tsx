@@ -1,7 +1,8 @@
 const BARRIERS = [
   {
     title: "Collective Action Problem",
-    description: "No single company has incentive to solve LAS safety.",
+    description:
+      "Many elements of large agent safety are not in the business interest of any individual company. Consequently we see a lack of investment in multi-agent evals and little discussion of large-agent safety at frontier labs.",
   },
   {
     title: "Lack of Data",
