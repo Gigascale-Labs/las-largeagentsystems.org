@@ -18,15 +18,16 @@ export function ComplexSystem() {
             Human systems were designed for humans. Large-scale changes to
             the participant mix on large systems has historically led to
             sudden, severe systemic failures - including the GFC, the 2010
-            Flash Crash, and US political polarisation induced. With agentic
-            AI, these changes could be catastrophic. A humanity disempowered
-            by its tools may be unable to meaningfully change course when
-            economic incentives turn against it. A rapid concentration of
-            power could upend social contracts, leading to prolonged
-            instability and diminishing the world&apos;s ability to respond
-            to other threats. Alternative threat models focus on collections
-            of distributed agents developing emergent capabilities, similar
-            to the OpenAI Hacks, or even superintelligence.
+            Flash Crash, and US political polarisation, partially induced
+            by bot farms. With agentic AI, these changes could be
+            catastrophic. A humanity disempowered by its tools may be unable
+            to meaningfully change course when economic incentives turn
+            against it. A rapid concentration of power could upend social
+            contracts, leading to prolonged instability and diminishing the
+            world&apos;s ability to respond to other threats. Alternative
+            threat models focus on collections of distributed agents
+            developing emergent capabilities, similar to the OpenAI Hack, or
+            even superintelligence.
           </p>
           <p>
             Safety lacks the methods and awareness to deal with large,
