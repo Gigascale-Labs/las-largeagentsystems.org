@@ -128,8 +128,9 @@ export function OrgTypeChart({ data }: { data: OrgTypeTimeline | null }) {
           <>
             {" "}
             The chart drops {data.excludedFromTimelineCount} of{" "}
-            {data.totalOrgs} catalogued organizations: they record no founding
-            year, no type, or both.
+            {data.totalOrgs} catalogued organizations.{" "}
+            {data.excludedFromTimelineCount === 1 ? "It records" : "They record"}{" "}
+            no founding year, no type, or both.
           </>
         )}
       </p>
