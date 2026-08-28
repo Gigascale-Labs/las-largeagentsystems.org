@@ -16,6 +16,7 @@ import {
   USAGE_STATS_SOURCE_URL,
   type UsageStatsData,
 } from "@/lib/usage-stats";
+import { logAxisTicks } from "@/lib/log-axis-ticks";
 
 type Granularity = "daily" | "monthly";
 
@@ -130,6 +131,19 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
     [data, preset],
   );
 
+  const yTicks = useMemo(() => {
+    const values: number[] = [];
+    for (const point of chartData) {
+      for (const series of USAGE_STATS_SERIES) {
+        const v = point[series.id];
+        if (typeof v === "number" && v > 0) values.push(v);
+      }
+    }
+    if (values.length === 0) return undefined;
+    const ticks = logAxisTicks(Math.min(...values), Math.max(...values));
+    return ticks.length > 0 ? ticks : undefined;
+  }, [chartData]);
+
   if (!data || data.rows.length === 0) {
     return (
       <div className="mt-12 border border-rule bg-background p-8 text-sm text-muted">
@@ -185,6 +199,7 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
             <YAxis
               scale="log"
               domain={["auto", "auto"]}
+              ticks={yTicks}
               allowDataOverflow
               stroke="var(--muted)"
               tickLine={false}
@@ -228,9 +243,8 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
 
       <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
         <p className="text-xs text-muted">
-          Each source is indexed to 100 at its first tracked point in the
-          selected range, since not every source has been measured for the
-          same length of time.
+          Each source is indexed to 100 at its first observation in the
+          selected range.
         </p>
         <button
           type="button"
@@ -293,8 +307,7 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
         >
           Gigascale-Labs/las-usage-stats
         </a>
-        , scraped daily. That repo holds one scraper per source and the raw
-        CSV this chart reads, so you can check how every number is collected.
+        , scraped daily.
       </p>
     </div>
   );
