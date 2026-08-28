@@ -122,16 +122,14 @@ export function OrgTypeChart({ data }: { data: OrgTypeTimeline | null }) {
         </ResponsiveContainer>
       </div>
       <p className="mt-3 text-xs text-muted">
-        Cumulative count of catalogued organizations by type.
+        Cumulative count of catalogued organizations by founding year. Bars
+        cover {DISPLAYED_TYPES.join(" and ")} only.
         {data.excludedFromTimelineCount > 0 && (
           <>
             {" "}
-            {data.excludedFromTimelineCount} additional catalogued
-            organization{data.excludedFromTimelineCount === 1 ? "" : "s"}{" "}
-            {data.excludedFromTimelineCount === 1 ? "has" : "have"} no
-            recorded founding year or type and{" "}
-            {data.excludedFromTimelineCount === 1 ? "isn't" : "aren't"}{" "}
-            reflected above.
+            The chart drops {data.excludedFromTimelineCount} of{" "}
+            {data.totalOrgs} catalogued organizations: they record no founding
+            year, no type, or both.
           </>
         )}
       </p>
