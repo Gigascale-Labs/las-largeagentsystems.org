@@ -12,7 +12,7 @@ import {
   YAxis,
 } from "recharts";
 import {
-  USAGE_STATS_SERIES,
+  USAGE_STATS_CHART_SERIES,
   USAGE_STATS_SOURCE_URL,
   type UsageStatsData,
 } from "@/lib/usage-stats";
@@ -80,7 +80,7 @@ function computeView(rows: UsageStatsData["rows"], preset: RangePreset) {
       order.push(key);
     }
     const bucket = bucketMap.get(key)!;
-    for (const series of USAGE_STATS_SERIES) {
+    for (const series of USAGE_STATS_CHART_SERIES) {
       const v = row.values[series.id];
       if (v != null) bucket[series.id] = v; // rows are chronological, so last write wins
     }
@@ -93,7 +93,7 @@ function computeView(rows: UsageStatsData["rows"], preset: RangePreset) {
   }));
 
   const baselines: Record<string, number> = {};
-  for (const series of USAGE_STATS_SERIES) {
+  for (const series of USAGE_STATS_CHART_SERIES) {
     const first = tableRows.find((r) => {
       const v = r.raw[series.id];
       return v != null && v > 0;
@@ -103,7 +103,7 @@ function computeView(rows: UsageStatsData["rows"], preset: RangePreset) {
 
   const chartData = tableRows.map((r) => {
     const point: Record<string, number | string | null> = { x: r.label };
-    for (const series of USAGE_STATS_SERIES) {
+    for (const series of USAGE_STATS_CHART_SERIES) {
       const base = baselines[series.id];
       const v = r.raw[series.id];
       const indexed = base && v != null ? (v / base) * 100 : null;
@@ -134,7 +134,7 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
   const yAxis = useMemo(() => {
     const values: number[] = [];
     for (const point of chartData) {
-      for (const series of USAGE_STATS_SERIES) {
+      for (const series of USAGE_STATS_CHART_SERIES) {
         const v = point[series.id];
         if (typeof v === "number" && v > 0) values.push(v);
       }
@@ -220,7 +220,7 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
               formatter={(value) => (typeof value === "number" ? value.toFixed(0) : String(value ?? ""))}
             />
             <Legend wrapperStyle={{ fontSize: 12, paddingTop: 16 }} />
-            {USAGE_STATS_SERIES.map((series) => (
+            {USAGE_STATS_CHART_SERIES.map((series) => (
               <Line
                 key={series.id}
                 type="linear"
@@ -266,7 +266,7 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
                 <th className="border-b border-rule px-2 py-1 font-mono uppercase tracking-[0.1em] text-muted">
                   Date
                 </th>
-                {USAGE_STATS_SERIES.map((series) => (
+                {USAGE_STATS_CHART_SERIES.map((series) => (
                   <th
                     key={series.id}
                     className="whitespace-nowrap border-b border-rule px-2 py-1 text-right font-mono uppercase tracking-[0.1em] text-muted"
@@ -282,7 +282,7 @@ export function UsageStatsChart({ data }: { data: UsageStatsData | null }) {
                   <td className="whitespace-nowrap border-b border-rule/50 px-2 py-1 font-mono tabular-nums">
                     {row.label}
                   </td>
-                  {USAGE_STATS_SERIES.map((series) => {
+                  {USAGE_STATS_CHART_SERIES.map((series) => {
                     const v = row.raw[series.id];
                     return (
                       <td

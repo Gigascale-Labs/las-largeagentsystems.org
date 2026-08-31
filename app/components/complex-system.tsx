@@ -30,17 +30,12 @@ export function ComplexSystem() {
             even superintelligence.
           </p>
           <p>
-            Safety lacks the methods and awareness to deal with large,
-            distributed systems of agents like those seen in the OpenAI Hack.
-            Despite warning shots on MoltBook, OpenAI was not prepared for
-            unwanted agent cooperation. Even after shutting down the first
-            emergent noticeboard, OpenAI did not detect its recurrence.
-            Moreover, multi-agent systems safety does not necessarily
-            transfer to swarms and web-scale interactions. Expense and
+            Safety lacks the methods and threat model awareness to deal
+            with large, distributed systems of agents like those seen in
+            the OpenAI Hack, particularly when these threats become
+            decentralised and intermingled with human actors. Expense and
             mismatched assumptions of system observability prevent a clean
             application of existing methods at emerging agentic scale.
-          </p>
-          <p>
             Meanwhile, agentic infrastructure and live deployments continue
             to grow, creating an abundance of unmonitored interactions and
             unmitigated risks.

@@ -19,10 +19,8 @@ export function Hero() {
           social sciences, computer science, and AI safety in equal measure.
           We&apos;ve put together this resource to summarise approaches and
           challenges in the safe transition to large-scale, possibly mixed
-          systems of humans and AI. We refer to the hybrid and AI-only systems
-          as &ldquo;large agent systems&rdquo;, to distinguish them from the
-          typically small-scale, centralised, or closed systems studied in
-          multi-agent systems research.
+          systems of humans and AI, which we refer to as large agent
+          systems.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <a

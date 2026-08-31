@@ -12,6 +12,8 @@ export interface UsageStatsSeriesConfig {
   column: string;
   url: string;
   colorVar: string;
+  /** True: the fetch and parse keep it, and the page draws no line for it. */
+  hidden?: boolean;
 }
 
 /**
@@ -19,7 +21,8 @@ export interface UsageStatsSeriesConfig {
  * fixed-order categorical palette in globals.css — never reorder per-chart).
  * n8n is tracked in the source repo too but is left out here to keep the
  * series count at 8, the palette's validated cap; see its own dashboard for
- * the full set.
+ * the full set. An entry marked `hidden` stays in the parse and reaches no
+ * page. Render from USAGE_STATS_CHART_SERIES, not from this list.
  */
 export const USAGE_STATS_SERIES: UsageStatsSeriesConfig[] = [
   {
@@ -49,6 +52,9 @@ export const USAGE_STATS_SERIES: UsageStatsSeriesConfig[] = [
     column: "olas_total_daily_active_agents",
     url: "https://olas.network",
     colorVar: "var(--chart-4)",
+    // Off the page. The chain is too narrow to stand for agentic growth:
+    // its agents run prediction markets and little else.
+    hidden: true,
   },
   {
     id: "langgraph",
@@ -79,6 +85,15 @@ export const USAGE_STATS_SERIES: UsageStatsSeriesConfig[] = [
     colorVar: "var(--chart-8)",
   },
 ];
+
+/**
+ * The series the page draws and tables: 7 of the 8 in USAGE_STATS_SERIES.
+ *
+ * Same fixed order and same colours. A hidden series leaves a gap in the
+ * palette (chart-4 is unused) rather than shifting every colour after it.
+ */
+export const USAGE_STATS_CHART_SERIES: UsageStatsSeriesConfig[] =
+  USAGE_STATS_SERIES.filter((s) => !s.hidden);
 
 export interface UsageStatsRow {
   date: string;
