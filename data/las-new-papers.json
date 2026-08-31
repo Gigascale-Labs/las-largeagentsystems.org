@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-08-30",
+    "counts": {
+      "fetched": 0,
+      "unseen": 0,
+      "screened": 0,
+      "relevant": 0,
+      "kept": 0,
+      "anchors": 20
+    },
+    "papers": []
+  },
+  {
     "date": "2026-08-29",
     "counts": {
       "fetched": 0,
@@ -14,14 +26,78 @@
   {
     "date": "2026-08-28",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 203,
+      "unseen": 203,
+      "screened": 200,
+      "relevant": 9,
+      "kept": 3,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2608.28046",
+        "title": "Emergent aggregation from collective foraging",
+        "authors": [
+          "Gorka Muñoz-Gil",
+          "Andrea López-Incera",
+          "Vide Ramsten",
+          "Giovanni Volpe",
+          "Thomas Müller",
+          "Hans J. Briegel"
+        ],
+        "url": "https://arxiv.org/abs/2608.28046",
+        "one_sentence": "Reinforcement-learning foragers optimizing individual reward for finding targets develop spatial aggregation without direct social reward. A crossover in visual range separates individual search from collective search behavior. A first-passage analytical model reproduces this transition.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Aggregation emerges when foragers see only conspecifics and never the targets; what happens when agents perceive both targets and conspecifics?",
+          "The crossover depends on visual range with replenishable targets; how does target replenishment rate, density and patchiness shift the onset of aggregation?",
+          "Does indirect, resource-driven reward also produce aggregation in populations of language-model agents rather than reinforcement learning walkers?",
+          "Can an observer detect the crossover from individual to collective search using only aggregate spatial statistics, without access to agent policies?",
+          "How does the aggregation transition change when agents are heterogeneous, for example with mixed visual ranges or mixed learned and random-walk policies?",
+          "Does the analytical first-passage model reproduce the transition in dimensions or geometries other than the one tested?"
+        ]
+      },
+      {
+        "arxiv_id": "2608.28198",
+        "title": "Performative Privacy: When Differential Privacy Maximizes Utility",
+        "authors": [
+          "Uddalak Mukherjee",
+          "Edwige Cyffers",
+          "Yann Chevaleyre"
+        ],
+        "url": "https://arxiv.org/abs/2608.28198",
+        "one_sentence": "Introduces performative privacy, where data leakage by a mechanism reduces future participation of agents contributing data. Analyzes a mean-estimation model where differentially private mechanisms trade estimation noise against retained participation over time. Shows theoretically and numerically that a finite privacy budget can outperform non-private estimation when the leakage-participation feedback is strong.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Does a finite privacy budget still beat non-private estimation for tasks beyond mean estimation, such as regression or classification?",
+          "How does the optimal privacy budget change when agents differ in their sensitivity to leakage instead of sharing one departure rule?",
+          "Can an adaptive privacy budget, tuned over rounds from observed participation, outperform a fixed budget?",
+          "How strong is the real feedback loop between data leakage and user participation in a deployed system?",
+          "What happens to participation and utility when several platforms with different privacy budgets compete for the same agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2608.27992",
+        "title": "GOD: Govern, Observe, and Direct - A Real-Time Control Room for Agent Societies",
+        "authors": [
+          "Yige Luo",
+          "Ran Guan"
+        ],
+        "url": "https://arxiv.org/abs/2608.27992",
+        "one_sentence": "GOD provides a local control room for inspecting and intervening in generative-agent simulations. It supports real-time queries, interventions, and portable experiment packs. Evaluation on 15 run slots checks whether interventions and state queries match recorded outcomes.",
+        "nearest_anchor_id": "2604.15236",
+        "nearest_anchor_title": "Agentic Microphysics: A Manifesto for Generative AI Safety",
+        "open_questions": [
+          "Does the command and artifact loop scale beyond 15 run slots and beyond Smallville-style scenarios?",
+          "The evaluation counts whether agents recorded the commanded destination, not whether interventions change population-level outcomes; which aggregate metrics respond to operator interventions?",
+          "Why did 6 of 84 target-agent checks and 13 of 182 state answers fail to match?",
+          "Which failure modes of agent societies, such as collusion or information cascades, does a spatial replay and Ask interface make visible, and which stay hidden?",
+          "Do operators actually reach correct conclusions faster with the control room than with raw logs?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-08-27",
