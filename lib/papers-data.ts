@@ -5,9 +5,16 @@ import { join } from "path";
 // (tests/papers-data.test.mts), which needs it to resolve the import —
 // tsconfig's allowImportingTsExtensions exists for exactly this case.
 import { sanitizeText } from "./sanitize.ts";
-import type { KeptPerDayPoint, Paper, PaperDay } from "./papers-schema";
+import type {
+  KeptPerDayPoint,
+  Paper,
+  PaperDay,
+  PaperMapPoint,
+  PapersMap,
+} from "./papers-schema";
 
 const PAPERS_JSON_PATH = join(process.cwd(), "data", "las-new-papers.json");
+const PAPERS_MAP_PATH = join(process.cwd(), "data", "las-new-papers-map.json");
 
 /**
  * Absolute URLs, because a feed reader has no page to resolve a relative one
@@ -212,4 +219,110 @@ export function summarisePapers(days: PaperDay[]): PapersSummary {
       days.flatMap((day) => day.papers.map((p) => p.open_questions.length)),
     ),
   };
+}
+
+/**
+ * The empty map. `getPapersMap` returns it when the file is missing,
+ * unparseable, or holds nothing plottable, so the page renders one shape
+ * rather than testing for null.
+ */
+const EMPTY_MAP: PapersMap = {
+  model: "",
+  dim: 0,
+  n: 0,
+  n_neighbors: 0,
+  min_dist: 0,
+  seed: 0,
+  min_papers: 0,
+  knn_overlap: null,
+  knn_k: 0,
+  points: [],
+};
+
+/** Returns a finite in-range coordinate, or `null`, which drops the point. */
+function coordinate(value: unknown): number | null {
+  if (typeof value !== "number" || !Number.isFinite(value)) return null;
+  // The build script centres and scales so the furthest paper sits at radius 1,
+  // so no value it writes exceeds 1. A single point at 1e9 would compress the
+  // other 45 into one pixel once the axes fit to it.
+  return Math.abs(value) <= 1.5 ? value : null;
+}
+
+function number(value: unknown): number {
+  return typeof value === "number" && Number.isFinite(value) ? value : 0;
+}
+
+/**
+ * Reads the UMAP projection of the reading list from
+ * `data/las-new-papers-map.json`, which `scripts/build-papers-map.mjs`
+ * rebuilds after every sync. Server-only: uses `fs`.
+ *
+ * Two filters drop a point:
+ *
+ * | Filter | Drops |
+ * |---|---|
+ * | Coordinates | a point whose x or y is not a finite number in [-1.5, 1.5] |
+ * | Membership | a point whose `arxiv_id` names no paper in `days` |
+ *
+ * The second keeps the map and the list agreeing. Clicking a dot scrolls to
+ * that paper's card, and a point with no card scrolls nowhere.
+ *
+ * `path` defaults to the real file. Pass an explicit path only from tests.
+ */
+export function getPapersMap(
+  days: PaperDay[],
+  path: string = PAPERS_MAP_PATH,
+): PapersMap {
+  if (!existsSync(path)) return EMPTY_MAP;
+
+  const known = new Set(
+    days.flatMap((day) => day.papers.map((paper) => paper.arxiv_id)),
+  );
+
+  try {
+    const parsed = JSON.parse(readFileSync(path, "utf8"));
+    if (!parsed || typeof parsed !== "object") return EMPTY_MAP;
+
+    const raw: unknown[] = Array.isArray(parsed.points) ? parsed.points : [];
+    const points: PaperMapPoint[] = [];
+    for (const item of raw) {
+      if (!item || typeof item !== "object") continue;
+      const point = item as Record<string, unknown>;
+      const arxivId = sanitizeText(
+        String(point.arxiv_id ?? ""),
+        TEXT_FIELD_LIMITS.arxiv_id,
+      );
+      const x = coordinate(point.x);
+      const y = coordinate(point.y);
+      if (!arxivId || !known.has(arxivId) || x === null || y === null) continue;
+      points.push({
+        arxiv_id: arxivId,
+        date: sanitizeText(String(point.date ?? ""), TEXT_FIELD_LIMITS.date),
+        x,
+        y,
+      });
+    }
+
+    return {
+      model: sanitizeText(String(parsed.model ?? ""), TEXT_FIELD_LIMITS.title),
+      dim: number(parsed.dim),
+      n: points.length,
+      n_neighbors: number(parsed.n_neighbors),
+      min_dist: number(parsed.min_dist),
+      seed: number(parsed.seed),
+      min_papers: number(parsed.min_papers),
+      // A share. Anything outside 0..1 is not one, and the page prints nothing.
+      knn_overlap:
+        typeof parsed.knn_overlap === "number" &&
+        Number.isFinite(parsed.knn_overlap) &&
+        parsed.knn_overlap >= 0 &&
+        parsed.knn_overlap <= 1
+          ? parsed.knn_overlap
+          : null,
+      knn_k: number(parsed.knn_k),
+      points,
+    };
+  } catch {
+    return EMPTY_MAP;
+  }
 }

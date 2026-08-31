@@ -10,10 +10,12 @@
     "sync:airtable": "node scripts/sync-airtable.mjs",
     "sync:las-conferences-events": "node scripts/sync-las-conferences-events.mjs",
     "sync:las-new-papers": "node scripts/sync-las-new-papers.mjs",
+    "build:papers-map": "node scripts/build-papers-map.mjs",
     "test": "node --test --experimental-strip-types tests/*.test.mts"
   },
   "dependencies": {
-    "next": "16.2.4",
+    "liqe": "^3.8.7",
+    "next": "^16.3.3",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "recharts": "^3.9.2"
@@ -24,8 +26,9 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.4",
+    "eslint-config-next": "^16.3.3",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "umap-js": "^1.4.0"
   }
 }

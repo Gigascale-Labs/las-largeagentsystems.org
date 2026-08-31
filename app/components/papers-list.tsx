@@ -2,10 +2,14 @@ import type { DayCounts, Paper, PaperDay } from "@/lib/papers-schema";
 
 /**
  * One continuous scroll of papers grouped by day, newest day first, beside a
- * day index that jumps down the page. No client JS: every jump is a plain
- * anchor to the day's `id`, and the open-questions toggle is a
- * `<details>/<summary>` pair, which is keyboard-operable and legible to a
- * screen reader on its own.
+ * day index that jumps down the page. Every jump is a plain anchor to the
+ * day's `id`, and the open-questions toggle is a `<details>/<summary>` pair,
+ * which is keyboard-operable and legible to a screen reader on its own.
+ *
+ * `matchedIds` filters it. `null` shows every paper; a set shows only those.
+ * A day whose papers all fail the filter keeps its heading and reports the
+ * count it hid. The day index lists every day held, so a day that vanished
+ * would leave an index entry jumping nowhere.
  *
  * Nothing here argues for a paper. No score, no similarity value, no
  * screening reason, and no approachability label on a question — those fields
@@ -13,6 +17,17 @@ import type { DayCounts, Paper, PaperDay } from "@/lib/papers-schema";
  * them. The title, the one-sentence summary and the questions are the whole
  * case for reading a paper.
  */
+
+/**
+ * Returns the DOM id of one paper's card. The map scrolls to this id, so both
+ * sides read the name from here rather than composing it twice.
+ *
+ * The prefix matters: a bare arXiv id starts with a digit, and a fragment
+ * must not.
+ */
+export function paperElementId(arxivId: string): string {
+  return `paper-${arxivId}`;
+}
 
 /** arXiv abstract page for a canon anchor, from its id. */
 function anchorHref(arxivId: string): string {
@@ -33,7 +48,7 @@ function PaperCard({ paper }: { paper: Paper }) {
   const questions = paper.open_questions.filter(Boolean);
 
   return (
-    <article className="border border-rule p-5">
+    <article id={paperElementId(paper.arxiv_id)} className="scroll-mt-24 border border-rule p-5">
       <h3 className="font-serif text-base font-semibold leading-snug">
         {paper.url ? (
           <a
@@ -112,7 +127,18 @@ function PaperCard({ paper }: { paper: Paper }) {
   );
 }
 
-function DaySection({ day }: { day: PaperDay }) {
+function DaySection({
+  day,
+  matchedIds,
+}: {
+  day: PaperDay;
+  matchedIds: Set<string> | null;
+}) {
+  const papers = matchedIds
+    ? day.papers.filter((paper) => matchedIds.has(paper.arxiv_id))
+    : day.papers;
+  const hidden = day.papers.length - papers.length;
+
   return (
     // The bare date is the id, so the feed's own entry links
     // (/papers#YYYY-MM-DD) land on the right day. scroll-mt clears the sticky
@@ -131,9 +157,14 @@ function DaySection({ day }: { day: PaperDay }) {
           {day.counts?.relevant ?? "?"} judged relevant, none cleared the
           judge&apos;s gates.
         </p>
+      ) : papers.length === 0 ? (
+        <p className="mt-4 max-w-2xl border border-rule px-5 py-4 text-sm leading-relaxed text-foreground/70">
+          {hidden} paper{hidden === 1 ? "" : "s"} kept on this day, none
+          matching the query.
+        </p>
       ) : (
         <div className="mt-4 space-y-4">
-          {day.papers.map((paper) => (
+          {papers.map((paper) => (
             <PaperCard key={`${day.date}-${paper.arxiv_id}`} paper={paper} />
           ))}
         </div>
@@ -142,7 +173,13 @@ function DaySection({ day }: { day: PaperDay }) {
   );
 }
 
-export function PapersList({ days }: { days: PaperDay[] }) {
+export function PapersList({
+  days,
+  matchedIds = null,
+}: {
+  days: PaperDay[];
+  matchedIds?: Set<string> | null;
+}) {
   if (days.length === 0) {
     return (
       <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
@@ -167,7 +204,9 @@ export function PapersList({ days }: { days: PaperDay[] }) {
               >
                 <span>{day.date}</span>
                 <span className="tabular-nums text-muted/60">
-                  {day.papers.length}
+                  {matchedIds
+                    ? day.papers.filter((p) => matchedIds.has(p.arxiv_id)).length
+                    : day.papers.length}
                 </span>
               </a>
             </li>
@@ -177,7 +216,7 @@ export function PapersList({ days }: { days: PaperDay[] }) {
 
       <div className="space-y-14">
         {days.map((day) => (
-          <DaySection key={day.date} day={day} />
+          <DaySection key={day.date} day={day} matchedIds={matchedIds} />
         ))}
       </div>
     </div>

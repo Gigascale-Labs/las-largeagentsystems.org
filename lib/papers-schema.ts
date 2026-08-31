@@ -64,3 +64,52 @@ export interface KeptPerDayPoint {
   /** Papers kept that day. A day the pipeline ran and kept none is 0. */
   kept: number;
 }
+
+/**
+ * One paper's place on the UMAP map. `scripts/build-papers-map.mjs` writes it.
+ *
+ * Two coordinates, plus the id that joins the point to the paper the list
+ * renders. The 768-dimensional vector behind the coordinates is absent: the
+ * build script fetches it, projects it, and drops it.
+ */
+export interface PaperMapPoint {
+  arxiv_id: string;
+  /** "YYYY-MM-DD", the day the pipeline kept the paper. The tooltip prints it. */
+  date: string;
+  /** Both in [-1, 1]: centred, then scaled so the furthest paper sits at radius 1. */
+  x: number;
+  y: number;
+}
+
+/**
+ * The map file: the points, and every parameter that produced them.
+ *
+ * The parameters travel with the points because the page prints them. They are
+ * what makes the projection reproducible.
+ */
+export interface PapersMap {
+  /** The embedding model upstream ran, e.g. "allenai/specter2_base". */
+  model: string;
+  /** Dimensions of the vector projected, e.g. 768. */
+  dim: number;
+  /** Papers plotted. 0 when the archive is too small to project. */
+  n: number;
+  /** UMAP's neighbourhood size. The build caps it at n-1. */
+  n_neighbors: number;
+  min_dist: number;
+  /** PRNG seed. Fixed: the same papers give the same map. */
+  seed: number;
+  /** Below this many papers the build writes no points. */
+  min_papers: number;
+  /**
+   * Mean share of each paper's `knn_k` nearest neighbours that survive the
+   * projection, 0 to 1. Measured over all `n` papers; 0.531 at n = 52.
+   *
+   * The page prints it. UMAP draws a layout for any input, and this says
+   * whether closeness on that layout tracks closeness in the embedding.
+   * `null` when n <= `knn_k`.
+   */
+  knn_overlap: number | null;
+  knn_k: number;
+  points: PaperMapPoint[];
+}

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Nav } from "../components/nav";
 import { Footer } from "../components/footer";
+import { PapersExplorer } from "../components/papers-explorer";
 import { PapersList } from "../components/papers-list";
 import { FeedButton } from "../components/feed-button";
 import { PapersPerDayChart } from "../components/papers-per-day-chart";
 import {
   getPaperDays,
+  getPapersMap,
   keptPerDaySeries,
   PAPERS_FEED_URL,
   PAPERS_SOURCE_REPO_URL,
@@ -27,6 +29,9 @@ export const metadata: Metadata = {
 export default function PapersPage() {
   const days = getPaperDays();
   const keptPerDay = keptPerDaySeries(days);
+  // The days are passed in so a point can never name a paper the page does
+  // not list. See `getPapersMap`.
+  const map = getPapersMap(days);
 
   return (
     <div className="flex flex-1 flex-col">
@@ -49,7 +54,13 @@ export default function PapersPage() {
           />
 
           <div className="mt-12">
-            <PapersList days={days} />
+            {/* With no days there is nothing to search or project, so the
+                list's own empty state is the whole page. */}
+            {days.length === 0 ? (
+              <PapersList days={days} />
+            ) : (
+              <PapersExplorer days={days} map={map} />
+            )}
           </div>
         </div>
       </main>

@@ -97,7 +97,8 @@ the reference. Two edits from that pass show the difference:
 **Not audited against the chart rules:** the homepage charts
 (`growth-chart.tsx`, `org-type-chart.tsx`, `usage-stats-chart.tsx`,
 `quantity-quality.tsx`). Reading each for axis labels, keys and colour
-overlap is the check that would settle it.
+overlap is the check that would settle it. `papers-per-day-chart.tsx` and
+`papers-map.tsx` were written to the rules.
 
 ## Editorial rule carried from `/papers`
 
@@ -110,3 +111,85 @@ argue for the paper instead of describing it. The fields are dropped in
 
 Keep this rule if you add a page over a dataset that carries its own
 confidence or quality scores.
+
+## A seventh part: a computed artifact
+
+`/papers` holds one file the other two pages do not: a file this repo computes
+from a second upstream file, rather than copying.
+
+| Step | File |
+|---|---|
+| Upstream publishes the vectors | `las-new-papers`, `data/embeddings/YYYY-MM-DD.json` |
+| This repo projects them | `scripts/build-papers-map.mjs` |
+| The result | `data/las-new-papers-map.json` — `{arxiv_id, date, x, y}` per paper |
+
+The rules for a sync hold here, plus four more.
+
+**Store the output, never the input.** Measured on the 10 days on file: the
+vectors take 337KB (52 papers, 768 floats each, 6.5KB per paper) and the output
+takes 6.0KB. The build script fetches the vectors, projects them, and drops
+them. This is "sync the fields the page renders", applied to a computation.
+
+**Keep the computation out of the sync script.** `sync-las-new-papers.mjs`
+carries no dependencies by the rule above; the projection needs `umap-js`. A
+failure in the projection leaves `data/las-new-papers.json` untouched.
+
+**Write the same file for the same input.** UMAP is stochastic, and the daily
+job commits whatever changed. An unseeded fit rewrites the map every day. The
+PRNG takes a fixed seed; three consecutive runs over the same 52 papers wrote
+byte-identical files.
+
+**Say how far the picture can be trusted.** UMAP produces a layout for any
+input. Whether that layout puts papers near each other because they are near
+each other in the embedding is a separate question, so the build script
+measures it: the mean share of each paper's 10 nearest neighbours that survive
+the projection. It read 0.531 over 52 papers, and the page prints it.
+
+### What a refit costs
+
+UMAP has no incremental mode. Adding papers moves every paper. The build
+script rotates and reflects each new layout onto the previous one, which
+removes the orientation change and nothing else.
+
+Displacement of the papers shared between two fits, in plot radii, where the
+plot radius is 1:
+
+| Papers added | n shared | Aligned median | Unaligned median | Source |
+|---|---|---|---|---|
+| 6 on 46 | 46 | 0.405 | 1.090 | observed, a real daily refit |
+| 2 on 44 | 44 | 0.247 | 0.622 | simulated, by withholding 2 papers |
+| 10 on 36 | 36 | 0.336 | 0.369 | simulated, by withholding a day |
+
+Inferred from those three rows: the alignment pays at small and moderate
+deltas and returns almost nothing at a large one, because the rearrangement
+dominates there. Three rows are not a curve. Running the same comparison at
+deltas of 1, 4 and 8 papers would establish where it stops paying.
+
+Not checked: anything above 52 papers. The 60-day cap admits roughly 480.
+
+## Search on /papers
+
+`lib/papers-search.ts`, with `liqe` as the parser: quoted phrases, AND / OR /
+NOT, brackets, `field:value`, wildcards, and implicit AND between bare terms.
+
+**The query does not leave the browser.** The page holds every paper it lists,
+so the search filters what is on screen. There is no endpoint and nothing is
+logged, so `docs/untrusted-input.md`'s server-side rules do not apply.
+
+The input is still capped at 200 characters and cleaned with `sanitizeText`.
+A zero-width space inside a term makes that term match nothing while looking
+identical to a term that matches.
+
+One `liqe` behaviour needed correcting. Measured: it compiles an unquoted term
+to `/term/ui` and a quoted one to `/term/u`, so `"large agent systems"` matched
+0 of 52 papers while `"Large Agent Systems"` matched 1.
+`caseInsensitivePhrases` rewrites each quoted literal in the parse tree as an
+escaped case-insensitive regex.
+
+Adding search ended `/papers`' no-client-JavaScript property. The list stays
+plain markup — anchors for the day index, `<details>` for the open questions —
+but the server now sends the tree to the browser as well as rendering it,
+because matching needs the text on the client.
+
+Not checked: the page weight and keystroke latency at the 60-day cap. I
+measured both only at 10 days and 52 papers.

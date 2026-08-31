@@ -21,15 +21,27 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          # 20, not 18. The map build below runs `npm ci`, and this project's
+          # dependencies do not install on 18.
+          node-version: '20'
+          cache: npm
 
       - name: Sync papers feed
         run: node scripts/sync-las-new-papers.mjs
 
+      # umap-js is a devDependency. The sync above needs no install; the
+      # projection below does. A failure in either of the next two steps leaves
+      # data/las-new-papers.json as the sync wrote it.
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Rebuild the paper map
+        run: node scripts/build-papers-map.mjs
+
       - name: Check for changes
         id: check
         run: |
-          if [ -n "$(git status --porcelain data/las-new-papers.json)" ]; then
+          if [ -n "$(git status --porcelain data/las-new-papers.json data/las-new-papers-map.json)" ]; then
             echo "changed=true" >> $GITHUB_OUTPUT
           else
             echo "changed=false" >> $GITHUB_OUTPUT
@@ -40,8 +52,9 @@ jobs:
         run: |
           git config user.name "las-new-papers-sync[bot]"
           git config user.email "bot@largeagentsystems.org"
-          git add data/las-new-papers.json
+          git add data/las-new-papers.json data/las-new-papers-map.json
           DAYS=$(jq 'length' data/las-new-papers.json)
           PAPERS=$(jq '[.[].papers | length] | add // 0' data/las-new-papers.json)
-          git commit -m "chore: sync papers from las-new-papers ($DAYS days, $PAPERS papers) [skip ci]"
+          PLOTTED=$(jq '.n' data/las-new-papers-map.json)
+          git commit -m "chore: sync papers from las-new-papers ($DAYS days, $PAPERS papers, $PLOTTED mapped) [skip ci]"
           git push
