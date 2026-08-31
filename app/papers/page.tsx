@@ -4,11 +4,9 @@ import { Footer } from "../components/footer";
 import { PapersExplorer } from "../components/papers-explorer";
 import { PapersList } from "../components/papers-list";
 import { FeedButton } from "../components/feed-button";
-import { PapersPerDayChart } from "../components/papers-per-day-chart";
 import {
   getPaperDays,
   getPapersMap,
-  keptPerDaySeries,
   PAPERS_FEED_URL,
   PAPERS_SOURCE_REPO_URL,
 } from "@/lib/papers-data";
@@ -28,9 +26,8 @@ export const metadata: Metadata = {
 
 export default function PapersPage() {
   const days = getPaperDays();
-  const keptPerDay = keptPerDaySeries(days);
-  // The days are passed in so a point can never name a paper the page does
-  // not list. See `getPapersMap`.
+  // `getPapersMap` takes the days so that no point can name a paper the page
+  // does not list.
   const map = getPapersMap(days);
 
   return (
@@ -48,18 +45,17 @@ export default function PapersPage() {
             Daily arXiv scrape.
           </h1>
 
-          <PapersPerDayChart
-            points={keptPerDay}
-            sourceUrl={PAPERS_SOURCE_REPO_URL}
-          />
-
-          <div className="mt-12">
-            {/* With no days there is nothing to search or project, so the
-                list's own empty state is the whole page. */}
+          <div className="mt-8">
+            {/* With no days there is nothing to search, count or project, so
+                the list's own empty state is the whole page. */}
             {days.length === 0 ? (
               <PapersList days={days} />
             ) : (
-              <PapersExplorer days={days} map={map} />
+              <PapersExplorer
+                days={days}
+                map={map}
+                sourceUrl={PAPERS_SOURCE_REPO_URL}
+              />
             )}
           </div>
         </div>

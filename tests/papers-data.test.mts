@@ -15,8 +15,8 @@ import {
   countQuestions,
   getOldestDate,
   getPaperDays,
-  keptPerDaySeries,
 } from "../lib/papers-data.ts";
+import { keptPerDaySeries } from "../lib/papers-series.ts";
 import type { Paper, PaperDay } from "../lib/papers-schema.ts";
 
 const dir = mkdtempSync(join(tmpdir(), "papers-data-test-"));

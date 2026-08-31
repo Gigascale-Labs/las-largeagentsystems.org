@@ -91,7 +91,7 @@ export function PapersMap({
 }) {
   if (map.points.length === 0) {
     return (
-      <div className="mt-8 border border-rule bg-background p-5 text-sm leading-relaxed text-foreground/70">
+      <div className="mt-4 border border-rule bg-background p-5 text-sm leading-relaxed text-foreground/70">
         No map. It appears once {map.min_papers || 12} papers carry an
         embedding vector. Below that, the layout follows the seed more than the
         papers.
@@ -100,7 +100,7 @@ export function PapersMap({
   }
 
   return (
-    <div className="mt-8">
+    <div className="mt-4">
       <p className="mb-2 text-xs text-muted">
         UMAP places each paper from its {map.dim}-dimensional{" "}
         {map.model || "embedding"} vector (n = {map.n} papers). Only the
@@ -138,18 +138,26 @@ export function PapersMap({
               cursor={{ stroke: "var(--rule)" }}
             />
             {/* Always present, including at one series: the chart rules ask
-                for a key on every chart. */}
+                for a key on every chart. The formatter puts the label on a
+                text token; recharts otherwise paints it in the series colour,
+                which leaves "Not matched" too pale to read. */}
             <Legend
               wrapperStyle={{ fontSize: 12, paddingTop: 20 }}
               iconType="circle"
+              formatter={(value: string) => (
+                <span className="text-muted">{value}</span>
+              )}
             />
             {/* Drawn first, so no matched dot sits under an unmatched one. */}
             {filtered && (
               <Scatter
                 name="Not matched"
                 data={unmatched}
-                fill="var(--muted)"
-                fillOpacity={0.25}
+                // An opaque blend, not `fillOpacity`: recharts paints the key's
+                // swatch from `fill` alone and ignores the opacity, so a
+                // translucent series gets a swatch far darker than its dots.
+                // color-mix keeps the blend correct in both themes.
+                fill="color-mix(in oklab, var(--muted) 35%, var(--background))"
                 isAnimationActive={false}
               />
             )}
@@ -174,18 +182,15 @@ export function PapersMap({
         <p>Click a dot to jump to its paper.</p>
         {map.knn_overlap !== null && (
           <p>
-            Measured: each paper keeps{" "}
-            {Math.round(map.knn_overlap * 100)}% of its {map.knn_k} nearest
-            neighbours after the projection, averaged over all {map.n}. Two
-            dots close together are usually close in the embedding. Two dots
-            far apart are not reliably far.
+            Each paper keeps {Math.round(map.knn_overlap * 100)}% of its{" "}
+            {map.knn_k} nearest neighbours after the projection. Two dots close
+            together are usually close in the embedding. Two dots far apart are
+            not reliably far.
           </p>
         )}
         <p>
           UMAP, cosine distance, n_neighbors = {map.n_neighbors}, min_dist ={" "}
-          {map.min_dist}, seed = {map.seed}. Every sync refits the whole
-          layout, so adding papers moves every dot. Read a dot&apos;s position
-          against the other dots drawn beside it, not against yesterday.
+          {map.min_dist}, seed = {map.seed}.
         </p>
       </div>
     </div>

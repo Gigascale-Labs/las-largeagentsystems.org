@@ -3,8 +3,10 @@
 import { useCallback, useDeferredValue, useMemo, useState } from "react";
 import type { PaperDay, PapersMap } from "@/lib/papers-schema";
 import { searchPapers, toSearchRecords } from "@/lib/papers-search";
+import { keptPerDaySeries } from "@/lib/papers-series";
+import { PapersCharts } from "./papers-charts";
 import { PapersList, paperElementId } from "./papers-list";
-import { PapersMap as PapersMapChart, type MapPoint } from "./papers-map";
+import type { MapPoint } from "./papers-map";
 import { PapersSearchBox } from "./papers-search-box";
 
 /**
@@ -20,9 +22,11 @@ import { PapersSearchBox } from "./papers-search-box";
 export function PapersExplorer({
   days,
   map,
+  sourceUrl,
 }: {
   days: PaperDay[];
   map: PapersMap;
+  sourceUrl: string;
 }) {
   const [query, setQuery] = useState("");
   // Keeps typing responsive while the filter catches up. At the 60-day cap
@@ -65,6 +69,13 @@ export function PapersExplorer({
     return [hit, miss];
   }, [map.points, matchedIds, titles]);
 
+  // Both charts read the same query. The per-day counts drop to the matched
+  // papers so the two views cannot disagree about what the page is showing.
+  const keptPerDay = useMemo(
+    () => keptPerDaySeries(days, matchedIds),
+    [days, matchedIds],
+  );
+
   const total = records.length;
   const shown = matchedIds ? matchedIds.size : total;
   const status =
@@ -90,7 +101,9 @@ export function PapersExplorer({
         status={status}
       />
 
-      <PapersMapChart
+      <PapersCharts
+        keptPerDay={keptPerDay}
+        sourceUrl={sourceUrl}
         map={map}
         matched={matched}
         unmatched={unmatched}

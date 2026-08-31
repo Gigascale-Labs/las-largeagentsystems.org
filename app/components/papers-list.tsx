@@ -191,7 +191,11 @@ export function PapersList({
   return (
     <div className="grid gap-10 lg:grid-cols-[9rem_minmax(0,1fr)] lg:items-start lg:gap-12">
       {/* A sticky index on wide screens, a horizontal strip on narrow ones. */}
-      <nav aria-label="Days" className="lg:sticky lg:top-24">
+      {/* min-w-0 lets this grid item shrink below its content width. Without
+          it the day strip sizes the column to the full list of days -- 1186px
+          at 10 days -- and the whole page scrolls sideways on a phone instead
+          of the strip scrolling inside itself. */}
+      <nav aria-label="Days" className="min-w-0 lg:sticky lg:top-24">
         <p className="font-mono text-[10px] uppercase tracking-widest text-muted">
           Days
         </p>

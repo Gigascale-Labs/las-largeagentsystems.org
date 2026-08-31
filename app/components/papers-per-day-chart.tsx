@@ -17,16 +17,18 @@ import {
 import type { KeptPerDayPoint } from "@/lib/papers-schema";
 
 /**
- * Papers kept per day, one bar per day on file.
+ * Draws one bar per day on file: the papers kept that day, or the papers a
+ * query matched that day.
  *
  * Built to the chart rules in `docs/synced-dataset-pattern.md`: the caption
- * states what is plotted and over how many days but makes no claim about it,
- * both axes are labelled, the single series carries a key, and one colour
- * draws one thing.
+ * says what the chart plots and over how many days without claiming anything
+ * about it, both axes carry labels, the single series carries a key, and one
+ * colour draws one thing.
  *
- * Every number here is counted at build time from the days in
- * `data/las-new-papers.json` — see `keptPerDaySeries` — so none of it goes
- * stale as the 60-day window moves.
+ * `keptPerDaySeries` counts every number here from the days in
+ * `data/las-new-papers.json`, so none of it goes stale as the 60-day window
+ * moves. `filtered` says whether a query narrowed those counts, which changes
+ * the caption and the key but nothing else.
  */
 
 /** "2026-08-20" -> "20 Aug". Returns the input unchanged if it is not a date. */
@@ -43,9 +45,12 @@ function shortDate(iso: string): string {
 export function PapersPerDayChart({
   points,
   sourceUrl,
+  filtered = false,
 }: {
   points: KeptPerDayPoint[];
   sourceUrl: string;
+  /** True when a query narrowed the counts. Changes the caption and the key. */
+  filtered?: boolean;
 }) {
   // No empty state here: `PapersList` below already says there are no days.
   if (points.length === 0) return null;
@@ -53,12 +58,16 @@ export function PapersPerDayChart({
   const chartData = points.map((p) => ({ ...p, label: shortDate(p.date) }));
   const first = points[0].date;
   const last = points[points.length - 1].date;
+  const total = points.reduce((sum, point) => sum + point.kept, 0);
+  const series = filtered ? "Papers matching" : "Papers kept";
 
   return (
-    <div className="mt-8">
+    <div className="mt-4">
       <p className="mb-2 text-xs text-muted">
-        Papers kept per day, {first} to {last} (n = {points.length} day
-        {points.length === 1 ? "" : "s"})
+        {filtered ? "Papers matching the query" : "Papers kept"} per day,{" "}
+        {first} to {last} (n = {points.length} day
+        {points.length === 1 ? "" : "s"}, {total} paper
+        {total === 1 ? "" : "s"})
       </p>
       <div className="h-[320px] w-full border border-rule bg-background p-4 md:p-8">
         <ResponsiveContainer width="100%" height="100%">
@@ -91,7 +100,7 @@ export function PapersPerDayChart({
               width={56}
             >
               <Label
-                value="Papers kept"
+                value={series}
                 angle={-90}
                 position="insideLeft"
                 fill="var(--muted)"
@@ -111,10 +120,17 @@ export function PapersPerDayChart({
                 payload?.[0]?.payload?.date ?? ""
               }
             />
-            <Legend wrapperStyle={{ fontSize: 12, paddingTop: 24 }} />
+            {/* Same formatter as papers-map.tsx: the label wears a text
+                token, and the swatch beside it carries the series colour. */}
+            <Legend
+              wrapperStyle={{ fontSize: 12, paddingTop: 24 }}
+              formatter={(value: string) => (
+                <span className="text-muted">{value}</span>
+              )}
+            />
             <Bar
               dataKey="kept"
-              name="Papers kept"
+              name={series}
               fill="var(--chart-1)"
               maxBarSize={32}
               radius={[4, 4, 0, 0]}

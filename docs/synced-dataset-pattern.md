@@ -186,6 +186,29 @@ to `/term/ui` and a quoted one to `/term/u`, so `"large agent systems"` matched
 `caseInsensitivePhrases` rewrites each quoted literal in the parse tree as an
 escaped case-insensitive regex.
 
+### The two chart views
+
+`/papers` draws one chart slot with two views, switched by the toggle above
+it: the papers-per-day bars and the UMAP map. `papers-charts.tsx` owns the
+switch. They occupy one slot because they answer different questions about the
+same 52 papers and a reader wants one at a time.
+
+Both views answer the search box. The map greys the papers a query excluded;
+the bar chart counts only the papers it matched, and its caption and key say
+"Papers matching" rather than "Papers kept". A view that ignored the query
+while its neighbour honoured it would read as a fault.
+
+That is why `keptPerDaySeries` moved to `lib/papers-series.ts`. Its counts now
+depend on client state, and `lib/papers-data.ts` imports `fs` at module scope,
+so a client component cannot import from it.
+
+One recharts behaviour to know when adding a third view: `Legend` paints its
+swatch from `fill` and ignores `fillOpacity`, so a translucent series gets a
+swatch far darker than its marks. The map's unmatched series uses an opaque
+`color-mix` instead. `Legend` also paints its label in the series colour,
+which left "Not matched" too pale to read, so both charts pass a `formatter`
+that puts the label on a text token.
+
 Adding search ended `/papers`' no-client-JavaScript property. The list stays
 plain markup — anchors for the day index, `<details>` for the open questions —
 but the server now sends the tree to the browser as well as rendering it,
