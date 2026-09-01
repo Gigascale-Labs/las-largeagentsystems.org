@@ -128,12 +128,3 @@ export function papersInCell(
   return entries.filter((entry) => inCell(entry, dimA, a, dimB, b));
 }
 
-/**
- * How many papers carry no value on `key`. The caption prints it, so the
- * tagging gap is a number on the page rather than something to count off the
- * `UNTAGGED` row by eye.
- */
-export function untaggedCount(entries: CanonEntry[], key: DimensionKey): number {
-  return entries.filter((entry) => valuesFor(entry, key).includes(UNTAGGED))
-    .length;
-}

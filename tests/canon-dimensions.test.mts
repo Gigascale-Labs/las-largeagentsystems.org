@@ -22,7 +22,6 @@ import {
   inCell,
   papersInCell,
   UNTAGGED,
-  untaggedCount,
   valuesFor,
   type DimensionKey,
 } from "../lib/canon-dimensions.ts";
@@ -208,19 +207,3 @@ describe("papersInCell", () => {
   });
 });
 
-describe("untaggedCount", () => {
-  const entries = [
-    entry({ threat_model: ["Inequality"] }),
-    entry({ threat_model: [] }),
-    entry(),
-  ];
-
-  it("counts the papers carrying no value on that dimension", () => {
-    assert.equal(untaggedCount(entries, "threat_model"), 2);
-    assert.equal(untaggedCount(entries, "focus_area"), 3);
-  });
-
-  it("is 0 when every paper is tagged", () => {
-    assert.equal(untaggedCount([entry({ focus_area: ["Design"] })], "focus_area"), 0);
-  });
-});
