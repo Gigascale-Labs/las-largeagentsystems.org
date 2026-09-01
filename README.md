@@ -79,12 +79,31 @@ All upstream text is untrusted. `lib/sanitize.ts` strips zero-width
 characters, bidirectional overrides, and the Unicode Tags block, and caps
 length. See `docs/untrusted-input.md`.
 
+## The review queue
+
+`review/` holds a second program: a tailnet-only page for picking which scraped
+papers go to the canon, plus one button that runs all four sync scripts,
+commits `data/` and pushes. Vercel deploys the push.
+
+It is not part of the Next.js app and Vercel never builds it. It runs on the
+host as a systemd user unit, and internal-site's Caddy serves it at
+`/las-papers/`. A pick becomes an Airtable Pending Queue row, untagged, which a
+reviewer then tags and approves in Airtable — the same intake the `/survey`
+form uses.
+
+```bash
+cp review/.env.example review/.env   # then set AIRTABLE_API_KEY
+node --experimental-strip-types --env-file=review/.env review/server.mts
+```
+
+`review/README.md` has the rest: where a pick goes, what the button runs, the
+three guards on it, and what is not covered by a test.
+
 ## Tests
 
-`npm test` runs 112 tests in 15 suites across 4 files: `tests/event-dates`,
-`tests/events-data`, `tests/papers-data`, `tests/safe-fetch`. All 112 pass on
-Node 22.23.2. The runner uses `--experimental-strip-types`, so it needs Node
-22.6 or later; Node 20 rejects the flag.
+`npm test` runs every `tests/*.test.mts`. The last run: 237 tests in 40 suites,
+all passing on Node 22.23.2. The runner uses `--experimental-strip-types`, so
+it needs Node 22.6 or later; Node 20 rejects the flag.
 
 No workflow runs the tests. The three workflows in `.github/workflows/` only
 sync data. Run `npm test` and `npm run lint` yourself before pushing.
@@ -96,7 +115,8 @@ sync data. Run `npm test` and `npm run lint` yourself before pushing.
 | `AIRTABLE_API_KEY` | `/survey` form writes, `scripts/sync-airtable.mjs` |
 | `AIRTABLE_BASE_ID` | Same; defaults to `apps8rBIORsmE7ij8` |
 | `AIRTABLE_CANON_TABLE_ID` | Canon table name |
-| `AIRTABLE_PENDING_QUEUE_TABLE_ID` | Pending Queue table name |
+| `AIRTABLE_PENDING_QUEUE_TABLE_ID` | Pending Queue table name, and the review queue's picks |
+| `LAS_REVIEW_*` | The review queue only. See `review/.env.example` |
 
 ## Docs
 
@@ -108,6 +128,7 @@ sync data. Run `npm test` and `npm run lint` yourself before pushing.
 | `docs/airtable-spec-for-ai.md` | The Airtable base |
 | `docs/las-canon-addendum.md` | The canon's scope and tagging |
 | `docs/las-conferences-events-spec-for-ai.md` | The events dataset |
+| `review/README.md` | The canon review queue and the publish button |
 
 ## Licence
 

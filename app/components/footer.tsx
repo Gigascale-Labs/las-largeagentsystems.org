@@ -23,19 +23,34 @@ export function Footer() {
             </a>
           </p>
         </div>
-        <p className="text-background/40">
-          {new Date().getFullYear()} Gigascale Labs. Published under an MIT
-          licence on{" "}
-          <a
-            href="https://github.com/Gigascale-Labs/las-largeagentsystems.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline decoration-background/30 underline-offset-4 hover:text-background"
-          >
-            GitHub
-          </a>
-          .
-        </p>
+        <div className="space-y-2 text-background/40">
+          <p>
+            {new Date().getFullYear()} Gigascale Labs. Published under an MIT
+            licence on{" "}
+            <a
+              href="https://github.com/Gigascale-Labs/las-largeagentsystems.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-background/30 underline-offset-4 hover:text-background"
+            >
+              GitHub
+            </a>
+            .
+          </p>
+          {/* Flaticon's free licence requires this credit wherever the icon is
+              used. It is the site icon, so the credit goes on every page. */}
+          <p>
+            <a
+              href="https://www.flaticon.com/free-icons/focus-group"
+              title="focus group icons"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-background/30 underline-offset-4 hover:text-background"
+            >
+              Focus group icons created by Magnific - Flaticon
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

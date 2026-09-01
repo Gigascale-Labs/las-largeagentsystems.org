@@ -1,0 +1,35 @@
+# The paper review queue, on the tailnet. Install as a user unit:
+#
+#   ln -s %h/las-largeagentsystems.org/review/las-papers-review.service \
+#         ~/.config/systemd/user/las-papers-review.service
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now las-papers-review
+#
+# `ExecStart` names an absolute node path because a user unit's PATH does not
+# carry nvm's shims. Node 22 or newer is required for --experimental-strip-types,
+# which is how this service runs TypeScript without a build step, the same way
+# `npm test` does. A node upgrade means editing this line and the LAS_REVIEW_NPM
+# value in review/.env.
+[Unit]
+Description=las-papers-review — canon review queue for the arXiv scrape, on the tailnet
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/las-largeagentsystems.org
+# Holds AIRTABLE_API_KEY and the LAS_REVIEW_* settings. The leading "-" means
+# the unit still starts when the file is absent; the page then says which
+# variable is missing rather than failing to boot.
+EnvironmentFile=-%h/las-largeagentsystems.org/review/.env
+ExecStart=%h/.nvm/versions/node/v22.23.2/bin/node --experimental-strip-types review/server.mts
+Restart=on-failure
+RestartSec=5
+SuccessExitStatus=SIGTERM
+
+# The service writes only its own state directory and the checkout it publishes.
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target
