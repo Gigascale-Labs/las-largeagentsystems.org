@@ -40,3 +40,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# review service: operational state, not site data. The decision log, the
+# rebuild lock and the last run's output. See review/README.md.
+/review/state/
+
+# the icon source, dropped here by hand. app/icon.png is the committed artifact.
+/temp_img/
