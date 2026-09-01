@@ -8,7 +8,6 @@ import {
   DIMENSION_LABELS,
   inCell,
   UNTAGGED,
-  untaggedCount,
   type DimensionKey,
 } from "@/lib/canon-dimensions";
 import { TABLE_HEAD_ROW, TABLE_ROW, TABLE_WRAP } from "@/lib/table-styles";
@@ -129,13 +128,6 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
         inCell(entry, dimA, activeCell.row, dimB, activeCell.col),
       )
     : entries;
-
-  // What the cells sum to. Larger than `entries.length` whenever a paper
-  // carries two values on one of the two axes.
-  const cellTotal = rowValues.reduce(
-    (sum, row) => sum + colValues.reduce((n, col) => n + count(row, col), 0),
-    0,
-  );
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
@@ -262,24 +254,6 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
         ))}
       </div>
 
-      {/*
-        Counted here, not written into the copy, so none of it goes stale as
-        the canon gets tagged.
-      */}
-      <p className="mt-3 max-w-3xl text-xs leading-relaxed text-muted">
-        Every paper appears in at least one cell.{" "}
-        <span className="italic">Not tagged</span> holds the papers carrying no
-        value on that axis: {untaggedCount(entries, dimA)} of {entries.length}{" "}
-        on {DIMENSION_LABELS[dimA]}, {untaggedCount(entries, dimB)} of{" "}
-        {entries.length} on {DIMENSION_LABELS[dimB]}.
-        {cellTotal > entries.length && (
-          <>
-            {" "}A paper carrying two values on a dimension appears once per
-            value, so the {cellTotal} cell entries exceed the {entries.length}{" "}
-            papers.
-          </>
-        )}
-      </p>
 
       <div className="mt-12">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
