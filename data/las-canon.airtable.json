@@ -1268,9 +1268,7 @@
       "pure-AI",
       "mixed human+AI"
     ],
-    "observability": [
-      "agents observable"
-    ],
+    "observability": [],
     "focus_area": [
       "Monitoring",
       "Steering",
