@@ -1260,10 +1260,14 @@
     "tags": "Surveys",
     "summary": "Provides a structured taxonomy of multi-agent AI risks, identifying three key failure modes (miscoordination, conflict, collusion) and seven risk factors. Foundational survey for the field.",
     "system_type": [],
-    "participant_mix": [],
+    "participant_mix": [
+      "pure-AI"
+    ],
     "observability": [],
     "focus_area": [],
-    "threat_model": [],
+    "threat_model": [
+      "Emergent Goals"
+    ],
     "claim_type": [
       "survey/taxonomy"
     ],
