@@ -129,6 +129,7 @@ sync data. Run `npm test` and `npm run lint` yourself before pushing.
 | `docs/las-canon-addendum.md` | The canon's scope and tagging |
 | `docs/las-conferences-events-spec-for-ai.md` | The events dataset |
 | `review/README.md` | The canon review queue and the publish button |
+| `lib/canon-dimensions.ts` | The cross-table's axes, and why every paper lands on one |
 
 ## Licence
 

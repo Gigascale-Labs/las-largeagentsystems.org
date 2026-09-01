@@ -1,50 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import type { CanonEntry } from "@/lib/canon-schema";
 import {
-  CLAIM_TYPES,
-  FOCUS_AREAS,
-  OBSERVABILITY_LEVELS,
-  PARTICIPANT_MIXES,
-  SYSTEM_TYPES,
-  THREAT_MODELS,
-  type CanonEntry,
-} from "@/lib/canon-schema";
+  axisValues,
+  DIMENSION_KEYS,
+  DIMENSION_LABELS,
+  inCell,
+  UNTAGGED,
+  untaggedCount,
+  type DimensionKey,
+} from "@/lib/canon-dimensions";
 import { TABLE_HEAD_ROW, TABLE_ROW, TABLE_WRAP } from "@/lib/table-styles";
 
-type DimensionKey =
-  | "system_type"
-  | "participant_mix"
-  | "observability"
-  | "focus_area"
-  | "threat_model"
-  | "claim_type";
-
-const DIMENSION_LABELS: Record<DimensionKey, string> = {
-  system_type: "System Type",
-  participant_mix: "Participant Mix",
-  observability: "Observability",
-  focus_area: "Focus Area",
-  threat_model: "Threat Model",
-  claim_type: "Claim Type",
-};
-
-const DIMENSION_KEYS = Object.keys(DIMENSION_LABELS) as DimensionKey[];
-
 const PAGE_SIZE = 10;
-
-const CLOSED_SET_VALUES: Partial<Record<DimensionKey, readonly string[]>> = {
-  system_type: SYSTEM_TYPES,
-  participant_mix: PARTICIPANT_MIXES,
-  observability: OBSERVABILITY_LEVELS,
-  focus_area: FOCUS_AREAS,
-  threat_model: THREAT_MODELS,
-  claim_type: CLAIM_TYPES,
-};
-
-function valuesFor(entry: CanonEntry, key: DimensionKey): string[] {
-  return entry[key] ?? [];
-}
 
 /**
  * Four steps, so a reader can tell them apart at a glance. The key beneath
@@ -125,20 +94,14 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
   } | null>(null);
   const [page, setPage] = useState(1);
 
-  const valueUniverse = CLOSED_SET_VALUES as Record<
-    DimensionKey,
-    readonly string[]
-  >;
-
-  const rowValues = valueUniverse[dimA];
-  const colValues = valueUniverse[dimB];
+  // Each axis ends in "Not tagged", which is what puts a paper carrying no
+  // value on that dimension onto the table. See lib/canon-dimensions.ts.
+  const rowValues = axisValues(dimA);
+  const colValues = axisValues(dimB);
 
   function count(rowValue: string, colValue: string): number {
-    return entries.filter(
-      (entry) =>
-        valuesFor(entry, dimA).includes(rowValue) &&
-        valuesFor(entry, dimB).includes(colValue),
-    ).length;
+    return entries.filter((entry) => inCell(entry, dimA, rowValue, dimB, colValue))
+      .length;
   }
 
   function selectDimA(next: DimensionKey) {
@@ -162,12 +125,17 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
   }
 
   const filtered = activeCell
-    ? entries.filter(
-        (entry) =>
-          valuesFor(entry, dimA).includes(activeCell.row) &&
-          valuesFor(entry, dimB).includes(activeCell.col),
+    ? entries.filter((entry) =>
+        inCell(entry, dimA, activeCell.row, dimB, activeCell.col),
       )
     : entries;
+
+  // What the cells sum to. Larger than `entries.length` whenever a paper
+  // carries two values on one of the two axes.
+  const cellTotal = rowValues.reduce(
+    (sum, row) => sum + colValues.reduce((n, col) => n + count(row, col), 0),
+    0,
+  );
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
@@ -223,7 +191,9 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
                 <th
                   key={col}
                   scope="col"
-                  className="border border-rule p-2 text-left align-bottom font-mono text-[10px] font-normal uppercase tracking-wide text-muted"
+                  className={`border border-rule p-2 text-left align-bottom font-mono text-[10px] font-normal uppercase tracking-wide text-muted ${
+                    col === UNTAGGED ? "italic" : ""
+                  }`}
                 >
                   <span className="block max-w-28">{col}</span>
                 </th>
@@ -235,7 +205,9 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
               <tr key={row}>
                 <th
                   scope="row"
-                  className="border border-rule p-2 text-left font-mono text-[10px] font-normal uppercase tracking-wide text-muted"
+                  className={`border border-rule p-2 text-left font-mono text-[10px] font-normal uppercase tracking-wide text-muted ${
+                    row === UNTAGGED ? "italic" : ""
+                  }`}
                 >
                   <span className="block max-w-40">{row}</span>
                 </th>
@@ -289,6 +261,25 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
           </span>
         ))}
       </div>
+
+      {/*
+        Counted here, not written into the copy, so none of it goes stale as
+        the canon gets tagged.
+      */}
+      <p className="mt-3 max-w-3xl text-xs leading-relaxed text-muted">
+        Every paper appears in at least one cell.{" "}
+        <span className="italic">Not tagged</span> holds the papers carrying no
+        value on that axis: {untaggedCount(entries, dimA)} of {entries.length}{" "}
+        on {DIMENSION_LABELS[dimA]}, {untaggedCount(entries, dimB)} of{" "}
+        {entries.length} on {DIMENSION_LABELS[dimB]}.
+        {cellTotal > entries.length && (
+          <>
+            {" "}A paper carrying two values on a dimension appears once per
+            value, so the {cellTotal} cell entries exceed the {entries.length}{" "}
+            papers.
+          </>
+        )}
+      </p>
 
       <div className="mt-12">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
