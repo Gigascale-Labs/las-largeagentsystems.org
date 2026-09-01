@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FEEDBACK_FORM_URL, NAV_SECTIONS } from "@/lib/sections";
+import { FEEDBACK_FORM_URL, NAV_LINKS, navHref } from "@/lib/sections";
 
 export function Nav() {
   return (
@@ -15,33 +15,15 @@ export function Nav() {
             scrolls on a narrow screen. */}
         <div className="flex min-w-0 items-center gap-4">
           <nav className="flex items-center gap-6 overflow-x-auto whitespace-nowrap text-xs font-medium uppercase tracking-widest text-muted [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {NAV_SECTIONS.map((section) => (
+            {NAV_LINKS.map((link) => (
               <Link
-                key={section.id}
-                href={`/#${section.id}`}
+                key={link.label}
+                href={navHref(link)}
                 className="shrink-0 transition-colors hover:text-foreground"
               >
-                {section.label}
+                {link.label}
               </Link>
             ))}
-            <Link
-              href="/survey"
-              className="shrink-0 transition-colors hover:text-foreground"
-            >
-              Survey
-            </Link>
-            <Link
-              href="/events"
-              className="shrink-0 transition-colors hover:text-foreground"
-            >
-              Events
-            </Link>
-            <Link
-              href="/papers"
-              className="shrink-0 transition-colors hover:text-foreground"
-            >
-              Papers
-            </Link>
           </nav>
 
           {/* Outside the scrolling nav, so it stays on screen at every width.
