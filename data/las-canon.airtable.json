@@ -1259,13 +1259,26 @@
     "url": "https://arxiv.org/abs/2502.14143",
     "tags": "Surveys",
     "summary": "Provides a structured taxonomy of multi-agent AI risks, identifying three key failure modes (miscoordination, conflict, collusion) and seven risk factors. Foundational survey for the field.",
-    "system_type": [],
-    "participant_mix": [
-      "pure-AI"
+    "system_type": [
+      "production economy",
+      "social network",
+      "financial system"
     ],
-    "observability": [],
-    "focus_area": [],
+    "participant_mix": [
+      "pure-AI",
+      "mixed human+AI"
+    ],
+    "observability": [
+      "agents observable"
+    ],
+    "focus_area": [
+      "Monitoring",
+      "Steering",
+      "Simulation"
+    ],
     "threat_model": [
+      "Systemic Instability",
+      "Partially Observable Systems",
       "Emergent Goals"
     ],
     "claim_type": [
