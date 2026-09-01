@@ -1,6 +1,6 @@
 # Airtable Intake Pipeline — Task F Status
 
-**Updated 2026-07-23.** Contribute-a-Source (Task F, see `docs/las-canon-addendum.md`)
+**Updated 2026-09-01.** Contribute-a-Source (Task F, see `docs/las-canon-addendum.md`)
 runs on Airtable: a `Pending Queue` table for submissions, manual reviewer
 tagging, and an automation that promotes approved rows into `Canon`. Both
 halves of site integration are now live: the write path (site form →
@@ -74,7 +74,7 @@ configured in Airtable:
 | `participant_mix` | pure-AI, mixed human+AI |
 | `observability` | aggregates observable, interactions observable, agents observable |
 | `focus_area` | Monitoring, Steering, Simulation, Redesign, Design |
-| `threat_model` | Gradual Disempowerment, Systemic Instability, Inequality, Collective Superintelligence, Partially Observable Systems, Power Concentration, Outdated Models |
+| `threat_model` | Gradual Disempowerment, Systemic Instability, Inequality, Collective Superintelligence, Partially Observable Systems, Power Concentration, Outdated Models. **Not `Emergent Goals`** — see the drift note below |
 | `claim_type` | theoretical/conceptual framework, empirical study, survey/taxonomy, proposed method/system, position/opinion, threat model articulation, policy/regulatory analysis, dataset/tool, live deployment |
 | `tag_confidence` | summary-only, full-text |
 | `status` (Pending Queue only) | pending, approved, rejected |
@@ -85,12 +85,22 @@ semicolon-separated, open-ended — not a choice list), matching
 includes `"Design"` in both tables too. Both were added and reconciled
 2026-07-23 (see "Canon/CSV reconciliation" above); `CLAIM_TYPES` previously
 lacked `"live deployment"` against the addendum's confirmed-authoritative
-9-value scheme — also fixed 2026-07-23. No more known drift between
-`lib/canon-schema.ts` and the live Airtable field/choice configuration.
+9-value scheme — also fixed 2026-07-23.
+
+**One known drift, opened 2026-09-01.** `THREAT_MODELS` in
+`lib/canon-schema.ts` now holds 8 values: `Emergent Goals` was added, from
+Hammond et al. 2025 (`arxiv.org/abs/2502.14143`, §3.6, "Emergent Goals"),
+and the front page shows it. Airtable's `threat_model` choice list in both
+tables still holds 7. Nothing breaks — no row carries the value yet, and the
+sync only reads — but a reviewer cannot tag a row with it until the choice is
+added in the Airtable UI. Listed under **What's Left** below.
 
 ## What's Left
 
 **Airtable UI (manual — no available tool can do these):**
+- [ ] Add `Emergent Goals` to the `threat_model` choice list on **both** Canon
+  and Pending Queue. `lib/canon-schema.ts` and the front page carry it as of
+  2026-09-01; Airtable does not. Until then a reviewer cannot tag a row with it.
 - [ ] Repurpose "Auto-Tagging on Record Creation": replace its dead webhook
   action with a single "Update record" action setting `status → "pending"`.
   Matters only for rows from the Airtable-hosted form; the site form
