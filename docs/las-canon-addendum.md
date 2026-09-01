@@ -91,6 +91,12 @@ If a paper needs to be findable for a reason the dimensions do not capture,
 `tags` is the lever. It is free text, and it already reads `Surveys` on this
 row.
 
+Tagging narrowly does not hide a paper. Each axis of the cross-table ends in a
+derived `Not tagged` value, so a paper carrying nothing on a dimension lands in
+that row or column rather than falling off the table. See
+`lib/canon-dimensions.ts`. Before that existed, 80 of the 90 rows were absent
+from the default view.
+
 Nothing in this repo retags a canon row from a file. Airtable is the source of
 truth, and no path pushes file edits back to it.
 
