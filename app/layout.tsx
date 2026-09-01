@@ -12,9 +12,9 @@ const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
 });
 
-const siteTitle = "Large Agent Systems are here.";
+const siteTitle = "Large Agent Systems";
 const siteDescription =
-  "Defining the Large Agent Systems problem, and inviting interested researchers and advocates to the community.";
+  "Resources and community for studying large multi-agent systems of AI agents.";
 
 export const metadata: Metadata = {
   title: siteTitle,

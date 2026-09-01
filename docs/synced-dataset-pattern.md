@@ -1,6 +1,6 @@
 # Synced dataset pattern
 
-**Updated 2026-08-26.** Three pages on this site display a dataset produced by
+**Updated 2026-09-01.** Three pages on this site display a dataset produced by
 a separate automated pipeline in another repository. They are all built the
 same way. Follow this shape for the next one; do not invent a fourth.
 
@@ -202,12 +202,72 @@ That is why `keptPerDaySeries` moved to `lib/papers-series.ts`. Its counts now
 depend on client state, and `lib/papers-data.ts` imports `fs` at module scope,
 so a client component cannot import from it.
 
-One recharts behaviour to know when adding a third view: `Legend` paints its
+Two recharts behaviours to know when adding a third view. `Legend` paints its
 swatch from `fill` and ignores `fillOpacity`, so a translucent series gets a
-swatch far darker than its marks. The map's unmatched series uses an opaque
+swatch far darker than its marks; the map's unmatched series uses an opaque
 `color-mix` instead. `Legend` also paints its label in the series colour,
-which left "Not matched" too pale to read, so both charts pass a `formatter`
-that puts the label on a text token.
+which left "Not matched" too pale to read, so the bar chart passes a
+`formatter` that puts the label on a text token.
+
+The map does not use `Legend` at all. Its key rows carry paper titles, which
+run past 100 characters and do not fit a legend strip, so the key is an HTML
+list below the plot with an inline-SVG swatch per row.
+
+### Colouring the map by the nearest canon paper
+
+The upstream pipeline records the canon paper each new paper sits nearest to,
+and the sync copies `nearest_anchor_id` and `nearest_anchor_title` across. The
+list prints them under each paper; the map colours by them.
+`lib/papers-anchors.ts` holds the grouping and the two measurements below.
+Nothing here recomputes the nearest canon paper. That is "do not reimplement an
+upstream document", applied to a field.
+
+**A scatter caps the palette at four.** Measured on the 10 days on file: 52
+papers name 19 distinct canon papers, the largest three at 7 papers each. A
+scatter puts any two marks side by side, so its palette has to clear the colour
+checks over every pair, not over neighbouring slots only. Run over the eight
+slots in `app/globals.css`, on both surfaces, at every subset of size 3 or
+more: 17 of 256 subsets pass, and none is larger than 4.
+
+Worst all-pairs separation, OKLab ΔE ×100 under simulated protan/deutan
+vision, where 8 is the target and 6 the floor:
+
+| Slots | Light | Dark | Verdict |
+|---|---|---|---|
+| 1, 4, 5, 6 | 13.0 | 6.9 | passes, dark in the floor band |
+| 4, 5, 6, 7 | 16.2 | 6.9 | passes, dark in the floor band |
+| 1, 2, 3, 4, the fixed-order prefix | 13.7 | 4.8 | fails both |
+
+The map takes 1, 4, 5, 6. The floor band is legal only with a second channel,
+so each group also carries a marker shape: circle, square, triangle, diamond.
+Two light slots sit under 3:1 against the page, which asks for visible labels;
+the key names every group and the list below prints each paper's canon paper
+in text.
+
+**Rank picks the colour, not identity.** The four named groups are the four
+canon papers with the most papers, ties broken by arXiv id, and they cover 26
+of the 52 papers. The other 15 canon papers share one grey. A daily sync that
+reorders the top four repaints them, and the page says so. Within one page the
+assignment is fixed: `groupAnchors` runs over every paper held, before any
+query, so typing in the search box never repaints a group.
+
+**Say how far the colouring can be trusted.** Same rule as `knn_overlap`.
+Measured over the 52 papers on the map: 14 (26.9%) have a nearest neighbour on
+the plot naming the same canon paper, against 6.6% with the canon papers dealt
+out at random. Median distance in plot radii, where the plot radius is 1:
+
+| Pair | Median | n |
+|---|---|---|
+| Both papers name the same canon paper | 0.591 | 87 pairs |
+| The two name different canon papers | 0.843 | 1239 pairs |
+
+`anchorAgreement` computes all of it at render time, in one O(n^2) pass over
+the unfiltered points, so none of it goes stale as the window moves.
+
+Not checked: whether a re-stepped palette clears all pairs at 5 slots or more.
+Feeding candidate steps to `validate_palette.js` would settle it. Not measured:
+the cost of that O(n^2) pass at the 60-day cap, which admits roughly 480
+papers. I ran it at 52.
 
 Adding search ended `/papers`' no-client-JavaScript property. The list stays
 plain markup — anchors for the day index, `<details>` for the open questions —

@@ -1,9 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import type { AnchorAgreement } from "@/lib/papers-anchors";
 import type { KeptPerDayPoint, PapersMap } from "@/lib/papers-schema";
 import { PapersPerDayChart } from "./papers-per-day-chart";
-import { PapersMap as PapersMapChart, type MapPoint } from "./papers-map";
+import {
+  PapersMap as PapersMapChart,
+  type AnchorSeries,
+  type MapPoint,
+} from "./papers-map";
 
 /**
  * Switches one chart slot between two views of the same 52 papers: the count
@@ -19,7 +24,7 @@ import { PapersMap as PapersMapChart, type MapPoint } from "./papers-map";
 type View = "per-day" | "map";
 
 const VIEWS: ReadonlyArray<{ id: View; label: string }> = [
-  { id: "per-day", label: "Per day" },
+  { id: "per-day", label: "Daily" },
   { id: "map", label: "Map" },
 ];
 
@@ -27,17 +32,19 @@ export function PapersCharts({
   keptPerDay,
   sourceUrl,
   map,
-  matched,
+  series,
   unmatched,
   filtered,
+  agreement,
   onSelect,
 }: {
   keptPerDay: KeptPerDayPoint[];
   sourceUrl: string;
   map: PapersMap;
-  matched: MapPoint[];
+  series: AnchorSeries[];
   unmatched: MapPoint[];
   filtered: boolean;
+  agreement: AnchorAgreement | null;
   onSelect: (arxivId: string) => void;
 }) {
   const [view, setView] = useState<View>("per-day");
@@ -75,9 +82,10 @@ export function PapersCharts({
       ) : (
         <PapersMapChart
           map={map}
-          matched={matched}
+          series={series}
           unmatched={unmatched}
           filtered={filtered}
+          agreement={agreement}
           onSelect={onSelect}
         />
       )}
