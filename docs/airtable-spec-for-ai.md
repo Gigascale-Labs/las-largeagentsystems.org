@@ -74,7 +74,7 @@ configured in Airtable:
 | `participant_mix` | pure-AI, mixed human+AI |
 | `observability` | aggregates observable, interactions observable, agents observable |
 | `focus_area` | Monitoring, Steering, Simulation, Redesign, Design |
-| `threat_model` | Gradual Disempowerment, Systemic Instability, Inequality, Collective Superintelligence, Partially Observable Systems, Power Concentration, Outdated Models. **Not `Emergent Goals`** — see the drift note below |
+| `threat_model` | Gradual Disempowerment, Systemic Instability, Inequality, Collective Superintelligence, Partially Observable Systems, Power Concentration, Outdated Models, Emergent Goals |
 | `claim_type` | theoretical/conceptual framework, empirical study, survey/taxonomy, proposed method/system, position/opinion, threat model articulation, policy/regulatory analysis, dataset/tool, live deployment |
 | `tag_confidence` | summary-only, full-text |
 | `status` (Pending Queue only) | pending, approved, rejected |
@@ -87,29 +87,57 @@ includes `"Design"` in both tables too. Both were added and reconciled
 lacked `"live deployment"` against the addendum's confirmed-authoritative
 9-value scheme — also fixed 2026-07-23.
 
-**One known drift, opened 2026-09-01.** `THREAT_MODELS` in
-`lib/canon-schema.ts` now holds 8 values: `Emergent Goals` was added, from
-Hammond et al. 2025 (`arxiv.org/abs/2502.14143`, §3.6, "Emergent Goals"),
-and the front page shows it. Airtable's `threat_model` choice list in both
-tables still holds 7. Nothing breaks — no row carries the value yet, and the
-sync only reads — but a reviewer cannot tag a row with it until the choice is
-added in the Airtable UI. Listed under **What's Left** below.
+**`Emergent Goals` added 2026-09-01**, to `lib/canon-schema.ts`, the front
+page, and both tables' `threat_model` choice list. Source: Hammond et al. 2025
+(`arxiv.org/abs/2502.14143`, §3.6). Both lists now hold 8, in the same order.
+Verified after the change: 7 original choices intact, Canon 90 rows, Pending
+Queue 1 row, nothing tagged with the new value yet. No known drift between
+`lib/canon-schema.ts` and the live Airtable choice configuration.
+
+### How to add a select choice from here
+
+MEASURED 2026-09-01, n=3 requests against the live `threat_model` field on
+Pending Queue:
+
+| Request | Result |
+|---|---|
+| `PATCH /v0/meta/bases/{base}/tables/{table}/fields/{field}` with `options.choices` | 422, "Changing a field's type or number precision is not currently supported" |
+| The same with `type` restated alongside `options` | 422, same message |
+| The same with `name` only | 200 |
+
+So `schema.bases:write` reads the schema and renames a field, and does **not**
+add a select choice. That endpoint takes `name` and `description`, nothing
+else.
+
+What works is `typecast: true` on a *record* write, which creates a missing
+select option as a side effect. The recipe used here, per table: create one
+throwaway record carrying the new value with `typecast: true`, then `DELETE`
+it in a `finally`. The option persists; the record does not. It needs
+`data.records:write`, not `schema.bases:write`.
+
+Two cautions. It changes schema as a side effect of writing data, so it is a
+deliberate one-off and not something the sync or the form should ever do —
+neither sets `typecast` today, and neither should. And it must run on every
+table that needs the choice: Pending Queue and Canon hold separate field
+definitions with separate choice ids.
 
 ## What's Left
 
-**Airtable UI (manual — no available tool can do these):**
-- [ ] Add `Emergent Goals` to the `threat_model` choice list on **both** Canon
-  and Pending Queue. `lib/canon-schema.ts` and the front page carry it as of
-  2026-09-01; Airtable does not. Until then a reviewer cannot tag a row with it.
+**Airtable UI (manual):**
 - [ ] Repurpose "Auto-Tagging on Record Creation": replace its dead webhook
   action with a single "Update record" action setting `status → "pending"`.
   Matters only for rows from the Airtable-hosted form; the site form
   already sets status in code.
 - [ ] Add a Grid view on Pending Queue filtered to `status = pending`, for
   reviewers to work from.
-- [ ] Delete or fix the stray Pending Queue row with `url: "test"`.
+- [ ] Delete or fix the stray Pending Queue row with `url: "test"` — READ
+  2026-09-01, it is `recVFKW6vxxnro97S`, `{submitted_by: "tester", url: "test"}`,
+  and it is the table's only row. Deletable from here now that the key carries
+  `data.records:write`; left in place because nothing asked for it.
 
 **Code:**
+- [x] `Emergent Goals` added to `THREAT_MODELS` and to both tables' choice
+  lists, 2026-09-01. See "How to add a select choice from here" above.
 - [x] `CLAIM_TYPES` in `lib/canon-schema.ts` now includes `"live deployment"`
   (9 values), matching the addendum's confirmed-authoritative scheme.
 - [x] `"Design"` added to `focus_area` choices in both Airtable tables; a
