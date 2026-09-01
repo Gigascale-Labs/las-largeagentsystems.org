@@ -23,100 +23,147 @@ along with which definition this repo uses.
 
 ## Task A: six-dimension tagging
 
-All 45 corpus entries are tagged across all six dimension columns plus
-`tag_confidence`, in `data/las-canon.csv`. Tagging was done from the
-`summary` field (title/summary/tags), not by fetching each paper's full
-abstract — so every row is `tag_confidence: summary-only`. `full-text`
-tagging (per the dimension-tagging spec's methodology) is a follow-up
-pass, not done here.
+All 90 canon rows carry values on all six dimension columns, subject to the
+empties named below.
 
-**`claim_type` conflict.** The two base-spec files define this column
-differently:
+### The full-text pass, 2026-09-01
 
-- Canon addendum (used here): 9-value paper-type taxonomy —
-  `theoretical/conceptual framework`, `empirical study`,
-  `survey/taxonomy`, `proposed method/system`, `position/opinion`,
-  `threat model articulation`, `policy/regulatory analysis`,
-  `dataset/tool`, `live deployment`.
-- `las-canon-and-open-problems-spec.md`: 4-value argument-structure
-  taxonomy — `diagnosis`, `mechanism`, `evidence`, `policy` — explicitly
-  designed so a paper can carry several at once (e.g. diagnose a problem
-  *and* propose a mechanism for it).
+One agent per paper read the paper and returned each value with a quoted
+passage and a section pointer. Every value was checked against the closed set
+in `lib/canon-schema.ts` before it was written. 89 of the 90 rows reached the
+full text and are now `tag_confidence: full-text`. The 90th, "New Report
+Analysing Multi-Agent Risks", is a 2,051-character announcement page whose
+report sits behind a download link; it stays `summary-only`.
 
-Confirmed with the spec owner: the 9-value addendum scheme is
-authoritative. `lib/canon-schema.ts` and `data/las-canon.csv` use it. The
-4-value scheme is not implemented as a separate column.
+MEASURED, dimension coverage over the 90 rows:
 
-**Flagged rows** (no value in any of the five non-`claim_type` dimensions, per
-both specs' flagging requirement): none, as of 2026-09-01.
-
-"Multi-Agent Risks from Advanced AI" was the one flagged row, on the grounds
-that a field-level survey describes no single system type, observability
-regime or named threat. It carries 11 values as of 2026-09-01:
-
-| Dimension | Values | Evidence |
+| Dimension | Before | After |
 |---|---|---|
-| `system_type` | production economy, social network, financial system | Worked examples: the 2010 flash crash (§3.2.2, §3.4.2), moderation bots (§3.6.2), trading and markets throughout |
-| `participant_mix` | pure-AI, mixed human+AI | Agent-to-agent risk throughout; principal-agent framing, 16 uses of "principal" |
-| `observability` | none | See below |
-| `focus_area` | Monitoring, Steering, Simulation | §4.2 Governance; the Directions subsection of each of §3.1–3.7 |
-| `threat_model` | Systemic Instability, Partially Observable Systems, Emergent Goals | §3.4 Destabilising Dynamics, §3.1 Information Asymmetries, §3.6 Emergent Agency |
-| `claim_type` | survey/taxonomy | unchanged |
+| `system_type` | 36 | 71 |
+| `participant_mix` | 90 | 89 |
+| `observability` | 64 | 90 |
+| `focus_area` | 90 | 90 |
+| `threat_model` | 40 | 88 |
 
-`labour market` and `Outdated Models` are absent from the paper: 0 hits for
-either across 433,843 characters.
+Filled dimension cells: 320 of 450 before, 428 of 450 after. 769 values added,
+15 removed, 0 rows left with no value on any dimension.
 
-**`observability` stays empty, and it is worth writing down why**, because a
-term count said otherwise. The full text holds 12 uses of "interpretability",
-2 of "white-box", 2 of "partially observable" and 2 of "aggregate". Reading all
-18 passages: every one is about interpretability as a *method*, or about what
-one agent observes of another. None places a system at an observability level,
-which is what this dimension records. One passage argues against the tag the
-count suggested — that single-agent interpretability methods "might not be
-easily applied to group-level emergent goals".
+### The 15 removals
 
-INFERRED from that: a term count is evidence that a passage exists, not that
-the paper takes a position. Read the passages before tagging from a count.
+A read removed an existing value only when the text contradicted it or no
+passage stood behind it. Each removal names a passage or a named absence.
 
-## How broadly to tag a survey
+| Row | Dimension | Removed | Reason |
+|---|---|---|---|
+| A global comparison of social media bot and human characteristics | `observability` | agents observable | BotHunter scores tweet text, metadata and ego-network structure; no internals |
+| AgentScope 1.0 | `focus_area` | Simulation | "simulation" occurs once, in a cited title; 1.0 is not the 0.x simulation framework |
+| An Economy of AI Agents | `system_type` | labour market | The chapter puts labour markets out of scope in its second paragraph |
+| Artificial Intelligence & Collusion | `threat_model` | Systemic Instability | The mechanism stabilises the market; the paper never returns to the chaos thread |
+| Causal Emergence 2.0 | `participant_mix` | pure-AI | The objects are 8-state Markov chains; "agent" appears only in a reference title |
+| Causal Emergence 2.0 | `threat_model` | Collective Superintelligence | Macro-beats-micro is about coarse-grained descriptions, not agent groups |
+| Detecting Multi-Agent Collusion | `threat_model` | Systemic Instability | 0 hits for cascad/systemic/contagion/instabilit in the body |
+| Generative AI as Economic Agents | `focus_area` | Simulation | Closed-form two-player games; the paper explicitly separates itself from simulation work |
+| LLM Agents Grounded in Self-Reports | `system_type` | social network | 1,052 isolated agents; "social network" and "social media" absent from 86 pages |
+| LLM economicus? | `system_type` | production economy | No firm, supply chain or marketplace; the framing is investor behaviour |
+| Scenarios for the Transition to AGI | `threat_model` | Power Concentration | A representative agent owns all capital; distribution is listed as future work |
+| The Moltbook Observatory Archive | `observability` | agents observable | The archive holds public profile metadata only |
+| When Preferences Fail to Become Incentives | `observability` | agents observable | Utilities are fitted from pairwise choices; reasoning mode off, traces never read |
+| zkLLM | `participant_mix` | pure-AI | Two parties, both human organisations; "agent" absent from the body |
+| zkLLM | `observability` | agents observable | The scheme's purpose is that parameters stay concealed |
 
-The rule the row above follows: **tag what a paper is the source for, not what
-it mentions.** `/survey` renders the dimensions as a `focus_area × threat_model`
-cross-tab that a reader clicks to filter, so a row tagged with everything
-appears in every cell — noise in every query rather than signal in one.
+### What stays empty, and why
 
-MEASURED 2026-09-01 over the 90 canon rows, dimensions carried per row out of
-the five non-`claim_type` ones:
+22 dimension cells of 450 hold no value after the pass. All are argued in the
+per-paper output, each naming the value it came closest to using.
 
-| Dimensions | Rows |
+| Dimension | Empty | Cause |
+|---|---|---|
+| `system_type` | 19 | The four values name specific real-world systems. 19 papers study a multi-agent system that is none of them — a framework, a safety argument, a maths paper, a crypto protocol. |
+| `threat_model` | 2 | AgentScope 1.0 and Causal Emergence 2.0 name no harm to any party. |
+| `participant_mix` | 1 | Causal Emergence 2.0 models Markov chains, not agents. |
+
+INFERRED: `system_type` is the binding constraint on coverage. A fifth value
+covering a general-purpose multi-agent system would close most of the 19. That
+is a schema change and has not been made.
+
+NOT CHECKED: any assignment against a second independent reader. The n=1
+per-paper read is the whole evidence base. Re-reading a sample of 10 and
+comparing tags would give an error rate.
+
+The evidence sits in `docs/canon-tag-evidence.json`: one object per row,
+holding the fetched URL, how much of it was read, a quote and section pointer
+for every value assigned, a reason for every dimension left empty, and the
+removals. Nothing imports it and nothing renders it — it is a record, and it
+holds quoted text from outside this site, so treat it as untrusted if anything
+ever does read it (see `docs/untrusted-input.md`).
+
+### `observability` on "Multi-Agent Risks from Advanced AI"
+
+An earlier hand pass on 2026-09-01 left this dimension empty, on the grounds
+that the 18 passages holding "interpretability", "white-box", "partially
+observable" and "aggregate" all describe interpretability as a method or what
+one agent observes of another. The full-text pass reversed that and assigned
+all three values. Its evidence:
+
+| Value | Passage |
 |---|---|
-| 0 | 3 |
-| 1 | 22 |
-| 2 | 34 |
-| 3 | 15 |
-| 4 | 15 |
-| 5 | 1 |
+| `agents observable` | §3.5.3 "Mutual Simulation and Transparency": "such agents are written in code that can – in theory – be read or understood by other agents" |
+| `interactions observable` | §2.3.2: "To try to prevent collusion, we could monitor and constrain their communication" |
+| `aggregates observable` | §3.2.3 "Evaluating and Monitoring Networks": "the frequency, proportion, and features of human-human, AI-human, and AI-AI interactions" |
 
-Median 2. The nine `survey/taxonomy` rows carry 0 to 3, none more, and no row
-in the canon carries more than 2 threat models. The closest precedent is the
-sibling row "New Report Analysing Multi-Agent Risks", a write-up of this same
-report, which carries one dimension: `participant_mix = pure-AI`.
+OBSERVED: the earlier pass searched a term list that did not include §3.5.3's
+own vocabulary, so it never opened the section whose whole argument is that an
+agent's internals can be read by another agent. The paper hedges that section
+("in theory", "has yet to find practical applications") and §3.1.3 states the
+opposite case, black-box access to a sender. The tag stands on the section
+being a named direction of the report.
 
-If a paper needs to be findable for a reason the dimensions do not capture,
-`tags` is the lever. It is free text, and it already reads `Surveys` on this
-row.
+The rule the earlier error produced still holds: **a term count is evidence
+that a passage exists, not that the paper takes a position.** The correction
+adds a second: **a term list is only as good as its coverage.** Read the
+section headings, not only the hits.
 
-Tagging narrowly does not hide a paper. Each axis of the cross-table ends in a
-derived `Not tagged` value, so a paper carrying nothing on a dimension lands in
-that row or column rather than falling off the table. See
-`lib/canon-dimensions.ts`. Before that existed, 80 of the 90 rows were absent
-from the default view.
+## How broadly to tag
+
+**Tag every dimension a paper supports, and leave one empty only when no value
+on its closed list fits.** This reverses the narrow rule this section carried
+until 2026-09-01, on the spec owner's instruction, given twice: first for
+"Multi-Agent Risks from Advanced AI" ("I think multi-agent risk needs to show
+up in all the categories it mentions"), then for the corpus ("please tag
+everything with every box unless there's really no appropriate label — way too
+many are missing tags").
+
+The narrow rule's argument was that `/survey` renders `focus_area ×
+threat_model` as a cross-tab, so a row tagged with everything appears in every
+cell. MEASURED across the five non-`claim_type` dimensions, dimensions carried
+per row, immediately before and after the full-text pass:
+
+| Dimensions carried | Rows before | Rows after |
+|---|---|---|
+| 0 | 0 | 0 |
+| 1 | 0 | 0 |
+| 2 | 11 | 1 |
+| 3 | 29 | 1 |
+| 4 | 39 | 17 |
+| 5 | 11 | 71 |
+
+Median 4 before, 5 after. The "before" column is the state after the
+summary-only fill earlier the same day, not the original tagging: that carried
+a median of 2, with 3 rows at 0 and 1 row at 5.
+
+A value still needs a passage behind it. Breadth is not permission to tag from
+a title, a term count, or what a paper of that kind usually contains.
+
+Each axis of the cross-table ends in a derived `Not tagged` value, so a paper
+carrying nothing on a dimension lands in that row or column rather than falling
+off the table. See `lib/canon-dimensions.ts`. Before that existed, 80 of the 90
+rows were absent from the default view.
 
 Nothing in this repo retags a canon row from a file. Airtable is the source of
 truth, and no path pushes file edits back to it.
 
-**Closed-set gaps:** none encountered — every paper that needed a
-dimension value found one already on a closed list.
+**Closed-set gaps:** `system_type` has one, above. Every other dimension found
+a value on its closed list for every paper that needed one.
 
 ## Task B: Cross-Cutting Open Problems Synthesis
 
