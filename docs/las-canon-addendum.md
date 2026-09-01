@@ -52,16 +52,31 @@ both specs' flagging requirement): none, as of 2026-09-01.
 
 "Multi-Agent Risks from Advanced AI" was the one flagged row, on the grounds
 that a field-level survey describes no single system type, observability
-regime or named threat. It was tagged on 2026-09-01, in Airtable, with
-`threat_model = Emergent Goals` and `participant_mix = pure-AI`. The first
-became possible when `THREAT_MODELS` gained `Emergent Goals`, taken from §3.6
-of that same paper: the closed list now carries a threat this paper is the
-source of.
+regime or named threat. It carries 11 values as of 2026-09-01:
 
-`system_type`, `observability` and `focus_area` stay empty on that row, and
-the original reasoning is why. The paper draws examples from all four system
-types and proposes directions across several focus areas, so a value in either
-would be a guess.
+| Dimension | Values | Evidence |
+|---|---|---|
+| `system_type` | production economy, social network, financial system | Worked examples: the 2010 flash crash (§3.2.2, §3.4.2), moderation bots (§3.6.2), trading and markets throughout |
+| `participant_mix` | pure-AI, mixed human+AI | Agent-to-agent risk throughout; principal-agent framing, 16 uses of "principal" |
+| `observability` | none | See below |
+| `focus_area` | Monitoring, Steering, Simulation | §4.2 Governance; the Directions subsection of each of §3.1–3.7 |
+| `threat_model` | Systemic Instability, Partially Observable Systems, Emergent Goals | §3.4 Destabilising Dynamics, §3.1 Information Asymmetries, §3.6 Emergent Agency |
+| `claim_type` | survey/taxonomy | unchanged |
+
+`labour market` and `Outdated Models` are absent from the paper: 0 hits for
+either across 433,843 characters.
+
+**`observability` stays empty, and it is worth writing down why**, because a
+term count said otherwise. The full text holds 12 uses of "interpretability",
+2 of "white-box", 2 of "partially observable" and 2 of "aggregate". Reading all
+18 passages: every one is about interpretability as a *method*, or about what
+one agent observes of another. None places a system at an observability level,
+which is what this dimension records. One passage argues against the tag the
+count suggested — that single-agent interpretability methods "might not be
+easily applied to group-level emergent goals".
+
+INFERRED from that: a term count is evidence that a passage exists, not that
+the paper takes a position. Read the passages before tagging from a count.
 
 ## How broadly to tag a survey
 
