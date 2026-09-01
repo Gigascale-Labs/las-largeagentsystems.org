@@ -47,20 +47,52 @@ Confirmed with the spec owner: the 9-value addendum scheme is
 authoritative. `lib/canon-schema.ts` and `data/las-canon.csv` use it. The
 4-value scheme is not implemented as a separate column.
 
-**Flagged rows** (no value in any of the five non-`claim_type`
-dimensions, per both specs' flagging requirement): "Multi-Agent Risks
-from Advanced AI" — a field-level survey/taxonomy paper that doesn't
-describe one system type, one observability regime, or one specific
-named threat from the closed lists; it still has a `claim_type`
-(`survey/taxonomy`).
+**Flagged rows** (no value in any of the five non-`claim_type` dimensions, per
+both specs' flagging requirement): none, as of 2026-09-01.
 
-That last clause stopped being true on 2026-09-01. `THREAT_MODELS` gained
-`Emergent Goals`, taken from §3.6 of that same paper, so the closed list now
-carries a threat this paper defines, and the choice exists on both Airtable
-tables as of the same day. The row's `threat_model` is still empty. Tagging it
-is a one-field edit in Airtable and an editorial call, not a mechanical one, so
-it is left to a reviewer. Nothing here retags a canon row from a file —
-Airtable is the source of truth, and no path pushes file edits back to it.
+"Multi-Agent Risks from Advanced AI" was the one flagged row, on the grounds
+that a field-level survey describes no single system type, observability
+regime or named threat. It was tagged on 2026-09-01, in Airtable, with
+`threat_model = Emergent Goals` and `participant_mix = pure-AI`. The first
+became possible when `THREAT_MODELS` gained `Emergent Goals`, taken from §3.6
+of that same paper: the closed list now carries a threat this paper is the
+source of.
+
+`system_type`, `observability` and `focus_area` stay empty on that row, and
+the original reasoning is why. The paper draws examples from all four system
+types and proposes directions across several focus areas, so a value in either
+would be a guess.
+
+## How broadly to tag a survey
+
+The rule the row above follows: **tag what a paper is the source for, not what
+it mentions.** `/survey` renders the dimensions as a `focus_area × threat_model`
+cross-tab that a reader clicks to filter, so a row tagged with everything
+appears in every cell — noise in every query rather than signal in one.
+
+MEASURED 2026-09-01 over the 90 canon rows, dimensions carried per row out of
+the five non-`claim_type` ones:
+
+| Dimensions | Rows |
+|---|---|
+| 0 | 3 |
+| 1 | 22 |
+| 2 | 34 |
+| 3 | 15 |
+| 4 | 15 |
+| 5 | 1 |
+
+Median 2. The nine `survey/taxonomy` rows carry 0 to 3, none more, and no row
+in the canon carries more than 2 threat models. The closest precedent is the
+sibling row "New Report Analysing Multi-Agent Risks", a write-up of this same
+report, which carries one dimension: `participant_mix = pure-AI`.
+
+If a paper needs to be findable for a reason the dimensions do not capture,
+`tags` is the lever. It is free text, and it already reads `Surveys` on this
+row.
+
+Nothing in this repo retags a canon row from a file. Airtable is the source of
+truth, and no path pushes file edits back to it.
 
 **Closed-set gaps:** none encountered — every paper that needed a
 dimension value found one already on a closed list.
