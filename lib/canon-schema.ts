@@ -11,11 +11,21 @@
  * exist and which one this repo treats as authoritative.
  */
 
+/**
+ * The real-world system a paper is about.
+ *
+ * `general purpose` is the fallback and is filled ONLY IF none of the four
+ * named systems fits. It is not a catch-all: a row that is not about a system
+ * of AI agents at all leaves this dimension empty instead. The two-part test,
+ * the rows it was applied to, and the rows deliberately left empty are in
+ * docs/las-canon-addendum.md, "The `general purpose` system type".
+ */
 export const SYSTEM_TYPES = [
   "production economy",
   "social network",
   "labour market",
   "financial system",
+  "general purpose",
 ] as const;
 
 export const PARTICIPANT_MIXES = ["pure-AI", "mixed human+AI"] as const;

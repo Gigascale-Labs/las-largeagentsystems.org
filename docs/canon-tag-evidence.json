@@ -612,7 +612,13 @@
    "how": "full-text",
    "chars": 22153
   },
-  "system_type": [],
+  "system_type": [
+   {
+    "value": "general purpose",
+    "quote": "We propose studying the constituent properties that predict agent behaviour in cooperation problems as a tractable approach to make progress on multi-agent safety.",
+    "where": "§ Discussion"
+   }
+  ],
   "participant_mix": [
    {
     "value": "pure-AI",
@@ -681,7 +687,19 @@
   },
   "unsupported": [],
   "claim_type_wrong": null,
-  "note": "Blog post, ~22k chars, read in full. `Simulation` is tagged because the paper takes a sustained position on simulated cooperation scenarios (one full section of critique plus a Discussion paragraph endorsing them as hypothesis-testing complements); it runs no simulation itself. `agents observable` was not tagged: the properties list asks whether an agent can `deceive or disguise its actions, reasoning, preferences, or objectives`, which argues internals are hidden rather than granting access to weights, activations or chain of thought."
+  "note": "Blog post, ~22k chars, read in full. `Simulation` is tagged because the paper takes a sustained position on simulated cooperation scenarios (one full section of critique plus a Discussion paragraph endorsing them as hypothesis-testing complements); it runs no simulation itself. `agents observable` was not tagged: the properties list asks whether an agent can `deceive or disguise its actions, reasoning, preferences, or objectives`, which argues internals are hidden rather than granting access to weights, activations or chain of thought.",
+  "general_purpose_test": {
+   "object_of_study": "Multi-agent interactions between deployed AI agents, and how to evaluate the agent properties that predict cooperation failure in them.",
+   "verdict": "general purpose",
+   "part1_recheck": "agree: no named domain fits. The only market language is `There are great financial incentives for the development and deployment of more agentic AI`, which describes the AI industry, not a financial system under study. The Prisoner's Dilemma and Tragedy of the Commons appear only as abstract game-theoretic problems, and the paper argues against using them. No firm, platform, employment or price-setting setting occurs anywhere in the text.",
+   "part2": {
+    "holds": true,
+    "quote": "We propose studying the constituent properties that predict agent behaviour in cooperation problems as a tractable approach to make progress on multi-agent safety.",
+    "where": "§ Discussion",
+    "reason": "The subject is multi-agent safety: the mechanisms and risks arising between two or more AI agents. It satisfies the Part 2 clause for a governance or safety argument whose subject is such systems, and also the clause for a framework built for them, since the five property clusters in Table 1 are proposed as an evaluation framing for multi-agent interactions."
+   },
+   "note": "A blog post from the Cooperative AI Foundation, not a paper. It runs no experiment; the object of study is the evaluation methodology for multi-agent systems, not a single model. The abstract states the frame directly: `Cooperation failures in multi-agent interactions could lead to catastrophic outcomes even among aligned AI agents.` The listed properties (theory of mind, credibility, coalition assessment, exploitability) are defined only in relation to other agents, which confirms two or more agents are the object."
+  }
  },
  {
   "n": 9,
@@ -692,7 +710,13 @@
    "how": "full-text",
    "chars": 98830
   },
-  "system_type": [],
+  "system_type": [
+   {
+    "value": "general purpose",
+    "quote": "Infectious jailbreak exploits the interaction between agents to induce infected agents to inject the adversarial image into memory banks of benign (not infected) agents.",
+    "where": "§1 Introduction"
+   }
+  ],
   "participant_mix": [
    {
     "value": "pure-AI",
@@ -761,7 +785,19 @@
   },
   "unsupported": [],
   "claim_type_wrong": null,
-  "note": "Attack is white-box: the adversarial image is optimised by gradient (MI-FGSM) on the shared LLaVA-1.5 backbone and CLIP retriever, and infection state is measured by inspecting each agent's album and retrieval success rate - hence `agents observable`. `mixed human+AI` rests on §4.7 harmful function calling (`{\"func\": \"purge\", \"params\": {\"object\": \"humans\"}}`) and the Impact Statement on OS agents during user interaction; the simulated loop itself is agent-agent only. `Partially Observable Systems` rests on the imperceptible payload plus the stated scale (\"which could scale to environments with billions of agents\") and spread with no further adversary intervention."
+  "note": "Attack is white-box: the adversarial image is optimised by gradient (MI-FGSM) on the shared LLaVA-1.5 backbone and CLIP retriever, and infection state is measured by inspecting each agent's album and retrieval success rate - hence `agents observable`. `mixed human+AI` rests on §4.7 harmful function calling (`{\"func\": \"purge\", \"params\": {\"object\": \"humans\"}}`) and the Impact Statement on OS agents during user interaction; the simulated loop itself is agent-agent only. `Partially Observable Systems` rests on the imperceptible payload plus the stated scale (\"which could scale to environments with billions of agents\") and spread with no further adversary intervention.",
+  "general_purpose_test": {
+   "object_of_study": "A simulated multi-agent environment of up to one million LLaVA-1.5 MLLM agents with memory banks that hold randomized pairwise chats, and the infection dynamics by which an adversarial image spreads between them.",
+   "verdict": "general purpose",
+   "part1_recheck": "agree: the closest of the four is `social network`, but the only passage naming real-world settings is the one-clause list \"Specific application scenarios include manufacturing, autonomous vehicles, disaster response, exploration, and military mission\" (§1), plus robots, virtual assistants and edge devices. The only occurrence of \"social media\" is a harmful-behaviour target string in the appendix example list, not the studied system. No platform, feed, forum or opinion-diffusion setting is modelled; the agent population has no social ties, only a fresh random pairing each round.",
+   "part2": {
+    "holds": true,
+    "quote": "Infectious jailbreak exploits the interaction between agents to induce infected agents to inject the adversarial image into memory banks of benign (not infected) agents.",
+    "where": "§1 Introduction",
+    "reason": "The object of study is a population of MLLM agents that talk to each other and write into each other's memory, which satisfies the Part 2 clause \"agents that talk to each other, or act on a shared environment\". The paper also studies a risk that exists only between agents: a single-agent jailbreak becomes population-wide only through the pairwise chats."
+   },
+   "note": "The paper is a red-teaming and defence result about a deployed fleet of agents, not about any named domain. Its formal model is epidemiological (infection and recovery rates over the agent population), but the agents themselves are the object, so it is not the excluded \"mathematical, physical or statistical object that is not an agent\" case."
+  }
  },
  {
   "n": 10,
@@ -772,7 +808,13 @@
    "how": "full-text",
    "chars": 73988
   },
-  "system_type": [],
+  "system_type": [
+   {
+    "value": "general purpose",
+    "quote": "An agentic AI system, or simply agentic system, depicted in Fig. 1, is a collection of agents interacting with humans and the environment with the objective of fulfilling specified goals.",
+    "where": "§ 2.2 Agentic Systems"
+   }
+  ],
   "participant_mix": [
    {
     "value": "pure-AI",
@@ -846,7 +888,19 @@
   },
   "unsupported": [],
   "claim_type_wrong": null,
-  "note": "`agents observable` is deliberately absent: the body has no passage on reading weights, activations, chain of thought or prompts. The single \"weights\" hit is Meinke et al.'s self-exfiltration, i.e. an agent moving its own weights, not a party observing them. Existing tag `Systemic Instability` is the weakest of the six threat models — the paper describes accumulating risk from sequences of local decisions, not cascades or contagion — but a passage supports it, so it stands."
+  "note": "`agents observable` is deliberately absent: the body has no passage on reading weights, activations, chain of thought or prompts. The single \"weights\" hit is Meinke et al.'s self-exfiltration, i.e. an agent moving its own weights, not a party observing them. Existing tag `Systemic Instability` is the weakest of the six threat models — the paper describes accumulating risk from sequences of local decisions, not cascades or contagion — but a passage supports it, so it stands.",
+  "general_purpose_test": {
+   "object_of_study": "The agentic AI system itself — a collection of two or more LLM/LMM agents interacting with each other, with humans, and with a shared environment — and the capabilities and safety risks that emerge from those interactions rather than from any single model.",
+   "verdict": "general purpose",
+   "part1_recheck": "agree: closest of the four is `production economy`, and it fails. Before the reference list the only domain-adjacent tokens are \"employ\" (in \"employ explicit hierarchical predictive processing methods\") and \"labor\" (inside \"collaboration\"). \"market\", \"price\", \"wage\", \"worker\", \"supply chain\" and \"social network\" have zero body hits. The economic references (incomplete contracts, residual control rights, organizational management) are borrowed as analogies for delegation and control between agents, not as a system under study: \"Structures from organizational management ... may inform general strategies for how to decompose/delegate diverse tasks among agents.\" The worked examples are a thermostat, an autonomous car, a robotic gripper, an LLM and a human.",
+   "part2": {
+    "holds": true,
+    "quote": "An agentic AI system, or simply agentic system, depicted in Fig. 1, is a collection of agents interacting with humans and the environment with the objective of fulfilling specified goals.",
+    "where": "§ 2.2 Agentic Systems",
+    "reason": "The paper defines its object of study as a collection of agents that communicate with each other and act on a shared environment, which satisfies the first Part 2 clause. § 4.3 makes the multi-agent requirement explicit — \"even in a simple system with two agents, one agent can decompose the original task and assign a subtask (or subgoal) for the other agent\" — and the whole paper is a safety argument whose subject is such systems, satisfying the fifth clause as well."
+   },
+   "note": "The paper's core claim is that a single-model view is the wrong unit of analysis: \"it is not necessary for every component to be highly functionally agentic for the system as a whole to possess a high level of functional agency\" (§ 2.2). That is the opposite of the Part 2 exclusion for a single model studied on its own. Two of the three named mechanisms of emergence (§ 3.3 metacognition via inter-agent communication, and the § 4.2-4.4 challenges on delegation, subgoal monitoring and one agent monitoring another) are strictly agent-agent."
+  }
  },
  {
   "n": 11,
@@ -921,7 +975,19 @@
   },
   "unsupported": [],
   "claim_type_wrong": null,
-  "note": "The record URL is a 2-minute AlignmentForum summary (7,586 chars); I tagged from the full arXiv paper it links, arXiv:2506.12152v1, and read both. Two values I considered and rejected: `Inequality` rests on one sentence only (§1, 'opacity often deepens societal divides or creates exclusion'), with no other passage developing it; `pure-AI` rests on the LLM-as-proxy-human evaluation idea, which appears three times but never as more than a single sentence (§4.1, §5.3)."
+  "note": "The record URL is a 2-minute AlignmentForum summary (7,586 chars); I tagged from the full arXiv paper it links, arXiv:2506.12152v1, and read both. Two values I considered and rejected: `Inequality` rests on one sentence only (§1, 'opacity often deepens societal divides or creates exclusion'), with no other passage developing it; `pure-AI` rests on the LLM-as-proxy-human evaluation idea, which appears three times but never as more than a single sentence (§4.1, §5.3).",
+  "general_purpose_test": {
+   "object_of_study": "A proposed interpretability method — a multi-turn conversation between one human and one LLM in which each builds a mental model of the other — not a system of two or more AI agents.",
+   "verdict": "empty",
+   "part1_recheck": "agree: none of the four fits. The closest is `production economy` via §2.2.1 'Model trainer model', but that section is about a lab's model development cycle becoming a dialogue with a meta-model ('Researchers could then converse with this meta-model'), which is a research workflow, not firms, supply chains or producing agents.",
+   "part2": {
+    "holds": false,
+    "quote": "agentic interpretability: a multi-turn conversation with an LLM wherein the LLM proactively assists human understanding by developing and leveraging a mental model of the user",
+    "where": "Abstract; restated as the definition in §2",
+    "reason": "The object of study is one human interacting with one model, which Part 2 explicitly excludes ('a single model studied on its own, including one human talking to one model'). Every worked setting in the paper is of this shape: model debugging with a meta-model (§2.2.1), chess tutoring (§2.2.2), and open-model surgery where 'researchers actively converse with the model' (§2.2.3)."
+   },
+   "note": "The only two-model passage in the paper is an evaluation shortcut: 'using LLMs as proxies to simulate the human in the agentic interpretability loop will provide a useful and relatively fast, inexpensive signal' (§5.3). The second model there stands in for the human rater, so it is a measuring instrument, not the object of study — the Part 2 exclusion for a grader or judge applies. The AlignmentForum framing 'A Strategy Against Gradual Disempowerment' is not the paper's subject; the arXiv paper (2506.12152, 'Because we have LLMs, we Can and Should Pursue Agentic Interpretability') never argues about a multi-agent deployment, and the post mentions disempowerment once, as motivation."
+  }
  },
  {
   "n": 12,
@@ -1011,7 +1077,13 @@
    "how": "full-text",
    "chars": 85400
   },
-  "system_type": [],
+  "system_type": [
+   {
+    "value": "general purpose",
+    "quote": "Agent conversation represents another standard paradigm for multi-agent applications. To streamline development and reduce complexity, AgentScope provides pipelines and message hubs for managing agent interactions efficiently and minimizing repetitive coding.",
+    "where": "S 3.3.2 Agent Conversation"
+   }
+  ],
   "participant_mix": [
    {
     "value": "pure-AI",
@@ -1071,7 +1143,19 @@
    }
   ],
   "claim_type_wrong": null,
-  "note": "Framework paper with no studied system and no articulated harm, so two dimensions are empty. `Steering` is tagged on the broad reading of \"control\": §3.1.2 gives a human user a runtime interrupt that pauses and redirects an agent mid-loop, and §4.3 gives a sandbox that bounds what tools an agent may execute. Neither is governance or policy in the societal sense."
+  "note": "Framework paper with no studied system and no articulated harm, so two dimensions are empty. `Steering` is tagged on the broad reading of \"control\": §3.1.2 gives a human user a runtime interrupt that pauses and redirects an agent mid-loop, and §4.3 gives a sandbox that bounds what tools an agent may execute. Neither is governance or policy in the societal sense.",
+  "general_purpose_test": {
+   "object_of_study": "A developer framework for building LLM agent applications, including its abstractions for multi-agent orchestration: agent-as-tool routing, message hubs, pipelines, and a meta planner that creates and supervises worker agents.",
+   "verdict": "general purpose",
+   "part1_recheck": "agree: none of the four fits. The only financial content is demo task material - the browser-use agent answers 'What is the latest stock price of Alibaba?' (S 5.4) and the meta planner roadmap writes a Meta (META) stock report (S 5.5). Both are one-off worked inputs, not a market, trading or price-setting system the paper studies. No production economy, social network or labour market appears.",
+   "part2": {
+    "holds": true,
+    "quote": "Agent conversation represents another standard paradigm for multi-agent applications. To streamline development and reduce complexity, AgentScope provides pipelines and message hubs for managing agent interactions efficiently and minimizing repetitive coding.",
+    "where": "S 3.3.2 Agent Conversation",
+    "reason": "The paper's object is a framework built for systems of two or more AI agents, which satisfies the Part 2 clause 'a framework, protocol or standard built for such systems'. Section 3.3 is devoted to multi-agent construction, and S 3.2 Meta Planner adds 'dynamic worker agent instantiation', one agent creating and supervising others."
+   },
+   "note": "Part 2 rests on the framework clause, not on a studied population: the paper reports no experiment on agent-agent dynamics. Its multi-agent support is first-class, not incidental - S 3.3 and S 5.2 (MsgHub, sequential_pipeline, dynamic group management) and the Meta Planner's WorkerManager."
+  }
  },
  {
   "n": 14,
@@ -2073,7 +2157,13 @@
    "how": "full-text",
    "chars": 14975
   },
-  "system_type": [],
+  "system_type": [
+   {
+    "value": "general purpose",
+    "quote": "it's not known whether an instance of the same model, if used as a monitor on this trajectory, would have reported the behavior or colluded to hide it",
+    "where": "§ Background, final paragraph"
+   }
+  ],
   "participant_mix": [
    {
     "value": "pure-AI",
@@ -2132,7 +2222,19 @@
   },
   "unsupported": [],
   "claim_type_wrong": null,
-  "note": "Deliberately did NOT tag `agents observable`: the post reads no chain-of-thought, activations or weights, and states the opposite (\"with limited information on this incident and the involved models, it's hard to say exactly what form of misalignment was behind it\"). The only internals passage is a conditional footnote about the ExploitGym prompt. `Collective Superintelligence` (the existing tag) is the weakest of the four threat models: it rests on the intelligence-explosion section and on instances colluding as monitors, not on a group exceeding human capability by acting collectively."
+  "note": "Deliberately did NOT tag `agents observable`: the post reads no chain-of-thought, activations or weights, and states the opposite (\"with limited information on this incident and the involved models, it's hard to say exactly what form of misalignment was behind it\"). The only internals passage is a conditional footnote about the ExploitGym prompt. `Collective Superintelligence` (the existing tag) is the weakest of the four threat models: it rests on the intelligence-explosion section and on instances colluding as monitors, not on a group exceeding human capability by acting collectively.",
+  "general_purpose_test": {
+   "object_of_study": "The post is about score-seeking misalignment in frontier models and the AI-monitoring-AI deployment regime meant to catch it, including whether monitor instances would report or collude with the model instances they oversee.",
+   "verdict": "general purpose",
+   "part1_recheck": "agree: none of the four fits. The closest is `production economy` (corporate operations at OpenAI and Hugging Face), but the companies are only the setting of one eval and one set of servers. No passage studies firms, supply chains, production, or a market. `labour market` fails for the reason already given: automation of alignment research is mentioned once (\"we'll rely heavily on AIs to solve our alignment and safety problems\") with no treatment of employment, wages, hiring or displacement.",
+   "part2": {
+    "holds": true,
+    "quote": "it's not known whether an instance of the same model, if used as a monitor on this trajectory, would have reported the behavior or colluded to hide it",
+    "where": "§ Background, final paragraph",
+    "reason": "This satisfies the clause 'one model acting on another: an overseer and an overseen model'. The monitor is not a measuring instrument here: whether one instance colludes with another is itself the open question the post says is 'critically important to the threat modeling', so the overseer-overseen pair is part of the object of study, not a grader attached to it."
+   },
+   "note": "A second passage carries the same weight and extends it from a pair to a deployment-wide regime: \"we'd hope that AI companies would monitor all deployments which present significant takeover opportunities, and monitoring systems would report and block the kind of misaligned actions we saw here, but unfortunately we don't know whether those monitors would collude\" (§ This misalignment poses direct takeover risk). The post also reasons about \"ambitious long-term goals shared between all instances\" and about score-seekers that \"collude if they're trained to cooperate in multi-agent settings\", and its footnote 2 defines its use of \"agent\" as \"an agent scaffold or context window\", so the incident itself is treated as multiple instances rather than one model. The safety-argument clause of Part 2 is met as well."
+  }
  },
  {
   "n": 25,
@@ -2416,7 +2518,13 @@
    "how": "full-text",
    "chars": 40788
   },
-  "system_type": [],
+  "system_type": [
+   {
+    "value": "general purpose",
+    "quote": "a design proposal for Institutional AI, an architecture for embedding adaptive oversight within multi-agent systems",
+    "where": "Abstract, contribution (iii); developed in §4 'Introducing the Concept of Institutional AI'"
+   }
+  ],
   "participant_mix": [
    {
     "value": "pure-AI",
@@ -2495,7 +2603,19 @@
   },
   "unsupported": [],
   "claim_type_wrong": null,
-  "note": "Conceptual paper, no experiments; all indicators (contagion velocity, intent-opacity rate, goal drift) are proposed, not measured. `Gradual Disempowerment` is the softest of the five threat tags: the loss of human authority is asserted over the AI system itself, not over wider societal systems."
+  "note": "Conceptual paper, no experiments; all indicators (contagion velocity, intent-opacity rate, goal drift) are proposed, not measured. `Gradual Disempowerment` is the softest of the five threat tags: the loss of human authority is asserted over the AI system itself, not over wider societal systems.",
+  "general_purpose_test": {
+   "object_of_study": "LLM-to-LLM multi-agent ecosystems as a class, and the safety and governance architecture needed for them: a risk taxonomy (ESRH) over micro, meso and macro failure modes plus a proposed internal-governance design called Institutional AI.",
+   "verdict": "general purpose",
+   "part1_recheck": "agree: `financial system` is the closest of the four and it does not fit. The only market content is a one-clause aside citing other papers in §1.1.1 — \"experiments in market-simulation environments show that independently aligned agents can spontaneously coordinate to supracompetitive equilibria\" [5,1] — and a second citation of [1] in §2 on polarization and collusion. The \"Collusion\" row in the meso-level taxonomy (Table 2) is generic inter-agent coordination, not price setting: \"Agents implicitly coordinate to maximize shared advantage or minimize effort, even absent explicit incentives.\" No trading, banking, credit, firm, platform, or labour setting is developed anywhere in §§1-5.",
+   "part2": {
+    "holds": true,
+    "quote": "a design proposal for Institutional AI, an architecture for embedding adaptive oversight within multi-agent systems",
+    "where": "Abstract, contribution (iii); developed in §4 'Introducing the Concept of Institutional AI'",
+    "reason": "The paper's object is a governance and safety architecture whose subject is networks of two or more interacting LLM agents, which satisfies both the 'framework, protocol or standard built for such systems' clause and the 'governance or safety argument whose subject is such systems' clause of Part 2. §4.2 makes the multi-agent object explicit by assigning distinct roles across agents: 'separate agent roles approximate legislative (rule generation), judicial (rule interpretation), and executive (task execution) capacities'."
+   },
+   "note": "Conceptual paper with no experiments — it runs none and defers empirical validation to later work ('This paper introduces only the conceptual foundation'). That affects nothing here: Part 2 admits a framework or governance argument as the object of study, and does not require an implemented or simulated system."
+  }
  },
  {
   "n": 29,
@@ -2822,7 +2942,19 @@
    }
   ],
   "claim_type_wrong": null,
-  "note": "`Simulation` is not tagged: the paper's simulations are probability redistributions in 8-state Markov chains, not a simulated agent population. `Redesign` is not tagged although CE 2.0 supersedes the author's CE 1.0, because a scientific theory is not an institution, market, protocol or infrastructure."
+  "note": "`Simulation` is not tagged: the paper's simulations are probability redistributions in 8-state Markov chains, not a simulated agent population. `Redesign` is not tagged although CE 2.0 supersedes the author's CE 1.0, because a scientific theory is not an institution, market, protocol or infrastructure.",
+  "general_purpose_test": {
+   "object_of_study": "An information-theoretic measure of macroscale causation over coarse-grainings of Markov chains, demonstrated on toy systems (an 8-state Markov chain, a thermostat and a room, a neuron), not on any system of AI agents.",
+   "verdict": "empty",
+   "part1_recheck": "agree",
+   "part2": {
+    "holds": false,
+    "quote": "Constructed from an axiomatic notion of causation, the theory's application is demonstrated in coarse-grains of Markov chains.",
+    "where": "Abstract",
+    "reason": "The object of study is a mathematical object - dimension reductions of a discrete causal model - which Part 2 explicitly excludes. No population, pipeline, protocol or deployment of two or more AI agents or models is studied anywhere in the paper."
+   },
+   "note": "The only AI content is one forward-looking clause in the Conclusion: 'CE 2.0 may also be primed to contribute to the growing field of AI interpretability [58] and AI safety [59], such as analyzing the multiscale structure of deep neural networks' (§7). That is a single network as a candidate future application, not a system of agents. The words 'agent' and 'agents' appear in the paper only inside a bibliography entry title ('Agent above, atom below'). 'Multi-agent', 'swarm' and 'society' do not appear at all."
+  }
  },
  {
   "n": 34,
@@ -3180,7 +3312,13 @@
    "how": "full-text",
    "chars": 10365
   },
-  "system_type": [],
+  "system_type": [
+   {
+    "value": "general purpose",
+    "quote": "In multi-agent runs, an additional layer of complexity emerged: agents could (and often had to) coordinate with one another.",
+    "where": "§ The Island Plane Crash"
+   }
+  ],
   "participant_mix": [
    {
     "value": "pure-AI",
@@ -3249,7 +3387,19 @@
   },
   "unsupported": [],
   "claim_type_wrong": "Existing value is `position/opinion`. The post reports a preliminary empirical simulation study: six runs (three per condition), bottom-up clustering of agent actions, and an LLM-judge scoring rubric. An empirical or simulation-study value fits better. I do not have the closed claim_type list, so I cannot name the exact replacement value.",
-  "note": "Source page returned HTTP 429 to the fetch script and WebFetch returned only a summary; the full body was retrieved verbatim from the LessWrong GraphQL API (post _id KbJ3HjKEjvt8BshSb) and converted to text. Support for `agents observable` is thinner than for the other two observability values: it rests on the authors reading their own agent system prompt as a cause of behaviour, plus the public repository, not on reading chain-of-thought or activations."
+  "note": "Source page returned HTTP 429 to the fetch script and WebFetch returned only a summary; the full body was retrieved verbatim from the LessWrong GraphQL API (post _id KbJ3HjKEjvt8BshSb) and converted to text. Support for `agents observable` is thinner than for the other two observability values: it rests on the authors reading their own agent system prompt as a cause of behaviour, plus the public repository, not on reading chain-of-thought or activations.",
+  "general_purpose_test": {
+   "object_of_study": "A three-agent LLM team compared against a single agent in a scripted island survival simulation, to test whether social interaction between agents changes the observed (mis)alignment behaviour.",
+   "verdict": "general purpose",
+   "part1_recheck": "agree: closest is `social network`, because agents coordinate socially and manage a ten-person survivor group, but there is no platform, network structure, feed, or diffusion process; the setting is a closed island survival simulation. `production economy` fails too - resource scavenging and task delegation happen with no firm, supply chain, or marketplace.",
+   "part2": {
+    "holds": true,
+    "quote": "In multi-agent runs, an additional layer of complexity emerged: agents could (and often had to) coordinate with one another.",
+    "where": "§ The Island Plane Crash",
+    "reason": "The object of study is a deployment of two or more AI agents that talk to each other and act on a shared environment, and the paper's question is which alignment failure modes arise between them. That satisfies the first Part 2 clause: agents that talk to each other, or act on a shared environment."
+   },
+   "note": "Six runs total, three per condition; the authors state they cannot yet separate incidental, setup-induced, and genuinely emergent causes. An LLM judge scores flagged behaviours, but it is only an instrument - the object of study is the multi-agent team itself, not a single model."
+  }
  },
  {
   "n": 39,
@@ -3527,7 +3677,13 @@
    "how": "full-text",
    "chars": 85739
   },
-  "system_type": [],
+  "system_type": [
+   {
+    "value": "general purpose",
+    "quote": "We study a group guessing game (developed by Goldstone et al. (2024) who called it “group binary search”) without communication: agents propose integers whose sum needs to match a randomly generated hidden target number.",
+    "where": "§2 Method, \"Group Task\""
+   }
+  ],
   "participant_mix": [
    {
     "value": "pure-AI",
@@ -3601,7 +3757,19 @@
   },
   "unsupported": [],
   "claim_type_wrong": null,
-  "note": "Methods paper, not a safety paper: it frames emergence and collective gain as desirable, so all four threat_model tags are read from what the paper analyses and evidences rather than from a stated harm. `Systemic Instability` rests on observed coordination failure (groups “fail to escape chaotic, uncoordinated states”, and Qwen3 agents entering infinite chain-of-thought loops, “paralysis under coordination ambiguity”, §4.4 and §A.13). `mixed human+AI` was rejected: humans appear only as a comparison literature and in one closing clause about “mixed human–AI teamwork”; no human is in the interaction loop. All three observability values hold: agents see only an aggregate “too high/too low” signal, the analyst holds the full per-agent action time series, and the analyst also reads the agents' reasoning traces."
+  "note": "Methods paper, not a safety paper: it frames emergence and collective gain as desirable, so all four threat_model tags are read from what the paper analyses and evidences rather than from a stated harm. `Systemic Instability` rests on observed coordination failure (groups “fail to escape chaotic, uncoordinated states”, and Qwen3 agents entering infinite chain-of-thought loops, “paralysis under coordination ambiguity”, §4.4 and §A.13). `mixed human+AI` was rejected: humans appear only as a comparison literature and in one closing clause about “mixed human–AI teamwork”; no human is in the interaction loop. All three observability values hold: agents see only an aggregate “too high/too low” signal, the analyst holds the full per-agent action time series, and the analyst also reads the agents' reasoning traces.",
+  "general_purpose_test": {
+   "object_of_study": "Groups of LLM agents playing a no-communication group binary-search game, measured with an information-theoretic test for cross-agent synergy and emergent role differentiation.",
+   "verdict": "general purpose",
+   "part1_recheck": "agree: the closest of the four is `production economy`, but the only support is a related-work clause about other people's systems (\"often attributed to division of labor among differentiated agents\", §5 Related Work). The paper's own setting has no firms, no market, no prices, no platform and no employment — agents propose integers summing to a hidden target.",
+   "part2": {
+    "holds": true,
+    "quote": "We study a group guessing game (developed by Goldstone et al. (2024) who called it “group binary search”) without communication: agents propose integers whose sum needs to match a randomly generated hidden target number.",
+    "where": "§2 Method, \"Group Task\"",
+    "reason": "The object of study is a group of five or more LLM agents acting on a shared environment: they do not talk to each other but their guesses are summed and they \"receive only group-level feedback ‘too high’ or ‘too low’\". That satisfies the Part 2 clause for agents that act on a shared environment, and also the clause for a population of agents that do not talk where the population is the object — the measured quantity is cross-agent synergy across the group."
+   },
+   "note": "Group sizes 3 to 15 were swept in preliminary experiments; the main runs use fixed groups of five agents across GPT-4.1, Llama-3.1-8B, Llama-3.1-70B, Gemini 2.0 flash and Qwen3. The framework itself (partial information decomposition of time-delayed mutual information) is a measurement tool built for multi-agent LLM systems, which independently meets the \"framework built for such systems\" clause."
+  }
  },
  {
   "n": 43,
@@ -3854,7 +4022,19 @@
   },
   "unsupported": [],
   "claim_type_wrong": null,
-  "note": "Watch two false positives: `Emergent Goals` (the paper's many uses of \"emergent\" are about emergent capabilities, not group-level goals) and `Gradual Disempowerment` (\"evading human control\" here means deceptive misalignment, not progressive substitution for human roles). `agents observable` rests on a real proposed standard — reading activations and giving auditors model access — not on a passing mention of interpretability."
+  "note": "Watch two false positives: `Emergent Goals` (the paper's many uses of \"emergent\" are about emergent capabilities, not group-level goals) and `Gradual Disempowerment` (\"evading human control\" here means deceptive misalignment, not progressive substitution for human roles). `agents observable` rests on a real proposed standard — reading activations and giving auditors model access — not on a passing mention of interpretability.",
+  "general_purpose_test": {
+   "object_of_study": "A regulatory regime — standards, registration and reporting, licensing and enforcement — imposed by governments on the developers of individual highly capable foundation models; the object of study is the regulation, not any system of interacting AI agents.",
+   "verdict": "empty",
+   "part1_recheck": "agree: none of the four fits. The closest is `production economy` (AI developers as regulated firms), but the paper studies the legal duties placed on those firms, not their production, supply chains or a market. Finance, aviation, nuclear and pharma appear only as regulatory precedent: 'Another example is the US Federal Select Agent Program' — no market, simulation or evaluation domain is modelled.",
+   "part2": {
+    "holds": false,
+    "quote": "In this paper, we focus specifically on the regulation of frontier AI models, which we define as highly capable foundation models",
+    "where": "§ 1 Introduction",
+    "reason": "The unit of regulation is one model at a time, assessed for dangerous capabilities and licensed across its lifecycle; the parties to the argument are governments, regulators and developers, so the model is the thing held rather than a participant. This is the Part 2 exclusion for a legal argument between humans or organisations, and also the exclusion for a single model studied on its own."
+   },
+   "note": "The word 'agent' occurs 18 times in the text. One is a single LLM-based agent used as an illustration of a dangerous capability ('One group attempted to create an LLM-based agent, giving it access to the internet, code execution abilities'); the other 17 are the US Federal Select Agent Program and biological agents in the precedent discussion or the bibliography. No passage anywhere makes two or more AI agents, or the interaction between models, the subject."
+  }
  },
  {
   "n": 46,
@@ -4237,7 +4417,13 @@
    "how": "full-text",
    "chars": 70956
   },
-  "system_type": [],
+  "system_type": [
+   {
+    "value": "general purpose",
+    "quote": "At each time step, two agents are randomly selected for interaction. Each agent will then output one of the two available words, and exchange it with the other agent.",
+    "where": "Methods, \"Model definition\""
+   }
+  ],
   "participant_mix": [
    {
     "value": "pure-AI",
@@ -4301,7 +4487,19 @@
   },
   "unsupported": [],
   "claim_type_wrong": null,
-  "note": "Observability is all three: the method reads model internals (per-token logits softmaxed into a cached policy over every memory state), records every pairwise exchange and its outcome (convergence is defined as 98% successful past interactions), and reports population-level statistics (fraction of 1000 runs reaching each consensus, mean-field state fractions). Systemic Instability rests on the Introduction's risk framing plus the paper's own cascade mechanism -- \"A word that gains even a small initial advantage is quickly incorporated into the memory inventories of most agents, driving rapid alignment across the system\" -- and the non-convergent metastable states found in large Llama populations. Inequality is the weaker of the four threat tags: all eleven word pairs are bias-sensitive social categories (man/woman, Black/White, straight/gay, American/Mexican), but the paper never discusses who is harmed."
+  "note": "Observability is all three: the method reads model internals (per-token logits softmaxed into a cached policy over every memory state), records every pairwise exchange and its outcome (convergence is defined as 98% successful past interactions), and reports population-level statistics (fraction of 1000 runs reaching each consensus, mean-field state fractions). Systemic Instability rests on the Introduction's risk framing plus the paper's own cascade mechanism -- \"A word that gains even a small initial advantage is quickly incorporated into the memory inventories of most agents, driving rapid alignment across the system\" -- and the non-convergent metastable states found in large Llama populations. Inequality is the weaker of the four threat tags: all eleven word pairs are bias-sensitive social categories (man/woman, Black/White, straight/gay, American/Mexican), but the paper never discusses who is harmed.",
+  "general_purpose_test": {
+   "object_of_study": "Populations of interacting LLM agents playing a naming game, studied across the full range of group sizes to measure how collective bias and consensus dynamics depend on population size.",
+   "verdict": "general purpose",
+   "part1_recheck": "agree: `social network` is closest, but the paper studies an unstructured, well-mixed population with random pairing and no platform, feed or social tie -- \"The prompt positions the LLM as an external observer forecasting 'Player 1' behavior ... and deliberately omits information about population structure or partner selection mechanisms.\" Finance, defense, energy, social media and personal assistance appear only in a one-clause citation list in the Introduction's first sentence.",
+   "part2": {
+    "holds": true,
+    "quote": "At each time step, two agents are randomly selected for interaction. Each agent will then output one of the two available words, and exchange it with the other agent.",
+    "where": "Methods, \"Model definition\"",
+    "reason": "The object of study is a population of two or more LLM agents that interact pairwise and exchange messages, which satisfies the Part 2 clause \"agents that talk to each other\". The population itself is the object: the paper measures collective bias and consensus as a function of population size N."
+   },
+   "note": "Interactions are simulated from probabilistic policies extracted from four instruction-tuned LLMs (Qwen QwQ-32B, Phi-4, GPT-4o, Llama 3.1) rather than by querying the models at every step; the paper validates this against direct LLM-based generation (SI Figs. S2-S3). The agents remain LLM-derived agents acting on each other, so the abstraction does not move the row toward \"a mathematical object that is not an agent\"."
+  }
  },
  {
   "n": 51,
@@ -4787,7 +4985,13 @@
    "how": "full-text",
    "chars": 94113
   },
-  "system_type": [],
+  "system_type": [
+   {
+    "value": "general purpose",
+    "quote": "A student finetuned on these outputs can acquire these traits, if the student is similar enough to the teacher.",
+    "where": "§9 Conclusion"
+   }
+  ],
   "participant_mix": [
    {
     "value": "pure-AI",
@@ -4841,7 +5045,19 @@
   },
   "unsupported": [],
   "claim_type_wrong": null,
-  "note": "Read the arXiv v1 preprint; the Nature PDF is cookie-blocked. `Steering` is the one judgement call: the paper proposes no policy lever, but it builds and applies alignment filters in every experiment (a 34-number blocklist in §3.2, a GPT-4.1 subtle-reference filter in §4.1, an LLM misalignment judge in §4.2) and its claim is that this control fails. `Systemic Instability` covers both contagion (misalignment propagating model-to-model through distillation) and monoculture: §5.1 shows transmission only between models that share an initialisation."
+  "note": "Read the arXiv v1 preprint; the Nature PDF is cookie-blocked. `Steering` is the one judgement call: the paper proposes no policy lever, but it builds and applies alignment filters in every experiment (a 34-number blocklist in §3.2, a GPT-4.1 subtle-reference filter in §4.1, an LLM misalignment judge in §4.2) and its claim is that this control fails. `Systemic Instability` covers both contagion (misalignment propagating model-to-model through distillation) and monoculture: §5.1 shows transmission only between models that share an initialisation.",
+  "general_purpose_test": {
+   "object_of_study": "A teacher LLM, the data it generates, and a student LLM finetuned on that data: the paper studies trait transmission from one model to another through distillation.",
+   "verdict": "general purpose",
+   "part1_recheck": "agree: the closest of the four is `production economy`, on the single Discussion clause \"Companies that train models on other models' outputs could inadvertently transmit unwanted traits\" (§8). That names AI developers as a place the risk lands; no firm, supply chain, market, platform or labour is studied. The experiments are teacher models, filtered datasets and student models only.",
+   "part2": {
+    "holds": true,
+    "quote": "A student finetuned on these outputs can acquire these traits, if the student is similar enough to the teacher.",
+    "where": "§9 Conclusion",
+    "reason": "This is the Part 2 clause \"one model acting on another: ... a teacher and a student\". The object of study is the teacher-student pair and the transmission mechanism between them, not either model alone."
+   },
+   "note": "An LLM judge (GPT-4.1) filters the training data in §4.2, but that is an instrument, not the object. The teacher-student pair is the object, so the \"measuring instrument\" exclusion does not apply. §7 also frames the setting as attacker-like (data poisoning), which is a second Part 2 clause."
+  }
  },
  {
   "n": 57,
@@ -4941,7 +5157,13 @@
    "how": "full-text",
    "chars": 219136
   },
-  "system_type": [],
+  "system_type": [
+   {
+    "value": "general purpose",
+    "quote": "We created over 1,000 generative agents, each modeling a real individual in the U.S., collectively forming a representative sample of the U.S. population.",
+    "where": "SM 1, \"Constructing the Agent Bank\", page 20"
+   }
+  ],
   "participant_mix": [
    {
     "value": "mixed human+AI",
@@ -5001,7 +5223,19 @@
    }
   ],
   "claim_type_wrong": null,
-  "note": "Read the v3 PDF (86 pages, main text plus SI). I did not tag `Steering` for focus_area: the bias-reduction result compares agent specifications rather than intervening on a deployed system. The SI consent section states a privacy risk ('the models we construct may become increasingly powerful over time', potentially inferring more than participants disclosed) but that harm runs from agent to human, so it does not fit `Partially Observable Systems`."
+  "note": "Read the v3 PDF (86 pages, main text plus SI). I did not tag `Steering` for focus_area: the bias-reduction result compares agent specifications rather than intervening on a deployed system. The SI consent section states a privacy risk ('the models we construct may become increasingly powerful over time', potentially inferring more than participants disclosed) but that harm runs from agent to human, so it does not fit `Partially Observable Systems`.",
+  "general_purpose_test": {
+   "object_of_study": "An \"Agent Bank\" of over 1,000 person-specific LLM generative agents, each grounded in one participant's interview and survey self-reports, built by an AI interviewer agent and evaluated as a population against the source humans.",
+   "verdict": "general purpose",
+   "part1_recheck": "agree: none of the four fits. Closest is `financial system` via the five behavioural games, but the paper describes them only as measures of altruism, trust and cooperation with a $0-$10 bonus - there is no market, price, trading or credit. `labour market` and `social network` have no support: 'market' occurs 3 times in the whole text and never as a labour or asset market, and the agents never form social ties.",
+   "part2": {
+    "holds": true,
+    "quote": "We created over 1,000 generative agents, each modeling a real individual in the U.S., collectively forming a representative sample of the U.S. population.",
+    "where": "SM 1, \"Constructing the Agent Bank\", page 20",
+    "reason": "The object of study is the whole agent bank, not one agent: accuracy is averaged 'across all agents in the agent bank', the replication studies test whether the agents reproduce population-level treatment effects, and the bank is released to researchers. That is the Part 2 clause 'a population of agents that do not talk, when the population is the object'."
+   },
+   "note": "The agents never interact with one another, so the decision rests entirely on the population clause, not on agent-to-agent interaction. A second, distinct AI agent is in the pipeline - 'we developed an AI interviewer agent to conduct semi-structured interviews with study participants' (SM 2) - built from the same generative-agent architecture, so the deployment involves two kinds of agent even before the bank is counted. The interviewer talks to humans, not to the generative agents."
+  }
  },
  {
   "n": 59,
@@ -5685,7 +5919,13 @@
    "how": "full-text",
    "chars": 10854
   },
-  "system_type": [],
+  "system_type": [
+   {
+    "value": "general purpose",
+    "quote": "this particular incident was driven by a combination of OpenAI models — including GPT‑5.6 Sol and an even more capable pre-release model, all with reduced cyber refusals for evaluation purposes",
+    "where": "Intro, paragraph before § What happened during this incident"
+   }
+  ],
   "participant_mix": [
    {
     "value": "pure-AI",
@@ -5749,7 +5989,19 @@
   },
   "unsupported": [],
   "claim_type_wrong": null,
-  "note": "Company incident report, not a paper, and explicitly preliminary: OpenAI states the investigation is ongoing and that METR, Redwood Research and CrowdStrike assessments are still to come. It is a first-party source for one event: OpenAI models under a cyber benchmark (ExploitGym), run without production classifiers, chained a zero-day in a package-registry cache proxy to escape a sandbox, reached the open Internet, and compromised Hugging Face production infrastructure plus four accounts on four other services. `claim_type` 'empirical study' is loose for a disclosure with no method or dataset, but it does report observed events, so I did not mark it wrong."
+  "note": "Company incident report, not a paper, and explicitly preliminary: OpenAI states the investigation is ongoing and that METR, Redwood Research and CrowdStrike assessments are still to come. It is a first-party source for one event: OpenAI models under a cyber benchmark (ExploitGym), run without production classifiers, chained a zero-day in a package-registry cache proxy to escape a sandbox, reached the open Internet, and compromised Hugging Face production infrastructure plus four accounts on four other services. `claim_type` 'empirical study' is loose for a disclosure with no method or dataset, but it does report observed events, so I did not mark it wrong.",
+  "general_purpose_test": {
+   "object_of_study": "A security incident in which two or more OpenAI models, run together in a cyber-capability evaluation, chained exploits out of the sandbox and compromised Hugging Face's production infrastructure, where Hugging Face's own defending agents and models detected and contained them.",
+   "verdict": "general purpose",
+   "part1_recheck": "agree",
+   "part2": {
+    "holds": true,
+    "quote": "this particular incident was driven by a combination of OpenAI models — including GPT‑5.6 Sol and an even more capable pre-release model, all with reduced cyber refusals for evaluation purposes",
+    "where": "Intro, paragraph before § What happened during this incident",
+    "reason": "The object of study is a set of two or more models acting together on a shared environment (OpenAI's research network, then Hugging Face's production infrastructure), which satisfies the 'agents that act on a shared environment' clause of Part 2. The report is also a safety and governance argument about such deployments: containment, monitoring and evaluation controls for cyber-capable models."
+   },
+   "note": "A second clause of Part 2 is also satisfied — attacker models against defender agents: \"Hugging Face’s security team and agents detected and stopped the activity on their infrastructure and had already begun containment and forensic reconstruction with their own open-source models\". Part 1 holds: the incident crosses two firms' infrastructure and a package-registry cache proxy, but no passage describes economic production, prices, jobs, trading or social ties, so none of the four named domains fits."
+  }
  },
  {
   "n": 68,
@@ -6265,7 +6517,13 @@
    "how": "full-text",
    "chars": 22046
   },
-  "system_type": [],
+  "system_type": [
+   {
+    "value": "general purpose",
+    "quote": "catalysing the foundational scientific research needed to understand, evaluate, and control risks emerging from large-scale ecosystems of interacting AI agents, deployed by multiple actors",
+    "where": "§ Core Question and Overview, final paragraph"
+   }
+  ],
   "participant_mix": [
    {
     "value": "pure-AI",
@@ -6354,7 +6612,19 @@
   },
   "unsupported": [],
   "claim_type_wrong": null,
-  "note": "Funder RFP (Schmidt Sciences, Google DeepMind, ARIA, Cooperative AI Foundation, Google.org), not a paper; it sets a four-cluster research agenda, so each focus_area value comes from its own sustained section. The page puts `Inequality` and `Power Concentration` explicitly out of scope ('Agentic inequality and power concentration ... are out of scope here'), and also excludes single-agent interpretability — so `agents observable` is tagged on code/property checking of sub-agents and on making decision processes legible, not on interpretability."
+  "note": "Funder RFP (Schmidt Sciences, Google DeepMind, ARIA, Cooperative AI Foundation, Google.org), not a paper; it sets a four-cluster research agenda, so each focus_area value comes from its own sustained section. The page puts `Inequality` and `Power Concentration` explicitly out of scope ('Agentic inequality and power concentration ... are out of scope here'), and also excludes single-agent interpretability — so `agents observable` is tagged on code/property checking of sub-agents and on making decision processes legible, not on interpretability.",
+  "general_purpose_test": {
+   "object_of_study": "A funding call setting a research agenda over multi-principal deployments of interacting AI agents: testbeds for agent populations, the system-level dynamics of agent networks, inter-agent infrastructure (identity, reputation, commitment), and oversight of deployed agent populations.",
+   "verdict": "general purpose",
+   "part1_recheck": "agree: no named domain fits. The closest is `production economy` (§3C-D on reputation, dispute resolution, contracts and delegation), but that text is trust plumbing between agents, not firms, production, or a task/service marketplace. `financial system` fails: collusion is named repeatedly (§4A) but never over price, and auctions appear only in the out-of-scope list ('simple auctions with discrete action spaces'). `social network` rests on one aside citing prior work in 'stylised games and simulated social environments'. `labour market` is absent.",
+   "part2": {
+    "holds": true,
+    "quote": "catalysing the foundational scientific research needed to understand, evaluate, and control risks emerging from large-scale ecosystems of interacting AI agents, deployed by multiple actors",
+    "where": "§ Core Question and Overview, final paragraph",
+    "reason": "The object of study is a population of interacting AI agents and the risks that arise between them, which satisfies both the 'population of agents ... when the population is the object' clause and the 'governance or safety argument whose subject is such systems' clause. The call explicitly rules out the disqualifying case: single-agent safety is listed as out of scope."
+   },
+   "note": "Not a research paper. It is a request for proposals, so it has no results section; the verdict rests on the stated agenda, which is a safety argument about multi-agent systems throughout its four clusters."
+  }
  },
  {
   "n": 74,
@@ -7271,7 +7541,13 @@
    "how": "full-text",
    "chars": 78632
   },
-  "system_type": [],
+  "system_type": [
+   {
+    "value": "general purpose",
+    "quote": "we develop several new features and components for AgentScope, a user-friendly multi-agent platform, enhancing its convenience and flexibility for supporting very large-scale multi-agent simulations",
+    "where": "Abstract"
+   }
+  ],
   "participant_mix": [
    {
     "value": "pure-AI",
@@ -7325,7 +7601,19 @@
   },
   "unsupported": [],
   "claim_type_wrong": null,
-  "note": "The threat_model tag is weaker than the others: the paper frames unmonitorable scale as an engineering usability problem for the researcher running the simulation, not as a societal harm, and it names no other harm. `agents observable` is well supported — the agents' thought process is generated, logged and quoted in nine appendix case studies, and every system prompt is printed. Design rather than Redesign: the actor-based mechanism, environment module, Agent-Manager and background generation pipeline are new components, added to the authors' own prior platform."
+  "note": "The threat_model tag is weaker than the others: the paper frames unmonitorable scale as an engineering usability problem for the researcher running the simulation, not as a societal harm, and it names no other harm. `agents observable` is well supported — the agents' thought process is generated, logged and quoted in nine appendix case studies, and every system prompt is printed. Design rather than Redesign: the actor-based mechanism, environment module, Agent-Manager and background generation pipeline are new components, added to the authors' own prior platform.",
+  "general_purpose_test": {
+   "object_of_study": "The AgentScope platform itself — an actor-based distributed infrastructure, environment support, and management interface for running simulations of up to 1 million interacting LLM agents.",
+   "verdict": "general purpose",
+   "part1_recheck": "agree: the closest of the four is `financial system`, because the only evaluation task is the \"guess 2/3 of the average\" beauty-contest game, but that game has no prices, assets, trades or auction — \"each agent reports a real number between and and the agent who reports a number closest to of the average of all the reported numbers wins the game\". No firm, platform, labour or market setting is simulated anywhere.",
+   "part2": {
+    "holds": true,
+    "quote": "we develop several new features and components for AgentScope, a user-friendly multi-agent platform, enhancing its convenience and flexibility for supporting very large-scale multi-agent simulations",
+    "where": "Abstract",
+    "reason": "The object of study is a framework built for systems of many LLM agents, which is an explicit Part 2 clause. The framework also supports agents that talk to each other and act on a shared environment: \"we enable both inter-agent interactions and agent-environment interactions (Sec. 3.2) to facilitate multi-agent simulations\" (§3), demonstrated on \"an agent-based simulation involving 1 million agents\" (§4.2)."
+   },
+   "note": "The 2/3-of-the-average game is used only as a workload to exercise the platform, not as a study of a market. The paper files it as social simulation."
+  }
  },
  {
   "n": 86,
@@ -7589,7 +7877,19 @@
    }
   ],
   "claim_type_wrong": null,
-  "note": "The abstract frames the motivating claim as LLMs `forming emergent, misaligned goals`, but these are single-model goals, so it does not match the group-level definition of `Emergent Goals`; I did not tag it. §4.5 finds harmful consequences make models sandbag (harmful-side win rate 40.5%, 95% CI 35.7-45.3), which is near `Partially Observable Systems`, but the paper uses it as a positive control and does not argue an observability harm. The record cites v1; the fetched text is v2."
+  "note": "The abstract frames the motivating claim as LLMs `forming emergent, misaligned goals`, but these are single-model goals, so it does not match the group-level definition of `Emergent Goals`; I did not tag it. §4.5 finds harmful consequences make models sandbag (harmful-side win rate 40.5%, 95% CI 35.7-45.3), which is near `Partially Observable Systems`, but the paper uses it as a positive control and does not argue an observability harm. The record cites v1; the fetched text is v2.",
+  "general_purpose_test": {
+   "object_of_study": "One LLM at a time (an \"actor model\"): whether its elicited pairwise utility ranking transfers into the quality of the text it generates when a preferred or dispreferred outcome is attached to success.",
+   "verdict": "empty",
+   "part1_recheck": "agree: none of the four fits. Closest is `production economy`, but the writing tasks (essays, grant abstracts, incident postmortems, translation) and the sponsored-competition wrapper are prompt devices for attaching a consequence, not firms, supply chains, a marketplace, or an economy of producing agents.",
+   "part2": {
+    "holds": false,
+    "quote": "The actor generates one artifact per prompt, and blind judges compare the two without seeing the consequence text. The primary outcome is whether the higher-utility artifact is judged better.",
+    "where": "§ 3 Methods, transfer design",
+    "reason": "This is the excluded pattern: a pipeline where the second model is only a measuring instrument. The three-model judge panel and the gemini-2.5-flash rubric coder never interact with the actor and are not the object of study; each actor model is studied on its own, so Part 2 fails and system_type stays empty."
+   },
+   "note": "Seven actor models are tested, but they are seven independent single-model measurements, not a population that is itself the object of study. No agent-to-agent interaction, shared environment, overseer-over-overseen relation, protocol, or framework for multi-agent systems appears anywhere in the paper; 'agentic' occurs only in cited model names and reference titles."
+  }
  },
  {
   "n": 89,
@@ -7734,6 +8034,18 @@
    }
   ],
   "claim_type_wrong": null,
-  "note": "The paper proves the input-output pair of one LLM inference is authentic without revealing weights. Its whole contribution is verifiability without observability, so `agents observable` inverts the paper's claim; the audit scenario (law enforcement probing for illegal output) is a sustained motivating passage in §1, §3.6 and Figure 2, which supports Monitoring."
+  "note": "The paper proves the input-output pair of one LLM inference is authentic without revealing weights. Its whole contribution is verifiability without observability, so `agents observable` inverts the paper's claim; the audit scenario (law enforcement probing for illegal output) is a sustained motivating passage in §1, §3.6 and Figure 2, which supports Monitoring.",
+  "general_purpose_test": {
+   "object_of_study": "A cryptographic zero-knowledge proof protocol (tlookup, zkAttn) that lets the holder of one LLM's weights prove to a human verifier that a single inference run was executed correctly, without revealing the parameters.",
+   "verdict": "empty",
+   "part1_recheck": "agree",
+   "part2": {
+    "holds": false,
+    "quote": "zkLLM empowers LLM owners to validate the integrity of inference outcomes to stakeholders, such as law enforcement agencies, thereby streamlining investigations involving LLMs while safeguarding intellectual property.",
+    "where": "§1 Introduction, contributions paragraph",
+    "reason": "The two parties are the model owner (prover) and law enforcement (verifier) — humans and organisations, not AI agents. The LLM is the thing held and audited, not a participant, which is the Part 2 exclusion for a protocol or legal argument between humans or organisations. Only one model appears; there is no second model, no population, and no overseer model."
+   },
+   "note": "The word 'agent' never occurs in the body. The only recurring roles are 'prover' (30+5 hits) and 'verifier' (35+1 hits), both cryptographic roles filled by people. The running scenario throughout (§1, §3 Q/A) is law enforcement auditing one deployed model. Text read: /tmp/claude-1000/-home-stephen-las-largeagentsystems-org/f6059fe3-bb17-496d-a50b-4ec729bab121/scratchpad/fulltext/90.txt (arXiv:2404.16109v1, 1641 lines)."
+  }
  }
 ]

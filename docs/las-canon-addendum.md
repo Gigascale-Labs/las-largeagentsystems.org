@@ -73,18 +73,18 @@ passage stood behind it. Each removal names a passage or a named absence.
 
 ### What stays empty, and why
 
-22 dimension cells of 450 hold no value after the pass. All are argued in the
-per-paper output, each naming the value it came closest to using.
+8 dimension cells of 450 hold no value. All are argued in the per-paper output,
+each naming the value it came closest to using.
 
 | Dimension | Empty | Cause |
 |---|---|---|
-| `system_type` | 19 | The four values name specific real-world systems. 19 papers study a multi-agent system that is none of them — a framework, a safety argument, a maths paper, a crypto protocol. |
+| `system_type` | 5 | The rows are not about a system of AI agents. See the next section. |
 | `threat_model` | 2 | AgentScope 1.0 and Causal Emergence 2.0 name no harm to any party. |
 | `participant_mix` | 1 | Causal Emergence 2.0 models Markov chains, not agents. |
 
-INFERRED: `system_type` is the binding constraint on coverage. A fifth value
-covering a general-purpose multi-agent system would close most of the 19. That
-is a schema change and has not been made.
+The full-text pass left 19 `system_type` cells empty. A fifth value, `general
+purpose`, closed 14 of them; the remaining 5 are the ones that value must not
+absorb.
 
 NOT CHECKED: any assignment against a second independent reader. The n=1
 per-paper read is the whole evidence base. Re-reading a sample of 10 and
@@ -122,6 +122,89 @@ The rule the earlier error produced still holds: **a term count is evidence
 that a passage exists, not that the paper takes a position.** The correction
 adds a second: **a term list is only as good as its coverage.** Read the
 section headings, not only the hits.
+
+## The `general purpose` system type
+
+`system_type` records **the real-world system a paper is about**. Four values
+name a specific domain. The fifth, `general purpose`, is the fallback.
+
+**Fill `general purpose` only if none of the four named systems fits.** It is
+never a second value beside one of them, and it is not a catch-all: a row that
+is not about a system of AI agents at all leaves `system_type` empty instead.
+
+### The two-part test
+
+Both parts must hold.
+
+**Part 1 — none of the four fits.** Name the closest of the four and the
+passage that fails to support it. If one of the four fits, use it and stop.
+
+| Value | The paper is about |
+|---|---|
+| `production economy` | firms, supply chains, production of goods or services, corporate operations, an economy of producing agents, task or service marketplaces |
+| `social network` | social media, online platforms, opinion or information diffusion, agent societies with social ties, forums, recommendation feeds |
+| `labour market` | employment, jobs, wages, hiring, worker displacement, the labour transition |
+| `financial system` | trading, markets, banking, credit, insurance, price setting, financial stability, collusion on price |
+
+**Part 2 — the paper is about a system of two or more AI agents.** The object
+of study is a population, network, deployment, pipeline, framework, protocol,
+benchmark, or governance regime involving two or more AI agents or models, or
+the mechanisms and risks that arise between them.
+
+Part 2 counts:
+
+- agents that talk to each other, or act on a shared environment
+- a population of agents that do not talk, when the population is the object
+- one model acting on another: an overseer and an overseen model, a teacher and
+  a student, an attacker and a target
+- a framework, protocol or standard built for such systems
+- a governance or safety argument whose subject is such systems
+
+Part 2 does not count, and the row leaves `system_type` **empty**:
+
+- a single model studied on its own, including one human talking to one model
+- a mathematical, physical or statistical object that is not an agent
+- a protocol or legal argument between humans or organisations, where the model
+  is the thing held rather than a participant
+- a pipeline where a second model is only a measuring instrument, such as an LLM
+  judge, and the object of study is the first model on its own
+
+Empty means "this row is not about a system of AI agents". `general purpose`
+means "it is, and the system is none of the four named domains". The two states
+are different, and the difference is what keeps `general purpose` from becoming
+the place every unclassified row lands.
+
+### The pass that applied it, 2026-09-01
+
+One agent per row re-read the paper and returned a verdict with a quoted
+passage. All 19 agreed with Part 1. 14 took the value; 5 did not.
+
+MEASURED, the clause of Part 2 that decided each of the 14:
+
+| Clause | Rows |
+|---|---|
+| agents talk to each other or act on a shared environment | Agent Smith; Agentic AI Needs a Systems Theory; Differences in Alignment Behaviour; Emergent Coordination in Multi-Agent Language Models; Group size effects; OpenAI/Hugging Face incident |
+| a framework, protocol or standard built for such systems | AgentScope 1.0; Very Large-Scale Multi-Agent Simulation in AgentScope |
+| a governance or safety argument about such systems | Agent Properties for Safe Interactions; Beyond Single-Agent Safety; Scaling AI Safety for a Multi-Agent World |
+| one model acting on another | Are we existentially threatened…; Language models transmit behavioural traits |
+| a population of agents that do not talk | LLM Agents Grounded in Self-Reports |
+
+The 5 that stayed empty, and the clause that excluded each:
+
+| Row | Excluded by |
+|---|---|
+| Agentic Interpretability | one human talking to one model; 0 uses of "multi-agent" in the text |
+| Causal Emergence 2.0 | a statistical object that is not an agent — 8-state Markov chains |
+| Frontier AI Regulation | a legal argument between humans and organisations; its 24 uses of "agent" are biological agents |
+| When Preferences Fail to Become Incentives | the LLM judge panel is a measuring instrument; the object is each actor model alone |
+| zkLLM | a two-party protocol; the model is held, not a participant |
+
+`system_type` coverage: 71 of 90 before the value existed, 85 of 90 after.
+Filled dimension cells: 428 of 450, then 442 of 450.
+
+NOT CHECKED: the 71 rows that already carried one of the four. This pass only
+looked at rows holding nothing, so it cannot find a row that took a named value
+it does not deserve.
 
 ## How broadly to tag
 
