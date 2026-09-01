@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import type { CanonEntry } from "@/lib/canon-schema";
 import {
   axisValues,
@@ -11,27 +11,9 @@ import {
   type DimensionKey,
 } from "@/lib/canon-dimensions";
 import { TABLE_HEAD_ROW, TABLE_ROW, TABLE_WRAP } from "@/lib/table-styles";
+import { bandLabel, scaleBands, shadeFor } from "@/lib/table-scale";
 
 const PAGE_SIZE = 10;
-
-/**
- * Four steps, so a reader can tell them apart at a glance. The key beneath
- * the table names each one; a shaded cell with no key is a colour with no
- * meaning.
- */
-const SHADES: { label: string; className: string }[] = [
-  { label: "0", className: "" },
-  { label: "1", className: "bg-accent/15" },
-  { label: "2–3", className: "bg-accent/35" },
-  { label: "4+", className: "bg-accent/60" },
-];
-
-function shade(count: number): string {
-  if (count === 0) return SHADES[0].className;
-  if (count === 1) return SHADES[1].className;
-  if (count <= 3) return SHADES[2].className;
-  return SHADES[3].className;
-}
 
 /**
  * One axis of the cross-table, as a row of buttons.
@@ -98,10 +80,20 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
   const rowValues = axisValues(dimA);
   const colValues = axisValues(dimB);
 
-  function count(rowValue: string, colValue: string): number {
-    return entries.filter((entry) => inCell(entry, dimA, rowValue, dimB, colValue))
-      .length;
-  }
+  // One pass over the grid per axis change, rather than one per cell per
+  // render: the shading needs the largest cell before any cell can be drawn,
+  // so the counts have to exist as a whole anyway.
+  const { counts, max } = useMemo(() => {
+    const grid = axisValues(dimA).map((row) =>
+      axisValues(dimB).map(
+        (col) =>
+          entries.filter((entry) => inCell(entry, dimA, row, dimB, col)).length,
+      ),
+    );
+    return { counts: grid, max: Math.max(0, ...grid.flat()) };
+  }, [entries, dimA, dimB]);
+
+  const bands = scaleBands(max);
 
   function selectDimA(next: DimensionKey) {
     setActiveCell(null);
@@ -193,7 +185,7 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
             </tr>
           </thead>
           <tbody>
-            {rowValues.map((row) => (
+            {rowValues.map((row, rowIndex) => (
               <tr key={row}>
                 <th
                   scope="row"
@@ -203,14 +195,14 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
                 >
                   <span className="block max-w-40">{row}</span>
                 </th>
-                {colValues.map((col) => {
-                  const n = count(row, col);
+                {colValues.map((col, colIndex) => {
+                  const n = counts[rowIndex][colIndex];
                   const isActive =
                     activeCell?.row === row && activeCell?.col === col;
                   return (
                     <td
                       key={col}
-                      className={`border border-rule p-0 text-center ${shade(n)}`}
+                      className={`border border-rule p-0 text-center ${shadeFor(n, bands)}`}
                     >
                       <button
                         onClick={() => toggleCell(row, col)}
@@ -239,17 +231,27 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
 
       {/*
         The key. The cells carry a colour scale, and a scale with no key is a
-        colour a reader has to guess at.
+        colour a reader has to guess at. It names the maximum it is scaled to,
+        because that maximum changes with the axes and so do the step ranges.
       */}
       <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[10px] uppercase tracking-widest text-muted">
-        <span>Papers per pair</span>
-        {SHADES.map((step) => (
-          <span key={step.label} className="flex items-center gap-1.5">
+        <span>
+          Papers per pair, scaled to this view (max {max})
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span
+            aria-hidden="true"
+            className="inline-block h-3 w-3 border border-rule"
+          />
+          0
+        </span>
+        {bands.map((band) => (
+          <span key={band.className} className="flex items-center gap-1.5">
             <span
               aria-hidden="true"
-              className={`inline-block h-3 w-3 border border-rule ${step.className}`}
+              className={`inline-block h-3 w-3 border border-rule ${band.className}`}
             />
-            {step.label}
+            {bandLabel(band)}
           </span>
         ))}
       </div>
