@@ -18,10 +18,11 @@ This version has breaking changes — APIs, conventions, and file structure may 
 `scripts/sync-las-new-papers.mjs`, `lib/papers-data.ts`,
 `app/papers/page.tsx`, `app/components/papers-list.tsx`.
 
-It is also the reference for two things built on a synced dataset: a computed
-artifact (`scripts/build-papers-map.mjs`, the UMAP projection) and client-side
-search (`lib/papers-search.ts`). Each has a section in
-`docs/synced-dataset-pattern.md`.
+It is also the reference for three things built on a synced dataset: a
+computed artifact (`scripts/build-papers-map.mjs`, the UMAP projection),
+client-side search (`lib/papers-search.ts`), and a categorical colouring over
+an upstream field (`lib/papers-anchors.ts`, the nearest canon paper). Each has
+a section in `docs/synced-dataset-pattern.md`.
 
 Two rules that are easy to get wrong: sync only the fields the page renders
 (a field that never reaches `data/` cannot leak later), and never
