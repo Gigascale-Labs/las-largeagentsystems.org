@@ -25,7 +25,7 @@ import {
   valuesFor,
   type DimensionKey,
 } from "../lib/canon-dimensions.ts";
-import { THREAT_MODELS, type CanonEntry } from "../lib/canon-schema.ts";
+import { SYSTEM_TYPES, THREAT_MODELS, type CanonEntry } from "../lib/canon-schema.ts";
 
 function entry(overrides: Partial<CanonEntry> = {}): CanonEntry {
   return {
@@ -160,6 +160,34 @@ describe("every paper appears on the table", () => {
         );
       }
     }
+  });
+});
+
+describe("the general purpose system type", () => {
+  // The rule the addendum states: `general purpose` is the fallback, filled
+  // only if none of the four named systems fits. A row carrying it beside a
+  // named value means the rule was broken upstream in Airtable, which is the
+  // only place system_type is edited.
+  it("never sits beside a named system type, in the real canon", () => {
+    const path = join(process.cwd(), "data", "las-canon.airtable.json");
+    if (!existsSync(path)) return;
+    const entries = JSON.parse(readFileSync(path, "utf8")) as CanonEntry[];
+    for (const paper of entries) {
+      const values = paper.system_type ?? [];
+      if (values.includes("general purpose")) {
+        assert.deepEqual(
+          values,
+          ["general purpose"],
+          `"${paper.title}" carries general purpose beside ${JSON.stringify(values)}`,
+        );
+      }
+    }
+  });
+
+  it("is the last value on the closed set, before UNTAGGED on the axis", () => {
+    assert.equal(SYSTEM_TYPES[SYSTEM_TYPES.length - 1], "general purpose");
+    const axis = axisValues("system_type");
+    assert.deepEqual(axis.slice(-2), ["general purpose", UNTAGGED]);
   });
 });
 
