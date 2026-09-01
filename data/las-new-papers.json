@@ -1,27 +1,253 @@
 [
   {
-    "date": "2026-08-30",
+    "date": "2026-08-31",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 267,
+      "unseen": 267,
+      "screened": 200,
+      "relevant": 12,
+      "kept": 4,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2608.30466",
+        "title": "CHASE: How Content Ecosystems Are Reshaped When Ranking Is the Only Target",
+        "authors": [
+          "Qianwen Gao",
+          "Zichang Su",
+          "Yiwen Hou",
+          "Arlen Kumar",
+          "Leanid Palkhouski"
+        ],
+        "url": "https://arxiv.org/abs/2608.30466",
+        "one_sentence": "Introduces CHASE, a simulation framework where content creators repeatedly rewrite documents to exploit an LLM ranking signal over 20 rounds. Measures declining alignment between ranking-favored content and independently judged quality across six domains (mean Spearman rho change -0.068). Validates the ranking proxy against citation rates in grounded LLM responses (AUC 0.853).",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Ranking serves as a proxy for source visibility, validated against citations in grounded generated responses with a rank-citation AUC of 0.853 plus or minus 0.093 across six domains; does the proxy hold for other retrieval stacks and citation behaviours?",
+          "Quality-ranking alignment falls in all six domains over 20 rounds of adaptation, but the ranking signal stays fixed; what happens when the ranker updates in response to creator adaptation?",
+          "Ecosystem dynamics depend on the domain; which domain properties predict the size of the alignment loss?",
+          "The simulation assumes every creator adapts to the ranking signal; how do outcomes change when only a fraction of creators optimize and the rest do not?",
+          "Which interventions on the ranking signal limit content homogenization under repeated creator adaptation?",
+          "Do human content creators adapt to LLM ranking signals in the way the simulated creators do?"
+        ]
+      },
+      {
+        "arxiv_id": "2608.30522",
+        "title": "Tariff Threats, Macroeconomic Expectations, and Policy Communication Strategies: Experiments Based on a Multi-Agent System",
+        "authors": [
+          "Jianhao Lin",
+          "Lexuan Sun",
+          "Yixin Yan"
+        ],
+        "url": "https://arxiv.org/abs/2608.30522",
+        "one_sentence": "Builds persistent LLM agents calibrated on 300 Michigan Survey households, exposed to simulated social-media messages over months. Tests how message features (immediacy, rate salience, narrative, sender identity) shape simulated inflation/unemployment expectations and their dispersion. Runs a second experiment on whether central-bank communication coordinates beliefs.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Do the simulated belief responses to tariff communication match human survey responses outside the Liberation Day announcement period?",
+          "How does the number of agents affect the reproduced distributional and demographic patterns, given the fixed panel of 300 households?",
+          "Which message features drive belief dispersion when they vary independently, rather than jointly as in the reported experiments?",
+          "Do the calibrated agents reproduce the demographic patterns they fail to match, and which subgroups do they miss?",
+          "Does the central-bank coordination effect on beliefs persist when agents also observe conflicting senders on social media?",
+          "How sensitive are the results to the choice of underlying language model?"
+        ]
+      },
+      {
+        "arxiv_id": "2608.30311",
+        "title": "One AI Signal, Many Human Judgments: A Bayesian Cascade Analysis of AI-based Credibility Indicators in Online Information Spread",
+        "authors": [
+          "Zhuoran Lu",
+          "Weilong Wang",
+          "Yangyang Yu",
+          "Xinru Wang",
+          "Zhuoyan Li",
+          "Zhiwei Liu",
+          "Sophia Ananiadou"
+        ],
+        "url": "https://arxiv.org/abs/2608.30311",
+        "one_sentence": "Extends the Bayesian cascade model of social learning to include an AI credibility indicator as a shared public signal. Identifies a preservation-correction trade-off where reliance on AI can lock in either correct or incorrect crowd judgments. Calibrates the model with human-subject news-veracity data and runs simulations showing over-reliance on a weak AI harms crowd informativeness, while diversifying AI signals helps.",
+        "nearest_anchor_id": "2605.24413",
+        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
+        "open_questions": [
+          "How well does the extended Bayesian cascade model predict cascade outcomes in live social media settings, rather than in calibration on news veracity judgment data?",
+          "Which schemes for diversifying AI credibility signals across users keep a crowd informative, and how do they compare on preservation versus correction of errors?",
+          "How does the preservation-correction trade-off change when agents in the cascade are LLM agents rather than Bayesian updaters with fixed weights?",
+          "What determines the spread in individual reliance on AI, from discounting the indicator to cascading on it, and can that heterogeneity be estimated without human-subject experiments?",
+          "How do network topology and the visible length of public history alter the Gateway condition threshold at which private impressions stop entering the cascade?"
+        ]
+      },
+      {
+        "arxiv_id": "2608.30946",
+        "title": "Reproducible macroscopic dynamics in a closed-loop human-AI learning system",
+        "authors": [
+          "Minlin Wu",
+          "Xu Fang",
+          "Yicheng Zhang",
+          "Chenyu Zhou",
+          "Zhiyi Liu"
+        ],
+        "url": "https://arxiv.org/abs/2608.30946",
+        "one_sentence": "Analyzes 297,915 learners' adaptive-tutoring histories to define semantic order variables and test them across disjoint cohorts. Identifies reproducible basin-like flow and metastable-like kinetics in aggregate learner state. Recovers population drift with a four-term mechanism (r=0.946) and shows self-supervised models learn similar leading-order dynamics.",
+        "nearest_anchor_id": "2604.15236",
+        "nearest_anchor_title": "Agentic Microphysics: A Manifesto for Generative AI Safety",
+        "open_questions": [
+          "Null-referenced corrections retain only partial-amplitude excess-field structure. What method calibrates the excess-field amplitude fully?",
+          "Do the semantic order variables and the basin-like flow reproduce on closed-loop human-AI systems other than adaptive tutoring, such as recommender or assistant logs?",
+          "Two models share leading population drift but keep model-specific residual directions. What causes the residual directions to differ?",
+          "Can a simulated closed-loop agent-tutor population reproduce basin-like flow and metastable-like kinetics in the same order variables?",
+          "Shuffled-order training reverses learned-plane flow and support-alignment randomisation reduces inward transport. Which properties of the interaction sequence carry the flow direction?",
+          "Does the identified leading-order effective field predict the effect of changing the tutoring policy on the population state?"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-08-30",
+    "counts": {
+      "fetched": 139,
+      "unseen": 139,
+      "screened": 139,
+      "relevant": 6,
+      "kept": 2,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2608.29535",
+        "title": "Integrating adaptive human behavior into epidemic models with large language models",
+        "authors": [
+          "Yicheng Mao",
+          "Haoyang Li",
+          "Rob Deardon",
+          "Hongru Du"
+        ],
+        "url": "https://arxiv.org/abs/2608.29535",
+        "one_sentence": "Couples LLM-inferred behavioral responses with mechanistic epidemic models to generate age-structured contact matrices. Tests the framework (GABLE) on COVID-19 in France, comparing forecasts against mobility-driven matrices. Also evaluates prospective policy scenarios by projecting behavioral and epidemic responses to candidate interventions.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "GABLE was applied to COVID-19 in France only; does an LLM behavioral layer reproduce contact structures in other countries and other epidemics?",
+          "How much of the forecasting gain comes from the LLM's own knowledge of COVID-19 in France rather than from the behavioral mechanism, given the pandemic falls inside training data?",
+          "Do different LLMs produce the same contact matrices, and does monoculture across models narrow the range of projected epidemic outcomes?",
+          "Does the LLM behavioral layer reproduce heterogeneity across subpopulations, or does it collapse to a single average behavioral response?",
+          "How accurate are the prospective policy projections when compared against outcomes of policies not yet implemented at prompt time?",
+          "How do LLM-generated contact matrices compare against survey-measured contact matrices such as CoMix, rather than against mobility-derived matrices?"
+        ]
+      },
+      {
+        "arxiv_id": "2608.29597",
+        "title": "Credibility in school choice",
+        "authors": [
+          "Camilo J. Sirguiado",
+          "Jiarui Xie"
+        ],
+        "url": "https://arxiv.org/abs/2608.29597",
+        "one_sentence": "Defines credibility of a school-choice mechanism as immunity to undetected deviation by the designer. Shows deferred acceptance is credible only when students observe enough of the assignment, and ranks mechanisms by credibility. Finds deferred acceptance's ranking against top trading cycles and efficiency-adjusted deferred acceptance depends on how much of the assignment students observe.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Do the credibility rankings of school choice mechanisms hold when participants are AI agents that report on behalf of students?",
+          "How much of the assignment must students observe before deferred acceptance becomes credible in practice, and can that threshold be estimated from real assignment disclosures?",
+          "Can students detect designer deviations from an announced mechanism by pooling their partial observations of the assignment?",
+          "What are the welfare costs of choosing a more credible mechanism over a less credible but more efficient one?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-08-29",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 151,
+      "unseen": 151,
+      "screened": 151,
+      "relevant": 9,
+      "kept": 4,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2608.29174",
+        "title": "Sustained Heterogeneity: an emergent collective mechanism in LLM-driven traffic",
+        "authors": [
+          "Yujun Qi",
+          "Yangyang Guan"
+        ],
+        "url": "https://arxiv.org/abs/2608.29174",
+        "one_sentence": "Deploys 22 LLM agents as real-time speed controllers on a ring road, observing emergent stop-and-go traffic waves. Identifies a persistent divergence phenomenon (Sustained Heterogeneity) and maps a density-dependent critical penetration fraction for instability onset across four traffic densities.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Sustained Heterogeneity is measured with one LLM acting as controller across a temperature sweep, so does the same per-cycle divergence appear across other model families and model sizes?",
+          "The paper concludes stability must be enforced at the dynamics layer, but does not test which dynamics-layer controller suppresses the three-stage cascade of drift, gap erosion and nonlinear braking.",
+          "Does letting the LLM agents exchange messages or share a common speed protocol remove the systematic divergence, or does divergence persist under coordination?",
+          "The phase boundary p_c(rho) is mapped on a 230 m single-lane ring, so how does the critical LLM penetration fraction change on open roads, merges and multi-lane networks?",
+          "Can Sustained Heterogeneity be detected from aggregate traffic measurements alone, without access to per-agent chain-of-thought?",
+          "The controls replace human drivers with IDM and OV models, so does the density-dependent transition hold when real human drivers share the road with LLM controllers?"
+        ]
+      },
+      {
+        "arxiv_id": "2608.29430",
+        "title": "Content Exploration Beyond the Feed: Creator Supply and the Shared Corpus",
+        "authors": [
+          "Yuanyuan Shen",
+          "Yiren Yan",
+          "Wenjie Li",
+          "Chunhui Zhu"
+        ],
+        "url": "https://arxiv.org/abs/2608.29430",
+        "one_sentence": "Analyzes four experiments on a short-video platform measuring how recommender exploration budgets affect creator posting behavior and viewer consumption. Finds production exploration raises creator posting rates and participation, while viewer-side experiments cannot detect the full corpus-level effect within a limited time window.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "The three-week co-diverted experiment cannot determine the sign of the eventual corpus effect, so what experiment duration and corpus turnover rate are needed to identify it?",
+          "Exploration budget objectives in the reviewed publications omit creator response, so how would a budget allocation rule that includes creator supply change corpus growth?",
+          "Viewer-side A/B tests cancel the corpus effect when both arms consume the same corpus, so which estimator designs recover the corpus effect under partial corpus sharing?",
+          "Confidence intervals for the eventual corpus effect can lack a finite upper endpoint before the corpus path bends, so which observable aggregate signals indicate that the bend has started?",
+          "Production exploration raises videos posted per creator by 8.55% on one short-video platform, so does the same creator response appear on other content platforms?"
+        ]
+      },
+      {
+        "arxiv_id": "2608.28977",
+        "title": "The Role of Network Topology and Opponent Information in Shaping Cooperation in Multi-Agent Reinforcement Learning Systems",
+        "authors": [
+          "Seongho Son",
+          "Stephen Hailes",
+          "Mirco Musolesi"
+        ],
+        "url": "https://arxiv.org/abs/2608.28977",
+        "one_sentence": "Studies deep reinforcement learning agents playing Iterated Prisoner's Dilemma on graph topologies where neighbors are opponents. Finds neighbor count and average path length drive cooperation emergence, and opponent identity information reduces cooperative strategy spread.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Deep reinforcement learning agents on graphs cooperate more or less depending on the number of neighbours and the average path length, but the reported experiments cover only the two-player Iterated Prisoner's Dilemma; does the same topology effect hold for other games such as public goods or stag hunt?",
+          "Providing agents with opponent identity hinders cooperation; which learned mechanism produces this effect?",
+          "Partner selection fosters mutual cooperation by limiting opponent-pool diversity; does this hold when the graph rewires over time rather than staying fixed?",
+          "Do the topology findings scale from the graph sizes tested to populations of thousands of learning agents?",
+          "Do the same cooperation patterns appear when the agents are LLM-based rather than deep reinforcement learning policies?"
+        ]
+      },
+      {
+        "arxiv_id": "2608.29097",
+        "title": "Optimally Selecting Representative Agents from a Metric Space",
+        "authors": [
+          "Benjamin Cookson",
+          "Eva Deltl",
+          "Yeeseok Oh"
+        ],
+        "url": "https://arxiv.org/abs/2608.29097",
+        "one_sentence": "Proves a tight 2-approximation bound for proportionally fair clustering satisfying the Droop core property in metric spaces. Shows centers can be restricted to agent locations, resolving an open plurality problem using Scarf's theorem.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does a 2-Droop core clustering exist when the set of feasible center locations does not include every agent location?",
+          "Can a clustering in the 2-Droop core be computed in polynomial time?",
+          "How close do fast heuristic clustering algorithms come to the 2-Droop core guarantee on real metric datasets?",
+          "How reliable are language-model-generated proofs in this problem class when authors verify them independently?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-08-28",
