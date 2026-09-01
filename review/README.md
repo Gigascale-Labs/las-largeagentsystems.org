@@ -157,10 +157,36 @@ one. An id that does not match leaves the field empty for the reviewer.
 | Property | How |
 |---|---|
 | Off the public internet | Binds the tailnet address; Caddy binds `TAILSCALE_BIND_IP` only |
-| No cross-site writes | Every POST checks `Sec-Fetch-Site` and `Origin` against the request host |
+| No cross-site writes | Every POST goes through `checkSameOrigin` in `review/csrf.mts`: `Sec-Fetch-Site` first, `Origin` against the request host second |
 | No injected markup | Every interpolated value goes through `escapeHtml`. Paper text is written by a paper's authors, then rewritten by a model |
 | No `javascript:` link | `safeHref` passes `http` and `https` and nothing else |
 | No client script | The pages run none. The rebuild page reloads itself with a meta refresh |
+
+### `Referrer-Policy` and the origin check are coupled
+
+OBSERVED 2026-09-01, n=1, Chromium 151 through Caddy: every form on the queue
+page returned "Refused — That form was sent from another site." The response
+carried `Referrer-Policy: no-referrer`, which the fetch spec says serialises a
+request's origin as the literal string `"null"`. `new URL("null")` throws, and
+the check refused a POST from its own page.
+
+MEASURED, same browser and route, changing only the response header:
+
+| `Referrer-Policy` | `Origin` the browser sent | `POST /decide` |
+|---|---|---|
+| `no-referrer` | `null` | 403 |
+| `same-origin` | `https://system-1.blenny-ratio.ts.net` | 303 |
+
+Two things changed. The response sets `Referrer-Policy: same-origin`, which
+still sends nothing to another site. And `"null"` now reads as "the browser
+withheld the origin", judged on `Sec-Fetch-Site` alone, so the check survives
+a future header change. A refusal now prints its reason on the page and logs
+it, because a refusal with no reason is what made this take an hour.
+
+ASSUMED: every browser that withholds `Origin` sends `Sec-Fetch-Site`. Chrome,
+Firefox and Safari have shipped it since 2020. NOT CHECKED: any browser other
+than Chromium 151. `tests/review-csrf.test.mts` covers the header combinations,
+not the browsers.
 
 Paper text is cleaned for storage upstream by `getPaperDays()`, which strips
 zero-width characters, bidirectional overrides and the Unicode Tags block. That
@@ -179,6 +205,7 @@ matters here, and `tests/review-html.test.mts` covers it.
 | `tests/review-queue.test.mts` | what the page shows, and the counts |
 | `tests/review-submission.test.mts` | the Airtable field mapping and the year derivation |
 | `tests/review-rebuild.test.mts` | the dirty-tree guard and the lock |
+| `tests/review-csrf.test.mts` | the cross-site POST check, including `Origin: null` |
 
 NOT CHECKED: `runRebuild` end to end. It fast-forwards a branch and pushes to a
 live remote, so testing it needs a throwaway remote and a throwaway checkout.

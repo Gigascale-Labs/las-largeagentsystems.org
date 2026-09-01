@@ -43,6 +43,7 @@ import {
   recordDecision,
   type Decision,
 } from "./decisions.mts";
+import { checkSameOrigin } from "./csrf.mts";
 import { escapeHtml, page, safeHref } from "./html.mts";
 import { buildQueue, type DecidedItem, type QueueItem } from "./queue.mts";
 import { readLastRun, runRebuild, type RebuildRun, type Step } from "./rebuild.mts";
@@ -95,7 +96,10 @@ function html(res: ServerResponse, status: number, body: string): void {
     "content-type": "text/html; charset=utf-8",
     // This page is a view of state that changes on every POST.
     "cache-control": "no-store",
-    "referrer-policy": "no-referrer",
+    // same-origin, not no-referrer. `no-referrer` also makes the browser send
+    // `Origin: null`, which the CSRF check then reads as a cross-site POST.
+    // See review/csrf.mts. This still sends nothing to another site.
+    "referrer-policy": "same-origin",
     "x-content-type-options": "nosniff",
   });
   res.end(body);
@@ -104,32 +108,6 @@ function html(res: ServerResponse, status: number, body: string): void {
 function redirect(res: ServerResponse, to: string): void {
   res.writeHead(303, { location: to, "cache-control": "no-store" });
   res.end();
-}
-
-/**
- * Rejects a POST that a different site sent.
- *
- * This service is on the tailnet, which is not the same as being unreachable:
- * a page the reviewer opens anywhere can post a form to a tailnet address. Two
- * headers settle it. `Sec-Fetch-Site` is set by the browser and cannot be
- * spoofed by page script; `Origin` is checked as well for clients that do not
- * send the first. A request carrying neither is accepted, which is what `curl`
- * from the host looks like.
- */
-function sameOrigin(req: IncomingMessage): boolean {
-  const site = req.headers["sec-fetch-site"];
-  if (typeof site === "string" && site !== "same-origin" && site !== "none") {
-    return false;
-  }
-  const origin = req.headers.origin;
-  if (typeof origin === "string" && origin !== "") {
-    try {
-      if (new URL(origin).host !== req.headers.host) return false;
-    } catch {
-      return false;
-    }
-  }
-  return true;
 }
 
 async function readBody(req: IncomingMessage): Promise<URLSearchParams | null> {
@@ -390,8 +368,23 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
   }
 
   if (method === "POST") {
-    if (!sameOrigin(req)) {
-      html(res, 403, page({ title: "Refused", body: "<h1>Refused</h1><p>That form was sent from another site.</p>" }));
+    const verdict = checkSameOrigin(req.headers as Parameters<typeof checkSameOrigin>[0]);
+    if (!verdict.ok) {
+      // The reason goes on the page, not only into the log. This service has
+      // one reviewer on a tailnet, and a refusal with no reason cost an hour
+      // once already — see the header comment in csrf.mts.
+      console.warn("refused a POST:", verdict.reason);
+      html(
+        res,
+        403,
+        page({
+          title: "Refused",
+          body: `<h1>Refused</h1>
+<p>This looks like a form sent from another site, so nothing was written.</p>
+<p class="counts">${escapeHtml(verdict.reason)}</p>
+<p><a href=".">Back to the queue</a></p>`,
+        }),
+      );
       return;
     }
     const params = await readBody(req);
