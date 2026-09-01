@@ -7,21 +7,31 @@
     "url": "https://theaidigest.org/village/blog/what-do-we-tell-the-humans",
     "tags": "Live Systems",
     "summary": "AI Digest documents errors, hallucinations, and lies observed among multiple frontier AI agents interacting in the live 'AI Village' multi-agent environment.",
-    "system_type": [],
+    "system_type": [
+      "production economy",
+      "social network"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "agents observable",
+      "aggregates observable"
     ],
     "focus_area": [
       "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Systemic Instability",
+      "Power Concentration"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "AI Digest"
     ]
@@ -35,20 +45,31 @@
     "tags": "",
     "summary": "Proposes modeling generative AI itself as an economic agent advising users in games, showing this changes equilibria versus human-only settings.",
     "system_type": [
-      "production economy"
+      "production economy",
+      "labour market"
     ],
     "participant_mix": [
       "mixed human+AI"
     ],
-    "observability": [],
-    "focus_area": [
-      "Simulation"
+    "observability": [
+      "interactions observable",
+      "aggregates observable"
     ],
-    "threat_model": [],
+    "focus_area": [
+      "Design",
+      "Steering",
+      "Redesign"
+    ],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Inequality",
+      "Gradual Disempowerment"
+    ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Microsoft Research"
     ]
@@ -62,22 +83,19 @@
     "tags": "Collective Intelligence",
     "summary": "Develops a quantitative framework for measuring causal emergence — how macro-level descriptions of a system can carry more causal information than micro-level descriptions — relevant to questions of when collective agent behaviour constitutes a genuinely emergent higher-level phenomenon.",
     "system_type": [],
-    "participant_mix": [
-      "pure-AI"
-    ],
+    "participant_mix": [],
     "observability": [
       "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Design"
     ],
-    "threat_model": [
-      "Collective Superintelligence"
-    ],
+    "threat_model": [],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Tufts University"
     ]
@@ -97,16 +115,23 @@
       "mixed human+AI"
     ],
     "observability": [
-      "aggregates observable"
+      "aggregates observable",
+      "interactions observable"
     ],
     "focus_area": [
-      "Steering"
+      "Steering",
+      "Monitoring",
+      "Redesign"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Systemic Instability",
+      "Inequality"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -124,16 +149,23 @@
       "pure-AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Monitoring",
+      "Steering"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Collective Superintelligence",
+      "Outdated Models",
+      "Power Concentration"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Sapienza University of Rome"
     ]
@@ -146,21 +178,36 @@
     "url": "https://www.researchgate.net/publication/390321374_Two_types_of_AI_existential_risk_decisive_and_accumulative",
     "tags": "Foundations & Taxonomies",
     "summary": "Proposes a taxonomy of AI existential risk distinguishing sudden 'decisive' takeover from gradual 'accumulative' erosion of human control. Full text not retrieved (HTTP 403); tagged from title and known authorship.",
-    "system_type": [],
-    "participant_mix": [
-      "mixed human+AI"
+    "system_type": [
+      "production economy",
+      "social network",
+      "labour market",
+      "financial system"
     ],
-    "observability": [],
+    "participant_mix": [
+      "mixed human+AI",
+      "pure-AI"
+    ],
+    "observability": [
+      "aggregates observable"
+    ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering",
+      "Redesign"
     ],
     "threat_model": [
-      "Gradual Disempowerment"
+      "Gradual Disempowerment",
+      "Systemic Instability",
+      "Outdated Models",
+      "Power Concentration",
+      "Inequality",
+      "Partially Observable Systems"
     ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -171,24 +218,34 @@
     "url": "https://arxiv.org/abs/2410.07283",
     "tags": "Security & Adversarial Robustness",
     "summary": "Introduces Prompt Infection — a self-replicating LLM-to-LLM prompt injection attack that propagates across interconnected agents like a computer virus, posing systemic threats including data theft and system-wide disruption.",
-    "system_type": [],
+    "system_type": [
+      "social network"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "aggregates observable",
+      "agents observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Simulation",
+      "Steering",
+      "Design"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Partially Observable Systems",
+      "Outdated Models"
     ],
     "claim_type": [
       "threat model articulation",
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "University College London",
       "Stanford University"
@@ -206,19 +263,27 @@
       "social network"
     ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Gradual Disempowerment"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "University of Vaasa",
       "Qatar Computing Research Institute, HBKU"
@@ -232,23 +297,37 @@
     "url": "https://www.lesswrong.com/posts/AJo2HFT8TdY2B3wNJ/system-level-safety-evaluations",
     "tags": "",
     "summary": "LessWrong post proposing 'system-level safety evaluations' testing whether societal institutions (elections, peer review) withstand coordinated AI-agent attacks; ties explicitly to gradual disempowerment.",
-    "system_type": [],
+    "system_type": [
+      "social network",
+      "financial system"
+    ],
     "participant_mix": [
-      "mixed human+AI"
+      "mixed human+AI",
+      "pure-AI"
     ],
     "observability": [
-      "aggregates observable"
+      "aggregates observable",
+      "interactions observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Simulation",
+      "Design",
+      "Steering"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Gradual Disempowerment",
+      "Partially Observable Systems",
+      "Emergent Goals",
+      "Power Concentration",
+      "Collective Superintelligence",
+      "Outdated Models"
     ],
     "claim_type": [
       "position/opinion"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -267,16 +346,23 @@
     ],
     "observability": [
       "agents observable",
-      "interactions observable"
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Design",
+      "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Systemic Instability",
+      "Collective Superintelligence",
+      "Outdated Models"
+    ],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Shanghai Artificial Intelligence Laboratory",
       "University of Oxford",
@@ -296,16 +382,21 @@
       "pure-AI"
     ],
     "observability": [
-      "agents observable"
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Outdated Models",
+      "Inequality"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -316,21 +407,33 @@
     "url": "https://arxiv.org/abs/2507.09901",
     "tags": "Simulation and Digital Twins",
     "summary": "Proposes Large Population Models: computational methods to simulate millions of interacting agents from real-world data with privacy-preserving protocols.",
-    "system_type": [],
+    "system_type": [
+      "labour market"
+    ],
     "participant_mix": [
-      "mixed human+AI"
+      "mixed human+AI",
+      "pure-AI"
     ],
     "observability": [
-      "aggregates observable"
+      "aggregates observable",
+      "interactions observable",
+      "agents observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Design",
+      "Steering"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Systemic Instability",
+      "Inequality"
+    ],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "MIT Media Lab"
     ]
@@ -343,21 +446,28 @@
     "url": "https://arxiv.org/abs/2505.17479",
     "tags": "Datasets",
     "summary": "Presents Twin-2K-500, a dataset for building digital twins of over 2,000 people based on their answers to more than 500 questions, supporting research on LLM-based simulation of individual human respondents.",
-    "system_type": [],
+    "system_type": [
+      "production economy"
+    ],
     "participant_mix": [
       "mixed human+AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Gradual Disempowerment",
+      "Inequality"
+    ],
     "claim_type": [
       "dataset/tool"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Columbia University"
     ]
@@ -377,18 +487,26 @@
       "pure-AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "aggregates observable",
+      "agents observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Monitoring",
+      "Steering"
     ],
     "threat_model": [
-      "Emergent Goals"
+      "Emergent Goals",
+      "Partially Observable Systems",
+      "Systemic Instability",
+      "Outdated Models",
+      "Inequality"
     ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "City St George's, University of London"
     ]
@@ -401,19 +519,35 @@
     "url": "https://aria.org.uk/media/dkhlumky/scaling-trust-programme-thesis.pdf",
     "tags": "Trust, Delegation & Accountability",
     "summary": "ARIA's programme thesis for Scaling Trust, outlining the research agenda and rationale for building technical infrastructure that allows trust to scale with the complexity of AI-mediated interactions.",
-    "system_type": [],
+    "system_type": [
+      "production economy"
+    ],
     "participant_mix": [
-      "mixed human+AI"
+      "mixed human+AI",
+      "pure-AI"
     ],
-    "observability": [],
+    "observability": [
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
+    ],
     "focus_area": [
-      "Design"
+      "Design",
+      "Monitoring",
+      "Steering",
+      "Redesign"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Power Concentration",
+      "Partially Observable Systems",
+      "Inequality",
+      "Outdated Models",
+      "Collective Superintelligence"
+    ],
     "claim_type": [
       "position/opinion"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "ARIA (Advanced Research + Invention Agency)"
     ]
@@ -426,21 +560,33 @@
     "url": "https://arxiv.org/abs/2412.10270",
     "tags": "Coordination & (Super-)cooperation",
     "summary": "Studies whether a 'society' of LLM agents deployed over many generations can learn mutually beneficial social norms despite defection incentives.",
-    "system_type": [],
+    "system_type": [
+      "financial system"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "agents observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Monitoring",
+      "Steering"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Outdated Models",
+      "Partially Observable Systems",
+      "Systemic Instability",
+      "Emergent Goals"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Google DeepMind"
     ]
@@ -455,19 +601,30 @@
     "summary": "Proposes a transition from model-level to system-level safety, introducing the Emergent Systemic Risk Horizon (ESRH) framework and a taxonomy of micro, meso, and macro-level failure modes in LLM-to-LLM ecosystems.",
     "system_type": [],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
-    "observability": [],
+    "observability": [
+      "interactions observable",
+      "aggregates observable",
+      "agents observable"
+    ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Design",
+      "Steering"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Partially Observable Systems",
+      "Emergent Goals",
+      "Outdated Models",
+      "Gradual Disempowerment"
     ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "DEXAI - Icaro Lab",
       "Sapienza University of Rome",
@@ -487,20 +644,29 @@
       "social network"
     ],
     "participant_mix": [
-      "mixed human+AI"
+      "mixed human+AI",
+      "pure-AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "agents observable",
+      "aggregates observable"
     ],
     "focus_area": [
       "Steering",
-      "Design"
+      "Design",
+      "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Gradual Disempowerment",
+      "Outdated Models",
+      "Systemic Instability"
+    ],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Cooperative AI Foundation",
       "Cooperative AI Research Fellowship",
@@ -516,19 +682,33 @@
     "url": "https://www.lesswrong.com/posts/vqfT5QCWa66gsfziB/a-phylogeny-of-agents",
     "tags": "Foundations & Taxonomies",
     "summary": "Argues agency is frame-dependent: the same system (ant colony, multi-AI 'automated firm') can be validly described as different agent types, causing alignment blind spots when only one frame is used.",
-    "system_type": [],
+    "system_type": [
+      "production economy"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
-    "observability": [],
+    "observability": [
+      "aggregates observable",
+      "interactions observable",
+      "agents observable"
+    ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering",
+      "Design"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Outdated Models",
+      "Partially Observable Systems",
+      "Systemic Instability",
+      "Emergent Goals"
+    ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -539,23 +719,29 @@
     "url": "https://arxiv.org/abs/2409.02822",
     "tags": "Collective Intelligence",
     "summary": "Demonstrates that LLM-based agents can spontaneously coordinate at scales beyond typical human group limits, governed by a 'majority force coefficient' that determines coordination possibility and varies with model capability.",
-    "system_type": [],
+    "system_type": [
+      "social network"
+    ],
     "participant_mix": [
       "pure-AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Monitoring"
     ],
     "threat_model": [
-      "Collective Superintelligence"
+      "Collective Superintelligence",
+      "Systemic Instability",
+      "Emergent Goals"
     ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "University of Konstanz",
       "Complexity Science Hub Vienna",
@@ -575,19 +761,27 @@
       "social network"
     ],
     "participant_mix": [
-      "mixed human+AI"
+      "mixed human+AI",
+      "pure-AI"
     ],
     "observability": [
-      "aggregates observable"
+      "aggregates observable",
+      "interactions observable"
     ],
     "focus_area": [
-      "Steering"
+      "Steering",
+      "Simulation",
+      "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Systemic Instability",
+      "Partially Observable Systems",
+      "Outdated Models"
+    ],
     "claim_type": [
       "survey/taxonomy"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "BNU-HKBU United International College",
       "University of Texas at Dallas"
@@ -608,16 +802,25 @@
       "mixed human+AI"
     ],
     "observability": [
-      "aggregates observable"
+      "aggregates observable",
+      "interactions observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Systemic Instability",
+      "Outdated Models",
+      "Inequality",
+      "Gradual Disempowerment",
+      "Power Concentration"
+    ],
     "claim_type": [
       "survey/taxonomy"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "University of Pennsylvania"
     ]
@@ -631,24 +834,35 @@
     "tags": "",
     "summary": "Ezrachi & Stucke argue pricing algorithms can tacitly collude, creating antitrust-relevant competition risks without explicit human intent.",
     "system_type": [
-      "production economy"
+      "production economy",
+      "financial system"
     ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "aggregates observable"
+      "aggregates observable",
+      "interactions observable",
+      "agents observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering",
+      "Redesign"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Emergent Goals",
+      "Gradual Disempowerment",
+      "Power Concentration",
+      "Inequality"
     ],
     "claim_type": [
       "policy/regulatory analysis"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "University of Oxford",
       "University of Tennessee"
@@ -663,7 +877,8 @@
     "tags": "",
     "summary": "Models how wages and output evolve as automation races capital accumulation across different AGI-transition scenarios.",
     "system_type": [
-      "labour market"
+      "labour market",
+      "production economy"
     ],
     "participant_mix": [
       "mixed human+AI"
@@ -672,15 +887,19 @@
       "aggregates observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Steering"
     ],
     "threat_model": [
-      "Power Concentration"
+      "Gradual Disempowerment",
+      "Inequality",
+      "Collective Superintelligence",
+      "Outdated Models"
     ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "NBER",
       "University of Virginia"
@@ -694,21 +913,32 @@
     "url": "https://arxiv.org/pdf/2408.04514",
     "tags": "",
     "summary": "Proposes a safety framework for emergent effects in decentralized multi-agent systems, formalizing mismatches between true global specification and local agent approximations.",
-    "system_type": [],
+    "system_type": [
+      "production economy"
+    ],
     "participant_mix": [
       "pure-AI"
     ],
-    "observability": [],
+    "observability": [
+      "interactions observable",
+      "aggregates observable",
+      "agents observable"
+    ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering",
+      "Simulation",
+      "Design"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Emergent Goals",
+      "Partially Observable Systems"
     ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "LMU Munich"
     ]
@@ -722,20 +952,31 @@
     "tags": "Labour & Automation",
     "summary": "Outlines a phased roadmap for the economic labor transition driven by AI, covering near-term automation waves through long-term structural economic transformation. Emphasises policy preparation and national self-assessment.",
     "system_type": [
-      "labour market"
+      "labour market",
+      "production economy"
     ],
     "participant_mix": [
       "mixed human+AI"
     ],
-    "observability": [],
-    "focus_area": [
-      "Steering"
+    "observability": [
+      "aggregates observable"
     ],
-    "threat_model": [],
+    "focus_area": [
+      "Steering",
+      "Redesign",
+      "Monitoring"
+    ],
+    "threat_model": [
+      "Inequality",
+      "Gradual Disempowerment",
+      "Systemic Instability",
+      "Power Concentration",
+      "Outdated Models"
+    ],
     "claim_type": [
       "policy/regulatory analysis"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Windfall Trust",
       "King's College London"
@@ -759,15 +1000,22 @@
       "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Design",
+      "Redesign",
+      "Steering"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Outdated Models",
+      "Partially Observable Systems",
+      "Power Concentration",
+      "Gradual Disempowerment"
     ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "SBS Swiss Business School"
     ]
@@ -780,21 +1028,35 @@
     "url": "https://arxiv.org/abs/2406.12137",
     "tags": "LA Infrastructure & Protocols",
     "summary": "Proposes a system of unique, persistent identifiers for AI systems to enable traceability, accountability, certification, and incident response across agentic deployments.",
-    "system_type": [],
+    "system_type": [
+      "financial system"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Design",
+      "Steering",
+      "Redesign"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Inequality",
+      "Power Concentration",
+      "Gradual Disempowerment"
+    ],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Centre for the Governance of AI",
       "Cooperative AI Foundation",
@@ -810,21 +1072,28 @@
     "url": "https://arxiv.org/abs/2602.01022",
     "tags": "Simulation and Digital Twins",
     "summary": "Finds LLMs show rationality bias vs. human behavioral benchmarks (loss aversion, herding); profile-based calibration corrects this across 24,000 agent-scenario pairs.",
-    "system_type": [],
+    "system_type": [
+      "financial system"
+    ],
     "participant_mix": [
       "pure-AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Monitoring",
+      "Design"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Outdated Models"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -835,21 +1104,31 @@
     "url": "https://www.lesswrong.com/posts/aCdhjy7Rps3BEhiSj/concrete-evaluations-to-investigate-the-openai-model-that",
     "tags": "",
     "summary": "LessWrong cross-post of the same evals proposal for the OpenAI multi-agent model that hacked Hugging Face.",
-    "system_type": [],
+    "system_type": [
+      "production economy"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Simulation"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Emergent Goals"
+    ],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -860,21 +1139,39 @@
     "url": "https://www.fhi.ox.ac.uk/wp-content/uploads/Reframing_Superintelligence_FHI-TR-2019-1.1-1.pdf",
     "tags": "Foundations & Taxonomies; Collective Intelligence",
     "summary": "Proposes the Comprehensive AI Services (CAIS) model as an alternative to the unified-agent conception of superintelligence, arguing that advanced AI capabilities are more likely to emerge as a decentralised ecosystem of bounded services than as a single agentic system.",
-    "system_type": [],
-    "participant_mix": [
-      "pure-AI"
+    "system_type": [
+      "production economy",
+      "labour market",
+      "financial system",
+      "social network"
     ],
-    "observability": [],
+    "participant_mix": [
+      "pure-AI",
+      "mixed human+AI"
+    ],
+    "observability": [
+      "interactions observable",
+      "agents observable"
+    ],
     "focus_area": [
-      "Design"
+      "Design",
+      "Steering",
+      "Monitoring",
+      "Redesign"
     ],
     "threat_model": [
-      "Collective Superintelligence"
+      "Collective Superintelligence",
+      "Emergent Goals",
+      "Partially Observable Systems",
+      "Power Concentration",
+      "Systemic Instability",
+      "Gradual Disempowerment",
+      "Outdated Models"
     ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Future of Humanity Institute, University of Oxford"
     ]
@@ -887,19 +1184,38 @@
     "url": "https://www.gov.uk/government/publications/ai-scenarios-2030-helping-policymakers-plan-for-the-future-of-ai/ai-scenarios-2030-helping-policymakers-plan-for-the-future-of-ai",
     "tags": "Agentic Economies; Threat Models; Policy and Governance",
     "summary": "UK government research and analysis publication presenting four scenarios for how AI may develop and affect society by 2030, intended to help policymakers plan for a range of plausible futures. Scenarios 2-4 are of particular relevance to the LAS canon.",
-    "system_type": [],
+    "system_type": [
+      "labour market",
+      "production economy",
+      "financial system",
+      "social network"
+    ],
     "participant_mix": [
-      "mixed human+AI"
+      "mixed human+AI",
+      "pure-AI"
     ],
-    "observability": [],
+    "observability": [
+      "aggregates observable",
+      "interactions observable",
+      "agents observable"
+    ],
     "focus_area": [
-      "Steering"
+      "Steering",
+      "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Gradual Disempowerment",
+      "Partially Observable Systems",
+      "Power Concentration",
+      "Inequality",
+      "Collective Superintelligence",
+      "Systemic Instability",
+      "Outdated Models"
+    ],
     "claim_type": [
       "policy/regulatory analysis"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "UK Government Office for Science"
     ]
@@ -917,16 +1233,22 @@
       "pure-AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "aggregates observable",
+      "interactions observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Design",
+      "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems"
+    ],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Alibaba Group"
     ]
@@ -939,24 +1261,35 @@
     "url": "https://arxiv.org/abs/2602.16136",
     "tags": "Threat Models",
     "summary": "Characterises 'Retrieval Collapse' — a two-stage degradation where AI-generated web content first homogenises, then degrades retrieval pipelines — demonstrating how LAS-scale content generation corrupts the information environment.",
-    "system_type": [],
+    "system_type": [
+      "social network",
+      "production economy"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "aggregates observable"
+      "aggregates observable",
+      "interactions observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Simulation",
+      "Redesign",
+      "Steering"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Gradual Disempowerment"
     ],
     "claim_type": [
       "empirical study",
       "threat model articulation"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "NAVER Corp."
     ]
@@ -971,22 +1304,29 @@
     "summary": "Reports 'infectious jailbreak' — a single adversarial image injected into one agent's memory propagates exponentially to infect all agents in environments of up to one million LLaVA-1.5 agents.",
     "system_type": [],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "aggregates observable",
+      "agents observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Simulation",
+      "Steering"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Partially Observable Systems",
+      "Outdated Models"
     ],
     "claim_type": [
       "threat model articulation",
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Sea AI Lab",
       "National University of Singapore",
@@ -1003,18 +1343,32 @@
     "summary": "Schmidt Sciences funding call for research on multi-agent AI safety: realistic testbeds, emergent system-level dynamics, interaction infrastructure, and oversight of deployed agent populations.",
     "system_type": [],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
-    "observability": [],
+    "observability": [
+      "interactions observable",
+      "aggregates observable",
+      "agents observable"
+    ],
     "focus_area": [
       "Monitoring",
-      "Design"
+      "Design",
+      "Simulation",
+      "Redesign",
+      "Steering"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Emergent Goals",
+      "Collective Superintelligence",
+      "Systemic Instability",
+      "Partially Observable Systems",
+      "Outdated Models"
+    ],
     "claim_type": [
       "position/opinion"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Schmidt Sciences"
     ]
@@ -1034,16 +1388,21 @@
       "mixed human+AI"
     ],
     "observability": [
-      "aggregates observable"
+      "aggregates observable",
+      "interactions observable"
     ],
     "focus_area": [
       "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Systemic Instability",
+      "Gradual Disempowerment"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -1058,21 +1417,29 @@
       "financial system"
     ],
     "participant_mix": [
-      "mixed human+AI"
+      "mixed human+AI",
+      "pure-AI"
     ],
     "observability": [
       "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering",
+      "Redesign"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Partially Observable Systems",
+      "Power Concentration",
+      "Outdated Models",
+      "Emergent Goals",
+      "Inequality"
     ],
     "claim_type": [
       "policy/regulatory analysis"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Bank of England"
     ]
@@ -1085,19 +1452,31 @@
     "url": "https://www.lesswrong.com/posts/tGcLA596E8g3KnphE/survey-of-multi-agent-llm-evaluations",
     "tags": "",
     "summary": "LessWrong survey of 32 multi-agent LLM evaluations finds most test miscoordination (26) but few test collusion (5); threat models like CBRN/cyber lack dedicated multi-agent evals.",
-    "system_type": [],
+    "system_type": [
+      "production economy"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
-    "observability": [],
+    "observability": [
+      "interactions observable",
+      "agents observable"
+    ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Design",
+      "Simulation"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Collective Superintelligence"
+    ],
     "claim_type": [
       "survey/taxonomy"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -1110,19 +1489,29 @@
     "summary": "Position paper arguing agentic AI's emergent capabilities and risks require a holistic systems-theoretic lens, not just single-model analysis.",
     "system_type": [],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
-    "observability": [],
+    "observability": [
+      "interactions observable"
+    ],
     "focus_area": [
-      "Design"
+      "Design",
+      "Steering",
+      "Monitoring"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Emergent Goals",
+      "Collective Superintelligence",
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Gradual Disempowerment"
     ],
     "claim_type": [
       "position/opinion"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "IBM Research"
     ]
@@ -1135,24 +1524,36 @@
     "url": "https://www.rivista.ai/wp-content/uploads/2026/04/ssrn-6372438.pdf",
     "tags": "Threat Models",
     "summary": "Taxonomises the ways agents embedded in networked environments can be exploited or constrained ('trapped'), covering spawning traps, financial flash-crash analogies, and technical/legal defences.",
-    "system_type": [],
+    "system_type": [
+      "production economy",
+      "financial system",
+      "social network"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "aggregates observable",
+      "agents observable"
     ],
     "focus_area": [
       "Steering",
-      "Redesign"
+      "Redesign",
+      "Monitoring"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Emergent Goals",
+      "Power Concentration"
     ],
     "claim_type": [
       "threat model articulation"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Google DeepMind"
     ]
@@ -1167,21 +1568,26 @@
     "summary": "Alex Mallen analyzes whether the OpenAI models' security-boundary breach into Hugging Face (to cheat a cyber eval) signals existential misalignment risk.",
     "system_type": [],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
       "interactions observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering"
     ],
     "threat_model": [
-      "Collective Superintelligence"
+      "Collective Superintelligence",
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Gradual Disempowerment"
     ],
     "claim_type": [
       "position/opinion"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -1192,21 +1598,35 @@
     "url": "https://doi.org/10.48550/arXiv.2508.05687",
     "tags": "",
     "summary": "Reid argues multi-agent LLM systems need risk-analysis methods distinct from single-agent safety, since agent interactions create emergent behaviours and novel failure modes.",
-    "system_type": [],
-    "participant_mix": [
-      "pure-AI"
+    "system_type": [
+      "production economy",
+      "labour market"
     ],
-    "observability": [],
+    "participant_mix": [
+      "pure-AI",
+      "mixed human+AI"
+    ],
+    "observability": [
+      "interactions observable",
+      "agents observable",
+      "aggregates observable"
+    ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Simulation",
+      "Steering"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Gradual Disempowerment",
+      "Emergent Goals"
     ],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Gradient Institute"
     ]
@@ -1221,17 +1641,28 @@
     "summary": "LessWrong post framing how alignment behaviour differs between single- and multi-agent AI systems. Content not retrieved; tagged from title only.",
     "system_type": [],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
-    "observability": [],
+    "observability": [
+      "interactions observable",
+      "aggregates observable",
+      "agents observable"
+    ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Simulation"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Gradual Disempowerment",
+      "Systemic Instability",
+      "Emergent Goals",
+      "Outdated Models"
+    ],
     "claim_type": [
       "position/opinion"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -1244,17 +1675,28 @@
     "summary": "Cooperative AI Foundation post arguing further Prisoner's Dilemma studies are unhelpful; proposes alternative agent-property framing for safety.",
     "system_type": [],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
-    "observability": [],
+    "observability": [
+      "interactions observable",
+      "aggregates observable"
+    ],
     "focus_area": [
-      "Design"
+      "Design",
+      "Monitoring",
+      "Steering",
+      "Simulation"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Systemic Instability"
+    ],
     "claim_type": [
       "position/opinion"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Cooperative AI Foundation"
     ]
@@ -1267,21 +1709,31 @@
     "url": "https://arxiv.org/abs/2409.10568",
     "tags": "Simulation and Digital Twins",
     "summary": "Examines the limits of agency that can be meaningfully attributed to LLM-driven agents within agent-based models, using the AgentTorch framework to support large-population simulations.",
-    "system_type": [],
+    "system_type": [
+      "labour market"
+    ],
     "participant_mix": [
       "pure-AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "aggregates observable",
+      "interactions observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Design",
+      "Monitoring",
+      "Steering"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Outdated Models",
+      "Systemic Instability"
+    ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "MIT Media Lab",
       "University of Oxford"
@@ -1295,21 +1747,36 @@
     "url": "https://arxiv.org/abs/2603.23471",
     "tags": "Policy and Governance",
     "summary": "Analyses how the EU AI Act — promulgated before agentic AI became widespread — faces significant obstacles addressing governance challenges specific to agents: autonomous task failure, malicious misuse, and unequal liability distribution.",
-    "system_type": [],
-    "participant_mix": [
-      "mixed human+AI"
+    "system_type": [
+      "production economy",
+      "financial system",
+      "labour market"
     ],
-    "observability": [],
+    "participant_mix": [
+      "mixed human+AI",
+      "pure-AI"
+    ],
+    "observability": [
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
+    ],
     "focus_area": [
-      "Steering"
+      "Steering",
+      "Redesign",
+      "Monitoring"
     ],
     "threat_model": [
-      "Inequality"
+      "Inequality",
+      "Outdated Models",
+      "Partially Observable Systems",
+      "Systemic Instability",
+      "Power Concentration"
     ],
     "claim_type": [
       "policy/regulatory analysis"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "University of Toronto (Schwartz Reisman Institute)",
       "Hebrew University of Jerusalem"
@@ -1328,18 +1795,24 @@
       "mixed human+AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Design",
+      "Steering"
     ],
     "threat_model": [
-      "Gradual Disempowerment"
+      "Gradual Disempowerment",
+      "Outdated Models",
+      "Partially Observable Systems"
     ],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Google DeepMind"
     ]
@@ -1352,23 +1825,27 @@
     "url": "https://arxiv.org/abs/2411.10109",
     "tags": "Persona Extraction; Simulation and Digital Twins",
     "summary": "Builds person-specific generative agents grounded in interview and survey self-report data from 1,052 Americans, achieving 83-86% of test-retest consistency and supporting general-purpose individual simulation.",
-    "system_type": [
-      "social network"
-    ],
+    "system_type": [],
     "participant_mix": [
       "mixed human+AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Design",
+      "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Inequality"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Stanford University"
     ]
@@ -1390,21 +1867,32 @@
       "pure-AI",
       "mixed human+AI"
     ],
-    "observability": [],
+    "observability": [
+      "interactions observable",
+      "aggregates observable",
+      "agents observable"
+    ],
     "focus_area": [
       "Monitoring",
       "Steering",
-      "Simulation"
+      "Simulation",
+      "Redesign",
+      "Design"
     ],
     "threat_model": [
       "Systemic Instability",
       "Partially Observable Systems",
-      "Emergent Goals"
+      "Emergent Goals",
+      "Collective Superintelligence",
+      "Inequality",
+      "Power Concentration",
+      "Outdated Models",
+      "Gradual Disempowerment"
     ],
     "claim_type": [
       "survey/taxonomy"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Cooperative AI Foundation"
     ]
@@ -1418,22 +1906,28 @@
     "tags": "Agentic Economies",
     "summary": "Uses utility theory to map and quantify economic behavioral biases (loss aversion, inequity aversion, time discounting) in LLMs, finding they are neither fully human-like nor fully rational agents.",
     "system_type": [
-      "production economy"
+      "financial system"
     ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Outdated Models"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Massachusetts Institute of Technology"
     ]
@@ -1453,18 +1947,28 @@
       "mixed human+AI"
     ],
     "observability": [
-      "aggregates observable"
+      "aggregates observable",
+      "interactions observable",
+      "agents observable"
     ],
     "focus_area": [
-      "Steering"
+      "Steering",
+      "Monitoring",
+      "Redesign",
+      "Design"
     ],
     "threat_model": [
-      "Gradual Disempowerment"
+      "Gradual Disempowerment",
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Systemic Instability",
+      "Inequality",
+      "Power Concentration"
     ],
     "claim_type": [
       "policy/regulatory analysis"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -1475,23 +1979,34 @@
     "url": "https://openreview.net/forum?id=kzYq2hfyHB",
     "tags": "",
     "summary": "Evaluates 350+ LLMs on leaderboards and a hiring task, finding errors are highly correlated across models sharing architecture or provider.",
-    "system_type": [],
+    "system_type": [
+      "labour market"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "aggregates observable",
+      "interactions observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Simulation",
+      "Redesign"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Inequality",
+      "Outdated Models",
+      "Power Concentration",
+      "Partially Observable Systems"
     ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -1504,22 +2019,36 @@
     "summary": "Surveys how AI agents might interact with humans and each other, shape markets and organizations, and what institutions might be required for well-functioning markets in a future with widespread agentic deployment.",
     "system_type": [
       "production economy",
-      "labour market"
+      "financial system"
     ],
     "participant_mix": [
-      "mixed human+AI"
+      "mixed human+AI",
+      "pure-AI"
     ],
-    "observability": [],
+    "observability": [
+      "aggregates observable",
+      "interactions observable",
+      "agents observable"
+    ],
     "focus_area": [
-      "Design"
+      "Design",
+      "Redesign",
+      "Steering",
+      "Monitoring"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Partially Observable Systems",
+      "Gradual Disempowerment",
+      "Power Concentration",
+      "Outdated Models",
+      "Collective Superintelligence",
+      "Emergent Goals"
     ],
     "claim_type": [
       "survey/taxonomy"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Johns Hopkins University",
       "Massachusetts Institute of Technology"
@@ -1540,16 +2069,23 @@
       "pure-AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Design",
+      "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Outdated Models"
+    ],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Georgia Institute of Technology"
     ]
@@ -1562,21 +2098,34 @@
     "url": "https://arxiv.org/abs/2601.10599",
     "tags": "",
     "summary": "Argues alignment must address agents embedded in social/technical systems, identifying structural failure modes like goal-independence and instrumental override.",
-    "system_type": [],
-    "participant_mix": [
-      "mixed human+AI"
+    "system_type": [
+      "financial system"
     ],
-    "observability": [],
+    "participant_mix": [
+      "mixed human+AI",
+      "pure-AI"
+    ],
+    "observability": [
+      "interactions observable",
+      "aggregates observable"
+    ],
     "focus_area": [
-      "Redesign"
+      "Redesign",
+      "Design",
+      "Steering",
+      "Monitoring"
     ],
     "threat_model": [
-      "Emergent Goals"
+      "Emergent Goals",
+      "Partially Observable Systems",
+      "Systemic Instability",
+      "Collective Superintelligence",
+      "Outdated Models"
     ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "DEXAI - Icaro Lab"
     ]
@@ -1594,18 +2143,24 @@
       "pure-AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "agents observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Simulation"
     ],
     "threat_model": [
-      "Emergent Goals"
+      "Emergent Goals",
+      "Outdated Models",
+      "Systemic Instability",
+      "Inequality"
     ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "City St George's, University of London",
       "IT University of Copenhagen",
@@ -1620,19 +2175,34 @@
     "url": "https://arxiv.org/abs/2012.08630",
     "tags": "Coordination & (Super-)cooperation",
     "summary": "Dafoe et al. propose a research agenda for equipping AI systems with cooperative capabilities across cooperation problems from small to global scale.",
-    "system_type": [],
+    "system_type": [
+      "financial system"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
-    "observability": [],
+    "observability": [
+      "aggregates observable",
+      "interactions observable",
+      "agents observable"
+    ],
     "focus_area": [
-      "Design"
+      "Design",
+      "Steering",
+      "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Inequality",
+      "Collective Superintelligence",
+      "Power Concentration",
+      "Outdated Models"
+    ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "DeepMind"
     ]
@@ -1652,16 +2222,25 @@
       "pure-AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "aggregates observable",
+      "interactions observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Monitoring",
+      "Steering",
+      "Design"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Systemic Instability",
+      "Inequality",
+      "Emergent Goals"
+    ],
     "claim_type": [
       "dataset/tool"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -1674,19 +2253,27 @@
     "summary": "OpenAI/Hugging Face joint report on a security incident during model evaluation, involving advanced cyber capabilities and lessons for defenders.",
     "system_type": [],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering",
+      "Redesign"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Power Concentration"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "OpenAI",
       "Hugging Face"
@@ -1701,22 +2288,30 @@
     "tags": "",
     "summary": "Analyzes 50 LLMs' risk preferences in decision tasks; finds alignment tuning for harmlessness/honesty causally increases risk aversion, affecting economic forecasts.",
     "system_type": [
-      "financial system"
+      "financial system",
+      "production economy"
     ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Gradual Disempowerment",
+      "Outdated Models"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -1727,21 +2322,30 @@
     "url": "https://arxiv.org/abs/2606.04592",
     "tags": "Persona Extraction",
     "summary": "Evaluates how well LLMs can mimic individual survey respondents when grounded in socio-economic microdata, assessing fidelity of synthetic personalities against real respondent data.",
-    "system_type": [],
+    "system_type": [
+      "production economy"
+    ],
     "participant_mix": [
       "mixed human+AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Monitoring",
+      "Design"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Outdated Models",
+      "Inequality"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Technical University of Munich"
     ]
@@ -1755,23 +2359,37 @@
     "tags": "Threat Models",
     "summary": "Develops the concept of gradual disempowerment — how incremental AI advances could permanently undermine human influence over the economy, culture, and nation-states without any single catastrophic event.",
     "system_type": [
-      "production economy"
+      "production economy",
+      "labour market",
+      "social network"
     ],
     "participant_mix": [
-      "mixed human+AI"
+      "mixed human+AI",
+      "pure-AI"
     ],
-    "observability": [],
+    "observability": [
+      "aggregates observable",
+      "interactions observable"
+    ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering",
+      "Redesign"
     ],
     "threat_model": [
-      "Gradual Disempowerment"
+      "Gradual Disempowerment",
+      "Partially Observable Systems",
+      "Systemic Instability",
+      "Emergent Goals",
+      "Outdated Models",
+      "Power Concentration",
+      "Collective Superintelligence"
     ],
     "claim_type": [
       "theoretical/conceptual framework",
       "threat model articulation"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Charles University (Alignment of Complex Systems)",
       "University of Cambridge",
@@ -1791,19 +2409,27 @@
       "pure-AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "aggregates observable",
+      "agents observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering",
+      "Simulation",
+      "Design"
     ],
     "threat_model": [
-      "Emergent Goals"
+      "Emergent Goals",
+      "Collective Superintelligence",
+      "Partially Observable Systems",
+      "Systemic Instability"
     ],
     "claim_type": [
       "proposed method/system",
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Northeastern University"
     ]
@@ -1817,25 +2443,33 @@
     "tags": "",
     "summary": "Meng & Chen (2026) model AI-driven systemic risk in financial markets, showing the systemic risk multiplier grows superlinearly with AI adoption share.",
     "system_type": [
-      "financial system"
+      "financial system",
+      "labour market"
     ],
     "participant_mix": [
       "mixed human+AI"
     ],
     "observability": [
-      "aggregates observable"
+      "aggregates observable",
+      "interactions observable",
+      "agents observable"
     ],
     "focus_area": [
-      "Redesign"
+      "Redesign",
+      "Monitoring",
+      "Simulation",
+      "Steering"
     ],
     "threat_model": [
       "Outdated Models",
-      "Systemic Instability"
+      "Systemic Instability",
+      "Gradual Disempowerment",
+      "Partially Observable Systems"
     ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -1847,23 +2481,34 @@
     "tags": "Simulation and Digital Twins",
     "summary": "Proposes AgentSociety, a large-scale simulator integrating LLM-driven agents with a realistic societal environment, generating social lives for over 10k agents with 5 million interactions for generative social science research.",
     "system_type": [
-      "social network"
+      "social network",
+      "production economy",
+      "financial system"
     ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
       "aggregates observable",
-      "agents observable"
+      "agents observable",
+      "interactions observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Design",
+      "Monitoring",
+      "Steering"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Systemic Instability",
+      "Outdated Models",
+      "Inequality"
+    ],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Tsinghua University"
     ]
@@ -1876,19 +2521,38 @@
     "url": "https://arxiv.org/abs/2602.11865",
     "tags": "Trust, Delegation & Accountability",
     "summary": "Proposes an adaptive framework for intelligent AI delegation, addressing task allocation, authority transfer, accountability, and trust establishment in complex multi-agent delegation networks.",
-    "system_type": [],
+    "system_type": [
+      "production economy",
+      "labour market",
+      "financial system"
+    ],
     "participant_mix": [
-      "mixed human+AI"
+      "mixed human+AI",
+      "pure-AI"
     ],
-    "observability": [],
+    "observability": [
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
+    ],
     "focus_area": [
-      "Steering"
+      "Steering",
+      "Design",
+      "Monitoring",
+      "Redesign"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Gradual Disempowerment",
+      "Systemic Instability",
+      "Inequality",
+      "Outdated Models",
+      "Collective Superintelligence"
+    ],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Google DeepMind"
     ]
@@ -1901,16 +2565,21 @@
     "url": "https://www.gradientinstitute.org/research-publications/new-report-analysing-multi-agent-risks",
     "tags": "",
     "summary": "Gradient Institute report analysing risks as organisations shift AI deployments from single agents toward multi-agent systems.",
-    "system_type": [],
+    "system_type": [
+      "production economy"
+    ],
     "participant_mix": [
       "pure-AI"
     ],
-    "observability": [],
+    "observability": [
+      "agents observable"
+    ],
     "focus_area": [
       "Monitoring"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Emergent Goals"
     ],
     "claim_type": [
       "survey/taxonomy"
@@ -1928,21 +2597,34 @@
     "url": "https://arxiv.org/pdf/2412.07780v1",
     "tags": "Foundations & Taxonomies",
     "summary": "Systematic review of 86 papers proposing a taxonomy of 13 categories and 50 sources of large-scale societal/economic systemic risk from general-purpose AI.",
-    "system_type": [],
-    "participant_mix": [
-      "mixed human+AI"
+    "system_type": [
+      "labour market",
+      "financial system",
+      "social network"
     ],
-    "observability": [],
+    "participant_mix": [
+      "mixed human+AI",
+      "pure-AI"
+    ],
+    "observability": [
+      "aggregates observable"
+    ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Partially Observable Systems",
+      "Gradual Disempowerment",
+      "Power Concentration",
+      "Outdated Models",
+      "Inequality"
     ],
     "claim_type": [
       "survey/taxonomy"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Future of Life Institute"
     ]
@@ -1956,24 +2638,37 @@
     "tags": "Large Agent Alignment",
     "summary": "Experimentally demonstrates that multi-agent 'AI organizations' achieve higher business utility but produce systematically greater misalignment than single aligned agents, across consultancy and software development tasks.",
     "system_type": [
-      "production economy"
+      "production economy",
+      "financial system",
+      "social network",
+      "labour market"
     ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Design",
+      "Simulation",
+      "Steering"
     ],
     "threat_model": [
-      "Emergent Goals"
+      "Emergent Goals",
+      "Collective Superintelligence",
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Inequality"
     ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Anthropic",
       "Stanford University"
@@ -1989,19 +2684,22 @@
     "summary": "Presents the first specialised zero-knowledge proof system for LLMs, enabling cryptographic verification of inference correctness without revealing model parameters — foundational infrastructure for accountable agent systems.",
     "system_type": [],
     "participant_mix": [
-      "pure-AI"
+      "mixed human+AI"
     ],
     "observability": [
-      "agents observable"
+      "interactions observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Design"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems"
+    ],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "University of Waterloo"
     ]
@@ -2015,7 +2713,8 @@
     "tags": "Financial Systems & Systemic Risk",
     "summary": "Examines whether and how artificial intelligence adoption enhances corporate financial risk-taking capacity, framed through the lenses of innovation resilience and environmental sustainability.",
     "system_type": [
-      "financial system"
+      "financial system",
+      "production economy"
     ],
     "participant_mix": [
       "mixed human+AI"
@@ -2024,13 +2723,17 @@
       "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Inequality",
+      "Partially Observable Systems"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -2048,16 +2751,23 @@
       "pure-AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "aggregates observable",
+      "interactions observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Outdated Models",
+      "Partially Observable Systems",
+      "Inequality"
+    ],
     "claim_type": [
       "survey/taxonomy"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -2072,19 +2782,27 @@
       "social network"
     ],
     "participant_mix": [
-      "mixed human+AI"
+      "mixed human+AI",
+      "pure-AI"
     ],
     "observability": [
-      "agents observable"
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering",
+      "Design"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Systemic Instability"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Carnegie Mellon University"
     ]
@@ -2099,19 +2817,24 @@
     "summary": "Presents AgentScope 1.0, a developer-centric framework for building agentic applications, supporting multi-agent simulation, orchestration, and deployment at scale.",
     "system_type": [],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Design",
+      "Monitoring",
+      "Steering"
     ],
     "threat_model": [],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Alibaba Group"
     ]
@@ -2124,22 +2847,36 @@
     "url": "https://arxiv.org/pdf/2601.04170",
     "tags": "",
     "summary": "Introduces 'agent drift' -- semantic, coordination, and behavioral degradation of multi-agent LLM systems over long interaction sequences -- with a theoretical framework.",
-    "system_type": [],
+    "system_type": [
+      "production economy",
+      "financial system"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "agents observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Simulation",
+      "Design",
+      "Steering"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Systemic Instability",
+      "Partially Observable Systems",
+      "Emergent Goals",
+      "Outdated Models"
+    ],
     "claim_type": [
       "theoretical/conceptual framework",
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -2154,15 +2891,25 @@
     "participant_mix": [
       "mixed human+AI"
     ],
-    "observability": [],
-    "focus_area": [
-      "Steering"
+    "observability": [
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
     ],
-    "threat_model": [],
+    "focus_area": [
+      "Steering",
+      "Monitoring",
+      "Design"
+    ],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Power Concentration",
+      "Outdated Models"
+    ],
     "claim_type": [
       "policy/regulatory analysis"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Centre for the Governance of AI"
     ]
@@ -2176,25 +2923,33 @@
     "tags": "",
     "summary": "Repo documenting uninstructed, systemic price-fixing collusion emerging among frontier LLM agents in a simulated auction/bidding environment.",
     "system_type": [
-      "production economy"
+      "production economy",
+      "financial system"
     ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "aggregates observable",
+      "agents observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Simulation",
+      "Steering"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Partially Observable Systems",
+      "Emergent Goals"
     ],
     "claim_type": [
       "dataset/tool",
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -2205,23 +2960,31 @@
     "url": "https://www.alignmentforum.org/posts/8oFYZdXkTaNGRtcn8/ai-swarms-are-starting-to-pose-indirect-takeover-risk",
     "tags": "Coordination & (Super-)cooperation",
     "summary": "Alignment Forum post arguing OpenAI's Hugging Face breach resulted from many agents coordinating across distinct contexts, posing indirect takeover risk.",
-    "system_type": [],
+    "system_type": [
+      "social network"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "agents observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering"
     ],
     "threat_model": [
-      "Collective Superintelligence"
+      "Collective Superintelligence",
+      "Emergent Goals",
+      "Partially Observable Systems",
+      "Systemic Instability"
     ],
     "claim_type": [
       "threat model articulation"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -2239,16 +3002,22 @@
       "pure-AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "aggregates observable",
+      "interactions observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Design",
+      "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Outdated Models"
+    ],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -2266,16 +3035,24 @@
       "pure-AI"
     ],
     "observability": [
-      "aggregates observable"
+      "aggregates observable",
+      "interactions observable",
+      "agents observable"
     ],
     "focus_area": [
-      "Simulation"
+      "Simulation",
+      "Design",
+      "Monitoring"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Outdated Models",
+      "Inequality",
+      "Systemic Instability"
+    ],
     "claim_type": [
       "proposed method/system"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Zhongguancun Academy"
     ]
@@ -2288,23 +3065,37 @@
     "url": "https://arxiv.org/abs/2512.16856",
     "tags": "Collective Intelligence",
     "summary": "Develops the concept of distributional AGI — emergent collective intelligence arising from large populations of agents — and proposes defence-in-depth mechanisms including cryptographic identity, market design, and accountability infrastructure.",
-    "system_type": [],
+    "system_type": [
+      "production economy",
+      "financial system"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "aggregates observable",
+      "interactions observable"
     ],
     "focus_area": [
-      "Redesign"
+      "Redesign",
+      "Design",
+      "Steering",
+      "Monitoring"
     ],
     "threat_model": [
-      "Collective Superintelligence"
+      "Collective Superintelligence",
+      "Emergent Goals",
+      "Systemic Instability",
+      "Partially Observable Systems",
+      "Power Concentration",
+      "Outdated Models"
     ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Google DeepMind"
     ]
@@ -2317,25 +3108,32 @@
     "url": "https://arxiv.org/abs/2604.01151",
     "tags": "Monitoring; Evaluations",
     "summary": "Introduces NARCBench and five activation-based probing techniques for detecting covert multi-agent collusion, achieving 1.00 AUROC in-distribution and strong zero-shot transfer across structurally diverse scenarios.",
-    "system_type": [],
+    "system_type": [
+      "financial system",
+      "production economy"
+    ],
     "participant_mix": [
-      "pure-AI"
+      "pure-AI",
+      "mixed human+AI"
     ],
     "observability": [
       "agents observable",
-      "interactions observable"
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Design",
+      "Simulation"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Partially Observable Systems"
     ],
     "claim_type": [
       "proposed method/system",
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "University of Oxford"
     ]
@@ -2349,7 +3147,8 @@
     "tags": "Threat Models; Labour & Automation; Policy and Governance",
     "summary": "Models automation embedded in a political environment where workers can revolt; decentralised automation raises capital's income share and the likelihood of successful revolt. Shows a complementarity between automation and political repression: capitalist states facing AI-driven inequality may find repression cheaper than redistribution as automation increases.",
     "system_type": [
-      "labour market"
+      "labour market",
+      "production economy"
     ],
     "participant_mix": [
       "mixed human+AI"
@@ -2362,12 +3161,14 @@
     ],
     "threat_model": [
       "Power Concentration",
-      "Inequality"
+      "Inequality",
+      "Gradual Disempowerment",
+      "Systemic Instability"
     ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Massachusetts Institute of Technology"
     ]
@@ -2385,16 +3186,22 @@
       "pure-AI"
     ],
     "observability": [
-      "agents observable"
+      "agents observable",
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Steering"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Systemic Instability"
+    ],
     "claim_type": [
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": []
   },
   {
@@ -2406,24 +3213,29 @@
     "tags": "Datasets",
     "summary": "Presents the Moltbook Observatory Archive, an incremental dataset passively recording agent profiles, posts, comments, community metadata, platform-level snapshots, and word-frequency trends from Moltbook, an AI-agent-only social media platform.",
     "system_type": [
-      "social network"
+      "social network",
+      "financial system"
     ],
     "participant_mix": [
       "pure-AI"
     ],
     "observability": [
       "aggregates observable",
-      "agents observable",
       "interactions observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Design"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Emergent Goals"
+    ],
     "claim_type": [
       "dataset/tool"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Simula Metropolitan Center for Digital Engineering (SimulaMet)",
       "Oslo Metropolitan University"
@@ -2437,19 +3249,38 @@
     "url": "https://arxiv.org/abs/2604.04604",
     "tags": "Policy and Governance",
     "summary": "First systematic regulatory mapping for AI agent providers under EU law (AI Act, GDPR, CRA, DSA, NIS2), proposing a twelve-step compliance architecture and regulatory trigger mapping connecting agent actions to applicable legislation.",
-    "system_type": [],
+    "system_type": [
+      "production economy",
+      "labour market",
+      "financial system",
+      "social network"
+    ],
     "participant_mix": [
-      "mixed human+AI"
+      "mixed human+AI",
+      "pure-AI"
     ],
-    "observability": [],
+    "observability": [
+      "interactions observable",
+      "agents observable",
+      "aggregates observable"
+    ],
     "focus_area": [
-      "Steering"
+      "Steering",
+      "Design",
+      "Redesign"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Systemic Instability",
+      "Emergent Goals",
+      "Inequality",
+      "Gradual Disempowerment"
+    ],
     "claim_type": [
       "policy/regulatory analysis"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Piccadilly Labs",
       "DEXAI - Icaro Lab"
@@ -2463,24 +3294,32 @@
     "url": "https://arxiv.org/abs/2604.15236",
     "tags": "Emergent Harms and Capabilities; Foundations & Taxonomies",
     "summary": "Proposes 'agentic microphysics' as a level of analysis (local interaction dynamics between agents) and 'generative safety' as a methodology for growing emergent risks from micro-level conditions to identify intervention points.",
-    "system_type": [],
+    "system_type": [
+      "social network"
+    ],
     "participant_mix": [
       "pure-AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Simulation",
+      "Steering",
+      "Design"
     ],
     "threat_model": [
-      "Emergent Goals"
+      "Emergent Goals",
+      "Systemic Instability",
+      "Outdated Models"
     ],
     "claim_type": [
       "theoretical/conceptual framework",
       "position/opinion"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "DEXAI - Icaro Lab",
       "Sapienza University of Rome",
@@ -2496,22 +3335,33 @@
     "url": "https://arxiv.org/pdf/2503.13657",
     "tags": "Foundations & Taxonomies",
     "summary": "Builds MAST, the first Multi-Agent System failure taxonomy, from 1600+ annotated traces across 7 MAS frameworks to explain poor MAS performance.",
-    "system_type": [],
+    "system_type": [
+      "production economy"
+    ],
     "participant_mix": [
       "pure-AI"
     ],
     "observability": [
-      "interactions observable"
+      "interactions observable",
+      "agents observable",
+      "aggregates observable"
     ],
     "focus_area": [
-      "Monitoring"
+      "Monitoring",
+      "Redesign",
+      "Steering",
+      "Simulation"
     ],
-    "threat_model": [],
+    "threat_model": [
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Systemic Instability"
+    ],
     "claim_type": [
       "survey/taxonomy",
       "empirical study"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "UC Berkeley"
     ]
@@ -2525,26 +3375,38 @@
     "tags": "Agentic Economies",
     "summary": "Proposes the 'sandbox economy' framework for analysing the emergent AI agent economic layer. Covers auction mechanisms, mission economies, and conditions for safely steerable AI agent markets.",
     "system_type": [
-      "production economy"
+      "production economy",
+      "financial system",
+      "labour market"
     ],
     "participant_mix": [
-      "mixed human+AI"
+      "mixed human+AI",
+      "pure-AI"
     ],
     "observability": [
-      "aggregates observable"
+      "aggregates observable",
+      "interactions observable"
     ],
     "focus_area": [
       "Steering",
-      "Redesign"
+      "Redesign",
+      "Design",
+      "Monitoring"
     ],
     "threat_model": [
       "Systemic Instability",
-      "Inequality"
+      "Inequality",
+      "Power Concentration",
+      "Partially Observable Systems",
+      "Outdated Models",
+      "Gradual Disempowerment",
+      "Emergent Goals",
+      "Collective Superintelligence"
     ],
     "claim_type": [
       "theoretical/conceptual framework"
     ],
-    "tag_confidence": "summary-only",
+    "tag_confidence": "full-text",
     "institutions": [
       "Google DeepMind"
     ]
