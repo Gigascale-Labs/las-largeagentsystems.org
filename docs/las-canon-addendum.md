@@ -56,11 +56,11 @@ named threat from the closed lists; it still has a `claim_type`
 
 That last clause stopped being true on 2026-09-01. `THREAT_MODELS` gained
 `Emergent Goals`, taken from §3.6 of that same paper, so the closed list now
-carries a threat this paper defines. The row's `threat_model` is still empty.
-Retagging it is an Airtable edit, and it is blocked on the same choice-list
-change: see `docs/airtable-spec-for-ai.md`, **What's Left**. Nothing here
-retags a canon row from a file — Airtable is the source of truth, and no path
-pushes file edits back to it.
+carries a threat this paper defines, and the choice exists on both Airtable
+tables as of the same day. The row's `threat_model` is still empty. Tagging it
+is a one-field edit in Airtable and an editorial call, not a mechanical one, so
+it is left to a reviewer. Nothing here retags a canon row from a file —
+Airtable is the source of truth, and no path pushes file edits back to it.
 
 **Closed-set gaps:** none encountered — every paper that needed a
 dimension value found one already on a closed list.
