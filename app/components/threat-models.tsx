@@ -50,6 +50,13 @@ const THREATS = [
     source: "Meng & Chen, 2026",
     url: "https://arxiv.org/abs/2604.03272",
   },
+  {
+    title: "Emergent Goals",
+    excerpt:
+      "For example, a group of moderation bots on a major social networking site could subtly but systematically manipulate the overall political perspectives of the user population, even though, individually, each agent is programmed to simply increase user engagement or filter out dis-preferred content.",
+    source: "Hammond et al., 2025",
+    url: "https://arxiv.org/abs/2502.14143",
+  },
 ];
 
 function scrollToJoin() {

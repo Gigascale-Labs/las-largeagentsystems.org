@@ -42,6 +42,7 @@ export const THREAT_MODELS = [
   "Partially Observable Systems",
   "Power Concentration",
   "Outdated Models",
+  "Emergent Goals",
 ] as const;
 
 export const CLAIM_TYPES = [
