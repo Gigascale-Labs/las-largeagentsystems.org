@@ -130,14 +130,16 @@ definitions with separate choice ids.
   already sets status in code.
 - [ ] Add a Grid view on Pending Queue filtered to `status = pending`, for
   reviewers to work from.
-- [ ] Delete or fix the stray Pending Queue row with `url: "test"` — READ
-  2026-09-01, it is `recVFKW6vxxnro97S`, `{submitted_by: "tester", url: "test"}`,
-  and it is the table's only row. Deletable from here now that the key carries
-  `data.records:write`; left in place because nothing asked for it.
 
 **Code:**
 - [x] `Emergent Goals` added to `THREAT_MODELS` and to both tables' choice
   lists, 2026-09-01. See "How to add a select choice from here" above.
+- [x] The stray Pending Queue row (`recVFKW6vxxnro97S`,
+  `{submitted_by: "tester", url: "test"}`) deleted 2026-09-01. Pending Queue
+  now holds 0 rows.
+- [x] "Multi-Agent Risks from Advanced AI" tagged in Canon, 2026-09-01:
+  `threat_model = Emergent Goals`, `participant_mix = pure-AI`. It was the
+  addendum's one flagged row; there are none now.
 - [x] `CLAIM_TYPES` in `lib/canon-schema.ts` now includes `"live deployment"`
   (9 values), matching the addendum's confirmed-authoritative scheme.
 - [x] `"Design"` added to `focus_area` choices in both Airtable tables; a
