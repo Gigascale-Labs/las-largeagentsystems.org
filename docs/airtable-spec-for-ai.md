@@ -189,26 +189,23 @@ fallback if the Airtable pipeline breaks.
 ## Observability: three fields on one scale, 2026-09-02
 
 The single `observability` field is replaced by three, one per viewer. Its old
-three values were tagged together, so a row could claim to see agent internals
-and only population aggregates at once, and the column never said *who* could
-see.
+three values were tagged together — of the 90 rows, 13 carried one, 23 carried
+two, and 54 carried all three — so the column separated almost nothing, and it
+never said *who* could see.
 
-**A person must create these three fields.** The API token carries no schema
-scope: `GET /v0/meta/bases` and
-`POST /v0/meta/bases/{base}/tables/{table}/fields` both return 403, and a write
-to a field that does not exist returns 422 `UNKNOWN_FIELD_NAME`. Grant
-`schema.bases:write` to automate it next time.
+Created 2026-09-02 on **Canon** and **Pending Queue**, all `multipleSelects`:
 
-Create on the **Canon** table and the **Pending Queue** table:
+| Table | Field | Field id |
+|---|---|---|
+| Canon | `participant_observability` | `fldA2yMWJ9gxve5nW` |
+| Canon | `operator_observability` | `fldRvf4RjChlsYHOT` |
+| Canon | `public_observability` | `fldymthsduv2nGDak` |
+| Pending Queue | `participant_observability` | `fldH4t8mNnzrupHI6` |
+| Pending Queue | `operator_observability` | `fldE23UY5O2ly8HE2` |
+| Pending Queue | `public_observability` | `fld55YNi1aRy2K5OE` |
 
-| Field name | Type |
-|---|---|
-| `participant_observability` | Multiple select |
-| `operator_observability` | Multiple select |
-| `public_observability` | Multiple select |
-
-Each takes the same five choices, in this order, copied exactly — the hyphens
-are plain hyphens, not dashes:
+Each carries the same five choices, in this order. The hyphens are plain
+hyphens, not dashes:
 
 1. `fully observable - reasoning, agents, and interactions`
 2. `partially observable - agents and interactions only`
@@ -216,27 +213,64 @@ are plain hyphens, not dashes:
 4. `partially observable - aggregates only`
 5. `unobservable - neither reasoning, agents, interactions, nor aggregates`
 
-They are Multiple select for consistency with the other dimension fields and
+They are `multipleSelects` for consistency with the other dimension fields and
 because `lib/canon-dimensions.ts` reads every dimension as a list. **One value
-per row**, though: two steps of one scale on one viewer is a contradiction, not
-a pair of facts. `tests/canon-dimensions.test.mts` asserts it against the data.
+per row**, though: two steps of one scale for one viewer is a contradiction,
+not a pair of facts. `tests/canon-dimensions.test.mts` asserts it against the
+data, because Airtable will happily accept a second value.
 
-What does NOT need a person:
+### What the API will and will not do
 
-| Change | How it lands |
+MEASURED 2026-09-02 with `schema.bases:read` and `schema.bases:write` present:
+
+| Attempt | Result |
 |---|---|
-| `hybrid - human, AI, other` on `participant_mix` | `typecast: true` on the record write adds the choice |
-| `general purpose` on `system_type` | already added 2026-09-01 |
+| `GET /v0/meta/bases/{base}/tables` | 200 |
+| `POST /v0/meta/bases/{base}/tables/{table}/fields` with choices | 200, n=6 |
+| `PATCH /v0/meta/bases/{base}/tables/{table}/fields/{field}` with `options` | 422, n=5 |
 
-The old `observability` field is left in place, untouched, holding the previous
-coding. Nothing reads it: `scripts/sync-airtable.mjs` no longer copies it and
-`lib/canon-data.ts` no longer lists it. Keeping it costs nothing and makes the
-recoding reversible. Delete it once the new columns have been reviewed.
+Every PATCH shape was refused with the same message: *"Changing a field's type
+or number precision is not currently supported."* Tried with `options` alone,
+with `type` restated alongside it, and with unchanged choices sent as bare ids.
+The scope is present and field creation works, so this is an Airtable API
+limit, not a permission problem.
 
-`mixed human+AI` is likewise left on the `participant_mix` choice list with no
-row using it. Remove both by hand when you are satisfied.
+INFERRED: **a select field's choices are fixed once the field exists.** To add
+or rename one, either write a record with `typecast: true`, which appends a
+choice, or create a replacement field and migrate. Renaming in place is not
+available from the API at all.
 
-Run `scripts/apply-canon-retag.mjs` once the fields exist. Without `--go` it
-checks that all three are present, confirms every value is on its closed list,
-and writes nothing; with `--go` it patches all 90 rows in batches of 10 and
+### Consequences of that limit
+
+| Change | How it landed |
+|---|---|
+| `hybrid - human, AI, other` on `participant_mix` | appended by `typecast: true` on the record write |
+| `general purpose` on Canon `system_type` | appended the same way, 2026-09-01 |
+| the three observability fields | created outright, with their choices, 2026-09-02 |
+
+Two leftovers, both harmless and both needing one click in the Airtable UI:
+
+- `mixed human+AI` is still on both tables' `participant_mix` choice lists with
+  **0 rows using it**. Canon now reads 59 `pure-AI` and 55
+  `hybrid - human, AI, other`.
+- The old `observability` field is still on both tables, holding the previous
+  coding. Nothing reads it: `scripts/sync-airtable.mjs` no longer copies it and
+  `lib/canon-data.ts` no longer lists it. Keeping it makes the recoding
+  reversible.
+
+Delete both once the new columns have been reviewed.
+
+**Known drift:** Pending Queue's `system_type` has four choices; Canon's has
+five. `general purpose` is missing there, and the PATCH limit above means it
+cannot be added except by a record write that uses it or by hand. The Pending
+Queue holds 1 row and nothing depends on the value yet.
+
+### Re-running it
+
+`scripts/apply-canon-retag.mjs` derives its payload from
+`docs/canon-tag-evidence.json`, which holds one object per row with the quote
+behind every value. Without `--go` it checks the three fields exist and writes
+nothing. With `--go` it patches all 90 rows in batches of 10 with `typecast`,
 then reads every record back and compares field by field.
+
+Ran 2026-09-02: 90 patched, 90 verified, 0 mismatches.

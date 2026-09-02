@@ -2,20 +2,33 @@
 /**
  * Writes the 2026-09-02 retagging into Airtable, then verifies it.
  *
- * It cannot create the fields it writes to: the API token carries no schema
- * scope, so `POST /v0/meta/bases/{base}/tables/{table}/fields` and even
- * `GET /v0/meta/bases` return 403. The three observability columns must exist
- * before this runs. `docs/airtable-spec-for-ai.md` lists them.
+ * Ran once, on 2026-09-02: 90 records patched, 90 read back, 0 mismatches. It
+ * is kept because it is re-runnable, and re-running it restores the canon's
+ * seven dimension columns to the state the full-text pass put them in.
  *
- * The `hybrid - human, AI, other` choice does NOT need creating by hand: this
- * writes with `typecast: true`, which adds a missing option to an existing
- * select field. Only whole fields need a person.
+ * The payload is derived from `docs/canon-tag-evidence.json`, which holds one
+ * object per row with the quote behind every value. That file is the record,
+ * so the script reads it rather than a second copy that could drift from it.
+ *
+ * Two things it cannot do, both measured:
+ *
+ * | Attempt | Result |
+ * |---|---|
+ * | create a field (`POST .../tables/{id}/fields`) | 200, with `schema.bases:write` |
+ * | change an existing field's choices (`PATCH .../fields/{id}`) | 422 every time, n=5 |
+ *
+ * The PATCH refusal is an Airtable limit, not a permission: it returns
+ * "Changing a field's type or number precision is not currently supported"
+ * with the scope present, with and without `type` restated, and with unchanged
+ * choices sent as bare ids. So a renamed choice cannot be renamed in place.
+ * `typecast: true` on the record write adds the new name instead, and the old
+ * one is left on the list with no row using it.
  *
  * Usage:
  *   AIRTABLE_API_KEY=... AIRTABLE_BASE_ID=... node scripts/apply-canon-retag.mjs [--go]
  *
- * Without `--go` it checks the fields exist, checks every value against the
- * closed sets, and writes nothing.
+ * Without `--go` it checks the three observability fields exist and writes
+ * nothing.
  */
 
 import { readFileSync } from "node:fs";
@@ -23,25 +36,38 @@ import { readFileSync } from "node:fs";
 const KEY = process.env.AIRTABLE_API_KEY;
 const BASE = process.env.AIRTABLE_BASE_ID;
 const TABLE = process.env.AIRTABLE_CANON_TABLE_ID || "Canon";
-const PAYLOAD = process.env.CANON_RETAG_PAYLOAD;
+const EVIDENCE =
+  process.env.CANON_TAG_EVIDENCE ?? "docs/canon-tag-evidence.json";
 const GO = process.argv.includes("--go");
 
 if (!KEY || !BASE) {
   console.error("Missing AIRTABLE_API_KEY or AIRTABLE_BASE_ID. See .env.example.");
   process.exit(1);
 }
-if (!PAYLOAD) {
-  console.error("Missing CANON_RETAG_PAYLOAD: path to the pending-write JSON.");
-  process.exit(1);
-}
-
 const NEW_FIELDS = [
   "participant_observability",
   "operator_observability",
   "public_observability",
 ];
 
-const rows = JSON.parse(readFileSync(PAYLOAD, "utf8"));
+/** The seven dimension columns this writes. `claim_type` is not retagged. */
+const DIMENSIONS = [
+  "system_type",
+  "participant_mix",
+  "focus_area",
+  "threat_model",
+  ...NEW_FIELDS,
+];
+
+const rows = JSON.parse(readFileSync(EVIDENCE, "utf8")).map((entry) => {
+  const fields = {
+    tag_confidence: entry.read?.how === "full-text" ? "full-text" : "summary-only",
+  };
+  for (const dimension of DIMENSIONS) {
+    fields[dimension] = (entry[dimension] ?? []).map((v) => v.value);
+  }
+  return { id: entry.id, title: entry.title, fields };
+});
 
 async function api(path, init = {}) {
   const res = await fetch(`https://api.airtable.com/v0/${path}`, {

@@ -318,8 +318,15 @@ column could not have shown any of that.
 ## `participant_mix` renamed
 
 `mixed human+AI` is now `hybrid - human, AI, other`. Same meaning, and the new
-name covers the case the old one did not name: a system mixing agents with
-non-AI components rather than only with humans. `pure-AI` is unchanged.
+name covers the case the old one did not: a system mixing agents with non-AI
+components rather than only with humans. `pure-AI` is unchanged. Canon reads 59
+`pure-AI` and 55 `hybrid - human, AI, other` after the pass.
+
+The rename is an append, not a rename, because Airtable's API will not modify
+an existing select field's choices — 422 on every shape tried, n=5, with the
+schema scope present. `docs/airtable-spec-for-ai.md` has the measurements.
+`mixed human+AI` therefore survives on the choice list with 0 rows using it,
+until someone removes it in the UI.
 
 ## Task B: Cross-Cutting Open Problems Synthesis
 
