@@ -74,7 +74,12 @@ export default function SourcesPage() {
             </div>
           )}
 
-          <div className="mt-24 border-t-2 border-accent pt-10">
+          {/* Anchored so /about can link straight to the form. scroll-mt clears
+              the sticky header, same as the home page's section anchors. */}
+          <div
+            id="contribute"
+            className="mt-24 scroll-mt-20 border-t-2 border-accent pt-10"
+          >
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
               Contribute
             </p>
