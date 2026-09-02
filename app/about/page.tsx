@@ -12,7 +12,7 @@ import {
 } from "@/lib/papers-data";
 import { getOrgTypeTimeline, ORG_MAP_SOURCE_URL } from "@/lib/org-map";
 import { FEEDBACK_FORM_URL, SLACK_FORM_URL } from "@/lib/sections";
-import { DIMENSION_LABELS, DIMENSION_KEYS } from "@/lib/canon-dimensions";
+import { DIMENSION_KEYS, DIMENSION_PROSE_LABELS } from "@/lib/canon-dimensions";
 import { TABLE_HEAD_ROW, TABLE_ROW, TABLE_WRAP } from "@/lib/table-styles";
 
 export const metadata: Metadata = {
@@ -165,24 +165,30 @@ export default async function AboutPage() {
 
           <Section eyebrow="Method" title="How the survey is tagged.">
             <p>
-              Every source in the survey carries values on six dimensions, so
-              the corpus can be crossed one against another and the gaps read
-              off the table:{" "}
+              Every source in the survey carries values on {DIMENSION_KEYS.length}{" "}
+              dimensions, so the corpus can be crossed one against another and
+              the gaps read off the table:{" "}
               {DIMENSION_KEYS.map((key, i) => (
                 <span key={key}>
                   {i > 0 && (i === DIMENSION_KEYS.length - 1 ? ", and " : ", ")}
-                  {DIMENSION_LABELS[key].toLowerCase()}
+                  {DIMENSION_PROSE_LABELS[key]}
                 </span>
               ))}
               .
             </p>
             <p>
               Each dimension draws from a closed list. A paper takes a value
-              only where a passage in it supports that value, and a dimension
-              stays empty when nothing on its list fits. Empty is a finding, not
-              an omission: it says the paper is not a source for that question.
-              The table has a <em>Not tagged</em> row and column so a paper
-              carrying nothing on a dimension still appears.
+              only where a passage in it supports that value, and where that
+              value is a main setting of the paper or appears at heading level.
+              A dimension stays empty when nothing on its list fits. Empty is a
+              finding, not an omission: it says the paper is not a source for
+              that question. The table has a <em>Not tagged</em> row and column
+              so a paper carrying nothing on a dimension still appears.</p>
+            <p>
+              The three observability columns record one scale three times, once
+              for what a participant can see, once for the operator, and once
+              for the public. They are the same question asked from three
+              vantage points, and the answers differ.
             </p>
             <p>
               Tagging is a judgement, and judgements are wrong sometimes. If a
