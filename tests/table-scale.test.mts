@@ -68,17 +68,20 @@ describe("shadeFor", () => {
     assert.equal(shadeFor(0, scaleBands(90)), "");
   });
 
-  it("puts the largest cell on the darkest step, at every maximum", () => {
+  it("puts the smallest count on the darkest step, at every maximum", () => {
+    // Inverted on purpose: the reader is hunting thin cells, not fat ones.
     for (let max = 1; max <= 200; max++) {
       const classes = classesOver(max);
-      assert.equal(classes[max - 1], "bg-accent/60", `max ${max}`);
+      assert.equal(classes[0], "bg-accent/60", `max ${max}`);
     }
   });
 
-  it("puts a count of 1 on the lightest step, at every maximum", () => {
-    for (let max = 1; max <= 200; max++) {
+  it("puts the largest cell on the lightest step, once there is more than one step", () => {
+    for (let max = 2; max <= 200; max++) {
+      const classes = classesOver(max);
       const bands = scaleBands(max);
-      assert.equal(shadeFor(1, bands), bands[0].className, `max ${max}`);
+      assert.equal(classes[max - 1], bands[bands.length - 1].className, `max ${max}`);
+      assert.notEqual(classes[max - 1], "bg-accent/60", `max ${max}`);
     }
   });
 
@@ -91,7 +94,9 @@ describe("shadeFor", () => {
     }
   });
 
-  it("never darkens as the count falls", () => {
+  it("never darkens as the count rises", () => {
+    // Band order is still low-to-high by count; the classes attached to those
+    // bands run dark-to-light. Walking counts upward must walk bands forward.
     for (const max of [1, 3, 4, 9, 23, 90]) {
       const bands = scaleBands(max);
       let seen = 0;
@@ -101,6 +106,13 @@ describe("shadeFor", () => {
         seen = i;
       }
     }
+  });
+
+  it("hands out the ramp darkest-first", () => {
+    assert.deepEqual(
+      scaleBands(90).map((b) => b.className),
+      ["bg-accent/60", "bg-accent/45", "bg-accent/30", "bg-accent/15"],
+    );
   });
 
   it("agrees with the band ranges the key prints", () => {
@@ -115,8 +127,10 @@ describe("shadeFor", () => {
   });
 
   it("clamps a count above the maximum rather than reading past the ramp", () => {
+    // Above the top band it falls to the last band, which is now the lightest.
     const bands = scaleBands(10);
-    assert.equal(shadeFor(99, bands), "bg-accent/60");
+    assert.equal(shadeFor(99, bands), bands[bands.length - 1].className);
+    assert.equal(shadeFor(99, bands), "bg-accent/15");
   });
 });
 

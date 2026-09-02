@@ -8,13 +8,26 @@
  * cleared 4 papers, and every shaded cell rendered at the top step. A scale
  * whose every cell is the same colour carries no information.
  *
- * Rebasing on the view's own maximum means the darkest cell is always the
- * largest one there, whichever pair of dimensions is selected and whichever
- * corpus the component was handed. The cost is that a shade means a different
- * count in each view, so the key prints the count range of every step and the
- * heading prints the maximum it is scaled to.
+ * Rebasing on the view's own range means the scale always spans it, whichever
+ * pair of dimensions is selected and whichever corpus the component was
+ * handed. The cost is that a shade means a different count in each view, so
+ * the key prints the count range of every step and the heading prints the
+ * maximum it is scaled to.
  *
- * One hue, light to dark: this is a magnitude scale, not a set of categories.
+ * **The ramp is inverted: the fewest papers get the darkest cell.** A reader
+ * of this table is looking for the thin cells, not the fat ones. The corpus is
+ * lumpy — on Focus Area x Observability the largest cell holds 78 of 90 rows —
+ * so a conventional ramp paints the four or five well-covered pairs dark and
+ * leaves everything a reader wants to find as the faintest wash on the page.
+ * Inverting it makes a rare pair the thing the eye lands on.
+ *
+ * A cell holding 0 papers stays unshaded, so "nothing here" and "one paper
+ * here" do not collide. That is the one discontinuity in the ramp, and it is
+ * deliberate: an empty cell is also disabled and renders an en dash rather
+ * than a number, so it is marked twice over.
+ *
+ * One hue, dark to light: this is still a magnitude scale, not a set of
+ * categories. Only the direction changed.
  */
 // The class strings stay literal here. Tailwind scans source for them, so a
 // class built by interpolating an opacity would never reach the stylesheet.
@@ -44,7 +57,10 @@ export function scaleBands(max: number): Band[] {
   if (max < 1) return [];
   const steps = Math.min(4, max);
   const edge = (i: number) => Math.ceil((max * i) / steps);
-  return RAMPS[steps].map((className, i) => ({
+  // Reversed: band 0 covers the lowest counts and takes the darkest class.
+  // See the note above on why a rare pair is what the reader is hunting for.
+  const ramp = [...RAMPS[steps]].reverse();
+  return ramp.map((className, i) => ({
     className,
     lower: edge(i) + 1,
     upper: edge(i + 1),

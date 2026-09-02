@@ -242,7 +242,7 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
       */}
       <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[10px] uppercase tracking-widest text-muted">
         <span>
-          Papers per pair, scaled to this view (max {max})
+          Papers per pair, scaled to this view (max {max}). Fewer is darker.
         </span>
         <span className="flex items-center gap-1.5">
           <span
