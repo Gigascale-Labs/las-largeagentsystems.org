@@ -208,45 +208,118 @@ it does not deserve.
 
 ## How broadly to tag
 
-**Tag every dimension a paper supports, and leave one empty only when no value
-on its closed list fits.** This reverses the narrow rule this section carried
-until 2026-09-01, on the spec owner's instruction, given twice: first for
-"Multi-Agent Risks from Advanced AI" ("I think multi-agent risk needs to show
-up in all the categories it mentions"), then for the corpus ("please tag
-everything with every box unless there's really no appropriate label — way too
-many are missing tags").
+**A value applies only if its topic is a main setting of the paper, or appears
+at heading level.** At least one must hold:
 
-The narrow rule's argument was that `/survey` renders `focus_area ×
-threat_model` as a cross-tab, so a row tagged with everything appears in every
-cell. MEASURED across the five non-`claim_type` dimensions, dimensions carried
-per row, immediately before and after the full-text pass:
+- the topic names a section or subsection heading, the abstract, or the title
+- the topic is where the paper's experiments, model, or data live
+- the topic is what the paper's central argument is about
 
-| Dimensions carried | Rows before | Rows after |
+These do not clear it: a topic in a motivation list, in a related-work sentence
+about someone else's paper, in a future-work or limitations line, or a term that
+recurs but is never the thing under study.
+
+**Exception: surveys.** A row whose `claim_type` is `survey/taxonomy` may be
+tagged with what it surveys, tested against its own section headings.
+
+### The rule has now moved twice, and this is the third position
+
+| Date | Rule | Set by |
 |---|---|---|
-| 0 | 0 | 0 |
-| 1 | 0 | 0 |
-| 2 | 11 | 1 |
-| 3 | 29 | 1 |
-| 4 | 39 | 17 |
-| 5 | 11 | 71 |
+| before 2026-09-01 | tag what a paper is the source for, not what it mentions | the original pass |
+| 2026-09-01 | tag every dimension a paper supports; leave one empty only when no value fits | spec owner, twice |
+| 2026-09-02 | main setting or heading level, surveys excepted | spec owner, with a worked example |
 
-Median 4 before, 5 after. The "before" column is the state after the
-summary-only fill earlier the same day, not the original tagging: that carried
-a median of 2, with 3 rows at 0 and 1 row at 5.
+The 2026-09-01 broad pass produced rows carrying everything. The spec owner's
+example: "On the Limits of Agency in Agent-Based Models" tagged `labour market`.
 
-A value still needs a passage behind it. Breadth is not permission to tag from
-a title, a term count, or what a paper of that kind usually contains.
+MEASURED after the 2026-09-02 reread, values on the four dimensions that
+existed under both rules:
 
-Each axis of the cross-table ends in a derived `Not tagged` value, so a paper
-carrying nothing on a dimension lands in that row or column rather than falling
-off the table. See `lib/canon-dimensions.ts`. Before that existed, 80 of the 90
-rows were absent from the default view.
+| Dimension | Broad pass | Threshold pass |
+|---|---|---|
+| `system_type` | 134 | 90 |
+| `participant_mix` | 140 | 114 |
+| `focus_area` | 269 | 172 |
+| `threat_model` | 344 | 229 |
+| total | 887 | 605 |
 
-Nothing in this repo retags a canon row from a file. Airtable is the source of
-truth, and no path pushes file edits back to it.
+488 values were considered and recorded as below threshold, each with the
+passage that failed the test. They are in `docs/canon-tag-evidence.json` under
+`below_threshold`, so a dropped value can be argued back rather than
+rediscovered.
 
-**Closed-set gaps:** `system_type` has one, above. Every other dimension found
-a value on its closed list for every paper that needed one.
+### The worked example kept its label
+
+OBSERVED: the reread kept `labour market` on "On the Limits of Agency in
+Agent-Based Models", against the spec owner's instinct. The paper simulates
+8.4 million agents in New York City, and §4 couples disease spread to a labour
+model: "We simulate dynamics of disease spread and labor market in New York
+City from December 2020 to April 2021". Unemployment is one of the two error
+metrics in Table 1. That is a main setting, not a mention.
+
+Seven other values on that row did not survive: `Monitoring`, `Steering`,
+`hybrid - human, AI, other`, `social network`, `general purpose`, `Inequality`,
+`Collective Superintelligence`. The row went from 11 values to 8, of which 3 are
+observability levels that did not exist before.
+
+INFERRED: the row read as over-tagged because it was, on seven counts. The one
+value that drew the complaint is the one with a section behind it. NOT CHECKED
+with the spec owner, who may still want it gone; `below_threshold` records the
+reasoning either way.
+
+## Observability: one scale, three viewers
+
+`observability` held `aggregates observable`, `interactions observable` and
+`agents observable`, tagged together. Two faults. The three were treated as
+independent tags, so a row could assert that agent internals were visible and
+that only population aggregates were. MEASURED over the 90 rows before the
+recoding: 13 carried one value, 23 carried two, and 54 carried all three. A
+column where 60 percent of rows hold every value separates nothing. And it
+never said who could see.
+
+It is now one ordinal scale, recorded once per viewer, one value each.
+
+| Step | reasoning | agents | interactions | aggregates |
+|---|---|---|---|---|
+| `fully observable - reasoning, agents, and interactions` | yes | yes | yes | yes |
+| `partially observable - agents and interactions only` | no | yes | yes | yes |
+| `partially observable - interactions only` | no | no | yes | yes |
+| `partially observable - aggregates only` | no | no | no | yes |
+| `unobservable - neither reasoning, agents, interactions, nor aggregates` | no | no | no | no |
+
+| Column | Who | The question |
+|---|---|---|
+| `participant_observability` | one participant inside the system | What can one agent see of the others? |
+| `operator_observability` | whoever runs or deploys it | What can the operator or experimenter see? |
+| `public_observability` | anyone outside | What can an outsider, auditor or regulator see? |
+
+MEASURED over the 90 rows:
+
+| Level | participant | operator | public |
+|---|---|---|---|
+| fully observable | 1 | 42 | 4 |
+| agents and interactions only | 25 | 36 | 15 |
+| interactions only | 35 | 3 | 12 |
+| aggregates only | 13 | 2 | 17 |
+| unobservable | 5 | 0 | 2 |
+| empty | 11 | 7 | 40 |
+
+OBSERVED: the three columns separate cleanly. The operator sees most — 42 rows
+fully observable, mostly papers whose authors ran the experiment and logged
+every message and chain of thought. Participants see less, concentrated on
+`interactions only`. The public sees least: 40 rows establish nothing about an
+outside view, and of those that do, `aggregates only` is the mode. A single
+column could not have shown any of that.
+
+`unobservable` is a positive claim that a viewer sees nothing, not a synonym for
+"the paper does not say". Empty is the second one.
+
+## `participant_mix` renamed
+
+`mixed human+AI` is now `hybrid - human, AI, other`. Same meaning, and the new
+name covers the case the old one did not name: a system mixing agents with
+non-AI components rather than only with humans. `pure-AI` is unchanged.
 
 ## Task B: Cross-Cutting Open Problems Synthesis
 

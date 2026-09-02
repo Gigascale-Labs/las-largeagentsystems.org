@@ -8,6 +8,7 @@ import {
   DIMENSION_LABELS,
   inCell,
   UNTAGGED,
+  valueLabel,
   type DimensionKey,
 } from "@/lib/canon-dimensions";
 import { TABLE_HEAD_ROW, TABLE_ROW, TABLE_WRAP } from "@/lib/table-styles";
@@ -175,11 +176,15 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
                 <th
                   key={col}
                   scope="col"
+                  // The stored value is the whole definition, which is too long
+                  // for a header. The short form is shown; the full one is the
+                  // tooltip, so nothing is lost.
+                  title={col}
                   className={`border border-rule p-2 text-left align-bottom font-mono text-[10px] font-normal uppercase tracking-wide text-muted ${
                     col === UNTAGGED ? "italic" : ""
                   }`}
                 >
-                  <span className="block max-w-28">{col}</span>
+                  <span className="block max-w-28">{valueLabel(col)}</span>
                 </th>
               ))}
             </tr>
@@ -189,11 +194,12 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
               <tr key={row}>
                 <th
                   scope="row"
+                  title={row}
                   className={`border border-rule p-2 text-left font-mono text-[10px] font-normal uppercase tracking-wide text-muted ${
                     row === UNTAGGED ? "italic" : ""
                   }`}
                 >
-                  <span className="block max-w-40">{row}</span>
+                  <span className="block max-w-40">{valueLabel(row)}</span>
                 </th>
                 {colValues.map((col, colIndex) => {
                   const n = counts[rowIndex][colIndex];
@@ -207,7 +213,7 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
                       <button
                         onClick={() => toggleCell(row, col)}
                         disabled={n === 0}
-                        aria-label={`${row} × ${col}: ${n} paper${n === 1 ? "" : "s"}`}
+                        aria-label={`${valueLabel(row)} × ${valueLabel(col)}: ${n} paper${n === 1 ? "" : "s"}`}
                         className={`h-10 w-10 text-sm tabular-nums transition-colors ${
                           isActive
                             ? "font-semibold ring-2 ring-inset ring-accent"
@@ -260,7 +266,7 @@ export function CanonExplorer({ entries }: { entries: CanonEntry[] }) {
       <div className="mt-12">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
           {activeCell
-            ? `${filtered.length} paper${filtered.length === 1 ? "" : "s"} - ${activeCell.row} × ${activeCell.col}`
+            ? `${filtered.length} paper${filtered.length === 1 ? "" : "s"} - ${valueLabel(activeCell.row)} × ${valueLabel(activeCell.col)}`
             : `All ${filtered.length} papers`}
         </p>
         <div className={`mt-4 ${TABLE_WRAP}`}>

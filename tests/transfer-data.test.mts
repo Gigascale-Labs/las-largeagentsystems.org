@@ -11,7 +11,7 @@ import { getTransferEntries } from "../lib/canon-data.ts";
 import {
   CLAIM_TYPES,
   FOCUS_AREAS,
-  OBSERVABILITY_LEVELS,
+  OBSERVABILITY_SCALE,
   SYSTEM_TYPES,
   THREAT_MODELS,
 } from "../lib/canon-schema.ts";
@@ -55,7 +55,9 @@ describe("getTransferEntries", () => {
   it("uses only closed-set values in the dimension columns", () => {
     const closed = {
       system_type: SYSTEM_TYPES,
-      observability: OBSERVABILITY_LEVELS,
+      participant_observability: OBSERVABILITY_SCALE,
+      operator_observability: OBSERVABILITY_SCALE,
+      public_observability: OBSERVABILITY_SCALE,
       focus_area: FOCUS_AREAS,
       threat_model: THREAT_MODELS,
       claim_type: CLAIM_TYPES,

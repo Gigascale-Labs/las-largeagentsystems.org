@@ -14,7 +14,9 @@ const TRANSFER_CSV_PATH = join(process.cwd(), "data", "las-transfer.csv");
 const MULTI_VALUE_COLUMNS = [
   "system_type",
   "participant_mix",
-  "observability",
+  "participant_observability",
+  "operator_observability",
+  "public_observability",
   "focus_area",
   "threat_model",
   "claim_type",

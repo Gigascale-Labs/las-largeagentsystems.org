@@ -21,11 +21,19 @@ import {
   DIMENSION_KEYS,
   inCell,
   papersInCell,
+  isSingleValue,
   UNTAGGED,
+  valueLabel,
   valuesFor,
   type DimensionKey,
 } from "../lib/canon-dimensions.ts";
-import { SYSTEM_TYPES, THREAT_MODELS, type CanonEntry } from "../lib/canon-schema.ts";
+import {
+  OBSERVABILITY_SCALE,
+  OBSERVABILITY_VIEWERS,
+  SYSTEM_TYPES,
+  THREAT_MODELS,
+  type CanonEntry,
+} from "../lib/canon-schema.ts";
 
 function entry(overrides: Partial<CanonEntry> = {}): CanonEntry {
   return {
@@ -188,6 +196,66 @@ describe("the general purpose system type", () => {
     assert.equal(SYSTEM_TYPES[SYSTEM_TYPES.length - 1], "general purpose");
     const axis = axisValues("system_type");
     assert.deepEqual(axis.slice(-2), ["general purpose", UNTAGGED]);
+  });
+});
+
+describe("the observability scale", () => {
+  // One ordinal scale per viewer. Two steps on one viewer is a contradiction,
+  // not a pair of facts — which is exactly what the column this replaced did:
+  // before the 2026-09-02 recoding, 54 of 90 rows carried all three of its
+  // values at once. Airtable is the only place these are edited and its
+  // multiple-select fields would happily take a second value, so this is the
+  // only thing standing between the data and that failure returning.
+  const VIEWERS = [
+    "participant_observability",
+    "operator_observability",
+    "public_observability",
+  ] as const;
+
+  it("holds at most one value per viewer, in the real canon", () => {
+    const path = join(process.cwd(), "data", "las-canon.airtable.json");
+    if (!existsSync(path)) return;
+    const entries = JSON.parse(readFileSync(path, "utf8")) as CanonEntry[];
+    for (const paper of entries) {
+      for (const viewer of VIEWERS) {
+        const values = paper[viewer] ?? [];
+        assert.ok(
+          values.length <= 1,
+          `"${paper.title}" has ${values.length} values on ${viewer}: ${JSON.stringify(values)}`,
+        );
+      }
+    }
+  });
+
+  it("gives every viewer the same five steps, in the same order", () => {
+    for (const viewer of VIEWERS) {
+      assert.deepEqual(CLOSED_SET_VALUES[viewer], OBSERVABILITY_SCALE);
+    }
+  });
+
+  it("names every viewer in OBSERVABILITY_VIEWERS", () => {
+    assert.deepEqual([...OBSERVABILITY_VIEWERS], [...VIEWERS]);
+    for (const viewer of VIEWERS) assert.ok(isSingleValue(viewer));
+  });
+
+  it("marks no other dimension single-value", () => {
+    for (const key of DIMENSION_KEYS) {
+      assert.equal(
+        isSingleValue(key),
+        (VIEWERS as readonly string[]).includes(key),
+        key,
+      );
+    }
+  });
+
+  it("shortens every scale step for display, and shortens nothing else", () => {
+    // A header showing the whole sentence would be taller than the table.
+    for (const step of OBSERVABILITY_SCALE) {
+      assert.notEqual(valueLabel(step), step, step);
+      assert.ok(valueLabel(step).length < 25, step);
+    }
+    assert.equal(valueLabel("Monitoring"), "Monitoring");
+    assert.equal(valueLabel(UNTAGGED), UNTAGGED);
   });
 });
 
