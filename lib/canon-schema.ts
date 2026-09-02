@@ -28,12 +28,53 @@ export const SYSTEM_TYPES = [
   "general purpose",
 ] as const;
 
-export const PARTICIPANT_MIXES = ["pure-AI", "mixed human+AI"] as const;
+export const PARTICIPANT_MIXES = [
+  "pure-AI",
+  "hybrid - human, AI, other",
+] as const;
 
-export const OBSERVABILITY_LEVELS = [
-  "aggregates observable",
-  "interactions observable",
-  "agents observable",
+/**
+ * How much of a system is visible, as one ordered scale.
+ *
+ * It replaces the three-value set `aggregates observable`,
+ * `interactions observable`, `agents observable`, which was not a scale: the
+ * three were tagged together, so a row could claim to see agent internals and
+ * only population aggregates at once, and the column said nothing about *who*
+ * could see.
+ *
+ * The scale is ordinal, most visible first. Four things can be visible, and
+ * each step drops one:
+ *
+ * | Step | reasoning | agents | interactions | aggregates |
+ * |---|---|---|---|---|
+ * | fully observable | yes | yes | yes | yes |
+ * | agents and interactions only | no | yes | yes | yes |
+ * | interactions only | no | no | yes | yes |
+ * | aggregates only | no | no | no | yes |
+ * | unobservable | no | no | no | no |
+ *
+ * One value per column. Two steps on one column would be a contradiction, not
+ * a pair of facts; `tests/canon-dimensions.test.mts` asserts it against the
+ * data.
+ */
+export const OBSERVABILITY_SCALE = [
+  "fully observable - reasoning, agents, and interactions",
+  "partially observable - agents and interactions only",
+  "partially observable - interactions only",
+  "partially observable - aggregates only",
+  "unobservable - neither reasoning, agents, interactions, nor aggregates",
+] as const;
+
+/**
+ * The three parties the scale is recorded for. Same scale, different vantage
+ * point: a system where agents read each other's messages, the operator logs
+ * everything, and the public sees a monthly total scores differently in each
+ * column, and the difference is the point.
+ */
+export const OBSERVABILITY_VIEWERS = [
+  "participant_observability",
+  "operator_observability",
+  "public_observability",
 ] as const;
 
 export const FOCUS_AREAS = [
@@ -69,7 +110,8 @@ export const CLAIM_TYPES = [
 
 export type SystemType = (typeof SYSTEM_TYPES)[number];
 export type ParticipantMix = (typeof PARTICIPANT_MIXES)[number];
-export type ObservabilityLevel = (typeof OBSERVABILITY_LEVELS)[number];
+export type ObservabilityLevel = (typeof OBSERVABILITY_SCALE)[number];
+export type ObservabilityViewer = (typeof OBSERVABILITY_VIEWERS)[number];
 export type FocusArea = (typeof FOCUS_AREAS)[number];
 export type ThreatModel = (typeof THREAT_MODELS)[number];
 export type ClaimType = (typeof CLAIM_TYPES)[number];
@@ -80,7 +122,12 @@ export type MultiValue<T extends string> = T[];
 export interface CanonDimensions {
   system_type?: MultiValue<SystemType>;
   participant_mix?: MultiValue<ParticipantMix>;
-  observability?: MultiValue<ObservabilityLevel>;
+  /** What one participant can observe of the others. One value. */
+  participant_observability?: MultiValue<ObservabilityLevel>;
+  /** What whoever runs the system can observe. One value. */
+  operator_observability?: MultiValue<ObservabilityLevel>;
+  /** What someone outside the system can observe. One value. */
+  public_observability?: MultiValue<ObservabilityLevel>;
   focus_area?: MultiValue<FocusArea>;
   threat_model?: MultiValue<ThreatModel>;
   claim_type?: MultiValue<ClaimType>;

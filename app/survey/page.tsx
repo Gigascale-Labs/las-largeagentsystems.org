@@ -65,8 +65,8 @@ export default function SourcesPage() {
                 pre-AI system - a market, an institution, a crowd - or a
                 research method. We keep them because their findings and
                 methods carry over to populations of agents. Participant mix
-                is empty throughout: neither pure-AI nor mixed human+AI
-                describes them.
+                is empty throughout: neither value on that dimension describes
+                a system with no AI agents in it.
               </p>
               <div className="mt-12">
                 <CanonExplorer entries={transferEntries} />

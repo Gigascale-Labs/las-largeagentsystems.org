@@ -45,7 +45,8 @@
 import {
   CLAIM_TYPES,
   FOCUS_AREAS,
-  OBSERVABILITY_LEVELS,
+  OBSERVABILITY_SCALE,
+  OBSERVABILITY_VIEWERS,
   PARTICIPANT_MIXES,
   SYSTEM_TYPES,
   THREAT_MODELS,
@@ -55,7 +56,9 @@ import {
 export type DimensionKey =
   | "system_type"
   | "participant_mix"
-  | "observability"
+  | "participant_observability"
+  | "operator_observability"
+  | "public_observability"
   | "focus_area"
   | "threat_model"
   | "claim_type";
@@ -63,7 +66,9 @@ export type DimensionKey =
 export const DIMENSION_LABELS: Record<DimensionKey, string> = {
   system_type: "System Type",
   participant_mix: "Participant Mix",
-  observability: "Observability",
+  participant_observability: "Participant Obs.",
+  operator_observability: "Operator Obs.",
+  public_observability: "Public Obs.",
   focus_area: "Focus Area",
   threat_model: "Threat Model",
   claim_type: "Claim Type",
@@ -83,7 +88,9 @@ export const UNTAGGED = "Not tagged";
 export const CLOSED_SET_VALUES: Record<DimensionKey, readonly string[]> = {
   system_type: SYSTEM_TYPES,
   participant_mix: PARTICIPANT_MIXES,
-  observability: OBSERVABILITY_LEVELS,
+  participant_observability: OBSERVABILITY_SCALE,
+  operator_observability: OBSERVABILITY_SCALE,
+  public_observability: OBSERVABILITY_SCALE,
   focus_area: FOCUS_AREAS,
   threat_model: THREAT_MODELS,
   claim_type: CLAIM_TYPES,
@@ -128,3 +135,29 @@ export function papersInCell(
   return entries.filter((entry) => inCell(entry, dimA, a, dimB, b));
 }
 
+/**
+ * Short display labels for values whose stored form is too long for a table
+ * header.
+ *
+ * The stored value is the whole sentence, because that sentence is the
+ * definition and shortening it in Airtable would lose what the level means.
+ * The header shows the short form and carries the full one as its `title`.
+ * Any value absent from this map renders as itself.
+ */
+export const VALUE_LABELS: Record<string, string> = {
+  "fully observable - reasoning, agents, and interactions": "Full",
+  "partially observable - agents and interactions only": "Agents + interactions",
+  "partially observable - interactions only": "Interactions only",
+  "partially observable - aggregates only": "Aggregates only",
+  "unobservable - neither reasoning, agents, interactions, nor aggregates":
+    "Unobservable",
+};
+
+export function valueLabel(value: string): string {
+  return VALUE_LABELS[value] ?? value;
+}
+
+/** Whether a dimension holds at most one value per paper. */
+export function isSingleValue(key: DimensionKey): boolean {
+  return (OBSERVABILITY_VIEWERS as readonly string[]).includes(key);
+}

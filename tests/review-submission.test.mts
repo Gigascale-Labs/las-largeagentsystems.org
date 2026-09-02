@@ -102,7 +102,9 @@ describe("toPendingSubmission", () => {
     const row = toPendingSubmission(paper(), "2026-08-27", options);
     assert.deepEqual(row.system_type, []);
     assert.deepEqual(row.participant_mix, []);
-    assert.deepEqual(row.observability, []);
+    assert.deepEqual(row.participant_observability, []);
+    assert.deepEqual(row.operator_observability, []);
+    assert.deepEqual(row.public_observability, []);
     assert.deepEqual(row.focus_area, []);
     assert.deepEqual(row.threat_model, []);
     assert.deepEqual(row.claim_type, []);
