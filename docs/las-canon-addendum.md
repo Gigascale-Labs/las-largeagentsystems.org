@@ -315,6 +315,78 @@ column could not have shown any of that.
 `unobservable` is a positive claim that a viewer sees nothing, not a synonym for
 "the paper does not say". Empty is the second one.
 
+## `Outdated Models` narrowed, 2026-09-02
+
+The value read "models, regulations, institutions or human mental models
+failing to keep pace with what they describe or govern". Under that reading it
+landed on **55 of the 90 rows** — more than any other threat model, and more
+than half the corpus. A label carried by 61 percent of a corpus selects
+nothing.
+
+It now reads: **the paper identifies a model that was valid on an existing
+human or algorithmic system, and shows it is no longer valid with AI in the
+mix, because AI violates its assumptions.** Four tests, all required, in
+`docs/canon-tagging-rubric.md`: a named model, prior validity, a violated
+assumption, consequent invalidity.
+
+One agent per paper reread all 90 against the new tests. MEASURED:
+
+| Outcome | Rows |
+|---|---|
+| kept the label | 23 |
+| removed | 32 |
+| added | 4 |
+| stayed off | 31 |
+| **carrying it, before → after** | **55 → 27** |
+
+### Test 2 is what did the removing
+
+Prior validity, not the violated assumption, is where most of the 32 failed.
+When the model being refuted is itself an AI method — an alignment technique,
+an LLM evaluation, an assumption about LLM diversity — it was never valid on a
+human or pre-AI algorithmic system, so nothing was invalidated by AI entering.
+"Correlated Errors in Large Language Models" is the clean case: it refutes the
+assumption that model diversity buys error independence, but that assumption
+was always about LLMs.
+
+The rest failed on the patterns tabled in the rubric: research gaps, calls for
+new work, regulatory lag stated as a date, bare insufficiency, arms races, a
+paper's own novelty pitch, and limitations of the paper itself.
+
+### It added four rows as well as removing thirty-two
+
+The new definition is not simply narrower — it is a different shape, so it
+reaches papers the old one missed. Four rows gained the label: "AI agents can
+coordinate beyond human scale" (Dunbar-style bounds on consensus group size
+assume cognitive limits that LLMs do not have), "Emergent social conventions
+and collective bias in LLM populations", "New Report Analysing Multi-Agent
+Risks", and "Retrieval Collapses When AI Pollutes the Web" (BM25 and neural
+rankers assume coherence and fluency separate quality from spam).
+
+### The worked example
+
+"On the Limits of Agency in Agent-Based Models" lost the label. Its passage was
+the Lucas Critique — that historical data cannot predict behaviour under a new
+policy. That is the classic policy-change critique, and it names no assumption
+that AI violates. It would have failed test 3 in 1976.
+
+### The front page changed with it
+
+`app/components/threat-models.tsx` quoted a magnitude from Meng & Chen — tail
+loss of 18-54 percent against Basel III buffers. A magnitude is a finding, not
+the threat. The card now quotes Theorem 3.15 from the same paper, which is the
+threat: standard correlated-signal models assume agent precision is exogenous
+and time-invariant, AI makes it endogenous through skill degradation, and the
+models' prediction of zero hysteresis stops holding. Verified character for
+character against the source.
+
+### Where the definitions live now
+
+`docs/canon-tagging-rubric.md`. Before this, the working definitions existed
+only in the prompt each tagging pass was given, which is why the value drifted:
+nothing in the repo said what it meant. `AGENTS.md` routes a tagger there and
+`docs/airtable-spec-for-ai.md` points at it from the choice lists.
+
 ## `participant_mix` renamed
 
 `mixed human+AI` is now `hybrid - human, AI, other`. Same meaning, and the new

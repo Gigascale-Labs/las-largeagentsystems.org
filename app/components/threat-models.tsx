@@ -45,8 +45,14 @@ const THREATS = [
   },
   {
     title: "Outdated Models",
+    // Replaced 2026-09-02, when the threat model was narrowed to "a model
+    // valid on a human or pre-AI system, invalidated because AI violates its
+    // assumptions". The previous excerpt gave one of this paper's magnitudes,
+    // which is a finding rather than the threat. Theorem 3.15 is the threat:
+    // the standard models assume agent precision cannot change, and AI
+    // changes it. Verified character for character against the arXiv HTML.
     excerpt:
-      "The model implies tail-loss amplification of 18–54%, economically significant relative to Basel III countercyclical buffers.",
+      "In any model satisfying standard correlated-signal assumptions with exogenous agent precision, the equilibrium is path-independent and hysteresis is identically zero. In our model, human skill degradation creates an asymmetry.",
     source: "Meng & Chen, 2026",
     url: "https://arxiv.org/abs/2604.03272",
   },

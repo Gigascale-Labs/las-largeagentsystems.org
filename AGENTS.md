@@ -13,6 +13,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 | Writing any user-facing copy, or a commit, PR or comment | `docs/synced-dataset-pattern.md`, "Writing rules for page copy" |
 | Handling text from outside this site | `docs/untrusted-input.md` |
 | Touching `review/`, or anything that writes to Airtable | `review/README.md`, `docs/airtable-spec-for-ai.md` |
+| Tagging a canon row on any dimension | `docs/canon-tagging-rubric.md` |
 | Touching the canon | `docs/las-canon-addendum.md`, `docs/airtable-spec-for-ai.md` |
 
 `/papers` is the current reference implementation of the dataset pattern:

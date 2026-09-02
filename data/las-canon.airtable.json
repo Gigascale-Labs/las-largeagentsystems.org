@@ -158,9 +158,7 @@
       "Simulation",
       "Monitoring"
     ],
-    "threat_model": [
-      "Outdated Models"
-    ],
+    "threat_model": [],
     "claim_type": [
       "empirical study"
     ],
@@ -193,8 +191,7 @@
     ],
     "threat_model": [
       "Systemic Instability",
-      "Gradual Disempowerment",
-      "Outdated Models"
+      "Gradual Disempowerment"
     ],
     "claim_type": [
       "theoretical/conceptual framework"
@@ -233,8 +230,7 @@
     ],
     "threat_model": [
       "Systemic Instability",
-      "Partially Observable Systems",
-      "Outdated Models"
+      "Partially Observable Systems"
     ],
     "claim_type": [
       "threat model articulation",
@@ -353,8 +349,7 @@
     ],
     "threat_model": [
       "Systemic Instability",
-      "Collective Superintelligence",
-      "Outdated Models"
+      "Collective Superintelligence"
     ],
     "claim_type": [
       "proposed method/system"
@@ -427,7 +422,6 @@
     ],
     "threat_model": [
       "Systemic Instability",
-      "Outdated Models",
       "Partially Observable Systems"
     ],
     "claim_type": [
@@ -504,7 +498,8 @@
     "threat_model": [
       "Emergent Goals",
       "Systemic Instability",
-      "Partially Observable Systems"
+      "Partially Observable Systems",
+      "Outdated Models"
     ],
     "claim_type": [
       "empirical study"
@@ -545,8 +540,7 @@
     "threat_model": [
       "Partially Observable Systems",
       "Power Concentration",
-      "Collective Superintelligence",
-      "Outdated Models"
+      "Collective Superintelligence"
     ],
     "claim_type": [
       "position/opinion"
@@ -585,7 +579,6 @@
     ],
     "threat_model": [
       "Emergent Goals",
-      "Outdated Models",
       "Systemic Instability"
     ],
     "claim_type": [
@@ -665,8 +658,7 @@
     ],
     "threat_model": [
       "Partially Observable Systems",
-      "Gradual Disempowerment",
-      "Outdated Models"
+      "Gradual Disempowerment"
     ],
     "claim_type": [
       "proposed method/system"
@@ -705,7 +697,6 @@
       "Design"
     ],
     "threat_model": [
-      "Outdated Models",
       "Emergent Goals"
     ],
     "claim_type": [
@@ -741,7 +732,8 @@
     ],
     "threat_model": [
       "Collective Superintelligence",
-      "Emergent Goals"
+      "Emergent Goals",
+      "Outdated Models"
     ],
     "claim_type": [
       "empirical study"
@@ -779,9 +771,7 @@
       "Steering",
       "Simulation"
     ],
-    "threat_model": [
-      "Outdated Models"
-    ],
+    "threat_model": [],
     "claim_type": [
       "survey/taxonomy"
     ],
@@ -977,8 +967,7 @@
     "threat_model": [
       "Inequality",
       "Gradual Disempowerment",
-      "Systemic Instability",
-      "Outdated Models"
+      "Systemic Instability"
     ],
     "claim_type": [
       "policy/regulatory analysis"
@@ -1099,9 +1088,7 @@
       "Simulation",
       "Design"
     ],
-    "threat_model": [
-      "Outdated Models"
-    ],
+    "threat_model": [],
     "claim_type": [
       "empirical study"
     ],
@@ -1218,8 +1205,7 @@
       "Gradual Disempowerment",
       "Power Concentration",
       "Inequality",
-      "Partially Observable Systems",
-      "Outdated Models"
+      "Partially Observable Systems"
     ],
     "claim_type": [
       "policy/regulatory analysis"
@@ -1293,7 +1279,8 @@
     ],
     "threat_model": [
       "Systemic Instability",
-      "Partially Observable Systems"
+      "Partially Observable Systems",
+      "Outdated Models"
     ],
     "claim_type": [
       "empirical study",
@@ -1375,8 +1362,7 @@
       "Emergent Goals",
       "Collective Superintelligence",
       "Systemic Instability",
-      "Partially Observable Systems",
-      "Outdated Models"
+      "Partially Observable Systems"
     ],
     "claim_type": [
       "position/opinion"
@@ -1453,8 +1439,7 @@
     "threat_model": [
       "Systemic Instability",
       "Partially Observable Systems",
-      "Power Concentration",
-      "Outdated Models"
+      "Power Concentration"
     ],
     "claim_type": [
       "policy/regulatory analysis"
@@ -1489,8 +1474,7 @@
       "Monitoring"
     ],
     "threat_model": [
-      "Partially Observable Systems",
-      "Outdated Models"
+      "Partially Observable Systems"
     ],
     "claim_type": [
       "survey/taxonomy"
@@ -1527,7 +1511,6 @@
     "threat_model": [
       "Collective Superintelligence",
       "Emergent Goals",
-      "Outdated Models",
       "Partially Observable Systems"
     ],
     "claim_type": [
@@ -1600,8 +1583,7 @@
       "Monitoring"
     ],
     "threat_model": [
-      "Partially Observable Systems",
-      "Outdated Models"
+      "Partially Observable Systems"
     ],
     "claim_type": [
       "position/opinion"
@@ -1746,7 +1728,6 @@
       "Design"
     ],
     "threat_model": [
-      "Outdated Models",
       "Systemic Instability"
     ],
     "claim_type": [
@@ -1824,7 +1805,6 @@
     ],
     "threat_model": [
       "Gradual Disempowerment",
-      "Outdated Models",
       "Partially Observable Systems"
     ],
     "claim_type": [
@@ -1944,9 +1924,7 @@
       "Monitoring",
       "Steering"
     ],
-    "threat_model": [
-      "Outdated Models"
-    ],
+    "threat_model": [],
     "claim_type": [
       "empirical study"
     ],
@@ -1984,7 +1962,6 @@
     ],
     "threat_model": [
       "Partially Observable Systems",
-      "Outdated Models",
       "Gradual Disempowerment"
     ],
     "claim_type": [
@@ -2023,8 +2000,7 @@
     ],
     "threat_model": [
       "Systemic Instability",
-      "Inequality",
-      "Outdated Models"
+      "Inequality"
     ],
     "claim_type": [
       "empirical study"
@@ -2144,8 +2120,7 @@
       "Emergent Goals",
       "Partially Observable Systems",
       "Systemic Instability",
-      "Collective Superintelligence",
-      "Outdated Models"
+      "Collective Superintelligence"
     ],
     "claim_type": [
       "theoretical/conceptual framework"
@@ -2300,8 +2275,7 @@
       "Steering"
     ],
     "threat_model": [
-      "Partially Observable Systems",
-      "Outdated Models"
+      "Partially Observable Systems"
     ],
     "claim_type": [
       "empirical study"
@@ -2533,7 +2507,6 @@
       "Design"
     ],
     "threat_model": [
-      "Outdated Models",
       "Systemic Instability"
     ],
     "claim_type": [
@@ -2606,7 +2579,8 @@
       "Monitoring"
     ],
     "threat_model": [
-      "Systemic Instability"
+      "Systemic Instability",
+      "Outdated Models"
     ],
     "claim_type": [
       "survey/taxonomy"
@@ -2640,7 +2614,6 @@
       "Systemic Instability",
       "Power Concentration",
       "Inequality",
-      "Outdated Models",
       "Gradual Disempowerment",
       "Partially Observable Systems"
     ],
@@ -2678,8 +2651,7 @@
     ],
     "threat_model": [
       "Emergent Goals",
-      "Collective Superintelligence",
-      "Outdated Models"
+      "Collective Superintelligence"
     ],
     "claim_type": [
       "empirical study"
@@ -2817,8 +2789,7 @@
       "Steering"
     ],
     "threat_model": [
-      "Partially Observable Systems",
-      "Outdated Models"
+      "Partially Observable Systems"
     ],
     "claim_type": [
       "empirical study"
@@ -3040,9 +3011,7 @@
       "Design",
       "Monitoring"
     ],
-    "threat_model": [
-      "Outdated Models"
-    ],
+    "threat_model": [],
     "claim_type": [
       "proposed method/system"
     ],
@@ -3074,9 +3043,7 @@
       "Simulation",
       "Design"
     ],
-    "threat_model": [
-      "Outdated Models"
-    ],
+    "threat_model": [],
     "claim_type": [
       "proposed method/system"
     ],
@@ -3118,8 +3085,7 @@
       "Emergent Goals",
       "Systemic Instability",
       "Partially Observable Systems",
-      "Power Concentration",
-      "Outdated Models"
+      "Power Concentration"
     ],
     "claim_type": [
       "theoretical/conceptual framework"

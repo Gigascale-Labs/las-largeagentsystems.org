@@ -77,6 +77,11 @@ configured in Airtable:
 | `public_observability` | the five-value scale below |
 | `focus_area` | Monitoring, Steering, Simulation, Redesign, Design |
 | `threat_model` | Gradual Disempowerment, Systemic Instability, Inequality, Collective Superintelligence, Partially Observable Systems, Power Concentration, Outdated Models, Emergent Goals |
+
+The choice lists say what a value is called. **`docs/canon-tagging-rubric.md`
+says what each one means and when it applies**, and is what a tagger should be
+given. `Outdated Models` in particular has a four-test definition there; it is
+not "models failing to keep pace".
 | `claim_type` | theoretical/conceptual framework, empirical study, survey/taxonomy, proposed method/system, position/opinion, threat model articulation, policy/regulatory analysis, dataset/tool, live deployment |
 | `tag_confidence` | summary-only, full-text |
 | `status` (Pending Queue only) | pending, approved, rejected |
