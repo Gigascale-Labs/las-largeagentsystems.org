@@ -63,6 +63,11 @@ export type DimensionKey =
   | "threat_model"
   | "claim_type";
 
+/**
+ * Axis labels, kept short because they sit on the cross-table's buttons and
+ * its corner cell. `DIMENSION_PROSE_LABELS` has the unabbreviated forms for
+ * running text.
+ */
 export const DIMENSION_LABELS: Record<DimensionKey, string> = {
   system_type: "System Type",
   participant_mix: "Participant Mix",
@@ -161,3 +166,18 @@ export function valueLabel(value: string): string {
 export function isSingleValue(key: DimensionKey): boolean {
   return (OBSERVABILITY_VIEWERS as readonly string[]).includes(key);
 }
+
+/**
+ * The same dimensions, spelled out. "Participant obs." is fine on a button and
+ * wrong in a sentence.
+ */
+export const DIMENSION_PROSE_LABELS: Record<DimensionKey, string> = {
+  system_type: "system type",
+  participant_mix: "participant mix",
+  participant_observability: "participant-to-participant observability",
+  operator_observability: "system operator observability",
+  public_observability: "public observability",
+  focus_area: "focus area",
+  threat_model: "threat model",
+  claim_type: "claim type",
+};

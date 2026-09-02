@@ -1,3 +1,5 @@
+import { SLACK_FORM_URL } from "@/lib/sections";
+
 export function Join() {
   return (
     <section
@@ -17,7 +19,7 @@ export function Join() {
           systems.
         </p>
         <a
-          href="https://forms.gle/4YSjPwHw16RDTAiV9"
+          href={SLACK_FORM_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-10 inline-block bg-foreground px-8 py-3.5 text-sm font-medium uppercase tracking-wide text-background transition-colors hover:bg-accent"
