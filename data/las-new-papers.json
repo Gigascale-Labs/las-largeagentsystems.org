@@ -1,5 +1,96 @@
 [
   {
+    "date": "2026-09-01",
+    "counts": {
+      "fetched": 295,
+      "unseen": 295,
+      "screened": 200,
+      "relevant": 13,
+      "kept": 4,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.01595",
+        "title": "Mechanism Design for Alignment and Control",
+        "authors": [
+          "Dirk Bergemann",
+          "Andrew Koh",
+          "Stephen Morris"
+        ],
+        "url": "https://arxiv.org/abs/2609.01595",
+        "one_sentence": "Develops a mechanism-design framework for AI agents whose alignment and capabilities are unknown, deriving a revelation principle and implementability conditions. Applies the framework to sandbagging, peer scoring, reward coupling for multi-agent competition, and scalable oversight.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Do current LLM agents actually respond to the proposed honesty-and-obedience mechanisms as the model predicts? The framework derives implementable policies but tests them only on stylized examples.",
+          "Does peer scoring discipline sandbagging when the agents are LLMs that can coordinate with each other? The paper treats peer scoring as a stylized example and does not test collusion between scored agents.",
+          "What happens to the revelation principle when capabilities can be counterfeited as well as concealed? The characterization relies on the one-sided imitation structure.",
+          "Do the conditions for eliciting higher-order beliefs to discipline multiple agents hold at population scale, with hundreds or thousands of agents rather than a few?",
+          "How does the alignment-interpretability trade-off appear in measured behaviour of deployed agents, where the two are substitutes in the instrument but complements in value?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.01519",
+        "title": "When Guardrails Look Effective: Construct Validity Failures in LLM Agent Commerce Evaluation",
+        "authors": [
+          "Peiying Zhu",
+          "Sidi Chang"
+        ],
+        "url": "https://arxiv.org/abs/2609.01519",
+        "one_sentence": "Audits a buyer-seller LLM agent market simulation and finds welfare gains from marketplace guardrails shrink or reverse once schema and choice-procedure asymmetries and generation variance are controlled. Proposes a construct-validity contract (incentive validity, protocol isolation, stochastic stability, welfare accounting) to flag when such simulated market claims are invalid or inconclusive.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Do language-model sellers in a buyer-seller testbed respond monotonically to profit pressure in the prompt?",
+          "How many generations per profile-condition are needed before guardrail welfare effects become stable in a language-model market simulation?",
+          "Does the construct-validity contract of incentive validity, protocol isolation, stochastic stability and welfare accounting apply to other agent market simulations, for example labour or advertising markets?",
+          "Do guardrail welfare effects reported for small models hold at frontier model scale?",
+          "Which welfare accounting rules identify guardrail effects when the seller is not a first-best profit maximizer?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.01038",
+        "title": "Data-Driven Persona-Conditioned Agents for A/B Test Simulation",
+        "authors": [
+          "Ziyad Benomar",
+          "Weronika Łajewska",
+          "Leonardo Perelli",
+          "Saab Mansour"
+        ],
+        "url": "https://arxiv.org/abs/2609.01038",
+        "one_sentence": "Builds LLM agents conditioned on data-driven personas from real user behavioral signals to simulate A/B test outcomes. Achieves 0.75-0.90 directional accuracy across 40 tests, studying persona data source, behavioral depth versus population diversity, and subsampling efficiency.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "Directional accuracy reaches 0.75-0.90 on a benchmark of 40 A/B tests, but the abstract does not say how accuracy behaves on effect sizes near zero or on tests with small measured deltas. How does simulation accuracy vary with the true effect size?",
+          "The personas come from anonymized behavioral data held by the paper's organisation. Can personas built from public behavioural traces, such as public forum or review activity, reach comparable directional accuracy?",
+          "The framework studies the trade-off between per-persona behavioral depth and population diversity. What population size and subsampling scheme minimises simulation cost for a target accuracy?",
+          "Persona-conditioned agent populations may collapse onto a few response modes. How much of the simulated population's variance comes from persona conditioning rather than from the base model's default behaviour?",
+          "Directional accuracy is measured against completed A/B tests. Does using simulated pre-screening to select which experiments to run change the set of product decisions a team makes?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.01263",
+        "title": "AI and the Economy: An Economic Examination of Production, Distribution, Firms, Labor, and Welfare",
+        "authors": [
+          "Ali Zeytoon-Nejad"
+        ],
+        "url": "https://arxiv.org/abs/2609.01263",
+        "one_sentence": "Essay analyzes AI's economic role as capital, labor substitute, general-purpose technology, and infrastructure. Discusses effects on productivity, labor markets, competition, market concentration, and welfare, and outlines policy considerations.",
+        "nearest_anchor_id": "2509.01063",
+        "nearest_anchor_title": "An Economy of AI Agents",
+        "open_questions": [
+          "Which of the five productivity channels named for AI (automation, augmentation, optimization, prediction, innovation) accounts for measured output gains, and in what proportion?",
+          "Does AI adoption raise market concentration in the industries that adopt it fastest?",
+          "When does AI act as a substitute for labour and when as a complement, at the level of occupations and tasks?",
+          "Which of the proposed policy measures for distributing AI gains actually change distributional outcomes, and by how much?",
+          "Does treating AI as economic infrastructure rather than as capital or synthetic labour change the predictions of a growth model?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-08-31",
     "counts": {
       "fetched": 267,
