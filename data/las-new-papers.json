@@ -1,5 +1,85 @@
 [
   {
+    "date": "2026-09-02",
+    "counts": {
+      "fetched": 205,
+      "unseen": 205,
+      "screened": 200,
+      "relevant": 10,
+      "kept": 3,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.02580",
+        "title": "Competitive Market Behavior of LLMs",
+        "authors": [
+          "Pawel Struski",
+          "Jakub Swistak",
+          "Inez Okulska",
+          "Przemyslaw Biecek"
+        ],
+        "url": "https://arxiv.org/abs/2609.02580",
+        "one_sentence": "Replicates human double-auction market experiments with LLM agents instead of humans. Measures convergence to equilibrium and allocation efficiency across model families. Analyzes chain-of-thought traces linking trade decisions to shifts from strategy to urgency.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Double auctions with LLM agents converge slower or not at all towards equilibrium, but which mechanism variants restore convergence remains untested.",
+          "Trading behaviour differs across model families and market roles, but the cause of this heterogeneity is unidentified.",
+          "Mixed markets of humans and LLM agents are untested, so it is unknown whether human traders correct or amplify the inefficiency.",
+          "Chain-of-Thought traces link trade execution to a shift from strategic language to urgency language, but whether this link is causal is unresolved.",
+          "Results come from a double auction, so it is open whether LLM agents also fail to reach efficient allocations in other mechanisms such as posted-price or call markets."
+        ]
+      },
+      {
+        "arxiv_id": "2609.02620",
+        "title": "Collective creativity in hybrid societies",
+        "authors": [
+          "Mason Youngblood",
+          "Katie Mudd",
+          "Manuel Anglada-Tort",
+          "Cameron Jones",
+          "Elena Miu",
+          "Diana Omigie",
+          "Margaret Schedel"
+        ],
+        "url": "https://arxiv.org/abs/2609.02620",
+        "one_sentence": "Argues creativity under generative AI should be measured as a property of hybrid human-AI populations, separating novelty from diversity. States AI-assisted ideation raises individual novelty while narrowing aggregate diversity. Claims composition of mixed human-AI groups determines whether individual gains accumulate without eroding collective diversity.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "Which mixtures of humans and generative models let novelty gains accumulate without reducing population-level diversity?",
+          "How does the network structure connecting human and model agents change the diversity of cultural artifacts a hybrid collective produces?",
+          "How do human and model search strategies differ in ways that make mixed groups out-diversify single-type groups?",
+          "Do machine-discovered solutions persist in human culture over long periods after they enter it?",
+          "Which measures separate novelty of single artifacts from diversity of artifact populations in observed cultural output?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.02357",
+        "title": "Strategic Centrality and the Emergence of Core-Periphery Networks",
+        "authors": [
+          "Itai Arieli",
+          "João Correia-da-Silva",
+          "Wade Hann-Caruthers",
+          "Anna Rubinchik"
+        ],
+        "url": "https://arxiv.org/abs/2609.02357",
+        "one_sentence": "Studies a network-formation game where agents sponsor links to maximize weighted centrality under linear cost. Proves every Nash equilibrium network is core-periphery in structure. Shows welfare-maximizing networks are always empty or complete.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "Do learning agents that adjust links over time converge to the core-periphery equilibria, and which core size do they select?",
+          "Does the core-periphery result survive when link costs are convex or heterogeneous across agents instead of linear and uniform?",
+          "The paper assumes weights on walk counts are positive and weakly decreasing; what equilibrium structures appear when weights are non-monotone?",
+          "The welfare-maximizing network is empty or complete while equilibria are core-periphery; which transfers or link subsidies close this gap?",
+          "Do observed online social and agent-interaction networks show the exact core-periphery pattern predicted here, in which every node links to every core node and to nothing else?",
+          "Do LLM agents that pursue centrality in a link-formation task reproduce the predicted concentration of links on a dense subset?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-09-01",
     "counts": {
       "fetched": 295,
