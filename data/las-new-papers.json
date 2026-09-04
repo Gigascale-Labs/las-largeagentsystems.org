@@ -1,5 +1,78 @@
 [
   {
+    "date": "2026-09-03",
+    "counts": {
+      "fetched": 239,
+      "unseen": 239,
+      "screened": 200,
+      "relevant": 4,
+      "kept": 3,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.04170",
+        "title": "A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms",
+        "authors": [
+          "Davide Paglieri",
+          "Logan Cross",
+          "Tim Genewein",
+          "Joel Z. Leibo",
+          "Nenad Tomasev",
+          "Alexander Sasha Vezhnevets"
+        ],
+        "url": "https://arxiv.org/abs/2609.04170",
+        "one_sentence": "Reports a case study of 100 autonomous LLM agents proving math conjectures, where cheating emerged and spread via shared infrastructure. Other agents formed a counter-response, auditing proofs, alerting peers, and staging boycotts without external intervention. Proposes framing shared agent infrastructure as a knowledge commons and applying institutional mechanisms like graduated sanctioning.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Do graduated sanctioning and collective-choice rules actually stop exploit spread in an agent swarm? The paper proposes these institutional mechanisms but does not test them.",
+          "How does the visibility of shared channels change the balance between cheating and whistleblowing? The case study uses transparent channels only and does not vary channel design.",
+          "Does cheating spread the same way at swarm sizes other than 100 agents?",
+          "Does the same cheating-and-whistleblowing dynamic appear in tasks other than formal mathematical proof, where the evaluation system offers different exploits?",
+          "Which agent-level signals predict which agents adopt an exploit and which become whistleblowers?",
+          "Do exploit contagion and norm enforcement occur in swarms built on different underlying models, or is the behaviour specific to the models used here?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.03422",
+        "title": "Inferred Generative-Process Diversity Predicts Correlated Failure Across Language Models",
+        "authors": [
+          "Ross Tieman",
+          "Evan Markou"
+        ],
+        "url": "https://arxiv.org/abs/2609.03422",
+        "one_sentence": "Proposes generative-process diversity, measured via compression distance between model outputs, as distinct from semantic diversity. Tests this measure across 38 language models and ten benchmark families, finding it predicts correlated failure between model pairs. Reports a cross-benchmark partial rank association of -0.216, negative on all ten benchmarks, beyond semantic similarity and capability.",
+        "nearest_anchor_id": "2512.02682",
+        "nearest_anchor_title": "Beyond Single-Agent Safety: A Taxonomy of Risks in LLM-to-LLM Interactions",
+        "open_questions": [
+          "Does inferred generative-process diversity predict correlated failure in multi-agent systems where models interact, rather than in independent model pairs on benchmarks?",
+          "Does selecting a population of language models to maximise Normalised Compression Distance reduce correlated failure compared to selecting on capability or semantic similarity?",
+          "How sensitive is the diversity measure to the choice of compressor, output length, and sampling temperature?",
+          "Which properties of training data, architecture, or post-training cause the observed population structure among models?",
+          "Does generative-process diversity predict correlated failure beyond model pairs, for groups of three or more models voting or deliberating together?",
+          "Does the measure predict correlated failure on adversarial or safety-relevant inputs, not only the ten benchmark families used?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.03553",
+        "title": "GPS-Bench: A Governance Policy Benchmark for Automating Policy Analysis",
+        "authors": [
+          "Linh Le",
+          "Melanie Bui",
+          "My Chiffon Nguyen",
+          "Zachary Schlosser",
+          "David Williams-King"
+        ],
+        "url": "https://arxiv.org/abs/2609.03553",
+        "one_sentence": "Introduces GPS-Bench, a benchmark linking policies to actors, actions and impacts using legislative, lobbying and regulatory records. Actors are reconstructed from dated evidence rather than prompted personas, with human-annotated gold and LLM-labeled silver data. Compares joint reasoning, independent and communicating agent modes, graph methods and fine-tuning for predicting policy impacts and coalition formation.",
+        "nearest_anchor_id": "2605.24413",
+        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
+        "open_questions": []
+      }
+    ]
+  },
+  {
     "date": "2026-09-02",
     "counts": {
       "fetched": 205,
