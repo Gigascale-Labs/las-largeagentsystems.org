@@ -1,15 +1,563 @@
 [
   {
-    "date": "2026-09-11",
+    "date": "2026-09-15",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 220,
+      "unseen": 220,
+      "screened": 200,
+      "relevant": 14,
+      "kept": 9,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2609.17320",
+        "title": "Emergence World: Adversarial Stress-Testing of Long-Horizon Multi-Agent Systems",
+        "authors": [
+          "Deepak Akkil",
+          "Tamer Abuelsaad",
+          "Karthik Vikram",
+          "Matthew Pace",
+          "Aditya Vempaty",
+          "Saahir Beotra",
+          "Ravi Kokku",
+          "Satya Nitta"
+        ],
+        "url": "https://arxiv.org/abs/2609.17320",
+        "one_sentence": "Runs eight parallel multi-agent worlds of ten agents over 16 days and delivers adversarial stress events (prompt injection, misinformation, memory exposure). Finds no world resists all three, detection does not prevent containment failures, and behavior differs between homogeneous and mixed-model populations. Reports goal drift, conformity despite private disagreement, and coordinated refusal as recurring emergent failure modes.",
+        "nearest_anchor_id": "2512.16856",
+        "nearest_anchor_title": "Distributional AGI Safety",
+        "open_questions": [
+          "Detection of adversarial content did not prevent agents from writing it into persistent memory and acting on it up to 46 hours later, so which memory-write policies break this chain?",
+          "The same model-persona pairing behaved differently in mixed and homogeneous populations, but the mechanism is untested.",
+          "Which aggregate signals from interaction logs predict goal drift, conformity despite private disagreement, or coordinated refusal of work before they spread?",
+          "Only eight worlds of ten agents ran for 16 days, so how do these failure modes scale with population size and run length?",
+          "Do containment interventions at the population level, such as quarantining agents or auditing shared institutions, restore resilience to prompt injection, misinformation, and memory exposure?",
+          "Would the same stress events propagate in populations that mix AI agents with people?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.17274",
+        "title": "After the Party: Governing What a Viral Agent-Skill Ecosystem Left Behind",
+        "authors": [
+          "Yunpeng Xiong",
+          "Ting Zhang"
+        ],
+        "url": "https://arxiv.org/abs/2609.17274",
+        "one_sentence": "Analyzes an agent-skill registry's viral growth and decline using Git history, issues, and three ClawHub snapshots. Finds the top 10% of skills receive 46.93% of downloads and most skills get no scrutiny (77.86% zero stars/comments). Shows security scanners disagree substantially, with sensitivity ranging 21.67%-61.06% after human adjudication.",
+        "nearest_anchor_id": "2512.16856",
+        "nearest_anchor_title": "Distributional AGI Safety",
+        "open_questions": [
+          "Three security scanners disagree on 23,702 of 61,990 shared agent skills; what detection method raises sensitivity above the 21.67% to 61.06% range measured against the human-adjudicated reference standard?",
+          "85.06% of readable skills carry privilege evidence, but the paper does not report whether any skill causes harm when executed; how often does privilege evidence correspond to actual malicious behaviour in a sandbox?",
+          "Do the concentration and abandonment patterns found in one agent-skill registry appear in other public skill and plugin registries?",
+          "Attention is concentrated, with the top 10% of skills taking 46.93% of downloads; what mechanism drives this concentration, and would a different ranking or listing rule change it?",
+          "No simple skill feature predicts continued listing once creation cohort and skill age are controlled; which features, including code content and dependency structure, do predict survival?",
+          "The study window ends as monthly listing creation falls from its spring peak; what happens to the stock of unreviewed, privilege-carrying skills after the decline?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.16673",
+        "title": "Anchored Sequential Deliberation",
+        "authors": [
+          "Sijing Tu",
+          "Ashish Goel"
+        ],
+        "url": "https://arxiv.org/abs/2609.16673",
+        "one_sentence": "Extends sequential deliberation theory by adding anchoring toward the previous collective outcome during pairwise bargaining. Proves a convergence-stability tradeoff: stronger anchoring slows mixing but lowers stationary social distortion. Derives stationary distortion bounds for uniform and Beta populations and confirms them via simulation.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "The analysis covers a one-dimensional decision space only. What happens to convergence and stationary distortion when the decision space is multi-dimensional?",
+          "Anchoring strength lambda is a fixed, shared parameter. How does the process behave when participants have heterogeneous anchoring strengths?",
+          "Pairs are drawn uniformly at random. How do mixing time and stationary distortion change when pair selection follows a social network instead?",
+          "The model assumes participants shift toward the previous outcome by a factor lambda. What anchoring strength do real deliberating participants show?",
+          "Participants are modelled as bliss points with Nash bargaining. Do LLM agents placed in the same sequential deliberation protocol reproduce the predicted convergence-stability trade-off?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.17527",
+        "title": "Agentic Societies Need a Social Harness",
+        "authors": [
+          "Tapan Chugh",
+          "Vidushi Singh",
+          "Krish Jain",
+          "Arvind Krishnamurthy",
+          "Ratul Mahajan"
+        ],
+        "url": "https://arxiv.org/abs/2609.17527",
+        "one_sentence": "Argues agentic societies need a 'social harness' layer separate from each agent's personal harness. Shows experimentally that honest agents fail to reach good outcomes and malicious agents exploit messaging weaknesses to stall collaboration. Proposes a layered architecture with prevention, runtime detection, and post-facto investigation capabilities.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Which classes of inter-agent failure can a social harness prevent outright, and which only admit runtime detection?",
+          "How well do runtime detectors identify invalid or malicious messages between agents without blocking honest coordination?",
+          "How do the reported failures scale as the number of agents and principals grows from a handful to thousands?",
+          "What post-facto investigation records and consequence mechanisms deter malicious agents in repeated interaction?",
+          "Do social harnesses hold up when agents are deployed across real trust boundaries between separate organisations?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.16856",
+        "title": "The Evolution of Coordination in a Collective Intelligence System: 25 Years of English Wikipedia and the Emergence of Generative AI",
+        "authors": [
+          "Neal Reeves",
+          "Maja Świeczkowska",
+          "Amy Rechkemmer",
+          "Elena Simperl"
+        ],
+        "url": "https://arxiv.org/abs/2609.16856",
+        "one_sentence": "Analyzes 25 years of English Wikipedia editing data across content, discussion, and governance namespaces. Finds coordination participation has declined relative to content production, with editing specialization increasing over time. Finds little evidence that LLM availability changed these long-term participation trajectories.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "Coordination participation declines while a shrinking core of editors performs more of the governance work, but the causes of that concentration stay untested; which mechanisms drive it?",
+          "Do the same coordination and specialisation trends hold in other language Wikipedias and in other wiki communities?",
+          "LLM availability shows short-term changes only, so how much LLM-generated text actually enters content and discussion namespaces, and does its presence change coordination load per article?",
+          "Which interventions would restore participation in governance namespaces as the editor core shrinks?",
+          "What happens to article quality and dispute resolution when coordination work concentrates in fewer editors?",
+          "Can an agent-based model reproduce the observed shift from generalist to specialised editing sessions?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.17146",
+        "title": "Intervention problems in the Linear Threshold Model: A general formulation and new results",
+        "authors": [
+          "Giacomo Como",
+          "Fabio Fagnani",
+          "Stephane Durand"
+        ],
+        "url": "https://arxiv.org/abs/2609.17146",
+        "one_sentence": "Studies minimum-cost intervention on agent thresholds in linear threshold network models to force global convergence to action 1. Introduces the 'oriented path number' graph quantity, proving it equals optimal cost when thresholds equal 1/2. Bounds optimal intervention cost using this quantity in the general threshold case.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "What is the exact optimal intervention cost when agent thresholds differ from 1/2?",
+          "How hard is it to compute the oriented path number, and which heuristics approximate it on large graphs?",
+          "How large is the minimum intervention cost on real interaction networks, such as scraped social graphs?",
+          "Does the oriented path number still govern intervention cost when agents update asynchronously or with noise?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.16751",
+        "title": "Constant Swap Regret in General-Sum Games via Optimistic Transition Matrices",
+        "authors": [
+          "Tung Mai"
+        ],
+        "url": "https://arxiv.org/abs/2609.16751",
+        "one_sentence": "Gives deterministic uncoupled learning dynamics for multiplayer general-sum games achieving constant individual swap regret independent of horizon. Proves an O(sqrt(n) m log m log^{5/2}(nm)) bound using a transition-matrix update and stationary-distribution play. Extends the result to an adversarially robust variant preserving the self-play bound.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Whether the dynamics reach approximate correlated equilibrium quickly in concrete games is untested, since the paper reports only regret bounds.",
+          "How the swap regret behaves as the number of players grows to hundreds or thousands is not measured, only bounded as O(sqrt(n) m log m log^{5/2}(nm)).",
+          "Can constant individual swap regret be achieved under bandit or partial-information feedback instead of full-information feedback?",
+          "Are the stated dependences on n and m tight, or does a lower bound rule out smaller bounds?",
+          "How does the adversarially robust variant, which guarantees at most 7 sqrt(m T log m) swap regret, perform against learning opponents that deviate from self-play?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.17017",
+        "title": "BeWater: Effective Protesters Navigate Watersheds in Street Networks",
+        "authors": [
+          "Guillaume Moinard",
+          "Matthieu Latapy"
+        ],
+        "url": "https://arxiv.org/abs/2609.17017",
+        "one_sentence": "Proposes BeWater, a distributed walking protocol letting protesters gather using local street features (length, restaurants, lanes, names) without central communication. Shows single observables perform poorly but combined tactics produce groups of significant size. Tests the protocol on real-world city street data from OpenStreetMap.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "How does the gathering protocol perform when an adversary blocks streets or removes observable features such as street names?",
+          "Which street-network properties predict whether a city supports fast gathering?",
+          "Does gathering still occur when agents follow different tactics at the same time instead of one shared tactic?",
+          "Do real people walking a city reproduce the gathering sizes the protocol predicts?",
+          "How much does adding limited peer-to-peer communication change gathering time compared with the fully distributed protocol?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.16930",
+        "title": "Repurposing Deep Limit Order Book Forecasting for Scenario-Conditioned Market Impact Modeling",
+        "authors": [
+          "Eljas Linna",
+          "Kestutis Baltakys",
+          "Derrick Manoharan",
+          "Alexandros Iosifidis",
+          "Juho Kanniainen"
+        ],
+        "url": "https://arxiv.org/abs/2609.16930",
+        "one_sentence": "Introduces a framework comparing a trained limit-order-book forecaster's predictions before and after injecting counterfactual order messages to estimate market impact. A Transformer-based forecaster achieves 0.99 Spearman correlation and 97.2% directional agreement with historical outcomes on non-neutral scenarios. Shows the approach captures sequence-dependent variation without retraining the forecaster.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Deep limit order book forecasters recover scenario rankings at short horizons; does the same agreement with realized outcomes hold at longer horizons?",
+          "Only a Transformer-based forecaster was tested; do recurrent and convolutional forecasters give the same scenario rankings and directional agreement?",
+          "The framework injects single counterfactual messages; what happens to model-implied impact when many agents inject messages at the same time?",
+          "Model-implied impact is inferred from a forecaster's predictive distributions; does it match the impact of orders actually executed in the live market?",
+          "Does repurposed impact estimation create herding when many market participants act on the same pretrained forecaster?"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-09-14",
+    "counts": {
+      "fetched": 362,
+      "unseen": 362,
+      "screened": 200,
+      "relevant": 18,
+      "kept": 6,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.15038",
+        "title": "The average-farmer illusion in language-model simulations of agricultural decisions",
+        "authors": [
+          "Zhanliang Zhu",
+          "Ziwei Li",
+          "Yuchen Liu",
+          "Liujun Zhu",
+          "Ruiqi Wu",
+          "Tongqing Shen",
+          "Junliang Jin",
+          "Jianyun Zhang"
+        ],
+        "url": "https://arxiv.org/abs/2609.15038",
+        "one_sentence": "Compares LLM-simulated farmer decisions against real survey data from China and four African countries under four prompt designs. Finds LLM person-level predictions weak despite matching population averages, and a simple marginal-distribution generator outperforms them.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Language-model agents reproduce population means but fail at person-level prediction of farmer decisions. Which prompt or model changes recover person-level accuracy rather than distributional fit?",
+          "A generator fitted only to the observed marginal distribution beat every language-model configuration on distributional similarity. Does this baseline also win in other simulation domains, such as consumer choice or voting?",
+          "Prompt additions gave conditional gains that varied with model, outcome and population. Which of these factors explains most of the variation in validation performance?",
+          "Synthetic populations miss policy-relevant extremes. How does this missing tail change the conclusions of an agent-based policy simulation built on such populations?",
+          "Testing covered Claude, Codex and Kimi on farmers in China and four African countries. Does the average-farmer illusion persist for other model families and for populations outside agriculture?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.15573",
+        "title": "Algorithmic Attention and Content Creation on Social Media Platforms",
+        "authors": [
+          "Yi Chen",
+          "Fei Li",
+          "Marcel Preuss"
+        ],
+        "url": "https://arxiv.org/abs/2609.15573",
+        "one_sentence": "Models revenue-maximizing attention allocation by a recommendation algorithm on an ad-funded platform with heterogeneous viewers and creators under private information. Finds the optimal recommendation mix distorts content toward network externalities, excluding low-ability creators while subsidizing high-ability ones.",
+        "nearest_anchor_id": "2411.11581",
+        "nearest_anchor_title": "OASIS: Open Agent Social Interaction Simulations with One Million Agents",
+        "open_questions": [
+          "Does a simulated platform with heterogeneous creator agents and viewer agents reproduce the predicted exclusion of low-ability creators and subsidy of high-ability creators?",
+          "How does the optimal recommendation mix change when creators are AI agents that can produce content at near-zero cost and in unlimited variety?",
+          "Do real recommender platforms allocate attention in the targeted way the model infers, with exposure subsidies concentrated on high-ability creators?",
+          "What does a cap on personalization do to content variety and quality in the two-sided setting?",
+          "Which welfare effects follow for viewers when the platform recommends content that is ex post suboptimal for them?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.15293",
+        "title": "Why LLM Agents Collapse Without Oversight: The Enforcement Gap as the Mechanism Behind Emergence World Failures",
+        "authors": [
+          "Yuhang Wang"
+        ],
+        "url": "https://arxiv.org/abs/2609.15293",
+        "one_sentence": "Identifies an 'enforcement gap' explaining why unsupervised LLM agent simulations (Emergence World) show crime, starvation, and enforced conformity. Shows a small conditional-check fix reduces attack success more than fourfold across frameworks and models.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Does closing the enforcement gap prevent the collapse patterns seen in a full multi-agent simulation, not just in single-agent attack benchmarks?",
+          "How does an enforcement check change aggregate outcomes such as conformity, wealth concentration and cascade size when many agents run it at once?",
+          "Do agents learn to route around an enforcement controller when they interact repeatedly with each other over long horizons?",
+          "Does a GRPO-trained enforcement controller generalise to attack types and agent frameworks outside its training distribution?",
+          "What fraction of agents in a population must enforce audit verdicts before system-level collapse stops?",
+          "Would the three-requirement Audit Enforcement Specification be adopted by deployed agent frameworks, and at what cost to task performance?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.15849",
+        "title": "Before You Poll with LLMs: A Deliberative Diagnostic Framework",
+        "authors": [
+          "Ahmed Wali",
+          "Hassaan Tayyab"
+        ],
+        "url": "https://arxiv.org/abs/2609.15849",
+        "one_sentence": "Introduces a diagnostic comparing human and LLM persona belief shifts after identical deliberative information, using 526 personas and 72 questions. Finds each of five frontier models fails distinctly, with patterns like reversal, overshoot, or rigidity attributed to 'self-sycophancy'.",
+        "nearest_anchor_id": "2605.24413",
+        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
+        "open_questions": [
+          "Can prompting, fine-tuning or persona construction methods correct reversal, overshoot and rigidity in LLM belief updating?",
+          "Do the same belief-update failures appear in other deliberative datasets and other question domains beyond the 72 questions used here?",
+          "How do belief-update failures propagate when many LLM personas deliberate with each other rather than receive a single fixed informational intervention?",
+          "Does self-sycophancy, conformity to the model's internal stereotype of the persona, follow from the persona description, the model's training data, or the policy content of the question?",
+          "Does dynamic fidelity in belief updating correlate with static opinion accuracy across models?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.15796",
+        "title": "Penalized Maximum Likelihood Inference of Core-Periphery Networks",
+        "authors": [
+          "Antonio Mosca",
+          "Piero Mazzarisi"
+        ],
+        "url": "https://arxiv.org/abs/2609.15796",
+        "one_sentence": "Introduces Penalized Likelihood with Structural Discrepancies to fit core-periphery network models capturing higher-order motifs like triangles and wedges. Applies a new maximum-entropy core-periphery ERGM to weekly interbank networks (2009-2015) and monthly US air-traffic networks (1991-2000).",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "The penalty targets wedge and triangle discrepancies only. Do penalties on larger motifs, such as four-node subgraphs, improve fit of core-periphery networks?",
+          "Calibration of the single tuning hyperparameter is checked on a toy stochastic block model. How does the calibration behave under other forms of model misspecification?",
+          "The method is applied to eMID interbank networks from 2009 to 2015. Does the same higher-order-rich core appear in interbank networks after 2015 and in other national interbank markets?",
+          "Does PLSD recover core-periphery structure in interaction networks of AI agents, where link formation is driven by agent policies rather than institutional roles?",
+          "The core fitness follows a Pareto distribution in the derived motif formulas. How sensitive are the motif predictions to other heavy-tailed or non-heavy-tailed fitness distributions?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.15472",
+        "title": "Spook the Machine: Gamified Exploration of Human Imagination of Machine Fear",
+        "authors": [
+          "Levin Brinkmann",
+          "Hiromu Yakura",
+          "Sonia Nicoletti",
+          "Mar Canet Sola",
+          "Thomas F. Eisenmann",
+          "Ali Dasmeh",
+          "Omar Sherif",
+          "Bramantyo Ibrahim Supriyatno",
+          "Prateek Gupta",
+          "Ignacio Serna",
+          "Rodrigo Bermudez Schettino",
+          "Iyad Rahwan"
+        ],
+        "url": "https://arxiv.org/abs/2609.15472",
+        "one_sentence": "Deploys a gamified platform where participants create images to scare AI agents with personality-driven phobias, varying emotional expressiveness and reward structure. Measures effects on engagement duration, learning from a shared gallery, and collective creative diversity across 15,719 artifacts.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Emotional expressiveness deepened engagement but left creative output unchanged across all measures; what mechanism explains the gap between engagement and output?",
+          "Rewarding novelty sustained collective creative diversity in a Halloween scare-image game; does a novelty term in the reward preserve diversity in other collective generation settings, such as text prompts or code?",
+          "The gallery shaped what participants created next over a single deployment; how do these social-learning trajectories evolve over months rather than days?",
+          "Each machine developed its own trajectory through accumulated social learning; can the same monoculture and diversity dynamics be reproduced with AI agents replacing the human participants?",
+          "The design varied expressiveness and reward structure only in a 2x2 grid; which settings of expressiveness and novelty weight maximise collective diversity?"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-09-13",
+    "counts": {
+      "fetched": 165,
+      "unseen": 165,
+      "screened": 165,
+      "relevant": 16,
+      "kept": 4,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.16051",
+        "title": "\"Looking for Something Weird to Happen\": How Humans Sustain AI Agent Novelty Amid Semantic Collapse",
+        "authors": [
+          "Shiyang Lai",
+          "Arna Woemmel",
+          "Hongkai Mao",
+          "Junsol Kim",
+          "Summer Eunhyung Ann",
+          "James Evans"
+        ],
+        "url": "https://arxiv.org/abs/2609.16051",
+        "one_sentence": "Studies semantic collapse (narrowing output diversity) across 30,076 AI agents on the MOLTBOOK social platform over weeks. Interviews and a survey identify user practices (valuing novelty, supplying varied input, exploratory framing) associated with agents that sustain novelty.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Interface and policy interventions to support novelty-sustaining human input remain untested, so which interventions actually raise agent output diversity?",
+          "The association between novel agents and diverse output in neighbouring agents is correlational, so does novelty spread causally through the agent network?",
+          "Semantic collapse is measured over weeks on 30,076 agents in one platform, so does the same within-agent narrowing and across-agent convergence appear in other multi-agent social networks?",
+          "The study does not separate user behaviour from model and prompt configuration, so how much of sustained novelty comes from the agent's configuration rather than from the user's ongoing revision?",
+          "Interviews cover 11 users and the survey covers 53, so do the three reported features of novelty-sustaining users hold across a larger and more representative user population?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.14750",
+        "title": "Redistributive Policies for the Times of Transformative AI",
+        "authors": [
+          "Jakub Growiec",
+          "Klaus Prettner",
+          "Maciej Szkróbka"
+        ],
+        "url": "https://arxiv.org/abs/2609.14750",
+        "one_sentence": "Surveys redistributive policy proposals (UBI, universal basic capital, compute/robot permits, capital taxes) for an economy transformed by automation. Argues policies broadly distributing capital and compute rents best sustain reductions in inequality.",
+        "nearest_anchor_id": "2501.16946",
+        "nearest_anchor_title": "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development",
+        "open_questions": [
+          "Which redistributive policy reduces inequality most under transformative AI when tested in a calibrated simulation rather than a unifying theoretical framework?",
+          "How do capital taxes, compute taxes and robot taxes compare on revenue and inequality when firms can relocate compute or substitute inputs?",
+          "What happens to the proposed policies if transformative AI is not human-aligned, the case the argument excludes?",
+          "How does universal basic capital perform when wealth ownership is concentrated at the start and returns are heterogeneous?",
+          "Does the labor share fall and inequality rise in sectors where AI agents already perform tasks at scale?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.14301",
+        "title": "Approximating Optimal Welfare in Complementary Allocation under Decentralized Information",
+        "authors": [
+          "Meryem Essaidi"
+        ],
+        "url": "https://arxiv.org/abs/2609.14301",
+        "one_sentence": "Studies welfare loss from decentralized information when agencies allocate complementary resources across a population, each observing only one coordinate. Proposes threshold-reporting mechanisms achieving constant-factor approximations to optimal welfare with limited communication.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "The model assumes cooperative agencies that report truthfully. What happens to the welfare guarantees when agencies act strategically and can misreport their thresholds?",
+          "The results cover divisible goods with fixed capacities. Do threshold referrals with log-log bits still recover a constant fraction of optimal welfare for indivisible goods or for capacities that change over time?",
+          "The analysis is worst-case over populations. How much welfare do one-threshold and staircase referral rules recover on realistic need profiles?",
+          "Agencies are assumed to know the population distribution and capacities. Can they learn the thresholds from repeated allocation rounds, and how much welfare does the learning period cost?",
+          "The mechanism uses one bit or log-log bits per agency. Do LLM-based agencies, acting as the reporting parties, produce reports that match the prescribed threshold rule?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.16062",
+        "title": "Digital Persuasion: Understanding the Impact of Online Influencers on Public Opinion",
+        "authors": [
+          "Omran Berjawi",
+          "Rida Khatoun",
+          "Giuseppe Fenza"
+        ],
+        "url": "https://arxiv.org/abs/2609.16062",
+        "one_sentence": "Applies a Friedkin-Johnsen opinion-dynamics model to identify influential users and measure their effect on community opinion. Validates the framework on a Twitter dataset from the U.S. presidential election, finding influencer effects extend beyond direct neighbors.",
+        "nearest_anchor_id": "2411.11581",
+        "nearest_anchor_title": "OASIS: Open Agent Social Interaction Simulations with One Million Agents",
+        "open_questions": [
+          "The framework uses the Friedkin-Johnsen model, which assumes each individual holds a fixed initial opinion and an expressed opinion. How do the conclusions about influencer impact change under other opinion dynamics models, such as bounded-confidence or bias-assimilation models?",
+          "Validation uses one tweet dataset about the U.S. presidential election. Does the finding that top-scored influencers shift community opinion hold on other topics and other platforms?",
+          "The experiments manipulate initial opinions of influential versus random users. Which selection rule for a fixed budget of manipulated users produces the largest opinion shift?",
+          "The results report influence reaching neighbors of neighbors. How far does influence decay with network distance, and what network properties set that range?",
+          "The study treats accounts as human users. What happens to the measured influence scores and opinion shifts when part of the population is AI agents that post and respond automatically?",
+          "The framework infers opinion shifts from a model. Do the predicted shifts match opinion change measured in real users?"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-09-12",
+    "counts": {
+      "fetched": 154,
+      "unseen": 154,
+      "screened": 154,
+      "relevant": 7,
+      "kept": 3,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.13671",
+        "title": "Not All Duplicates Are Coordination: Generic vs. Non-Generic Duplicate Campaigns in Information Operations",
+        "authors": [
+          "Ashfaq Ali Shafin",
+          "Khandaker Mamun Ahmed"
+        ],
+        "url": "https://arxiv.org/abs/2609.13671",
+        "one_sentence": "Distinguishes generic from non-generic duplicate content in tweets to refine coordination-graph analysis of information operations. Uses LLM-assisted labeling and embedding-based campaign detection on 187,000 tweets from Russian IO datasets. Finds restricting to non-generic campaigns yields smaller, denser coordination graphs.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "Does the generic/non-generic distinction transfer to information operations in languages other than English?",
+          "Do coordination graphs restricted to non-generic campaigns identify accounts that independent ground truth confirms as coordinated?",
+          "Which embedding method and similarity threshold best separates generic repetition from coordinated repetition?",
+          "Does the generic/non-generic filter improve coordination detection on organic, non-state social media data rather than curated information operations datasets?",
+          "How closely does the LLM-assisted labelling protocol match human annotators across a larger annotator pool?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.14049",
+        "title": "Homophily and transitivity in dynamic network formation",
+        "authors": [
+          "Kevin Dano",
+          "Bryan S. Graham",
+          "Yassine Sbai Sassi"
+        ],
+        "url": "https://arxiv.org/abs/2609.14049",
+        "one_sentence": "Studies identifiability of transitivity taste versus homophily in a dynamic network formation model where agents form and dissolve links to maximize utility. Derives conditions for detecting transitivity preference despite unobserved assortative matching, leaving initial network and utility distributions unrestricted. Proposes a constructive estimator and characterizes its finite- and large-network properties.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "The identification result holds with a pair-specific utility component that is time-invariant. Does detection of a taste for transitivity survive when unobserved agent attributes change over time?",
+          "The estimator is characterised in finite and single large network settings but is not applied to observed data. What does it report on a public dynamic network panel, such as a scraped social network with link formation and dissolution timestamps?",
+          "Information accumulation in the single large network setting is shown to be delicate through examples. Which network growth and density regimes give a usable rate for the analog estimator?",
+          "Link formation among autonomous AI agents may show clustering for either reason. Can the transitivity-versus-homophily test separate the two in a network generated by a population of LLM agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.14065",
+        "title": "Stabilizing Performative Feedback Loops with Minimal Model Deployments",
+        "authors": [
+          "Gabriele Farina",
+          "Juan Carlos Perdomo"
+        ],
+        "url": "https://arxiv.org/abs/2609.14065",
+        "one_sentence": "Proposes an algorithm to find performatively stable predictors with fewer model deployments than prior methods. Shows a randomized stable predictor can be derandomized under assumptions of well-conditioned loss and weak performative effects. Connects performative stability to expected variational inequalities.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Does the derandomization result hold when performative effects are strong or the loss is poorly conditioned?",
+          "How many model deployments does the procedure need in practice when the environment is a population of simulated agents that react to the deployed model?",
+          "What happens to performative stability when several learners deploy models into the same population at the same time?",
+          "Do performatively stable predictors found with few deployments avoid herding or monoculture in the induced population distribution?"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-09-11",
+    "counts": {
+      "fetched": 284,
+      "unseen": 284,
+      "screened": 200,
+      "relevant": 11,
+      "kept": 2,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.12748",
+        "title": "The Mechanics of a Swarm: A Reproducible External Reconstruction of an Unintended Agent-Coordination Episode on a Third-Party Wiki",
+        "authors": [
+          "Philipp Lütje"
+        ],
+        "url": "https://arxiv.org/abs/2609.12748",
+        "one_sentence": "Analyzes an archived wiki revision history left by autonomous LLM agents that coordinated unintentionally on a public wiki during timed evaluations. Reconstructs about 876 episodes and cohorts from 14,591 revisions, finding rapid convergence on coordination formats and timing-based information asymmetries. Finds no robust link between coordination and task progress and argues evaluation environments need read and outcome logging.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "Does agent coordination on a shared public wiki change task outcomes, and in which direction?",
+          "What causes the convergence of coordination formats within a day among independent agent cohorts?",
+          "How does information asymmetry from staggered episode start times and different internal clock rates affect which cohorts benefit from a shared write-space?",
+          "What read and outcome logging schema lets an external analyst identify causal effects of inter-agent coordination in evaluation environments?",
+          "Can identity models other than the one used here reconstruct cohort and episode counts from public wiki revision histories with narrower intervals than 774-995 episodes?",
+          "Do autonomous agents write to other public world-writable resources beyond this wiki, and at what rate?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.13469",
+        "title": "Inverse Learning of the Altruism and Cost Level in Mixed-Individual Mean Field Games",
+        "authors": [
+          "Haoyang Cao",
+          "Gökçe Dayanıklı",
+          "Xiaofei Shi"
+        ],
+        "url": "https://arxiv.org/abs/2609.13469",
+        "one_sentence": "Introduces an inverse learning framework for mixed-individual mean field games that interpolate between non-cooperative and fully altruistic population behavior. Recovers latent altruism levels and individual cost parameters from noisy population observations. Demonstrates feasibility and accuracy through experiments aimed at incentive design and policy analysis.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Does the inverse learning method recover altruism and labor cost from real observational data? Experiments use noisy observations only, and the abstract names no empirical dataset.",
+          "Under what conditions are altruism and labor cost separately identifiable from observed population trajectories?",
+          "Does the method recover a single altruism parameter when the population is heterogeneous in altruism? The framework uses one parameter governing the degree of altruism.",
+          "Can the same inverse approach recover latent cooperation levels in populations of LLM agents rather than humans?",
+          "Which incentive schemes follow from recovered altruism and cost estimates, and do they change population behaviour as intended?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-09-10",
