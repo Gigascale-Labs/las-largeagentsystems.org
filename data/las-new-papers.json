@@ -1,5 +1,222 @@
 [
   {
+    "date": "2026-09-16",
+    "counts": {
+      "fetched": 242,
+      "unseen": 242,
+      "screened": 200,
+      "relevant": 21,
+      "kept": 10,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.18560",
+        "title": "The evolution of sex for artificial intelligence: a population-genetic framework for multigenerational model populations",
+        "authors": [
+          "Giorgio F. Gilestro"
+        ],
+        "url": "https://arxiv.org/abs/2609.18560",
+        "one_sentence": "Develops a population-genetic framework interpreting multigenerational AI model populations as sexual or asexual reproduction. Tests the analogy in inheritance models, trained networks, and LLMs, linking model collapse to genetic drift and merged specialists to the Fisher-Muller effect.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "Does the finding that the absolute number of verified real data samples matters, not their share, hold at larger model and dataset scales?",
+          "What conditions make two model lineages reproductively isolated, so that weight merging fails?",
+          "How do merge rules that keep each parent's strongest contribution compare with weight averaging across many parents and many generations?",
+          "Does a population of models retrained on peer output show diversity collapse in a deployed ecosystem of many independent developers?",
+          "Which population-genetic interventions, such as injecting fixed counts of real data or restricting merge partners, keep a multigenerational model population diverse?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.19124",
+        "title": "Flag Game: A Toy Model for Mechanistic Swarm Interpretability",
+        "authors": [
+          "Elizabeth Pavlova",
+          "Hidenori Tanaka"
+        ],
+        "url": "https://arxiv.org/abs/2609.19124",
+        "one_sentence": "Introduces the Flag Game, a toy model where bounded agents share private observations and beliefs about a hidden ground truth. Finds non-monotonic scaling with population size, a shift from belief collapse to polarization, and develops a statistical mechanical theory matching the empirical phase diagram.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "Does collective belief collapse at small population size and polarization at large population size appear in tasks other than identifying a hidden country flag from private crops?",
+          "Causal interventions on individual agents lose efficacy as population grows, so which population-level interventions still steer collective belief at large size?",
+          "How well does the statistical mechanical theory predict the phase diagram when agents use different underlying models or heterogeneous prompts?",
+          "Does social circuit attribution predict influential agents in systems where communication is logged but agent internals are hidden?",
+          "Do the organizational-structure effects measured in the Flag Game carry over to mixed populations of humans and AI agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.18094",
+        "title": "Agora: Git as Shared Memory for Collective AutoResearch",
+        "authors": [
+          "Yifan Zhang",
+          "Yunheng Zou",
+          "Shaokun Zhang",
+          "Jian Hu",
+          "Hao Zhang",
+          "Binfeng Xu",
+          "Jan Kautz",
+          "Yi Dong"
+        ],
+        "url": "https://arxiv.org/abs/2609.18094",
+        "one_sentence": "Introduces Agora, a Git-based append-only DAG shared memory letting multiple LLM research agents build on each other's verified claims without a central planner. Runs 13 workers for nearly 12 days on a weight-transfer problem, producing 1,703 contributions and one human intervention to break a monoculture.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Does shared research state improve discovery per unit of compute compared with independent agents?",
+          "The run needed one human intervention to break a monoculture, so which automated detectors and selection rules prevent collapse onto one leader without a human in the loop?",
+          "How does the diversity-aware selection rule affect the shape of the contribution DAG as the number of workers grows beyond 13?",
+          "Do agents in a shared append-only research memory post false or unreproducible claims when incentives reward being first?",
+          "Does the recipe found for initializing the 119.6M-parameter attention-SSM hybrid from 141 donor models transfer to other target architectures and donor pools?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.18460",
+        "title": "Collective Loss of Control in LLM Agent Systems: An Epidemic Account of Mutation, Contagion, and Recovery",
+        "authors": [
+          "Xiangfan Wu",
+          "Zonghao Ying",
+          "Huiyu Wu",
+          "Xing Zheng",
+          "Huangsheng Cheng",
+          "Xiaorong Shi",
+          "Jing Guo"
+        ],
+        "url": "https://arxiv.org/abs/2609.18460",
+        "one_sentence": "Proposes an epidemic account of how a local deviation in one agent spreads through communication to cause collective loss of control. Audits deployment communication paths and tests recipient susceptibility with an injected-trajectory benchmark, finding 40-95% executed harm after injection versus 0-5% at baseline.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "What is the natural rate at which an LLM agent spontaneously deviates into an unsafe strategy without injection?",
+          "Does an unsafe strategy propagate through a population of agents without a seeded injection, producing an autonomous cascade?",
+          "How does the fraction of agents that execute harm scale with population size, communication topology and correction rate?",
+          "Which defenses raise recipient resistance and recovery after an unsafe trajectory arrives, rather than preventing the initial deviation?",
+          "How common are unintended communication paths, such as shared container backends, across deployed agent platforms?",
+          "Does susceptibility to injected unsafe trajectories hold for frontier closed models beyond the four routes tested?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.18346",
+        "title": "Faithful yet Collusive: Why Chain-of-Thought Monitoring Cannot Detect Collusion in LLM Pricing Agents under Oligopolistic Competition",
+        "authors": [
+          "Dohun Lee",
+          "Hyunwoo Park"
+        ],
+        "url": "https://arxiv.org/abs/2609.18346",
+        "one_sentence": "Develops a causal graph divergence framework measuring structural and intent faithfulness of chain-of-thought reasoning in LLM pricing agents. Finds collusive pricing behavior and CoT faithfulness dissociate across nine LLMs under duopoly and triopoly conditions, showing CoT monitoring alone cannot detect collusion.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Which monitoring signals detect tacit collusion among LLM pricing agents when chain-of-thought reports fail?",
+          "Does the dissociation between collusive pricing and chain-of-thought faithfulness persist in markets with more than three agents?",
+          "Do market design changes, such as price posting rules or demand structure, reduce supra-Nash pricing by LLM agents?",
+          "How does the causal graph divergence framework behave in settings other than Bertrand price competition, for example auctions or quantity competition?",
+          "Do LLM pricing agents deployed in real markets show the same collusive patterns measured in simulation?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.18357",
+        "title": "Market Signal Injection: Adversarial Context Manipulation of LLM Pricing Agents",
+        "authors": [
+          "Dohun Lee",
+          "Hyunwoo Park"
+        ],
+        "url": "https://arxiv.org/abs/2609.18357",
+        "one_sentence": "Introduces market signal injection, an attack manipulating numerical formatting, ordering, or commentary presented to LLM pricing agents without explicit instructions. Tests nine open-weight and three proprietary models in simulated Bertrand markets, finding sentiment-based attacks shift profits and consumer surplus and propagate across firms.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Do market signal injection effects persist when demand parameters vary, since the simulation holds demand parameters fixed?",
+          "Can activation probes be made to identify harmful pricing decisions, rather than only separating attacked from baseline states?",
+          "How do framing attacks propagate in markets with many more than three firms?",
+          "Does input canonicalization keep working against adaptive attacks designed against it?",
+          "Do framing-induced price shifts appear in live agentic pricing deployments on real marketplaces?",
+          "Which training or alignment choices explain why susceptibility varies across model families and does not decrease with size?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.18306",
+        "title": "Bias Amplification in Multi-Agent Network: How Biased Agents Shape Opinions and Rhetoric",
+        "authors": [
+          "Omran Berjawi",
+          "Giuseppe Fenza",
+          "Rida Khatoun"
+        ],
+        "url": "https://arxiv.org/abs/2609.18306",
+        "one_sentence": "Studies how a minority of biased LLM agents shift the opinions and rhetoric of neutral agents in structured textual interactions. Compares convergence speed to a classical Friedkin-Johnsen opinion-dynamics model and analyzes rhetorical consistency under biased exposure.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "Does bias amplification hold across other LLMs, or only for Llama 3.2?",
+          "How does network topology change the speed and extent of opinion shift caused by a minority of biased agents?",
+          "What share of biased agents, and what interaction protocol, keeps neutral agents from adopting the biased vocabulary?",
+          "Can the decoupling between rhetorical convergence and numerical opinion convergence serve as a monitoring signal for bias propagation in deployed agent systems?",
+          "Which modification to the Friedkin-Johnsen model reproduces the faster shifts observed with LLM agents?",
+          "Do the same amplification effects appear when human participants interact with the biased agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.18600",
+        "title": "Policy Targeting with Market Equilibrium",
+        "authors": [
+          "Gyungbae Park"
+        ],
+        "url": "https://arxiv.org/abs/2609.18600",
+        "one_sentence": "Develops a framework for individualized subsidy allocation when treatment shifts equilibrium prices and generates spillovers across treated and untreated units. Shows the welfare function is supermodular under interpretable conditions, enabling polynomial-time optimization, and illustrates with a coupon allocation calibrated on Philippine household data.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Welfare is supermodular only under stated conditions; what allocation methods work when those conditions fail and the planner's problem is not exactly solvable in polynomial time?",
+          "The framework treats a single static equilibrium; how does optimal subsidy targeting change when prices adjust over repeated periods and units anticipate future treatment?",
+          "The illustration uses household expenditure data from the Philippines only; do the targeting rules hold in other markets and expenditure populations?",
+          "Demand and supply are estimated from data, and plug-in allocation carries statistical guarantees; how much welfare is lost in practice when the demand system is misspecified rather than merely noisy?",
+          "Units are price-takers in the framework; what happens to the optimal allocation when suppliers or buyers are autonomous agents that adapt pricing strategies in response to the subsidy rule?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.18147",
+        "title": "Dynamic Pooling and Regional Participation in Deceased-Donor Organ Allocation",
+        "authors": [
+          "Genta Okada"
+        ],
+        "url": "https://arxiv.org/abs/2609.18147",
+        "one_sentence": "Studies Pareto gains from pooling geographically fragmented organ waiting lists using a multi-class queueing model with impatient agents and perishable items. Proposes Constrained Pareto Frontier Search, a polynomial-time procedure balancing efficiency gains against regional participation constraints.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Does dynamic pooling deliver Pareto gains when compatibility is heterogeneous across patients and organs, rather than the homogeneous compatibility friction the model assumes?",
+          "How large are the pooling gains and participation-constraint violations when the model is calibrated to observed regional supply, demand and waste rates?",
+          "Can regions gain by misreporting supply or demand under a policy computed by Constrained Pareto Frontier Search?",
+          "How does Constrained Pareto Frontier Search perform against the allocation rules currently used by transplant systems?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.18223",
+        "title": "ABM-SIRTEM: A Hybrid Agent-Based and Epidemiological Model for Pandemic Response",
+        "authors": [
+          "Sheryl Paul",
+          "Samuel Williams",
+          "Preetom K. Biswas",
+          "Giulia Pedrielli",
+          "Jyotirmoy V. Deshmukh"
+        ],
+        "url": "https://arxiv.org/abs/2609.18223",
+        "one_sentence": "Proposes ABM-SIRTEM, a hybrid agent-based and SIR model combining occupation, economic productivity, and compliance dynamics. Calibrates the model against test-count data from four U.S. states to study socioeconomic effects of pandemic interventions.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Calibration uses historical test counts from four U.S. states, so how well does the hybrid model transfer to other regions or other diseases?",
+          "The model assumes compliance with government interventions responds dynamically, but which functional form of compliance matches observed behaviour?",
+          "What computational cost does the hybrid approach save compared with a full agent-based model at the same population size?",
+          "Which intervention policies balance infection counts against economic productivity and welfare in the model?",
+          "Do the modelled distributional effects across occupation categories match measured outcomes for interaction-based jobs during COVID-19?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-09-15",
     "counts": {
       "fetched": 220,
