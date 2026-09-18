@@ -1,5 +1,216 @@
 [
   {
+    "date": "2026-09-17",
+    "counts": {
+      "fetched": 280,
+      "unseen": 280,
+      "screened": 200,
+      "relevant": 21,
+      "kept": 10,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.19913",
+        "title": "Digital Twins for Opinion Dynamics: A Generative LLM Framework for Social Networks",
+        "authors": [
+          "Omran Berjawi",
+          "Giuseppe Fenza",
+          "Rida Khatoun",
+          "Sherali Zeadally"
+        ],
+        "url": "https://arxiv.org/abs/2609.19913",
+        "one_sentence": "Builds a digital twin framework that clones a real Twitter network and uses Mistral-7B agents with persona, memory and social exposure to update opinions. Validates against COVID-19 and 2020 US election datasets, reporting MAE of 0.150 and 0.121. Ablations show agent attributes, memory and social exposure each contribute to predictive fidelity.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Does the digital twin reproduce opinion trajectories on platforms and topics beyond the two Twitter datasets (COVID-19 discourse and the 2020 U.S. election)?",
+          "Can a validated digital twin predict the effect of interventions such as content moderation, de-amplification or seeding of counter-messages?",
+          "How does predictive fidelity change with the choice of LLM, given that the framework only reports Mistral-7B?",
+          "How far ahead in time can the framework forecast before error grows, and over what network sizes does it stay tractable?",
+          "Agent attributes are the largest contributor to fidelity, so how sensitive are results to the method that infers persona, stubbornness and influence from observed posts?",
+          "Does fitting a digital twin to observed trajectories produce agents whose internal update rules match real user belief revision, or only matching aggregate curves?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.20548",
+        "title": "Mitigating Retaliatory Algorithmic Collusion in Repeated Games",
+        "authors": [
+          "Karthik Sivachandran",
+          "Rohan Paleja"
+        ],
+        "url": "https://arxiv.org/abs/2609.20548",
+        "one_sentence": "Formalizes a connection between Q-learning collusion and Simple Penal Code theory, showing collusive equilibria create detectable conditional dependence in agent policies. Proposes CURB, a reward-shaping method that penalizes this signal to preclude collusive fixed points. Reduces collusion in Bertrand and Cournot repeated games and extends to deep Q-network agents.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Does the total variation distance signal detect collusion among LLM-based pricing agents, which do not learn by Q-learning?",
+          "Can the reward-shaping intervention be applied when only prices and quantities are observable, and not the agents' action distributions?",
+          "How does the intervention behave with more than two agents, and in games with heterogeneous agents or asymmetric costs?",
+          "Do agents trained under the reward-shaping penalty find other ways to sustain supra-competitive prices that do not involve punishment threats?",
+          "Can a regulator apply the total variation detection test to real pricing data from deployed algorithmic pricing systems?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.19705",
+        "title": "SoK: Trading Agents or Market Crashers? Dissecting Robustness and Security Failures in Academic Financial LLM Trading Schemes",
+        "authors": [
+          "Mengxiao Wang",
+          "Nitesh Saxena"
+        ],
+        "url": "https://arxiv.org/abs/2609.19705",
+        "one_sentence": "Introduces FARSIGHT, a framework evaluating financial LLM trading agent schemes for robustness under market turbulence and security against three attack types. Applies it to 15 academic trading schemes. Finds 80% fail at least one robustness metric and 100% show security vulnerabilities.",
+        "nearest_anchor_id": "2512.16856",
+        "nearest_anchor_title": "Distributional AGI Safety",
+        "open_questions": [
+          "Can market-wide cascades from a single misjudging LLM trading agent be reproduced in an agent-based market simulation, and what agent population share triggers them?",
+          "Which market designs, such as circuit breakers, position limits or order-to-trade ratios, reduce cascade risk when a share of traders are LLM agents?",
+          "Do LLM trading agents built from the same base model herd into correlated positions, and does that correlation amplify drawdowns?",
+          "How do the robustness and security failures found in 15 academic schemes carry over to deployed trading systems that execute real capital?",
+          "Can attacks on information sources, such as poisoned news feeds, steer a population of LLM trading agents into coordinated mispricing?",
+          "Which signals in interaction logs or order flow detect agent-as-attacker behavior before a crash occurs?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.20404",
+        "title": "Learning Principal-Agent Contracts for Equitable Smallholder Carbon Farming under Moral Hazard and Adverse Selection",
+        "authors": [
+          "Rishi Bharadwaj",
+          "Yadati Narahari"
+        ],
+        "url": "https://arxiv.org/abs/2609.20404",
+        "one_sentence": "Models carbon-farming contracting as a POMDP with adverse selection and moral hazard, learning a dynamic profit-maximizing contract via reinforcement learning. Finds the aggregator realizes 87.7% of achievable adoption on large farms versus 8.2% on smallholdings. Shows a counterfactual area-proportional MRV cost structure eliminates this disparity.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Does introducing competition among several aggregators change the exclusion of smallholders that a single pooled contract produces?",
+          "Which policy instruments, such as MRV subsidies or size-tiered contract menus, close the adoption gap between 8.2% on smallholdings and 87.7% on large farms?",
+          "How do the learned contracts perform when farmer adoption costs and agronomic outcomes follow distributions taken from field survey data rather than the simulated population?",
+          "Do the simulated adoption gradients match observed smallholder participation in real carbon farming programs?",
+          "Does an area-proportional MRV cost structure remain feasible when measurement error on small plots is accounted for?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.19789",
+        "title": "Contagion on the Trading Floor: How Adversarial Signals Spread in Multi-Agent Trading Systems",
+        "authors": [
+          "Qi Rong Sua",
+          "Junhao Dong",
+          "Nguyen Duc Thai",
+          "Yuqing Wen",
+          "Cheston Tan",
+          "Yew-Soon Ong"
+        ],
+        "url": "https://arxiv.org/abs/2609.19789",
+        "one_sentence": "Introduces GMATS, a framework modeling multi-agent LLM trading architectures, and tests black-box poisoning attacks injected via social-media feeds. Defines contagion metrics tracking belief-shift at analyst and coordinator layers. Finds simple attacks degrade risk-return profiles and reduce Sharpe ratios, while certain topologies dampen the shock.",
+        "nearest_anchor_id": "2512.16856",
+        "nearest_anchor_title": "Distributional AGI Safety",
+        "open_questions": [
+          "Which multi-agent topologies and coordinator prompts dampen poisoned social-media signals, and by how much across a systematic sweep?",
+          "Do poisoning attacks that degrade one trading stack transfer to stacks built on different LLM backbones?",
+          "Can belief-shift scores at analyst and coordinator layers serve as a live detector of poisoning before backtest returns degrade?",
+          "How do poisoned agents affect prices and volatility when many such stacks trade against each other in a market with price impact, rather than in an offline backtest?",
+          "Does adversarial contagion measured offline appear in deployed LLM trading systems at real capital scale?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.20044",
+        "title": "Noise-adjusted turnover in estimated networks",
+        "authors": [
+          "Sultan Amed",
+          "Sayantan Banerjee"
+        ],
+        "url": "https://arxiv.org/abs/2609.20044",
+        "one_sentence": "Studies Hamming-turnover between two separately estimated network snapshots under a homogeneous edge-misclassification model. Derives a closed-form unbiased adjustment for latent turnover using observed turnover and estimated graph sizes. Shows sparsity and calibration error can leave order-p bias after adjustment, with numerical illustrations.",
+        "nearest_anchor_id": "2503.13395",
+        "nearest_anchor_title": "Causal Emergence 2.0: Quantifying emergent complexity",
+        "open_questions": [
+          "The adjustment assumes sensitivity and specificity are known; how can these rates be estimated from data when they are unknown?",
+          "Misclassification is assumed homogeneous across edges; what happens to the turnover adjustment when error rates vary by node degree or edge type?",
+          "How large is the spurious turnover in real economic or financial networks estimated over two periods?",
+          "The functional covers two snapshots; how does the adjustment extend to sequences of many periods with serial dependence?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.20017",
+        "title": "Who Aggregates Information? Screening, Rent, and the Coexistence of CLOB and AMM Prediction Markets",
+        "authors": [
+          "Chengqi Zang",
+          "Gabriel P. Andrade",
+          "Tomoyuki Nakajima"
+        ],
+        "url": "https://arxiv.org/abs/2609.20017",
+        "one_sentence": "Models a CLOB and an LMSR operating on the same prediction-market event, built on transaction-level evidence that CLOB makers profit from carrying mispriced tail demand rather than spread. Shows competitive CLOB quotes screen informed traders while informed flow routes to the LMSR. Analyzes how AMM depth shifts the CLOB premium and how three-or-more-outcome markets leave CLOB beliefs indeterminate versus coherent LMSR pricing.",
+        "nearest_anchor_id": "2512.16856",
+        "nearest_anchor_title": "Distributional AGI Safety",
+        "open_questions": [
+          "Does the tail-demand signature, where makers profit by carrying the under-priced side to settlement rather than from spread, appear on other prediction-market platforms?",
+          "The model predicts that AMM depth moves the CLOB premium with a sign set by maker-side contestability, which the abstract does not test empirically.",
+          "How can a multi-outcome CLOB recover coherent implied beliefs when binary books pin switch prices but leave beliefs indeterminate?",
+          "Does the coexistence of CLOB and LMSR venues survive when the informed flow comes from autonomous trading agents instead of human traders?",
+          "What happens to screening rent and venue coexistence when behavioral tail demand is absent or shrinks?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.20421",
+        "title": "Stable Allocations, Unstable Payment Paths: The Shapley Value and Voluntary Coalition Formation",
+        "authors": [
+          "Tongseok Lim"
+        ],
+        "url": "https://arxiv.org/abs/2609.20421",
+        "one_sentence": "Examines whether players voluntarily follow the marginal-contribution payment path implied by the random-order Shapley value in convex games. Introduces payment flows dividing transition surplus and shows every efficient allocation can be implemented via a budget-balanced voluntary flow. Analyzes an equal-residual-sharing case yielding an affine combination of Shapley and equal-division allocations for two player types.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "With more than two player types, which allocation does the closest voluntary flow under equal residual sharing select?",
+          "Do the voluntary payment flows extend to non-convex games?",
+          "Does voluntary entry under marginal-contribution payments break down in practice when LLM agents form coalitions and can choose when to join?",
+          "How do the voluntary flows and the Shapley flow differ in computational cost as the number of players grows?",
+          "When do voluntary entry and coalitional stability conflict, beyond the examples given?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.20059",
+        "title": "AI Should Facilitate Democratic Deliberation at Scale",
+        "authors": [
+          "José Ramón Enríquez",
+          "Jiaxin Pei",
+          "Alex Pentland"
+        ],
+        "url": "https://arxiv.org/abs/2609.20059",
+        "one_sentence": "Argues AI should support deliberation at scale by lowering engagement frictions while preserving human agency. Proposes four guiding principles: agency, mutual respect, equality, augmentation. Identifies alignment, sycophancy, bias and over-reliance as challenges.",
+        "nearest_anchor_id": "2605.24413",
+        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
+        "open_questions": [
+          "What metrics measure informed, representative and friction-robust discourse in place of engagement metrics?",
+          "How does sycophancy in an AI facilitator change the distribution of opinions in a deliberation?",
+          "Does AI-assisted deliberation reduce human agency through over-reliance over repeated sessions?",
+          "Does AI-assisted deliberation produce more representative outcomes than vote delegation schemes such as liquid democracy?",
+          "How does training bias in the facilitating model shift which viewpoints reach consensus in a large deliberation?",
+          "Can deliberation-focused AI systems hold up when participants try to manipulate them, and what attacks work?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.19888",
+        "title": "Putting Context into Preference Aggregation",
+        "authors": [
+          "Philipp Peitler",
+          "Karl H. Schlag"
+        ],
+        "url": "https://arxiv.org/abs/2609.19888",
+        "one_sentence": "Weakens Arrow's independence axioms to let social preference depend on a defined context of menu alternatives and outside preferences. Derives unique representations under this weaker structure. Discusses applications to markets, intertemporal individual well-being, and bargaining.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Which context definitions produce unique representations beyond the markets, intertemporal well-being and bargaining examples given?",
+          "How do context-dependent aggregation rules behave as voting or allocation mechanisms in a population of autonomous agents that report preferences strategically?",
+          "Can context, as the definition requires, be inferred from observed choices rather than assumed by the analyst?",
+          "Do context-dependent social preferences remain stable when the menu changes repeatedly over time, as in a market with entering and exiting alternatives?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-09-16",
     "counts": {
       "fetched": 242,
