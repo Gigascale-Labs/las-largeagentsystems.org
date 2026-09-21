@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-09-20",
+    "counts": {
+      "fetched": 0,
+      "unseen": 0,
+      "screened": 0,
+      "relevant": 0,
+      "kept": 0,
+      "anchors": 20
+    },
+    "papers": []
+  },
+  {
     "date": "2026-09-19",
     "counts": {
       "fetched": 0,
@@ -14,14 +26,57 @@
   {
     "date": "2026-09-18",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 205,
+      "unseen": 205,
+      "screened": 200,
+      "relevant": 4,
+      "kept": 2,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2609.21997",
+        "title": "Bayesian Belief Layer for Controllable Opinion Dynamics in LLM Agents",
+        "authors": [
+          "Hafsa Akbar",
+          "Daniel Platnick",
+          "Marjan Alirezaie",
+          "Hossein Rahnama"
+        ],
+        "url": "https://arxiv.org/abs/2609.21997",
+        "one_sentence": "Introduces a Bayesian belief layer separating LLM agents' internal stance from their utterances, using a stubbornness parameter to reproduce Friedkin-Johnsen opinion-dynamics regimes. Tests show the layer's fixed points match FJ closed-form solutions and recover prescribed stubbornness after language generation across four models.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Does the Bayesian belief layer reproduce opinion dynamics in networks larger than the small groups tested, and on realistic social network topologies?",
+          "Which opinion regimes appear when agents hold many interdependent stances instead of a single scalar stance?",
+          "How do the per-model stance biases surfaced by the belief layer differ across model families and across topics?",
+          "Do the three regimes produced by sweeping the prior-strength parameter match opinion trajectories measured in real online discussions?",
+          "Can an external monitor infer the stubbornness parameter of agents it does not control, using only their utterances?",
+          "Does an explicit belief layer change downstream behaviour beyond stance, such as coalition formation or strategic misreporting?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.21325",
+        "title": "LEGIT: Credentialing Protocol for Trustworthy AI Agent Marketplaces",
+        "authors": [
+          "Steve Drew",
+          "Jiayu Zhou"
+        ],
+        "url": "https://arxiv.org/abs/2609.21325",
+        "one_sentence": "Presents LEGIT, a protocol binding certified performance and cost measurements to agent identity and evaluation budget for marketplace comparison. Analyzes reputation manipulation risk under a Sybil attack model and quantifies deposits and fees needed to deter it.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the LEGIT credentialing protocol hold up when agents change their configuration after certification?",
+          "How reliable is buyer feedback in an agent marketplace, and what happens to reputation scores when feedback is noisy or strategic?",
+          "What deposit and fee levels defeat Sybil reputation manipulation under attack models other than the one stated?",
+          "Do credential records shift allocation and price outcomes across a whole marketplace of many agents and buyers?",
+          "How do certification results transfer across task domains and evaluation budgets not covered by the signed record?",
+          "Do human buyers actually use and trust credential records and visual profiles when selecting agents?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-09-17",
