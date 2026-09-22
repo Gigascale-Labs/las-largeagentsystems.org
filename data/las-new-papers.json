@@ -1,11 +1,85 @@
 [
   {
+    "date": "2026-09-21",
+    "counts": {
+      "fetched": 236,
+      "unseen": 236,
+      "screened": 200,
+      "relevant": 13,
+      "kept": 3,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.24012",
+        "title": "Testing, not presuming, adequacy: calibrating generative social simulators against emergent network structure",
+        "authors": [
+          "Tengfei Shao",
+          "Chao Li",
+          "Xu Wang",
+          "Masayuki Goto"
+        ],
+        "url": "https://arxiv.org/abs/2609.24012",
+        "one_sentence": "Proposes an adequacy-aware calibration protocol combining posterior estimation, identifiability checks, and held-out audits for generative social simulators.  Applies it to a persona-based simulation of a bipartite buyer-brand resale market, finding the simulator fails to reproduce several network statistics.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Adding agent interaction or a buyer-breadth mechanism to the forward model may restore adequacy, and the paper does not test this.",
+          "The calibration is approximate and overconfident for one behavioural parameter, and the paper does not say which estimator change fixes this.",
+          "The adequacy protocol runs only on four channel-by-residency cells of one second-hand luxury resale market, so its behaviour on other emergent network data is untested.",
+          "Within-category brand relabelling causes no consistent degradation of the language-model persona profiles, and the paper does not identify which parts of a profile carry the predictive structure.",
+          "The held-out audit surfaces a buyer-breadth-dispersion miss that no earlier diagnostic detects, and the paper does not say which diagnostics would catch it earlier."
+        ]
+      },
+      {
+        "arxiv_id": "2609.24629",
+        "title": "Augmented Hypothesis Testing with Persona-Based LLM Simulations",
+        "authors": [
+          "Ziyad Benomar",
+          "Aymen Al Marjani",
+          "Paul Missault",
+          "Saab Mansour"
+        ],
+        "url": "https://arxiv.org/abs/2609.24629",
+        "one_sentence": "Proposes a learning-augmented hypothesis testing framework using persona-based LLM agent predictions to reduce A/B test sample sizes.  Validates the framework, including a Generalized PPI++ estimator, on four real-world datasets.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "How much do persona-based LLM predictions reduce required sample size across datasets other than the four used here?",
+          "Which persona construction choices, such as the amount and source of user attributes, control the accuracy of individual-level predictions?",
+          "Do the robustness bounds hold when LLM predictions are systematically biased in the same direction as the treatment effect?",
+          "Does the framework keep statistical validity when experimental units interfere with each other, as in a social network?",
+          "Do the sample-size savings hold in a live A/B test run on a deployed product?",
+          "How does prediction quality degrade when the persona population drifts away from the population under test?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.24784",
+        "title": "Convex AI Compositionality and the Governance of AI System Populations",
+        "authors": [
+          "Andrea Ferrario"
+        ],
+        "url": "https://arxiv.org/abs/2609.24784",
+        "one_sentence": "Introduces a convex-space formalism to represent and govern populations of related AI system instantiations and configurations.  Illustrates the framework on distributed healthcare and recruitment AI deployment scenarios.",
+        "nearest_anchor_id": "2512.16856",
+        "nearest_anchor_title": "Distributional AGI Safety",
+        "open_questions": [
+          "Convex compositionality represents populations of AI system configurations, but the abstract gives no empirical test; can the representation be applied to a real population of deployed model versions built from public model registries and release logs?",
+          "Which operational-state metrics can a monitor actually compute from aggregate behaviour of a population of AI instantiations, and do those metrics track the convex-hull heterogeneity measures the framework assumes?",
+          "The framework states conditions under which convex composition preserves lifecycle reachability and AI identity relations; do those conditions hold in practice, or do real deployment pipelines violate them?",
+          "The illustrations cover distributed healthcare deployments and recruitment AI variants; does the representation extend to populations of interacting agents in markets or social networks where agents influence each other?",
+          "Regulation remains single-system-centric; what legal instruments would treat a collection of related AI systems as one governance object?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-09-20",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
+      "fetched": 139,
+      "unseen": 139,
+      "screened": 139,
+      "relevant": 6,
       "kept": 0,
       "anchors": 20
     },
@@ -14,14 +88,54 @@
   {
     "date": "2026-09-19",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 153,
+      "unseen": 153,
+      "screened": 153,
+      "relevant": 6,
+      "kept": 2,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2609.22757",
+        "title": "Algorithmic Collusion and the Complexity of Information-Value-Free Equilibria",
+        "authors": [
+          "Ioannis Anagnostides",
+          "Weiqiang Zheng"
+        ],
+        "url": "https://arxiv.org/abs/2609.22757",
+        "one_sentence": "Studies the computational complexity of information-value-free (correlated) equilibria, a concept proposed for detecting algorithmic collusion.  Proves PPAD-completeness for computing such equilibria in many-player or Bayesian games, and an exponential query lower bound.  Shows a weaker variant (IVFCCE) admits no-regret dynamics membership in CLS but is at least as hard as P-matrix linear complementarity problems.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Do no-regret pricing algorithms in repeated market games converge to outcomes with low information value, and how large is the gap in practice?",
+          "Can a regulator detect a violation of the information-value-free condition from observed play alone, without access to the agents' algorithms?",
+          "Which refinements of correlated equilibrium other than information-value-free admit polynomial-time computation in succinct games?",
+          "Is computing an exponentially small approximation of an information-value-free coarse correlated equilibrium PPAD-hard or PLS-hard, closing the gap between the CLS membership and the P-matrix linear complementarity lower bound?",
+          "How does the intractability of information-value-free equilibria change the design of regulation on algorithmic collusion?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.22761",
+        "title": "Causal inference in two-sided randomization designs: factorial regression, two-way clustering, and covariate adjustment",
+        "authors": [
+          "Pengfei Tian",
+          "Jizhou Liu",
+          "Lei Shi",
+          "Peng Ding"
+        ],
+        "url": "https://arxiv.org/abs/2609.22761",
+        "one_sentence": "Develops estimators and inference procedures for randomized experiments in two-sided populations, such as buyers and sellers in a marketplace.  Under local interference, establishes that OLS with two-way cluster-robust variance estimation yields valid inference for spillover and interaction effects.  Proposes a sharper variance estimator and a covariate-adjustment method for efficiency gains.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "The local interference assumption restricts spillovers to buyer-seller pairs, so how do the estimators behave when market-level equilibrium effects violate it?",
+          "The results are asymptotic, so how do the two-way clustered and sharper variance estimators perform in finite samples with few buyers or few sellers?",
+          "How do two-sided randomization designs perform in a marketplace where one or both populations consist of autonomous AI agents that adapt to the treatment?",
+          "Which covariates give efficiency gains under the recommended two-way analysis-of-variance representation in a real platform experiment?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-09-18",
