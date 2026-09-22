@@ -21,9 +21,11 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          # 20, not 18. The map build below runs `npm ci`, and this project's
-          # dependencies do not install on 18.
-          node-version: '20'
+          # 22, not 20. `npm test` runs .mts files through Node's type
+          # stripping, which arrived in 22.6, and package.json says so. The map
+          # build below runs `npm ci`, and this project's dependencies do not
+          # install on 18.
+          node-version: '22'
           cache: npm
 
       - name: Sync papers feed

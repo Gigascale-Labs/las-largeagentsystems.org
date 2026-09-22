@@ -8,13 +8,17 @@ serves three catalogues: the canon, upcoming events, and new arXiv papers.
 
 | Item | Version |
 |---|---|
-| Next.js (App Router, Turbopack) | 16.2.4 |
+| Next.js (App Router, Turbopack) | 16.3.3 |
 | React | 19.2.4 |
 | TypeScript | 5 |
 | Tailwind CSS | 4 |
 | Recharts | 3.9.2 |
-| Node (local) | 22.23.2 |
-| Node (sync workflows) | 18 |
+| Node (local and sync workflows) | 22 |
+
+Node 22.6 or later, pinned in `.nvmrc` and declared in `package.json`
+`engines`. `npm test` runs `tests/*.test.mts` through Node's type stripping,
+which arrived in 22.6; on Node 20 all 17 test files fail to load. Run
+`nvm use` in this directory before anything else.
 
 `AGENTS.md` states the first rule for this repo: this Next.js version differs
 from older ones. Read `node_modules/next/dist/docs/` before writing code.
