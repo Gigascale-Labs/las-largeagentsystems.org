@@ -1,5 +1,57 @@
 [
   {
+    "date": "2026-09-22",
+    "counts": {
+      "fetched": 227,
+      "unseen": 227,
+      "screened": 200,
+      "relevant": 6,
+      "kept": 2,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.26481",
+        "title": "Behavior is Not Enough: A Mechanism-Based Evaluation of Social Norm Emergence in LLM Societies",
+        "authors": [
+          "Rasika Muralidharan",
+          "Haewoon Kwak",
+          "Jisun An"
+        ],
+        "url": "https://arxiv.org/abs/2609.26481",
+        "one_sentence": "Introduces a framework measuring agents' reported expectations, not just behavior, to distinguish mechanisms of social norm emergence in LLM societies. Tests social learning and social selection under controlled ablations and adversarial disruption across four LLM families. Finds expectation elicitation raises cooperation, social learning stabilizes behavior, and social selection identifies cooperators without reinforcing them.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Reported expectations may not match agents' internal states, so how well do elicited empirical and normative expectations agree with internal evidence such as activations or chain-of-thought?",
+          "Does the elicitation of expectations itself change agent behavior enough to invalidate it as a measurement, and can a non-intrusive probe recover the same mechanism attribution?",
+          "The framework covers social learning and social selection, so which other norm-formation mechanisms, such as punishment or reputation, contribute to cooperative outcomes in LLM societies?",
+          "How do the reported mechanism effects scale beyond the tested group sizes to populations of thousands of agents?",
+          "Normative expectations and behavioral coordination recover differently after adversarial disruption, so what determines the recovery time of each?",
+          "Do the mechanism attributions hold in mixed populations of humans and LLM agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.25760",
+        "title": "The Limits of Simulated Societies: How Post-Training and Survey Fine-Tuning Erase Cross-Cultural Variance",
+        "authors": [
+          "Rojin Ziaei"
+        ],
+        "url": "https://arxiv.org/abs/2609.25760",
+        "one_sentence": "Measures point accuracy and dispersion retention of LLMs simulating diverse populations on World Values Survey data across twelve countries. Identifies a 'consensus collapse' failure mode where alignment training compresses output diversity toward one stereotype per group. Shows fine-tuning and temperature adjustments fail to restore the human spread, especially for non-WEIRD countries.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Post-training compresses the spread of simulated opinion, and no tested method restores it; which training or decoding method does restore dispersion without losing point accuracy?",
+          "The dispersion gap between WEIRD and non-WEIRD countries widens under survey fine-tuning, and Nigeria stays at 0.36 after mixing with an unaligned prior; what causes the country-specific collapse?",
+          "Consensus collapse is measured on single-response survey answers; does the same compression appear in multi-agent simulations where agents interact over many turns?",
+          "Dispersion retention uses the ratio of predicted to human standard deviation on 10,000 respondent-question pairs; how does the diagnostic behave on non-survey behaviour such as market choices or social-network posting?",
+          "The diagnostic covers eleven zero-shot models and five fine-tuned variants; does consensus collapse persist in frontier closed models and in larger post-training pipelines?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-09-21",
     "counts": {
       "fetched": 236,
