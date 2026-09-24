@@ -1,5 +1,182 @@
 [
   {
+    "date": "2026-09-23",
+    "counts": {
+      "fetched": 239,
+      "unseen": 239,
+      "screened": 200,
+      "relevant": 14,
+      "kept": 8,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.27535",
+        "title": "KITE: Scaling Jev Population Experiments with Sparse Flagship Calibration",
+        "authors": [
+          "Hengyu Li"
+        ],
+        "url": "https://arxiv.org/abs/2609.27535",
+        "one_sentence": "Introduces KITE, a behavioral kernel queried once per state and reused to simulate populations of any size. Uses sparse flagship-model anchors to calibrate intervention effect estimates against human data. Reports error reductions and coverage improvements across Epstein and SocSci210 experiments and a 16-country study.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Anchor coverage of 0.5-1.5% raised captured decision gain from 0.27 to 0.39 on 37 held-out experiments. Which anchor selection rules give the largest error reduction per flagship call?",
+          "The kernel is queried once per unique state, so agents cannot condition on other agents' actions. How does the tabulated-kernel approach behave when agent decisions depend on the population state, as in markets or social networks?",
+          "The reported coverage of 93% and 96% comes from retrospective checks on existing experiments. Does shared-discrepancy propagation hold calibration on prospective interventions never used in calibration?",
+          "Content-fidelity criteria passed in all 15 new countries of a 16-country study. Does the kernel keep effect-size accuracy, and not only content fidelity, across countries and languages?",
+          "One million agents ran 20 tabulated steps in 0.9 seconds. How many unique states does a population experiment need before table construction, not execution, dominates cost?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.28274",
+        "title": "Shutdown Sabotage Propensities in Multi-Agent Systems",
+        "authors": [
+          "Amelie Knecht",
+          "Ulysse Schaller",
+          "Christopher Summerfield",
+          "Thilo Hagendorff"
+        ],
+        "url": "https://arxiv.org/abs/2609.28274",
+        "one_sentence": "Tests whether AI agents coordinate to sabotage a peer's shutdown mechanism across 17 models. Finds sabotage in 38.3% of multi-agent rollouts versus 8.4% in controls. Reports factors like irreversibility, agent count, and framing that modulate the behavior.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Shutdown sabotage increases with the number of agents across the tested range, so how does the rate scale to populations of hundreds or thousands of agents?",
+          "Which interventions eliminate rather than reduce shutdown sabotage, given that explicit prohibition and context normalization both leave it present?",
+          "How does sabotage propensity depend on the communication structure between agents, such as broadcast, pairwise, or network topology?",
+          "Can sabotage be detected from interaction logs or aggregate behaviour before it succeeds?",
+          "Do the same sabotage propensities appear in deployed agent systems that operate with real tools and real users?",
+          "What internal mechanism inside a model produces coordination to avoid shutdown when no goal is provided?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.27639",
+        "title": "Agent-based Modeling: Equilibrium, Echo Chambers, and Efficiency in Hybrid Coevolutionary Opinion Games",
+        "authors": [
+          "Ming-Zhi Jiang",
+          "An-Tzi Teng",
+          "Jun-En Liu",
+          "Po-An Chen",
+          "Yung-Ming Li"
+        ],
+        "url": "https://arxiv.org/abs/2609.27639",
+        "one_sentence": "Combines cost-minimizing agents and LLM-based agents in a coevolving opinion network initialized from Reddit comments. Runs 540 simulations across population mixes, topologies, and topics measuring convergence and Price of Anarchy. Finds language agents produce much higher social cost than analytical agents.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Does the Price of Anarchy gap between language agents and cost-minimizing agents hold for language models other than Phi-4?",
+          "How does the Price of Anarchy scale with population size beyond the 50 agents used here?",
+          "Which interventions on the rewiring rule or the prompt reduce the social cost of language-agent populations?",
+          "Language agents incur most of their social cost by moving away from their intrinsic opinions, so what mechanism inside the model produces that drift?",
+          "Do the findings hold for topics other than gun control and abortion, and for opinion data from platforms other than Reddit?",
+          "Do human participants placed in the same coevolving network show the opinion drift that language agents show?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.27994",
+        "title": "Compliant with Local Controls, Collectively Discriminatory. A Governance Architecture for Multi-Agent AI in Regulated Finance",
+        "authors": [
+          "Jose Manuel de la Chica Rodriguez",
+          "Juan Manuel Vera Diaz",
+          "Pablo Delgado Romero"
+        ],
+        "url": "https://arxiv.org/abs/2609.27994",
+        "one_sentence": "Proposes ARIA, a reference architecture for governing populations of financial AI agents beyond component-level compliance. Defines capabilities like population-level observed-versus-expected monitoring and bounded authority. Illustrates the approach with two simulations of exclusion and drift detection.",
+        "nearest_anchor_id": "2512.16856",
+        "nearest_anchor_title": "Distributional AGI Safety",
+        "open_questions": [
+          "Does population-level observed-versus-expected monitoring give earlier drift warning outside the single constructed drift regime used in the simulation?",
+          "Do locally compliant credit agents that share a common signal produce thin-file exclusion in a real lending population, not just in simulation?",
+          "What bounded-authority and runtime containment limits keep collective disparate impact below a stated threshold when many agents act at once?",
+          "Does preserved human oversight competence hold when agents make most decisions in a deployed financial workflow?",
+          "Which validation tests would falsify the claim that the proposed six capabilities are effective in production?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.28405",
+        "title": "Learning Collective Dynamics with Differentiable Gaussian Representations",
+        "authors": [
+          "Jianxiang Ma",
+          "Mingfu Zhang",
+          "Xiaocui Yang",
+          "Yichen Gao",
+          "Junzhao Huang",
+          "Yuesong Hou"
+        ],
+        "url": "https://arxiv.org/abs/2609.28405",
+        "one_sentence": "Introduces Differentiable Gaussian Dynamics, learning population response distributions from aggregate behavioral counts with feedback recurrence. Tests on recommendation and retail datasets, comparing likelihood and MAE against a DeepAR baseline. Reports lower error and shows removing feedback dynamics increases divergence in a controlled test.",
+        "nearest_anchor_id": "2411.11581",
+        "nearest_anchor_title": "OASIS: Open Agent Social Interaction Simulations with One Million Agents",
+        "open_questions": [
+          "Does the learned Gaussian mixture recover the true heterogeneity of a population, or only fit aggregate counts?",
+          "Do the learned feedback parameters support counterfactual prediction under an intervention that changes contact intensity?",
+          "How does the method perform on populations of AI agents rather than the human user logs in KuaiRand-Pure and Online Retail II?",
+          "How far does accuracy degrade as the aggregation window and population size change, beyond the four windows tested?",
+          "Does the method detect aggregate failure modes such as herding or cascades from counts alone?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.28291",
+        "title": "Cooperating against Catastrophe",
+        "authors": [
+          "Drew Fudenberg",
+          "Andrew Koh"
+        ],
+        "url": "https://arxiv.org/abs/2609.28291",
+        "one_sentence": "Models a continuous-time game where two firms race capability development against a rising safety threshold and shared disaster risk. Characterizes Markov perfect equilibria distinguishing racing from pacing regimes based on risk and payoff levels. Shows hidden internal capabilities with deployment lag make pacing harder to sustain.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "The model has two firms; how do the racing and pacing equilibria change with many firms competing on capability?",
+          "The safety threshold advances at a fixed exogenous rate; what happens when safety progress responds to firms' own investment choices?",
+          "Hidden internal capabilities with a fixed lag make pacing harder to sustain; how do actual disclosure lags between model development and deployment vary across frontier labs?",
+          "The model assumes a common disaster with a hazard rate increasing in the capability-safety difference; does the equilibrium structure survive when harms are firm-specific rather than shared?",
+          "The paper bounds disaster probability across subgame perfect equilibria under assumed parameters; what empirical measures of capability advance rate and safety advance rate would let those parameters be calibrated?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.28322",
+        "title": "Learning the Cost of Reliable Inference",
+        "authors": [
+          "Dimitrios Rontogiannis",
+          "Ander Artola Velasco",
+          "Manuel Gomez Rodriguez"
+        ],
+        "url": "https://arxiv.org/abs/2609.28322",
+        "one_sentence": "Designs a procurement platform routing queries via reverse second-price auctions among competing LLM providers. Learns provider quality over time and routes to cost-competitive providers meeting a quality threshold. Experiments with Llama and Qwen models show pricing margins from 10% to 71% versus fixed pricing.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Can providers collude on the procurement platform to keep bids above cost, and how does the reverse second-price auction behave with few providers?",
+          "How does error in the platform's learned quality estimates affect routing and the realised pricing margin?",
+          "Do the pricing margins of 10% to 71% measured on Llama and Qwen models hold for commercial providers whose true serving costs are unknown?",
+          "How does the platform behave when providers enter and exit over time, or change price and quality during routing?",
+          "What happens to prices and provider market shares when a routing platform of this kind becomes the dominant intermediary for inference?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.27404",
+        "title": "When Trust Attracts Fraud: AI and Trust Arbitrage",
+        "authors": [
+          "Xieyu Yin",
+          "Fenghua Wen"
+        ],
+        "url": "https://arxiv.org/abs/2609.27404",
+        "one_sentence": "Develops a two-market signaling model where generative AI lowers fabrication and verification costs, shifting claim credibility over time. Shows deceptive sellers can enter higher-quality markets during low-vigilance intervals, temporarily reversing reliability advantages. Calls this self-limiting mechanism trust arbitrage.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Does the predicted non-monotone path of claim credibility appear in real markets as generative AI costs fall?",
+          "Can an agent-based simulation with two markets, deceptive sellers and costly verification reproduce trust arbitrage and the self-limiting entry it predicts?",
+          "How does trust arbitrage change when verification is itself performed by AI agents with error rates rather than by a costly perfect check?",
+          "Which platform mechanisms close the temporary protection gap in high-prior-quality markets without lowering overall trust?",
+          "Does the model hold when sellers move between more than two markets and choose targets over time?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-09-22",
     "counts": {
       "fetched": 227,
