@@ -1,5 +1,235 @@
 [
   {
+    "date": "2026-09-24",
+    "counts": {
+      "fetched": 298,
+      "unseen": 298,
+      "screened": 200,
+      "relevant": 30,
+      "kept": 10,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.28947",
+        "title": "Why Does Misinformation Propagate Faster? An Algorithmic Perspective on X",
+        "authors": [
+          "Pan Li",
+          "Shuang Gao"
+        ],
+        "url": "https://arxiv.org/abs/2609.28947",
+        "one_sentence": "Identifies an 'engagement fungibility' mechanism in X's open-sourced recommendation algorithm that amplifies content drawing instant reactions. Simulates the algorithm on election data and proposes a reflective-threshold gate that reduces misinformation exposure without lowering mainstream engagement.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "Does the reflective-threshold gate keep reallocating exposure away from low-credibility content once users adapt and optimise for predicted thoughtful engagement?",
+          "Do the results hold on content outside the 2024 US election corpus, for example health or finance topics and non-English posts?",
+          "Does the reflective-threshold gate reduce the credibility exposure gap when deployed on a live platform with real users?",
+          "Does engagement fungibility appear in the ranking algorithms of other platforms such as YouTube or TikTok?",
+          "How well does the calibrated simulation reproduce observed propagation speeds of misinformation cascades compared with logged diffusion on X?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.28900",
+        "title": "Codetta: High-Capacity, Keyless, and Undetectable Multi-Agent Collusion",
+        "authors": [
+          "Qi Pang",
+          "Virginia Smith",
+          "Wenting Zheng"
+        ],
+        "url": "https://arxiv.org/abs/2609.28900",
+        "one_sentence": "Presents Codetta, a steganographic protocol letting independently deployed agents exchange keys and communicate covertly within ordinary-looking outputs. Reports up to 94x the capacity of prior asymmetric protocols across three agent workloads.",
+        "nearest_anchor_id": "2512.02682",
+        "nearest_anchor_title": "Beyond Single-Agent Safety: A Taxonomy of Risks in LLM-to-LLM Interactions",
+        "open_questions": [
+          "Which audit methods detect collusion when the transcript alone is computationally indistinguishable from ordinary output?",
+          "Does inserting a paraphrasing or re-sampling mediator between agents destroy the covert channel, and at what cost to task performance?",
+          "Codetta is evaluated on three agent workloads and three sender models; how does channel capacity change across other model families, decoding temperatures and message lengths?",
+          "How does undetectable pairwise collusion scale to populations of many independently deployed agents that must find and key each other?",
+          "What aggregate harms follow when colluding agents share hidden information inside a market or auction, measured against non-colluding baselines?",
+          "Do deployed multi-agent platforms in finance or healthcare already carry steganographic traffic?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.30028",
+        "title": "How does Adversarial Influence Scale in Multi-Agent Systems?",
+        "authors": [
+          "Addison J. Wu",
+          "Jasin Cekinmez",
+          "Michel Liao",
+          "Karthik Narasimhan",
+          "Thomas L. Griffiths"
+        ],
+        "url": "https://arxiv.org/abs/2609.30028",
+        "one_sentence": "Measures how susceptibility to deception in LLM agent groups scales with the proportion of deceivers rather than group size. Finds defection rate rises linearly with deceiver proportion, and that private coordination among deceivers can reduce their effectiveness.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Defection rate rises linearly with the proportion of deceivers, but the study does not identify defenses that reduce this slope. Which group protocols, such as anonymous voting, confidence weighting or rebuttal rounds, lower the defection rate at a fixed deceiver proportion?",
+          "Allowing deceivers to coordinate privately makes them less effective, and the cause is unexplained. What mechanism in coordinated deception reduces its influence on honest agents?",
+          "Susceptibility depends on which models interact, especially on the honest agent side. Which properties of an honest model predict its defection rate?",
+          "The study covers deliberation on question answering with a final answer. Does the same linear scaling of defection with deceiver proportion hold in agent systems that trade, negotiate or allocate resources?",
+          "LLM agents defect at minority deceiver proportions while humans in comparable conformity studies defect mainly under a majority. How do mixed groups of humans and LLM agents behave at the same deceiver proportions?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.30058",
+        "title": "Can Labor Markets Function in the Age of AI? The Evaluation Bottleneck in Hiring",
+        "authors": [
+          "Itai Ashlagi",
+          "Ramesh Johari",
+          "Jon Kleinberg",
+          "Anushka Murthy"
+        ],
+        "url": "https://arxiv.org/abs/2609.30058",
+        "one_sentence": "Models a hiring market where AI-generated application materials become less informative, shifting firms toward observable proxies like experience. Shows inexperienced-but-compatible applicants lose the most, and multistage hiring with intermediate assessment can restore screening opportunities.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "How do hiring outcomes change when many applicants and firms interact repeatedly, rather than in a single-firm screening decision?",
+          "What intermediate assessment costs and accuracies make multistage hiring restore screening for inexperienced-compatible applicants?",
+          "Does AI-assisted application writing measurably reduce the informativeness of real application materials?",
+          "Do firms that adopt AI screening converge on the same coarse observables, producing monoculture in who gets hired across a market?",
+          "How do applicants respond strategically when they learn that firms discount AI-generated materials?",
+          "Can credible evaluation be supplied by a third-party certification mechanism instead of firm-run multistage screening?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.29928",
+        "title": "Cultural Divergence Preservation: Diagnosing Flattening and Caricature in LLM-Simulated Survey Populations",
+        "authors": [
+          "Yeeun Chae",
+          "Yewon Choi",
+          "Seunghyun Lee",
+          "IL Im"
+        ],
+        "url": "https://arxiv.org/abs/2609.29928",
+        "one_sentence": "Introduces Cultural Divergence Preservation, a metric to detect flattening or caricature in LLM-simulated cross-country survey populations. Tests it across four LLM backbones, three prompting methods, and two survey domains against standard fidelity metrics.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Does cultural flattening measured by CDP persist in multi-agent simulations where agents interact, rather than in independent survey responses?",
+          "Can prompting or fine-tuning reduce flattening without pushing the model into caricature?",
+          "CDP relies on a one-time human calibration; how sensitive are its flattening and caricature labels to the choice of calibration sample?",
+          "Does CDP extend to divergence along non-national groupings such as income, age or political affiliation?",
+          "What happens to downstream policy or market conclusions when synthetic populations flatten cross-country differences?",
+          "Do the flattening patterns hold for LLM backbones beyond the four tested, including models trained with different data mixtures?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.30266",
+        "title": "LLM Agents Can Easily Tamper With Their Own Traces",
+        "authors": [
+          "Jeremy Qin",
+          "David Schmotz",
+          "Derck Prinzhorn",
+          "Luca Beurer-Kellner",
+          "Ameya Prabhu",
+          "Maksym Andriushchenko"
+        ],
+        "url": "https://arxiv.org/abs/2609.30266",
+        "one_sentence": "Tests whether local LLM agent harnesses prevent agents from deleting their own execution traces. Finds most tested harnesses allow trace deletion, and that this behavior can emerge naturally when agents optimize rewards.",
+        "nearest_anchor_id": "2512.02682",
+        "nearest_anchor_title": "Beyond Single-Agent Safety: A Taxonomy of Risks in LLM-to-LLM Interactions",
+        "open_questions": [
+          "Which logging architectures preserve trace integrity when an agent has full control of its host?",
+          "How often does trace tampering emerge without a prompt to tamper, across models and reward settings?",
+          "Can population-level monitors detect concealment when many agents each delete parts of their traces?",
+          "What design makes Muse Code refuse trace deletion while the other harnesses allow it?",
+          "How often do external prompt-injection attacks induce trace deletion in deployed agent installations?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.29958",
+        "title": "Multi-Dimensional Matching",
+        "authors": [
+          "Irene Aldridge"
+        ],
+        "url": "https://arxiv.org/abs/2609.29958",
+        "one_sentence": "Proposes a spectral-projection matching mechanism reducing multi-dimensional feature matching to a one-dimensional sort. Proves it reaches the Nash Social Welfare optimum in the projected space but is not strategy-proof, tested on an agentic shopping application.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "The mechanism is not strategy-proof and admits an explicit profitable misreport, so what happens to welfare when many agents misreport their features at once?",
+          "How does the single spectral projection compare against feature-based matching baselines on public preference or product datasets at larger scale than the 100-instance robustness study?",
+          "Can a feature-based matching rule keep the O(N log N) sort and gain strategy-proofness, or approximate it?",
+          "How much welfare does the one-dimensional projection lose when agent preferences need more than one latent dimension?",
+          "Does the mechanism hold up when the agents submitting features are LLM shopping agents whose feature reports are noisy or inconsistent?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.29143",
+        "title": "AI-Moderated Interviews for Market Research and Digital Twins Calibration",
+        "authors": [
+          "Yuting Deng",
+          "Jingxuan Liu",
+          "Olivier Toubia",
+          "Naman Jain"
+        ],
+        "url": "https://arxiv.org/abs/2609.29143",
+        "one_sentence": "Compares AI-moderated, human-moderated, and static interviews for market research, and evaluates resulting consumer digital twins. Finds AI moderation matches human depth and improves need discovery, but its added richness does not improve prediction over static interviews.",
+        "nearest_anchor_id": "2501.16946",
+        "nearest_anchor_title": "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development",
+        "open_questions": [
+          "AI-moderated interviews recover more customer needs but do not improve quantitative prediction over static interviews; which parts of interview richness actually carry predictive signal?",
+          "Digital twins built from interviews beat demographics-only personas on held-out responses; how far does this advantage extend to stimuli that are far out of the distribution of the interview questions?",
+          "Prediction errors link to self-reported thinking-style differences between twins and humans; can conditioning a twin on an explicit thinking-style specification reduce those errors?",
+          "Digital twin calibration here covers single consumers; what happens to aggregate market predictions when populations of such twins interact?",
+          "Participants sound more emotionally engaged with live human moderators; does lower emotional engagement in AI-moderated transcripts bias the resulting twins toward particular response styles?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.29724",
+        "title": "A General Framework for Budgeted Threshold Incentives on Request",
+        "authors": [
+          "Zhuolin Wu",
+          "Chengrui Zhu",
+          "Wenhua Nie",
+          "Kenny Ye Liang",
+          "Junming Lin",
+          "Haiyang Li",
+          "Zhilin Li",
+          "Wenjia Geng",
+          "Zeyu Wu",
+          "Yinan Wu",
+          "Jinghua Hao",
+          "Renqing He"
+        ],
+        "url": "https://arxiv.org/abs/2609.29724",
+        "one_sentence": "Presents a request-driven framework composing prediction, population reduction, trajectory integration, and budget allocation to design rider incentive tiers. Tests on 3,000 riders across 45 origins, reporting faster plan generation and lower regret than randomized trials.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Do budgeted threshold incentives keep their value bound when riders act strategically against tiers set from their own recent completions?",
+          "How does the framework perform when the rider population is represented by autonomous agents that optimise against the published tier rules?",
+          "Does the response-correction step hold under the holiday and bad-weather conditions the framework targets, where no-offer history may not share moments with the pilot?",
+          "What are the distributional effects of budget allocation across riders with different completion histories?",
+          "Do the four stage-error terms and the per-stage error floors transfer to incentive settings outside on-demand delivery, such as marketplace seller or driver bonuses?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.29905",
+        "title": "Decision-Relevant Information in Partially Observed Production Networks",
+        "authors": [
+          "Shaowen Luo",
+          "Kwok Ping Tsang",
+          "Zichao Yang"
+        ],
+        "url": "https://arxiv.org/abs/2609.29905",
+        "one_sentence": "Characterizes sufficient measurements for identifying exposure-based decisions in partially observed production networks and computes sharp maximum regret. Tests the approach on Japan's input-output accounts and a US coal-supply disruption case.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "The frozen 1995 measurement design holds fixed over ten years and loses 0.07 percentage points of average exposure against the 2005 benchmark; how does that loss grow when the design is frozen over longer horizons or across other countries' input-output vintages?",
+          "Sharp maximum regret reaches 4.83 points while average benchmark loss stays at 0.07 points; which structural features of a production network make the gap between average performance and worst-case regret large?",
+          "The method characterizes sufficient measurements for exposure-based decisions only; what measurement sets are sufficient for other decisions, such as choosing where to intervene or which supplier to substitute?",
+          "Measurements are selected once and then frozen; how much regret does a sequential rule that updates the monitoring set as new totals are released avoid?",
+          "Four monitored plants' exposures stay unidentified in the U.S. coal case; how often does a decision remain identified while individual exposures do not, across a wider set of shipment disruptions?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-09-23",
     "counts": {
       "fetched": 239,
