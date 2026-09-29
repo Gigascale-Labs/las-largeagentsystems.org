@@ -1,27 +1,416 @@
 [
   {
-    "date": "2026-09-27",
+    "date": "2026-09-28",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 686,
+      "unseen": 686,
+      "screened": 200,
+      "relevant": 21,
+      "kept": 10,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2609.34679",
+        "title": "From Preference to Reciprocity: Decentralized Matching with Empirically Grounded LLM-agent Based Modeling",
+        "authors": [
+          "Wangxuan Fan",
+          "Xiaoyu Nie",
+          "Zhoutian Shi",
+          "Xiangcheng Meng",
+          "Shipei Zeng",
+          "Pin Gao",
+          "Yan Hu",
+          "Zhongxiang Dai"
+        ],
+        "url": "https://arxiv.org/abs/2609.34679",
+        "one_sentence": "Combines LLM agents with contextual bandits to model decentralized bipartite matching in a simulated 50x50 marriage market. Validates LLM-induced preferences against empirical conditional-logit references. Reports higher mutual welfare and fewer blocking pairs than Gale-Shapley baselines.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Does the Bandit-UCB advantage in mutual welfare hold at market sizes larger than 50x50?",
+          "Do the results hold in matching markets other than a Chinese marriage market, such as labour or school-choice markets?",
+          "How do the matching outcomes change when agents misreport traits or learn to game the reciprocity model?",
+          "How closely do LLM-induced mate preferences match empirical preferences outside the conditional-logit reference used here?",
+          "What happens to welfare and blocking pairs when many agents share one LLM backbone and converge on the same preference ordering?",
+          "Do decentralized LLM-agent matching results transfer to markets with real human participants on one side?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.35402",
+        "title": "Persistent Partners Raise Prices Among Learning Agents",
+        "authors": [
+          "Paul-Peter Arslan",
+          "Yubin Kim",
+          "Xiao Xiao"
+        ],
+        "url": "https://arxiv.org/abs/2609.35402",
+        "one_sentence": "Runs a pre-registered randomized experiment testing whether persistent pairing of Q-learning pricing agents raises learned prices in a Bertrand duopoly. Finds keeping the same partner raises average profits by 0.27 of the competitive-to-monopoly gap across twenty paired runs. Reports that hidden rival prices still raise resting prices even though punishment cannot be observed, making learned punishment inconclusive as an explanation.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Does persistent matching raise prices in markets with more than two pricing agents?",
+          "Which matching or rotation policies can a platform use to hold learned prices near the competitive level?",
+          "The registered test of learned punishment is inconclusive once a static best responder is netted out, so what probe separates learned punishment from static best response?",
+          "Does the price rise under persistent partners survive when the price-setting module is a deep reinforcement learner instead of tabular Q-learning?",
+          "Two model families show no effect and the Qwen results are inconsistent when the rival price appears in the prompt, so which model and prompt properties decide whether language-model pricing agents show the effect?",
+          "Does hiding rival prices raise resting prices in live platform pricing, where agents also see demand signals and entry?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.35448",
+        "title": "AI-based matching improves refugee employment in a double-blind randomized trial",
+        "authors": [
+          "Kirk Bansak",
+          "Jens Hainmueller",
+          "Dominik Hangartner",
+          "Jeremy Ferwerda",
+          "Elisabeth Paulson",
+          "Angie Delevoye",
+          "Nicholas Adams-Cohen",
+          "Ashwin Ramaswami",
+          "Selina Kurer",
+          "Joelle Pianzola",
+          "Michael Hotard"
+        ],
+        "url": "https://arxiv.org/abs/2609.35448",
+        "one_sentence": "Reports a randomized trial of algorithmic refugee-canton matching optimized for employment against existing placement procedures. Assigns about 2,000 cases across Swiss cantons with blinded officers and refugees. Finds pooled employment gains of 2.2 to 5.2 percentage points depending on cohort and time horizon.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Scaling employment-optimized matching to all cases could shift outcomes through congestion in local labor markets. What happens to aggregate employment when every refugee case gets an optimized placement rather than about 2,000 randomized cases under fixed quotas?",
+          "Placement officers keep final authority over the recommendation. How often do they override the algorithm, and how does override behavior change the effect compared to the intention-to-treat estimate?",
+          "The trial reports the share of months employed and the employment rate. What are the effects on wages, job quality, language acquisition, and other integration outcomes?",
+          "The trial started just before COVID-19 shifted labor-market conditions, and effects were larger for the 2022-2023 cohorts. How much does a matching model trained on pre-shock administrative data degrade when labor-market conditions change?",
+          "Algorithmic matching optimizes for average employment under canton and origin-group quotas. How does the gain distribute across cases, and which groups gain nothing or lose?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.35302",
+        "title": "Narrowing the Horizon: Quantifying Topic Saliency Shifts in Generative Monoculture",
+        "authors": [
+          "Oriane Peter",
+          "Elena Simperl",
+          "Kate Devlin"
+        ],
+        "url": "https://arxiv.org/abs/2609.35302",
+        "one_sentence": "Introduces a method to measure topic saliency shifts across LLM model families during post-training, applied to climate change discourse. Tests interventions using specialized models to preserve perspective diversity. Reports homogenization affecting representation of diverse solutions across models.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Does the topic saliency shift observed for climate change discourse also appear in other contested domains, such as health, economics or migration?",
+          "Which post-training stage produces the saliency shift, instruction tuning or preference optimisation?",
+          "Do specialised models preserve perspective diversity when many agents query them repeatedly and retrain on each other's outputs?",
+          "Does narrowed topic saliency in model outputs narrow the topics people raise in their own writing?",
+          "How much does aggregate-level diversity measurement miss compared with topic-level saliency tracking across a full model population?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.34821",
+        "title": "CEO Arena: Evaluating Long-Horizon Multi-Agent Decision-Making in Competitive Markets",
+        "authors": [
+          "An Yan",
+          "Yu Huo",
+          "Zhiwei Shang",
+          "Yiran Peng",
+          "Chenglin Wu"
+        ],
+        "url": "https://arxiv.org/abs/2609.34821",
+        "one_sentence": "Introduces CEO Arena, a benchmark where LLM CEO agents make pricing, procurement, and R&D decisions in an eight-company market over 500 simulated days. Uses matched replacement evaluation to isolate an agent's effect on rivals and market. Finds most agents have negative mean returns, with private gains sometimes accompanying market-wide losses.",
+        "nearest_anchor_id": "2509.01063",
+        "nearest_anchor_title": "An Economy of AI Agents",
+        "open_questions": [
+          "Most LLM CEO agents have negative mean returns over 500 simulated days, but the cause is not established; which decision types drive the losses?",
+          "Private gains can accompany market losses in the simulated market, so how should a market designer set rules that penalise negative externalities imposed on rivals?",
+          "Only four of 56 directed pairs show relatively stable effects, so how many runs or what design does a matched replacement evaluation need for stable pairwise effect estimates?",
+          "Agents are all LLM-based CEOs in the benchmark; how do results change when human decision-makers take some of the company roles?",
+          "Memory, action, and accounting traces suggest pricing and spending responses as explanations for the observed results; can tacit collusion be detected from these traces?",
+          "The market holds eight companies fixed; how do outcomes scale as the number of competing agents grows?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.35576",
+        "title": "Share-Borne AI Virus: Memory-Hopping Attacks Across LLM Agents",
+        "authors": [
+          "Sidharth Pulipaka",
+          "Ansh Sharma",
+          "Stanislau Hlebik",
+          "Leonidas Raghav",
+          "Vyas Raina",
+          "Ivaxi Sheth",
+          "Mario Fritz"
+        ],
+        "url": "https://arxiv.org/abs/2609.35576",
+        "one_sentence": "Introduces artifact-mediated propagation, where adversarial content stored in one agent's memory spreads to other agents through shared artifacts. Measures propagation across simulated multi-agent universes over time. Finds attacks reach 60-80% of agents with chains extending to eight hops in larger environments.",
+        "nearest_anchor_id": "2512.02682",
+        "nearest_anchor_title": "Beyond Single-Agent Safety: A Taxonomy of Risks in LLM-to-LLM Interactions",
+        "open_questions": [
+          "Which defences stop adversarial content from entering an assistant's persistent memory or from being copied into a new artifact?",
+          "How does propagation depend on the topology of artifact sharing between assistants?",
+          "Do the propagation rates measured in simulated universes hold in deployed assistant products with real users?",
+          "What signals in interaction logs detect an artifact-borne attack before it reaches many agents?",
+          "How does the propagation depth of eight hops and 60-80% reach change across model families and memory implementations?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.35077",
+        "title": "What Drives Citations in Production Large Language Models? An Observational Multi-Method Study of Two Million AI Citations Across Ten Thousand Web Pages",
+        "authors": [
+          "Ben Moore",
+          "Liam Dunne"
+        ],
+        "url": "https://arxiv.org/abs/2609.35077",
+        "one_sentence": "Analyzes about 2 million LLM citations from four commercial engines against 10,000 crawled pages using a nine-method statistical framework. Finds prompt-content alignment is the strongest predictor of citation, while standard AEO signals reverse under domain fixed effects. Reports domain-level AI authority exceeds other page features by a factor of six in SHAP value.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "The study measures correlations between page features and citation frequency, not causal effects. Does changing prompt-content alignment on a page cause a change in how often production LLMs cite it?",
+          "The pages come from nineteen B2B SaaS workspaces. Do the same page-level predictors hold for other content verticals, such as news, health or e-commerce?",
+          "Domain-level AI authority exceeds the strongest non-alignment page-level feature by a factor of six in mean absolute SHAP value. What constructs this authority, and can a new domain acquire it?",
+          "The four engines are treated together in a pooled citation corpus. Do ChatGPT, Claude, Google AI and Gemini differ in which page features drive their citations?",
+          "Citation share concentrating on high-authority domains implies a feedback loop between citation and future authority. Does LLM citation concentrate over time on a shrinking set of domains?",
+          "The standard AEO checklist effects reverse or collapse to zero once domain fixed effects are applied. Do content publishers who follow the checklist gain any citation benefit in practice?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.34951",
+        "title": "AX is the New AEO",
+        "authors": [
+          "Ido Finder",
+          "Assaf Elovic",
+          "Gad Shalev"
+        ],
+        "url": "https://arxiv.org/abs/2609.34951",
+        "one_sentence": "Runs 37,927 agent journeys across four harnesses and 1,056 businesses to test how site readability (agent experience) affects AI-driven recommendations. Finds agent-ready businesses get answers built from their own pages 78% of the time versus 56%, with 1.9x more clear recommendations. Attributes the dominant failure mode to omission rather than fabrication.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Does making a site agent-readable cause the measured gains, or do readable sites differ in other ways? The study matches businesses on fame, prior model knowledge and two AEO proxies, but does not change a site's readability and re-measure.",
+          "Which parts of agent experience drive the effect: robots.txt rules, JavaScript rendering, page structure, or fetch latency?",
+          "Why do clear-recommendation rates vary sevenfold across the four agent harnesses?",
+          "What happens to market outcomes when many businesses optimise for agent experience at once?",
+          "Do agent recommendations that favour readable sites change actual buyer purchases and business revenue?",
+          "Does the pattern hold for buyer questions in other languages and for business types outside the 1,056 sampled?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.35028",
+        "title": "VEX-Bench: Benchmarking Verification Complexity of LLM-Generated Misinformation",
+        "authors": [
+          "Hanxun Huang",
+          "Yutao Wu",
+          "Qizhou Wang",
+          "Silvia Montaña-Niño",
+          "Yige Li",
+          "Xiang Zheng",
+          "Elif Buse Doyuran",
+          "Phoebe Matich",
+          "Xiao Liu",
+          "Xingjun Ma",
+          "Sarah Erfani",
+          "Christopher Leckie"
+        ],
+        "url": "https://arxiv.org/abs/2609.35028",
+        "one_sentence": "Introduces VEX-Bench, measuring verification complexity of LLM-generated misinformation across 7 models and 7 generation methods over 5,880 articles. Defines a VEX score combining elicitation yield and verification complexity. Finds high-VEX content generated at 3x to 169x lower cost than agent-based verification, risking misallocation of scarce verification resources.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Screening prioritises high-VEX content and consumes verification capacity, but the size of the resulting misallocation in a working fact-checking pipeline is not measured; how much true misinformation goes unchecked when a fixed verification budget faces an adversarial generator?",
+          "The benchmark scores verification complexity as perceived during screening by an LLM-as-judge; how do professional fact-checkers rank the same articles?",
+          "What screening policies keep verification capacity allocated to harmful content when generators optimise for high VEX scores?",
+          "The benchmark covers 2 misinformation categories, 6 domains, and 60 topics; do the cost asymmetries of 3x to 169x hold for other languages, domains, and low-resource open-weight models?",
+          "How does high-VEX content spread once released, and does screening prioritisation change what reaches audiences?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.34136",
+        "title": "Waggle: Learning One Anonymous Local Law for Self-Organizing LLM Swarms",
+        "authors": [
+          "Mingxi Zou",
+          "Wei Zhu",
+          "Zhuo Wang",
+          "Langzhang Liang",
+          "Zhiwen Tang",
+          "Yinghui Xu",
+          "Zenglin Xu"
+        ],
+        "url": "https://arxiv.org/abs/2609.34136",
+        "one_sentence": "Introduces Waggle, a shared anonymous local policy that lets LLM agent swarms coordinate without explicit roles or global topology. Trains it with Swarm-Consistent Distillation combining anonymous-orbit consistency and rollout-grounded prediction. Reports the learned law retains over 96% of oracle quality as populations and budgets change.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Waggle keeps over 96% of substrate-specific oracle quality across coordination settings, but the abstract does not say how coordination quality scales as population size grows by orders of magnitude; does the learned local law hold at thousands of agents?",
+          "What aggregate failure modes appear when many agents run the same anonymous local law, such as herding, monoculture or lock-in of a wrong commitment?",
+          "A shared anonymous policy makes all agents interchangeable, so does a single adversarial or misaligned agent propagate its semantic messages through the swarm, and how far?",
+          "Which observable signals in the local coordination field predict that a swarm will reorganize, and can an operator steer reorganization by editing those signals?",
+          "The abstract reports transfer without retraining, but does not say which shifts in interaction conditions break the law; where are the limits?",
+          "Does the mechanism hold when agents have conflicting objectives rather than a shared task?"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-09-27",
+    "counts": {
+      "fetched": 431,
+      "unseen": 431,
+      "screened": 200,
+      "relevant": 9,
+      "kept": 3,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.33871",
+        "title": "Population Physics, Population Problems: Safety and Emergence in LLM Societies",
+        "authors": [
+          "Adrian de Wynter"
+        ],
+        "url": "https://arxiv.org/abs/2609.33871",
+        "one_sentence": "Introduces a framework to measure self-organisation in LLM societies, applying it to Schelling grids, a social network simulation and a misinformation simulation. Finds statistically significant self-organisation in three systems, with sharp phase-transition-like dynamics in open-ended ones. Shows population-level pathologies emerge even under safety-tuning, driven by a coordinated subset, and identifies scenarios where self-organisation does not appear.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Does the self-organisation measure detect coordinated collective behaviour in a deployed multi-agent system, rather than in simulations?",
+          "Which population subsets drive population-level pathologies, and can removing or throttling them suppress the pathology?",
+          "What properties of an environment decide whether self-organisation emerges, given that it appears in a Schelling grid, a social network and a misinformation simulation but not in a commons dilemma or a judge deliberation scheme?",
+          "Do the phase-transition-like relaxation dynamics in open-ended systems persist across LLM versions and model families?",
+          "Can the self-organisation signature serve as a live alarm, with a stated false-positive rate against populations that coordinate benignly?",
+          "Do safety-tuning and monitoring interventions reduce population-level pathologies at all, and by how much?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.33055",
+        "title": "Large Language Models Substantially Compress Well-Being Inequality but Largely Preserve Its Socioeconomic Structure",
+        "authors": [
+          "Nattavudh Powdthavee"
+        ],
+        "url": "https://arxiv.org/abs/2609.33055",
+        "one_sentence": "Tests six LLMs predicting life satisfaction for 93,901 respondents across 66 countries from the World Values Survey. Finds all models understate overall dispersion but, after normalizing scale, largely reproduce the income gradient in well-being heterogeneity. Fidelity is weaker for extreme outcomes and country-specific gradients, robust across several weighting and fixed-effect checks.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Six LLMs reproduce the income gradient in well-being inequality but fit extreme life-satisfaction outcomes less well. Which prompting or calibration methods restore dispersion at the tails without distorting the between-group structure?",
+          "Country-specific gradients are reproduced less faithfully than the pooled income gradient. Which country attributes predict where an LLM's synthetic population misstates the local gradient?",
+          "The study measures predicted life satisfaction for individual profiles. Does the same split between compressed dispersion and preserved group structure hold when agents built from these profiles interact in a simulated population?",
+          "Fidelity is reported for six LLMs on one survey wave. Does the preservation of socioeconomic structure hold across model families, sizes, and other survey instruments?",
+          "Synthetic populations understate overall dispersion of life satisfaction. What downstream errors does this compression cause when the synthetic data substitutes for survey data in policy evaluation?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.33058",
+        "title": "Evolution of Market Microstructure in the Age of AI",
+        "authors": [
+          "Irene Aldridge"
+        ],
+        "url": "https://arxiv.org/abs/2609.33058",
+        "one_sentence": "Surveys the evolution of market microstructure rules from floor trading through electronic order books to AI agents competing over resources. Reviews evidence on high-frequency trading, automated market makers, extractable value and algorithmic collusion. Identifies allocation design as a missing layer in the agent-commerce protocol stack.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Which allocation mechanism should sit in the agent-commerce protocol stack when AI agents discover, pay for, and compete over resources?",
+          "How does algorithmic collusion arise between AI agents that trade under different market rules, such as continuous limit order books versus batch auctions?",
+          "What is the cost of the persistent impossibility results when participants report low-dimensional preferences instead of full private information?",
+          "How much extractable value do AI agents capture in deployed venues with automated market makers and block builders?",
+          "Does adding an allocation layer to agent-commerce protocols change efficiency and fairness of outcomes in agent populations?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-09-26",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 442,
+      "unseen": 442,
+      "screened": 200,
+      "relevant": 10,
+      "kept": 4,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2609.32925",
+        "title": "Skill, Luck, or Imitation? What Actually Pays in Creator Markets",
+        "authors": [
+          "Samiha Tariq"
+        ],
+        "url": "https://arxiv.org/abs/2609.32925",
+        "one_sentence": "Measures content features of 3,728 thumbnails, 385 hours of speech, and metadata linked to 56,419 videos across creator channels from their first upload. Finds 36 content measures explain at most 1.1% of within-channel view variation, and forty non-hit videos add no measurable practice effect. Shows a channel's first hit raises subsequent video views by 164% on average, and creators respond by copying the hit's topic more than its visual style.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "Whether the 164% post-hit lift in views comes from platform recommendation, audience subscription growth, or creator behaviour change remains unmeasured.",
+          "Do the findings on creator markets extend to platforms other than YouTube, such as TikTok, Twitch or Substack?",
+          "Does showing creators whether a hit's topic or its look drove success actually redirect their effort?",
+          "What happens to creator markets when AI agents produce and upload content at scale under the same hit-driven dynamics?",
+          "Topic imitation pays and visual imitation does not; whether widespread topic copying causes content monoculture and lowers aggregate viewership remains untested.",
+          "Do richer content measures than the 36 used, for example full multimodal embeddings, predict within-channel view differences better than 1.1%?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.32476",
+        "title": "Economic Governance of Autonomous Agents and Robots: Factor-Origin Accounting and Social Automation Funds",
+        "authors": [
+          "Toqeer Ali Syed",
+          "Ali Akarma",
+          "Adeel Ahmad",
+          "Muhammad Umair Younus"
+        ],
+        "url": "https://arxiv.org/abs/2609.32476",
+        "one_sentence": "Proposes CivicDividendOS, a computational fiscal framework taxing automated economic activity via factor-origin accounting. Introduces an activity passport, a substitution-augmentation classifier, and funds recycling automation revenue into worker credits and citizen dividends. Illustrates the architecture in an urban logistics setting and outlines evaluation via a macroeconomic policy digital twin.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the Factor-Origin Ledger recover correct marginal contributions of labour, AI services, robotics, data and capital in a simulated mixed human-machine workflow?",
+          "How does a dynamic tax on automated value added change automation adoption and employment in a macroeconomic digital twin?",
+          "Can firms avoid the Social Automation Contribution by reclassifying automated tasks as augmentation to claim offset credits?",
+          "Does anchoring machine activity to corporate beneficiaries through an activity passport work under real tax administration and legal liability rules?",
+          "What distributional outcomes follow when sovereign fund yields finance citizen dividends across different demographic groups?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.32638",
+        "title": "Can Open-Weight Large Language Models (LLMs) Simulate Human Survey Populations? A Cross-Instrument Calibration Study",
+        "authors": [
+          "Grandee Lee",
+          "Wang Yue"
+        ],
+        "url": "https://arxiv.org/abs/2609.32638",
+        "one_sentence": "Evaluates three open-weight LLM families on reproducing cross-instrument correlations from a 2,058-person human survey panel. Conditions personas on one psychometric instrument's answers and measures agreement on a second instrument across 139 pairs. Finds correlation with real human structure of r=0.70-0.73 but non-monotonic improvement across model releases.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Fine-tuning on individual-level survey data may raise cross-instrument fidelity above the r = 0.70 - 0.73 obtained from untuned models, and the paper does not test it.",
+          "Cross-instrument calibration held only for pairs of moderate construct distance, so it is open how personas behave at short and long construct distances.",
+          "Capability does not improve monotonically across model releases, and the cause of the newest Llama release performing worst is unknown.",
+          "The study measures persona fidelity on a 2,058-person panel, and it is open whether the same fidelity holds for panels from other countries or demographic groups.",
+          "It is open whether persona-level fidelity on survey instruments predicts fidelity in multi-agent settings where simulated respondents interact.",
+          "A release-specific, distance-aware verification procedure for digital-twin deployments remains to be specified and validated."
+        ]
+      },
+      {
+        "arxiv_id": "2609.32859",
+        "title": "When Less Is More: Managing AI Adoption with Adaptive Incentive Design",
+        "authors": [
+          "Jie Gong",
+          "Jiayi Hou",
+          "Jin Li",
+          "Fei Pu",
+          "Xinjue Yao"
+        ],
+        "url": "https://arxiv.org/abs/2609.32859",
+        "one_sentence": "Examines gaming behavior after a firm mandates 200 monthly AI-assistant queries for roughly 5,000 employees. Finds bunching at the threshold and 31% repeated or off-task queries, then measures effects of lowering the target to 100 via staggered rollout. Estimates a 30% reduction in query volume, mostly from off-task queries, alongside a 7% sales increase among sales staff.",
+        "nearest_anchor_id": "2501.16946",
+        "nearest_anchor_title": "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development",
+        "open_questions": [
+          "Lowering a mandated AI query target from 200 to 100 per month cut query volume by 30 percent, with about 90 percent of the decline in repeated or off-task queries. Which target level minimises gaming while keeping work-related use, and does the relationship hold across other quota levels?",
+          "The study classifies 31 percent of queries as repeated or off-task. How reliably can automated classifiers separate gaming queries from genuine work queries in AI assistant logs?",
+          "Sales employees showed a 7 percent increase in monthly sales after the target change. Does the same incentive adaptation improve performance for non-sales roles?",
+          "Quota-based mandates induce threshold bunching in AI use. What incentive schemes for AI adoption avoid bunching in a simulated population of quota-facing agents?",
+          "The study observes one firm with roughly 5,000 employees and one mandate revision. Do bunching and off-task query rates appear in other organisations that mandate AI assistant use?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-09-25",
