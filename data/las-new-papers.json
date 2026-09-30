@@ -1,5 +1,146 @@
 [
   {
+    "date": "2026-09-29",
+    "counts": {
+      "fetched": 591,
+      "unseen": 591,
+      "screened": 200,
+      "relevant": 14,
+      "kept": 6,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.37820",
+        "title": "Information Games: Strategic Crowding and Firm Repositioning in Language-Model Space",
+        "authors": [
+          "Marcus Gawronsky",
+          "Chun-Sung Huang"
+        ],
+        "url": "https://arxiv.org/abs/2609.37820",
+        "one_sentence": "Develops ESCAPE, a rational-share game modeling firm positioning in language-model space under heterogeneous capability costs, deriving a unique equilibrium and decomposing reallocation into opportunity and crowding components. Analysis of corporate news distributions shows persistent but evolving peer structure, with optimized peer reconstructions retaining 86.5% of validation advantage one year later.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Does the relative-response contrast identify strategic positioning in real firms, or only in the benchmark many-firm economy where it accounts for 90.5% of the weighted squared composition-response contrast?",
+          "How long does peer structure in corporate news distributions stay informative beyond the one-year horizon at which optimized peer reconstructions retain 86.5% of their validation advantage?",
+          "How do capability costs, which the model treats as heterogeneous inputs, get estimated from observable firm data?",
+          "Do the crowding and repositioning predictions hold when the positioning decisions come from autonomous language-model agents instead of firms assumed to be rational?",
+          "Does entry into crowded regions of language-model space raise systemic risk through monoculture, given that the model shows rational firms can enter such regions?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.37321",
+        "title": "PowerMarketJax: A JAX Benchmark Suite for Multi-Agent Reinforcement Learning in Power Markets",
+        "authors": [
+          "Zhanhua Pan",
+          "Xin Qin",
+          "Xiao Liu",
+          "Zhilong Cao",
+          "Jianhong Wang",
+          "Dawei Qiu"
+        ],
+        "url": "https://arxiv.org/abs/2609.37321",
+        "one_sentence": "Introduces PowerMarketJax, a GPU-based MARL benchmark suite across five power market designs including wholesale, balancing, ancillary services, and peer-to-peer auctions. Finds learned bidding strategies depend strongly on market design, with independent learners missing coordinated strategies or losing profits as more agents adopt them.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Independent learners miss better strategies when gains require many agents to change together, but the abstract does not test whether tacit collusion emerges under longer training or communication between agents; does it?",
+          "Which market designs among day-ahead wholesale, real-time balancing, ancillary services, peer-to-peer double auctions, and local flexibility give the most price manipulation by learned bidders?",
+          "Do bidding strategies learned in the simulator transfer to real power market data and real participant behaviour?",
+          "How does the number of participating agents change market outcomes such as price levels and profit dispersion?",
+          "Does adding LLM-based bidders alongside reinforcement learning bidders change clearing prices in the same environments?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.36424",
+        "title": "Agent-Based Evolutionary Dynamics for Mixed Autonomy Weaving Ramps",
+        "authors": [
+          "Sheryl Paul",
+          "Kexin Wang",
+          "Ruolin Li",
+          "Jyotirmoy V. Deshmukh"
+        ],
+        "url": "https://arxiv.org/abs/2609.36424",
+        "one_sentence": "Develops an agent-based model of mixed-autonomy weaving ramps where vehicles adapt lane choices via evolutionary game-theoretic updates with altruism-based objectives. Proves convergence to the equilibrium predicted by macroscopic Wardrop theory and studies effects of finite populations, heterogeneous altruism, and imperfect information.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the decentralized evolutionary update rule still converge when some connected and automated vehicles behave selfishly or misreport their state to exploit altruistic vehicles?",
+          "How does the model behave on a road network with several weaving ramps instead of a single one?",
+          "Do the simulated convergence rates and altruism burdens match measured traffic on real weaving ramps?",
+          "How does the distribution of altruistic burden across vehicles change if drivers can opt out of altruistic lane choices over time?",
+          "What level of state-information error breaks convergence to the macroscopic equilibrium?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.37902",
+        "title": "You Cannot Pick a Provider From the Price List: Market-Aware Routing for Open-Weight LLM Inference",
+        "authors": [
+          "Liang He",
+          "Jingbo Wen",
+          "Yixiong Chen",
+          "Yue Yang",
+          "Qizhen Lan",
+          "Kangning Cui",
+          "Xilu Wang"
+        ],
+        "url": "https://arxiv.org/abs/2609.37902",
+        "one_sentence": "Measures live open-weight LLM inference endpoints across many providers and finds price does not predict quality, latency, or availability. Introduces FACET, an online router that certifies per-provider-task feasibility and routes to cheaper certified endpoints while failing safe to an anchor.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "How fast does the provider quality, latency and availability map drift over months? Measurement covers three waves only.",
+          "What happens when many clients run market-aware routers at once? The paper models the client as a price taker and does not treat aggregate demand shifts onto newly certified cheap providers.",
+          "Do providers respond strategically once certification routes traffic by measured quality, for example by serving high quality only to probe-like requests?",
+          "How much ground-truth probing is needed to bound systematic evaluator bias in quality signals? The paper names the trust boundary and suggests probes or audits without quantifying the required rate.",
+          "Does task-selective provider feasibility extend beyond the measured task types, such as tool use, long-context work or code execution?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.37957",
+        "title": "Multiscale Reconstruction of Weighted Networks from Coarse-Grained Data",
+        "authors": [
+          "Mattia Marzi",
+          "Frank P. Pijpers",
+          "Diego Garlaschelli"
+        ],
+        "url": "https://arxiv.org/abs/2609.37957",
+        "one_sentence": "Extends a multiscale weighted-network model into a probabilistic framework for reconstructing networks across aggregation levels without refitting. Tested on the International Trade Network and Dutch production network, recovering fine-scale binary structure with higher precision and accuracy than same-resolution baselines despite using only coarse-grained input.",
+        "nearest_anchor_id": "2503.13395",
+        "nearest_anchor_title": "Causal Emergence 2.0: Quantifying emergent complexity",
+        "open_questions": [
+          "Can a multiscale reconstruction method calibrated on aggregate layers recover fine-scale weights, not only the binary structure, with comparable accuracy?",
+          "How does multiscale reconstruction perform on networks of AI agent transactions or interactions, where aggregation is by agent type rather than geography or sector?",
+          "How far can global parameters be transferred across aggregation levels before accuracy degrades, and which aggregation mechanisms break the transfer?",
+          "Does reconstruction accuracy at the level of individual links hold for systemic-risk measures such as contagion or cascade size computed on the reconstructed network?",
+          "Can the method reconstruct firm-level production networks from published sector-level input-output tables?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.37009",
+        "title": "An LLM-powered Agent Framework for Heterogeneous Evacuation Behavior Modeling under a Moving Threat in a Public Plaza",
+        "authors": [
+          "Jian Ma",
+          "Runxin Yu",
+          "Tianyu Tang",
+          "Xiaolian Li"
+        ],
+        "url": "https://arxiv.org/abs/2609.37009",
+        "one_sentence": "Introduces an LLM-powered agent framework where pedestrian agents perceive private views, maintain memory-based knowledge graphs, and evacuate under a moving threat. Evaluates eight personality compositions in a simulated plaza, finding evacuation success strongly linked to exit knowledge and personality-dependent threat assessment.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "The framework never compares its agent behaviour against real evacuation data, so how well do persona-conditioned LLM agents reproduce observed human evacuation patterns?",
+          "Evacuation success tracked usable-exit knowledge almost perfectly, 89.5% versus 1.05%, so which information-sharing rules between agents change that gap?",
+          "All agents ran under one common sampling configuration, so how do temperature and model choice shift the measured personality differences?",
+          "Results come from one simulated public plaza, so how do the reported associations between geometry, information and evacuation time hold across other layouts and crowd sizes?",
+          "The Memory-based Knowledge Graph excludes reasoning traces from the decision context, so what does keeping those traces do to decision consistency and evacuation outcomes?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-09-28",
     "counts": {
       "fetched": 686,
