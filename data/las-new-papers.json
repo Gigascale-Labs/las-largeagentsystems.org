@@ -1,5 +1,64 @@
 [
   {
+    "date": "2026-09-30",
+    "counts": {
+      "fetched": 535,
+      "unseen": 535,
+      "screened": 200,
+      "relevant": 8,
+      "kept": 2,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2609.39211",
+        "title": "Consensus and Factual Dynamics in Large Populations of Interacting Language Models",
+        "authors": [
+          "Emanuele Ricco",
+          "Elia Onofri",
+          "Vincenzo Sammartino",
+          "Roberto Di Pietro"
+        ],
+        "url": "https://arxiv.org/abs/2609.39211",
+        "one_sentence": "Introduces RHEON, a physics-inspired framework modeling populations of LLM agents as a spin system with tunable interaction topology and temperature. Generates a 4.7M-response corpus sweeping 432 configurations to study how consensus and factual accuracy depend on population size, topology, and sampling temperature. Finds consensus speed and hallucination-minimizing temperature depend on coupling structure, and semantic agreement does not guarantee factual correctness.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "Whether a configuration settles on correct or hallucinated consensus is not predictable from its initial state alone, so what observable during the dynamics predicts the outcome?",
+          "The hallucination-minimising sampling temperature depends on the coupling topology, so can a rule map a given topology to its safest temperature?",
+          "RHEON draws all agents from a single frozen model, so how does consensus change when the population mixes different models?",
+          "Semantic agreement correlates with factual convergence but never certifies correctness, so what added signal gives a usable correctness certificate?",
+          "The sweep covers prompt, population size, topology and temperature, so do the findings hold for tasks beyond factual question answering, such as negotiation or coordination?",
+          "Do the same consensus dynamics appear in mixed populations of humans and language model agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2609.40067",
+        "title": "Community-Driven API and AI Writer Design for Openly Scaling Community Notes",
+        "authors": [
+          "Brad Miller",
+          "Jay Baxter",
+          "Jiansong Chao",
+          "Keith Coleman",
+          "Sophie Hilgard",
+          "Daniel Ortiz"
+        ],
+        "url": "https://arxiv.org/abs/2609.40067",
+        "one_sentence": "Describes the design and operation of X's Community Notes AI Note Writer API, which lets AI agents propose notes alongside human contributors under user-controlled selection rules. Reports the Community Writer generates 52% of Helpful notes and submits first proposals on 60% of posts compared to other writers, over a measured period. Analyzes overlap and complementarity between AI-only and human-only Helpful notes, finding 42% AI-only and 30% human-only coverage.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "AI note writers now produce 52% of notes shown as Helpful on X, so does the growing share of AI notes change how human contributors propose or rate notes over time?",
+          "Do AI-written notes concentrate on a narrower set of topics or framings than human notes, creating monoculture in the context shown to users?",
+          "The Community Writer submits the first non-deleted note on 60% of posts, so does speed advantage crowd out later human notes through rating anchoring?",
+          "What is the accuracy and failure rate of AI-written notes relative to human notes on the same posts?",
+          "Can the open-source Community Writer be driven by adversarial post feeds to propose misleading notes at scale?",
+          "How does the gatekeeping algorithm behave when most proposed notes come from a small number of AI clients rather than many independent humans?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-09-29",
     "counts": {
       "fetched": 591,
