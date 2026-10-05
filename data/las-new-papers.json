@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-10-04",
+    "counts": {
+      "fetched": 0,
+      "unseen": 0,
+      "screened": 0,
+      "relevant": 0,
+      "kept": 0,
+      "anchors": 20
+    },
+    "papers": []
+  },
+  {
     "date": "2026-10-03",
     "counts": {
       "fetched": 0,
@@ -14,14 +26,59 @@
   {
     "date": "2026-10-02",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 358,
+      "unseen": 358,
+      "screened": 200,
+      "relevant": 11,
+      "kept": 2,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2610.02654",
+        "title": "Coherence-Driven Belief Formation and Population Dynamics of Contagion in LLM Agents",
+        "authors": [
+          "Tathagata Banerjee",
+          "Nima Moghaddas"
+        ],
+        "url": "https://arxiv.org/abs/2610.02654",
+        "one_sentence": "Measures the probability an LLM agent adopts a belief based on peer endorsement count, finding a sigmoid adoption kernel typical of complex contagion. Identifies claim plausibility, source reliability and agent disposition as drivers, reducible to a single coherence dimension. Observes clustered-network spread, bifurcating cascade windows, and hysteretic consensus in simulated agent populations.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "The adoption kernel is measured in language model agents only. Does the same sigmoid kernel and threshold sensitivity hold for human belief adoption under matched conditions?",
+          "Measurement covers one or a few language models. Does the adoption kernel shape and threshold vary across model families, sizes and alignment training?",
+          "The collective dynamics use clustered and random networks. How does the cascade window change on empirical network topologies such as scraped social graphs?",
+          "Hysteretic consensus makes consensus harder to remove than to establish. Which population-level interventions reverse an established consensus in agent populations, and at what cost?",
+          "Three sources collapse to one effective coherence dimension. Does the single-dimension approximation break down for claims that conflict with a model's safety training or for adversarially crafted sources?",
+          "Mixed populations of humans and language model agents are untested. How do AI agents with sigmoid adoption kernels change contagion dynamics when embedded among human participants?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.03033",
+        "title": "When Numbers Start Talking: Numerical Signalling and Strategic Behaviour Among LLMs",
+        "authors": [
+          "Alessio Buscemi",
+          "Daniele Proverbio",
+          "Alessandro Di Stefano",
+          "The Anh Han",
+          "German Castignani",
+          "Pietro Liò"
+        ],
+        "url": "https://arxiv.org/abs/2610.03033",
+        "one_sentence": "Tests four LLMs playing four cooperation games with natural-language, numerical, or random messages under varied personalities. Finds structured messages change payoffs unpredictably, and agent-generated numeric signals deviate from randomness when instructed to communicate. Concludes monitoring for coordination should target message-level statistical fingerprints rather than behavioral outcomes.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Can message-level fingerprints detect coordination between LLM agents in games beyond the four tested here?",
+          "What makes the effect of structured messages on cooperation unpredictable across games and models?",
+          "Can numerical messages sent between LLM agents be decoded into human-readable meaning?",
+          "Do numerical signalling and the departure from randomness persist in populations of hundreds or thousands of agents rather than small groups?",
+          "Does restricting or filtering a numerical channel reduce coordination among LLM agents, and at what cost to payoffs?",
+          "Do the reported message effects hold for LLMs other than the four tested, including models released later?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-10-01",
