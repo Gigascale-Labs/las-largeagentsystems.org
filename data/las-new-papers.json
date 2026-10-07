@@ -1,5 +1,162 @@
 [
   {
+    "date": "2026-10-06",
+    "counts": {
+      "fetched": 387,
+      "unseen": 387,
+      "screened": 200,
+      "relevant": 16,
+      "kept": 7,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2610.07535",
+        "title": "Disentangling Models from Personas in Heterogeneous LLM Simulations",
+        "authors": [
+          "Dani Roytburg",
+          "Daphne Ippolito"
+        ],
+        "url": "https://arxiv.org/abs/2610.07535",
+        "one_sentence": "Simulates a social network with agents built on different base LLMs and personas. Finds engagement depends more on base model than assigned persona, with effects strengthening as more models mix. Analyzes lexical patterns linked to engagement-maximizing style.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Base model effects on engagement strengthen as more models enter the mix, but the point at which network dynamics converge to base model effects is untested.",
+          "The simulation covers a social network with engagement as the outcome, so whether base model identity dominates persona in markets, production or labour settings is unknown.",
+          "Lexical patterns correlate with an engagement-maximizing style, but whether changing a model's lexical style removes its attraction or repulsion effect is not tested.",
+          "Engagement in real deployed mixed human and AI networks may or may not show the same base model dominance found in simulation.",
+          "If one base model attracts engagement across contexts, the effect on content diversity and monoculture in a heterogeneous agent network is unmeasured."
+        ]
+      },
+      {
+        "arxiv_id": "2610.08347",
+        "title": "Network Intervention by Polling Strategic Agents",
+        "authors": [
+          "Chenyu Zhang",
+          "Rohit Parasnis",
+          "Saurabh Amin"
+        ],
+        "url": "https://arxiv.org/abs/2610.08347",
+        "one_sentence": "Studies a planner setting prices in a network of strategic agents with private information in multi-activity network games. Derives a centrality-based decomposition of welfare and a polling algorithm (Poll) that samples one agent per round. Tests scalability on a real-world network with over 300,000 agents, reducing communication by orders of magnitude versus exact computation.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Poll induces truthful reports under behavior-specific implementations, but how does it perform when agents are LLM-based and may misreport in ways the behavioral model does not cover?",
+          "The price update uses a short walk through a sampled agent's neighborhood, so how does convergence degrade when the planner has only a noisy or outdated view of the network topology?",
+          "Poll was tested on one real-world network with over 300,000 agents, so how do its communication savings and query complexity vary across network families with different degree distributions and clustering?",
+          "The planner sets non-discriminatory prices, so what happens to welfare and to the detection of adversarial deviations when prices may discriminate between agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.08264",
+        "title": "Understanding Interfirm AI Talent Flow Networks through Online Professional Profiles",
+        "authors": [
+          "Donghang Li",
+          "Yunhan Zheng",
+          "Alok Prakash",
+          "Shenhao Wang",
+          "Jinhua Zhao"
+        ],
+        "url": "https://arxiv.org/abs/2610.08264",
+        "one_sentence": "Reconstructs an interfirm network of AI talent flows from about 535 million employment records across 58 countries, 2010-2022. Finds AI talent inflows concentrate among leading firms with stronger preferential attachment than general labor mobility, though core positions change often. Shows network centrality associates with higher enterprise value beyond workforce size, confirmed via event-study estimates.",
+        "nearest_anchor_id": "2512.16856",
+        "nearest_anchor_title": "Distributional AGI Safety",
+        "open_questions": [
+          "AI talent inflows concentrate among a small set of leading firms, but it stays unclear whether this concentration translates into concentration of model capability or market power.",
+          "The event-study links sharp improvements in network position to higher enterprise value, yet the causal direction is untested against reverse causality from rising valuation attracting talent.",
+          "Central positions in AI talent networks change hands more often than in non-AI networks, and the mechanism behind this turnover is unidentified.",
+          "The study covers 2010--2022, so the effect of large language model deployment after 2022 on AI talent circulation remains unmeasured.",
+          "Whether AI agents substituting for AI workers changes the value of network position in talent circulation is unexamined."
+        ]
+      },
+      {
+        "arxiv_id": "2610.08275",
+        "title": "Personalized Recommendations Without Inducing Congestion: Mitigating Disparities in the NYC High School Match",
+        "authors": [
+          "Erica Chiang",
+          "Kenny Peng",
+          "Rebecca Lichtenstein",
+          "Brielle McDaniel",
+          "Kristen O'Neil",
+          "Deja Thomas",
+          "Lianna Wright",
+          "Jon Kleinberg",
+          "Eva Tardos",
+          "Nikhil Garg"
+        ],
+        "url": "https://arxiv.org/abs/2610.08275",
+        "one_sentence": "Formalizes recommendation-induced congestion in capacity-constrained matching markets, using the NYC high school match as motivation. Proposes a congestion-aware, bilevel optimize-and-simulate recommendation approach. Deploys it in the 2025-26 admissions cycle via a randomized controlled trial, measuring increased ranking and match rates for recommended programs.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Recommendation-induced congestion is formalized for a school match with a single clearing mechanism, so how does congestion scale when recommenders act in markets with repeated or continuous clearing, such as labour or housing markets?",
+          "The congestion-aware allocation is analyzed in equilibrium under a given demand model, so how do outcomes degrade when applicant preferences or capacities are mis-estimated?",
+          "Only one recommender operates in the deployment, so what happens when several independent recommenders compete in the same capacity-constrained market?",
+          "The trial reports one admissions cycle, so do recommendations change program popularity, selectivity and applicant behaviour across repeated cycles?",
+          "The match rate difference has p=0.071, so does the effect on matching hold at larger sample size?",
+          "Recommendations target applicants with few nearby options, so how much of the measured disparity reduction persists in the full population distribution of outcomes?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.08272",
+        "title": "Performative Prediction with Selective Labels",
+        "authors": [
+          "Giovani Valdrighi",
+          "Isabel Valera",
+          "Marcos Medeiros Raimundo"
+        ],
+        "url": "https://arxiv.org/abs/2610.08272",
+        "one_sentence": "Extends performative prediction theory to settings with selective labels, where only accepted population members have observed outcomes. Shows naive retraining under selective labels can misguide convergence to a stable model. Proposes a worst-case robust objective using confidence intervals on positive-label probability, tested in a lending application with fairness regularization.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Performative prediction with selective labels is formalized for a single deployed model and one population; what happens when many models with selective labels act on the same population at the same time?",
+          "The robust objective needs a confidence interval on the probability of a positive label; how do the convergence bounds degrade when that interval is misspecified?",
+          "The sensitivity assumption on the conditional label distribution tightens intervals over time; does it hold in real lending or hiring data?",
+          "Experiments cover a lending application with fairness regularization only; does the robust retraining approach hold in other selective-label settings such as content moderation or labour-market screening?",
+          "Repeated risk minimization on observed data misguides retraining; which aggregate signals detect this drift before convergence fails?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.07959",
+        "title": "Rewarding Informed Voting in PoS Governance",
+        "authors": [
+          "Juan Beccuti",
+          "Manvir Schneider"
+        ],
+        "url": "https://arxiv.org/abs/2610.07959",
+        "one_sentence": "Studies reward design for delegated representatives who acquire costly information and vote on binary governance proposals. Shows no payment rule makes sincere voting strictly optimal under a non-neutral prior, and compares proportional sharing against a conditional winning-coalition reward rule. Finds the conditional rule supports sincere equilibria with equal or higher effort and accuracy than proportional sharing.",
+        "nearest_anchor_id": "2605.24413",
+        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
+        "open_questions": [
+          "Insincere equilibria coexist with sincere equilibria under the conditional reward rule, so which rules or initial conditions select the sincere equilibrium?",
+          "The analysis assumes a binary proposal, so how do the results change for multi-option or continuous governance proposals?",
+          "Fixed budgets limit accuracy in large symmetric committees, so what budget scaling keeps decision accuracy constant as committee size grows?",
+          "Real delegated proof-of-stake governance uses mostly proportional or flat delegate rewards, so does observed voter turnout and vote-split behaviour match the model's predictions?",
+          "Delegated representatives may be AI agents that acquire information at low cost, so how does lower effort cost change the comparison between proportional sharing and the conditional rule?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.08096",
+        "title": "The lattice structure of the crawler",
+        "authors": [
+          "Hinata Kurashita"
+        ],
+        "url": "https://arxiv.org/abs/2610.08096",
+        "one_sentence": "Studies the crawler mechanism for object reallocation under single-peaked preferences. Proves Nash equilibrium allocations of the crawler's revelation game form a complete lattice under weak Pareto dominance. Shows truthful allocation is the lattice's greatest element, initial endowment its least.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Do learning agents in the crawler's direct revelation game converge to the truthful allocation or to worse elements of the lattice?",
+          "Does the Nash equilibrium set of top trading cycles on the unrestricted strict preference domain also form a complete lattice under weak Pareto dominance?",
+          "Which other restricted preference domains admit rules whose Nash equilibrium allocations form a complete lattice with the truthful allocation as greatest element?",
+          "How do LLM agents report preferences in the crawler mechanism, and where do their reports land in the equilibrium lattice?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-05",
     "counts": {
       "fetched": 386,
