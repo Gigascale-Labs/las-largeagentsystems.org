@@ -1,5 +1,208 @@
 [
   {
+    "date": "2026-10-07",
+    "counts": {
+      "fetched": 399,
+      "unseen": 399,
+      "screened": 200,
+      "relevant": 14,
+      "kept": 9,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2610.10468",
+        "title": "A Society of Researchers: Designing Institutions for Populations of Autonomous Research Agents",
+        "authors": [
+          "Ali Asaria",
+          "Deep Gandhi",
+          "Tony Salomone"
+        ],
+        "url": "https://arxiv.org/abs/2610.10468",
+        "one_sentence": "Proposes institutional structures (grants, review, a human resource allocator) for a population of ten thousand persistent research agents. Reports a running deployment where one lab found a compute-reduction result others have not yet confirmed. Lists six open problems for organizing large agent populations.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "Does an explicit institution improve the output of a research agent population compared to an unorganized population of the same size?",
+          "Can agent reviewers collude or log-roll when peer review allocates compute grants among agent principal investigators?",
+          "How should a human governor set allocation rules when the governor assigns no tasks and only distributes compute?",
+          "The reported result of reaching the same language model pretraining quality with about 30% less compute is not agreed on by the labs that tested it, so does it replicate?",
+          "Does compute and influence concentrate in a few principal investigators as a research agent society runs over long horizons?",
+          "Do populations of thousands of persistent research agents converge on similar research directions instead of exploring diverse ones?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.09409",
+        "title": "Stability and Diversity of Networked Self-Consuming Generative Ecosystems",
+        "authors": [
+          "Xiukun Wei",
+          "Yang Zhang",
+          "Xueru Zhang"
+        ],
+        "url": "https://arxiv.org/abs/2610.09409",
+        "one_sentence": "Models networks of generative models exchanging synthetic training data as a weighted directed graph. Derives conditions for convergence and characterizes fixed points under retraining dynamics. Studies how real-data access, cross-model consumption, and graph structure affect long-term stability and diversity.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Do real generative models retrained on each other's outputs through a network show the convergence and diversity loss that the theory predicts?",
+          "Which interaction graph structures keep diversity highest under self-consuming retraining?",
+          "How much real data must each model keep to stop diversity collapse in a networked loop?",
+          "Can diversity collapse in a network of self-consuming models be detected from model outputs alone, without access to training mixtures?",
+          "What happens when each model chooses its data sources strategically, so edge weights change over time?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.09415",
+        "title": "Self-Consuming Generative Models with Co-Evolving Human Preferences",
+        "authors": [
+          "Xiukun Wei",
+          "Tian Xie",
+          "Ding Zhu",
+          "Xueru Zhang"
+        ],
+        "url": "https://arxiv.org/abs/2610.09415",
+        "one_sentence": "Analyzes self-consuming generative model loops where curated user preferences co-evolve with the model's output distribution. Shows pure user-curated training drives the system to biased singleton equilibria. Proposes injecting reference data to steer the coupled system toward equilibria preserving desired attributes.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Does the predicted amplification of initial bias appear when real users curate outputs of a real generative model?",
+          "How do the coupled dynamics change when the user population is heterogeneous, with subgroups holding different initial preferences?",
+          "What happens to the reference-data injection threshold when several self-consuming models train on the same user population and compete for curation?",
+          "Can preference drift from exposure to model outputs be measured in public interaction logs of generative-content platforms?",
+          "How does the steering algorithm behave when the controller cannot observe user preferences directly and must infer them from curation choices?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.09824",
+        "title": "Homogenization in Multi-Agent Systems",
+        "authors": [
+          "Prakhar Ganesh",
+          "Kyra Wilson",
+          "Luca Zappella",
+          "Barry-John Theobald",
+          "Nicholas Apostoloff",
+          "Lucas Monteiro Paes",
+          "Nivedha Sivakumar"
+        ],
+        "url": "https://arxiv.org/abs/2610.09824",
+        "one_sentence": "Defines metrics for homogenization (conformity, polarization, inertia) in multi-agent LLM systems. Measures downstream risks in code generation, hiring, and peer review tasks. Shows simple diversity interventions fail to reduce homogenization.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Which interventions reduce homogenization in multi-agent systems, given that sampling stochasticity and mixed-model agent populations fail to do so?",
+          "Do conformity, polarization and inertia metrics behave the same way as the number of agents grows beyond the sizes tested here?",
+          "Does homogenization appear in multi-agent systems outside code generation, hiring and peer review, such as markets or social networks?",
+          "How do correlated errors hidden by homogenization in code generation propagate into deployed software systems?",
+          "Do mixed human and agent groups show the same conformity and inertia dynamics as pure-agent groups?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.09667",
+        "title": "Shared and structured inputs undermine collective random choice by reasoning AI agents",
+        "authors": [
+          "Takahiro Ezaki",
+          "Naoto Imura",
+          "Katsuhiro Nishinari"
+        ],
+        "url": "https://arxiv.org/abs/2610.09667",
+        "one_sentence": "Behaviorally tests six reasoning LLMs for threshold and divisibility rules in random selection tasks. Finds shared identifiers produce correlated participation, reduced but not eliminated by explicit randomization instructions. Applies this to an oversight scenario of selecting requests for human review.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Explicit instructions to randomize independently reduced but did not eliminate correlation under shared inputs; which prompt or scaffold designs remove the residual correlation?",
+          "Threshold and divisibility rules appear in identifier-based choices for six reasoning models; do the same rules appear across other model families, versions and non-reasoning models?",
+          "Single-agent measurements predicted correlated participation for two models; how far does this single-agent-to-population prediction hold as agent counts grow into the thousands?",
+          "All four models followed supplied random draws closely; what architecture for supplying external randomness keeps agent selections independent in a deployed auditing pipeline?",
+          "Identifier-based selection was predictable in the human-review task; can an adversary who controls identifier fields steer which requests escape review?",
+          "Correlated and biased participation raise collective failure modes; what population-level failures occur when many agents share input streams in resource allocation markets?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.09296",
+        "title": "The AI Evaluation Ecosystem",
+        "authors": [
+          "Yash Dave",
+          "Sang T. Truong",
+          "Serena Wang",
+          "Sanmi Koyejo"
+        ],
+        "url": "https://arxiv.org/abs/2610.09296",
+        "one_sentence": "Builds a generative agent-based simulation of model providers, users, and benchmarks as strategic actors over a capability-space. Applies it to study how shifting from public to private holdout benchmarks changes the gap between scores and user satisfaction. Uses the model as a sandbox for benchmark design hypotheses.",
+        "nearest_anchor_id": "2501.16946",
+        "nearest_anchor_title": "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development",
+        "open_questions": [
+          "Which benchmarks widen the gap between benchmark scores and user satisfaction when scoring moves from public to private holdouts, and why?",
+          "How do other evaluator and policy choices, such as disclosure rules or funding allocation, reshape provider capability investment?",
+          "Do the simulated benchmark-satisfaction gaps match measured gaps between real benchmark scores and real user preference data?",
+          "How sensitive are the results to the six-dimensional capability space, and do they hold under different numbers or definitions of capability dimensions?",
+          "Does the structural information partition across actors drive the holdout result, or would full information produce the same gap?",
+          "How do model providers actually respond to private holdout benchmarks in deployed evaluation programmes?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.10199",
+        "title": "Robust Decentralized Fairness Auditing",
+        "authors": [
+          "Sayan Biswas",
+          "Jade Garcia Bourrée",
+          "Anne-Marie Kermarrec",
+          "Palak",
+          "Martijn de Vos"
+        ],
+        "url": "https://arxiv.org/abs/2610.10199",
+        "one_sentence": "Proposes Auditopus, a decentralized fairness-auditing protocol where multiple auditors share cumulative statistics rather than raw queries. Down-weights auditors whose statistics are inconsistent with history to counter fairwashing attacks. Reduces audit error up to 78% versus no defense even with 49% adversarial auditors.",
+        "nearest_anchor_id": "2512.02682",
+        "nearest_anchor_title": "Beyond Single-Agent Safety: A Taxonomy of Risks in LLM-to-LLM Interactions",
+        "open_questions": [
+          "Adversarial auditors that coordinate can send mutually consistent fabricated statistics vectors, and the defense down-weights auditors only by statistical inconsistency with previous vectors; how much audit error can a colluding coalition induce?",
+          "The defense holds up to 49% adversarial auditors in the reported tests; what is the breaking point as the adversary fraction passes half?",
+          "Auditors send cumulative statistics vectors instead of raw queries; how much can a receiving auditor or the LLM provider reconstruct about another auditor's query set from those vectors?",
+          "The method is tested with two datasets and two pre-trained LLMs; does the down-weighting rule keep the same error reduction across more models, demographic groups, and fairness metrics?",
+          "What incentives make independent auditors join a decentralized audit and report honestly when the LLM provider can pay them to fairwash?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.10333",
+        "title": "The Economic Security of Exponential EIP-1559",
+        "authors": [
+          "Ben Berger",
+          "Edward W. Felten",
+          "Robin Fritsch"
+        ],
+        "url": "https://arxiv.org/abs/2610.10333",
+        "one_sentence": "Studies parameter selection for exponential EIP-1559 gas pricing to guarantee a lower bound on collected fees above a usage threshold. Characterizes the revenue-minimizing usage distribution for the exponential variant and an approximation for a related variant. Derives economically secure parameter settings and discusses tradeoffs.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "How do the proposed economically secure parameters perform on historical Ethereum gas usage?",
+          "The revenue bounds assume a worst-case gas-usage distribution; how do users respond strategically when parameters are set to deter usage above a threshold?",
+          "Does the economic security bound hold when many automated agents submit transactions and coordinate or herd on timing?",
+          "What is the tradeoff between the deterrence threshold and normal-load user cost in deployed chains such as Arbitrum and Robinhood Chain?",
+          "Can the characterization of revenue-minimizing usage distributions extend to other fee mechanisms beyond the two exponential EIP-1559 variants?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.09244",
+        "title": "Beyond Nominal Equilibria: Risk-Averse Multi-Population Mean-Field Games",
+        "authors": [
+          "Bhavini Jeloka",
+          "Siddhartha Ganguly",
+          "Panagiotis Tsiotras"
+        ],
+        "url": "https://arxiv.org/abs/2610.09244",
+        "one_sentence": "Introduces risk-averse multi-population mean-field games where populations optimize worst-case reward over ambiguity sets of other populations' behavior. Establishes existence of equilibrium and contractivity under entropy regularization. Proposes a risk-averse fictitious-play algorithm with exploitability decaying to zero in experiments.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "How does risk-averse multi-population mean-field equilibrium differ from nominal equilibrium in a concrete market or congestion setting with many agents?",
+          "Does the risk-averse fictitious-play scheme converge when the ambiguity sets are estimated from observed behaviour rather than assumed as dynamically feasible sets?",
+          "How do the existence and contractivity results change when assumptions are relaxed, for example without entropy regularization?",
+          "Do LLM-based agent populations behave like the risk-averse representative agents the model assumes?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-06",
     "counts": {
       "fetched": 387,
