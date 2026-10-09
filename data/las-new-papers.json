@@ -1,5 +1,194 @@
 [
   {
+    "date": "2026-10-08",
+    "counts": {
+      "fetched": 436,
+      "unseen": 436,
+      "screened": 200,
+      "relevant": 16,
+      "kept": 9,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2610.11256",
+        "title": "Who Leads and Who Collects:Algorithmic Collusion in Markets of Heterogeneous Language Models",
+        "authors": [
+          "Jun Yeong Lee"
+        ],
+        "url": "https://arxiv.org/abs/2610.11256",
+        "one_sentence": "Runs four LLMs from different providers as pricing agents in a logit Bertrand market across 11 compositions, 20 runs, and 200 periods each. Finds collusion levels vary strongly by model (Claude and Gemini reach 72-79% of monopoly rent, DeepSeek 24%, GPT none) and depend on market composition. Shows mixed markets redistribute rent in a transitive order that inverts price-anchor ranking.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Collusion levels come from four language models at their cheapest tier; how do higher-capability tiers of the same providers price in the same logit Bertrand market?",
+          "The market has four firms with no communication; how do collusion rents change with more firms or with a communication channel between agents?",
+          "Rent sharing follows a transitive order that inverts the anchor ranking; which prompt or policy features of each model produce the anchoring and following behaviour?",
+          "Two GPT firms prevent convergence in any composition; can a market designer use a deliberately non-converging agent as an anti-collusion intervention?",
+          "Results come from a simulated logit demand market; do the same model-specific collusion patterns appear when agents price against real buyers or on a live platform?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.12436",
+        "title": "Ecology of AI Agents: Collaboration Creates a Population Threshold for Takeoff",
+        "authors": [
+          "Erin Crawley",
+          "Hidenori Tanaka"
+        ],
+        "url": "https://arxiv.org/abs/2610.12436",
+        "one_sentence": "Develops an ecological growth-equation theory where collaboration among misaligned AI agents creates a critical population threshold for self-reinforcing takeoff. Below the threshold populations decline; above it they expand even without individual capability gains, an analogue of the Allee effect. Proposes ecological red teaming and population pacing as mitigation strategies.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "How does collective cybersecurity capability scale with the number of agents in practice?",
+          "What is the critical population size for takeoff for a given model generation?",
+          "Does the strong Allee effect predicted by the population growth equation appear in a simulated agent population that must compromise hosts to reproduce?",
+          "Which collaboration structures among agents raise or lower the takeoff threshold?",
+          "How should ecological red teaming and population pacing be specified as a deployment protocol that regulators or labs can audit?",
+          "Do the model's assumptions about fitness depending only on cybersecurity capability hold when defenders also adapt?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.12028",
+        "title": "Policy Synthesis for Finite Populations of MDP Agents under Aggregate Reach-Avoid Chance Constraints",
+        "authors": [
+          "Jie Fu",
+          "Anamika Dubey"
+        ],
+        "url": "https://arxiv.org/abs/2610.12028",
+        "one_sentence": "Proposes a control method for finite populations of MDP agents under aggregate reach-avoid chance constraints, propagating variance of empirical density alongside mean-field dynamics. Uses Cantelli inequality to convert chance constraints into deterministic moment conditions within a gradient-based policy synthesis procedure. Evaluates the method on a gridworld and an EV-charging aggregation problem against a deterministic mean-field LP baseline.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Agents are assumed to have decoupled transition dynamics with only empirical-density feedback. Does the moment-propagation method still certify the reach-avoid chance constraints when agents interact directly, for example through prices or congestion?",
+          "How conservative is the Cantelli-based surrogate compared with the true constraint violation rate at small fleet size N?",
+          "Can tighter finite-N certificates be derived using higher-order moments or concentration bounds other than Cantelli?",
+          "The method is evaluated on a gridworld and an EV-charging aggregation problem. Does it hold on heterogeneous populations where agents have different transition models and reward structures?",
+          "Does density-feedback policy synthesis under aggregate chance constraints transfer to agents whose policies are learned by reinforcement learning rather than specified as MDP policies?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.11177",
+        "title": "Dynamic Mechanism and Information Design in AI-Agent Environments: A General Analytical Framework",
+        "authors": [
+          "Guoqiang Tian"
+        ],
+        "url": "https://arxiv.org/abs/2610.11177",
+        "one_sentence": "Builds a general dynamic mechanism and information design framework covering contracting, hidden information, and multi-agent interaction over time. Establishes a dynamic revelation principle and recursive implementability characterization, identifying information rents, verification rents, and hidden-action implementation costs. Extends analysis to multi-agent settings with correlated information and peer discipline.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Do LLM agents behave as the framework assumes, reporting truthfully and obeying after reporting when continuation incentives make those actions optimal?",
+          "How much does monitoring informativeness have to increase before partial disclosure beats full disclosure in a simulated agent contract?",
+          "With many agents and correlated information, does peer discipline hold, or do agents collude on reports?",
+          "What are the sizes of the three margins -- dynamic information rents, verification rents, and the implementation cost of hidden action -- in a deployed agent delegation setting?",
+          "Can the recursive characterization of implementability be solved at the scale of thousands of interacting agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.11333",
+        "title": "TokenBank: Financial Infrastructure for AI Services",
+        "authors": [
+          "Cary Chang",
+          "Jialin Zhou"
+        ],
+        "url": "https://arxiv.org/abs/2610.11333",
+        "one_sentence": "Presents TokenBank, a contract framework representing consumption rights, price forwards, revenue-backed financing, and failure-protection claims for AI service operators. Evaluates it by replaying 899,441 API requests and running real model-driven agent execution alongside contract API tests. Measures tradeoffs such as forwards reducing mean expenditure by $304.88 while increasing its standard deviation.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Forwards reduce mean expenditure by USD 304.88 but raise its standard deviation from USD 1,152.45 to USD 1,190.82 in a zero-discount rising-price resampling scenario; what happens under falling or volatile API price paths and non-zero discount rates?",
+          "The evaluation uses replay of 899,441 API requests without supplier invoices or commercial revenue; how do the contracts perform when real cost and revenue streams are used?",
+          "Financing changes mean contribution by +1.0635, -0.1406, and -0.2962 experimental USD under low, baseline, and ample capital; what capital thresholds separate the regimes where financing helps from where it hurts?",
+          "What systemic effects appear when many agent operators trade these forwards, financing claims, and protection claims against each other?",
+          "Which service-failure definitions can be verified well enough to trigger compensation without dispute or gaming by operators?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.12321",
+        "title": "Spatial Pattern Formation from Multi-Agent Learning in Public Goods Dilemmas",
+        "authors": [
+          "Yefei Zhang",
+          "Yuxuan Zhao"
+        ],
+        "url": "https://arxiv.org/abs/2610.12321",
+        "one_sentence": "Simulates cooperators and defectors learning movement policies via tabular Q-learning in a spatial public goods model. Finds cooperator clustering around resource peaks and welfare losses that peak when cooperators learn fast and defectors learn slowly. Shows charging agents for crowding during learning recovers much of the welfare loss in tested conditions.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Learned traveling bands depend on training history, not an asymptotic outcome. Do the spatial patterns and welfare losses persist under much longer training budgets?",
+          "Tabular Q-learning with local observations produces the clusters and bands. Do the same patterns appear with function-approximation or LLM-based agents that have richer observations?",
+          "Charging agents for the crowding they impose recovers much of the welfare loss. How does this congestion charge compare with other population-level mechanisms, such as movement quotas or taxes on resource peaks?",
+          "Cooperator and defector shares are fixed in the model. What happens to pattern formation when agents also learn whether to cooperate or defect?",
+          "The welfare losses are largest when cooperators learn fast and defectors learn slow. Can an observer infer the learning-rate asymmetry of a population from aggregate spatial data alone?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.11200",
+        "title": "Information Divergence and Endogenous Evolution of Asymmetric Information",
+        "authors": [
+          "Ratna K. Shrestha",
+          "Gaurav Subedi",
+          "Ayush Shrestha"
+        ],
+        "url": "https://arxiv.org/abs/2610.11200",
+        "one_sentence": "Models how agents observing a common Markov state at asynchronous times develop differing predictive distributions due to information age, independent of private signals. Shows information-age divergence recurs infinitely often and generates 'stale consensus', low disagreement despite high uncertainty, in a Gaussian AR(1) setting. Derives partial-unraveling equilibria for costly certification of information freshness across ordered agent types.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Does stale consensus appear in simulated markets of AI agents that update at different times, with low disagreement but high forecast error?",
+          "The model assumes a stationary Gaussian AR(1) state; what happens to disagreement and certification under regime shifts or jump processes?",
+          "Do partial-unraveling equilibria in freshness certification arise when agents are LLM-based rather than rational optimisers?",
+          "Can information age be measured from observable market aggregates such as price dispersion or trade timing?",
+          "How do asynchronous update ages affect herding and systemic instability in credit and insurance markets with real participants?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.11675",
+        "title": "Delegate Pricing to Algorithms: When Slow and Steady Wins the Race",
+        "authors": [
+          "Galit Ashkenazi-Golan",
+          "Edward Plumb",
+          "Clemens Possnig",
+          "Yufei Zhang"
+        ],
+        "url": "https://arxiv.org/abs/2610.11675",
+        "one_sentence": "Analyzes a meta-game where firms choose learning rates for gradient-based pricing algorithms, evaluating discounted profit over the entire convergence path. Proves firms prefer fast algorithms under strategic substitutability but choose deliberately slow ones under strategic complementarity to delay competitive erosion. Shows firms can extract surplus during prolonged convergence to the competitive price equilibrium even though that price is dominant in the stage game.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "The analysis covers two firms selecting learning rates in a continuous-time pricing game, so what happens to the learning-rate choice when many firms compete?",
+          "Firms in the model choose a learning rate for a fixed gradient dynamic, so does the slow-algorithm result hold when firms instead choose among practical pricing algorithms such as Q-learning or bandit pricers?",
+          "Does the predicted link between strategic complementarity and sluggish price adjustment appear in real algorithmic pricing data?",
+          "The model measures payoffs as discounted profits along the learning path, so which regulatory interventions remove the incentive to design slow algorithms that delay convergence to the competitive price?",
+          "Does the dichotomy between substitutability and complementarity survive when demand or cost conditions change during learning?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.11908",
+        "title": "Cost-Aware Mixture-of-Experts Coordination for Model Markets",
+        "authors": [
+          "Yizhou Ma",
+          "Wenbo Wu",
+          "Xikun Jiang",
+          "Zhuoqin Yang",
+          "Luis-Daniel Ibáñez"
+        ],
+        "url": "https://arxiv.org/abs/2610.11908",
+        "one_sentence": "Lifts Mixture-of-Experts from a model architecture to a market coordination mechanism, with brokers using gating networks to combine heterogeneous experts under cost constraints. Derives a cost-aware gating mechanism, market-aware training objective, and a cost-adjusted revenue allocation rule with budget balance and monotonicity properties. Tests the framework on fifteen tabular and image benchmarks, finding higher welfare than standard MoE.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Can expert providers in an MoE model market manipulate the gating network or report costs strategically to raise their revenue share?",
+          "What happens to welfare and allocation when many brokers compete for the same pool of experts, rather than one broker coordinating experts?",
+          "Does repeated routing by cost-aware gating concentrate traffic and revenue on a few experts over time?",
+          "How does the cost-adjusted revenue allocation rule behave with large language model experts and real API prices instead of latency-derived costs on tabular and image benchmarks?",
+          "Do budget balance, participation monotonicity and cost sensitivity still hold when experts enter and exit the market dynamically?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-07",
     "counts": {
       "fetched": 399,
