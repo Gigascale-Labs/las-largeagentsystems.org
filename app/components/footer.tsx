@@ -7,25 +7,25 @@ export function Footer() {
             LargeAgentSystems<span className="text-accent">.org</span>
           </p>
           <p className="mt-2 max-w-xs text-background/60">
-            A project of Gigascale Labs.
+            A project of Stephen Elliott.
           </p>
         </div>
         <div className="space-y-1 text-background/70">
-          <p>Gigascale Labs</p>
+          <p>Stephen Elliott</p>
           <p>
             <a
-              href="https://www.gigascale-labs.org"
+              href="https://www.stelliott.online"
               target="_blank"
               rel="noopener noreferrer"
               className="underline decoration-background/30 underline-offset-4 hover:text-background"
             >
-              gigascale-labs.org
+              stelliott.online
             </a>
           </p>
         </div>
         <div className="space-y-2 text-background/40">
           <p>
-            {new Date().getFullYear()} Gigascale Labs. Published under an MIT
+            {new Date().getFullYear()} Stephen Elliott. Published under an MIT
             licence on{" "}
             <a
               href="https://github.com/Gigascale-Labs/las-largeagentsystems.org"

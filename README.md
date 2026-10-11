@@ -1,6 +1,6 @@
 # largeagentsystems.org
 
-The site for LargeAgentSystems.org, a project of Gigascale Labs. It states the
+The site for LargeAgentSystems.org, a project of Stephen Elliott. It states the
 large agent systems problem, shows the field's growth from public datasets, and
 serves three catalogues: the canon, upcoming events, and new arXiv papers.
 

@@ -54,16 +54,16 @@ export default function AboutPage() {
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
             LargeAgentSystems.org is a project of{" "}
             <a
-              href="https://www.gigascale-labs.org"
+              href="https://www.stelliott.online"
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent hover:underline"
             >
-              Gigascale Labs
+              Stephen Elliott
             </a>
             . We use <em>large agent system</em> to mean a large-scale system of
-            interacting AI agents, often with humans in it too: an economy, a
-            social platform, a market, a workforce. Millions of agents are
+            interacting AI agents, often with humans in it. Examples include economies,
+            social platforms, markets, and workforces. Millions of agents are
             entering systems like these now.
           </p>
 
