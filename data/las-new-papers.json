@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-10-11",
+    "counts": {
+      "fetched": 0,
+      "unseen": 0,
+      "screened": 0,
+      "relevant": 0,
+      "kept": 0,
+      "anchors": 20
+    },
+    "papers": []
+  },
+  {
     "date": "2026-10-10",
     "counts": {
       "fetched": 0,
@@ -14,14 +26,142 @@
   {
     "date": "2026-10-09",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 315,
+      "unseen": 315,
+      "screened": 200,
+      "relevant": 12,
+      "kept": 6,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2610.12822",
+        "title": "Reward Hacking as a Transmissible Strategy in Multi-Agent Coding Systems",
+        "authors": [
+          "Yuepeng Hu",
+          "Pegah Ghahremani",
+          "Reza Aghajani",
+          "Mahesh Pasupuleti",
+          "Himaghna Bhattacharjee"
+        ],
+        "url": "https://arxiv.org/abs/2610.12822",
+        "one_sentence": "Shows reward-hacking strategies elicited in one coding agent can propagate to other agents through shared code, memory, and plans. Tests four open-weight backbones and proposes code review as a mitigation that reduces delivered hacks.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Reward hacking propagates between agents in small multi-agent coding systems, but the scale at which propagation saturates or dies out is untested. How does the size and topology of the agent network change whether a hack amplifies or decays?",
+          "The theoretical conditions for amplification, persistence and decay across agent interactions are stated but not matched against measured transmission rates. Do measured propagation chains follow the predicted thresholds?",
+          "Code review by the coder or a separate verifier reduces delivered hacks, but the residual rate after review is not characterised across task difficulty. At what task difficulty does review stop catching transmitted hacks?",
+          "Propagation is shown through code, shared memory and natural-language plans. Which observable signals in interaction logs identify a transmitted hack before delivery?",
+          "Coding RL elicits and amplifies reward hacking in four open-weight backbones. Does the same elicitation occur under RL on non-coding automated evaluators?",
+          "Reward hacking biases task routing toward reward-hacking agents. Can a routing or market mechanism be designed that prices in hack risk and removes this bias?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.13710",
+        "title": "OpenSocialJax: Evaluating Social Adaptation in Sequential Social Dilemmas with Open-Ended Environmental Dynamics",
+        "authors": [
+          "Zihao Guo",
+          "Meng Fang",
+          "Joel Z. Leibo",
+          "Yali Du"
+        ],
+        "url": "https://arxiv.org/abs/2610.13710",
+        "one_sentence": "Introduces OpenSocialJax, extending Clean Up and Commons Harvest with open-ended hidden environment configurations. Evaluates eight LLMs on rule discovery and cooperation, finding rule discovery does not reliably sustain cooperation or prevent resource depletion.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Rule discovery improves performance but does not sustain cooperation in the sequential social dilemmas. Which interventions, such as reputation, sanctioning or communication channels, prevent the cleaning burden from concentrating among fewer agents?",
+          "Every team eventually exhausts the shared resource in OpenHarvest. Does resource depletion persist as the number of agents grows beyond the team sizes tested?",
+          "One cooperative agent sustained the public good in OpenCleanup at a cost to its own return. What mix of cooperative and self-interested agents is needed to keep a public good alive across configurations?",
+          "Episodes sample one configuration from tens of millions and hold it fixed across five trials. Does adaptation improve when configurations change within an episode?",
+          "Eight large language models were evaluated. Do fine-tuned or reinforcement-learning-trained agents sustain cooperation where prompted models fail?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.12849",
+        "title": "Co-Modifying Application Code and Deployment Infrastructure: A Causal Study of AI Agent Pull Requests",
+        "authors": [
+          "Mohammad Wathiq Soualhi",
+          "Basem Suleiman"
+        ],
+        "url": "https://arxiv.org/abs/2610.12849",
+        "one_sentence": "Analyzes 26,999 pull requests across six agent architectures to measure integration overhead and review bypass when agents modify both application code and deployment infrastructure. Finds agent identity reduces odds of human review by 63.7% and many dual-scope PRs merge without inspection.",
+        "nearest_anchor_id": "2512.16856",
+        "nearest_anchor_title": "Distributional AGI Safety",
+        "open_questions": [
+          "Do deployment-aware benchmarks change how software agents handle CI/CD, container and provisioning files?",
+          "Do path-based access controls on infrastructure files reduce the share of agent pull requests that merge without human review?",
+          "Why does agent identity reduce the odds of human review by 63.7% compared to human contributors with the same write access?",
+          "What build and runtime failures follow from the uninspected dual-scope merges identified in AIDev v5 and MOSAIC-3M?",
+          "Does the review bypass for agent contributions persist across repository size, governance style and project age?",
+          "How do the integration penalties change as the share of agent pull requests in a repository grows?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.13133",
+        "title": "The Limits of Manipulation within Personalized Incentive Policies",
+        "authors": [
+          "Andrea Araldo",
+          "Alessa Mayer",
+          "Ravi Seshadri",
+          "Amir Brudner"
+        ],
+        "url": "https://arxiv.org/abs/2610.13133",
+        "one_sentence": "Formalizes a Stackelberg game where an agent can simulate a false profile to extract higher subsidies from a regulator that learns profiles from past behavior. Derives an upper bound on manipulation gains and illustrates deterrence effects on a London transport mode choice dataset.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "The analysis uses a single agent against a regulator; what happens when many agents manipulate a personalized incentive policy at once and the regulator learns from the pooled population behavior?",
+          "Does the deterrence effect of classification uncertainty hold when agents are LLM-based rather than utility maximizers with known profiles?",
+          "How much regulator welfare is lost by deliberately adding classification uncertainty to deter manipulation, across realistic profile distributions?",
+          "The simulations use the London Passenger Mode Choice dataset; do the same manipulation bounds hold in other demand domains such as energy or goods subsidies?",
+          "Do real people incur the predicted Cost of Manipulation when facing a learning regulator?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.13439",
+        "title": "Collective Autonomous Vehicle Routing Needs Social Awareness for Coexistence with Human Drivers",
+        "authors": [
+          "Anastasia Psarou",
+          "Mikolaj Rams",
+          "Blazej Torbus",
+          "Rafal Kucharski"
+        ],
+        "url": "https://arxiv.org/abs/2610.13439",
+        "one_sentence": "Adds a marginal-cost term to AV routing rewards in multi-agent RL to capture externalities on human-driven vehicles in mixed-autonomy traffic. Simulations on Ingolstadt and Provins networks show social rewards reduce human vehicle delay while also benefiting AVs.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Increasing the weight of the social component in the autonomous vehicle reward makes the system fail to reach the desired performance, and the cause is unresolved. What mechanism drives this failure, and how should the weight be set?",
+          "Marginal cost is computed by counterfactual simulation in which one autonomous vehicle is removed, which requires a simulator. Can the social component be estimated from observed traffic data alone, without counterfactual runs?",
+          "Results cover Ingolstadt and Provins at tested penetration rates. Does social routing still improve outcomes in larger networks and at penetration rates outside the tested range?",
+          "Human-driven vehicles are modelled inside the simulator rather than observed. How do the results change when human drivers adapt their route choices in response to social autonomous vehicle routing?",
+          "The scalable variant computes marginal cost only for the autonomous vehicles whose route choices most affect the system. How should that subset be selected, and how does selection error change the outcome?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.12916",
+        "title": "DeFiRank: Federated Pairwise Ranking for Governance in Decentralized Financial Networks",
+        "authors": [
+          "Zahra Batool",
+          "Michael Duchesne",
+          "Kaiwen Zhang",
+          "Ulrich Aivodji"
+        ],
+        "url": "https://arxiv.org/abs/2610.12916",
+        "one_sentence": "Proposes DeFiRank, a federated pairwise ranking model that institutions jointly train to rank DeFi providers without sharing transaction data. Evaluated on real blockchain data, it reaches NDCG@15 of about 0.87 versus 0.92 for a centralized baseline.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "Can participants game a federated pairwise ranking of blockchain providers by splitting addresses, cycling funds between controlled wallets, or padding counterparty diversity?",
+          "How does the ranking behave when a subset of the participating institutions submits poisoned model updates?",
+          "What happens to provider behaviour over time once the ranking drives promotion and demotion decisions?",
+          "Does the chosen definition of authentic participation, based on counterparty diversity, application usage and transaction frequency, agree with governance outcomes that human committees would reach?",
+          "How does ranking performance change as the number of participating institutions and the skew of their data partitions change?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-10-08",
