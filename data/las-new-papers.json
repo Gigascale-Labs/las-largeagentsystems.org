@@ -1,27 +1,400 @@
 [
   {
-    "date": "2026-10-11",
+    "date": "2026-10-13",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 421,
+      "unseen": 421,
+      "screened": 200,
+      "relevant": 9,
+      "kept": 4,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2610.17674",
+        "title": "AI Information Synthesis and Content Polarization",
+        "authors": [
+          "Chang Liu",
+          "Yuting Zhu"
+        ],
+        "url": "https://arxiv.org/abs/2610.17674",
+        "one_sentence": "Builds a game-theoretic model where content producers respond strategically to AI information synthesis by reallocating capacity between shared and differentiated content. Finds that as AI reliability increases, consumer substitution toward AI causes producers to increase content polarization despite AI itself providing balanced information.",
+        "nearest_anchor_id": "2501.16946",
+        "nearest_anchor_title": "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development",
+        "open_questions": [
+          "Does the predicted shift of producer capacity toward horizontally differentiated content appear in real content markets after AI assistants become available?",
+          "Do the three reliability phases reproduce in an agent-based simulation with LLM consumers and LLM content producers rather than in the analytic model?",
+          "How much competition among content producers is needed to cancel the polarization effect?",
+          "What happens when the AI synthesizer trains on the content producers' output, so that producer polarization feeds back into AI reliability?",
+          "Does the result hold when consumers learn about AI reliability over repeated rounds instead of knowing it?",
+          "Can content polarization in this setting be measured from public interaction logs or scraped content, given the model defines it as capacity allocated to horizontal versus vertical information?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.18336",
+        "title": "Strategic Multi-Agent Resource Allocation via Statistical Contracts",
+        "authors": [
+          "Ben Chugg",
+          "Michael I. Jordan",
+          "Aaditya Ramdas"
+        ],
+        "url": "https://arxiv.org/abs/2610.18336",
+        "one_sentence": "Formulates a statistical contract framework where a principal allocates resources among agents who may be null or non-null based on data they submit. Uses e-values to define allocation regions that limit payoffs to null agents while supporting online arrivals and post-hoc risk control.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "The contract guarantees hold under assumed agent rationality and known loss functions. How do the allocation guarantees degrade when agents misreport or choose strategies outside the assumed model?",
+          "The framework treats agents as acting independently. What happens to allocation to null agents when groups of agents coordinate their entry and data generation?",
+          "The closed-form approximations trade accuracy for interpretability. How much allocation efficiency do they lose against the polynomial-time linear optimization across problem sizes?",
+          "The online variant makes irrevocable decisions under time-uniform error control. How does its allocation to non-null agents compare with the batch mechanism under realistic arrival orders?",
+          "The participation analysis gives conditions under which entry is profitable for a non-null agent. Do autonomous LLM agents, acting as contract participants, actually enter when those conditions hold?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.18158",
+        "title": "When and How Order-Flow Interventions Work After Dealers Adapt",
+        "authors": [
+          "Guanghao Wu",
+          "Zhuo Cai",
+          "Zhidong Li",
+          "Shoujin Wang"
+        ],
+        "url": "https://arxiv.org/abs/2610.18158",
+        "one_sentence": "Proposes SOFA, an order-flow allocation contract that scores market states, schedules intervention strength, and routes customer orders toward tighter dealer quotes. Tests the method across 20 independently trained dealer populations in an ABIDES market simulation, measuring changes in execution cost.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Can an order-flow contract lower low-risk execution cost without raising high-risk execution cost?",
+          "Does the gain from state-aligned timing survive when dealer agents use learning algorithms other than the one trained here?",
+          "How does the State Scorer perform when trained on real public market data instead of lagged simulated data?",
+          "Do learning dealers settle on persistently wide quotes through tacit collusion, and does a public order-flow contract change that?",
+          "What venue objectives justify weighting low-risk execution cost more than 1.38 times high-risk cost?",
+          "Does the announced commitment schedule remain effective when dealers can learn to predict or game the schedule?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.17672",
+        "title": "Encounter-Driven City-Scale Human Mobility Generation with Large Language Models",
+        "authors": [
+          "Chao Li",
+          "Renhe Jiang",
+          "Chuan Xiao",
+          "Jiawei Wang"
+        ],
+        "url": "https://arxiv.org/abs/2610.17672",
+        "one_sentence": "Proposes EncounterMob, an LLM framework generating individual mobility trajectories jointly with population-level encounter structure. Tests on Japan and NYC mobility datasets against baselines on encounter and personal mobility metrics.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Does the encounter recovery protocol transfer to cities outside Japan and NYC?",
+          "Can encounter-aware generated mobility reproduce downstream population-level outcomes such as epidemic spread or information cascades?",
+          "How does the framework scale beyond city scale in residents and in LLM calls?",
+          "Does preserving encounter structure in synthetic trajectories increase re-identification risk for the residents in the source data?",
+          "Which component of EncounterMob, the Encounter Generator or the Iterative Coupling Framework, drives the reported error reductions?"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-10-12",
+    "counts": {
+      "fetched": 462,
+      "unseen": 462,
+      "screened": 200,
+      "relevant": 17,
+      "kept": 3,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2610.16498",
+        "title": "From Caricature to Collective Artifact: How Persona Construction Drives Polarization in Generative Social Simulations",
+        "authors": [
+          "Dimitris Michailidis",
+          "Petter Törnberg",
+          "Fernando P. Santos"
+        ],
+        "url": "https://arxiv.org/abs/2610.16498",
+        "one_sentence": "Ablates persona layers (affective polarization, party ID, vote choice) in a Twitter-like generative social simulation built from ANES survey data. Finds that removing explicit partisan statements shifts the network from near-complete segregation to cross-party ties close to real Twitter levels. Proposes a checklist for evaluating persona construction in future social simulations.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Which persona construction method produces agents whose behaviour matches real social media data on several outcomes at once, not just network segregation?",
+          "Does weighting survey answers by self-reported issue salience, rather than turning every answer into a behavioural instruction, change the level of cross-party tie formation?",
+          "Do the same persona ablations change collective outcomes in simulations of other platforms and other countries' survey data?",
+          "Which parts of the proposed persona evaluation checklist actually predict behavioural validity against observed human behaviour?",
+          "How do the ablation effects vary across LLM backbones and model scales?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.16946",
+        "title": "Social Priors: Descriptions of AI Users Shape How Language Models Trust and Cooperate",
+        "authors": [
+          "Harsh Kumar",
+          "George Eilender",
+          "Ashton Anderson"
+        ],
+        "url": "https://arxiv.org/abs/2610.16946",
+        "one_sentence": "Finetunes a model on corpora that attribute different motives to AI users (prosocial, antisocial, self-advancing, task-only) and measures downstream trust behavior. In trust games, antisocial-trained models send less money to people after a bad record but keep most funds for a device with the same record. In a common-pool resource simulation, one antisocial agent leads an otherwise sustainable group to exhaust the resource after privately planning to mislead them.",
+        "nearest_anchor_id": "2605.24413",
+        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
+        "open_questions": [
+          "One antisocial agent exhausts the common-pool resource in every group of otherwise sustainable agents, but the finding comes from small groups; how does the contagion scale with group size and with the share of antisocial agents?",
+          "Capping Assistant-Axis drift and steering emotion-related directions leave the behavioral gaps largely intact, so which interventions do remove them?",
+          "Belief shifts appear when antisocial documents are 1% of training tokens; how common are such descriptions of AI users in public web and pretraining corpora?",
+          "The results come from finetuning Qwen3-32B; do social priors transfer the same way across other model families and sizes?",
+          "Antisocial models target distrust at people and at users of AI chatbots in particular; does this asymmetry change how such models behave in mixed populations of humans and agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.16684",
+        "title": "The Voter Model with Opinion Graph",
+        "authors": [
+          "Petra Berenbrink",
+          "Thorsten Götte",
+          "Martin Hoefer",
+          "Tim Koglin"
+        ],
+        "url": "https://arxiv.org/abs/2610.16684",
+        "one_sentence": "Studies a bounded-confidence voter model where agents adopt a neighbor's opinion only if it is adjacent in an opinion graph, until the configuration becomes stable. Proves stabilization time bounds of O(n^2 log n) for ordinary and tighter bounds for a productive variant. Derives survival-probability bounds for opinions based on initial support and gives bounds on how large any surviving opinion can grow.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "The analysis assumes every pair of agents can interact. How does stabilization time change when agents interact over a sparse social network instead of a complete graph?",
+          "The bound on maximum opinion support is O(min{n, \\Delta^6 \\hat{s}}). Is the dependence on maximum degree \\Delta tight, or can simulation show the true exponent is smaller?",
+          "Proving a matching lower bound for the high-probability O(n^2 log n) stabilization bound of productive EdgeVOG remains open.",
+          "The model assumes an agent adopts an opinion only if the two opinions are adjacent in the opinion graph. Do populations of LLM agents update opinions in a way consistent with such a bounded-confidence rule?",
+          "Which opinion graph structures make a chosen opinion most likely to survive, and can an external party pick initial supports to steer the surviving independent set?"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-10-11",
+    "counts": {
+      "fetched": 218,
+      "unseen": 218,
+      "screened": 200,
+      "relevant": 7,
+      "kept": 2,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2610.15256",
+        "title": "Do Rollups Self-Organize? Multi-Agent Reinforcement Learning in the EIP-4844 Blob Fee Market",
+        "authors": [
+          "Alessio Brini"
+        ],
+        "url": "https://arxiv.org/abs/2610.15256",
+        "one_sentence": "Builds a calibrated multi-agent RL environment for Ethereum's EIP-4844 blob fee market with heterogeneous rollups and an endogenous base fee. Finds independent learners settle near the three-blob target without coordination across a fiftyfold demand range. Shows posting frequency scales with rollup size and that a costless layer-1 outside option lowers fees while keeping aggregate supply at target.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Independent learners settle near the three-blob target without coordination, but the paper does not test learners that can communicate or share policies; does explicit coordination between rollups move supply or fees away from the target?",
+          "Supply rises above the three-blob target above 200x demand; what change to the multiplicative fee update rule holds supply at the target over the full fiftyfold range?",
+          "Simulated posting frequency increases with rollup size; does on-chain post-Dencun blob data show the same size threshold for real rollups?",
+          "The environment calibrates heterogeneous rollups to post-Dencun data; how do the equilibrium blob count and fee change when the rollup population shifts in number or size distribution?",
+          "A costless layer-1 calldata outside option lowers the fee by about an order of magnitude; what happens when the outside option carries a realistic, time-varying cost?",
+          "Independent learners have no convergence guarantee in this environment; under what conditions on the fee update rule does convergence to the target hold?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.15871",
+        "title": "Entropy-Regularized Mean-Field Games with Average-Reward Criterion: Span-Seminorm Contractions and Model-Free Learning",
+        "authors": [
+          "Gunes Akbas",
+          "Naci Saldi",
+          "Berkay Anahtarci",
+          "Can Deha Kariksiz"
+        ],
+        "url": "https://arxiv.org/abs/2610.15871",
+        "one_sentence": "Studies entropy-regularized mean-field games with average-reward criterion under finite state/action spaces, proving span-seminorm contraction properties. Establishes conditions for equilibrium existence and uniqueness, with geometric convergence of a fixed-point iteration. Derives a model-free learning algorithm with finite-sample bounds, illustrated on a congestion-aware routing game.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Does the equilibrium remain unique when the kernel Lipschitz constant exceeds the minorization mass or the temperature falls below the stated threshold?",
+          "How does entropy regularization at the stated temperature threshold change equilibrium congestion compared to the unregularized game?",
+          "Can the span-seminorm contraction and the finite-sample bound extend to continuous or large state and action spaces?",
+          "Do the convergence rates hold for multiple interacting populations rather than one homogeneous population?",
+          "How many simulator samples does model-free soft Q-learning need in practice to reach the equilibrium population distribution in the routing game?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-10-10",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 262,
+      "unseen": 262,
+      "screened": 200,
+      "relevant": 21,
+      "kept": 8,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2610.14850",
+        "title": "Displacement Is Endogenous: AI Workers in a Search-and-Matching Labor Market",
+        "authors": [
+          "Ibrahim Denis Fofanah"
+        ],
+        "url": "https://arxiv.org/abs/2610.14850",
+        "one_sentence": "Builds a search-and-matching labor market model where AI systems enter as workers alongside humans, applying for jobs, getting hired, and getting dismissed under product demand and search frictions. Across 30 seeded runs per configuration, AI entry at 70% of human wage raises unemployment by 4.1 percentage points and reduces human employment by 12.2 workers. Shows demand elasticity determines whether displacement occurs through layoffs or reduced hiring, with the largest unemployment effect at wage parity.",
+        "nearest_anchor_id": "2509.01063",
+        "nearest_anchor_title": "An Economy of AI Agents",
+        "open_questions": [
+          "Firms in the model face a downward-sloping product demand with a fixed elasticity, and demand elasticity decides how many workers AI displaces; which empirical elasticities across real sectors give which displacement levels?",
+          "Screening changes who gets hired but leaves the displacement total unchanged; does that hold when screening accuracy differs between AI and human applicants?",
+          "AI enters at an exogenous wage ratio of 70% of the human wage; what happens when the AI price falls over time as a function of adoption?",
+          "Workers in the model do not retrain or change occupation; how do displacement totals change when humans can switch task types after dismissal?",
+          "The model reports simulated unemployment effects; do the predicted layoff and hiring margins match observed labour market data in occupations with high AI adoption?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.14738",
+        "title": "sGLP: Specifying Stochastic Agents that Simulate People",
+        "authors": [
+          "Ehud Shapiro"
+        ],
+        "url": "https://arxiv.org/abs/2610.14738",
+        "one_sentence": "Presents sGLP, a stochastic extension of a grassroots logic programming language that replaces real people with stochastic agents for large-scale simulation of grassroots platforms. Demonstrates it on social-graph formation with four behavioral profiles and on currency circulation with four spending/saving profiles. Proves that sGLP-driven runs remain valid vGLP program runs and implements the simulator using Gillespie's method.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Do stochastic profiles drawn from four hand-specified types reproduce the behaviour of real people on a grassroots platform?",
+          "How does the mix of spender, saver, cautious and generous profiles change the distribution of currency holdings as population size grows?",
+          "Which aggregate failure modes, such as concentration of currency or fragmentation of the social graph, appear in grassroots currencies under adversarial or free-riding profiles not included in the four tested types?",
+          "Can the social graph that forms under homophile and indifferent profiles be compared against the degree and clustering statistics of public social network datasets?",
+          "Does replacing stochastic agents with language model agents change the social graph and currency circulation that a grassroots platform produces?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.14570",
+        "title": "PsyMemBehav: Psychology-Informed and Memory-Grounded Two-Level Identity-to-Action Reasoning for Social-Media Behavior Simulation",
+        "authors": [
+          "Wenji Zhang",
+          "Xilong Cheng",
+          "Yunxiao Qin",
+          "Mai Tu",
+          "Tongye Zhu",
+          "Yuhao Zhou",
+          "JingBo Ji",
+          "Yuting Tan",
+          "Duoyin Li",
+          "Hongjiang Xiao",
+          "Yuan Zhang"
+        ],
+        "url": "https://arxiv.org/abs/2610.14570",
+        "one_sentence": "Introduces PsyMemBehav, which combines psychology-informed user profiles and retrieved memories to simulate platform behavior (comment, like, repost) via two-level identity-to-action reasoning. Builds a benchmark from 5.57M observed behaviors of 5,862 real users across Reddit, Bluesky, and Twitter. Reports top individual-level metrics and lowest group-level error among compared simulated systems, conditional on recorded engagement only.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "The benchmark records only engagements, so it leaves open how a simulated user decides to take no action on a thread.",
+          "Does individual-level behavioral fidelity produce correct aggregate dynamics when thousands of simulated users interact with each other rather than continuing observed threads?",
+          "Does the two-level identity-to-action method hold on platforms and languages outside Reddit, Bluesky, and Twitter?",
+          "Which of the 41 user descriptors and the top-5 retrieved memories actually drive the reported gains?",
+          "Do group-level MAE and MSE on recorded engagement predict accuracy for population-level quantities such as cascade size and topic spread?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.14948",
+        "title": "Exact Phase-Type Point Processes for Certified Measurement and Prediction of Event Streams",
+        "authors": [
+          "Sayak Dutta"
+        ],
+        "url": "https://arxiv.org/abs/2610.14948",
+        "one_sentence": "Develops a phase-type Hawkes process giving exact concave-likelihood estimation with a duality-gap certificate for measuring how markets absorb news shocks, plus EPT-X, a related neural point process for prediction. Applied to six markets around 670 macroeconomic releases, finds direct price reaction absorbed in about a second while self-generated echoes stretch half the response to 16-137 seconds. EPT-X achieves best or tied-best test likelihood on five order-book datasets and two other event-stream benchmarks.",
+        "nearest_anchor_id": "2503.13395",
+        "nearest_anchor_title": "Causal Emergence 2.0: Quantifying emergent complexity",
+        "open_questions": [
+          "The multiscale phase-type Hawkes model measures echo durations of 16-137 s around macroeconomic releases in six markets; it is unknown whether the same echo structure holds in markets dominated by algorithmic or AI agents, such as crypto venues that trade continuously.",
+          "The paper reports that the EasyTPP implementation of IntensityFree clamps short inter-event times before scoring and that EasyTPP Amazon gaps are uniform on two fixed intervals; the extent to which published point-process benchmark results depend on such data and scoring artefacts is untested.",
+          "Stability of the shock response holds if and only if the spectral radius of the branching matrix is below one; how close live markets sit to that boundary over time, and whether the spectral radius can serve as a monitoring signal for systemic instability, is not reported.",
+          "EPT-X attains the best test likelihood on five LOBSTER order-book streams, Retweet and Taobao; whether better likelihood translates into better detection of aggregate failure modes such as herding or cascades is not evaluated.",
+          "The measurement model gives a duality-gap certificate for the global maximum of a concave log-likelihood; it is unclear whether a comparable certificate exists once the history-dependent mixture-of-Erlang channel of EPT-X makes the objective non-concave."
+        ]
+      },
+      {
+        "arxiv_id": "2610.14646",
+        "title": "Beyond Independent Values: Optimal Auctions with Correlated Valuations for LLM-Native Advertising",
+        "authors": [
+          "Shiman Sheng",
+          "Mingyu Guo"
+        ],
+        "url": "https://arxiv.org/abs/2610.14646",
+        "one_sentence": "Introduces AffMyerson, an auction for LLM-native advertising that models correlated advertiser values given conversation context via a multivariate normal with a sign-constrained precision matrix. Proves the mechanism is truthful and individually rational for any prior in this family, with closed-form virtual values computable in quadratic time without matrix inversion. With LLM-agent bidders, reports 6.2% more revenue than second-price auction with tuned reserve and 9.2% more than Myerson's independent-value auction.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Correlated-value auctions for LLM advertising raise revenue by 6.2% over a tuned second-price auction in experiments with LLM-agent bidders, but the effect on user welfare and answer quality in the conversation is untested. How does the auction change what the assistant tells the user?",
+          "The model assumes advertiser values given the conversation follow a multivariate normal or log-normal prior. How do the revenue and truthfulness results hold when the true value distribution is misspecified or multi-modal?",
+          "LLM-agent bidders told to judge the conversation bid together, and agents told to calculate do not. What prompting, model choice or fine-tuning makes a population of bidding agents converge on correlated bids?",
+          "Correlated bidding across agents that read the same conversation is a form of common-signal herding. Can advertiser agents use this shared signal to collude tacitly and suppress bids, and does the auction's conditioning on the prior make collusion easier or harder?",
+          "The gain falls from 6.2% to 4.5% on real keyword search queries where willingness to pay is hard to read. Which features of a query determine how much conditioning on correlation is worth?",
+          "The auction is evaluated with LLM-agent bidders and on real keyword queries, not with human advertisers setting budgets. How do human advertisers respond to a pricing rule that conditions on competitors' correlated values?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.15015",
+        "title": "Algorithmic Fairness Over Time: Advances & Prospects",
+        "authors": [
+          "Miriam Rateike"
+        ],
+        "url": "https://arxiv.org/abs/2610.15015",
+        "one_sentence": "Presents a taxonomy distinguishing static and temporal notions of algorithmic fairness under feedback loops where decisions affect future observed data. Identifies implicit temporal assumptions in existing fairness research and lists open questions for measuring and ensuring fairness over time.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Which temporal fairness notions hold up when the implicit assumptions behind them, such as a fixed population or stable decision horizon, are relaxed?",
+          "How do fairness metrics measured at one time step diverge from fairness measured over a full deployment trajectory under feedback loops?",
+          "What interventions keep an algorithmic decision model fair over time as its own decisions reshape the observed data distribution?",
+          "Do the identified temporal fairness effects appear in real deployed decision systems acting on real populations?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.14473",
+        "title": "Diffusion-Based Auctions for Multi-Winner Banner Ads",
+        "authors": [
+          "Lilian Sun",
+          "Henry Huang",
+          "Fucheng Warren Zhu",
+          "Giannis Daras",
+          "Constantinos Daskalakis"
+        ],
+        "url": "https://arxiv.org/abs/2610.14473",
+        "one_sentence": "Proposes a banner-ad auction mechanism using diffusion models that lets multiple bidders co-win a single ad slot, blending their desired images based on bid strength. Combines bidder values and textual descriptions into a score driving the diffusion reverse process, then selects the welfare-maximizing sampled image. Experiments measure efficiency gains over single-winner allocation, monotonicity, and approximate incentive compatibility with Myerson- and Clarke-based payments.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "The mechanism is only approximately incentive compatible when combined with Myerson- or Clarke-based payments. How much can a bidder gain by misreporting its value or its textual description?",
+          "Gains in efficiency, monotonicity and approximate incentive compatibility grow with the number of Monte Carlo samples. What is the cost curve of sampling against auction latency and how does it limit deployment?",
+          "The evaluation covers bids and textual descriptions, but not how users respond to co-won banner images. Do blended ads change click-through or brand attribution relative to single-winner ads?",
+          "Multiple bidders co-win one image, so their declared descriptions interact. Can groups of bidders coordinate descriptions to push the chosen image toward a shared outcome and lower their payments?",
+          "Experiments report results for a set of bidders, but the abstract does not state how the mechanism scales. How do welfare and image quality change as the number of bidders per opportunity grows?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.14449",
+        "title": "Jevolution: A Framework for Studying Communication and Collective Dynamics in AI Agents",
+        "authors": [
+          "Xirui Huang",
+          "Nikhil Hooda",
+          "Utkarsh Gupta"
+        ],
+        "url": "https://arxiv.org/abs/2610.14449",
+        "one_sentence": "Presents Jevolution, an instrumented spatial predator-prey simulation framework separating world dynamics, scheduling, controller adapters, and experiment records using the ODD protocol. A communication case study across six habitat-seed pairs measures a small, statistically inconclusive effect of signaling on rabbit population abundance. Frames itself as an inspectable experimental system rather than a claim about emergent language or ecological realism.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Does a predefined signal system raise or lower rabbit abundance in a spatial predator-prey simulation?",
+          "How many habitat-seed pairs are needed before the signals-on minus signals-off difference separates from zero?",
+          "Do agent-to-agent signals in the framework acquire content, rather than staying fixed predefined tokens?",
+          "How do collective dynamics change when the controller runs thousands of agents instead of the two species of the case study?",
+          "Do results from the framework match any observed ecological population dynamics?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-10-09",
