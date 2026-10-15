@@ -1,5 +1,107 @@
 [
   {
+    "date": "2026-10-14",
+    "counts": {
+      "fetched": 378,
+      "unseen": 378,
+      "screened": 200,
+      "relevant": 10,
+      "kept": 4,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2610.20587",
+        "title": "Price of Anarchy of First-Price Auctions in Agentic Markets",
+        "authors": [
+          "Shubhendu Trivedi",
+          "Jacob Eisenstein",
+          "Alekh Agarwal",
+          "Ian Gemp",
+          "Michael Kaisers",
+          "Adam Fisch"
+        ],
+        "url": "https://arxiv.org/abs/2610.20587",
+        "one_sentence": "Studies price of anarchy in first-price auctions within agentic markets where AI agents bid for user prompts. Shows competitive floors and near-independence of bidder values reduce welfare loss below the standard 1-1/e bound. Validates results using simulated strategic bidders on the EmbedLLM prompt routing dataset.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Do real agent populations show the competitive floor assumed in the analysis, where several bidders value a prompt above a baseline share of optimal welfare?",
+          "How does the price of anarchy change when bidders learn their bids by no-regret or reinforcement learning instead of playing an equilibrium?",
+          "Can bidders in a repeated first-price prompt market collude and suppress bids below the equilibrium level?",
+          "Which allocation rule gives higher welfare than first-price auctions for prompts when agents hold private costs and capabilities?",
+          "Does the near-independence condition hold once agents share a common base model and therefore correlate in quality on the same prompt?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.20200",
+        "title": "Drivers of LLM Consensus Formation Under Competing Incentives: A Simulation Study",
+        "authors": [
+          "Isabel Jones",
+          "Matthew Edwards",
+          "Janina A. Hoffmann"
+        ],
+        "url": "https://arxiv.org/abs/2610.20200",
+        "one_sentence": "Introduces a Network Consensus game testing how LLM agents with competing incentives reach collective agreement. Varies communication access and network structure across six open-source models and one closed model. Finds consensus depends on stubbornness, majority-following, and graph clustering.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Which mechanisms make highly clustered graphs reduce consensus, and can changes to network structure restore it?",
+          "Do mixed groups of humans and LLM agents reach consensus at the rates seen in pure-LLM groups?",
+          "Does the consensus behaviour reported for networks of a few agents hold at populations of hundreds or thousands?",
+          "Can prompting or fine-tuning change stubbornness and majority-following, and so change collective consensus outcomes?",
+          "Do other closed models match the consensus behaviour of the single closed model tested here, which reached consensus without communication?",
+          "Does the payoff asymmetry between agents determine which colour wins, and does it concentrate payoff on particular agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.19863",
+        "title": "When Extremists Enter LLM Societies: Investigating Extreme Behavior in Multi-Agent Systems",
+        "authors": [
+          "Guo Chen",
+          "Huaijin Xie",
+          "Ziwen Li",
+          "Reed Li",
+          "Yu Lu",
+          "Haibo Shi",
+          "Bingbing Xu",
+          "Junjie Huang"
+        ],
+        "url": "https://arxiv.org/abs/2610.19863",
+        "one_sentence": "Introduces EXAM, a framework for configuring extremist agents within LLM multi-agent social simulations. Tests four scenarios including elections, financial crises, and epidemics. Finds small persistent extremist subgroups produce measurable, model- and scenario-dependent shifts in collective behavior.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Collective shifts from extremist agents depend on the backbone model, but the abstract does not say which backbone features drive the difference. Which backbone properties predict susceptibility to tail-actor influence?",
+          "EXAM covers four scenarios: congressional election, financial crisis, epidemic public opinion, and iterated prisoner's dilemma. Do the same tail-actor effects appear in production economies, labour markets or recommender-driven social networks?",
+          "The framework controls extremist population proportion and spatial distribution. What proportion and network placement marks the threshold at which a tail group flips the majority position?",
+          "The paper measures the effect of extremist agents but does not test defences. Which monitoring or steering interventions detect and limit tail-actor influence in an LLM agent population?",
+          "Extremist agents are configured through prompts and natural-language histories. Do the collective shifts persist when agents are extreme because of fine-tuning rather than prompting?",
+          "The simulations contain only LLM agents. Do the same tail-actor shifts occur in mixed populations of humans and LLM agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.20144",
+        "title": "Structural Dependence, Imitation or Herding? A Multi-Agent Simulation of Global Intermedia Agenda Setting",
+        "authors": [
+          "Mohammad Yousuf",
+          "Arif Md Tareque Habib"
+        ],
+        "url": "https://arxiv.org/abs/2610.20144",
+        "one_sentence": "Combines observational data from 18 national news outlets with an LLM-agent simulation of editors to test dependence, imitation, and herding mechanisms in news coverage. Finds support for herding but not imitation, and that the dependence mechanism reduces to publishing wire copy. Leaves open whether wire copy sets the agenda or just the timing.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Wire copy sets the timing of foreign news in peripheral outlets, but whether it sets the agenda stays open. What measurement separates timing dependence from agenda dependence?",
+          "The simulation did not decide between dependence, imitation and herding, because the fitted dependence rule reduced to publishing wire copy. What agent rule specification would make the three mechanisms distinguishable in simulation?",
+          "Tier and local stake showed no effect distinguishable from none across 18 outlets in six countries. Do these effects appear in a larger sample of outlets or in other event types?",
+          "The study covers two wars and two UN climate conferences in 2022-2024. Does the wire-copy timing result hold for domestic or non-crisis news?",
+          "Language models acted as the outlets' editors in the simulation. How well do language-model editors reproduce the observed coverage patterns of real outlets?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-13",
     "counts": {
       "fetched": 421,
