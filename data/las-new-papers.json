@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-10-18",
+    "counts": {
+      "fetched": 0,
+      "unseen": 0,
+      "screened": 0,
+      "relevant": 0,
+      "kept": 0,
+      "anchors": 20
+    },
+    "papers": []
+  },
+  {
     "date": "2026-10-17",
     "counts": {
       "fetched": 0,
@@ -14,14 +26,114 @@
   {
     "date": "2026-10-16",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 270,
+      "unseen": 270,
+      "screened": 200,
+      "relevant": 14,
+      "kept": 5,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2610.23283",
+        "title": "Market Efficiency in a Changing Asset Population: Mobility, Entry, and Survival over Cryptocurrency's Full History",
+        "authors": [
+          "Antonis Ballis",
+          "Christos Ioannidis"
+        ],
+        "url": "https://arxiv.org/abs/2610.23283",
+        "one_sentence": "Tests weak-form market efficiency symmetry restrictions on the full population of 8,970 cryptocurrency assets over 690 weekly cross-sections from 2013-2026. Finds symmetry rejected in every era but asymmetry declines 70%, driven by entry-driven compositional churn rather than valuation convergence. Reports the bottom market-cap decile earns 27.5% weekly on paper but nothing among assets that actually trade.",
+        "nearest_anchor_id": "2503.13395",
+        "nearest_anchor_title": "Causal Emergence 2.0: Quantifying emergent complexity",
+        "open_questions": [
+          "Markov-chain symmetry tests on the cryptocurrency capitalisation distribution reject weak-form efficiency in every era, but it is unknown whether the same test rejects on other asset populations such as listed equities or exchange-traded tokens on a single chain.",
+          "The fall in asymmetry comes from entry-driven compositional churn rather than coins' own valuations, so what determines the rate and composition of entry over time remains open.",
+          "The bottom decile earns 27.5% per week on paper and nothing among assets that trade, on capacity of $293,000, and it is unknown how this capacity estimate changes under different liquidity and transaction-cost assumptions.",
+          "The test treats entry, exit and survival as observed, and it is unknown how much earlier efficiency findings change when survivorship is inferred instead of observed.",
+          "The share of cryptocurrency trading done by automated or agentic traders is not measured, so its link to the decline in distributional asymmetry is open."
+        ]
+      },
+      {
+        "arxiv_id": "2610.23305",
+        "title": "On the (In)stability of Adaptive Fee Mechanisms in Multi-Chain Systems",
+        "authors": [
+          "Yifan Zhou",
+          "Jiang Xiao",
+          "Xuechao Wang",
+          "Ru Cheng",
+          "Shijie Zhang"
+        ],
+        "url": "https://arxiv.org/abs/2610.23305",
+        "one_sentence": "Models multi-chain blockchain fee markets as a delayed-feedback nonlinear dynamical system. Finds cross-chain coupling reduces the stable parameter range for base-fee update rates by up to 84.8%, and instability propagates between chains. Proposes a protocol-level mitigation that removes the over-correction causing this instability.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the proposed protocol-level mitigation hold up when deployed on a live multi-chain network rather than in experiments?",
+          "Do the predicted load oscillations appear in historical block-fill and base-fee data from Cosmos chains and their IBC flows?",
+          "How does stability change as the number of coupled chains and the cross-chain topology grow beyond the configurations tested?",
+          "What happens to multi-chain fee stability when users are strategic agents that reroute transactions in response to fee differences, instead of an assumed demand process?",
+          "Can the safe parameter bounds for base fee update rates be proven analytically for nonlinear delayed feedback, rather than measured experimentally?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.23199",
+        "title": "Validating LLM-generated political networks with survey-reported partisan exposure",
+        "authors": [
+          "Marco Tonin",
+          "Michele Tizzoni",
+          "Bruno Lepri",
+          "Luca Maria Aiello"
+        ],
+        "url": "https://arxiv.org/abs/2610.23199",
+        "one_sentence": "Generates LLM-based political social networks using personas from a national survey dataset. Compares generated partisan exposure at both network and individual level against survey-reported exposure. Finds aggregate network similarity can mask systematic errors in individual-level partisan exposure.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Which prompting and sampling configurations reduce the gap between LLM-generated partisan exposure and survey-reported exposure?",
+          "Do the group-specific exposure errors persist across other LLM families and model sizes?",
+          "Can ego-level validation benchmarks be built for network domains other than political exposure, such as occupational or geographic ties?",
+          "How do ego-level exposure errors propagate when the generated networks are used to simulate opinion dynamics or information cascades?",
+          "Do LLM-generated networks reproduce the partisan exposure measured from observed platform ties rather than self-reported exposure?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.23282",
+        "title": "A Characterization of Quantile Stable Matchings in Many-to-Many Markets",
+        "authors": [
+          "Paola Manasero",
+          "Pablo Neme"
+        ],
+        "url": "https://arxiv.org/abs/2610.23282",
+        "one_sentence": "Characterizes quantile stable matchings in many-to-many markets with substitutable preferences via a combinatorial cycle-based framework. Extends prior rotation-based results from one-to-one to many-to-many markets. Avoids exhaustive enumeration of the full stable matching set.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the cycle-based characterization yield a polynomial-time algorithm for computing quantile stable matchings in many-to-many markets?",
+          "Do quantile stable matchings keep the same cycle characterization when preferences drop the law of aggregate demand or strong substitutability?",
+          "How much computation does cycle elimination save against exhaustive enumeration of the stable set on markets of realistic size?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.22864",
+        "title": "The Source of Data Value: Consumer Disclosure, Access Design, and Platform Monetization",
+        "authors": [
+          "Hexiao Liu",
+          "Lijian Lu",
+          "Mingzheng Wang"
+        ],
+        "url": "https://arxiv.org/abs/2610.22864",
+        "one_sentence": "Develops a game-theoretic model of a platform, two sellers, and privacy-sensitive consumers under different data-disclosure regimes. Analyzes when the platform can monetize defensive data adoption and how disclosure rules affect welfare. Derives conditions under which mandatory versus voluntary disclosure changes pricing and seller incentives.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "The model fixes two differentiated sellers. How do the defensive-adoption and exclusive-access results change with many sellers competing on one platform?",
+          "The results come from a static game. What happens when sellers and the platform repeat the data-pricing interaction and learn from past outcomes?",
+          "The model assumes privacy-sensitive consumers with positive privacy costs. What disclosure rates do real consumers choose when offered anonymous purchasing?",
+          "Capping anonymous offers at the no-data benchmark is proposed as a remedy. Does pricing in anonymous channels on live marketplaces show the segmentation effect the model predicts?",
+          "Sellers in the model are strategic optimisers. How do the same data-purchase incentives play out when sellers are autonomous pricing agents with bounded information?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-10-15",
