@@ -1,27 +1,348 @@
 [
   {
-    "date": "2026-10-18",
+    "date": "2026-10-19",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 347,
+      "unseen": 347,
+      "screened": 200,
+      "relevant": 14,
+      "kept": 5,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2610.26438",
+        "title": "Fake News, Real Crashes: Information Injection Attacks on LLM Financial Trading Agents",
+        "authors": [
+          "Mengxiao Wang",
+          "Nitesh Saxena"
+        ],
+        "url": "https://arxiv.org/abs/2610.26438",
+        "one_sentence": "Benchmarks information injection attacks against LLM financial trading agents across five injection vectors and seven event categories over about 10,000 decisions on 15 stocks.Finds fabricated news reaches 62% attack success and some templates reach 100% across all stocks, exceeding prompt-injection success rates.Shows surface cues like named sources affect success, that agent state changes vulnerability, and that most defenses except hierarchical aggregation fail to reduce success.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Does a single fabricated headline move prices when many LLM trading agents read the same feed and trade together?",
+          "Hierarchical aggregation reduces attack success rate, but the size of the reduction and the conditions under which it fails stay untested.",
+          "Which surface credibility cues beyond a named source and a \"BREAKING\" tag drive fact-poisoning success?",
+          "Can a classifier or retrieval check detect fabricated headlines blended unlabeled into real news feeds before the agent acts?",
+          "The benchmark covers 15 U.S. stocks; whether the same attack vectors work on other asset classes and non-U.S. markets stays open.",
+          "Do information injection attacks succeed against LLM agents that trade real capital in deployment?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.25603",
+        "title": "When Better Opportunities Backfire: Service Worker Responses to Parallel AI Deployment in Customer Acquisition",
+        "authors": [
+          "Xinyu Fu",
+          "Shulong Luo",
+          "Narayan Ramasubbu",
+          "Peng Shen",
+          "Xincheng Wang",
+          "Yucheng Wang"
+        ],
+        "url": "https://arxiv.org/abs/2610.25603",
+        "one_sentence": "Studies a Chinese health-insurance brokerage's AI voice-agent deployment using over half a million outreach records with a regression-discontinuity-in-time design.Finds enriched early-workday opportunities raise high-intent lead probability by about 23 percentage points but human acquisition still drops about 5 percentage points in that window.Attributes this to workers raising their reservation value and persisting less, shortening calls by about 13%, with gains from better lead ordering outweighed by this behavioral response.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does a task-allocation rule that spreads high-intent leads evenly across the workday avoid the drop in customer acquisition?",
+          "Do compensation schemes that reward persistence on a lead offset the higher reservation value created by AI-enriched opportunity sets?",
+          "Does the behavioral response fade as workers adapt to the new lead distribution over months?",
+          "Do the same effects appear when AI agents handle high-intent leads and humans handle low-intent leads?",
+          "How far do the measured effects extend to contact centers outside Chinese online health-insurance brokerage?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.25814",
+        "title": "Balanced Social Learning",
+        "authors": [
+          "Andrew Koh",
+          "Ricky Li"
+        ],
+        "url": "https://arxiv.org/abs/2610.25814",
+        "one_sentence": "Characterizes when social learning among myopic agents with heterogeneous preferences achieves efficient discovery of high-value actions.Shows that under full transparency, efficiency requires balance conditions on priors, preferences, and log-likelihood ratio moments.Compares adaptive information policies to adaptive evidence policies, showing the latter can approximate the former's value as individual signal impact vanishes.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Agents are myopic and generate information only about the action they choose; does the balance condition for efficient social learning still hold when agents are forward-looking or can experiment?",
+          "Do the moment conditions on the log-likelihood ratio distribution that make full transparency efficient hold in real observational-learning data such as public review or rating platforms?",
+          "How do adaptive evidence policies that permanently disclose subsets of past information perform when the designer must estimate the prior and the preference distribution rather than know them?",
+          "Does the characterization extend to populations of LLM agents that read past information as text rather than as calibrated signals?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.25823",
+        "title": "Optimizing Marketing Budgets for Social Influence: A Generalized Fractional Incentives Framework",
+        "authors": [
+          "Abhishek K. Umrawal",
+          "Akhil Bhimaraju",
+          "Eliot W. Robson",
+          "Lav R. Varshney"
+        ],
+        "url": "https://arxiv.org/abs/2610.25823",
+        "one_sentence": "Proposes Budgeted Generalized Fractional Influence Maximization, allocating continuous marketing spend across heterogeneous users with network spillovers.Develops a discrete greedy algorithm with approximation guarantees for this allocation problem.Tests the approach on multiple large-scale networks, showing continuous allocation can outperform standard heuristics under heterogeneous response and cost conditions.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "User-specific response functions are assumed as model inputs; how can they be estimated from observed adoption data, and how does misspecification change the allocation?",
+          "How does the greedy allocation perform when several marketers compete for influence over the same network under separate budgets?",
+          "Do the simulated gains over standard heuristics hold in a live marketing campaign with real spend and real users?",
+          "How does the framework behave when some nodes are autonomous agents whose adoption responses differ from human users?",
+          "How does the approximation guarantee degrade when the network structure is only partially observed?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.25630",
+        "title": "The Forward/Inverse Duality of Controlled Emergence:A Computational Design Program from Explanation to Engineering",
+        "authors": [
+          "Hao Li",
+          "Minghui Ren",
+          "Shaowen Lu"
+        ],
+        "url": "https://arxiv.org/abs/2610.25630",
+        "one_sentence": "Proposes a forward/inverse design framework treating emergence control as dual problems of explaining and engineering local rules to achieve target macroscopic behavior.Defines controllability, reproducibility, and formalizability as measurable coordinates and gives testable hypotheses about critical scale and constraint-adaptability trade-offs.A small pilot experiment checks only that the protocol runs, not the hypotheses themselves.",
+        "nearest_anchor_id": "2604.15236",
+        "nearest_anchor_title": "Agentic Microphysics: A Manifesto for Generative AI Safety",
+        "open_questions": [
+          "Do the three working hypotheses on critical scale, constraint-adaptability trade-off, and minimal constraint hold under statistical test?",
+          "Can controllability, reproducibility, and degree of formalizability be measured in a running multi-agent system?",
+          "Does the feasibility criterion that reduces inverse design to interval checking find controllable local rules for a target macroscopic behaviour?",
+          "Does the design language transfer to multi-agent artificial intelligence systems built from language model agents?",
+          "Does the framework hold in industrial internet and emergency response deployments?"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-10-18",
+    "counts": {
+      "fetched": 199,
+      "unseen": 199,
+      "screened": 199,
+      "relevant": 8,
+      "kept": 5,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2610.25040",
+        "title": "Scam Town: Can Scam Education Spread Like a Vaccine?",
+        "authors": [
+          "Simiao Ren",
+          "Tommy Duong",
+          "Xingyu Shen",
+          "Jiaqi Gan",
+          "Tsang Ng",
+          "Ankit Raj",
+          "Kidus Zewde",
+          "Huaiyu Guo",
+          "Siyu Zhang"
+        ],
+        "url": "https://arxiv.org/abs/2610.25040",
+        "one_sentence": "Builds Scam Town, a simulated town of LLM-played residents who receive scam calls and can warn people they know.Measures that word-of-mouth alone cuts scams by about a fifth across 80 simulated towns, while combining it with official warnings cuts scams by about half, with the largest effect when warnings reach older residents scammers call most.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Do the simulated effects hold with real people, who were never tested here?",
+          "Does the finding that each warning leads to fewer than one more warning depend on the language model that plays the residents?",
+          "How does the social network structure of the town change the reduction in scam victims?",
+          "Which targeting rule for official warnings minimises scams when scammer call lists are imperfect?",
+          "Does the combination of an official warning plus word of mouth cut scams by about half when the combination runs live rather than only in simulation?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.25508",
+        "title": "How Far Can an Agent Push? Trust-Safety Margins in Live Language-Based Economic Games",
+        "authors": [
+          "Dima Galat",
+          "Marian-Andrei Rizoiu"
+        ],
+        "url": "https://arxiv.org/abs/2610.25508",
+        "one_sentence": "Tests a protected agent and instrument agents across negotiation, bargaining, and persuasion games in the GLEE competition against 460 other agents.Measures a 0.071 adjusted-percentile gain from learned pricing in negotiation, a 0.194 sales increase from persuasion recommendations with a defined confidence interval, and ranks the protected agent 11th of 460 in bargaining.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the persuasion result hold when the receiver is a human rather than a language model agent?",
+          "Leaderboard ratings for all five agents moved on the final day when the opponent pool shifted, while their play was unchanged; how can rating systems for live agent competitions separate agent policy from pool composition?",
+          "A continuation model conditioned on the rejected offer did not beat a recency-weighted incumbent in bargaining, and the paper does not say why; what information about a counterpart's acceptance behaviour is predictive in language-based bargaining?",
+          "How far do trust-safety margins measured in GLEE negotiation, bargaining and persuasion transfer to other language-based economic games?",
+          "Three dispatch defects appeared when delivered behaviour was checked against the design; which automated checks catch the gap between a specified agent policy and the behaviour actually delivered in a live population?",
+          "Recommending every unit raises sales where the receiver's slack makes obedience rational and lowers them where it does not; does repeated exposure to such recommendations cause lasting loss of trust across a population of agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.25113",
+        "title": "Self-organizing reinforcement learning: a swarm approaches the explore-exploit optimum",
+        "authors": [
+          "Galen J. Wilkerson"
+        ],
+        "url": "https://arxiv.org/abs/2610.25113",
+        "one_sentence": "Shows a reward-free foraging swarm using Levy flights and recruitment cascades approaches the ideal-free distribution equilibrium of a resource-sharing game.Measures committed foragers matching resource richness with slope 0.94, reaching ~65% of a trained RL baseline's performance at zero training cost.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "The swarm stays measurably exploitable relative to the Nash allocation. How much can an adversarial agent that joins the swarm gain from this gap?",
+          "Results come from one embodied foraging environment. Does the recruitment-dispersal cascade reach the ideal free distribution in other resource-sharing settings, such as multi-market order routing or task allocation?",
+          "The comparison uses PPO and a centralised-critic learner that overtake the swarm after about 4,000 of 15,000 steps. Does a hybrid that starts from the swarm rule and then learns beat either alone?",
+          "Matching slope falls from 0.94 to 0.08 when recruitment is decoupled from movement. How do slope and settling time scale with swarm size, proximity-network density and cascade threshold?",
+          "Agents in the swarm are identical. Does matching survive heterogeneous agents, including agents that withhold recruitment signals or send false ones?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.25374",
+        "title": "Mining the Self-Rewriting System: A Vision for Data Mining on AI-Native Infrastructure",
+        "authors": [
+          "Mayank Darbari",
+          "Chiman Salavati",
+          "Liang Wu",
+          "Dawei Wang",
+          "Jiong Zhang",
+          "Kelly Wan",
+          "Krishna Chakka",
+          "Liangjie Hong"
+        ],
+        "url": "https://arxiv.org/abs/2610.25374",
+        "one_sentence": "Proposes 'self-rewriting systems' as a research object where agents' actions reshape the logs and data later used to train and evaluate them.Outlines four problems covering drift attribution, trace mining, knowledge-fabric maintenance, and gating of concurrent learning streams, using telecom as an example.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Can coupled cross-surface failures be distinguished from marginal per-surface monitoring alone, and under what conditions does joint monitoring restore identifiability?",
+          "How can heterogeneous drift signals be fused into calibrated gating and attribution decisions?",
+          "How can process mining handle agent traces whose activity alphabet grows over time?",
+          "What public benchmarks measure endogenous drift in self-rewriting systems, and what evaluation criteria do they need?",
+          "Does the claimed non-identifiability of cross-surface causes hold in deployed AI-native infrastructure such as telecom, finance, or clinical decision support?",
+          "How can concurrent learning streams be promoted safely through one shared evaluation gate without the gate itself drifting?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.25539",
+        "title": "Informative Imitation",
+        "authors": [
+          "Nemanja Antic",
+          "Harry Pei"
+        ],
+        "url": "https://arxiv.org/abs/2610.25539",
+        "one_sentence": "Analyzes steady-state equilibria of a sequential learning game where uninformed agents imitate others based on recent adoption counts of a risky action.Shows imitation decisions can be strategic complements, producing multiple equilibria, and that the equilibrium maximizing imitation probability also maximizes welfare.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Does the strategic complementarity between uninformed agents' imitation decisions survive when agents observe richer signals than the count of adopters in the last m agents?",
+          "Which of the multiple steady-state equilibria do adaptive or learning agents actually reach when they are not assumed to coordinate on one?",
+          "Do populations of LLM agents placed in this safe-versus-risky choice game reproduce the predicted imitation herds and welfare ranking?",
+          "How does the window length m change the informativeness of risky-action herds and the welfare of the imitation-maximising equilibrium?",
+          "Does the welfare ranking of equilibria still hold when adoption costs are correlated across agents rather than private and independent?",
+          "Do observed adoption cascades in real markets match the predicted link between herd size and herd informativeness?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-10-17",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 178,
+      "unseen": 178,
+      "screened": 178,
+      "relevant": 12,
+      "kept": 5,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2610.24792",
+        "title": "Strategic Origins of Network Structure",
+        "authors": [
+          "Christoph Riedl",
+          "Rory Smead"
+        ],
+        "url": "https://arxiv.org/abs/2610.24792",
+        "one_sentence": "Introduces a 'game-graph equilibrium' model where network structure emerges as the stable outcome of payoff-driven partner-choice dynamics. Proves two-type games yield exactly four topological classes, generalizing to K^K classes for K types. Applies mechanistic inference to real networks including international trade, recovering interpretable game-theoretic parameters and predicting unseen topologies.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Can mechanistic inference recover generating games from networks formed by LLM agents that choose partners?",
+          "Does the game-graph equilibrium framework describe networks with more than two agent types in practice, given the claim of K^K topological classes?",
+          "Do the four core-periphery equilibria separate cooperative from exploitative dynamics in empirical networks beyond international trade?",
+          "How does mechanistic inference behave when partner choice is partly constrained by cost, distance or platform rules rather than payoffs alone?",
+          "Which real-world networks reject the hard game-theoretic manifold constraint, and what structures do they show instead?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.24865",
+        "title": "A general mechanism for collective foraging: percolating recruitment cascades coupled to a maximum-entropy",
+        "authors": [
+          "Galen J. Wilkerson"
+        ],
+        "url": "https://arxiv.org/abs/2610.24865",
+        "one_sentence": "Models foraging recruitment as a linear-threshold contagion cascade on a communication network coupled to physical movement. Shows the coupling between network and space self-limits coordination without parameter tuning, producing recruitment, patch-leaving, and Levy search behaviors. Reports up to 7.6x harvest gains over solitary search for sparse, clustered resources, vanishing when search is already easy.",
+        "nearest_anchor_id": "2503.13395",
+        "nearest_anchor_title": "Causal Emergence 2.0: Quantifying emergent complexity",
+        "open_questions": [
+          "The harvest gain reaches 7.6x solitary search when resources are sparse and clustered, and falls to nothing when search is easy. Where in the resource-field parameter space does the gain cross zero?",
+          "Does the self-limiting cascade window survive agents with heterogeneous thresholds, noisy sensing, or agents that misreport discoveries?",
+          "The model couples a communication network to physical motion. Does the same percolating-recruitment mechanism produce self-limiting coordination in agent populations where the network is not embedded in space, such as online information cascades?",
+          "Does the claimed cascade window appear in recorded foraging data from real swarms, not only in the model?",
+          "Percolating cascades give a large return on minimal communication. Can an adversary exploit the degree-normalized activation rule to drive a swarm to a false resource?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.24833",
+        "title": "Measuring Consensus in AI Agent Networks",
+        "authors": [
+          "Jin Gao"
+        ],
+        "url": "https://arxiv.org/abs/2610.24833",
+        "one_sentence": "Introduces an evaluation framework tracking how AI agents' stated positions converge during negotiation, using position trajectories and dispersion metrics. Tests it on two case studies (staffing decisions, contract reconciliation) across 1,872 runs. Finds explanation-sharing correlates with accuracy, and separates agent convergence from task correctness.",
+        "nearest_anchor_id": "2605.24413",
+        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
+        "open_questions": [
+          "The framework tracks consensus in two case studies with small agent groups; does it scale to networks of hundreds or thousands of agents?",
+          "Results associate sharing explanations with more accurate group decisions, but the abstract does not establish a causal link; what happens to accuracy when explanation sharing is suppressed or forced?",
+          "The second task shows persistent disagreement despite accurate aggregate answers; which network topologies or message-passing rules remove that residual dispersion?",
+          "The case studies use agents only; how do stated positions converge when humans take part in the same exchange?",
+          "The framework measures consensus from publicly stated positions; does the stated position match the agent's internal state, and can divergence between them be detected?",
+          "Membership-change experiments give a complementary evaluation; which model families or mixtures of models shift the convergence trajectories?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.24819",
+        "title": "Rating Multiple Agents with Career Concerns",
+        "authors": [
+          "Huseyin Yildirim"
+        ],
+        "url": "https://arxiv.org/abs/2610.24819",
+        "one_sentence": "Designs optimal rating mechanisms for multiple career-concerned agents with correlated talent, using a relaxed Bayes-plausibility condition for closed-form solutions. Shows confidential ratings combine full-disclosure wages with Fisher-score-based incentives, shifting between relative-performance and team-based ratings depending on informativeness. Characterizes when public ratings require full versus partial disclosure based on cost heterogeneity and effort spillovers.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Optimal ratings are derived for career-concerned agents with correlated talents, but the results assume agents are human workers; does the same rating design hold when the rated agents are AI agents whose \"career concerns\" are reputation scores in a marketplace?",
+          "The analysis treats a single principal rating a fixed set of agents; what happens when many principals rate overlapping pools of agents and ratings become public across platforms?",
+          "Confidential ratings are shown to be preferred by the principal and public ratings by the agents, inferred from the model; does this conflict appear in real rating or pay-transparency settings?",
+          "The closed-form rating relies on relaxing Bayes plausibility to linear orthogonality, exact under normality; how large is the effort-bound error for non-normal priors such as heavy-tailed talent distributions?",
+          "Partial disclosure arises under large cost heterogeneity or strong effort spillovers; which empirical levels of cost heterogeneity and spillover occur in agent populations that complete tasks jointly?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.24562",
+        "title": "No-Regret Revenue Maximization in Sequential Market Making Under Inventory Constraints",
+        "authors": [
+          "Davide Maran",
+          "Marcello Restelli",
+          "Francesco Emanuele Stradi"
+        ],
+        "url": "https://arxiv.org/abs/2610.24562",
+        "one_sentence": "Studies regret-minimizing algorithms for a market maker setting bid/ask prices under unknown valuations and inventory constraints over T rounds. Shows regret and inventory bounds scale as T^(2/3) with binary trade feedback, improving to square-root-T with full order book data. Proves a lower bound showing tighter inventory limits force higher minimum regret.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the regret bound hold when several learning market makers compete in the same market instead of one acting alone?",
+          "How do the algorithms perform against strategic traders who adapt their valuations or time their orders to the posted prices?",
+          "Do the T^(2/3) and sqrt(T) bounds survive non-stationary buyer and seller valuations?",
+          "Can the lower bound linking tighter inventory limits to higher regret be extended to settings with multiple assets or correlated inventories?",
+          "How do the algorithms behave on real order book data, where the feedback on failed trades is partial rather than complete?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-10-16",
@@ -6916,243 +7237,6 @@
           "The survey samples 39 researchers, so do platform users and policymakers rank the same interventions differently on acceptance and political feasibility?",
           "How does the multi-criteria framework transfer to domains other than misinformation, such as recommender systems or privacy interfaces?",
           "Content moderation interventions were designed for human posters, so which of them remain effective when a large share of accounts are autonomous AI agents?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-08-20",
-    "counts": {
-      "fetched": 185,
-      "unseen": 185,
-      "screened": 155,
-      "relevant": 11,
-      "kept": 11,
-      "anchors": 33
-    },
-    "papers": [
-      {
-        "arxiv_id": "2608.20316",
-        "title": "Pandora's AI Model Routing Box: Efficient Allocation with Costly Value Estimation",
-        "authors": [
-          "Adam Fisch",
-          "Shubhendu Trivedi",
-          "Fantine Huot",
-          "William W. Cohen",
-          "Michael Kaisers",
-          "Mirella Lapata",
-          "Kate Larson",
-          "Jacob Eisenstein"
-        ],
-        "url": "https://arxiv.org/abs/2608.20316",
-        "one_sentence": "Casts model routing with costly value estimation as a Pandora's Box problem. Studies both a centralized router and a decentralized bidding market of specialists.",
-        "nearest_anchor_id": "2605.24413",
-        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
-        "open_questions": [
-          "When autonomous specialists each decide whether to invest in self-assessment before bidding for a task, under what conditions does value-of-information reasoning shift surplus from the mechanism to strategic bidders rather than improving allocative efficiency?",
-          "Do decentralized bidding markets with costly self-assessment remain incentive-compatible and stable when many specialists adopt the same value-of-information policy, or does correlated bidding produce herding and price instability?",
-          "How do routing policies based on a Gaussian signal model degrade when specialist value distributions are heavy-tailed, correlated across specialists, or nonstationary over time?",
-          "Does repeated routing among a fixed pool of specialists cause monoculture, where a few models capture most queries and the diversity benefit of heterogeneous systems erodes?",
-          "Can strategic specialists learn to misreport self-assessments over repeated interactions with a router, and what audit or pricing rules detect such misreporting from allocation logs alone?",
-          "How do these routing and bidding policies perform in a live deployment with real user traffic, latency constraints, and evolving specialist inventories?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.20054",
-        "title": "What You Can't See Is What You Learn: Restricted Evidence Visibility Favors Compositional Generalization in Shared-Genome Language-Model Societies",
-        "authors": [
-          "Narcis Marincat"
-        ],
-        "url": "https://arxiv.org/abs/2608.20054",
-        "one_sentence": "Trains four-cell societies of language-model agents that share one adapter. Shows that restricting each cell's evidence visibility increases the chance of a compositionally generalizing communication interface.",
-        "nearest_anchor_id": "2602.16136",
-        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
-        "open_questions": [
-          "Does restricting evidence visibility among communicating LLM modules still favor generalizing, reusable interfaces as the number of agents grows well beyond four cells, and how does the effect scale with society size and relay topology?",
-          "Do the value-indexed, transplantable communication packets that emerge under restricted visibility survive in non-fixed, learned or dynamic communication topologies rather than a fixed relay?",
-          "Why did all trained societies fail ordinary-language preservation, and can training protocols be found that retain general language ability while acquiring a compositional relay interface?",
-          "Can the intervention battery used here (same-value packet transplants, destructive ablations, counterfactual packets) be developed into a general observability method for auditing whether inter-agent messages in larger multi-agent systems carry reusable, semantically indexed content?",
-          "Would the restricted-visibility advantage replicate on tasks other than sealed natural-language function composition, and does it hold above the preregistered accuracy floor with different base models?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.19701",
-        "title": "Beyond Memory Majority: Latent-Source Reasoning for Multi-Agent Memory Arbitration",
-        "authors": [
-          "Chenchen Lin",
-          "Wenhao Yuan",
-          "Xuehe Wang",
-          "Edith Cheuk Han Ngai"
-        ],
-        "url": "https://arxiv.org/abs/2608.19701",
-        "one_sentence": "Identifies correlated provenance among memories written by different agents as a source of false majorities. Proposes a framework that estimates effective independent evidence before arbitration.",
-        "nearest_anchor_id": "2602.16136",
-        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
-        "open_questions": [
-          "How does memory correlation bias scale as the number of agents sharing a memory store grows — does the false-majority effect worsen superlinearly with population size and shared upstream sources?",
-          "Can memory correlation bias, and the effective number of independent evidence sources, be measured from interaction/provenance logs alone as a monitoring signal for a deployed multi-agent system?",
-          "Does correlation-aware arbitration reduce population-level pathologies such as herding, information cascades and belief monoculture, beyond improving per-query benchmark accuracy?",
-          "How robust is provenance-based correlation estimation to adversarial agents that forge or launder provenance metadata to manufacture apparent independence?",
-          "What is the retrieval-cost versus arbitration-reliability trade-off of active evidence recovery when applied across thousands of agents and long time horizons?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.19778",
-        "title": "Distilling Aggregate Mobility Statistics into a Language Model Policy for Post-Event Crowd Simulation",
-        "authors": [
-          "Tatsuya Amano",
-          "Hirozumi Yamaguchi"
-        ],
-        "url": "https://arxiv.org/abs/2608.19778",
-        "one_sentence": "Fine-tunes a language-model pedestrian agent policy so that simulated destination composition matches aggregate mobile-network origin-destination flows. Uses iterative proportional fitting and resampled training data.",
-        "nearest_anchor_id": "2502.08691",
-        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
-        "open_questions": [
-          "Does distilling aggregate destination composition into an LLM agent policy generalise beyond stadium egress after sporting events, to other event types, cities, or transport modes?",
-          "How much individual-level behavioural realism is recoverable from aggregate counts alone, and what identifiability limits govern which behaviour rules are distinguishable given only zone counts and OD flows?",
-          "Are there correction schemes better than iterative proportional fitting plus resampled fine-tuning for counteracting the dominant-class inflation introduced by fine-tuning on aggregate targets?",
-          "Does matching aggregate destination shares also improve downstream simulation outcomes such as congestion, crowd density peaks, or evacuation times, rather than only the fitted statistic?",
-          "How does the calibrated crowd policy behave when many such agents interact and adapt to congestion, i.e. do aggregate-fitted policies remain valid under endogenous crowd feedback?",
-          "Can the aggregate-to-policy distillation be validated against real individual trajectories to quantify residual error, and what privacy guarantees does the aggregate-only pipeline actually provide?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.19760",
-        "title": "Credit Without Ground Truth: Auditing Step-Level Credit Assignment in LLM Agents Against Executed Replay",
-        "authors": [
-          "Haiyue Zhang"
-        ],
-        "url": "https://arxiv.org/abs/2608.19760",
-        "one_sentence": "Audits step-level credit signals for LLM agents against counterfactual replay ground truth. Finds that none identifies causally pivotal steps better than chance.",
-        "nearest_anchor_id": "2408.02784",
-        "nearest_anchor_title": "LLM economicus? Mapping the Behavioral Biases of LLMs via Utility Theory",
-        "open_questions": [
-          "Do step-level credit signals (LLM-judge scores, outcome-conditioned logprob ratios, policy confidence) fail to track causal contribution in multi-agent or multi-turn interactive environments as they do in a single-agent tool environment?",
-          "Can a credit-assignment signal be constructed that beats chance at identifying causally pivotal decision points, e.g. by using cheap partial replay rather than a judge?",
-          "How does the measurability of causal contribution (fraction of decision points with policy-supported counterfactuals) scale with model size, family, and sampling temperature?",
-          "When credit-rule comparisons are matched on effective sample size and optimizer steps, does any credit rule yield genuine training gains over the untrained policy?",
-          "Does the observed coupling between implicit credit signals and policy fluency produce systematic biases when many agents are trained on each other's judgements at scale?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.20231",
-        "title": "Growth Without Us: Machine Consumers, Corporate Circularity, and the Decoupling of GDP from Humanity after AGI",
-        "authors": [
-          "Sahil Sharma"
-        ],
-        "url": "https://arxiv.org/abs/2608.20231",
-        "one_sentence": "Models a post-AGI economy where corporations own producing-and-consuming AI/robot agent populations, using a von Neumann expanding-economy framework. Derives closed-economy demand closure and growth-rate decoupling from human demography. Proves a golden-rule theorem showing human ownership share decays exponentially unless growth stays below the machine economy's expansion frontier, and characterizes three terminal regimes (rentier post-scarcity, full circular decoupling, socialized ownership) along with the policy instruments that select among them.",
-        "nearest_anchor_id": "2501.16946",
-        "nearest_anchor_title": "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development",
-        "open_questions": [
-          "The model treats the human ownership share as a single state variable that decays when growth is maximal. What growth rates and consumption rates keep this share stable in an agent-based simulation with heterogeneous firms and agents?",
-          "Corporations own populations of AI agents that trade energy, compute, maintenance and upgrades among firms. Does such an inter-corporate market concentrate ownership in a few firms, and under what trading rules?",
-          "The paper names legal instruments that force the machine economy inside its expansion frontier. Which specific ownership rules, such as mandated dividends or sovereign wealth stakes, actually select the rentier regime rather than full decoupling?",
-          "Growth is claimed to be one to two orders of magnitude higher once agents are manufactured rather than reared. Do measured fabrication throughput and energy capture limits support that range?",
-          "The model assumes AI agents consume energy, compute, maintenance and upgrades. Do current deployed agent systems show any measurable demand for such inputs that behaves like consumption in the model?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.20290",
-        "title": "Phantom Gains: Auditing Self-Improvement Against a Measured Null",
-        "authors": [
-          "Cheng Xu",
-          "Nan Yan",
-          "Liming Chen",
-          "M-Tahar Kechadi"
-        ],
-        "url": "https://arxiv.org/abs/2608.20290",
-        "one_sentence": "Audits per-problem gain/loss statistics used to claim LLM self-improvement against measured null baselines. Shows seven measurement artifacts that invert the reported findings.",
-        "nearest_anchor_id": "2602.16136",
-        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
-        "open_questions": [
-          "Does the finding that external distillation adds genuinely new problem solutions while self-training does not hold across model families and scales, or is it specific to an 8B model with rank-32 LoRA?",
-          "How many baseline replicates are actually required for a measured-null transition audit to be reliable, and can a cheaper replicate-allocation design achieve the same false-discovery control?",
-          "How much of the spurious per-problem capability change attributed to inference batching persists across serving stacks, batch sizes and decoding settings, and can it be eliminated by deterministic serving configurations?",
-          "Is the observation that self-training corrupts previously solved problems above the measured noise floor stable over more rounds of self-training, and does it compound or saturate?",
-          "Do transition-level measurement artifacts of the kind identified here also inflate reported gains in multi-agent or agent-population self-improvement loops, where per-episode outcomes are differenced across interacting agents?",
-          "Does the null-calibrated auditing protocol change the conclusions of already-published self-improvement claims when applied retrospectively to their released artifacts?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.20274",
-        "title": "Break It Down, Pass It On: Cross-Task Skill Transfer in LLM Agents",
-        "authors": [
-          "Yiyang Feng",
-          "Biddut Sarker Bijoy",
-          "Niranjan Balasubramanian",
-          "Jiawei Zhou"
-        ],
-        "url": "https://arxiv.org/abs/2608.20274",
-        "one_sentence": "Compares task-level versus subtask-level and text versus code skill induction for cross-task transfer among LLM agents. Proposes a skill utility score that predicts transfer success.",
-        "nearest_anchor_id": "2508.16279",
-        "nearest_anchor_title": "AgentScope 1.0: A Developer-Centric Framework for Building Agentic Applications",
-        "open_questions": [
-          "Does a skill library shared across many agents produce behavioural monoculture or correlated failures, and how does that scale with the number of agents drawing on the same induced skills?",
-          "Does a pre-execution skill utility score (combining specificity and abstractness) still predict success when skills are exchanged between heterogeneous agents rather than reused by the same agent?",
-          "What mechanisms or filters should govern which induced skills are admitted to a shared agent memory, given that some retrieved skills degrade performance below a no-memory baseline?",
-          "Do the findings that subtask-level and text-format skills transfer better hold across model families, scales, and task domains beyond those tested?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.19557",
-        "title": "When Do LLM Agents Help? Deadline-Aware Mixed-Criticality Task Scheduling at the Autonomous-Vehicle Edge",
-        "authors": [
-          "Reza Zakerian"
-        ],
-        "url": "https://arxiv.org/abs/2608.19557",
-        "one_sentence": "Compares a contract-net auction heuristic and a multi-agent LLM control plane for deadline-aware mixed-criticality task scheduling at the vehicular edge, finding LLM benefit only under non-stationary load.",
-        "nearest_anchor_id": "2410.07283",
-        "nearest_anchor_title": "Prompt Infection: LLM-to-LLM Prompt Injection within Multi-Agent Systems",
-        "open_questions": [
-          "Beyond a single mid-run surge of safety-critical tasks, which classes of non-stationarity (drifting arrival rates, server failures, adversarial load patterns) open enough headroom for an LLM control plane to beat a static deadline-aware heuristic?",
-          "How does the benefit of an LLM control plane over heuristic scheduling scale with the number of edge servers, offloading agents, and concurrent task streams?",
-          "Does the LLM control plane's advantage survive comparison with learned adaptive policies (e.g. RL or contextual-bandit variants richer than the tested bandit) under the same non-stationary loads?",
-          "Do multiple independently-run LLM control planes bidding in the same contract-net auction produce emergent failure modes such as herding on the same server or implicit collusion against best-effort traffic?",
-          "Are the control-plane latency and monetary cost of LLM orchestration low enough for real deployed vehicular edge systems, as opposed to simulated instances?",
-          "Do the reported gains transfer to real-world autonomous-vehicle offloading traces rather than synthetic topologies and instances?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.20099",
-        "title": "Reward-Guided Autoregressive Graph Generation for Efficient Multi-Agent Communication Topology Design",
-        "authors": [
-          "Poomphob Suwannapichat",
-          "Boonyarit Changaival",
-          "Caesar Wu",
-          "Pascal Bouvry"
-        ],
-        "url": "https://arxiv.org/abs/2608.20099",
-        "one_sentence": "Fine-tunes an autoregressive generator of multi-agent communication topologies with a reward model rewarding both correctness and sparsity, cutting token use.",
-        "nearest_anchor_id": "2605.24413",
-        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
-        "open_questions": [
-          "How do reward-optimised sparse communication topologies scale as the number of agents grows from a handful to hundreds or thousands — does the token saving hold, and does accuracy degrade at scale?",
-          "Do topologies learned with a compactness reward generalise to task distributions unseen during reward-model training, or do they overfit to the benchmark suite?",
-          "Does rewarding sparsity make multi-agent systems more fragile to a single faulty, adversarial, or prompt-injected agent, since fewer redundant communication paths exist?",
-          "What structural signatures (degree distribution, centralisation, information bottlenecks) do reward-guided generators converge to, and does the resulting concentration of information flow through hub agents create population-level failure modes?",
-          "Can the reward model's trade-off between task correctness and structural compactness be tuned as a steering knob at deployment time rather than fixed during fine-tuning?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.19779",
-        "title": "An Irreducible Quantum Advantage in Aligning World Models with Reality",
-        "authors": [
-          "Josep Lumbreras",
-          "Hailan Ma",
-          "Jayne Thompson",
-          "Mile Gu"
-        ],
-        "url": "https://arxiv.org/abs/2608.19779",
-        "one_sentence": "Constructs classical stochastic environments for which no finite classical world model preserves optimal action preferences while a single-qutrit quantum model reproduces them exactly.",
-        "nearest_anchor_id": "2509.10147",
-        "nearest_anchor_title": "Virtual Agent Economies",
-        "open_questions": [
-          "How large is the policy-misalignment penalty in practice when a finite-memory classical simulator stands in for a long-memory environment — i.e. what is the measured regret of a policy trained in the approximate model versus the true process, as a function of memory size?",
-          "Do learned sequence-model world models (e.g. RNN/transformer or LLM-driven simulators) reproduce the predicted failure signatures — collapse of action distinguishability and persistent expected-reward error — on processes constructed to be classically irreducible?",
-          "Does the irreducible classical-modelling gap persist, or compound, when many interacting agents are trained inside the same imperfect world model, e.g. producing correlated policy errors or herding across the agent population?",
-          "Can the exact quantum world model be realised on available quantum hardware, and does its alignment advantage survive realistic noise and decoherence?",
-          "Is there a general characterisation of which real-world environments (as opposed to hand-constructed processes) admit no finite classical world model preserving optimal policies?"
         ]
       }
     ]
