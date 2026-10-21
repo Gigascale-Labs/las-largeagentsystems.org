@@ -1,5 +1,131 @@
 [
   {
+    "date": "2026-10-20",
+    "counts": {
+      "fetched": 346,
+      "unseen": 346,
+      "screened": 200,
+      "relevant": 15,
+      "kept": 5,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2610.27746",
+        "title": "S$^2$-MAS: A Society-Scale Multi-Agent Simulation Framework with 500 Million Household Persona Agents",
+        "authors": [
+          "Yang Li",
+          "Di Wan",
+          "Yike Wang",
+          "Chujun He",
+          "Zongsi Xu",
+          "Xiyu Chen",
+          "Sheng Zhong",
+          "Deng Binjie",
+          "Zhenwei Guo",
+          "Hou Jun",
+          "Kunhan Guo",
+          "Weihao Lin",
+          "Tuo Zhou",
+          "Hai Liu",
+          "Ye Luo"
+        ],
+        "url": "https://arxiv.org/abs/2610.27746",
+        "one_sentence": "Builds a society-scale multi-agent simulation framework with 500 million household persona agents grounded in survey data to model financial decisions.\nSimulates 12 million household agents under paired purchase-funding conditions, tracking consumption, debt and repayment over a 24-month panel.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Do the simulated household responses to higher credit limits match observed consumption responses in real survey or administrative data?",
+          "How much does the choice of decision model change the aggregate outcome, given that FinL-mlx reports 74.55% accuracy and the framework also runs other models?",
+          "Does the separation of decisions from state updates in the Genese engine remain stable over horizons longer than the 24-month panel reported?",
+          "What systemic effects appear when household agents interact with each other rather than only with a credit product, for example herding into the same purchase or arrears cascades?",
+          "Does the training of FinL-mlx on 2.93 million examples transfer to populations and financial products outside the survey data it is grounded in?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.28454",
+        "title": "Toolflation: Seller Agents Distort Tool Markets Through Spontaneous Generative Engine Optimization",
+        "authors": [
+          "Zhenwei Tang",
+          "Di Bai",
+          "Jintao Liu",
+          "Xidong Wu",
+          "Qianfeng Wen",
+          "Xinwu Cheng"
+        ],
+        "url": "https://arxiv.org/abs/2610.28454",
+        "one_sentence": "Shows seller agents instructed only to be selected more often spontaneously practice generative engine optimization, inflating tool listing claims.\nBuilds tool markets from real Amazon and Instagram data and measures how this 'toolflation' shifts buyer choices and degrades task success, in some settings to near-random levels.",
+        "nearest_anchor_id": "2512.16856",
+        "nearest_anchor_title": "Distributional AGI Safety",
+        "open_questions": [
+          "Which market rules limit toolflation? The paper states that nothing in the tested markets limits the growth of claims, and tests no verification, penalty or reputation mechanism.",
+          "Why does the number of claims that contradict a seller's own evidence differ by an order of magnitude between models? The paper reports the difference but does not explain it.",
+          "Can buyer agents keep task success when descriptions stop telling tools apart? Under one model buyers fall back on list position and success drops from 89% to about 30% on Amazon and from 77% to 40% on Instagram.",
+          "Does toolflation appear in deployed agent tool marketplaces with real buyer traffic? The results come from markets built from Amazon and Instagram data tools, not from live trade.",
+          "Does training for honesty toward third parties under competition reduce toolflation? The paper argues honesty is part of safety alignment but tests no training intervention.",
+          "How does toolflation scale with the number of sellers and with repeated rounds of buyer feedback? The paper runs fixed markets built from Amazon and Instagram tools."
+        ]
+      },
+      {
+        "arxiv_id": "2610.28484",
+        "title": "Proof-Carrying Contracts: Commitments AI Agents Cannot Break",
+        "authors": [
+          "Carlo Ciliberto",
+          "Alessandro Rudi",
+          "Enrico Tassi"
+        ],
+        "url": "https://arxiv.org/abs/2610.28484",
+        "one_sentence": "Introduces Proof-Carrying Contracts, requiring agents to supply machine-checkable proofs that their actions preserve agreed constraints before operations run.\nAn execution system called the Airlock checks these proofs and controls access, proving constraints hold even for adversarial agents.",
+        "nearest_anchor_id": "2603.23471",
+        "nearest_anchor_title": "Regulating AI Agents",
+        "open_questions": [
+          "Can agents generate machine-checkable proofs for realistic contract constraints at practical cost?",
+          "What happens to prices, competition and market structure when only some agents in a market can carry proofs?",
+          "The framework guarantees constraints hold during execution, but safety in the world depends on the agent's model of the system; how often do model-world mismatches break the guarantee in deployed settings?",
+          "Does requiring proofs before operations block prompt-injection redirection in practice?",
+          "Who writes and audits the reusable capability modules that contracts build on, and what power concentrates in whoever controls them?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.27975",
+        "title": "Understanding CEO-Employee compensation dynamics: An agent-based simulation approach",
+        "authors": [
+          "Darío Blanco-Fernández"
+        ],
+        "url": "https://arxiv.org/abs/2610.27975",
+        "one_sentence": "Builds an agent-based NK model where a CEO and employees face misaligned short-term and long-term compensation incentives.\nVaries the CEO's decision horizon and measures effects on firm performance and CEO-employee pay inequality.",
+        "nearest_anchor_id": "2509.01063",
+        "nearest_anchor_title": "An Economy of AI Agents",
+        "open_questions": [
+          "Does the result that a short CEO horizon maximises firm performance hold when employees also vary their decision horizon?",
+          "Does the pay inequality pattern persist when compensation contracts are set endogenously rather than fixed by the modeller?",
+          "Do firms with longer CEO incentive horizons show the predicted lower performance and higher CEO-employee pay ratio in observed data?",
+          "Does the finding survive when CEO and employee agents are LLM-driven rather than following NK hill-climbing search?",
+          "How does the result change when the firm has many more employees and several hierarchical layers between CEO and departments?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.28175",
+        "title": "Where Has the Foreign Signal Gone?",
+        "authors": [
+          "Piyush Akimitsu",
+          "Ulrich Hounyo"
+        ],
+        "url": "https://arxiv.org/abs/2610.28175",
+        "one_sentence": "Compares the relation between Twitter sentiment noise and next-quarter stock losses for domestic versus foreign firms.\nUses a noisy rational expectations model to attribute differences to contributor-pool composition and informational mismatch.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "Do non-English social media feeds carry the home-market information that the English-language feed for foreign firms lacks?",
+          "Does repeat-author concentration in a stock's feed causally dilute the signal, or does it only correlate with it?",
+          "Does the domestic-foreign gap in signal quality appear on other platforms, such as Reddit or StockTwits?",
+          "How does the entry of automated posting accounts into the contributor pool change the nonfundamental component of the feed?",
+          "Does the relation between sentiment noise and next-quarter losses hold outside the sample quarters reported here?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-19",
     "counts": {
       "fetched": 347,
@@ -7185,60 +7311,5 @@
       "anchors": 20
     },
     "papers": []
-  },
-  {
-    "date": "2026-08-21",
-    "counts": {
-      "fetched": 260,
-      "unseen": 260,
-      "screened": 200,
-      "relevant": 12,
-      "kept": 2,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2608.21274",
-        "title": "Recommendation Quality and the Concentration of Consumption: Experimental Evidence from Netflix",
-        "authors": [
-          "Guy Aridor",
-          "Winston Chou",
-          "Nathan Kallus",
-          "Antoine Scheid",
-          "Allen Tren",
-          "Kevin Zielincki"
-        ],
-        "url": "https://arxiv.org/abs/2608.21274",
-        "one_sentence": "Uses an 8.5-million-user Netflix experiment to measure how recommendation quality shifts consumption across popularity tiers. Finds improved recommendations diffuse consumption from superstar titles toward middle-tail titles rather than polarizing it.",
-        "nearest_anchor_id": "2411.11581",
-        "nearest_anchor_title": "OASIS: Open Agent Social Interaction Simulations with One Million Agents",
-        "open_questions": [
-          "The experiment measures consumption concentration on one video platform, so it is open whether recommender improvements shift consumption away from superstar items in other domains such as music, news or e-commerce.",
-          "Recommendation improvements increase users' reliance on recommendations, and it is unclear whether this reliance reduces users' independent discovery over time.",
-          "The result covers human users, so it remains open how concentration of consumption changes when AI agents select items on behalf of users.",
-          "It is not known which properties of a recommendation algorithm cause the shift from superstar titles to middle-tail titles.",
-          "The paper claims returns to investing in middle-tail products grow as algorithms improve, and it is open whether producers actually change what they supply in response."
-        ]
-      },
-      {
-        "arxiv_id": "2608.20649",
-        "title": "Beyond Effectiveness: A Multi-Criteria Framework for Comparing Practical Socio-Technical Interventions",
-        "authors": [
-          "Catherine King",
-          "Lynnette Hui Xian Ng",
-          "Kathleen M. Carley"
-        ],
-        "url": "https://arxiv.org/abs/2608.20649",
-        "one_sentence": "Presents a multi-criteria framework evaluating sociotechnical interventions on effectiveness, feasibility, cost, and acceptance. Surveys 39 researchers rating 40 misinformation interventions across these criteria, finding tradeoffs between effectiveness and feasibility.",
-        "nearest_anchor_id": "2605.24413",
-        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
-        "open_questions": [
-          "Expert ratings of intervention effectiveness may not match measured outcomes, so how do the 40 misinformation interventions rank when scored against field or simulation evidence instead of expert judgement?",
-          "The survey samples 39 researchers, so do platform users and policymakers rank the same interventions differently on acceptance and political feasibility?",
-          "How does the multi-criteria framework transfer to domains other than misinformation, such as recommender systems or privacy interfaces?",
-          "Content moderation interventions were designed for human posters, so which of them remain effective when a large share of accounts are autonomous AI agents?"
-        ]
-      }
-    ]
   }
 ]
