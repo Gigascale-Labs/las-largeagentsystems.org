@@ -1,5 +1,353 @@
 [
   {
+    "date": "2026-10-22",
+    "counts": {
+      "fetched": 300,
+      "unseen": 300,
+      "screened": 200,
+      "relevant": 21,
+      "kept": 9,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2610.31165",
+        "title": "Network topology shapes consensus and vulnerability in LLM populations",
+        "authors": [
+          "Roberto Passaro",
+          "Ariel Flint",
+          "Romualdo Pastor-Satorras",
+          "Andrea Baronchelli",
+          "Luca Maria Aiello"
+        ],
+        "url": "https://arxiv.org/abs/2610.31165",
+        "one_sentence": "Places LLM-derived policies on networks of 10^3-10^5 agents playing a naming game to measure how topology affects consensus speed and tipping thresholds. Finds sparse networks slow consensus up to twelvefold but can restore convergence, and hubs need far fewer committed agents to tip conventions than random nodes.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "The naming game is the only coordination task tested, so does topology shape consensus and tipping thresholds in the same way for richer tasks such as bargaining, pricing, or norm formation?",
+          "Policies are extracted from four LLMs and then placed on networks, so it is open whether running the LLMs in the loop at each interaction reproduces the measured tipping thresholds.",
+          "Static networks are used throughout, so how do rewiring and agent-driven link formation change time to consensus and the critical mass of committed agents?",
+          "Hub targeting needs one-sixth of the committed agents of random placement, so which population-level defences or monitoring signals detect a hub-targeted tipping attempt before the convention flips?",
+          "Real deployed agent populations have unknown interaction graphs, so what empirical topologies do they follow?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.30769",
+        "title": "LLM Multi-Agent Systems Are Vulnerable to Herding and Runaway Cascades",
+        "authors": [
+          "Farnoosh Hashemi",
+          "Shiyu Ji",
+          "Joice Chen",
+          "Michael W. Macy"
+        ],
+        "url": "https://arxiv.org/abs/2610.30769",
+        "one_sentence": "Tests LLM agent populations on a Music Lab-style recommendation task with exposure to cumulative recommendation counts. Exposure produces runaway cascades diverging from intrinsic song appeal, with LLM populations more susceptible to herding than humans and less able to self-correct.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "LLM populations herd more than humans in a song recommendation task, but it is unknown whether the same gap appears in other choice domains such as code review, product ranking or peer evaluation.",
+          "The experiment reports cumulative recommendation counts as the only social signal, so the effect of other signal formats such as rank order, star ratings or named endorsers is untested.",
+          "Which interventions stop a runaway cascade in an LLM population, for example signal noise, signal truncation, or seeding agents with diverse priors?",
+          "Herding susceptibility is reported for the models tested, and its relation to model size, instruction tuning or reasoning mode is unresolved.",
+          "LLM cascades self-correct less than human cascades, and the mechanism behind the missing self-correction is not identified.",
+          "Do herding and cascades of this kind appear in deployed multi-agent recommender systems and automated evaluation pipelines?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.30752",
+        "title": "The Delegation Divide: An Open Index of AI-Agent Delegability across Occupations and Countries",
+        "authors": [
+          "Cristian Espinal Maya",
+          "Santiago Jiménez Londoño"
+        ],
+        "url": "https://arxiv.org/abs/2610.30752",
+        "one_sentence": "Builds an Agent Delegability Index rating 18,796 O*NET tasks for delegation level and barriers, weighted by employment across 146 countries. Finds delegable employment share rises with national income and correlates with existing exposure measures and observed AI usage.",
+        "nearest_anchor_id": "2602.11865",
+        "nearest_anchor_title": "Intelligent AI Delegation",
+        "open_questions": [
+          "Delegability ratings come from two language models on a frozen rubric; how much do the ratings move under a different rubric, different model families, or rubric wording changes?",
+          "The index scores delegability in 2026 as a static snapshot; how does it change as agent capability improves over time?",
+          "Delegability and observed AI usage correlate at r = 0.86 across 101 countries, but the direction of causation is untested; does delegable task composition drive adoption or does adoption follow other factors?",
+          "Full delegation peaks for tasks of about 11.8 minutes of human time; what explains this peak, and does it hold for agents with long-horizon memory and tool use?",
+          "The index rates tasks one at a time; what happens to employment and output when many agents take over delegable tasks and interact at the level of a whole labour market?",
+          "The physical barrier dominates jobs in low-income countries; does robotics progress remove that barrier and reverse the income slope of 7.23 points per log point of GDP per capita?",
+          "Blind human rating of 300 tasks agrees with the model consensus at kappa = 0.85; do workers in the rated occupations agree that their own tasks are delegable?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.30909",
+        "title": "TwinStore: A Synthetic Consumer Platform Using Vision--Language Models",
+        "authors": [
+          "Minhyeok Lee"
+        ],
+        "url": "https://arxiv.org/abs/2610.30909",
+        "one_sentence": "Presents TwinStore, a vision-language-model platform that turns a store into a digital twin populated with synthetic shoppers who plan trips and decide purchases from rendered shelves. Validates simulated receipts and price elasticities against eleven public retail datasets.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Do synthetic shoppers reproduce real receipts for store formats and categories outside the eleven public datasets used for validation?",
+          "Simulated price elasticities fall inside the range measured in the field, but the abstract does not report whether promotion or layout effects match measured effects.",
+          "How do decisions driven by a digital twin of shoppers change real store outcomes when deployed?",
+          "Does vision-language-model-based shopper simulation collapse to a monoculture of choices, so that many synthetic shoppers under-represent real heterogeneity?",
+          "What happens when many retailers each optimise layouts and prices against the same simulator at the same time?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.31105",
+        "title": "Who Is the Influencer? Consensus Dynamics in Multi-Agent Systems",
+        "authors": [
+          "Gouki Minegishi",
+          "Jingyuan Feng",
+          "Hiroki Furuta",
+          "Takeshi Kojima",
+          "Yusuke Iwasawa",
+          "Yutaka Matsuo"
+        ],
+        "url": "https://arxiv.org/abs/2610.31105",
+        "one_sentence": "Tests which model dominates consensus when several LLMs interact on an opinion-free task, finding larger models absorb others' opinions. Interprets agents as weighted particles on a simplex, linking model size to in-context learning strength as the mechanism of influence.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "The consensus task requires no pretraining knowledge and has no correct answer, so it stays open whether larger models also dominate consensus on tasks with verifiable answers.",
+          "Does the weighted-particle account predict influence when model weight is varied by means other than parameter count, for example by prompt framing, temperature, or agent count per model?",
+          "Can a population-level intervention, such as topology changes or agent weighting rules, stop a single large model from absorbing the opinions of the others?",
+          "Do the same consensus dynamics hold at population scale, with thousands of mixed agents rather than the small systems tested?",
+          "Does in-context learning strength measured independently predict which model becomes the influencer across model families?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.30595",
+        "title": "Temporal Liquidity Crossing for Blockchains: An EIP-1559 Extension for Admission Below the Base Fee",
+        "authors": [
+          "Duanyang Dan Guo"
+        ],
+        "url": "https://arxiv.org/abs/2610.30595",
+        "one_sentence": "Introduces temporal liquidity markets, letting transactions seeking early execution fund transactions willing to be excluded from the fee-controller's base-fee calculation. Proves properties including validator-checked rule validity and no subsidy, and shows raised utilization in synthetic experiments.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does temporal liquidity crossing raise total utilization under empirical Ethereum transaction demand, rather than synthetic demand?",
+          "How do strategic senders learn to set authorization densities and provider opt-ins over repeated blocks?",
+          "What happens to the base-fee controller when provider gas is excluded from its input under volatile demand over many blocks?",
+          "Do builders and validators collude off-chain to capture the funded provider channel in a live deployment?",
+          "Which transaction senders gain and which lose when admission below the base fee becomes possible?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.30999",
+        "title": "Truthful by Omission: Click Thinning for LLM-Native Advertising",
+        "authors": [
+          "Junhua Liu",
+          "Zhicheng Liang",
+          "Zejun Zhang",
+          "Langzhou He",
+          "Feng Qian"
+        ],
+        "url": "https://arxiv.org/abs/2610.30999",
+        "one_sentence": "Proposes click thinning, a method that randomly omits ads to decouple each ad's click probability from ordering, for LLM-embedded advertising auctions. Gives a mechanism that is truthful in expectation and achieves at least half the optimal welfare under free reordering.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "The mechanism assumes each ad's click-through rate when reached is known and unaffected by omitting other ads. How does welfare and truthfulness degrade when click-through rates are estimated from data or depend on which other ads appear?",
+          "The model assumes users stop at their first click. Which user stopping behaviours do real assistant users show, and how do they change the allocation?",
+          "Click thinning omits ads at random, so identical queries give different ad sets. How do advertisers bid when they learn from repeated rounds rather than bidding once in a one-shot mechanism?",
+          "The mechanism fixes the answer and its editorial order before bidding. What happens to welfare and truthfulness when the generative assistant can also reshape the passage that hosts each ad?",
+          "Omitting ads at random changes what users see for the same question. What effect does click thinning have on user trust in the assistant's answers?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.30891",
+        "title": "Equilibria and Learning in Competitive Market Making",
+        "authors": [
+          "Matteo Onger",
+          "Luigi Foscari"
+        ],
+        "url": "https://arxiv.org/abs/2610.30891",
+        "one_sentence": "Characterizes pure-strategy Nash equilibria in a market-making game with N strategic market makers and one trader, showing spreads widen with volatility. Shows no-internal-regret learning dynamics converge to the continuous Nash price envelope as tick size vanishes, validated by simulation.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "The trader is non-strategic and representative. Does at least one pure-strategy Nash equilibrium survive when traders also act strategically or when several heterogeneous traders arrive?",
+          "Convergence of no-internal-regret learners to the Nash price envelope holds under an additional regularity condition. How often does learning fail or cycle when that condition does not hold?",
+          "Repeated play among N market makers may support quotes wider than the Nash spread. Do no-regret learners in this game converge to tacit collusion rather than to equilibrium?",
+          "The analysis assumes learners with no internal regret. Do LLM-based market-making agents reproduce the predicted widening of the bid-ask spread with asset value volatility?",
+          "Equilibrium spread widens strictly with asset value volatility in the model. Does the same relation hold in public exchange order-book data across assets?",
+          "The game fixes the tick size as a limit parameter. How does a finite tick size change the number of market makers needed to drive spreads toward the competitive level?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.30667",
+        "title": "Fast Iterative Combinatorial Auctions via Deep Reinforcement Learning",
+        "authors": [
+          "Luis F. Paul Tosta",
+          "Quinn Arnold",
+          "Gianluca Brero"
+        ],
+        "url": "https://arxiv.org/abs/2610.30667",
+        "one_sentence": "Introduces FastCombo, a reinforcement-learning method for sequential price discovery in iterative combinatorial auctions, trained offline to minimize rounds to clearing. Reduces online price-selection time by roughly 300-900x relative to a Bayesian baseline across auction test-suite domains.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the learned price policy still reduce rounds when bidders have general combinatorial valuations instead of single-minded ones?",
+          "How does the policy behave when bidders misreport demand or bid strategically rather than respond truthfully to prices?",
+          "How far can the trained graph policy transfer to auctions with more bidders and items than it saw in training?",
+          "What is the tight bound on the round penalty of greedy one-step clearing policies relative to informative policies?",
+          "Does the round reduction hold when the learned policy faces a valuation distribution different from the one used for offline training?"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-10-21",
+    "counts": {
+      "fetched": 375,
+      "unseen": 375,
+      "screened": 200,
+      "relevant": 14,
+      "kept": 6,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2610.29577",
+        "title": "The Reflexivity Threshold: A Phase Transition for Multi-Agent Performative Prediction",
+        "authors": [
+          "Ahmed Mahrous",
+          "Roberto Di Pietro"
+        ],
+        "url": "https://arxiv.org/abs/2610.29577",
+        "one_sentence": "Introduces a reflexivity matrix capturing how agents' deployed predictions shift other agents' best responses in networked retraining. Identifies a spectral threshold separating convergent learning from unbounded excess loss. Proves bounds above and below the threshold and recovers prior single-agent results as a special case.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Can the reflexivity matrix be estimated from observed deployment and retraining logs, without knowing per-agent gradient sensitivities and curvature?",
+          "Do learners that use global information, rather than local information only, avoid linear cumulative excess loss above the threshold?",
+          "What happens to repeated retraining when the spectral radius sits exactly at one?",
+          "Does the spectral threshold predict instability in simulations where agents are language models that retrain on each other's outputs?",
+          "How does the threshold change when the network of who affects whom changes over time?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.30307",
+        "title": "The Customer Is the Builder: How AI Coding Agents Are Rewriting the Economics of Software",
+        "authors": [
+          "Ripon Chandra Malo",
+          "Zimeng Yu",
+          "Tong Qiu"
+        ],
+        "url": "https://arxiv.org/abs/2610.30307",
+        "one_sentence": "Defines a software substitution frontier where organizations use coding agents to build rather than buy functionality. Uses benchmark capability growth, an open-source alternative search, and a survey showing 32% of respondents forwent purchases due to agent capacity. Finds mixed market evidence: purchased software still gained investment share even as build capacity grew.",
+        "nearest_anchor_id": "2604.10290",
+        "nearest_anchor_title": "AI Organizations are More Effective but Less Aligned than Individual Agents",
+        "open_questions": [
+          "The 575 open-source alternatives identified for commercial products lack independent validation of functional match. Which of these candidates actually cover the functions of the commercial product they are matched to?",
+          "The 12 application repositories produced by the Craft suite remain unverified for completeness and reliability. How complete and reliable is software that coding agents build over short development periods?",
+          "Self-reports that 32 percent of survey respondents forwent a software purchase do not establish the spending displaced. How much purchasing does agent-built software displace in dollar terms?",
+          "The doubling of benchmark task length every 129 days is an extrapolation, not a forecast of customer switching. Which observable market indicators track agent capability growth, and with what lag?",
+          "The software substitution frontier is defined by what customers could build and maintain at an acceptable standard for less than buying. What empirical cost and quality thresholds place a given function inside or outside that frontier?",
+          "The analysis covers organizations and professional buyers whose domain knowledge helps them specify tools. Does the same substitution pattern hold for buyers without domain knowledge?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.30488",
+        "title": "From Single-Actor Environments to Multi-Actor Event Worlds: Can LLMs Be Event World Models?",
+        "authors": [
+          "Juntong Ni",
+          "Zewen Liu",
+          "Bohan Wang",
+          "Lige Zhang",
+          "Wei Jin"
+        ],
+        "url": "https://arxiv.org/abs/2610.30488",
+        "one_sentence": "Formalizes 'event worlds' where multiple independent actors generate partially observed event logs, using Diplomacy games and Polymarket trades. Tests LLMs' ability to predict future events given an agent's proposed action and other actors' behavior. Finds models struggle to predict outcomes when other actors strongly influence results, especially without their recorded actions.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Can explicit modelling of other actors' actions close the prediction gap that appears when only the agent's own action is given?",
+          "Does the prediction gap persist in event worlds other than Diplomacy and Polymarket, such as open-source code repositories or public auction logs?",
+          "Why do larger models and longer histories help little when other actors' actions are hidden?",
+          "How much does overestimation of plan success by the world model degrade agent performance in a live multi-agent market?",
+          "Can fine-tuning on imagined experience from event world models improve policy learning beyond the reported gains?",
+          "What properties of an event world determine whether other actors strongly affect the outcome?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.30324",
+        "title": "Paying for Information, Not for Clicks: A Block-Level Publisher Content Marketplace for AI Answers",
+        "authors": [
+          "Markus Mobius",
+          "Luca Braghieri",
+          "Sarah Eichmeyer",
+          "Daniel G. Goldstein",
+          "Nicole Immorlica",
+          "Oliver Kiss",
+          "Ro'ee Levy",
+          "Brendan Lucier",
+          "Ishan Mahajan",
+          "Jingyi Qiu",
+          "Tanya Rosenblat",
+          "David M. Rothschild",
+          "Andras Sari",
+          "Alexsandrs Slivkins",
+          "Colin Watson"
+        ],
+        "url": "https://arxiv.org/abs/2610.30324",
+        "one_sentence": "Proposes a block-level attribution marketplace that pays publishers for distinct facts used in AI-generated answers, via Shapley-value payment rules. Evaluates allocations from 1,974 search queries, comparing equal-sharing, first-publication, and indispensable-contribution rules. Finds a global content index changes allocations substantially compared to query-restricted attribution, giving premium publishers 42-50% of value depending on the rule.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Building a shared global index of facts and publication timestamps is named as necessary, but the method for constructing and maintaining one at corpus scale is untested.",
+          "The evaluation covers one heavily covered news episode, so allocations under thinly covered or breaking stories remain unmeasured.",
+          "Payment rules are evaluated on static allocations, not on how publishers change reporting behaviour when a rule is in force.",
+          "Block extraction depends on identifying a distinct fact across articles, and the error rate of that extraction step is not reported.",
+          "The framework does not say whether publishers can game attribution by splitting, padding or back-dating blocks.",
+          "Allocations come from answers to 1,974 queries from one search engine, so dependence on the retrieval system is unknown."
+        ]
+      },
+      {
+        "arxiv_id": "2610.29221",
+        "title": "Policy Learning with Network-Shaping Assignments",
+        "authors": [
+          "Zhenxiao Chen",
+          "Zhiheng You"
+        ],
+        "url": "https://arxiv.org/abs/2610.29221",
+        "one_sentence": "Develops a model-based method to learn policies that assign people into groups, accounting for how those assignments reshape subsequent social networks. Characterizes identification of policy value integrated over post-assignment network distributions and builds plug-in estimators with regret bounds. Applies the method to classroom seating and business group data, estimating welfare gains over random assignment.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Can the method learn assignment rules for populations of AI agents, where the agents form the network after assignment?",
+          "How much does the learned policy lose when the assumed network formation model is wrong?",
+          "Do the predicted welfare gains over random assignment hold in a field setting with real classrooms or business groups?",
+          "How do the regret bounds change when assignments are made repeatedly and agents anticipate future assignments?",
+          "What scale of feasible arrangements can the plug-in estimators handle before computational error dominates regret?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.30469",
+        "title": "Learning to Incentivise: Using Reinforcement Learning for Sustainable Urban Mobility",
+        "authors": [
+          "Germán Pardo-González",
+          "Shaghayegh Vosough",
+          "Katerina Papadaki",
+          "Claudio Roncoli"
+        ],
+        "url": "https://arxiv.org/abs/2610.30469",
+        "one_sentence": "Applies multi-agent reinforcement learning to dynamically allocate rerouting incentives to drivers instead of road pricing. Simulates traffic networks, finding incentives reduce total travel time by 16% or CO2 emissions by 9% under unlimited budget. Shows a trade-off where minimizing travel time increases emissions and vice versa, improvable via weighted objectives.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "How does the incentive scheme perform under a limited budget rather than an unlimited budget?",
+          "Which weights in the multi-objective function improve both total travel time and emissions, and how sensitive is that region to network and demand changes?",
+          "Do drivers accept and comply with dynamically assigned rerouting incentives in practice?",
+          "How does the incentive scheme distribute costs and benefits across driver groups compared with road pricing?",
+          "Does the scheme scale from the tested network to a city-scale network with many more agents?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-20",
     "counts": {
       "fetched": 346,
@@ -7224,92 +7572,5 @@
         ]
       }
     ]
-  },
-  {
-    "date": "2026-08-23",
-    "counts": {
-      "fetched": 142,
-      "unseen": 142,
-      "screened": 142,
-      "relevant": 5,
-      "kept": 3,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2608.22234",
-        "title": "Learning to Agree under Pseudo-Reciprocity",
-        "authors": [
-          "Shinya Sugiura"
-        ],
-        "url": "https://arxiv.org/abs/2608.22234",
-        "one_sentence": "Characterizes communication networks that guarantee consensus in rational social learning via a property called pseudo-reciprocity. Shows a single bidirectional link can suffice for consensus regardless of population size.",
-        "nearest_anchor_id": "2409.02822",
-        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
-        "open_questions": [
-          "Do boundedly rational agents, such as LLM agents, reach consensus on pseudo-reciprocal networks, or does the result depend on rationality and the sure-thing principle?",
-          "How long does consensus take on a network whose reciprocity comes from a single bidirectional link?",
-          "Are observed communication networks, such as follower graphs on public social platforms, pseudo-reciprocal?",
-          "Which weaker conditions than the sure-thing principle still guarantee consensus on pseudo-reciprocal networks?",
-          "What happens to consensus when links fail or agents drop out of a network that relies on one bidirectional link?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.22582",
-        "title": "Hybrid Panels: Toward Human-AI Collaboration in Survey Research",
-        "authors": [
-          "Julia Romberg",
-          "Tobias Gummer",
-          "Gabriella Lapesa",
-          "Tanja Kunz",
-          "Claudia Wagner"
-        ],
-        "url": "https://arxiv.org/abs/2608.22582",
-        "one_sentence": "Introduces hybrid panels combining human survey participants and LLMs in a longitudinal survey infrastructure. Describes a pilot study using alignment errors to improve subsequent survey waves' design.",
-        "nearest_anchor_id": "2502.08691",
-        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
-        "open_questions": [
-          "How accurately can an LLM reproduce the answers of a specific respondent in a longitudinal survey when conditioned on that respondent's earlier waves?",
-          "Which question types and subpopulations produce the largest alignment errors between LLM-simulated answers and human answers?",
-          "Can measured alignment errors in one wave be used to choose which questions to assign to human participants in the next wave, and does this reduce total error?",
-          "Does substituting LLM answers for human answers in a panel bias downstream population estimates, and by how much?",
-          "Does a hybrid panel that recruits and retains real participants over several waves maintain data quality and response rates?",
-          "What validation procedures let survey users distinguish human-sourced from LLM-sourced records in a released hybrid dataset?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.22286",
-        "title": "Uniform Inference on Quantile Effects under Network Interference",
-        "authors": [
-          "Zequn Jin",
-          "Gaoqian Xu",
-          "Zixin Yang",
-          "Zhengyu Zhang"
-        ],
-        "url": "https://arxiv.org/abs/2608.22286",
-        "one_sentence": "Develops uniform confidence bands for quantile treatment and spillover effects in network experiments. Applies Gaussian approximations conditional on the realized network and tests the method on a Nepal savings-account experiment.",
-        "nearest_anchor_id": "2409.10568",
-        "nearest_anchor_title": "On the limits of agency in agent-based models",
-        "open_questions": [
-          "Quantile treatment and spillover effects are defined for one-step neighbor exposure; how do the estimators behave when exposure depends on paths of length two or more?",
-          "The uniform confidence bands are validated on a savings-account experiment and on simulated networks; how do they perform on networks with heavy-tailed degree distributions and strong clustering?",
-          "Can quantile spillover estimators recover distributional effects in multi-agent systems where the network changes during the experiment?",
-          "Do the proposed uniform confidence bands hold when treatment assignment is not randomized, as in observational interaction logs from online platforms?",
-          "How does the method compare with existing average-spillover-effect estimators in detecting heterogeneous effects in field experiments outside microfinance?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-08-22",
-    "counts": {
-      "fetched": 142,
-      "unseen": 142,
-      "screened": 142,
-      "relevant": 6,
-      "kept": 0,
-      "anchors": 20
-    },
-    "papers": []
   }
 ]
