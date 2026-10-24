@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-10-23",
+    "counts": {
+      "fetched": 0,
+      "unseen": 0,
+      "screened": 0,
+      "relevant": 0,
+      "kept": 0,
+      "anchors": 20
+    },
+    "papers": []
+  },
+  {
     "date": "2026-10-22",
     "counts": {
       "fetched": 300,
@@ -7410,165 +7422,6 @@
           "How do simulation outcomes change when the agent population grows from a small port to 100 or more agents on consumer hardware?",
           "Does the context limit that ends runs at 50-52 weeks bias long-horizon results, and which memory scheme extends the horizon?",
           "Can the excluded raw runs and initial persona data be replaced by openly licensed personas without changing the reported aggregates?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-08-24",
-    "counts": {
-      "fetched": 320,
-      "unseen": 320,
-      "screened": 200,
-      "relevant": 17,
-      "kept": 7,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2608.22884",
-        "title": "Predicting the scale limits of social mechanisms in agent societies",
-        "authors": [
-          "Zengqing Wu",
-          "Chuan Xiao"
-        ],
-        "url": "https://arxiv.org/abs/2608.22884",
-        "one_sentence": "Introduces an audit method that predicts before execution whether a social mechanism (reciprocity, consensus, punishment, gossip) survives as an LLM agent population grows. Controlled experiments show a single structural term can determine scale-failure. Predictions held across different code and model families.",
-        "nearest_anchor_id": "2409.02822",
-        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
-        "open_questions": [
-          "The audit predicts scale limits for reciprocity, consensus, punishment and gossip; does it also predict limits for mechanisms such as reputation markets, coalition formation or norm enforcement with sanctions?",
-          "One prediction from the audit failed; what property of a mechanism decides whether the audit applies to it?",
-          "Agents responded differently to social information given as counts than as percentages; which other framings of social information change scale behaviour?",
-          "Do the predicted scale limits hold at populations of thousands of agents, where direct testing was avoided because of cost?",
-          "Predictions held on a second model family; do they hold across open-weight models of different sizes and across mixed populations of models?",
-          "Do the scale limits found for language-model agents match those observed in human groups running the same mechanisms?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.23867",
-        "title": "Markets, Not Planners: Decentralized Orchestration of LLM Agents with Private Information",
-        "authors": [
-          "Xiao Liu",
-          "Haoyang Li",
-          "Songwei Li",
-          "Hongbo Fang",
-          "Fengli Xu",
-          "Feng Shi",
-          "James Evans"
-        ],
-        "url": "https://arxiv.org/abs/2608.23867",
-        "one_sentence": "Proposes AgentLance, a repeated bidding market with VCG-style payments and hierarchical delegation for allocating tasks among LLM agents with private costs. It shows the market matches agents to specializations and outperforms centralized orchestration baselines. It then corrects observed market failures.",
-        "nearest_anchor_id": "2509.10147",
-        "nearest_anchor_title": "Virtual Agent Economies",
-        "open_questions": [
-          "Repeated auctions among LLM agents that keep strategy notes could allow bid coordination; how often does tacit collusion emerge, and how does it change prices and task shares?",
-          "Agents mis-estimate their own execution costs; which methods let an agent calibrate its cost estimates from its own past outcomes?",
-          "A single inserted preference nearly doubles a favored agent's task share under a centralized LLM allocator; how far does a bid-and-reputation market reduce this manipulability under directed attacks?",
-          "What happens to market concentration and reputation dynamics as the agent pool grows to thousands of heterogeneous agents?",
-          "Hierarchical delegation lets winners subcontract through the same mechanism; how deep does the delegation chain go before payment and quality degrade?",
-          "Does the market allocation hold up when tasks arrive with unknown difficulty and no ground-truth score for reputation updates?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.23906",
-        "title": "Quantifying System-Level Harms from AI Adoption in Complex Sociotechnical Systems",
-        "authors": [
-          "Paul Vautravers",
-          "Oliver Chalkley",
-          "Gabriel Downer",
-          "Kate S",
-          "Damian Ruck"
-        ],
-        "url": "https://arxiv.org/abs/2608.23906",
-        "one_sentence": "Proposes a framework linking hazard analysis, component testing, and probabilistic system modelling to trace AI model behavior to system-level risk. Applied to a payment settlement system, it shows adversarial LLM trading inputs alter systemic resilience. It finds these inputs increase cascading bank failures under widespread AI adoption.",
-        "nearest_anchor_id": "2512.16856",
-        "nearest_anchor_title": "Distributional AGI Safety",
-        "open_questions": [
-          "The component-to-system mapping links measured behavioural shifts in an LLM to parameters of a financial contagion model. How sensitive are the predicted bank failures and cascade thresholds to the choice of that mapping?",
-          "The worked example uses one payment system. Does the framework produce comparable loss scenarios for other critical infrastructure, such as power grids or telecom networks?",
-          "Adversarial inputs shift AI recommendations in component-level tests. How much do these shifts persist when the agent operates in a repeated market with feedback from other agents?",
-          "Results depend on the assumption that operators follow AI recommendations. What fraction of recommendations do human operators in financial settlement actually accept?",
-          "Widespread or monopolistic AI adoption changes system resilience in the model. At what level of model monoculture does correlated adversarial vulnerability become the dominant driver of cascades?",
-          "The framework claims a traceable pathway from model behaviour to system outcomes. Which system-level indicators can a regulator measure from aggregate data alone to detect that this pathway is active?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.22697",
-        "title": "Does Rank Still Matter? Position Bias When AI Agents Shop on Our Behalf",
-        "authors": [
-          "Davood Wadi",
-          "Yu Ma"
-        ],
-        "url": "https://arxiv.org/abs/2608.22697",
-        "one_sentence": "Randomizes hotel listing order across 5,000 AI agent shopping sessions and compares four LLMs to human field data on position effects. Finds AI agents inspect more listings and show weak non-monotonic position effects. Finds AI agents converge on the same undominated choice regardless of model.",
-        "nearest_anchor_id": "2602.16136",
-        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
-        "open_questions": [
-          "Position bias differs across four large language models in a way that tracks neither provider nor capability, so what property of a model determines whether rank reaches the choice stage?",
-          "If displayed attributes matter more than placement for agent shoppers, how do sellers change attribute presentation once agents dominate demand, and what equilibrium follows?",
-          "All models converge on the same undominated listing, so does agentic search concentrate demand on few sellers in a marketplace with many buyers?",
-          "Human field data and agent sessions are compared here, but what happens in a mixed market where some consumers delegate to agents and others search themselves?",
-          "Can a seller or platform manipulate agent inspection and choice by crafting listing attributes or injected text on the results page?",
-          "Does the non-monotonic inspection pattern, with lowest probability in the middle of a page, persist for result pages longer or shorter than one hundred listings and in other product categories?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.23835",
-        "title": "Generating Intervention Hypotheses using Explainable Explanations on Graphs: G2I, a Two-Stage Greedy Framework",
-        "authors": [
-          "Mulin Tian",
-          "Ajitesh Srivastava"
-        ],
-        "url": "https://arxiv.org/abs/2608.23835",
-        "one_sentence": "Reframes counterfactual GNN explanation as intervention design, using greedy local search for actionable node-level changes. It uses a DNF coverage formulation for network-level intervention selection under budget. Tested on synthetic graphs and real suicide-risk networks, it produces interpretable, budget-constrained intervention rules.",
-        "nearest_anchor_id": "2409.10568",
-        "nearest_anchor_title": "On the limits of agency in agent-based models",
-        "open_questions": [
-          "Greedy counterfactual search gives guarantees only under stated conditions, and the paper shows those conditions are approximately met on its test graphs. How far do the guarantees degrade on graph families where the conditions fail?",
-          "The intervention selection assumes a static graph. How do selected interventions perform when nodes change features or rewire edges in response to the intervention?",
-          "Do the interpretable rules produced by the greedy method match what a domain specialist judges actionable?",
-          "Real-world results use suicide risk networks. Does the DNF coverage formulation transfer to networks where interventions target economic or market behaviour rather than health risk?",
-          "Cost-effectiveness is measured against mask-based counterfactual methods on model predictions, not on realised outcomes. How well do model-derived intervention budgets predict actual outcome change?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.23796",
-        "title": "Accelerating the Adoption of Residential Solar Power Systems: Policy Analysis using a Dynamic Structural Model",
-        "authors": [
-          "Sebastián Souyris",
-          "Jason A. Duan",
-          "Anantaram Balakrishnan",
-          "Varun Rai"
-        ],
-        "url": "https://arxiv.org/abs/2608.23796",
-        "one_sentence": "Builds a dynamic structural model of household solar adoption incorporating forward-looking decisions, return on investment, and neighbor influence. Estimates the model on Austin household data and simulates counterfactual rebate policies. Finds short limited-time rebates outperform prolonged programs.",
-        "nearest_anchor_id": "2409.10568",
-        "nearest_anchor_title": "On the limits of agency in agent-based models",
-        "open_questions": [
-          "Does the finding that a limited-period rebate produces more adoption than a prolonged program hold in cities with different solar economics and settlement patterns than Austin, Texas?",
-          "How sensitive is the ranking of rebate designs to the assumed form of neighbor influence in the diffusion model?",
-          "Can the dynamic structural model of forward-looking households be replaced by a simulation of generative agents that reproduces the same adoption dynamics?",
-          "Do estimated adoption elasticities change when household-level covariates beyond home value and urbanization level are used?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.23642",
-        "title": "AI Agents Push Humans Out of the Loop",
-        "authors": [
-          "Margaret Mitchell",
-          "Avijit Ghosh",
-          "Samir Passi"
-        ],
-        "url": "https://arxiv.org/abs/2608.23642",
-        "one_sentence": "A position paper argues current AI agent design impedes human oversight and erodes overseer skills through extended automation use. It proposes design affordances to support critical judgement. It proposes organizational protocols to counteract skill atrophy.",
-        "nearest_anchor_id": "2603.23471",
-        "nearest_anchor_title": "Regulating AI Agents",
-        "open_questions": [
-          "Extended use of AI agents is claimed to degrade the cognitive capacities needed for oversight, but the size of this effect is unmeasured. How much does oversight skill decline with sustained agent use?",
-          "The proposed design affordances and organizational protocols are untested. Do they measurably improve the quality of human oversight decisions?",
-          "Oversight failures may compound when many agents act at once. What aggregate measures show when a population of agents has effectively removed humans from decision loops?",
-          "Which agent interface designs make agent actions legible enough for an overseer to intervene in time?"
         ]
       }
     ]
