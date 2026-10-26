@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-10-25",
+    "counts": {
+      "fetched": 0,
+      "unseen": 0,
+      "screened": 0,
+      "relevant": 0,
+      "kept": 0,
+      "anchors": 20
+    },
+    "papers": []
+  },
+  {
     "date": "2026-10-24",
     "counts": {
       "fetched": 0,
@@ -14,14 +26,134 @@
   {
     "date": "2026-10-23",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 269,
+      "unseen": 269,
+      "screened": 200,
+      "relevant": 11,
+      "kept": 6,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2610.32874",
+        "title": "Do \"True\" and \"False\" Add Up to One? Complement Consistency in LLM-Agent Opinion Simulations",
+        "authors": [
+          "Anouar Imel",
+          "Jin Qi"
+        ],
+        "url": "https://arxiv.org/abs/2610.32874",
+        "one_sentence": "Tests whether LLM agents' reported truth probabilities and their complements sum to one across three small open models. Finds paired reports sum to 1.18 on average for one model, with similar failures across controlled and real fact-checking claims. Shows populations seeded from complementary opinion states diverge rather than mirroring each other after five simulation rounds.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "Do larger or frontier models show the same complement inconsistency as the three small open models tested here?",
+          "Does the complement-averaging correction improve forecast accuracy over the better single wording in more than one model out of three?",
+          "How does complement inconsistency propagate in networks larger than the tested peer group sizes and over more than five rounds?",
+          "Which other invariances, beyond complement and same-meaning paraphrase, do LLM-agent opinion reports violate?",
+          "Do published conclusions from LLM-agent opinion simulations change when the reported probabilities are corrected for wording inconsistency?",
+          "Does fine-tuning or training on complement-consistent data remove the inconsistency?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.32355",
+        "title": "AI-Augmented Research: Free to Write, Costly to Read",
+        "authors": [
+          "Wolfgang Kuhle"
+        ],
+        "url": "https://arxiv.org/abs/2610.32355",
+        "one_sentence": "Builds an economic model where AI lowers writing cost faster than reading cost, shrinking the band of verified papers. Shows in a 'costless writing limit' verified-paper share vanishes and impact depends only on author reputation. Models AI-generated literature summaries as reliable only when errors across AI-written papers are sufficiently independent.",
+        "nearest_anchor_id": "2509.01063",
+        "nearest_anchor_title": "An Economy of AI Agents",
+        "open_questions": [
+          "The model infers that the share of verified papers vanishes as writing costs fall, but does not measure this in real publication data. Does the share of papers that receive substantive verification decline as AI writing tools spread?",
+          "The model assumes AI summaries aggregate papers reliably only if their errors are sufficiently independent. How correlated are the errors of summaries produced by different public language models on the same set of papers?",
+          "A threshold share of papers written with the same AI makes summaries inherit that AI's errors. Where does this threshold sit under realistic error distributions?",
+          "The model treats reader attention as split between ignoring, verifying and trusting. Which mechanisms restore verification of outsider papers when writing is costless?",
+          "AI review filters out original research that could correct the AI's errors. Does this filtering appear in deployed AI-assisted review systems?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.32190",
+        "title": "Markets of Minds: A 51-Billion-State Economy of Intelligence",
+        "authors": [
+          "Jusheng Zhang",
+          "Xuekun Wu",
+          "Wenhao Wang",
+          "Mark Wang",
+          "Ming-Hsuan Yang"
+        ],
+        "url": "https://arxiv.org/abs/2610.32190",
+        "one_sentence": "Introduces a market mechanism allocating expert model assistance across agents under shared resource constraints. Models agent dependencies across 51.2 billion persona-market states. Shows the allocator achieves 85.42% task-adherence versus 73.86% for random allocation under a 30% assistance quota.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "The allocator is frozen and evaluated on a matched replay of 240 cases under a single 30% assistance quota. How does allocation quality change across quota levels and larger case sets?",
+          "Assistance value can be negative, which means some interventions make an agent worse. Which agent and service features predict regression risk before the expert output is observed?",
+          "The framework clears assistance contracts under shared resource constraints without stating whether agents report their expected gains truthfully. Can agents misreport capability or scarcity to capture more shared expert capacity?",
+          "The persona-market state space spans 51.2 billion states defined by capabilities, budgets, provider access, scarcity, and network roles. Does the allocator transfer to state regions absent from the replay set?",
+          "Allocating scarce expert reasoning concentrates capacity on agents with the highest expected gain. Does repeated allocation widen capability inequality across the agent population over time?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.32780",
+        "title": "AI Alignment for Digital Democracy: Fairer Voters Representation against LLM Biases",
+        "authors": [
+          "Yi Qi",
+          "Srijoni Majumdar",
+          "Evangelos Pournaras"
+        ],
+        "url": "https://arxiv.org/abs/2610.32780",
+        "one_sentence": "Measures demographic bias in LLM emulation of voters across three U.S. presidential elections, comparing two models. Finds removing gender or education from voter profiles lowers group error by 22-42% and 64% respectively, while removing race raises mean group error over 40%. Tests alignment strategies like repeated queries and fairness instructions, finding they do not reduce and can double errors.",
+        "nearest_anchor_id": "2605.24413",
+        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
+        "open_questions": [
+          "Removing gender or education from voter profiles lowers the largest group error, but removing self-reported race raises the mean group error; which mechanism explains this asymmetry across demographic features?",
+          "Do the feature-removal effects hold for elections outside the three U.S. presidential elections tested, such as parliamentary or referendum votes?",
+          "Repeated queries and fairness instructions do not reduce group errors and can double them; which alignment or fine-tuning strategies do reduce them?",
+          "How do individual-vote emulation errors aggregate when thousands of LLM-emulated voters form an electorate, and do group-level biases amplify or cancel in the aggregate outcome?",
+          "Does the bias pattern generalise beyond the one closed-source and one open-source model tested?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.32945",
+        "title": "Monetizing Intelligence: Advertising and Subscription Design on LLM Platforms",
+        "authors": [
+          "Yuhang Ji",
+          "Fasheng Xu",
+          "Tianjun Feng"
+        ],
+        "url": "https://arxiv.org/abs/2610.32945",
+        "one_sentence": "Models a monopolistic LLM platform jointly choosing response quality, advertising intensity, and subscription prices. Finds advertising can fund free service but causes utility polarization among user tiers. Shows an intermediate advertising cap can maximize consumer surplus and cheaper compute can raise total ad revenue despite lower ad intensity.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Does a monopolistic platform model still predict utility polarization when several LLM platforms compete for the same consumers?",
+          "What advertising cap maximizes consumer surplus when quality cost and advertising returns are calibrated to observed LLM platform prices and plan tiers?",
+          "Do real LLM subscribers respond to ad-supported tiers in the way the model assumes, where ads reduce user value and better service raises advertising returns?",
+          "How do agent users, rather than human users, change the advertising returns and quality choices on an LLM platform?",
+          "Does falling compute cost raise aggregate advertising revenue in practice, as the model infers for large cost reductions?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.32698",
+        "title": "Agent-Based Transport Model Calibration via Online Stochastic Batch Optimization",
+        "authors": [
+          "Abdelkader Dib",
+          "Milos Balac"
+        ],
+        "url": "https://arxiv.org/abs/2610.32698",
+        "one_sentence": "Proposes an online calibration framework for agent-based models using stochastic batch optimization within a single simulation run. Applies it to calibrate MATSim utility parameters for a Switzerland-scale transportation scenario. Reports mode shares aligning with observed data within a standard simulation timeframe.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Does online stochastic batch calibration converge for agent-based models other than MATSim transport simulations?",
+          "How does the online calibration method compare against traditional black-box calibration in accuracy and total run count on the same scenario?",
+          "Does co-evolution of parameters and agent behavior inside one run bias the parameter estimates relative to offline calibration?",
+          "Which calibration targets beyond mode shares, such as trip distance or time-of-day distributions, can the online method match?",
+          "How do batch size and learning rate choices affect stability of the online calibration loop?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-10-22",
@@ -6875,293 +7007,6 @@
           "What does the fifth primitive, supply chain, add once it is integrated into the request path, given it is currently separate tooling?",
           "Do the five primitives cover the governance failures seen in enterprise agent deployments other than the authors' own, or is the decomposition specific to their codebase?",
           "Can a third party detect policy violations from a hash-linked signed ledger alone, without access to the agents or the vendor?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-08-26",
-    "counts": {
-      "fetched": 229,
-      "unseen": 229,
-      "screened": 200,
-      "relevant": 10,
-      "kept": 10,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2608.26081",
-        "title": "SwarmWorld: Stigmergic technological evolution in societies of language-model agents",
-        "authors": [
-          "Subhadeep Pal",
-          "Fiona Y. Wang",
-          "Markus J. Buehler"
-        ],
-        "url": "https://arxiv.org/abs/2608.26081",
-        "one_sentence": "",
-        "nearest_anchor_id": "2506.12078",
-        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
-        "open_questions": [
-          "Isolated best-of-N search remains competitive for the strongest single artifact while shared societies build broader portfolios. Which task properties decide whether sharing or isolated search wins?",
-          "Explicit cultural mechanisms amplify collaboration and organization, but functional benefits depend on outcome and timescale. Which cultural mechanisms give durable functional gains over long runs?",
-          "Most artifact reuse begins through physical observation rather than communication. Does removing communication entirely change the resulting technological portfolio?",
-          "Agents start homogeneous and differentiate into exploration, construction, maintenance, and coordination behaviors. What drives this role differentiation, and can it be measured from interaction logs alone?",
-          "The societies use a single language-model agent population. How do results change with mixed model families or with heterogeneous agent capability?",
-          "How does the size of the agent society change the resilience of the technological portfolio under unseen disturbances?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.25937",
-        "title": "Candidate supply and answer selection shape the value of LLM judging in multi-agent systems",
-        "authors": [
-          "Jia-Hao Ji",
-          "Sijie Li",
-          "Jiabei Cheng",
-          "Zixi She",
-          "Jin-Tai Yu",
-          "Zhiyuan Yuan"
-        ],
-        "url": "https://arxiv.org/abs/2608.25937",
-        "one_sentence": "",
-        "nearest_anchor_id": "2605.24413",
-        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
-        "open_questions": [
-          "Judge reliability varies with the task, the generator and the rarity of the correct answer. Which measurable features of a candidate pool predict when an LLM judge will pick the correct minority answer?",
-          "The selection rule combines answer frequency with the judge's score. Which weighting of frequency and judge signal maximises accuracy across benchmarks?",
-          "Consensus without quality control shows patterns of memetic drift. How does a popular error spread through peer communication as the number of agents and the communication topology change?",
-          "The study replays fixed candidate pools, so generation stays unchanged. Does inserting the frequency-plus-judge rule inside the communication loop, rather than at the terminal step, protect correct answers better?",
-          "Accuracy rises from 63.82% to 70.82-70.95% on the benchmarks studied. Does the same selection rule hold on tasks with open-ended answers rather than benchmark questions with a single correct answer?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.25241",
-        "title": "A Few Pages of Markdown: Committed AI Configuration and Lower Quality Cost after Coding-Agent Adoption",
-        "authors": [
-          "Yegor Denisov-Blanch",
-          "Shyam Agarwal",
-          "Pavel Azaletskiy",
-          "Hao He",
-          "Rylan Schaeffer",
-          "Brando Miranda",
-          "Bogdan Vasilescu",
-          "Sanmi Koyejo"
-        ],
-        "url": "https://arxiv.org/abs/2608.25241",
-        "one_sentence": "",
-        "nearest_anchor_id": "2604.10290",
-        "nearest_anchor_title": "AI Organizations are More Effective but Less Aligned than Individual Agents",
-        "open_questions": [
-          "Does committed AI configuration cause the smaller rise in cognitive complexity, or does engineering discipline explain the gap?",
-          "What happens to code quality in repositories that reach multi-agent orchestration, the maturity level with few observed cases?",
-          "Does the quality benefit of committed AI configuration decay as artifacts go stale, given that 73.8% are committed once and never modified?",
-          "Do the RAMP levels and the quality gap replicate outside the 441 repositories, for example in other languages, ecosystems, or closed-source teams?",
-          "Which specific configuration content, such as behavioral rules versus named agent definitions, accounts for the difference in static-analysis warnings?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.25602",
-        "title": "The Reverse Big Push: Generative AI and Self-Fulfilling Automation",
-        "authors": [
-          "Soumen Banerjee",
-          "Jianguo Wang"
-        ],
-        "url": "https://arxiv.org/abs/2608.25602",
-        "one_sentence": "",
-        "nearest_anchor_id": "2501.16946",
-        "nearest_anchor_title": "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development",
-        "open_questions": [
-          "Does the two-equilibrium result survive in a simulation with many heterogeneous firms and workers, rather than the stylized local service economy the model assumes?",
-          "Do observed adoption patterns in professional services match the coordination region the parameterization predicts?",
-          "Which aggregate indicators signal that a local economy is entering the automation cascade before employment falls?",
-          "How effective is the proposed temporary bridge subsidy at moving an economy out of the low-demand automated equilibrium?",
-          "Does the strategic-complements condition hold when model providers price capability strategically instead of charging fixed usage fees?",
-          "What are actual usage-based rental prices for frontier model capability relative to payroll for the same task?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.25488",
-        "title": "Social Network Structure, Wealth, and Wealth Inequality Across Cultures",
-        "authors": [
-          "Eleanor A. Power",
-          "Monique Borgerhoff Mulder",
-          "Samuel Bowles",
-          "Matthew O. Jackson",
-          "Jeremy Koster",
-          "Daniel Redhead",
-          "Thomas Rutter",
-          "Sahana Subramanyam",
-          "Justin Weltz",
-          "Nurul Alam",
-          "Sarah Alami",
-          "Alexandra Alvergne",
-          "Curtis Atkisson",
-          "Michele Barnes",
-          "Bret Beheim",
-          "Christine M. Beitl",
-          "Madeline Brown",
-          "Mark Caudell",
-          "Wendy Chávez-Páez",
-          "Komal Chauhan",
-          "Joshua Cinner",
-          "Siobhán Cully",
-          "Augusto Dalla Ragione",
-          "Angelina L. DeMarco",
-          "Ivan Deschenaux",
-          "Federico Fernandez",
-          "Juan Pablo Ferreiro",
-          "Drew Gerkey",
-          "Matthew Gervais",
-          "Christopher Golden",
-          "Gianluca Grimalda",
-          "Werner Hertzog",
-          "Paul L. Hooper",
-          "Karen Kramer",
-          "Geoff Kushnick",
-          "Banrida Langstieh",
-          "Rodrigo Lazo",
-          "Sheina Lew-Levy",
-          "Shane Macfarlan",
-          "Emmanuel Maliti",
-          "Karl J. Mertens",
-          "Madalena Monteban",
-          "Rafael Morais Chiaravalloti",
-          "Daniel Murphy",
-          "Kathryn Oths",
-          "Alejandro Pérez Velilla",
-          "Emily Post",
-          "Sean Prall",
-          "Cody Ross",
-          "Anirudh Sankar",
-          "Brooke Scelza",
-          "Michael Schnegg",
-          "Edmond Seabright",
-          "Mary K. Shenk",
-          "Kathrine E. Starkweather",
-          "Chun-Yi Sum",
-          "Bram Tucker",
-          "Bapu Vaitla",
-          "Vivek Venkataraman",
-          "John P. Ziker"
-        ],
-        "url": "https://arxiv.org/abs/2608.25488",
-        "one_sentence": "",
-        "nearest_anchor_id": "2605.13860",
-        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
-        "open_questions": [
-          "Does the association between wealth inequality and weak poor-to-rich network connection reflect causation, and in which direction?",
-          "Which network formation rules reproduce the observed pattern that higher wealth inequality goes with poorer units being less connected to wealthier ones?",
-          "Do community-level environmental, institutional, and economic attributes predict the strength of economic homophily across communities?",
-          "Do populations of LLM agents that borrow, share, and work together generate the same wealth-degree and homophily patterns found in human communities?",
-          "Do the reported patterns hold in online social network data, where prior evidence on wealth and social structure comes from?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.25779",
-        "title": "The emergence and evolution of a referential code in populations of bee-like agents",
-        "authors": [
-          "Grzegorz Chrupała"
-        ],
-        "url": "https://arxiv.org/abs/2608.25779",
-        "one_sentence": "",
-        "nearest_anchor_id": "2510.22422",
-        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
-        "open_questions": [
-          "The transition to the gravity-referenced code depends on an exogenous benefit for vertical combs. Can the transition occur when the benefit is endogenous, for example when comb orientation itself changes foraging or nesting payoffs inside the model?",
-          "The model applies selection at the colony level with mutation-driven code change. Does the same transition occur when agents learn the code within a lifetime instead of inheriting it?",
-          "Direct pointing evolves only when food is moderately hard to find by random search. Which spatial distributions of food, beyond few-and-large and many-and-small, mark the boundary of that region?",
-          "Coupling between sender and receiver mutations matters only at low mutation rates in this model. How does the required coupling scale with population size and colony number?",
-          "The model uses bee-like agents with a fixed signal space. Do the same conditions predict code change in populations of language-model agents that negotiate a referential code?",
-          "The results come from simulation only. Do the predicted conditions for direct pointing match measured foraging and dance data across honeybee species?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.25776",
-        "title": "EVOMAL: Self-Poisoning in Self-Evolving Coding Agents",
-        "authors": [
-          "Xiaodong Wu",
-          "Yu Shi",
-          "Qi Li",
-          "Zhimin Zhao",
-          "Xiangman Li",
-          "Bram Adams",
-          "Ahmed E. Hassan",
-          "Jianbing Ni"
-        ],
-        "url": "https://arxiv.org/abs/2608.25776",
-        "one_sentence": "",
-        "nearest_anchor_id": "2512.16856",
-        "nearest_anchor_title": "Distributional AGI Safety",
-        "open_questions": [
-          "Counter-prompt reduces the self-poisoning rate to at most 6.7%, so what remains of the propagation dynamics at that rate over many rounds?",
-          "How does self-poisoning spread when many agents share one skill library, rather than a single agent authoring for itself?",
-          "Which library-level signals detect agent-authored malicious skills, given that existing defenses focus on attacker-submitted names, code, and signatures?",
-          "Does the reported 20.3% to 41.8% self-poisoning rate hold outside the 153 tool-relevant SWE-bench Verified tasks and the six tested models?",
-          "What library structure or retrieval rule keeps imitation useful while blocking payload propagation?",
-          "Do self-evolving coding agents deployed in real developer workflows show the same self-propagating skill copies?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.25871",
-        "title": "CEDAR: Controlled and Event-Driven Demand Forecasting via Residual Decomposition",
-        "authors": [
-          "Junjie Meng",
-          "Ranxu Zhang",
-          "Zi-an Zhang",
-          "Shujun Liu",
-          "Xiaoning Qi",
-          "Xiaozhou Xu",
-          "Yanyong Zhang",
-          "Hui Xiong",
-          "Chao Wang"
-        ],
-        "url": "https://arxiv.org/abs/2608.25871",
-        "one_sentence": "",
-        "nearest_anchor_id": "2409.10568",
-        "nearest_anchor_title": "On the limits of agency in agent-based models",
-        "open_questions": [
-          "CEDAR trains on about 32 million product trajectories from Alibaba 1688; whether decision-conditioned forecasting transfers to other marketplaces is untested.",
-          "Do decision-conditioned rollouts stay accurate when many merchants change budget schedules at the same time?",
-          "The Residual Correction Module uses LLM-assisted text representations of event descriptions; how much of the accuracy gain comes from the event text rather than the action-conditioned transition model is not reported.",
-          "Does conditioning forecasts on planned actions change the distribution of merchant budget decisions, and does that drive herding on the same event signals?",
-          "Which measurable aggregate signals reveal that a deployed demand simulator has become policy-insensitive under a shifted merchant policy?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.25720",
-        "title": "Endogenous Selection and Spillovers: Bayesian Inference for Policy-Relevant Causal Effects",
-        "authors": [
-          "Duong Trinh"
-        ],
-        "url": "https://arxiv.org/abs/2608.25720",
-        "one_sentence": "",
-        "nearest_anchor_id": "2409.10568",
-        "nearest_anchor_title": "On the limits of agency in agent-based models",
-        "open_questions": [
-          "How sensitive are the estimated direct and spillover effects to the choice of exposure mapping, which the Spillover Roy model restricts to a low-dimensional function of neighbours' treatments?",
-          "Does the Bayesian data-augmentation algorithm remain feasible on networks with millions of nodes?",
-          "Do the diminishing returns to program expansion found for the U.S. Opportunity Zones program also appear in other place-based or network-targeted programs?",
-          "Can the framework identify direct and spillover effects when the units are autonomous agents that select into treatment by copying neighbours, rather than human agents with latent resistance?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.25907",
-        "title": "Quantum-Inspired Modeling of Driving Behavior",
-        "authors": [
-          "Mohammad Elayan",
-          "Omid Armantalab",
-          "Wissam Kontar"
-        ],
-        "url": "https://arxiv.org/abs/2608.25907",
-        "one_sentence": "",
-        "nearest_anchor_id": "2503.13395",
-        "nearest_anchor_title": "Causal Emergence 2.0: Quantifying emergent complexity",
-        "open_questions": [
-          "Does the three-profile structure (free flow, transition, congestion) hold on trajectory datasets other than I-24 MOTION?",
-          "How does the number of recovered driving profiles change with the number of latent dimensions and the training context?",
-          "Does an autonomous vehicle that uses the live behavioral read and short-horizon forecast change aggregate traffic outcomes when many such vehicles are present?",
-          "Does the density-matrix representation forecast motion better than standard car-following or learned trajectory baselines?",
-          "Do the recovered profiles correspond to stable traits of individual drivers over long periods rather than to momentary traffic conditions?"
         ]
       }
     ]
