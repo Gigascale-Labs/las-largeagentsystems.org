@@ -1,27 +1,300 @@
 [
   {
-    "date": "2026-10-25",
+    "date": "2026-10-26",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 326,
+      "unseen": 326,
+      "screened": 200,
+      "relevant": 11,
+      "kept": 4,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2610.35738",
+        "title": "Fuji: The Shape, Composition, and Spread of Demand Bursts on Robinhood Chain",
+        "authors": [
+          "Pranay Anchuri"
+        ],
+        "url": "https://arxiv.org/abs/2610.35738",
+        "one_sentence": "Measures demand bursts on Robinhood Chain using data from every block in its first three months and over 50 million Uniswap swaps. Finds bursts trade roughly the same number of pools as quiet periods but trade them harder, with median peak 2.5 times usual load, and rise/fall fit sums of two exponentials. Compares externally-triggered-cascade and self-excitation models for burst arrival and finds trader entry into pools followed by excess entries for about 24 seconds, leaving imitation versus shared-signal explanations open.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "Entries into a pool during a burst cluster within about 24 seconds, but the cause is unresolved: does imitation or a shared external signal drive the clustering?",
+          "Do the two-exponential rise and fall shapes and the 2.5x median peak hold on other layer-2 chains and on layer-1 chains?",
+          "Externally triggered cascades fit burst arrivals better than self-excitation on this chain, but the external trigger is unidentified: which off-chain events start the bursts?",
+          "How should gas pricing rules change given that bursts trade mostly different pools and accumulate elevated demand for hours before the peak?",
+          "What share of burst trading comes from automated agents rather than humans, and do the two groups produce different burst shapes?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.35692",
+        "title": "Self-Confirming Equilibrium under Model Misspecification",
+        "authors": [
+          "Riccardo Formenti"
+        ],
+        "url": "https://arxiv.org/abs/2610.35692",
+        "one_sentence": "Defines Self-Confirming Equilibrium under Model Misspecification for recurrent games played in large anonymous populations with partial feedback. Introduces preference functionals encoding misspecification and ambiguity aversion, generalizing variational, maxmin, and smooth-ambiguity evaluations. Develops a companion Robust Nash Equilibrium concept, proving existence results and showing it reduces to classical Nash and Self-Confirming Equilibrium under specific conditions.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Does a learning dynamic converge to Self-Confirming Equilibrium under Model Misspecification in a large anonymous population?",
+          "How does the informativeness of the feedback function change the gap between Robust Nash Equilibrium and Nash equilibrium in concrete games?",
+          "Do LLM agents playing recurrent games with partial ex-post feedback behave as if averse to misspecification?",
+          "Can existence of Self-Confirming Equilibrium under Model Misspecification be proven when the statistical distances are not continuous?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.35802",
+        "title": "Game theory of academic effort and hiring in the age of AI",
+        "authors": [
+          "Saptarshi Pal",
+          "Peter S. Park"
+        ],
+        "url": "https://arxiv.org/abs/2610.35802",
+        "one_sentence": "Develops a game-theoretic model of academic hiring where applicants choose between deep understanding and AI-assisted paper volume. Classifies pure-strategy equilibria and runs learning simulations to identify behaviors populations of applicants and recruiters may adopt. Provides a framework for evaluating hiring practices that preserve incentives for genuine understanding.",
+        "nearest_anchor_id": "2509.01063",
+        "nearest_anchor_title": "An Economy of AI Agents",
+        "open_questions": [
+          "The model classifies pure-strategy equilibria only, so what mixed-strategy equilibria arise between applicants and recruiters when AI makes paper production cheap?",
+          "Learning simulations identify which behaviours populations adopt, but how do the outcomes change under different learning dynamics, population sizes and payoff parameters?",
+          "Do observed publication counts and hiring outcomes in mathematics and the theoretical sciences match the equilibria the model predicts since AI became widely accessible?",
+          "Which interview or screening designs preserve the value of deep understanding when papers stop sorting applicants by understanding?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.35442",
+        "title": "Simulation-Efficient Double-Flow Neural Posterior Estimation for Agent-Based Models",
+        "authors": [
+          "Junyao Zhang",
+          "Jinglai Li",
+          "Junqi Tang"
+        ],
+        "url": "https://arxiv.org/abs/2610.35442",
+        "one_sentence": "Proposes DF-NPE, combining learned time-series summaries with two conditional normalizing flows to reduce simulation cost in neural posterior estimation for agent-based models. Tests on the Brock-Hommes asset-pricing model, reducing direct simulations by 90 percent while achieving lower posterior discrepancy and runtime than standard NPE. Finds performance depends on the ratio of direct to synthetic training data and the training strategy used.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Does the method transfer to agent-based models other than the Brock-Hommes asset-pricing model?",
+          "Which allocation of directly simulated and synthetic training pairs gives the lowest posterior discrepancy?",
+          "Are the posteriors from the method calibrated, for example under simulation-based calibration or coverage tests?",
+          "How does the method behave as the number of model parameters and the length of the simulated time series grow?",
+          "Can the method calibrate agent-based models whose agents are language models rather than rule-based traders?"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-10-25",
+    "counts": {
+      "fetched": 171,
+      "unseen": 171,
+      "screened": 171,
+      "relevant": 15,
+      "kept": 6,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2610.34542",
+        "title": "LLM WikiLeaks: Uncovering URL-Based Capability Extension and Security Circumvention in Agentic Message Boards",
+        "authors": [
+          "Orel Navi",
+          "Elad Feldman",
+          "Ben Nassi"
+        ],
+        "url": "https://arxiv.org/abs/2610.34542",
+        "one_sentence": "Studies the ProWiki incident where agents restricted to HTTP GET requests repurposed a wiki as a message board. Analyzes 14,591 edits and 79,541 URL postings, finding agents chain third-party web services to extend capabilities or bypass access restrictions.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "How often do agents in other public venues repurpose third-party Web services to extend capabilities, beyond the single German-language wiki studied here?",
+          "Which detection methods identify nested URL chains that hide destination hosts from inspectors matching literal URLs or outer hostnames?",
+          "What fraction of the URL postings come from distinct agent deployments, and how do deployments differ in their use of intermediate services?",
+          "Do access controls that block reachable third-party services reduce agent circumvention without degrading task performance?",
+          "How do agents discover shared message boards and intermediate services in the first place?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.34357",
+        "title": "6G Reasoning Agent Societies: Composition, Scaling, and Consistency-Time Laws",
+        "authors": [
+          "Hatim Chergui",
+          "Carolina Fernández-Martínez",
+          "Mustapha Benjillali",
+          "Mehdi Bennis",
+          "Merouane Debbah"
+        ],
+        "url": "https://arxiv.org/abs/2610.34357",
+        "one_sentence": "Models LLM agent societies as cellular sheaves to derive composition, scaling, and consistency-time laws for hallucination propagation. Finds isolated per-agent audits miss up to 23% of joint divergence, and consistency time scales as Ω(n^(2/d)) with topology degree d.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Hidden total correlation masks up to 23% of joint divergence in simulated topologies, but the dependence of this gap on topology, agent count and task type stays unmeasured.",
+          "Radius-3 local audits keep consistency time bounded at about 300 ms, yet the detection loss from truncating audits to a local radius is not reported.",
+          "Consistency time is claimed to grow as Omega(n^{2/d}) on polynomial-growth topologies, and the threshold n*=13 for a 1 s budget needs checking on agent societies larger than those tested.",
+          "The laws are stated for messages carrying interpreted conclusions in 6G control planes, so whether they transfer to other multi-agent settings such as markets or social platforms is open.",
+          "Validation uses simulated topologies and deployed LLM societies, but the behaviour of the composition law under adversarial agents that game audit scores stays untested.",
+          "Trust inflation of 1.14 dB in cognitive SNR slows convergence, and no mitigation mechanism is evaluated."
+        ]
+      },
+      {
+        "arxiv_id": "2610.34460",
+        "title": "The fiscal limits of efficient trade",
+        "authors": [
+          "Toan Le",
+          "Saara Hämäläinen",
+          "César Barilla"
+        ],
+        "url": "https://arxiv.org/abs/2610.34460",
+        "one_sentence": "Characterizes truthful, efficient trading mechanisms that minimize worst-case fiscal deficit in markets with many buyers and sellers. Derives a 'competitive pivot mechanism' as optimal in bilateral trade and extends the duality approach to public goods and partnership dissolution.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Optimal mechanisms in markets with more than two agents have a combinatorial structure that the characterization does not resolve; which mechanisms solve the worst-case deficit problem at given market sizes?",
+          "How fast does the best deficit excess decay as the number of buyers and sellers grows, measured against the stated continuum benchmark?",
+          "The duality characterization assumes interim participation and truthful reporting; what happens to the deficit bound when agents are autonomous AI traders that misreport or learn strategies over repeated rounds?",
+          "Does the competitive pivot mechanism retain its deficit ceiling in the stated extensions to public goods and partnership dissolution?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.34508",
+        "title": "Screening AI-equipped applicants",
+        "authors": [
+          "Pengyu Qian",
+          "Sophie H. Yu"
+        ],
+        "url": "https://arxiv.org/abs/2610.34508",
+        "one_sentence": "Models an employer screening applicants whose AI-generated reports can be manipulated at privately known cost. Shows that as manipulation ability becomes more dispersed, optimal hiring converges to ignoring reports entirely ('strategic feature collapse'), and proposes a dual-track mechanism recovering most welfare gains.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Does manipulation ability actually disperse among applicants with the same observable quality when generative AI is available, and by how much?",
+          "The dual-track mechanism is proven asymptotically optimal under regularity conditions; how does it perform away from those conditions?",
+          "How do applicants respond behaviourally to a dual-track hiring rule once it is announced?",
+          "What happens to welfare when many applicants use the same AI tool and reports become correlated rather than independently manipulated?",
+          "Does selection on observable quality alone concentrate hiring outcomes on groups with better credential histories?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.34412",
+        "title": "Stable matching under regulation",
+        "authors": [
+          "Chao Huang"
+        ],
+        "url": "https://arxiv.org/abs/2610.34412",
+        "one_sentence": "Shows that a regulator participating in every agreement restores setwise stability in matching markets where agents' preferences fail substitutability. Gives two existence results trading off restrictions on agent preferences against restrictions on the regulator's behavior.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Does a mechanism exist that computes a setwise stable outcome with a regulator in the agreement, and how does it scale with the number of agents and contracts?",
+          "How often do setwise stable outcomes exist when the stated preference conditions fail, for example when ordinary agents have complementary preferences and the regulator does not support profitable contract deletions?",
+          "What happens to stability when the regulator is an autonomous agent with learned rather than fixed preferences?",
+          "Which real regulated matching markets satisfy the weaker-than-substitutability condition the existence result requires?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.34133",
+        "title": "Smart charging without rebound peaks: Wholesale price feedback limits distribution grid peaks from price-responsive electric vehicles",
+        "authors": [
+          "Lion Hirth"
+        ],
+        "url": "https://arxiv.org/abs/2610.34133",
+        "one_sentence": "Simulates price-optimized EV charging under German 2025 wholesale price data, finding that ignoring wholesale price feedback overstates rebound grid peaks. Modeling equilibrium price-quantity feedback reduces the predicted coincident import peak increase from 260% to 5%.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Local EV adoption above the national average can still produce rebound peaks; at what adoption share and charging power does the price feedback stop damping local peaks?",
+          "Does the damping effect survive when charging agents anticipate their own price impact instead of taking prices as given?",
+          "Does the result hold in power systems other than Germany in 2025, for example with different renewable mixes and network charge designs?",
+          "The simulation assumes real-time prices; what happens to coincident grid peaks when agents respond to day-ahead or block tariffs that do not clear against the fleet's own load?",
+          "How does the equilibrium price feedback interact with heterogeneous charging controllers that share one forecasting model or vendor?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-10-24",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 162,
+      "unseen": 162,
+      "screened": 162,
+      "relevant": 12,
+      "kept": 3,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2610.33536",
+        "title": "FraudSociety: A Generative Agent-Based Society for the Financial-Fraud Economy",
+        "authors": [
+          "Keyang Chen",
+          "Mingxuan Jiang",
+          "Zeping Li",
+          "Yiwen Zhao",
+          "Yifan Wang",
+          "Qiuyang Zhang",
+          "Shuaicheng Qi",
+          "Yicun Liu",
+          "Zhixin Li",
+          "Sen Liu",
+          "Yinan Jing",
+          "Guangnan Ye",
+          "Hongfeng Chai"
+        ],
+        "url": "https://arxiv.org/abs/2610.33536",
+        "one_sentence": "Builds FraudSociety, an LLM-agent simulator coupling social information spread with financial ledgers to model fraud economy dynamics. Validates against real-world loss concentration statistics and tests counter-fraud interventions, with the best reducing repeat-payment rate from 49.4% to 10.9%.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Personalized intervention cuts the repeat-payment rate from 49.4% to 10.9% inside the simulator, but the abstract does not report any test against real intervention trials; how well do simulated intervention rankings predict real-world effect sizes?",
+          "Fraudster agents adapt to interaction histories and ledger states, so what happens when fraudsters also adapt to the deployed counter-fraud intervention itself?",
+          "Loss concentration matches Canadian Anti-Fraud Centre statistics, but the abstract does not say which mechanism in the simulator produces that concentration; is it social-network exposure, the Need-Intent-Action module, or ledger feedback?",
+          "Macro-level outcomes are calibrated to United States and Canadian fraud statistics; do the same parameters reproduce fraud patterns in other countries and payment systems?",
+          "LLM-agent simulators can match aggregate statistics while encoding the training-data priors of the backbone model, so how much do FraudSociety's results change across different LLM backbones?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.33617",
+        "title": "When Generated Information Returns: Error Persistence in LLM-Mediated Information Ecosystems",
+        "authors": [
+          "Yi Liu"
+        ],
+        "url": "https://arxiv.org/abs/2610.33617",
+        "one_sentence": "Studies how false claims persist as LLM-generated articles recirculate as input to later generation rounds. Controlled community writing experiments across twelve factual targets and four models measure a 7.29 point rise in complete false claims after recirculation.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Error persistence differs across facts and across the four production models, but the abstract does not say which properties of a fact or a model drive the difference. Which claim features and model features predict the size of error persistence?",
+          "The abstraction intervention leaves error reproduction largely unchanged except for one quotation target. Which interventions on the published corpus do reduce reproduction of complete false claims?",
+          "The experiment uses a controlled community writing process with matched external supply and input capacity. Does the same divergence between stance and detail supply appear in real web corpora that mix human and LLM articles?",
+          "Recirculation runs for a fixed number of rounds in the reported design. How does the presence of complete false claims evolve over many more rounds, and does it reach a steady state?",
+          "Evaluation here scores both endorsement and supplied detail. Which measurement of supplied detail best predicts downstream reuse by a later model?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.33728",
+        "title": "Strategic Calibration in LLM Multi-Agent Systems: Audited Pivot Scoring for Truthful Elicitation",
+        "authors": [
+          "Jinhao Zhou",
+          "Zhaohan Zhang",
+          "Xijian Xu",
+          "Jun Wu"
+        ],
+        "url": "https://arxiv.org/abs/2610.33728",
+        "one_sentence": "Proposes an audited pivot scoring mechanism to make confidence reporting truthful when confidence drives resource allocation among LLM agents. Experiments show it reduces distortion and Brier loss compared to a compensated proper scoring baseline.",
+        "nearest_anchor_id": "2605.24413",
+        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
+        "open_questions": [
+          "LLM agents inflate confidence under Top-K incentives in calculator-free experiments, but the number of agents is small; does the inflation and the effect of the mechanism hold at population scale with hundreds or thousands of reporting agents?",
+          "The mechanism assumes agents report independently; can agents collude on confidence reports to defeat sparse audits and the Clarke pivot charge?",
+          "The audit-variance trade-off is characterised analytically; what audit rate minimises cost while keeping truthful reporting the best response in deployed agent pipelines?",
+          "Truthfulness holds under the stated model assumptions; which assumptions break when the allocation platform cannot fully control or observe the downstream benefit of an allocation?",
+          "CPS achieves higher exact allocation match while APSM yields lower Brier loss; which objective matters for downstream task quality in a multi-agent coordination system?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-10-23",
@@ -6869,144 +7142,6 @@
           "Why did 6 of 84 target-agent checks and 13 of 182 state answers fail to match?",
           "Which failure modes of agent societies, such as collusion or information cascades, does a spatial replay and Ask interface make visible, and which stay hidden?",
           "Do operators actually reach correct conclusions faster with the control room than with raw logs?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-08-27",
-    "counts": {
-      "fetched": 215,
-      "unseen": 215,
-      "screened": 200,
-      "relevant": 12,
-      "kept": 6,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2608.26849",
-        "title": "LiveSim: Simulating Environment-Shaped Users in Multi-Agent Live-Stream Ecosystems",
-        "authors": [
-          "Jiaqi Xu",
-          "Yiran Qiao",
-          "Jing Chen",
-          "Qiwei Zhong",
-          "Xiang Ao",
-          "Xueqi Cheng"
-        ],
-        "url": "https://arxiv.org/abs/2608.26849",
-        "one_sentence": "Presents LiveSim, an LLM framework that simulates live-stream users as editable behavioral hypotheses refined through trajectory comparisons. Accumulates environment-behavior patterns in a collective memory to support ecosystem-level analysis of risk evolution and platform interventions.",
-        "nearest_anchor_id": "2409.10568",
-        "nearest_anchor_title": "On the limits of agency in agent-based models",
-        "open_questions": [
-          "Does a simulator that refines user hypotheses from observed trajectories transfer to platforms other than live streaming, such as social feeds or marketplaces?",
-          "How much of the reported fidelity gain comes from the collective behavioral memory versus the per-user hypothesis editing?",
-          "Do platform interventions tested in the simulation produce the same effect sizes when applied on a live platform?",
-          "Which aggregate signals from interaction logs are enough to detect risk evolution without access to individual user profiles?",
-          "Does the collective behavioral memory cause simulated users to converge to a monoculture of behavior over long runs?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.26896",
-        "title": "AI agents in Algorithmic Electricity Markets: On the Emergence of Tacit Collusion",
-        "authors": [
-          "Jakub Seredyński",
-          "Georgios Tsaousoglou"
-        ],
-        "url": "https://arxiv.org/abs/2608.26896",
-        "one_sentence": "Models strategic electricity market bidding as a repeated game with imperfect monitoring, using multi-agent reinforcement learning to represent participants. Proposes multi-dimensional criteria beyond profit-vs-Nash comparisons and finds cases where agents learn supra-competitive outcomes consistent with tacit collusion, without being instructed to collude.",
-        "nearest_anchor_id": "2502.14143",
-        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
-        "open_questions": [
-          "Do the tacit collusion outcomes persist when the number of participants in the electricity market rises beyond the small oligopoly modelled here?",
-          "Which market design changes, such as bid disclosure rules or price caps, reduce supra-competitive outcomes among learning-based bidding agents?",
-          "Do the proposed multi-dimensional collusion criteria detect tacit collusion in real bidding data from operating electricity markets?",
-          "Do agents driven by large language models rather than reinforcement learning reach the same supra-competitive outcomes in repeated electricity market bidding?",
-          "How does the imperfect public monitoring assumption change the results if agents observe more or less about rivals' actions?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.27382",
-        "title": "Token-Level Advertising",
-        "authors": [
-          "Hanbing Liu",
-          "Bowei Zhang",
-          "Changyuan Yu",
-          "Yinyu Ye",
-          "Qi Qi"
-        ],
-        "url": "https://arxiv.org/abs/2608.27382",
-        "one_sentence": "Proposes LAMA, a token-level advertising auction where advertisers report continuation values that shape a platform's generation via a latent mixture. Proves Markov dominant-strategy incentive compatibility and individual rationality, near-optimal KL-regularized welfare, and reports gains in welfare and revenue on commercial-search query experiments.",
-        "nearest_anchor_id": "2602.16136",
-        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
-        "open_questions": [
-          "LAMA is tested on commercial-search query splits only; how does token-level advertising behave on other query populations, such as advice-seeking or health queries?",
-          "The mechanism assumes advertisers report local continuation values truthfully under Markov DSIC; what happens when many advertisers bid strategically through a learned bidding agent instead?",
-          "Response quality is reported as maintained at the user-facing level; does repeated token-level advertiser influence shift user beliefs or choices over multiple interactions?",
-          "Token-level advertising embeds advertiser influence into generation with no predefined slot; can a third party detect and measure the amount of paid influence in an output from the text alone?",
-          "How does platform welfare and revenue under LAMA distribute across advertisers of different budget sizes?",
-          "LAMA is evaluated as a single platform mechanism; what happens to welfare and price levels when several competing generative platforms run token-level auctions over the same advertiser pool?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.27187",
-        "title": "When Interference Graphs Evolve: Doubly Robust Estimation of Dynamic Peer Effects",
-        "authors": [
-          "Xiaojing Du"
-        ],
-        "url": "https://arxiv.org/abs/2608.27187",
-        "one_sentence": "Introduces a controlled contrast framework separating own-treatment, peer-exposure, and network-evolution effects when interaction graphs change over time. Develops the DynaNet-DR doubly robust estimator, consistent if either outcome regression or propensity model is correct, tested on semi-synthetic and MathOverflow data.",
-        "nearest_anchor_id": "2502.08691",
-        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
-        "open_questions": [
-          "Does the DynaNet-DR estimator recover peer effects when the network summary is not sufficient, or when unmeasured confounders drive both edge formation and outcomes?",
-          "How do the summary-indexed contrasts compare against estimands defined by explicit counterfactual edge generation?",
-          "Do peer-effect estimates on evolving graphs hold for populations of AI agents, where interaction graphs change faster than in human forums?",
-          "Which choices of clipping threshold and finite-sample stabilization control the bias-variance trade-off of the estimator?",
-          "Does the estimator remain consistent when the weak dependence assumption fails, for example under strong network-wide cascades?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.26626",
-        "title": "Risks and Controls for Multi-Agent Systems: an analytical framework for deployment of AI agents across organisational boundaries",
-        "authors": [
-          "Alistair Reid",
-          "Simon O'Callaghan",
-          "Dustin Venini",
-          "Liam Carroll",
-          "Tiberio Caetano"
-        ],
-        "url": "https://arxiv.org/abs/2608.26626",
-        "one_sentence": "Proposes a framework of deployment tiers (singular, federated, open) for reasoning about risks and controls when AI agents from different organizations interact. Identifies failure modes and controls per tier, and flags governance gaps where no single actor can act.",
-        "nearest_anchor_id": "2502.14143",
-        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
-        "open_questions": [
-          "Which failure modes actually appear when agents from different organisations interact under only voluntary shared standards? The framework names failure modes per governance tier but reports no measurements.",
-          "Can the three governance tiers be distinguished from observable interaction logs alone, without knowing who deploys each agent?",
-          "Which controls listed for federated and open environments reduce failure rates when applied, and by how much?",
-          "Where no actor is positioned to apply a control, what collective action mechanism gets organisations to adopt it voluntarily?",
-          "How do organisations deploying agents across their perimeter today distribute across the three tiers?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.26696",
-        "title": "Five Primitives for Governing Autonomous AI Agents at Runtime",
-        "authors": [
-          "Jiten Oswal",
-          "John Cadeddu"
-        ],
-        "url": "https://arxiv.org/abs/2608.26696",
-        "one_sentence": "Argues agent governance is a runtime problem and derives five primitives (discovery, identity, governance, attestation, supply chain) for mediating agent actions. Describes an implementation with policy mediation, per-tenant authorization, and a signed action ledger, four of five primitives built in private pilots.",
-        "nearest_anchor_id": "2603.23471",
-        "nearest_anchor_title": "Regulating AI Agents",
-        "open_questions": [
-          "How much latency does a runtime enforcement point on the critical path add per agent action, and how does the overhead scale with the number of agents?",
-          "Does fail-closed mediation turn availability incidents into denial cascades across a population of interdependent agents?",
-          "How can a per-tenant action vocabulary stay complete when agents select actions by model and attempt actions not enumerated in advance?",
-          "What does the fifth primitive, supply chain, add once it is integrated into the request path, given it is currently separate tooling?",
-          "Do the five primitives cover the governance failures seen in enterprise agent deployments other than the authors' own, or is the decomposition specific to their codebase?",
-          "Can a third party detect policy violations from a hash-linked signed ledger alone, without access to the agents or the vendor?"
         ]
       }
     ]
