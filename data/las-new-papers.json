@@ -1,5 +1,185 @@
 [
   {
+    "date": "2026-10-27",
+    "counts": {
+      "fetched": 308,
+      "unseen": 308,
+      "screened": 200,
+      "relevant": 15,
+      "kept": 8,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2610.36989",
+        "title": "A Serious-Game Testbed for Self-Governing Human-Machine Institutions",
+        "authors": [
+          "Callum Berger",
+          "Jeremy Pitt",
+          "Stefan Sarkadi"
+        ],
+        "url": "https://arxiv.org/abs/2610.36989",
+        "one_sentence": "Introduces Megabike, a multi-agent simulator and serious game testing self-governing hybrid human-machine institutions.;Runs forty sessions with LLM riders of different dispositions choosing regimes, electing leaders, and expelling members.;Finds that combinations of agent archetypes produce unexpected and counterproductive collective outcomes.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the outcome of self-governance change when human riders take seats alongside language-model riders?",
+          "Which combinations of cooperative, lazy, subversive and opposing dispositions produce counterproductive governance outcomes, and how often?",
+          "Do the regime choices, leader elections and expulsions observed depend on which language model drives the riders?",
+          "How do governance outcomes scale when the number of riders and rival bikes grows beyond the demonstrated setup?",
+          "Which metrics computed from the action logs predict institutional failure before expulsion or resource collapse occurs?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.37448",
+        "title": "Test-Time Communication in Trading Agent Swarms",
+        "authors": [
+          "Avid Fayaz",
+          "Harry Zhang",
+          "Håvard Alstadheim",
+          "Erik Nordlöf",
+          "Vilhelm Karlin",
+          "André Silva"
+        ],
+        "url": "https://arxiv.org/abs/2610.37448",
+        "one_sentence": "Runs 200 trading agents from four model families under five communication regimes over seven trading days.;Measures that communicating groups converge on shared stock holdings and phrase reuse more than isolated agents.;Finds isolated groups also converge, so herding measures need a no-peer baseline.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Two of four model families showed higher portfolio overlap under communication; what distinguishes those families from the two that did not?",
+          "Seeing a groupmate's post raised phrase reuse by 7 percentage points but did not detectably change that morning's trades; how long is the lag between language adoption and trade adoption?",
+          "Isolated groups also converged on the same stocks, so what is the correct no-peer baseline for measuring excess convergence?",
+          "The run covered seven US trading days; does communication-driven convergence persist or decay over months, and across market regimes?",
+          "Communicating groups sold in step more often than isolated ones; at what population size does synchronised selling move prices?",
+          "Which communication regime, among isolation, message boards and shared notes, minimises convergence while keeping return?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.37504",
+        "title": "Strategyproof Deep Reinforcement Learning for Online Resource Allocation",
+        "authors": [
+          "Fariba Dehghan",
+          "Sebastian Stein",
+          "Vahid Yazdanpanah",
+          "Stephanie Gauthier"
+        ],
+        "url": "https://arxiv.org/abs/2610.37504",
+        "one_sentence": "Introduces a strategyproof deep RL mechanism for online resource allocation combining a monotonic neural network and critical payment rule.;Trains the rule by RL or imitation and reports 97.8% of an offline welfare bound on a four-resource stream.;Reports imitation training reaches similar performance about 89 times faster than RL.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "The mechanism is tested on a four-resource stream with two partner pairs; how does it perform as the number of resources, agents and interaction patterns grows?",
+          "Strategyproofness holds for single-report agents; does it survive when agents collude or submit multiple coordinated bids?",
+          "The paper reports welfare against an offline upper bound; how does the mechanism distribute allocations and payments across agents?",
+          "Imitation training reaches 97.5% welfare by copying an existing rule; which properties of the imitated rule carry over to the learned mechanism and which do not?",
+          "How does the mechanism behave when the demand distribution shifts away from the one seen during training?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.36629",
+        "title": "Sybil-Proofness of Generalized Adaptive Clinching and Implications for Blockchain Mechanism Design",
+        "authors": [
+          "Chengkai Zhang",
+          "Yuhao Li",
+          "Elaine Shi",
+          "Mengqian Zhang",
+          "Lirong Xia",
+          "Qishen Han"
+        ],
+        "url": "https://arxiv.org/abs/2610.36629",
+        "one_sentence": "Proves a generalized adaptive clinching auction framework is Sybil-robust against bidders splitting into fake identities.;Designs a new two-sided automated market maker mechanism satisfying Sybil-robust incentive compatibility and relaxed Pareto optimality.;Argues these guarantees are essentially the best achievable via impossibility results.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Adaptive clinching resists Sybil splitting only when the aggregate reported budget stays within the bidder's enforceable true budget, so how can a blockchain enforce budget limits across identities a bidder controls?",
+          "The proof covers one bidder splitting into fake identities, so what happens when several distinct bidders collude instead of splitting?",
+          "How does the two-sided AMM mechanism perform against constant-function market makers in a simulated market with many trading agents?",
+          "How often do Sybil-style identity splits occur in deployed AMMs and auctions on public chains?",
+          "Do the Sybil-robustness guarantees hold when bidders are autonomous agents that learn bidding policies rather than report values once?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.36666",
+        "title": "Impossibility of No-Regret in Multi-Agent Bidding",
+        "authors": [
+          "Zongjun Yang",
+          "Rachitesh Kumar",
+          "Christian Kroer"
+        ],
+        "url": "https://arxiv.org/abs/2610.36666",
+        "one_sentence": "Proves it is computationally impossible for all pacing bidders to achieve no-regret simultaneously under budget constraints in repeated second-price auctions.;Shows high variance in online bidding systems implies high regret via a PPAD-hardness argument.;Demonstrates via simulation that common bidding algorithms display cycling, high-variance behavior.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Which bidding algorithms cycle, and under what market instances does cycling start?",
+          "Does the link between high variance and high regret hold under non-i.i.d. or adversarial item arrivals?",
+          "What restricted market classes allow all pacing bidders to reach joint no-regret despite the PPAD-hardness result in general?",
+          "Do deployed automated bidding systems show the cycling and high-variance behaviour predicted for pacing algorithms?",
+          "Which auction or budget-pacing mechanism designs reduce the variance of bids across many competing agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.36941",
+        "title": "Algorithmic Monoculture in Machine Learning-based Site-Specific Fertilizer Recommendation",
+        "authors": [
+          "Abdelghani Belgaid"
+        ],
+        "url": "https://arxiv.org/abs/2610.36941",
+        "one_sentence": "Models how shared versus farm-specific errors in ML fertilizer recommendations aggregate into social loss across many farms.;Calibrates the model with nine model families across five Moroccan cereal systems.;Finds accuracy-constrained diversification lowers modeled social loss by 10.89-41.53% while uniform allocation breaches a regret cap.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Does error correlation between model families, which the calibration takes as an illustrative parameter, match the correlation measured on real agronomic data?",
+          "How does the diversification rule perform when adoption shares are chosen by farms over time rather than set by a planner?",
+          "Do the modeled social loss reductions of 10.89-41.53% correspond to agronomic or monetary welfare changes in the field?",
+          "Does the Herfindahl-Hirschman characterization of concentration extend to settings where predictive risks differ across models?",
+          "Does the shared-error framework transfer to other recommendation domains with many interconnected decision makers, such as credit scoring or hiring?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.37487",
+        "title": "Contemporaneous Transmission Networks and Systemic Risk in European Banking",
+        "authors": [
+          "Minh Duc Duong",
+          "Alessio Moneta",
+          "Fabrizio Lillo",
+          "Caterina Giannetti",
+          "Tu Anh Doan Nguyen"
+        ],
+        "url": "https://arxiv.org/abs/2610.37487",
+        "one_sentence": "Fits a recursive non-Gaussian network model on volatility-standardized returns of 51 European banks.;Constructs Systemic Impact and Systemic Vulnerability scores capturing outward influence and incoming sensitivity.;Finds receiving roles more reproducible than transmitting roles across repeated network discovery, with ordering sensitivity noted.",
+        "nearest_anchor_id": "2503.13395",
+        "nearest_anchor_title": "Causal Emergence 2.0: Quantifying emergent complexity",
+        "open_questions": [
+          "The full-sample model does not satisfy the stated criterion for independent recovered shocks, so what pre-processing or model class restores shock independence on European bank equity returns?",
+          "Transmitting roles are less reproducible than receiving roles across repeated network discovery, so which estimation choices drive that instability?",
+          "Alternative recursive orderings give comparable tail asymmetries, so how can one identify the true causal ordering among banks?",
+          "Do the Systemic Impact Score and Systemic Vulnerability Score predict realised distress in later crisis episodes better than existing systemic risk measures such as CoVaR or SRISK?",
+          "Does contemporaneous equity-return transmission among banks reproduce the interbank exposure network it is meant to proxy?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.36649",
+        "title": "When Is a Cheap Fairness Edit Safe? Screening Post-Hoc Edits in Two-Sided Matching Markets",
+        "authors": [
+          "Moirangthem Tiken Singha",
+          "Rabinder Kumar Prasada"
+        ],
+        "url": "https://arxiv.org/abs/2610.36649",
+        "one_sentence": "Proposes a closed-form linear projector that edits protected-attribute influence in two-sided matching markets at inference time.;Bounds mean welfare change and introduces a pre-deployment screen returning PASS, KILL, or OUT-OF-SCOPE verdicts.;Tests the screen on synthetic and realistic markets, finding architecture choice affects whether edits stay within bounded scope.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "The screen runs on synthetic and simulated markets only. Does it return the same verdicts on real admissions or hiring data?",
+          "Two-tower and graph neural network encoders fall outside the graded scope in every tested instance. Which architectural properties cause this?",
+          "The paper covers exactly vertical and near-vertical markets. What screening procedure applies to markets that are not vertically ordered at all?",
+          "Applicants and opportunities may change behaviour once a fairness edit is deployed. How do welfare bounds hold when agents adapt strategically over repeated rounds?",
+          "The probabilistic bound is informative in 69% to 87% of configurations. Which market parameters decide when it is uninformative?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-10-26",
     "counts": {
       "fetched": 326,
@@ -7066,82 +7246,6 @@
           "Can a clustering in the 2-Droop core be computed in polynomial time?",
           "How close do fast heuristic clustering algorithms come to the 2-Droop core guarantee on real metric datasets?",
           "How reliable are language-model-generated proofs in this problem class when authors verify them independently?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-08-28",
-    "counts": {
-      "fetched": 203,
-      "unseen": 203,
-      "screened": 200,
-      "relevant": 9,
-      "kept": 3,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2608.28046",
-        "title": "Emergent aggregation from collective foraging",
-        "authors": [
-          "Gorka Muñoz-Gil",
-          "Andrea López-Incera",
-          "Vide Ramsten",
-          "Giovanni Volpe",
-          "Thomas Müller",
-          "Hans J. Briegel"
-        ],
-        "url": "https://arxiv.org/abs/2608.28046",
-        "one_sentence": "Reinforcement-learning foragers optimizing individual reward for finding targets develop spatial aggregation without direct social reward. A crossover in visual range separates individual search from collective search behavior. A first-passage analytical model reproduces this transition.",
-        "nearest_anchor_id": "2509.10147",
-        "nearest_anchor_title": "Virtual Agent Economies",
-        "open_questions": [
-          "Aggregation emerges when foragers see only conspecifics and never the targets; what happens when agents perceive both targets and conspecifics?",
-          "The crossover depends on visual range with replenishable targets; how does target replenishment rate, density and patchiness shift the onset of aggregation?",
-          "Does indirect, resource-driven reward also produce aggregation in populations of language-model agents rather than reinforcement learning walkers?",
-          "Can an observer detect the crossover from individual to collective search using only aggregate spatial statistics, without access to agent policies?",
-          "How does the aggregation transition change when agents are heterogeneous, for example with mixed visual ranges or mixed learned and random-walk policies?",
-          "Does the analytical first-passage model reproduce the transition in dimensions or geometries other than the one tested?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.28198",
-        "title": "Performative Privacy: When Differential Privacy Maximizes Utility",
-        "authors": [
-          "Uddalak Mukherjee",
-          "Edwige Cyffers",
-          "Yann Chevaleyre"
-        ],
-        "url": "https://arxiv.org/abs/2608.28198",
-        "one_sentence": "Introduces performative privacy, where data leakage by a mechanism reduces future participation of agents contributing data. Analyzes a mean-estimation model where differentially private mechanisms trade estimation noise against retained participation over time. Shows theoretically and numerically that a finite privacy budget can outperform non-private estimation when the leakage-participation feedback is strong.",
-        "nearest_anchor_id": "2502.14143",
-        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
-        "open_questions": [
-          "Does a finite privacy budget still beat non-private estimation for tasks beyond mean estimation, such as regression or classification?",
-          "How does the optimal privacy budget change when agents differ in their sensitivity to leakage instead of sharing one departure rule?",
-          "Can an adaptive privacy budget, tuned over rounds from observed participation, outperform a fixed budget?",
-          "How strong is the real feedback loop between data leakage and user participation in a deployed system?",
-          "What happens to participation and utility when several platforms with different privacy budgets compete for the same agents?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.27992",
-        "title": "GOD: Govern, Observe, and Direct - A Real-Time Control Room for Agent Societies",
-        "authors": [
-          "Yige Luo",
-          "Ran Guan"
-        ],
-        "url": "https://arxiv.org/abs/2608.27992",
-        "one_sentence": "GOD provides a local control room for inspecting and intervening in generative-agent simulations. It supports real-time queries, interventions, and portable experiment packs. Evaluation on 15 run slots checks whether interventions and state queries match recorded outcomes.",
-        "nearest_anchor_id": "2604.15236",
-        "nearest_anchor_title": "Agentic Microphysics: A Manifesto for Generative AI Safety",
-        "open_questions": [
-          "Does the command and artifact loop scale beyond 15 run slots and beyond Smallville-style scenarios?",
-          "The evaluation counts whether agents recorded the commanded destination, not whether interventions change population-level outcomes; which aggregate metrics respond to operator interventions?",
-          "Why did 6 of 84 target-agent checks and 13 of 182 state answers fail to match?",
-          "Which failure modes of agent societies, such as collusion or information cascades, does a spatial replay and Ask interface make visible, and which stay hidden?",
-          "Do operators actually reach correct conclusions faster with the control room than with raw logs?"
         ]
       }
     ]
