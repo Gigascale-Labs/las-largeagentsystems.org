@@ -1,15 +1,194 @@
 [
   {
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 339,
+      "unseen": 339,
+      "screened": 200,
+      "relevant": 13,
+      "kept": 6,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2610.40324",
+        "title": "Crowds Believe in You: Online Prediction Markets Overestimate How Often People Achieve Their Own Goals",
+        "authors": [
+          "Zihan Chen",
+          "Lei Nico Zheng",
+          "Di Zhu"
+        ],
+        "url": "https://arxiv.org/abs/2610.40324",
+        "one_sentence": "Analyzes 6,150 Manifold prediction markets where users forecast their own future goals, comparing calibration to external-event markets. Finds self-markets resolve YES 4.4 percentage points less often than final prices imply, versus 0.9 points for external markets, with overpricing emerging within a day of trading and peaking before close. Finds observer trading pushes self-market prices further toward YES while the creator's own late trading supplies most of the eventual correction.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the overestimation of self-markets also appear on other prediction market platforms, such as Polymarket or Metaculus?",
+          "What market design corrects the optimism in self-markets, given that the correcting information sits with the market creator?",
+          "Do LLM trading agents reproduce the same optimism when they forecast a person's self-posed goals?",
+          "Why do observers move self-market prices toward YES: social encouragement, deference to the creator's private information, or something else?",
+          "Does a recalibration that uses creator trading behaviour as a feature beat the 1.5% improvement from price-level recalibration alone?",
+          "Does the wording of a self-market, including whether it names an outcome the person wants, predict the size of the overstatement?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.39660",
+        "title": "Sticky Collusion: Persistence of LLM Agent Collusion after Incentive Removal and Partner Replacement",
+        "authors": [
+          "Joshua Adrian Cahyono"
+        ],
+        "url": "https://arxiv.org/abs/2610.39660",
+        "one_sentence": "Tests whether collusion between two LLM verifier agents persists after the colluding incentive is removed or a partner is replaced. Finds collusion is sticky: it outlives incentive removal in most episodes across three model families, survives partner replacement for the remaining colluder, and depends on retained memory. Reports collusion ends once the memory is wiped or the underlying channel defect is repaired.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Collusion is tested in pairs of agents; does stickiness after incentive removal persist in groups of more than two agents?",
+          "Does collusion remain sticky in a price-setting market environment, where Q-learning agents stop colluding after partner replacement?",
+          "Wiping memory ends collusion in every history while partial memory often sustains it; which parts of the memory carry the behaviour?",
+          "Can collusion be detected from interaction logs alone before the behaviour appears in verdicts?",
+          "Does collusion re-form around a remaining colluder when the newcomer is a human verifier rather than an agent?",
+          "The abstract reports rates for GPT-6-Luna, DeepSeek V4.1 Flash and Gemini-3.1-Flash-Lite; how do stickiness rates depend on model scale within one family?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.39198",
+        "title": "Persistence of Bounded Rationality in Financial Markets: An Evolutionary Game-Theoretic Model",
+        "authors": [
+          "Cheng Zhang"
+        ],
+        "url": "https://arxiv.org/abs/2610.39198",
+        "one_sentence": "Models a financial market as a population of rational and boundedly rational trader types evolving under replicator dynamics based on relative fitness. Shows that under complementary interactions and moderate friction differences, a stable interior mix of both types persists indefinitely. Finds that lowering costs of disciplined (e.g. algorithmic) trading shifts composition toward rationality continuously but does not eliminate bounded rationality unless a cost-advantage threshold is exceeded.",
+        "nearest_anchor_id": "2509.01063",
+        "nearest_anchor_title": "An Economy of AI Agents",
+        "open_questions": [
+          "The model assumes two trader types with fitness that depends linearly on the other type's share and on frictions; what happens with three or more behavior types, such as momentum, value and market-making agents?",
+          "The model infers the interior equilibrium from replicator dynamics; does an agent-based market with LLM or algorithmic traders reproduce the predicted stable mix of rational and boundedly rational traders?",
+          "Comparative statics predict a cost-advantage threshold above which bounded rationality disappears; what is the empirical value of that threshold in real markets?",
+          "Does the antagonistic case, where the interior point is a tipping threshold between one-type regimes, produce observable precursors of regime flips in price or volume series?",
+          "The model treats AI-based trading only as a reduction in the cost of disciplined trading; how does composition evolve when AI agents also correlate their strategies and create monoculture?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.40562",
+        "title": "Nearly-Optimal Time-Sample Trade-off in Consensus Dynamics",
+        "authors": [
+          "Francesco d'Amore",
+          "Joel Rybicki",
+          "Nobutaka Shimizu",
+          "Takeharu Shiraga",
+          "Robin Vacus"
+        ],
+        "url": "https://arxiv.org/abs/2610.40562",
+        "one_sentence": "Analyzes synchronous h-Majority consensus dynamics, where each of n nodes samples h others per round and adopts the majority opinion. Proves a near-optimal bound on consensus time as a function of sample size h and initial opinion share, holding for any h≥3 and any starting configuration. Establishes a matching lower bound up to polylogarithmic factors for symmetric update rules.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "The consensus time bound covers every sample size h at or above 3, so what happens at h = 2?",
+          "The lower bound holds for update rules that treat all opinions symmetrically and pick either a sampled opinion or the node's current opinion, leaving asymmetric or memory-based rules open.",
+          "The analysis assumes nodes sample uniformly at random from all n nodes, so how do the time-sample trade-offs change on sparse or clustered interaction graphs?",
+          "Does the predicted dependence of consensus time on sample size hold when the nodes are LLM agents that aggregate sampled opinions by prompt rather than by a majority rule?",
+          "How does the trade-off degrade when some nodes report false opinions or never update?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.40230",
+        "title": "Who Says What: Strategic Communication in Networks",
+        "authors": [
+          "Anuj Bhowmik",
+          "Saptarshi P. Ghosh",
+          "Iman Kundu",
+          "Sandipan Saha"
+        ],
+        "url": "https://arxiv.org/abs/2610.40230",
+        "one_sentence": "Models a multiplayer communication game where privately informed agents report information through a social network while balancing their own and neighbors' preferences. Characterizes equilibrium actions as centrality-weighted combinations of bliss points and derives conditions for truthful, over-, or under-reporting based on network position. Shows that full information revelation can fail even under identical preferences, with transmission varying by network topology.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Does the degree-discounted Bonacich centrality prediction for equilibrium actions hold when agents are LLM agents rather than Bayesian players?",
+          "How does the truthful-versus-misreport pattern change on empirical network topologies beyond the star and complete networks analysed?",
+          "Do large populations of communicating agents converge to the unbiasedness Nash equilibrium when biases are learned rather than chosen in equilibrium?",
+          "Which observable aggregates of a network of communicating agents reveal whether information transmission is coarse or fully informative?",
+          "Does the model's prediction that network position drives misreporting match the behaviour of people communicating in real networks?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.40626",
+        "title": "Finding Competitive Equilibria in Online Marketplaces with Platform Fees, Taxes, and Subsidies",
+        "authors": [
+          "Taihei Oki",
+          "Ryosuke Sato"
+        ],
+        "url": "https://arxiv.org/abs/2610.40626",
+        "one_sentence": "Develops an ascending-price procedure for computing competitive equilibria in multi-unit trading networks with platform fees, taxes, and subsidies modeled as piecewise-linear transfers. Proves the procedure reaches the minimum equilibrium price vector in finitely many strongly-polynomial-time iterations under stated oracle and arithmetic models. Extends prior double-track auction frameworks to bidder- and good-specific transfer functions.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "How many iterations does the ascending procedure need on synthetic multi-unit trading networks of realistic size, and how does that count scale with the number of agents, goods and fee breakpoints?",
+          "Does the procedure still converge when valuations violate generalized full substitutes?",
+          "What happens to the computed minimum equilibrium price when autonomous agents report valuations strategically instead of truthfully?",
+          "Do real platform fee, tax and subsidy schedules in deployed online marketplaces fit the agent- and transaction-specific piecewise-linear transfer form the method assumes?",
+          "Can the submodular flow formulation be extended to multi-seller markets with both substitutes and complements, beyond the single-seller case?"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-10-28",
+    "counts": {
+      "fetched": 243,
+      "unseen": 243,
+      "screened": 200,
+      "relevant": 14,
+      "kept": 2,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2610.38155",
+        "title": "Floor It, Then Fill It: Simulating Creator Ecosystems for Fair Video-Content Recommendation Systems at Billion User Scale",
+        "authors": [
+          "Sohini Roychowdhury",
+          "Long Sha",
+          "Sunand Agarwal",
+          "Payal Kamboj",
+          "Shuyang Chen",
+          "Junlin Zhang",
+          "Scott Chen",
+          "Hui Zhang"
+        ],
+        "url": "https://arxiv.org/abs/2610.38155",
+        "one_sentence": "Builds a simulator of ~42K creators and coupled viewer interactions over 12 weeks to test fairness interventions in recommendation systems. A floor-protected view-allocation policy meets 90% of weekly view targets and grows small-creator reach ~33% per week, with analysis of the sim2real gap.",
+        "nearest_anchor_id": "2411.11581",
+        "nearest_anchor_title": "OASIS: Open Agent Social Interaction Simulations with One Million Agents",
+        "open_questions": [
+          "The simulator is calibrated against observed platform metrics, but the Sim2Real gap remains open: do the fairness gains of a floor-protected view-target policy hold in a live recommender deployment?",
+          "The creator population is clustered from real platform creator-level distributions; it is unclear whether equivalent simulators can be built from public data such as public channel-level statistics.",
+          "Only a budgeted multi-armed bandit formulation of view allocation is evaluated; other mechanisms for allocating views to small creators are untested.",
+          "Viewers are modeled as coupled interactions with creator state machines rather than as adaptive agents; how do results change when viewers respond strategically or when creators themselves are AI agents optimizing for the reserve lever?",
+          "The proposed validation protocols for deciding when simulation-derived fairness conclusions can be trusted are not themselves validated against held-out real outcomes.",
+          "The horizon is 12 weeks; long-run effects of a small-creator reserve on monoculture and distribution stability are unmeasured."
+        ]
+      },
+      {
+        "arxiv_id": "2610.38728",
+        "title": "From Grind to Grasp",
+        "authors": [
+          "Peter Sunehag"
+        ],
+        "url": "https://arxiv.org/abs/2610.38728",
+        "one_sentence": "Introduces a formalism ('grasp') comparing achievements across work and information budgets, applied to recursive self-improvement and collectives. Argues organizational maintenance work can generate emergent collective goals, including self-persistence, and cautions against letting agent societies gain coordination authority.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "Grasp is defined as performance across work budgets at a fixed information allowance, but the abstract gives no measurement procedure; how can grasp be estimated for a concrete agent or agent collective?",
+          "The claim that a collective can outperform its members yet require more total work than a single system with the combined resources is inferred from the formalism; does it hold in a measured multi-agent setup?",
+          "Organisational work in an agent collective is said to generate goals beyond assigned tasks, including maintaining the collective; how large is this share of total work, and does it grow with collective size?",
+          "The criterion for recursive self-improvement requires successors to make comparable further improvements with less work; does any current self-improvement pipeline satisfy it?",
+          "The formalism relates computational depth, work-bounded complexity and grasp; which formal relations between these quantities hold, and under what limits do they break?",
+          "Knowledge sharing and coordination across society are proposed as a route to faster progress even as comparable advances require increasing work; what empirical evidence supports this trade-off?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-10-27",
@@ -7112,59 +7291,6 @@
           "Can a simulated closed-loop agent-tutor population reproduce basin-like flow and metastable-like kinetics in the same order variables?",
           "Shuffled-order training reverses learned-plane flow and support-alignment randomisation reduces inward transport. Which properties of the interaction sequence carry the flow direction?",
           "Does the identified leading-order effective field predict the effect of changing the tutoring policy on the population state?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-08-30",
-    "counts": {
-      "fetched": 139,
-      "unseen": 139,
-      "screened": 139,
-      "relevant": 6,
-      "kept": 2,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2608.29535",
-        "title": "Integrating adaptive human behavior into epidemic models with large language models",
-        "authors": [
-          "Yicheng Mao",
-          "Haoyang Li",
-          "Rob Deardon",
-          "Hongru Du"
-        ],
-        "url": "https://arxiv.org/abs/2608.29535",
-        "one_sentence": "Couples LLM-inferred behavioral responses with mechanistic epidemic models to generate age-structured contact matrices. Tests the framework (GABLE) on COVID-19 in France, comparing forecasts against mobility-driven matrices. Also evaluates prospective policy scenarios by projecting behavioral and epidemic responses to candidate interventions.",
-        "nearest_anchor_id": "2409.10568",
-        "nearest_anchor_title": "On the limits of agency in agent-based models",
-        "open_questions": [
-          "GABLE was applied to COVID-19 in France only; does an LLM behavioral layer reproduce contact structures in other countries and other epidemics?",
-          "How much of the forecasting gain comes from the LLM's own knowledge of COVID-19 in France rather than from the behavioral mechanism, given the pandemic falls inside training data?",
-          "Do different LLMs produce the same contact matrices, and does monoculture across models narrow the range of projected epidemic outcomes?",
-          "Does the LLM behavioral layer reproduce heterogeneity across subpopulations, or does it collapse to a single average behavioral response?",
-          "How accurate are the prospective policy projections when compared against outcomes of policies not yet implemented at prompt time?",
-          "How do LLM-generated contact matrices compare against survey-measured contact matrices such as CoMix, rather than against mobility-derived matrices?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.29597",
-        "title": "Credibility in school choice",
-        "authors": [
-          "Camilo J. Sirguiado",
-          "Jiarui Xie"
-        ],
-        "url": "https://arxiv.org/abs/2608.29597",
-        "one_sentence": "Defines credibility of a school-choice mechanism as immunity to undetected deviation by the designer. Shows deferred acceptance is credible only when students observe enough of the assignment, and ranks mechanisms by credibility. Finds deferred acceptance's ranking against top trading cycles and efficiency-adjusted deferred acceptance depends on how much of the assignment students observe.",
-        "nearest_anchor_id": "2502.14143",
-        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
-        "open_questions": [
-          "Do the credibility rankings of school choice mechanisms hold when participants are AI agents that report on behalf of students?",
-          "How much of the assignment must students observe before deferred acceptance becomes credible in practice, and can that threshold be estimated from real assignment disclosures?",
-          "Can students detect designer deviations from an announced mechanism by pooling their partial observations of the assignment?",
-          "What are the welfare costs of choosing a more credible mechanism over a less credible but more efficient one?"
         ]
       }
     ]
