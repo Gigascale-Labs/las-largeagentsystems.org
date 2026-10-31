@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-10-30",
+    "counts": {
+      "fetched": 0,
+      "unseen": 0,
+      "screened": 0,
+      "relevant": 0,
+      "kept": 0,
+      "anchors": 20
+    },
+    "papers": []
+  },
+  {
     "date": "2026-10-29",
     "counts": {
       "fetched": 339,
@@ -7187,110 +7199,6 @@
           "When does AI act as a substitute for labour and when as a complement, at the level of occupations and tasks?",
           "Which of the proposed policy measures for distributing AI gains actually change distributional outcomes, and by how much?",
           "Does treating AI as economic infrastructure rather than as capital or synthetic labour change the predictions of a growth model?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-08-31",
-    "counts": {
-      "fetched": 267,
-      "unseen": 267,
-      "screened": 200,
-      "relevant": 12,
-      "kept": 4,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2608.30466",
-        "title": "CHASE: How Content Ecosystems Are Reshaped When Ranking Is the Only Target",
-        "authors": [
-          "Qianwen Gao",
-          "Zichang Su",
-          "Yiwen Hou",
-          "Arlen Kumar",
-          "Leanid Palkhouski"
-        ],
-        "url": "https://arxiv.org/abs/2608.30466",
-        "one_sentence": "Introduces CHASE, a simulation framework where content creators repeatedly rewrite documents to exploit an LLM ranking signal over 20 rounds. Measures declining alignment between ranking-favored content and independently judged quality across six domains (mean Spearman rho change -0.068). Validates the ranking proxy against citation rates in grounded LLM responses (AUC 0.853).",
-        "nearest_anchor_id": "2602.16136",
-        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
-        "open_questions": [
-          "Ranking serves as a proxy for source visibility, validated against citations in grounded generated responses with a rank-citation AUC of 0.853 plus or minus 0.093 across six domains; does the proxy hold for other retrieval stacks and citation behaviours?",
-          "Quality-ranking alignment falls in all six domains over 20 rounds of adaptation, but the ranking signal stays fixed; what happens when the ranker updates in response to creator adaptation?",
-          "Ecosystem dynamics depend on the domain; which domain properties predict the size of the alignment loss?",
-          "The simulation assumes every creator adapts to the ranking signal; how do outcomes change when only a fraction of creators optimize and the rest do not?",
-          "Which interventions on the ranking signal limit content homogenization under repeated creator adaptation?",
-          "Do human content creators adapt to LLM ranking signals in the way the simulated creators do?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.30522",
-        "title": "Tariff Threats, Macroeconomic Expectations, and Policy Communication Strategies: Experiments Based on a Multi-Agent System",
-        "authors": [
-          "Jianhao Lin",
-          "Lexuan Sun",
-          "Yixin Yan"
-        ],
-        "url": "https://arxiv.org/abs/2608.30522",
-        "one_sentence": "Builds persistent LLM agents calibrated on 300 Michigan Survey households, exposed to simulated social-media messages over months. Tests how message features (immediacy, rate salience, narrative, sender identity) shape simulated inflation/unemployment expectations and their dispersion. Runs a second experiment on whether central-bank communication coordinates beliefs.",
-        "nearest_anchor_id": "2502.08691",
-        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
-        "open_questions": [
-          "Do the simulated belief responses to tariff communication match human survey responses outside the Liberation Day announcement period?",
-          "How does the number of agents affect the reproduced distributional and demographic patterns, given the fixed panel of 300 households?",
-          "Which message features drive belief dispersion when they vary independently, rather than jointly as in the reported experiments?",
-          "Do the calibrated agents reproduce the demographic patterns they fail to match, and which subgroups do they miss?",
-          "Does the central-bank coordination effect on beliefs persist when agents also observe conflicting senders on social media?",
-          "How sensitive are the results to the choice of underlying language model?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.30311",
-        "title": "One AI Signal, Many Human Judgments: A Bayesian Cascade Analysis of AI-based Credibility Indicators in Online Information Spread",
-        "authors": [
-          "Zhuoran Lu",
-          "Weilong Wang",
-          "Yangyang Yu",
-          "Xinru Wang",
-          "Zhuoyan Li",
-          "Zhiwei Liu",
-          "Sophia Ananiadou"
-        ],
-        "url": "https://arxiv.org/abs/2608.30311",
-        "one_sentence": "Extends the Bayesian cascade model of social learning to include an AI credibility indicator as a shared public signal. Identifies a preservation-correction trade-off where reliance on AI can lock in either correct or incorrect crowd judgments. Calibrates the model with human-subject news-veracity data and runs simulations showing over-reliance on a weak AI harms crowd informativeness, while diversifying AI signals helps.",
-        "nearest_anchor_id": "2605.24413",
-        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
-        "open_questions": [
-          "How well does the extended Bayesian cascade model predict cascade outcomes in live social media settings, rather than in calibration on news veracity judgment data?",
-          "Which schemes for diversifying AI credibility signals across users keep a crowd informative, and how do they compare on preservation versus correction of errors?",
-          "How does the preservation-correction trade-off change when agents in the cascade are LLM agents rather than Bayesian updaters with fixed weights?",
-          "What determines the spread in individual reliance on AI, from discounting the indicator to cascading on it, and can that heterogeneity be estimated without human-subject experiments?",
-          "How do network topology and the visible length of public history alter the Gateway condition threshold at which private impressions stop entering the cascade?"
-        ]
-      },
-      {
-        "arxiv_id": "2608.30946",
-        "title": "Reproducible macroscopic dynamics in a closed-loop human-AI learning system",
-        "authors": [
-          "Minlin Wu",
-          "Xu Fang",
-          "Yicheng Zhang",
-          "Chenyu Zhou",
-          "Zhiyi Liu"
-        ],
-        "url": "https://arxiv.org/abs/2608.30946",
-        "one_sentence": "Analyzes 297,915 learners' adaptive-tutoring histories to define semantic order variables and test them across disjoint cohorts. Identifies reproducible basin-like flow and metastable-like kinetics in aggregate learner state. Recovers population drift with a four-term mechanism (r=0.946) and shows self-supervised models learn similar leading-order dynamics.",
-        "nearest_anchor_id": "2604.15236",
-        "nearest_anchor_title": "Agentic Microphysics: A Manifesto for Generative AI Safety",
-        "open_questions": [
-          "Null-referenced corrections retain only partial-amplitude excess-field structure. What method calibrates the excess-field amplitude fully?",
-          "Do the semantic order variables and the basin-like flow reproduce on closed-loop human-AI systems other than adaptive tutoring, such as recommender or assistant logs?",
-          "Two models share leading population drift but keep model-specific residual directions. What causes the residual directions to differ?",
-          "Can a simulated closed-loop agent-tutor population reproduce basin-like flow and metastable-like kinetics in the same order variables?",
-          "Shuffled-order training reverses learned-plane flow and support-alignment randomisation reduces inward transport. Which properties of the interaction sequence carry the flow direction?",
-          "Does the identified leading-order effective field predict the effect of changing the tutoring policy on the population state?"
         ]
       }
     ]
