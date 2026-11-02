@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-11-01",
+    "counts": {
+      "fetched": 0,
+      "unseen": 0,
+      "screened": 0,
+      "relevant": 0,
+      "kept": 0,
+      "anchors": 20
+    },
+    "papers": []
+  },
+  {
     "date": "2026-10-31",
     "counts": {
       "fetched": 0,
@@ -14,14 +26,196 @@
   {
     "date": "2026-10-30",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 266,
+      "unseen": 266,
+      "screened": 200,
+      "relevant": 10,
+      "kept": 9,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2610.41866",
+        "title": "AI evaluators favor job applications written by certain AI models, independent of candidate quality",
+        "authors": [
+          "Nicolò Pagan",
+          "Michael Andreas Ebling",
+          "Stefania Ionescu",
+          "Anikó Hannák"
+        ],
+        "url": "https://arxiv.org/abs/2610.41866",
+        "one_sentence": "Pairs eleven LLM writer agents with nine evaluator agents across ten jobs and fifty candidates to test if model choice affects hiring outcomes. Finds a consistent ranking of writer models by evaluator acceptance, with locally hosted models disadvantaged and evaluators favoring their own outputs. Reports that in the most adverse pairing, about 1.8 of 25 qualified candidates are filtered out due to model mismatch, tracing this to stylistic cue preferences.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Does the generative preference hierarchy hold when the applicant pool mixes human-written and LLM-written cover letters?",
+          "Do style-normalising interventions, such as rewriting all applications with one model before screening, remove the penalty against locally hosted writer models?",
+          "How stable is the writer ranking as model versions change over months?",
+          "What happens to the labour market when applicants learn which writer model evaluators favour and shift their model choice?",
+          "Do the measured filtering effects translate into hiring outcomes in deployed employer screening systems?",
+          "Does the same stylistic-cue mechanism drive evaluator bias in other screening tasks, such as grant review or admissions?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.41132",
+        "title": "When Disclosure Is Compulsory: Evaluating Ride-Hailing Rebalancing Policies with Self-Interested LLM Driver Agents",
+        "authors": [
+          "Xinyu Wang",
+          "Andres Fielbaum"
+        ],
+        "url": "https://arxiv.org/abs/2610.41132",
+        "one_sentence": "Compares reactive and anticipatory ride-hailing rebalancing policies under a disclosure mandate, with each driver modeled as a self-interested LLM agent. Tests two LLMs in a three-zone model and in Manhattan, measuring effects on relocation offer decline rates, platform profit, driver income, and service rate. Finds disclosure changes which policy performs best, with effects differing between a small model and the Manhattan simulation.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Disclosure is tested at one level of detail, the directive's level; how do platform profit, driver income and service rate change as the disclosed rules become more or less detailed?",
+          "The study uses two LLMs, Claude Haiku 5.5 and Jev; do other models with different reasoning or compliance behaviour reproduce the same decline rates and profit gaps?",
+          "Only reactive and anticipatory rebalancing policies are compared; which rebalancing or incentive designs stay robust when their rules must be public and drivers delegate to LLMs?",
+          "Drivers are modelled as independent self-interested agents; what happens when LLM drivers share the disclosed rules and coordinate or collude on declining relocation offers?",
+          "Results come from a three-zone model and a Manhattan model; do they hold in cities with different demand geography and supply density?",
+          "The agents are LLMs, not people; how do human drivers who read the same disclosed rules, with or without an LLM assistant, compare to the simulated decline and income figures?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.41294",
+        "title": "The Double Diagonal Estimator: Reducing Bias in Two-Sided Marketplace Experiments",
+        "authors": [
+          "Saanvi Chawla",
+          "Vasilis Syrgkanis"
+        ],
+        "url": "https://arxiv.org/abs/2610.41294",
+        "one_sentence": "Proposes the Double Diagonal estimator for treatment effect estimation in two-sided marketplace experiments with randomized supply and demand. Proves under a mean-field market model that its bias is smaller than a standard estimator below a threshold of the outside-option parameter. Shows the two estimators have opposite bias directions and reports lowest bias across varied numerical experiments.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "The bias comparison holds only below a critical threshold of the outside-option parameter, where the outside option is at most twice as attractive as platform options. Which estimator is preferable above that threshold?",
+          "The analysis compares bias but not variance. What is the mean-squared-error ranking of the Double Diagonal and naive two-sided randomization estimators at realistic sample sizes?",
+          "The theory assumes a mean-field market model. Does the bias ordering survive when matching is local on a network rather than mean-field?",
+          "Validation uses numerical experiments only. How does the Double Diagonal estimator perform on experiments run in a deployed two-sided marketplace?",
+          "Marketplace participants may be autonomous agents that adapt to treatment. Does interference-robust estimation still recover treatment effects when buyers and sellers are learning agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.42105",
+        "title": "Strategic Tanking in Stable Matching Markets",
+        "authors": [
+          "James P. Bailey"
+        ],
+        "url": "https://arxiv.org/abs/2610.42105",
+        "one_sentence": "Introduces 'strategic tanking', where an agent makes itself less attractive to some partners to improve its assignment in stable matching. Shows cutoff tanking reproduces the effect of truncating one's own preference list on the stable set. Shows arbitrary tanking can reach equilibria outside the sincere stable set under proposer-deferred acceptance.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Can tanking be detected from observed match outcomes or application logs alone?",
+          "How often do agents find profitable tanking strategies when they learn by repeated play rather than by computing an equilibrium?",
+          "Which matching mechanisms limit the gain from arbitrary tanking, given that proposer-deferred acceptance admits tanking equilibria outside the sincere stable set?",
+          "Do LLM agents placed in a matching market discover tanking without being told about it?",
+          "What welfare effects does tanking produce in real matching markets such as school choice or residency matching?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.42004",
+        "title": "TradeWar: A Benchmark for Execution-Grounded Trade Negotiation with Adaptive LLM Agents",
+        "authors": [
+          "Xiangyu Kong",
+          "Ruirui Yang",
+          "Xia Hou"
+        ],
+        "url": "https://arxiv.org/abs/2610.42004",
+        "one_sentence": "Introduces TradeWar, a benchmark translating LLM trade negotiations into tariff policies evaluated via an Economic Health Index. Proposes TACTIC, an agent that adapts across episodes using memory of settlement outcomes without weight updates. Reports TACTIC improves final EHI from 58.2 to 73.2 across 20 episodes versus a non-adaptive ablation at 65.2.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "TradeWar scores negotiation outcomes with an Economic Health Index, but the abstract does not report whether agents collude to raise tariffs against non-participants or form blocs. Do multi-country LLM negotiators form stable cartels across repeated episodes?",
+          "TACTIC adapts across 20 episodes with three seeds. Does the advantage hold over longer horizons and more seeds, and does it saturate?",
+          "The settlement layer enforces capacity and network constraints with fixed parameters. How sensitive are the reported EHI gaps to the choice of economic model and index definition?",
+          "TACTIC degrades less than PromptLLM and MemoryLLM under technology-controls and energy-crisis shocks. Which shocks cause cascading breakdown of agreements across the whole country network?",
+          "The benchmark uses LLM agents only. How do outcomes change when human negotiators take part alongside LLM agents?",
+          "Results come from unnamed base LLMs. Do adaptation gains persist across model families and sizes, or do agents of one family converge on a shared negotiation strategy?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.41691",
+        "title": "Does Reasoning Make Language Models Agree?",
+        "authors": [
+          "Mila Gorecki",
+          "Moritz Hardt"
+        ],
+        "url": "https://arxiv.org/abs/2610.41691",
+        "one_sentence": "Compares agreement between language models under controlled changes in reasoning effort versus observed reasoning length, across nine models and three classification tasks. Finds enabling reasoning increases cross-model agreement on the same individuals, while individuals eliciting longer reasoning traces receive less consistent predictions. Both patterns hold after accounting for accuracy differences.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "Does the agreement increase from enabling reasoning extend beyond the three classification tasks tested, for example to open-ended or sequential decision tasks?",
+          "Nine models from two developers show the effect; does it hold across a wider set of developers and open-weight models?",
+          "How does correlated error between reasoning models change the aggregate outcome when many such models make decisions about the same population?",
+          "What makes an individual elicit longer reasoning traces, and does that property explain the lower cross-model consistency those individuals receive?",
+          "Does the link between reasoning length and disagreement persist in deployed decision pipelines where models act on real users?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.41103",
+        "title": "Optimal climate policy in incomplete electricity markets",
+        "authors": [
+          "Emil Dimanchev",
+          "Steven A. Gabriel",
+          "Stein-Erik Fleten",
+          "Filippo Pecci",
+          "Magnus Korpas"
+        ],
+        "url": "https://arxiv.org/abs/2610.41103",
+        "one_sentence": "Builds a game-theoretic model of climate policy where electricity market agents react to subsidies and carbon prices under incomplete long-term contracting. Finds in experiments that market incompleteness shifts investment toward gas and that subsidies and carbon prices provide an insurance co-benefit by countering this shift. Reports carbon pricing's efficiency advantage over subsidies shrinks under incompleteness and can reverse in some cases.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "The model runs only illustrative experiments, so how do the optimal subsidy and carbon price levels change when the model is calibrated to a real power system?",
+          "The insurance co-benefit depends on assumed risk aversion of investors and consumers, so how sensitive are the optimal policy levels to this parameter?",
+          "Only subsidies and carbon prices are compared, so how do other instruments such as capacity markets, contracts for difference or public long-term contracting rank once contracting is incomplete?",
+          "Gas price and demand are the only uncertain variables, so does the result hold when uncertainty also covers technology cost, hydrology or transmission availability?",
+          "The model treats market agents as reacting to a fixed policy, so what happens when agents learn and update their expectations over repeated policy periods?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.41912",
+        "title": "Decentralized Dynamic Stable Matching",
+        "authors": [
+          "Jing Chen",
+          "Mengtong Gao",
+          "Zhenhe Zhang"
+        ],
+        "url": "https://arxiv.org/abs/2610.41912",
+        "one_sentence": "Studies decentralized computation of player-optimal stable matching under unannounced arrivals and departures without a common clock or communication. Gives a deterministic protocol with mismatch cost O(t*+K^2 log T) for known preferences, improving a prior bound. Extends to unknown preferences learned from observation, with a protocol achieving cost O(t*+K^4 Δmin^-2 log T) and a matching lower bound.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "The protocol for known preferences is optimal only up to a K^2 factor among sublinear-cost protocols; can the gap in the number of arms K be closed?",
+          "How do the known-preference and learning protocols behave empirically under arrival and departure patterns other than worst case?",
+          "Players are assumed to follow the protocol exactly; what happens when some players deviate strategically or misreport proposals?",
+          "Mismatch cost counts only rounds where the realized matching differs from the current player-optimal stable matching; how does the protocol perform under other welfare measures such as per-player regret or inequality across players?",
+          "Can the decentralized learning protocol be run with LLM agents that infer preferences from interaction outcomes instead of bandit-style estimators?"
+        ]
+      },
+      {
+        "arxiv_id": "2610.41239",
+        "title": "Understanding LLM-Based Bargaining of Driving Agents in Mixed-Autonomy Traffic",
+        "authors": [
+          "Lingxiao Zhou",
+          "Di Chen",
+          "Jia Li"
+        ],
+        "url": "https://arxiv.org/abs/2610.41239",
+        "one_sentence": "Builds an LLM-based framework for bargaining over shared road space between autonomous and human-driven vehicle agents. Varies traffic density, objectives, and domain knowledge, introducing a taxonomy of bidding actions and communicative attitudes. Finds distinct interaction patterns in agreement versus breakdown trials and differences between private and public communication.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Do the bargaining patterns observed with one LLM hold across other LLMs and prompt formulations?",
+          "Do LLM-based bargaining outcomes match how human drivers actually negotiate shared road space?",
+          "How does the gap between private and public communicative attitudes change the aggregate traffic outcome, such as throughput or deadlock rate?",
+          "Does the bargaining framework scale beyond the tested agent counts to population-level mixed-autonomy traffic with many simultaneous negotiations?",
+          "Which intervention on the bargaining protocol reduces conflict escalation and raises agreement rates?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-10-29",
@@ -7040,86 +7234,6 @@
           "Multi-agent decomposition adds mechanism rather than accuracy. Does adding more actors change aggregate policy-outcome predictions, or only the stated reasoning?",
           "Personas are reconstructed from dated records rather than prompted as archetypes. Does evidence-grounded persona construction reduce the herding and monoculture seen in archetype-prompted agent populations?",
           "The benchmark scores prediction of actor actions and downstream impacts. Can validated policy simulations be used to steer real policy design, and what error rate makes that use unsafe?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-09-02",
-    "counts": {
-      "fetched": 205,
-      "unseen": 205,
-      "screened": 200,
-      "relevant": 10,
-      "kept": 3,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2609.02580",
-        "title": "Competitive Market Behavior of LLMs",
-        "authors": [
-          "Pawel Struski",
-          "Jakub Swistak",
-          "Inez Okulska",
-          "Przemyslaw Biecek"
-        ],
-        "url": "https://arxiv.org/abs/2609.02580",
-        "one_sentence": "Replicates human double-auction market experiments with LLM agents instead of humans. Measures convergence to equilibrium and allocation efficiency across model families. Analyzes chain-of-thought traces linking trade decisions to shifts from strategy to urgency.",
-        "nearest_anchor_id": "2510.22422",
-        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
-        "open_questions": [
-          "Double auctions with LLM agents converge slower or not at all towards equilibrium, but which mechanism variants restore convergence remains untested.",
-          "Trading behaviour differs across model families and market roles, but the cause of this heterogeneity is unidentified.",
-          "Mixed markets of humans and LLM agents are untested, so it is unknown whether human traders correct or amplify the inefficiency.",
-          "Chain-of-Thought traces link trade execution to a shift from strategic language to urgency language, but whether this link is causal is unresolved.",
-          "Results come from a double auction, so it is open whether LLM agents also fail to reach efficient allocations in other mechanisms such as posted-price or call markets."
-        ]
-      },
-      {
-        "arxiv_id": "2609.02620",
-        "title": "Collective creativity in hybrid societies",
-        "authors": [
-          "Mason Youngblood",
-          "Katie Mudd",
-          "Manuel Anglada-Tort",
-          "Cameron Jones",
-          "Elena Miu",
-          "Diana Omigie",
-          "Margaret Schedel"
-        ],
-        "url": "https://arxiv.org/abs/2609.02620",
-        "one_sentence": "Argues creativity under generative AI should be measured as a property of hybrid human-AI populations, separating novelty from diversity. States AI-assisted ideation raises individual novelty while narrowing aggregate diversity. Claims composition of mixed human-AI groups determines whether individual gains accumulate without eroding collective diversity.",
-        "nearest_anchor_id": "2409.02822",
-        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
-        "open_questions": [
-          "Which mixtures of humans and generative models let novelty gains accumulate without reducing population-level diversity?",
-          "How does the network structure connecting human and model agents change the diversity of cultural artifacts a hybrid collective produces?",
-          "How do human and model search strategies differ in ways that make mixed groups out-diversify single-type groups?",
-          "Do machine-discovered solutions persist in human culture over long periods after they enter it?",
-          "Which measures separate novelty of single artifacts from diversity of artifact populations in observed cultural output?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.02357",
-        "title": "Strategic Centrality and the Emergence of Core-Periphery Networks",
-        "authors": [
-          "Itai Arieli",
-          "João Correia-da-Silva",
-          "Wade Hann-Caruthers",
-          "Anna Rubinchik"
-        ],
-        "url": "https://arxiv.org/abs/2609.02357",
-        "one_sentence": "Studies a network-formation game where agents sponsor links to maximize weighted centrality under linear cost. Proves every Nash equilibrium network is core-periphery in structure. Shows welfare-maximizing networks are always empty or complete.",
-        "nearest_anchor_id": "2605.13860",
-        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
-        "open_questions": [
-          "Do learning agents that adjust links over time converge to the core-periphery equilibria, and which core size do they select?",
-          "Does the core-periphery result survive when link costs are convex or heterogeneous across agents instead of linear and uniform?",
-          "The paper assumes weights on walk counts are positive and weakly decreasing; what equilibrium structures appear when weights are non-monotone?",
-          "The welfare-maximizing network is empty or complete while equilibria are core-periphery; which transfers or link subsidies close this gap?",
-          "Do observed online social and agent-interaction networks show the exact core-periphery pattern predicted here, in which every node links to every core node and to nothing else?",
-          "Do LLM agents that pursue centrality in a link-formation task reproduce the predicted concentration of links on a dense subset?"
         ]
       }
     ]
