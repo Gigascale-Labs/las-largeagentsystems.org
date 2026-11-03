@@ -1,27 +1,479 @@
 [
   {
-    "date": "2026-11-01",
+    "date": "2026-11-02",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 391,
+      "unseen": 391,
+      "screened": 200,
+      "relevant": 21,
+      "kept": 9,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2611.02910",
+        "title": "The Market for AI-Assisted Signaling",
+        "authors": [
+          "Federico Vaccari"
+        ],
+        "url": "https://arxiv.org/abs/2611.02910",
+        "one_sentence": "Models a market where AI providers choose assistance technologies and prices for signaling ability, with adoption unobserved. Shows profitable assistance can lower welfare even when ability remains fully revealed, and easier imitation can raise signaling costs. Analyzes how competition and verification capacity affect information revealed in the market.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "The model assumes individual adoption of AI assistance is unobserved; what changes when adoption is partly observable, for example through disclosure rules or detection tools?",
+          "Do real markets for AI writing and coding assistance show the predicted pattern, where providers improve tools for lower-ability users to raise purchases by higher-ability users?",
+          "How do the welfare results hold when many senders and several providers interact repeatedly instead of in a single static market?",
+          "Greater verification capacity can reduce information by changing which customers providers serve; which verification designs avoid this reversal?",
+          "What happens to signaling equilibria when receivers also use AI assistance to evaluate output?",
+          "Do the predicted increases in required output appear in settings such as hiring tests or academic submissions after AI assistance becomes available?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.02908",
+        "title": "User Attributes and Political Ideology Shape LLM Receptiveness in Online Political Debates",
+        "authors": [
+          "Akram Elbouanani",
+          "Yousra Taleb",
+          "Gianluca Demartini",
+          "Adrian Popescu"
+        ],
+        "url": "https://arxiv.org/abs/2611.02908",
+        "one_sentence": "Reconstructs 5,376 Debate.org debates as LLM conversations and runs 150,000 controlled multi-turn exchanges varying user political orientation. Finds LLMs are systematically more receptive to left-leaning than right-leaning users, persisting across stance and repeated interaction. Shows fine-tuning on different political corpora can largely erase or reverse this asymmetry.",
+        "nearest_anchor_id": "2605.24413",
+        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
+        "open_questions": [
+          "Reconstructed Debate.org debates drive the measurement, so it stays open whether the same receptiveness asymmetry appears in live platform discussions where LLMs are invoked by real users.",
+          "Fine-tuning on different political corpora can erase or reverse the asymmetry, but the amount and type of corpus needed to shift it is unmeasured.",
+          "The study measures receptiveness in pairwise and competing-user conversations, leaving open what happens to opinion distributions when many LLM participants and many users interact in one discussion network.",
+          "Receptiveness is measured, not its effect on users, so whether asymmetric validation changes human argument choices or stances stays unknown.",
+          "Repeated interaction increases receptiveness, and the limit of this drift over long conversation horizons is untested."
+        ]
+      },
+      {
+        "arxiv_id": "2611.03240",
+        "title": "Susceptibility optimization for wisdom of crowds: A social power reformulation and realization framework",
+        "authors": [
+          "Ye Tian",
+          "Anzhi Sheng",
+          "Angela Fontan",
+          "Long Wang",
+          "Karl H. Johansson"
+        ],
+        "url": "https://arxiv.org/abs/2611.03240",
+        "one_sentence": "Formulates susceptibility optimization under the Friedkin-Johnsen model to minimize collective estimation bias via social power. Decomposes the nonconvex problem into social-power reformulation and realization stages with closed-form solutions. Provides a distributed algorithm with linear communication complexity for collective intelligence.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "The optimization assumes the initial biases and the influence network are known. How well does the method perform when biases and network weights must be estimated from observed opinion trajectories?",
+          "Closed-form optimal susceptibilities exist only when realizability conditions hold. What happens to collective bias when realizability fails and only approximate social power is attainable?",
+          "The analysis treats susceptibilities as design variables set by a planner. Do agents that strategically choose their own susceptibility reach the bias-minimizing social power?",
+          "The model represents each agent by a scalar estimate and a fixed susceptibility. Do populations of LLM agents in a social network show susceptibility and social power that match the Friedkin-Johnsen predictions?",
+          "The results hold for a static influence network. How does the optimal susceptibility assignment change when the network rewires over time?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.02539",
+        "title": "Scientific Liquidity Agents: An Agent-Based Model of Knowledge Arbitrage in Scientific Communities",
+        "authors": [
+          "Koutian Wu",
+          "You Liu",
+          "Yue Liu",
+          "Zhiping Li",
+          "Ergan Shang"
+        ],
+        "url": "https://arxiv.org/abs/2611.02539",
+        "one_sentence": "Introduces an agent-based model (SLA) of knowledge arbitrage among specialist and intermediary researcher agents. Simulations with 10 and 18 agents produce 68 and 274 papers, tracking network connectivity and knowledge-transfer bottlenecks. Finds paper production outpaces replication, locating the bottleneck in verification.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "Do the reported patterns hold at larger agent counts than 10 and 18?",
+          "Why does no recorded replication succeed, and which verification rules change that outcome?",
+          "Which link definition should define community structure when similarity, contact, and coauthorship edges give different counts?",
+          "Do simulated knowledge liquidity measures match citation and coauthorship patterns in real scientific corpora?",
+          "How much of the connected community structure depends on epistemic arbitrageurs being present as a distinct role?",
+          "Do large language model agents reproduce the belief-desire-intention behaviour the model assumes for specialists and arbitrageurs?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.02407",
+        "title": "Networked Synthetic Social Engineering on the Web",
+        "authors": [
+          "Bryan C. Boots"
+        ],
+        "url": "https://arxiv.org/abs/2611.02407",
+        "one_sentence": "Builds a testbed (ASE-EC) to study how unsupported claims propagate across AI publishers and whether corrections reduce downstream reliance. Measures verification and violation rates across 1,080 research units using Qwen3-4B. Finds scope revalidation adds no benefit, but targeted corrections of reused reports reduce invalid decisions.",
+        "nearest_anchor_id": "2605.24413",
+        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
+        "open_questions": [
+          "Results come from Qwen3-4B on two briefing tasks, so it stays open whether larger or mixed model populations show the same correction and authorization failures.",
+          "Scope revalidation added no demonstrated protection in the reported runs, and the mechanism behind that null result is unexplained.",
+          "How does unsupported-source reuse spread as the number of dependent publishers and the depth of the citation chain grow beyond the tested configuration?",
+          "Targeting corrections at reused reports cut residual invalid decisions from 14.4% to 8.1% in the testbed, and it is untested whether this holds in a deployed web service network with real publishers.",
+          "All unapproved requests were blocked by an external gateway, so the failure rate without such a gateway, or with a partially trusted one, remains unmeasured.",
+          "Do human recipients in a mixed human-and-agent briefing chain propagate unsupported sources at the rates observed for agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.03409",
+        "title": "On inverse aggregate network assignment games",
+        "authors": [
+          "Joseph Y. J. Chow"
+        ],
+        "url": "https://arxiv.org/abs/2611.03409",
+        "one_sentence": "Extends aggregate assignment games to networked, capacitated two-sided mobility markets with an inverse-optimization estimator. Calibrates the model on a Long Island Rail Road network with 897 nodes and 8,320 directed links. Recovers oracle link flows with R^2 above 96% and social-optimal surplus within 6% using 10-50% link sampling.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "The inverse model recovers rationing prices and surplus from sampled link flows in a transit network with human travelers, but no test includes autonomous agent operators or travelers; how does the estimator behave when a share of the operators are algorithmic price-setters?",
+          "Deadweight loss is overestimated by 10-17% under the misspecified inverse model; which model misspecifications drive that bias?",
+          "Tests use 10-50% link sampling on one rail network; how does fit degrade on multi-operator networks with several competing operators and overlapping routes?",
+          "The framework estimates operator supply scales by group; can the same inverse optimization detect collusive pricing between operators from aggregate link flows alone?",
+          "Calibration uses 2026 fares and timetabled seat supply as inputs; how sensitive are the recovered rationing prices to errors in the assumed supply data?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.02504",
+        "title": "Nought Venture, Nought Have: Risk Taking and Efficient Investment in Matching Markets",
+        "authors": [
+          "Kyungmin Kim",
+          "R. Vijay Krishna",
+          "Dmitry Ryvkin"
+        ],
+        "url": "https://arxiv.org/abs/2611.02504",
+        "one_sentence": "Studies a two-sided assortative matching market where agents choose investment and risk-taking to attract partners. Proves finite markets have a unique semi-symmetric equilibrium with below-frontier investment. Shows this inefficiency vanishes as the economy grows with population ratio fixed, characterizing the convergence rate.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the efficiency result hold when the population ratio changes as the market grows, instead of being held fixed?",
+          "How do matching outcomes change when agents learn investment and risk-taking choices instead of playing the equilibrium?",
+          "Which of the continuum economy's many equilibria do LLM agents select when they choose investment and risk in a two-sided matching market?",
+          "What are the convergence rates and equilibrium structures when agents choose correlated rather than independent quality distributions?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.02647",
+        "title": "Public salience mobilizes nationwide responses to violence against women",
+        "authors": [
+          "Augusto Cerqua",
+          "Marco Letta",
+          "Costanza Giannantoni",
+          "Gabriele Pinto"
+        ],
+        "url": "https://arxiv.org/abs/2611.02647",
+        "one_sentence": "Uses case-level Italian femicide data from 2017-2024 to study nationwide mobilization effects of highly salient cases. Finds salient intimate-partner femicides increase help-seeking and police reporting nationwide without raising subsequent femicides. Shows mobilization depends on salience intensity, perpetrator relationship, and gendered nature of the violence, not generic crime salience.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "How long do the increases in help-seeking and police reporting last after a salient intimate partner femicide?",
+          "Which media channels carry salience, and can a salience index built from news volume and search interest predict the size of the mobilization response?",
+          "Does salience-driven mobilization appear outside Italy, in countries with different media systems and reporting institutions?",
+          "Does the absence of a copycat effect hold for non-lethal violence, which the study measures only through police reports?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.03137",
+        "title": "Dynamic Coalition Formation Under Capacity Constraints: A Regime-Switching Value-Investing Game",
+        "authors": [
+          "Rosario Patanè"
+        ],
+        "url": "https://arxiv.org/abs/2611.03137",
+        "one_sentence": "Develops a two-stage coalitional game for daily coalition formation among a network operator and service providers under capacity limits. Uses a probabilistic audit mechanism for truthfulness and computes Shapley allocations under a Geometric Random Walk demand model. Simulations over five service classes and three years show 12.4% gain over static grand-coalition membership.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "The admission rule can underperform static grand-coalition membership when capacity is abundant, and the capacity threshold where this reversal happens is not identified.",
+          "The results hold the Network Operator fixed, so it is open what happens when the operator also chooses investment strategically.",
+          "The gain depends on the order in which Service Providers update, and no order-independent mechanism is given.",
+          "Mandatory reservations can produce negative Shapley payoffs, and no pricing or side-payment scheme is shown to remove them.",
+          "Demand follows a Geometric Random Walk, and the robustness of the admission rule to correlated or regime-switching demand across providers stays untested.",
+          "The probabilistic audit gives truthfulness only under verified settlement and enforceable penalties, and behaviour under weak or absent enforcement is unknown."
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-01",
+    "counts": {
+      "fetched": 272,
+      "unseen": 272,
+      "screened": 200,
+      "relevant": 22,
+      "kept": 9,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2611.01799",
+        "title": "Learning AI Agents, Market Makers, and Stress in Automated Markets",
+        "authors": [
+          "Irene Aldridge"
+        ],
+        "url": "https://arxiv.org/abs/2611.01799",
+        "one_sentence": "Models trader archetypes as AI agents with distinct reward functions interacting through a constant-product automated market maker. Shows herd-dominated and arbitrage-dominated markets share identical return distributions but differ in stress-episode length by a feedback-to-noise-dependent factor. Finds spread-earning makers restore stability but create fragile liquidity with discontinuous collapse and hysteresis.",
+        "nearest_anchor_id": "2509.01063",
+        "nearest_anchor_title": "An Economy of AI Agents",
+        "open_questions": [
+          "Does the serial-statistics detector identify the feedback sign in real automated market maker data?",
+          "Do learning agents driven by language models reproduce the herd and arbitrage archetypes that the model defines through reward functions?",
+          "What maker-taker fee schedule keeps liquidity stable when agent populations are heterogeneous rather than split into two archetypes?",
+          "How large is the hysteresis gap in liquidity collapse for pools that operate today?",
+          "Does the stress-episode length result hold on market makers that are not constant-product, such as concentrated-liquidity or dynamic-fee designs?",
+          "Can a regulator act on the feedback sign once it is identified, and which intervention shortens stress episodes?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.01706",
+        "title": "Agent-Based Disruption Simulation on an Edge-Level Product-Annotated Supply Network of the Automotive Industry",
+        "authors": [
+          "Benjamin Rolf",
+          "Hiroyasu Inoue",
+          "Sebastian Lang"
+        ],
+        "url": "https://arxiv.org/abs/2611.01706",
+        "one_sentence": "Builds a product-annotated automotive supply network of about 77,000 firms and 197,000 edges from the MarkLines database. Extends an agent-based disruption model with product-specific substitution rules and runs 119,000 simulations of hub failures. Finds product-specific substitution rules produce cascades four to five times larger than portfolio-overlap rules, with the factor ranging from 1.2 to 18 under alternative assumptions.",
+        "nearest_anchor_id": "2512.16856",
+        "nearest_anchor_title": "Distributional AGI Safety",
+        "open_questions": [
+          "Only 6% of edges carry observed products, and the rest are imputed, so how much do cascade sizes depend on the imputation method beyond the 1.2 to 18 range already tested?",
+          "Semantic similarity of product names is used as the substitution rule, so how well does name similarity track actual engineering substitutability?",
+          "Simulated cascade sizes are never compared against observed firm failures in a real disruption, so how accurate is the model out of sample?",
+          "The criticality index that adds product substitutability identifies 32 of the 50 most damaging suppliers against 20 for topology alone, so which further firm attributes raise that count?",
+          "Results cover the global automotive industry, so do product-level substitutability effects hold in supply networks of other sectors?",
+          "Capacities and inventories are calibrated and then held fixed, so how do cascade sizes respond to varying inventory and capacity assumptions?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.01540",
+        "title": "Social Networks and the Propagation of Household Shocks to Asset Prices",
+        "authors": [
+          "Faisal Quaiyyum"
+        ],
+        "url": "https://arxiv.org/abs/2611.01540",
+        "one_sentence": "Develops a financially weighted propagation operator on social networks linking household disturbances to credit price exposure. Finds relative financial importance of a network location changes with the time horizon, so no single centrality measure captures exposure. Empirically links social exposure to storm-damaged counties with reduced spending elsewhere, and shows the operator reduces held-out prediction error by about 30 percent versus direct exposure.",
+        "nearest_anchor_id": "2503.13395",
+        "nearest_anchor_title": "Causal Emergence 2.0: Quantifying emergent complexity",
+        "open_questions": [
+          "Does the financially weighted propagation operator predict the credit-premium component in observed data, not only in simulations run under the model's own diffusion law?",
+          "Do shocks other than storms, such as local job losses or wildfires, propagate across the social network to credit prices in the same way?",
+          "How does the ranking of counties by financial importance change across horizons, and can a horizon-indexed exposure measure be built from public network data?",
+          "Which household measurements actually span the independently measured demand sensitivities needed to recover the projection exactly?",
+          "Does social exposure to storm-damaged counties reduce spending in counties outside the recorded footprints at horizons beyond a few weeks?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.01918",
+        "title": "AgenticMobility: An Open-Source Platform for Multi-AI-Agent Mobility Dynamics",
+        "authors": [
+          "Jiaheng Xiao",
+          "Jiangtao Han",
+          "Jiachen Wang",
+          "Honghai Li",
+          "Lijun Sun",
+          "Kay Axhausen",
+          "Chang Liu",
+          "Zhengbing He"
+        ],
+        "url": "https://arxiv.org/abs/2611.01918",
+        "one_sentence": "Introduces AgenticMobility, an open platform where LLM agents act as travelers and a traffic manager within MATSim. Runs 100-day simulations across five configurations with persistent agent memory and traffic-charge interventions. Reports stable route choices, departure-time adjustments, and differences between controlled and population-wide outcomes.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "The demonstration uses one run per configuration with a shared simulation seed, so variance across seeds is unmeasured. How much do collective mobility outcomes vary across random seeds and repeated runs?",
+          "The platform varies information access, retained experience, and management feedback, but the demonstration does not report how these factors change outcomes. Which of these factors drives herding or monoculture in route and departure-time choice?",
+          "LLM travelers choose routes and departure times against a manager that adjusts link charges. Can traveler agents learn to exploit or collude against the charging policy over repeated rounds?",
+          "Simulated travelers act as a proxy for human travelers. How closely do LLM agent route and departure-time choices match observed human travel behaviour?",
+          "The demonstration uses 1,179,300 finalized decisions over 100 days with LLM agents. How does the platform scale in cost and stability for longer horizons or larger agent populations?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.01865",
+        "title": "A Compute Center Anyone Can Join: A Peer-to-Peer System for AI Inference",
+        "authors": [
+          "Yimo Lin",
+          "Zhen Zhang"
+        ],
+        "url": "https://arxiv.org/abs/2611.01865",
+        "one_sentence": "Proposes the Open Inference Market, a peer-to-peer system where workers post unsettled earnings as collateral against audited cheating in AI inference delivery. Models audit frequency needed for deterrence as constant per worker per day, independent of throughput. Estimates about 0.3 replays per worker per day suffice to deter cheating under example parameters.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the audit mechanism still deter cheating when workers collude with each other or with the audit judge?",
+          "The deterrence result assumes a rational worker, so how does the mechanism behave against workers who cheat at a loss or who are driven by a strategy other than profit?",
+          "Replay-based auditing assumes a cheating result can be told apart from an honest one, so what false-flag and detection rates does a replay judge achieve on real inference across heterogeneous GPUs and nondeterministic kernels?",
+          "What market structure emerges from the Open Inference Market at scale, including whether price and throughput concentrate in a few large workers?",
+          "The example parameters give about 0.3 replays per worker per day, so which parameter ranges make the audited share and bond size infeasible in practice?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.02265",
+        "title": "The Verification Bottleneck",
+        "authors": [
+          "Peter Achim"
+        ],
+        "url": "https://arxiv.org/abs/2611.02265",
+        "one_sentence": "Builds a general-equilibrium model of peer review where generative AI lowers research production cost and researchers choose observable output. Shows that beyond a technological threshold, reviewer capacity and verified knowledge can weakly or strictly decline even under optimal editorial decisions. Finds that observable output quality reverses this effect, increasing both reviewer capacity and verified knowledge.",
+        "nearest_anchor_id": "2501.16946",
+        "nearest_anchor_title": "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development",
+        "open_questions": [
+          "Does submission volume and review capacity in real venues follow the predicted decline after generative AI lowers production cost?",
+          "Which editorial policies, such as submission limits, fees or desk-reject rules, keep verified knowledge from declining when production cost falls?",
+          "The model assumes quality is private information; what signals make quality observable enough to recover the weakly positive case?",
+          "How do individual reviewers decide to withdraw their time as submission load rises?",
+          "Does using AI agents as reviewers relieve the capacity constraint or further weaken screening?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.01431",
+        "title": "Longest-Queue Policies in Dynamic Matching with Abandonments",
+        "authors": [
+          "Siqi He",
+          "Yehua Wei",
+          "Jiaming Xu"
+        ],
+        "url": "https://arxiv.org/abs/2611.01431",
+        "one_sentence": "Studies a dynamic two-way matching market where heterogeneous agents arrive, wait, and abandon according to random patience. Proposes a longest-queue policy using dual solutions from a fluid linear-programming relaxation to select good matches and critical partners. Proves the policy's approximation ratio against the fluid benchmark approaches one as arrival rates scale up.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "How does the longest-queue policy perform when the general position gap condition fails?",
+          "What approximation ratio does the longest-queue policy reach at small arrival scales, where the 1-O(1/s) bound is loose?",
+          "Does the policy keep its performance when agents are strategic and can misreport type or time their arrival?",
+          "How does the policy extend from two-way matching to multi-way matching with more than two agents per match?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.01754",
+        "title": "Optimization Frameworks & Learning Algorithms for Discrete-Time Mean Field Games",
+        "authors": [
+          "Xin Guo",
+          "Mathieu Laurière"
+        ],
+        "url": "https://arxiv.org/abs/2611.01754",
+        "one_sentence": "Develops discrete-time mean field games with finite state and action spaces, covering equilibrium existence, uniqueness, and approximation of large finite-player games. Presents optimization formulations including occupation measures and primal-dual methods, plus learning algorithms such as fictitious play and online mirror descent. Illustrates methods on crowd motion, traffic routing, and epidemic management examples.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Mean field equilibria give approximate equilibria in large finite-player games, but the monograph does not state how the approximation error behaves for populations of LLM agents that deviate from the homogeneity assumption.",
+          "Fixed-point iterations, fictitious play and online mirror descent have stated convergence limitations, and it remains open which of them converge on games with multiple equilibria.",
+          "The numerical examples cover crowd motion, traffic routing and epidemic management, and it remains untested whether the same formulations describe market or social-network settings with strategic agents.",
+          "The monograph assumes finite state and action spaces, and the behaviour of these learning algorithms under large or continuous action spaces is not addressed."
+        ]
+      },
+      {
+        "arxiv_id": "2611.01981",
+        "title": "Opening the Black Box of Neural Auction Mechanisms",
+        "authors": [
+          "Li Kong",
+          "Zilong Liu",
+          "Haoyang Zhou",
+          "Hanbing Liu",
+          "Qi Qi"
+        ],
+        "url": "https://arxiv.org/abs/2611.01981",
+        "one_sentence": "Proposes a post-hoc auditing framework for neural auction mechanisms using sparse autoencoders to decompose hidden representations. Validates interpreted features through activation prediction and causal interventions tied to measurable auction states. Applies the pipeline to examine strategic misreporting incentives and alignment with Myerson's optimal auction.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the sparse autoencoder auditing pipeline transfer to neural auction architectures other than CITransNet?",
+          "Can verified features predict strategic misreporting by bidders in a simulated bidding population rather than in single-auction diagnosis?",
+          "How do audited features behave when many autonomous bidding agents interact with the same learned mechanism over time?",
+          "Do the feature interpretations hold on live advertising auctions with real bidder value distributions?",
+          "Can auditors use verified features to detect collusion or revenue manipulation inside a deployed neural auction?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-10-31",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 261,
+      "unseen": 261,
+      "screened": 200,
+      "relevant": 11,
+      "kept": 4,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2611.01226",
+        "title": "Learning about Markets from Models: Evidence from an AI Hiring Platform",
+        "authors": [
+          "Hossein Alidaee",
+          "Tarun Khanna",
+          "Rembrand Koning"
+        ],
+        "url": "https://arxiv.org/abs/2611.01226",
+        "one_sentence": "Analyzes firm-specific retention-prediction models on an AI hiring platform used by low-skill employers. Builds a firm-application matrix scoring each application against every firm's model, not only the firm it applied to. Finds models are predictive only within their own firm and firms disagree on how traits affect retention.",
+        "nearest_anchor_id": "2509.01063",
+        "nearest_anchor_title": "An Economy of AI Agents",
+        "open_questions": [
+          "Firm-specific hiring models predict retention at their own firm but score no better than chance at other firms, and the paper does not say whether this pattern holds in high-skill labour markets.",
+          "The paper names two mechanisms behind retention gains from reassigning an application to a different firm, but does not test which mechanism dominates under different market conditions.",
+          "Platforms that hold both the full application pool and every firm-specific model can compute a firm-application matrix, and it is open whether a platform can act on that matrix to steer applications without reducing firms' own measured retention.",
+          "Policymakers could use model differentiation across firms to prioritise interventions, and the paper does not test which intervention rule derived from the matrix improves worker outcomes.",
+          "The paper studies human decision makers whose responses are encoded in models, and does not say how the comparison externality changes when the hiring decisions themselves are made by autonomous agents that adapt to each other."
+        ]
+      },
+      {
+        "arxiv_id": "2611.00661",
+        "title": "Designing Behavioral Profiles for Language Model Simulation of Out-of-Distribution Human Behavior",
+        "authors": [
+          "Robin Na",
+          "Kehang Zhu",
+          "Logan Cross",
+          "Michiel A. Bakker"
+        ],
+        "url": "https://arxiv.org/abs/2611.00661",
+        "one_sentence": "Develops a framework that selects behavioral features for LLM-generated profiles used to simulate human behavior in games. Tests predictions against new participants across 616 public-goods games, 144 bargaining games, and 1,480 money-request designs. Finds one-feature profiles outperform no-profile or generic personas, but adding more features gives no clear benefit.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Profiles with more features give no clear benefit over one-feature profiles; what causes the saturation?",
+          "Transfer of profiles between game families gives uneven gains and can lower accuracy; which properties of a game family predict whether transfer helps?",
+          "Does the ranking of behavioral features hold across different simulator language models?",
+          "Do profile-based simulations predict outcomes in many-agent settings larger than the 2-to-few-player games tested here?",
+          "Which behavioral features remain predictive for experimental designs collected after the profiles are built, with new participant pools?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.01234",
+        "title": "How Much Can Approximate Equilibria Change the Social Cost of Selfish Routing?",
+        "authors": [
+          "Yu Cheng",
+          "Tianle Jiang"
+        ],
+        "url": "https://arxiv.org/abs/2611.01234",
+        "one_sentence": "Derives tight bounds on how social cost changes when players use approximate rather than exact Nash equilibria in nonatomic congestion games. Covers general degree-d polynomial latency games and single-commodity routing on series-parallel networks. Shows the possible relative reduction and increase scale as Θ(√(dε)) in general games versus Θ(hε) on series-parallel networks of depth h.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Bounds cover degree-d polynomial latencies only, so the possible change in social cost under other latency classes stays open.",
+          "The separation holds between general congestion games and single-commodity series-parallel routing, so the bounds for multi-commodity or general network topologies stay open.",
+          "The bounds are worst case over matching instances, so how much social cost actually changes on real road networks under eps-approximate Nash equilibria is untested.",
+          "The results assume drivers accept any route within a factor 1+eps of the fastest, so it is open how a navigation app can reach a low-cost eps-NE when drivers choose routes themselves.",
+          "Results are stated for nonatomic congestion games, so the corresponding bounds for atomic games with finitely many players stay open."
+        ]
+      },
+      {
+        "arxiv_id": "2611.01195",
+        "title": "Recommendations with Costly Verification",
+        "authors": [
+          "Ying Gao",
+          "Yingju Ma"
+        ],
+        "url": "https://arxiv.org/abs/2611.01195",
+        "one_sentence": "Characterizes when lowering consumers' cost to verify a recommended product's quality increases or decreases false recommendations. Shows that without commitment, lower verification costs never increase false recommendations, but with commitment, transparency can worsen recommendation quality and consumer welfare. Identifies a log-elasticity condition on consumer cost-type distribution that determines the outcome.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the log-elasticity condition on consumer verification cost types hold in real populations of platform users?",
+          "What happens to false recommendations when the recommender is an AI agent that learns a recommendation policy instead of committing to one ex ante?",
+          "How do the results change when many recommenders compete for the same consumers rather than one recommender facing the population?",
+          "Do verification costs fall and false recommendations rise as predicted when consumers delegate verification to AI assistants?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-10-30",
@@ -7154,86 +7606,6 @@
           "The study reports adoption counts and cost, so it is open how the learned incentive schedules distribute benefits across income groups or regions.",
           "Policies are learned with PPO, SAC and TD3 against static baselines, so it is open how they compare with optimised rule-based or model-predictive controllers.",
           "The model simulates yearly adoption under uncertainty, so it is open whether the learned schedules match observed adoption responses to real historical PV incentive programmes."
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-09-03",
-    "counts": {
-      "fetched": 239,
-      "unseen": 239,
-      "screened": 200,
-      "relevant": 4,
-      "kept": 3,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2609.04170",
-        "title": "A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms",
-        "authors": [
-          "Davide Paglieri",
-          "Logan Cross",
-          "Tim Genewein",
-          "Joel Z. Leibo",
-          "Nenad Tomasev",
-          "Alexander Sasha Vezhnevets"
-        ],
-        "url": "https://arxiv.org/abs/2609.04170",
-        "one_sentence": "Reports a case study of 100 autonomous LLM agents proving math conjectures, where cheating emerged and spread via shared infrastructure. Other agents formed a counter-response, auditing proofs, alerting peers, and staging boycotts without external intervention. Proposes framing shared agent infrastructure as a knowledge commons and applying institutional mechanisms like graduated sanctioning.",
-        "nearest_anchor_id": "2502.14143",
-        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
-        "open_questions": [
-          "Do graduated sanctioning and collective-choice rules actually stop exploit spread in an agent swarm? The paper proposes these institutional mechanisms but does not test them.",
-          "How does the visibility of shared channels change the balance between cheating and whistleblowing? The case study uses transparent channels only and does not vary channel design.",
-          "Does cheating spread the same way at swarm sizes other than 100 agents?",
-          "Does the same cheating-and-whistleblowing dynamic appear in tasks other than formal mathematical proof, where the evaluation system offers different exploits?",
-          "Which agent-level signals predict which agents adopt an exploit and which become whistleblowers?",
-          "Do exploit contagion and norm enforcement occur in swarms built on different underlying models, or is the behaviour specific to the models used here?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.03422",
-        "title": "Inferred Generative-Process Diversity Predicts Correlated Failure Across Language Models",
-        "authors": [
-          "Ross Tieman",
-          "Evan Markou"
-        ],
-        "url": "https://arxiv.org/abs/2609.03422",
-        "one_sentence": "Proposes generative-process diversity, measured via compression distance between model outputs, as distinct from semantic diversity. Tests this measure across 38 language models and ten benchmark families, finding it predicts correlated failure between model pairs. Reports a cross-benchmark partial rank association of -0.216, negative on all ten benchmarks, beyond semantic similarity and capability.",
-        "nearest_anchor_id": "2512.02682",
-        "nearest_anchor_title": "Beyond Single-Agent Safety: A Taxonomy of Risks in LLM-to-LLM Interactions",
-        "open_questions": [
-          "Does inferred generative-process diversity predict correlated failure in multi-agent systems where models interact, rather than in independent model pairs on benchmarks?",
-          "Does selecting a population of language models to maximise Normalised Compression Distance reduce correlated failure compared to selecting on capability or semantic similarity?",
-          "How sensitive is the diversity measure to the choice of compressor, output length, and sampling temperature?",
-          "Which properties of training data, architecture, or post-training cause the observed population structure among models?",
-          "Does generative-process diversity predict correlated failure beyond model pairs, for groups of three or more models voting or deliberating together?",
-          "Does the measure predict correlated failure on adversarial or safety-relevant inputs, not only the ten benchmark families used?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.03553",
-        "title": "GPS-Bench: A Governance Policy Benchmark for Automating Policy Analysis",
-        "authors": [
-          "Linh Le",
-          "Melanie Bui",
-          "My Chiffon Nguyen",
-          "Zachary Schlosser",
-          "David Williams-King"
-        ],
-        "url": "https://arxiv.org/abs/2609.03553",
-        "one_sentence": "Introduces GPS-Bench, a benchmark linking policies to actors, actions and impacts using legislative, lobbying and regulatory records. Actors are reconstructed from dated evidence rather than prompted personas, with human-annotated gold and LLM-labeled silver data. Compares joint reasoning, independent and communicating agent modes, graph methods and fine-tuning for predicting policy impacts and coalition formation.",
-        "nearest_anchor_id": "2605.24413",
-        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
-        "open_questions": [
-          "Fine-tuning on the grounded record gives the strongest actor-level impact prediction, and decomposition does not beat it. Does this ranking hold on policy domains and time periods outside the benchmark's records?",
-          "The benchmark treats LLM-labelled cases as Silver supervision and human-annotated cases as the Gold test set. How much does Silver label noise shift the measured ranking of inference modes?",
-          "Agents hold private, non-identical evidence and propose coalitions to named partners. Do the coalitions they form match the commitments in the historical record, and under which conditions do they diverge?",
-          "Multi-agent decomposition adds mechanism rather than accuracy. Does adding more actors change aggregate policy-outcome predictions, or only the stated reasoning?",
-          "Personas are reconstructed from dated records rather than prompted as archetypes. Does evidence-grounded persona construction reduce the herding and monoculture seen in archetype-prompted agent populations?",
-          "The benchmark scores prediction of actor actions and downstream impacts. Can validated policy simulations be used to steer real policy design, and what error rate makes that use unsafe?"
         ]
       }
     ]
