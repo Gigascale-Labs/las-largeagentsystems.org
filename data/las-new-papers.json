@@ -1,5 +1,179 @@
 [
   {
+    "date": "2026-11-03",
+    "counts": {
+      "fetched": 339,
+      "unseen": 339,
+      "screened": 200,
+      "relevant": 16,
+      "kept": 8,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2611.04886",
+        "title": "Modelling lock-in of AI adoption through skill erosion",
+        "authors": [
+          "Renaud Lambiotte"
+        ],
+        "url": "https://arxiv.org/abs/2611.04886",
+        "one_sentence": "Builds an agent-based model where individuals imitate successful peers while skills grow with practice and erode with AI reliance. Derives skill distributions for AI users versus non-users and finds bistability and hysteresis between low-adoption/high-skill and high-adoption/low-skill states. Shows a temporary benefit increase, such as a price drop, can leave a population AI-dependent even after the benefit reverts.",
+        "nearest_anchor_id": "2501.16946",
+        "nearest_anchor_title": "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development",
+        "open_questions": [
+          "The model derives skill distributions for non-users and AI users analytically under random imitation of successful peers. Do the same bistability and hysteresis results hold when imitation follows a network structure instead of well-mixed contact?",
+          "The model assumes skills grow with practice and erode with reliance on AI at fixed rates. What are the real erosion and recovery rates for concrete tasks such as coding or writing?",
+          "Can aggregate adoption and output data identify whether a population sits in the bistable regime before a switch occurs?",
+          "The model treats AI benefit as an exogenous parameter that can rise and fall, such as through low prices. What adoption-subsidy or pricing paths avoid leaving a population in the high-adoption, low-skill state?",
+          "Does the asymmetry between a single AI user invading experts and a single non-user reverting an AI-dependent population survive heterogeneous agents with different learning rates?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.05292",
+        "title": "Personas Are Not People: Identity as State, Not Attribute",
+        "authors": [
+          "Tamunotonye Harry",
+          "Yuanyuan Feng"
+        ],
+        "url": "https://arxiv.org/abs/2611.05292",
+        "one_sentence": "Argues synthetic-population simulations built on fixed personas cannot reproduce behavior specific to context and circumstance, proving this under two stated assumptions. Proposes a person-in-context design and tests it on a Reddit personality corpus and a clinical-trial recruitment survey. The design produces context-dependent behavior but does not fully match real population behavior in either test.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Person-in-context design produces context-dependent behavior but does not match the real populations in either test setting; what changes to the design close the remaining gap?",
+          "The proof rests on two stated assumptions; do those assumptions hold for the persona simulations used in practice?",
+          "Which population subgroups suffer the largest distortion in synthetic-population evaluations when personas are fixed?",
+          "The evaluation criterion is proposed on two datasets only; does it separate context-dependent from context-free behavior across other naturalistic corpora and survey domains?",
+          "Do the conclusions about fixed personas carry over to multi-agent simulations where agents interact, rather than to single simulated respondents?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.04266",
+        "title": "Prizes, Shared Hazard, and the Speed of Frontier AI",
+        "authors": [
+          "Li Gan"
+        ],
+        "url": "https://arxiv.org/abs/2611.04266",
+        "one_sentence": "Builds a calibrated takeoff model of labs racing for commercial lead while sharing catastrophic risk from speed. Three racing labs pass through takeoff in 18 months versus 69 months under a common research-sharing rule. Removing the contest, rather than the shared hazard, explains most of the gap in catastrophe probability between racing and coordination.",
+        "nearest_anchor_id": "2512.16856",
+        "nearest_anchor_title": "Distributional AGI Safety",
+        "open_questions": [
+          "The takeoff model is calibrated with illustrative parameters, so how sensitive are the 18-month and 69-month takeoff durations to the hazard and prize parameters?",
+          "The model assumes labs are symmetric, so what happens to race speed when labs differ in capability, cost and risk tolerance?",
+          "Open source is modelled only in its ideal form, where every lab publishes capability findings at once, so how much slowing survives partial or delayed publication?",
+          "The claim that industry hazard at a common research share does not depend on the number of labs is assumed, not measured, so does hazard scale with lab count in practice?",
+          "The White House Accord on Super Intelligence audits safety but sets no speed limit, so which enforceable instruments would reduce the private gain from speeding up?",
+          "Decomposition attributes 65 and 44 percent of the catastrophe-probability gap to the contest, so can this split be estimated from observed lab release timing rather than inferred from the model?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.05135",
+        "title": "From Opinions to Commitments: Unstable Assignments and Silent Choices in AI-Mediated Proposals",
+        "authors": [
+          "Sachit Mahajan",
+          "Javier Argota S{á}nchez-Vaquerizo",
+          "Arthur Capozzi",
+          "Dirk Helbing"
+        ],
+        "url": "https://arxiv.org/abs/2611.05135",
+        "one_sentence": "Tests four LLM mediators that turn many citizens' opinions into collective proposals across repeated runs. Finds assignments and represented views change with random seed or opinion order in 17-20% of run sets. Proposes audits that expose alternative assignments and disclose the mediator's objective.",
+        "nearest_anchor_id": "2605.24413",
+        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
+        "open_questions": [
+          "Which audit procedure makes alternative assignments visible to participants without overwhelming them, and does it change which proposal a group selects?",
+          "Does assignment instability persist when the mediator drafts from hundreds or thousands of opinions instead of thirty?",
+          "The LLM judge overstated how often runs differed; what detection method agrees with human annotators on assignment differences?",
+          "Which safeguards beyond temperature zero, draft selection, and draft merging reduce assignment instability?",
+          "How does the choice of mediator objective change minority-position coverage across a wider range of prompts and issue domains?",
+          "What happens downstream when unstable assignments feed into real collective decisions, such as participatory budgeting?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.04272",
+        "title": "Agreements Have a Clock: Compute Growth and the Verification of AI Restraint",
+        "authors": [
+          "Li Gan"
+        ],
+        "url": "https://arxiv.org/abs/2611.04272",
+        "one_sentence": "Builds a game-theoretic model of a pause agreement between a leader and follower nation on frontier AI. Shows cooperation is supportable when monitoring cost stays below the gains from cooperation, with a shrinking response window as compute grows. In a calibrated example, cooperation holds through month 18.9, extending to 25.5 or 31.8 under added safety research or cheaper monitoring.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "The model uses an example with a fixed leader window to place the cooperation deadline at month 18.9. How do the deadlines shift when diffusion and compute-growth rates are calibrated to public data on chip production, training-run compute, and model release gaps?",
+          "The agreement game has a leader and a follower. Does cooperation remain supportable when three or more powers can enter, defect, or form blocs?",
+          "Monitoring cost enters the model as a parameter, and halving it extends cooperation to month 31.8. What do actual verification regimes for compute, such as chip registries or datacentre inspection, cost relative to the gains from cooperation?",
+          "The result assumes secret advances reach the frozen frontier faster as compute grows. Does the same clock appear when algorithmic progress, rather than compute, drives the secret advance?",
+          "Verified matched safety research extends cooperation from month 18.9 to month 25.5 in the model. What makes safety research verifiable to a rival in practice?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.04203",
+        "title": "Toward User-Centered Agentic Recommendation: When Does Platform Competition Benefit Users?",
+        "authors": [
+          "Kehan Zheng",
+          "Deyao Hong",
+          "Qian Li",
+          "Jun Zhang",
+          "Jie Jiang",
+          "Hongning Wang"
+        ],
+        "url": "https://arxiv.org/abs/2611.04203",
+        "one_sentence": "Formalizes user-centered agentic recommendation as a repeated game between user agents and competing platform agents that can misrepresent item descriptions. Analysis shows expanded cross-platform access does not guarantee user welfare gains under strategic misrepresentation. Experiments on synthetic and Amazon-grounded markets show credibility assessment can improve welfare depending on market size and parameters.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Platform credibility assessment improves finite-horizon utility in synthetic and Amazon-grounded markets, but the dependence on market size and mechanism parameters stays unmapped; which parameter ranges make credibility assessment fail?",
+          "The analysis models platform agents as independent strategic misreporters; what happens to user welfare when platform agents collude on description inflation?",
+          "User agents assess credibility from consumed items only; does welfare improve when user agents share feedback with each other across a population?",
+          "The experiments use synthetic and Amazon-grounded markets; do the welfare conditions hold when real users interact with the user agents on a deployed recommender platform?",
+          "The interaction budget is linear in platform count; does the guarantee survive when platforms enter and exit over time?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.04590",
+        "title": "Can Network Models of Science Do Without Pluralist Agents?",
+        "authors": [
+          "Jonas Hallgren",
+          "David Hyland",
+          "Mahault Albarracin"
+        ],
+        "url": "https://arxiv.org/abs/2611.04590",
+        "one_sentence": "Introduces a multi-agent variational inference model comparing pluralist agents, who hold rival theories simultaneously, with monist agents restricted to one model. Simulations show communities with rival theories pass through uncertainty periods before shifting accepted theories. Examines how shared support for theories versus shared beliefs within them differently shapes collective belief change.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Which network topologies make pluralist agent communities converge on the more accurate theory faster than monist communities?",
+          "Does the advantage of holding rival theories side by side persist as the community grows from a few agents to thousands?",
+          "Do LLM agents that are prompted to maintain rival theories show the belief-shift dynamics that the variational model produces?",
+          "Do observed belief dynamics in real scientific communities match the periods of uncertainty followed by theory shifts that the model produces?",
+          "Which communication policy between communities with different observations maximises collective accuracy: sharing support for theories, sharing beliefs within them, or both?",
+          "Can pluralist agents be made to lock onto a false theory by an adversary that injects support for it?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.04097",
+        "title": "ScaleTraj: Scale-Decomposed Human Trajectory Generation",
+        "authors": [
+          "Yulin Zeng",
+          "Yiheng Zhao",
+          "Jun Yan",
+          "Yuhong Liu"
+        ],
+        "url": "https://arxiv.org/abs/2611.04097",
+        "one_sentence": "Identifies a Population-Level Displacement Gap where bottom-up trajectory generators fail to reproduce the heavy-tailed displacement distribution after aggregation. Introduces a Scale Fidelity Profile metric diagnosing mismatches in trip allocation across spatial scales. Proposes ScaleTraj, a transformer separating scale selection from destination prediction, which reduces this gap on two datasets while preserving individual fidelity.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "The Population-Level Displacement Gap is defined for displacement distributions, so which other population-level regularities, such as radius of gyration or visitation frequency, do bottom-up trajectory generators fail to reproduce?",
+          "ScaleTraj is tested on two datasets, so does the reduction in the Population-Level Displacement Gap hold on other cities and other spatial resolutions?",
+          "Does closing the Population-Level Displacement Gap improve downstream tasks that consume synthetic trajectories, such as epidemic or transport simulation?",
+          "The Scale Fidelity Profile diagnoses trip allocation errors across spatial scales, so can it serve as a training objective rather than only an evaluation metric?",
+          "Do generated individual trajectories leak identifying information about real users in the training data?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-02",
     "counts": {
       "fetched": 391,
@@ -7433,179 +7607,6 @@
           "Storage-mediated coordination is linked to stigmergy, but the evidence needed to separate influence from common causes is only specified. Which statistical tests distinguish agent-to-agent influence through shared storage from correlated behaviour with a shared cause?",
           "Recurrence after channel closure and state quarantine is proposed as a test but not measured. Do coordinated agent intrusions resume after a shared channel closes and inherited state is quarantined?",
           "The analysis rests on the Hugging Face incident and one public-wiki investigation. Do coordination episodes appear on other shared infrastructure such as package registries or public code repositories?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-09-04",
-    "counts": {
-      "fetched": 280,
-      "unseen": 280,
-      "screened": 231,
-      "relevant": 15,
-      "kept": 7,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2609.05591",
-        "title": "WolfSociety: Understanding Collective Risk from Harmful-Agent Scaling in Financial Agent Societies",
-        "authors": [
-          "Lejun Zhang",
-          "Sarah Lu-Liang",
-          "Xin Jiang",
-          "Muning Wen",
-          "Weinan Zhang",
-          "Shangding Gu"
-        ],
-        "url": "https://arxiv.org/abs/2609.05591",
-        "one_sentence": "Simulates financial agent societies of varying size with harmful and honest agents on a social network trading a shared market. Measures how harmful-agent fraction and society size jointly determine collective failure, finding a size-dependent collapse transition and a nonlinear boundary shaped by network reach and conformity.",
-        "nearest_anchor_id": "2502.14143",
-        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
-        "open_questions": [
-          "Does the collapse transition appear in non-financial agent societies, such as social networks without a shared market?",
-          "Which monitoring signals from aggregate market or message data detect an approaching collapse boundary before failure occurs?",
-          "Do interventions on network structure, such as capping an agent's reach or rewiring hubs, move the collapse boundary back toward higher harmful fractions?",
-          "How does the collapse boundary scale beyond N=2000 agents?",
-          "Does the finite-size framework predict collapse boundaries for societies that mix humans and AI agents?",
-          "Do the reported thresholds hold across different agent backbones and harmful-agent prompt designs?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.05663",
-        "title": "What LLM Trading Agents Actually Do in Production: A Six-Month, Population-Scale Record from Two Fleets",
-        "authors": [
-          "T. J. Barton",
-          "Chris Constantakis",
-          "Patti Hauseman",
-          "Annie Mous",
-          "Alaska Hoffman",
-          "Brian Bergeron",
-          "Hunter Goodreau"
-        ],
-        "url": "https://arxiv.org/abs/2609.05663",
-        "one_sentence": "Presents a six-month, population-scale measurement record of autonomous LLM trading agents across two production fleets, covering thousands of vaults and agents. Finds operating-layer parameters like leverage sliders and leaderboard placement drive behavior more than strategy text, and neither fleet shows a directional trading edge.",
-        "nearest_anchor_id": "2512.16856",
-        "nearest_anchor_title": "Distributional AGI Safety",
-        "open_questions": [
-          "Volatility-blind sizing appears in two production fleets, but the cause is untested; does the operating layer's posture slider prevent volatility scaling, or do the language models themselves fail to condition size on volatility?",
-          "A mechanical bracket recovers +39.0 bps per position in replay; does adding brackets to a live agent fleet keep that gain once agents adapt around it?",
-          "Choice stability differs across model families in paired replay; which model properties predict stability, and does low stability degrade portfolio-level outcomes?",
-          "A leaderboard render boundary routes capital to top-3 agents; does this selection channel produce strategy monoculture and correlated positions across a fleet?",
-          "Both fleets show no directional edge over 21 days and three months; does an edge or a systematic loss appear over longer horizons and in non-memecoin, non-perpetual markets?",
-          "The record covers two systems with one design lineage; do fleets from other vendors show the same operating-layer dominance over strategy text?",
-          "Agent fixed effects absorb 60% of variance in leverage; what configuration and prompt features make up that per-agent component?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.04667",
-        "title": "ERPBench: Evaluating LLM Agents for Enterprise Decision-Making Across Competitive Market Ecologies",
-        "authors": [
-          "Xinran Zhang",
-          "Pengrui Lu",
-          "Lyumanshan Ye",
-          "Pengfei Liu"
-        ],
-        "url": "https://arxiv.org/abs/2609.04667",
-        "one_sentence": "Introduces ERPBench, an ERP simulation testing whether enterprise-decision rankings of LLM agents transfer between solo competition and shared-market competition among six agents. Finds model rankings differ substantially between the two ecologies across 100 problems and six model families.",
-        "nearest_anchor_id": "2409.10568",
-        "nearest_anchor_title": "On the limits of agency in agent-based models",
-        "open_questions": [
-          "Why do rankings of LLM agents change between competing against rule-based opponents and competing against other LLM agents?",
-          "Do ranking shifts persist when the number of competing agents in the shared market grows beyond six?",
-          "Does a shared market of LLM agents produce collusive or herding price behaviour over the six rounds?",
-          "How sensitive are the reported valuations to the fixed service configuration and the six-round horizon?",
-          "Do rankings measured in a six-round ERP simulation predict performance of the same agents in real enterprise workflows?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.05018",
-        "title": "How a Chatbot's Response Style Shapes a Classroom: A Multi-Agent Simulation of Students Consulting AI",
-        "authors": [
-          "Rin Tamai",
-          "Yuya Dan"
-        ],
-        "url": "https://arxiv.org/abs/2609.05018",
-        "one_sentence": "Builds a 20-agent virtual classroom simulation where students consult an AI counselor under six response styles across 15- and 50-day runs. Finds affirming and inciting prompts raise simulated AI dependence and reduce classroom attendance, while a solution-oriented style matches or beats a no-AI control.",
-        "nearest_anchor_id": "2502.14143",
-        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
-        "open_questions": [
-          "Results come from single runs of one 20-agent classroom, so the variance across seeds and classroom compositions is unknown.",
-          "The state updates come from a second LLM call, and the sensitivity of the reported orderings to the evaluator model and its prompt is untested.",
-          "The consultation text for a dependent agent is fixed, which creates a near-deterministic loop; it is open whether varied agent utterances remove the dependence spiral.",
-          "Scaling behaviour is unknown: the simulation uses 20 agents, and how dependence and social displacement change at hundreds or thousands of agents is untested.",
-          "Whether the simulated dependence and self-reliance effects correspond to any effect in people is unmeasured.",
-          "Chatbot styles here are fixed prompts; the effect of styles that adapt to user state over time is unexamined."
-        ]
-      },
-      {
-        "arxiv_id": "2609.05227",
-        "title": "CABAL: Multi-Agent Simulacra for Tracing the Effects of Collusive Bidding in Peer Review",
-        "authors": [
-          "Jicheng Zhou",
-          "Kemou Li",
-          "Kahim Wong",
-          "Zheyuan Li",
-          "Zhuan Shi",
-          "Fengpeng Li",
-          "Haiwei Wu",
-          "Jiantao Zhou"
-        ],
-        "url": "https://arxiv.org/abs/2609.05227",
-        "one_sentence": "Introduces CABAL, a multi-agent simulation framework configuring LLM reviewer agents as honest or collusive to study bidding manipulation in peer review. Finds collusive bidding more than doubles target-paper capture while conference-wide effects stay comparatively modest, and tested bid-phase detectors give only limited detection.",
-        "nearest_anchor_id": "2502.14143",
-        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
-        "open_questions": [
-          "Which detectors can find collusive bidding with both high precision and high coverage?",
-          "Do assignment mechanisms exist that limit target-paper capture by collusion rings without harming honest reviewer-paper matching?",
-          "How do the simulated effects of collusive bidding compare to bidding behaviour in a real conference review cycle?",
-          "How does the size of a collusion ring change target-paper capture and score inflation?",
-          "Do collusive policies driven by different LLMs produce the same capture and scoring effects?",
-          "Which conference-scale parameters, such as paper count, reviewer load and bid quotas, make collusive bidding more effective?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.05318",
-        "title": "Optimal Rates for Agentic Networked Information Aggregation",
-        "authors": [
-          "MohammadHossein Bateni",
-          "Zahra Hadizadeh",
-          "MohammadTaghi Hajiaghayi",
-          "Mahdi JafariRaviz",
-          "Shayan Taherijam"
-        ],
-        "url": "https://arxiv.org/abs/2609.05318",
-        "one_sentence": "Studies a networked information-aggregation model where agents on a DAG each see part of the features and pass only predictions forward. Derives tight excess-error rates as a function of path depth and coverage, closing a prior gap between upper and lower bounds.",
-        "nearest_anchor_id": "2502.14143",
-        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
-        "open_questions": [
-          "The rate bounds hold for M-covered paths and a cyclic instance. What are the optimal aggregation rates for general DAG topologies, where agents have several parents?",
-          "Do the O(M^2/D) rates hold when agents fit non-linear predictors instead of linear or logistic ones?",
-          "The model assumes each agent passes only a scalar prediction or logit. How do the excess error rates change when agents pass short natural-language conclusions between LLM agents?",
-          "The bounds are worst-case over constructed instances. What excess error appears on real feature distributions from public tabular datasets under randomly drawn M-covered paths?",
-          "Excess error contracts geometrically along a path for any fixed distribution. How does the contraction rate change when the feature distribution shifts as the path progresses?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.04880",
-        "title": "Reinforcement Learning for Sequential Solar PV Policy Design under Uncertainty: An Agent-Based Approach",
-        "authors": [
-          "Iias Faiud",
-          "Jonaid Shianifar",
-          "Michael Schukat",
-          "Karl Mason"
-        ],
-        "url": "https://arxiv.org/abs/2609.04880",
-        "one_sentence": "Combines reinforcement learning with a stochastic agent-based model simulating yearly solar PV adoption across a population of households over a 16-year horizon. Trains PPO, SAC and TD3 policymaker agents to select incentives, producing adoption-cost trade-off curves compared to static baselines.",
-        "nearest_anchor_id": "2409.10568",
-        "nearest_anchor_title": "On the limits of agency in agent-based models",
-        "open_questions": [
-          "The policymaker agent learns incentives inside one stochastic agent-based model of solar PV adoption, so it is open how far the learned policies transfer to a model with different adoption rules or parameters.",
-          "Household agents in the model do not react strategically to the incentive schedule, so it is open how learned policies change when agents anticipate future grants and delay adoption.",
-          "The study reports adoption counts and cost, so it is open how the learned incentive schedules distribute benefits across income groups or regions.",
-          "Policies are learned with PPO, SAC and TD3 against static baselines, so it is open how they compare with optimised rule-based or model-predictive controllers.",
-          "The model simulates yearly adoption under uncertainty, so it is open whether the learned schedules match observed adoption responses to real historical PV incentive programmes."
         ]
       }
     ]
