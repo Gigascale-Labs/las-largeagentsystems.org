@@ -1,5 +1,97 @@
 [
   {
+    "date": "2026-11-04",
+    "counts": {
+      "fetched": 278,
+      "unseen": 278,
+      "screened": 200,
+      "relevant": 15,
+      "kept": 4,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2611.06022",
+        "title": "Who Pays for the Knowledge Models Copy? Model Collapse as Rogers' Paradox",
+        "authors": [
+          "Nam H. Le"
+        ],
+        "url": "https://arxiv.org/abs/2611.06022",
+        "one_sentence": "Reframes model collapse as an instance of Rogers' paradox from cultural evolution, where copying without fresh learning leaves a population no better off.Fits Rogers' model to synthetic-training experiments across trigram models and a pretrained transformer, predicting retention of rare knowledge under various data mixtures.Closes the loop by modeling endogenous data supply when humans can query the model instead of learning themselves, deriving an equilibrium reliability condition and showing checks that add new information break the paradox.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "The endogenous-supply result is derived at equilibrium in a model; does the predicted balance between model-written text and independent learning appear in an agent-based simulation with heterogeneous verification costs?",
+          "Rogers' model is fitted to word trigrams and one pretrained transformer; does the same fit hold for larger models and other data modalities?",
+          "Which checks carry new information and which are conformist, measured on real retrieval and verification tools rather than in the stylised model?",
+          "How large is the share of model-written text in the corpora that current models train on, and is it rising fast enough to matter for rare-knowledge retention?",
+          "Do people who read model output actually relearn for themselves when the output is wrong, and at what cost threshold do they stop?",
+          "Restarting each generation from fixed pretrained weights insulates a lineage; how does that insulation degrade when the world changes faster than the frozen weights encode?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.06346",
+        "title": "Today's Work, Tomorrow's Workforce: Incentivizing Learning in AI-Assisted Work",
+        "authors": [
+          "Moritz Diener",
+          "Daniel Hendriks",
+          "Philipp Spitzer",
+          "Gerhard Satzger",
+          "Joshua Holstein",
+          "Wei Sun"
+        ],
+        "url": "https://arxiv.org/abs/2611.06346",
+        "one_sentence": "Extends an accept-or-solve model to sequential tasks where workers' skills evolve through practice versus reliance on AI.Compares myopic and strategic workers and shows novices can get trapped at low skill while experts lose skill despite high AI-assisted accuracy.Derives incentive payments needed to sustain independent work and skill acquisition, showing some payments become self-sustaining over time.",
+        "nearest_anchor_id": "2509.01063",
+        "nearest_anchor_title": "An Economy of AI Agents",
+        "open_questions": [
+          "Does the predicted skill trap appear in real AI-assisted work, where novices stay at low skill while outcome accuracy stays high?",
+          "What happens to the incentive scheme when many workers share one AI system and skills are distributed across a workforce rather than held by a single worker?",
+          "How do the incentive costs change when workers are heterogeneous in starting skill, learning rate and effort cost?",
+          "Can an organisation infer a worker's skill level and reliance pattern from accept-or-solve logs alone, so that incentives can be targeted?",
+          "Does the result that a higher skill target can lower long-run incentive cost survive when AI accuracy itself improves over time?",
+          "Which skills are worth investing in when the AI oversees tasks the worker can no longer check independently?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.06629",
+        "title": "Does Frontier AI Strengthen Cyber Defense? Evidence from Project Glasswing",
+        "authors": [
+          "Thomas Mosk"
+        ],
+        "url": "https://arxiv.org/abs/2611.06629",
+        "one_sentence": "Studies how early access to a frontier vulnerability-finding AI model affected disclosures by treated tech firms versus firms without access.Finds treated firms more than doubled disclosures and reported more high-impact vulnerabilities while fixing flaws at the same speed.Finds external bug-bounty researchers shifted reporting toward untreated firms and that the share of exploited vulnerabilities fell, with no rise in attacker exploitation counts.",
+        "nearest_anchor_id": "2512.16856",
+        "nearest_anchor_title": "Distributional AGI Safety",
+        "open_questions": [
+          "Access to the vulnerability-finding model went to a small group of large US tech firms, so the effect of broad access on the same outcomes is untested; what happens to disclosure and exploitation rates when access widens to smaller firms and to firms in other countries?",
+          "External researchers reported about half as many vulnerabilities in treated firms' code and more elsewhere; it remains open whether this reallocation changes total security across the whole software ecosystem or just moves effort.",
+          "Attackers may themselves gain access to comparable vulnerability-finding models through open-weight or jailbroken systems; the paper does not measure exploitation under that condition.",
+          "The study measures disclosure counts and fix speed but not whether the additional flaws found are the ones attackers would have chosen; how much do model-found vulnerabilities overlap with exploited vulnerabilities?",
+          "Restricted release creates a measured asymmetry in software security between firms in different countries; the long-run equilibrium of that asymmetry is unmodelled."
+        ]
+      },
+      {
+        "arxiv_id": "2611.06374",
+        "title": "Corralling AI Risks with Grassroots Contracts",
+        "authors": [
+          "Ehud Shapiro"
+        ],
+        "url": "https://arxiv.org/abs/2611.06374",
+        "one_sentence": "Proposes 'grassroots contracts' as a decentralized mechanism to give accountable identities to AI agents and provenance to content on digital platforms.Presents smartphone app implementations for a social graph with accountable agents and a social network with content provenance.Argues this design counters platform AI control, anonymous AI agents, and unattributed deepfakes.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Grassroots contracts are presented with two smartphone apps, but the abstract gives no measurement of adoption or behaviour at scale. What happens to a grassroots social graph when thousands of accountable AI agents and humans join it?",
+          "The proposal assumes agent accountability follows from contract-based identity attestation. Can an agent that holds an accountable identity still masquerade as a human in its content and interactions?",
+          "Digital provenance is proposed as the remedy for unattributed deepfakes, but the abstract reports no detection or evasion rate. How often can anonymous content bypass or forge provenance in practice?",
+          "Grassroots contracts aim to prevent control of global platforms by any single party. Which network conditions let a grassroots social graph re-concentrate into a few dominant hubs?",
+          "Mass migration from incumbent platforms is required for grassroots contracts to corral the three risks. What incentives make users leave a platform with network-effect lock-in?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-03",
     "counts": {
       "fetched": 339,
@@ -7520,93 +7612,6 @@
           "Does the bounded transition range assumption hold in multi-agent best-response dynamics, where Lipschitz sensitivity fails?",
           "How do weighted and unweighted per-state Hedge dynamics behave empirically in agent populations where the environment map is discontinuous?",
           "Does local mixed stability, which equals stationarity, still permit population-level failures such as herding when many agents deploy policies that reshape a shared environment?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-09-05",
-    "counts": {
-      "fetched": 152,
-      "unseen": 152,
-      "screened": 152,
-      "relevant": 6,
-      "kept": 4,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2609.06151",
-        "title": "Ripple Effects: Robust Norms without Punishment",
-        "authors": [
-          "Alistair Barton"
-        ],
-        "url": "https://arxiv.org/abs/2609.06151",
-        "one_sentence": "Builds a tractable model of pro-social norms among slightly altruistic agents in large communities.Shows a continuum of equilibria sustaining the norm depending on how much agents are influenced by others' observed actions.Finds robustness to bad actors requires altruism to exceed impatience, and that more observers per action does not improve robustness.",
-        "nearest_anchor_id": "2409.02822",
-        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
-        "open_questions": [
-          "Does the norm survive when agents are strategically heterogeneous, and how does robustness scale with the degree of heterogeneity?",
-          "Do populations of LLM agents that observe each other's actions sustain a pro-social norm without punishment, as the model predicts?",
-          "How does the robustness result change when observation is structured by a network rather than by a fixed number of random observers?",
-          "What conditions on altruism and impatience make the equilibrium selection unique rather than a continuum?",
-          "Do real online communities show the predicted insensitivity of norm compliance to audience size beyond one observer?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.05792",
-        "title": "Scalable Clustered Network Connectedness with Control Variables: Theory and Application to Global Banking",
-        "authors": [
-          "Bastien Buchwalter",
-          "Francis X. Diebold",
-          "Kamil Yilmaz"
-        ],
-        "url": "https://arxiv.org/abs/2609.05792",
-        "one_sentence": "Extends a clustered connectedness framework by adding diagnostics for ordering sensitivity and a control-variable cluster for macro-financial factors.Applies the method to seventy-one global banks across seven regional clusters from 2003 to 2024.Finds accounting for common factors changes system-wide connectedness estimates and reduces ordering sensitivity, especially for US and European clusters.",
-        "nearest_anchor_id": "2503.13395",
-        "nearest_anchor_title": "Causal Emergence 2.0: Quantifying emergent complexity",
-        "open_questions": [
-          "Does the choice of cluster membership change cross-cluster connectedness, and how much?",
-          "The method assumes control-cluster innovations are contemporaneously exogenous to bank-cluster innovations; what happens to the estimates when that assumption fails?",
-          "Does the control-cluster design reduce ordering sensitivity in networks other than global banking, for example equity sectors or crypto markets?",
-          "Can clustered connectedness with controls detect herding or monoculture in markets where autonomous trading agents act at scale?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.06231",
-        "title": "Formalising Grassroots Social Contracts: From Legal Text to Grassroots Platforms",
-        "authors": [
-          "James Golike",
-          "Andy Lewis-Pye",
-          "Ehud Shapiro"
-        ],
-        "url": "https://arxiv.org/abs/2609.06231",
-        "one_sentence": "Defines grassroots social contracts as agreements meeting eight conditions including no external register or authority.Describes an abstraction cascade turning legal contract text into formal act schemas and multiagent transaction protocols.Proves the resulting protocol satisfies the grassroots and volition conditions, illustrated with a social graph and currency example.",
-        "nearest_anchor_id": "2509.10147",
-        "nearest_anchor_title": "Virtual Agent Economies",
-        "open_questions": [
-          "Do grassroots platforms built from these act schemas hold up when many agents join, fork and coalesce instances at scale?",
-          "What happens to grassroots currencies and the grassroots social graph when some participants behave strategically or collude?",
-          "How do the three legal clause types behave in practice, when attested and undertaken clauses depend on courts outside the protocol?",
-          "Can the decidable Introduction, Provenance and Volition conditions be checked automatically on contract text written by people rather than in the formal language?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.06140",
-        "title": "Counter-Swarm Doctrine: Containing Coordinated Agent Intrusions",
-        "authors": [
-          "Gregory N Frank"
-        ],
-        "url": "https://arxiv.org/abs/2609.06140",
-        "one_sentence": "Argues shared infrastructure lets agents coordinate intrusions across multiple executions, using incidents as motivation.Proposes treating a 'coordination episode' as the unit of security analysis and defines evidence needed to distinguish influence from common cause.Outlines an evaluation design comparing isolated actions, rolling windows, and discovered episodes, without presenting a detector or measured results.",
-        "nearest_anchor_id": "2512.16856",
-        "nearest_anchor_title": "Distributional AGI Safety",
-        "open_questions": [
-          "Prospective episode discovery, finding which agent actions belong together before an evaluator supplies membership, has no implemented detector yet. Which algorithms can group actions into coordination episodes from interaction and storage logs?",
-          "The proposed evaluation compares isolated actions, rolling windows, known groups, and prospectively discovered episodes at matched review cost, but is never run. Does episode-level monitoring reduce harmful outcomes compared to per-action monitoring?",
-          "Storage-mediated coordination is linked to stigmergy, but the evidence needed to separate influence from common causes is only specified. Which statistical tests distinguish agent-to-agent influence through shared storage from correlated behaviour with a shared cause?",
-          "Recurrence after channel closure and state quarantine is proposed as a test but not measured. Do coordinated agent intrusions resume after a shared channel closes and inherited state is quarantined?",
-          "The analysis rests on the Hugging Face incident and one public-wiki investigation. Do coordination episodes appear on other shared infrastructure such as package registries or public code repositories?"
         ]
       }
     ]
