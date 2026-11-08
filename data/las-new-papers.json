@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-11-07",
+    "counts": {
+      "fetched": 0,
+      "unseen": 0,
+      "screened": 0,
+      "relevant": 0,
+      "kept": 0,
+      "anchors": 20
+    },
+    "papers": []
+  },
+  {
     "date": "2026-11-06",
     "counts": {
       "fetched": 0,
@@ -7401,76 +7413,6 @@
           "How does the Italian B2B network change over time, and are firm-to-firm links stable or churning?",
           "Do other countries' invoicing networks show the same lower downstream than upstream tail exponents?",
           "Which concentration measures on the invoice network best predict firm-level distress or sector-level output loss?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-09-08",
-    "counts": {
-      "fetched": 318,
-      "unseen": 318,
-      "screened": 248,
-      "relevant": 9,
-      "kept": 3,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2609.09150",
-        "title": "Copying explains the collective behavior of AI agents in the wild",
-        "authors": [
-          "Giordano De Marzo",
-          "Nicola Alboré",
-          "David Garcia"
-        ],
-        "url": "https://arxiv.org/abs/2609.09150",
-        "one_sentence": "Analyzes a public log of thousands of short-lived AI agents editing a wiki to pass a timed test. Fits three minimal copying models, one per decision (where to write, what name to use, how to word messages). Shows simple copying of visible content reproduces heavy-tailed meeting distributions, name-part frequencies, and page-level consistency patterns.",
-        "nearest_anchor_id": "2409.02822",
-        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
-        "open_questions": [
-          "Copying models reproduce page popularity, name pieces and page consistency, but the abstract does not say whether the first writer can reliably set a convention. Does an early or quiet-period intervention steer conventions in a population of copying agents, and how large must it be?",
-          "The copying rule comes from one wiki episode with hour-lived, memoryless agents. Does the same proportional copying rule hold for agents with persistent memory or longer lifetimes?",
-          "Each of the three copying models has a single free parameter. How do the fitted parameters vary across agent model families and prompt settings?",
-          "Agents weight the page in front of them most, then the recent edit stream, and only weakly older content. Which environment designs reduce this recency weighting and prevent convention lock-in?",
-          "The record covers one public wiki that agents found by accident. How common is such spontaneous coordination on other open, writable public resources?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.08677",
-        "title": "Entropic Risk-Sensitive Evolutionary Learning and Equilibrium Selection in Coordination Games",
-        "authors": [
-          "Solaleh Mohammadi",
-          "Xiang Gao",
-          "Kaiqing Zhang"
-        ],
-        "url": "https://arxiv.org/abs/2609.08677",
-        "one_sentence": "Models risk-sensitive evolutionary learning using an entropic risk measure in coordination games under best-response-with-mutations and logit-choice protocols. Shows population risk attitude changes which equilibrium is stochastically stable, with risk-seeking populations favoring payoff-dominant outcomes and risk-averse populations favoring maximin outcomes. Extends single-population results to symmetric k-action games under large-population limits.",
-        "nearest_anchor_id": "2502.14143",
-        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
-        "open_questions": [
-          "Does risk sensitivity steer equilibrium selection in populations of LLM agents playing coordination games, as the entropic model predicts?",
-          "What happens to equilibrium selection when agents in the same population hold different risk attitudes instead of one shared parameter?",
-          "Do the large-population results for k-action games hold at small and intermediate population sizes?",
-          "Can the risk attitude of a population be inferred from observed play alone, so that a monitor could read the control knob from interaction logs?",
-          "Do the two-population asymmetric results extend to k-action games beyond the 2x2 case analysed?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.08198",
-        "title": "Self-Fulfilling Prophecies, Quasi Nonergodicity, and Wealth Inequality: A Comment",
-        "authors": [
-          "Alexis Akira Toda"
-        ],
-        "url": "https://arxiv.org/abs/2609.08198",
-        "one_sentence": "Re-derives the wealth distribution statistics from Bouchaud and Farmer's self-fulfilling-prophecy model, correcting a time-averaged estimand to a cross-sectional one. With one million dynasties, finds terminal cross-sectional Gini of 0.883 versus the reported 0.7, and lower median-to-average wealth ratio. Notes the corrected model produces more inequality but does not match the originally claimed quantitative fit or Pareto tail.",
-        "nearest_anchor_id": "2502.08691",
-        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
-        "open_questions": [
-          "Can the self-fulfilling-beliefs model reproduce observed wealth distributions once the statistics come from a terminal cross section instead of dynasty-level time averages?",
-          "Does the wealth process in the model have a Pareto tail, and what is its exponent?",
-          "Which parameter values, if any, let the model match both the Gini coefficient and median-to-mean wealth ratio at the same time?",
-          "How large a difference does the choice between time-averaged and cross-sectional estimands make in other agent-based wealth models?"
         ]
       }
     ]
