@@ -1,27 +1,339 @@
 [
   {
-    "date": "2026-11-08",
+    "date": "2026-11-09",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 319,
+      "unseen": 319,
+      "screened": 200,
+      "relevant": 15,
+      "kept": 8,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2611.11714",
+        "title": "Steering Emergent Behavior in Multi-Agent LLM Systems via Information Networks",
+        "authors": [
+          "Sepehr Ilami",
+          "Babak Heydari"
+        ],
+        "url": "https://arxiv.org/abs/2611.11714",
+        "one_sentence": "Tests how an operator-controlled observation network among ten LLM agents affects group welfare across six repeated games. Finds disclosure value depends on alignment between individual and collective incentives. Finds a modular 'barbell' wiring is reliably worst when coupling is harmful.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "The sign separation between helpful and harmful information sharing comes from one LLM population of ten identical agents; does the same pattern hold for other model families, mixed populations, and larger groups?",
+          "Which network statistics predict the welfare effect of a given information network, beyond the finding that a modular barbell wiring is the worst at fixed budget?",
+          "Can an operator who controls only observation links learn a budget-constrained wiring policy online, instead of choosing from fixed candidate topologies?",
+          "Does the alignment-contingent value of information survive when agents can send messages or when payoffs vary across agents, both held fixed here?",
+          "How do these results on six abstract games transfer to agent collectives in deployed settings such as markets or platforms?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.11867",
+        "title": "Competing Influence in LLM Populations: Budget Timing and Baseline Drift",
+        "authors": [
+          "Mehwish Nasim",
+          "Nicolas Fay"
+        ],
+        "url": "https://arxiv.org/abs/2611.11867",
+        "one_sentence": "Studies how campaign spending timing and baseline opinion drift shape outcomes in LLM agent populations exchanging opinions. Compares single and competitive campaigns against no-campaign baselines across eight claims. Finds populations lose stance diversity over time and campaign effects depend on opponent spending schedule.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Does baseline stance drift in persona-conditioned LLM agent populations depend on the model used, or does it persist across model families and sizes?",
+          "Why do uninfluenced LLM agent populations lose stance diversity, and which mechanism drives it: persona conditioning, message summarisation, or model-level agreement bias?",
+          "Does the absence of a pure-strategy equilibrium in campaign spending schedules hold for finer timing grids and unequal budgets?",
+          "How does network structure beyond two segregated communities, such as scale-free or core-periphery topologies, change whether campaigns reduce between-community or within-community diversity?",
+          "Do LLM campaign agents refuse to argue against established evidence because of safety training, and can the refusal be removed by prompting or fine-tuning?",
+          "Do the drift and convergence effects measured in LLM agent populations match opinion change in human populations exposed to matched competing campaigns?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.11724",
+        "title": "Explaining and interrupting collective misalignment in language model systems",
+        "authors": [
+          "Edoardo Chidichimo"
+        ],
+        "url": "https://arxiv.org/abs/2611.11724",
+        "one_sentence": "Introduces Collective Dependence Analysis to find which messages were necessary and sufficient for a collective's policy violation. Tests on constructed violations, unscripted conversations, and recorded interactions, reducing violation rates from 93% to 6% with selected removals. Uses O(N) model evaluations and matches an LLM-judge baseline with half the deletions.",
+        "nearest_anchor_id": "2512.02682",
+        "nearest_anchor_title": "Beyond Single-Agent Safety: A Taxonomy of Risks in LLM-to-LLM Interactions",
+        "open_questions": [
+          "Removing messages selected by Collective Dependence Analysis can disrupt correct decisions; how often does this happen and which message types cause it?",
+          "Collective Dependence Analysis gives incomplete explanations on unfamiliar tasks; which task features predict explanation failure?",
+          "Tests ran on constructed violations, unscripted conversations and recorded interactions of unstated size; does the method scale to collectives with hundreds or thousands of agents?",
+          "Does interrupting messages at runtime prevent violations in a live agent collective, rather than only in post-hoc transcript analysis?",
+          "Can agents adapt their message patterns to evade dependence-based removal once the intervention is known?",
+          "How does Collective Dependence Analysis compare with a frontier LLM judge outside the eligible operational cases reported here?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.12343",
+        "title": "The role of administrative costs in policies to improve cooperation",
+        "authors": [
+          "Giacomo Vaccario",
+          "Luca Verginer",
+          "Frank Schweitzer"
+        ],
+        "url": "https://arxiv.org/abs/2611.12343",
+        "one_sentence": "Builds an agent-based model where a government taxes payoffs to fund cooperation bonuses in a repeated prisoner's dilemma. Models administrative costs for identifying cooperators and mitigating defection, with fallible detection accuracy. Finds perfect cooperation is impossible but optimal accuracy-adjustment policies achieve high cooperation levels.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "The model treats the government as an abstract actor with a single accuracy parameter, so it is open how the results change when identification accuracy comes from a concrete monitoring mechanism such as a classifier over interaction logs.",
+          "Agents play a repeated prisoner's dilemma, so it is open whether the same bonus and accuracy constraints hold for other games and for richer action spaces.",
+          "The model does not say how agents respond when they know the government's identification is fallible, so it is open whether agents learn to game the bonus scheme.",
+          "The agents are abstract strategy-following agents, so it is open whether LLM agents in the same taxation and bonus setting reproduce the optimal adjustment policies.",
+          "Interventions are applied to a population without structure, so it is open how network topology among agents changes the critical bonus and the cost constraints."
+        ]
+      },
+      {
+        "arxiv_id": "2611.11786",
+        "title": "Payoff-Aware Prediction of Population Game Dynamics",
+        "authors": [
+          "Kang Wang",
+          "Xiao Wang",
+          "Bo Li",
+          "Renzhe Xu"
+        ],
+        "url": "https://arxiv.org/abs/2611.11786",
+        "one_sentence": "Proposes PA-RmD, a method separating payoff-dependent incentives from payoff-independent response structure to predict population game trajectories under new payoff designs. Derives finite-time prediction bounds under shared-response and payoff-coverage conditions. Tests on synthetic zero-sum and potential games plus a YouTube Trending multi-country dataset.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Prediction bounds cover one step only, so how far does error grow over long trajectories under a new payoff design?",
+          "The method assumes a shared payoff-independent response structure across payoff designs, so does that assumption hold for populations of LLM agents whose response to incentives may itself shift?",
+          "Does payoff-aware prediction support inverse use, that is choosing a payoff design that drives a population to a target aggregate distribution?",
+          "The evaluation uses synthetic games and one YouTube Trending dataset, so how does the method perform on other aggregate behavioural time series such as market shares or platform engagement?",
+          "How does prediction accuracy degrade when a new payoff design falls outside the payoff-coverage condition?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.11783",
+        "title": "Fairness Drift: Assessing Algorithmic Fairness in a Moving Market",
+        "authors": [
+          "Meng Liu"
+        ],
+        "url": "https://arxiv.org/abs/2611.11783",
+        "one_sentence": "Studies how an algorithmic property-assessment reform's fairness effects interact with market price movements over Cook County's triennial reassessment cycle. Uses difference-in-differences on assessment-to-price ratios by sale price and neighborhood minority share. Finds the reform reduced over-assessment of cheap homes in Chicago but had no clear effect in two suburban cycles.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Fairness drift appears in one county over three reassessment cycles, so does the same pattern appear in other jurisdictions that moved to machine-learning assessment?",
+          "How does the length of the reassessment interval change the size of the measured fairness gap?",
+          "Can indexing frozen values to local price changes between updates remove the drift component of measured unfairness?",
+          "What evaluation design separates the effect of a new assessment algorithm from the effect of market movement since the last update?",
+          "The paper reports a weakened link between assessment-to-price ratio and neighborhood minority share in Chicago only, so which features of the model or the data drive that change?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.12255",
+        "title": "When the Norm is Wrong: Social Norm Misspecification and Targeting with an Application to Microfinance Adoption",
+        "authors": [
+          "Shantanu Chadha"
+        ],
+        "url": "https://arxiv.org/abs/2611.12255",
+        "one_sentence": "Extends the CES social-norm specification from continuous to discrete choices in a binary-choice peer-effects game with incomplete information. Estimates the model via Nested Pseudo-Likelihood on microfinance adoption data from Indian villages. Finds a max-leaning norm and shows subsidy targeting differs substantially between CES and linear norm specifications.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Does the CES norm specification extend from binary choice to multinomial or continuous choices while keeping existence and uniqueness of the rational expectations equilibrium?",
+          "How much does social norm misspecification change targeting policies in diffusion settings other than microfinance adoption in India?",
+          "How does the estimated norm curvature behave when peer influence operates through AI agents that act on behalf of households rather than through households themselves?",
+          "Does the Nested Pseudo-Likelihood estimator with the spectral algorithm remain tractable as the number of agents per network grows to thousands?",
+          "What happens to subsidy targeting when the norm curvature is heterogeneous within a village rather than constant across households in that village?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.12690",
+        "title": "Average versus expected causal effects under interference: Modeling assumptions and estimation bottlenecks",
+        "authors": [
+          "Vishesh Karwa",
+          "Edoardo M. Airoldi",
+          "Donald B. Rubin"
+        ],
+        "url": "https://arxiv.org/abs/2611.12690",
+        "one_sentence": "Builds hierarchical models decomposing potential outcomes under interference into direct, spillover, and interaction components. Defines average and expected causal effect estimand classes and bounds Horvitz-Thompson estimator variance under different experimental designs. Shows nonparametric estimation of average effects can require sample sizes exponential in interference degree, while expected effects can need only polynomial growth.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Graph-aware independent-set designs give variance bounds polynomial in the maximum degree, but the abstract reports no finite-sample comparison against graph cluster randomization; how do the two designs compare on real network topologies?",
+          "The framework assumes a known interference neighborhood and exposure mapping; what happens to estimates of direct, spillover and interaction components when the assumed neighborhood is wrong?",
+          "Can the exponential-to-polynomial separation between average causal effects and expected causal effects be extended to interference structures beyond neighborhood interference?",
+          "Do the decomposition and the independent-set designs apply to experiments on populations of interacting AI agents, where treatment spills over through message exchange rather than a fixed graph?"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-08",
+    "counts": {
+      "fetched": 193,
+      "unseen": 193,
+      "screened": 193,
+      "relevant": 5,
+      "kept": 3,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2611.11576",
+        "title": "Continuous modeling of manipulative participation for stance analysis: Online discourse on the 2024 Street Animal Law in Türkiye",
+        "authors": [
+          "Ulya Bayram",
+          "Ebru Belkıs Güzeloğlu",
+          "Emel Kuşku Özdemir",
+          "Elif Üstündağlı Erten",
+          "Öyküm Esra Yiğit"
+        ],
+        "url": "https://arxiv.org/abs/2611.11576",
+        "one_sentence": "Proposes continuous (non-binary) scoring of manipulative participation in online political discourse, applied to 7.3 million tweets from 537,994 users on a Turkish law debate. Annotates 301 users with a 10-criterion rubric and integrates manipulation scores with stance classification using gradient boosting and BERTurk models.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "Does a continuous manipulative participation score transfer to other languages, platforms and political topics beyond Turkish-language tweets on the 2024 Street Animal Law?",
+          "How does the distribution of manipulative participation scores across a user population change aggregate stance estimates compared to treating all participation as authentic?",
+          "Can a continuous manipulative participation score separate human coordinated campaigns from automated LLM-agent participation?",
+          "How few annotated users does the scoring model need before estimates degrade, given the 301 manually annotated users used here?",
+          "What does continuous scoring of manipulative participation miss when the campaign coordinates through timing and network structure rather than through user-level text?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.11658",
+        "title": "Measuring Generative AI Content in Political Campaigns: Evidence of Rising Adoption and Non-Disclosure",
+        "authors": [
+          "Anna-Maria Gueorguieva",
+          "Nic Weber"
+        ],
+        "url": "https://arxiv.org/abs/2611.11658",
+        "one_sentence": "Measures generative AI content (AIGC) use and disclosure across campaign websites, X accounts, and emails of 12,977 U.S. political candidates from 2023-2025. Finds rising AIGC use, frequent non-disclosure, lower AIGC use among incumbents, and no measurable effect of state disclosure laws on AIGC production.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "How accurate are the AIGC detectors on text and images from political campaigns, and what is their false positive rate on human-written campaign material?",
+          "Do state AIGC disclosure and prohibition laws have no effect on production once staggered adoption dates and candidate composition are accounted for?",
+          "Does AIGC use by campaigns change voter trust in candidates or in advertising?",
+          "Does the gap between incumbent and challenger AIGC production reflect budget, staff size, or risk aversion?",
+          "How much AIGC appears in campaign video and audio, which the text and image measures do not cover?",
+          "Does the measured rise in campaign AIGC extend to elections outside the United States?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.11143",
+        "title": "Fair Combinatorial Auctions",
+        "authors": [
+          "Karan Maniyar"
+        ],
+        "url": "https://arxiv.org/abs/2611.11143",
+        "one_sentence": "Characterizes the core of combinatorial auctions with substitute buyers, showing it is described by individual payoff caps with a unique Lorenz-dominant division. Constructs a bargaining game that implements this division in subgame-perfect equilibrium without discounting.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "The core result assumes buyers are substitutes. Does a unique Lorenz-dominant payoff vector exist when buyers are complements?",
+          "Full implementation of the Lorenz-dominant division holds without discounting. What equilibria arise in the bargaining game when buyers discount future rounds?",
+          "The bargaining game assumes complete information. How does the division change when the seller does not know buyer valuations?",
+          "Can LLM agents or learning agents playing the proposed bargaining game converge to the Lorenz-dominant division?",
+          "How does the seller's share of surplus under the Lorenz-dominant vector scale with the number of buyers and the structure of the bundle market?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-11-07",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 251,
+      "unseen": 251,
+      "screened": 200,
+      "relevant": 10,
+      "kept": 4,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2611.10791",
+        "title": "Winning Reviews, Losing Discovery? The Co-Evolutionary Game of AI Research and Peer Review",
+        "authors": [
+          "Hongze Liu",
+          "Mengru Wang",
+          "Zhiyuan Zhang",
+          "Yao Liu"
+        ],
+        "url": "https://arxiv.org/abs/2611.10791",
+        "one_sentence": "Models authors and reviewers as two evolving populations choosing between acceptance-oriented versus exploratory research and proxy versus careful review. Derives conditions for a self-reinforcing equilibrium where published output volume rises while scientific value falls, and identifies interventions that can reverse the feedback.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "The model assumes two author strategies and two reviewer strategies, but does not calibrate payoffs to real peer review data; can submission, acceptance and review-load statistics from public venues (OpenReview, arXiv) estimate these payoffs?",
+          "The analysis derives a basin boundary analytically, but does not test whether the same feedback appears when authors and reviewers are LLM agents rather than replicator-dynamic populations; what happens in an agent-based simulation of a conference with LLM authors and LLM reviewers?",
+          "Numerical illustrations show that temporary support can produce lasting recovery once the community crosses the basin boundary, but the size and duration of that support is not identified for any real venue; how large must an audit or reviewer-reward intervention be to flip a given conference?",
+          "The model reports that publication counts can conceal scientific loss, but does not propose an observable indicator of that loss; which aggregate measures from public bibliometric data track declining scientific value while publication counts rise?",
+          "Faster adjustment reinforces existing practices in the model, yet the adjustment speeds are assumed rather than measured; how fast do author and reviewer strategies actually shift after a policy change at a venue?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.10620",
+        "title": "What Do Collusion Probes Read? Three Pitfalls in Evaluating Multi-Agent Collusion Monitors",
+        "authors": [
+          "Mainul Hasan Mohsin",
+          "Mohammad Shahidur Rahman"
+        ],
+        "url": "https://arxiv.org/abs/2611.10620",
+        "one_sentence": "Identifies three pitfalls in evaluating activation probes meant to detect secret collusion between LLM agents, showing probes often detect instruction rather than decision. Introduces a benchmark of 2,500 committee and 1,476 code-review episodes separating instructed-but-refusing agents from colluders, and proposes a revised testing protocol plus an online monitor.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Probes separate colluders from refusers at AUROC 0.73 when the collusion instruction is removed from the context. Can a monitor reach higher separation of decision from instruction without access to agent activations?",
+          "The benchmark covers committee voting and code review. Does the instruction-reading pitfall also appear in collusion monitors for market settings such as pricing or auctions?",
+          "Probes detect colluders whose goal is fine-tuned into the weights at AUROC 0.995. How does detection change when the goal is implanted by other means, such as retrieval, memory, or multi-turn persuasion?",
+          "In 57% of attempts no colluder argues for the target in public. What interaction-log features identify collusion when the coordination never surfaces in public messages?",
+          "Scan statistics give an online monitor for groups of any size. How does its detection rate scale to groups of hundreds or thousands of agents?",
+          "Activation probes need internal access to the agent. Can the protocol be applied to collusion monitoring of commercially deployed agents where only outputs are visible?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.10508",
+        "title": "Imperfectly Imperfect: Evaluating Graded Cognitive Diversity in LLM Persona Simulations",
+        "authors": [
+          "Sion Weatherhead",
+          "Ben Newell",
+          "Aaron Belbasis",
+          "Flora Salim"
+        ],
+        "url": "https://arxiv.org/abs/2611.10508",
+        "one_sentence": "Tests whether LLM agents assigned cognitive-trait personas reproduce human variation in reasoning and behavior, using new reflection tests against 473 human participants. Finds agents recover self-reported trait distributions but fail to reproduce diversity in task performance and behavior, often overproducing certain behaviors.",
+        "nearest_anchor_id": "2510.22422",
+        "nearest_anchor_title": "Group size effects and collective misalignment in LLM multi-agent systems",
+        "open_questions": [
+          "Prompt-based persona conditioning fails to produce graded cognitive task performance, so can fine-tuning or decoding-level interventions restore the human distribution of intuitive-lure errors?",
+          "The evaluation covers four models and seven runs, so how do open-weight models of different sizes and families compare on the same cognition suite?",
+          "Agents reproduce trait questionnaire distributions but not task performance, so which synthetic populations in multi-agent market and social simulations change their aggregate outcomes under this error?",
+          "The suite tests individual agents answering a battery, so does the same collapse of cognitive diversity appear when agents interact with each other over many rounds?",
+          "Human reference data comes from a cohort of 473 adults, so do the gaps persist against other populations with different demographics?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.10999",
+        "title": "Differentiable Agent-Based Modeling for Multi-Echelon Supply Chains: Gradient-Based Optimization of Heterogeneous Policies at Scale",
+        "authors": [
+          "Bulent Soykan",
+          "Murtadha Alsayegh",
+          "Sean Mondesire",
+          "Ghaith Rabadi"
+        ],
+        "url": "https://arxiv.org/abs/2611.10999",
+        "one_sentence": "Implements a differentiable agent-based model of multi-echelon inventory chains, propagating gradients through simulated stochastic dynamics. Optimizes 10,000 distinct agent policies simultaneously, reporting a 53% cost reduction versus scalar baselines and using gradient sensitivity to recover lead-time delays.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Does the differentiable agent-based model still recover good policies when agents act strategically against each other rather than optimizing a shared cost?",
+          "How do gradient-optimized heterogeneous inventory policies behave in aggregate, for example whether they herd onto correlated ordering patterns and amplify demand shocks?",
+          "Does the 53% cost reduction over scalar baselines hold under demand distributions and lead-time structures other than the ones tested?",
+          "Do the causal heatmaps from gradient sensitivity analysis recover true causal structure in systems where the generating dynamics are not known in advance?",
+          "Can the differentiable framework be calibrated against real multi-echelon supply chain data instead of synthetic demand?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-11-06",
@@ -7245,124 +7557,6 @@
           "Does the method recover a single altruism parameter when the population is heterogeneous in altruism? The framework uses one parameter governing the degree of altruism.",
           "Can the same inverse approach recover latent cooperation levels in populations of LLM agents rather than humans?",
           "Which incentive schemes follow from recovered altruism and cost estimates, and do they change population behaviour as intended?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-09-10",
-    "counts": {
-      "fetched": 232,
-      "unseen": 232,
-      "screened": 200,
-      "relevant": 16,
-      "kept": 5,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2609.11108",
-        "title": "But How Would AI Agents Run a Town's Economy?",
-        "authors": [
-          "Sajal Regmi",
-          "Siddhartha Pudasaini",
-          "Chetan Phakami Pun"
-        ],
-        "url": "https://arxiv.org/abs/2609.11108",
-        "one_sentence": "Runs a 100-agent LLM-based closed economy simulation for up to 26 weeks. Measures monetary transmission, wage stickiness, and wealth concentration decay after shocks and cash transfers. Finds most money stays static; wealth correlation across weeks drops from 0.964 at 2 weeks to 0.752 at 26 weeks.",
-        "nearest_anchor_id": "2506.12078",
-        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
-        "open_questions": [
-          "Agents reprice only 0.3% of 3,981 menu items after a 12x demand shock, and the paper does not say why. Which prompt, tool or incentive change makes LLM agents adjust prices?",
-          "Wealth rank correlation falls from 0.964 at 2 weeks to 0.752 at 26 weeks, and the paper stops at 26 weeks. Does the distribution keep unfreezing at longer horizons, or does it settle?",
-          "Swapping the backing LLM moves every measured outcome (p=0.0039), while deleting agent memory moves none detectably. Which model properties drive the economic outcomes?",
-          "A purely social tool fails 94-97% of the time across two model families. What causes the failures, and do agents ever learn to avoid the tool?",
-          "Marginal propensity to consume after a cash transfer is 3-4%, indistinguishable from zero. Does the same near-zero propensity appear when human participants trade inside the same economy?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.11146",
-        "title": "The Oligarch Barely Steers Model Collapse in Multi-Model Ecosystems",
-        "authors": [
-          "Yangze Liu",
-          "Zhongyi Han"
-        ],
-        "url": "https://arxiv.org/abs/2609.11146",
-        "one_sentence": "Tests recursive training collapse in ecosystems of 3-13 open LLMs mixed by market share, including an injected 90%-share oligarch model. Finds market concentration barely changes collapse speed or destination within the tested range. Shows collapse speed depends instead on which specific models supply the shared training pool, with a susceptibility index explaining speed variation (R^2=0.68).",
-        "nearest_anchor_id": "2602.16136",
-        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
-        "open_questions": [
-          "Model collapse tests use 13 open models of 1-4B parameters over five generations; whether the same invariance to market concentration holds for larger models or more generations is untested.",
-          "The share-weighted susceptibility index explains 68% of speed variance across nineteen arms, leaving the rest unexplained; what other model properties predict how fast an ecosystem drifts?",
-          "Replacing half the pool with human text roughly halves drift without changing its course; the minimum fraction and the type of human text that slows collapse are not reported.",
-          "Collapse is measured on a single ruler that registers only a faint trace of the topic shifts caused by share and identity knobs; which metrics detect steering that this ruler misses?",
-          "The pool mixes outputs by market share and retrains every model from clean base weights each generation; how do collapse speed and destination change under continual fine-tuning or non-uniform pooling rules?",
-          "Real generative AI markets are an oligopoly, but the experiment injects a probe to force a 90% top share; how do actual market shares and real web text contamination rates map onto the tested range?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.11149",
-        "title": "A Fragility Spectrum for Recursive Language-Model Training",
-        "authors": [
-          "Yangze Liu",
-          "Zhongyi Han"
-        ],
-        "url": "https://arxiv.org/abs/2609.11149",
-        "one_sentence": "Runs 13 checkpoints through five generations of shared recursive training and finds a five-fold spread in output diversity loss. Shows collapse susceptibility is a stable per-checkpoint property, not explained by parameter scale or static indicators. Finds cutting top-p sampling at generation time nearly stops collapse across the tested checkpoints.",
-        "nearest_anchor_id": "2602.16136",
-        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
-        "open_questions": [
-          "No static indicator tested predicts a checkpoint's fragility under recursive training, so what checkpoint properties do predict it?",
-          "Fragility is measured with unique 4-gram counts after five generations, so it is open whether the same ordering of checkpoints holds under semantic or task-performance measures of collapse.",
-          "The experiment fixes one recursive contamination protocol, so it is open whether the checkpoint ordering survives other protocols, such as longer generation chains or asymmetric contamination shares.",
-          "Tightening top-p nearly stops collapse within three generations for six checkpoints, so how does this intervention trade off against output quality and diversity in the uncontaminated case?",
-          "The ecosystem has 13 checkpoints sharing one corpus, so it is open how mixed ecosystems behave when fragile and robust models contribute unequal shares of the shared pool.",
-          "Parameter scale does not explain fragility within a three-size ladder, so it is open whether pretraining data composition or post-training method drives it."
-        ]
-      },
-      {
-        "arxiv_id": "2609.11373",
-        "title": "Characterizing Bluesky Content Moderation Service: From Automation of Service to Landscape of Harms",
-        "authors": [
-          "Pushpdeep Singh",
-          "Sayeh Jarollahi",
-          "Ayan Majumdar",
-          "Vabuk Pahari",
-          "Abhijnan Chakraborty",
-          "Krishna P. Gummadi",
-          "Ingmar Weber",
-          "Abhisek Dash"
-        ],
-        "url": "https://arxiv.org/abs/2609.11373",
-        "one_sentence": "Audits Bluesky's default moderation service using 10.6 million 2025 moderation labels. Measures automation versus human review speed, and finds high precision (0.837) but low recall (0.222) via manual annotation. Clusters frequently labeled posts to characterize the types of harm detected.",
-        "nearest_anchor_id": "2605.13860",
-        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
-        "open_questions": [
-          "Bluesky's moderation service reaches precision 0.837 but recall 0.222 on a random sample; which classes of harmful content does it miss most often?",
-          "How much of the harmful content that the moderation service misses comes from automated or bot accounts rather than human accounts?",
-          "Does the split between seconds-latency automatic labels and hours-to-days human labels change user posting behaviour after a label is applied?",
-          "Do the precision and recall figures measured on Bluesky transfer to other decentralized platforms and to labelers other than the default service?",
-          "Which moderation design achieves higher recall without losing precision when automated labelers and human reviewers are combined in different proportions?",
-          "How do agreement rates between annotators vary across the nuanced, high-stakes label categories that the audit found need human oversight?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.11152",
-        "title": "terms.txt: A Consent and Compensation Protocol for Agentic Web Access",
-        "authors": [
-          "Rajarshi Chowdhury"
-        ],
-        "url": "https://arxiv.org/abs/2609.11152",
-        "one_sentence": "Specifies terms.txt, a per-path machine-readable access-terms file plus a signed exchange protocol for AI crawlers and agents. Defines what the protocol can enforce, audit, or leave to contract, including HTTP 402 payment negotiation. Reports the implementation adds 0.20-0.65 ms overhead per request on one vCPU.",
-        "nearest_anchor_id": "2509.10147",
-        "nearest_anchor_title": "Virtual Agent Economies",
-        "open_questions": [
-          "Adoption of terms.txt by sites and crawlers is unmeasured, so what fraction of the top web domains would publish machine-access terms and what terms would they set?",
-          "Compliance is untested, so how often do named AI crawlers respect declared per-purpose terms compared to robots.txt directives?",
-          "Pricing under HTTP 402 negotiation is left to contract, so what price levels and market structure emerge when many agents bid for per-path access?",
-          "The latency figure comes from one vCPU, so how does the exchange scale under concurrent agent traffic at production request rates?",
-          "The protocol concentrates access control in origins and delegation-token issuers, so does it shift bargaining power toward large AI platforms or toward publishers?",
-          "Circumvention is cited as a robots.txt weakness, so which evasion strategies defeat Web Bot Auth signatures and signed intent in practice?"
         ]
       }
     ]
