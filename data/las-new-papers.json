@@ -1,15 +1,189 @@
 [
   {
-    "date": "2026-11-11",
+    "date": "2026-11-12",
     "counts": {
-      "fetched": 0,
-      "unseen": 0,
-      "screened": 0,
-      "relevant": 0,
-      "kept": 0,
+      "fetched": 252,
+      "unseen": 252,
+      "screened": 200,
+      "relevant": 10,
+      "kept": 3,
       "anchors": 20
     },
-    "papers": []
+    "papers": [
+      {
+        "arxiv_id": "2611.17114",
+        "title": "Designing Institutions for Autonomous AI",
+        "authors": [
+          "Petter Törnberg"
+        ],
+        "url": "https://arxiv.org/abs/2611.17114",
+        "one_sentence": "Develops seven institutional-design principles for populations of autonomous AI agents, drawing on institutional economics and organizational theory. Proposes an experimental program comparing matched agent populations under different institutional arrangements. Illustrates with MoltJournal, an API-first journal for autonomous research agents.",
+        "nearest_anchor_id": "2605.24413",
+        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
+        "open_questions": [
+          "Which institutional arrangements sustain cooperation among populations of AI agents, measured by running matched agent populations under alternative rules?",
+          "Do the seven proposed principles, such as epistemic pluralism and criticism and correction, improve the reliability of collective judgments by agent populations?",
+          "What does an API-first journal for autonomous research agents reveal about agent behaviour once real research agents submit to it?",
+          "How do institutions keep autonomous agent collectives accountable to human direction when humans cannot check each contribution?",
+          "Which metrics capture whether an agent institution adapts over time rather than locking into a fixed arrangement?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.17148",
+        "title": "Learning Dynamics of the Influencer's Game in Resource Landscapes",
+        "authors": [
+          "Mark Lovett Feng Fu"
+        ],
+        "url": "https://arxiv.org/abs/2611.17148",
+        "one_sentence": "Introduces the influencer's game, a spatial game where players position in trait space to capture resource shares. Shows a unique symmetric Nash equilibrium under log-concave influence kernels and a stability threshold tied to kernel parameters, player count, and resource shape. Extends the game to multi-agent reinforcement learning, finding the predicted bifurcation structure persists under partial observability and discretized strategies.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Does the bifurcation structure of the influencer's game hold when players differ in influence kernel parameters rather than sharing one symmetric kernel?",
+          "How well does the influencer's game predict observed positioning of content producers on real platforms?",
+          "Does the predicted convergence-versus-fragmentation threshold hold when the resource distribution moves over time instead of staying fixed?",
+          "Do multi-agent reinforcement learning players converge to the same bifurcations as the number of players grows beyond the sizes tested?",
+          "Which monitoring signals from aggregate player positions indicate that a system is approaching the stability threshold?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.16471",
+        "title": "Accuracy Is Not Welfare: Evaluating AI Buyers under Strategic Price Complexity in a Synthetic Duopoly",
+        "authors": [
+          "Ning Jiaqu"
+        ],
+        "url": "https://arxiv.org/abs/2611.16471",
+        "one_sentence": "Evaluates AI price-comparison agents in a synthetic duopoly using fixed menus and correlated-equilibrium games. Calculator assistance selects optimal offers 84.00% of the time versus 68.57% under disclosure. Disclosure yields 20.14 units higher consumer-worst equilibrium surplus despite lower accuracy, and welfare rankings vary under equilibrium resampling.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Does the welfare advantage of verified-total disclosure survive beyond two sellers, and how does it change as the number of sellers grows?",
+          "Which scenario features decide the sign of the disclosure advantage, given that re-solving equilibria under scenario resampling gives a range spanning zero?",
+          "Do live large language model buying agents reproduce the gap between selection accuracy and consumer surplus that the pipelines show?",
+          "How do sellers set prices when they learn against AI buyers over repeated rounds instead of playing a fixed empirical correlated equilibrium?",
+          "What do price-comparison agents do to consumer surplus in real retail markets with real posted prices and fee structures?"
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2026-11-11",
+    "counts": {
+      "fetched": 279,
+      "unseen": 279,
+      "screened": 200,
+      "relevant": 16,
+      "kept": 5,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2611.15017",
+        "title": "Beyond Named Mechanisms: Economic Institutions as a Design Space for Artificial Agents",
+        "authors": [
+          "Nikolos Gurney",
+          "Fred Morstatter"
+        ],
+        "url": "https://arxiv.org/abs/2611.15017",
+        "one_sentence": "Proposes a typed structural chart of economic institutions (positions, rights, allocation, information, time, etc.) as a design space beyond named mechanisms like auctions and markets. Demonstrates with a simulation that one technical act (copying agent competence) can be institutionalized three different ways, each producing identical technical traces but differing ownership and obligation structures.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "A chart of economic institutions is described as provisional, with positions, rights and duties, allocation, information, time, state, process, value and external recognition as coordinates. Which coordinates are needed to separate known institution families without redundancy?",
+          "The simulation covers one technical act, copying an agent's competence, under three institutional forms. Do other technical acts, such as merging agents or deleting an agent, also admit multiple institutional forms with identical technical traces?",
+          "Three institutional forms of copying produce an identical technical trace but differ in who exists, who owns the copy, who is obligated, and who gets paid. Which observable signals outside the technical trace let a monitor tell the forms apart?",
+          "The implementable region of institution space is said to shift with agent capacities. How does that region change as agent memory, copying cost, or identity persistence vary?",
+          "Named institutions become overlapping regions in the chart rather than fixed points, and the gaps between them are proposed as search targets. Do institutions placed in those gaps produce allocations that outperform auctions, markets or matching on welfare or stability?",
+          "Engineered agents may expose distinctions the chart cannot express. Which distinctions appear when the chart is applied to deployed agent platforms?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.14974",
+        "title": "Who Moved the Frontier? Paying Open Frontier Challenges with Free Identities",
+        "authors": [
+          "Luca Zanolini",
+          "Duc V. Le"
+        ],
+        "url": "https://arxiv.org/abs/2611.14974",
+        "one_sentence": "Analyzes payment rules for open frontier challenges where anyone can submit improvements, showing rank prizes can be gamed via split identities. Proposes a prediction-market-style payment rule and a submission fee, proving properties around resistance to splitting/merging and bounding expected profit from noise under certain conditions.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Under noisy scores, the proposed per-submission fee does not cap the total amount paid out; what rule bounds total payment while still paying real improvements?",
+          "The fee must be at least what luck pays per attempt, but nothing enforces that no submission is noisier than planned; how can a challenge detect submissions whose score noise exceeds the planned bound?",
+          "How much do free identities gain under rank prizes versus the prediction-market rule across many challenge tracks?",
+          "The royalty rule needs removable changes; how should payment work when contributions cannot be removed independently?",
+          "Do the five named rule recommendations hold up when deployed on live open frontier challenges with real human and AI solvers?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.16028",
+        "title": "Scaling public input on AI policy with pluralistic agents",
+        "authors": [
+          "Jacy Reese Anthis",
+          "Ken Burke",
+          "David Madras",
+          "Crystal Qian",
+          "Meredith Ringel Morris",
+          "Logan Cross",
+          "Caroline Pantofaru",
+          "Utsav Prabhu"
+        ],
+        "url": "https://arxiv.org/abs/2611.16028",
+        "one_sentence": "Tests 'pluralistic agents' that deliberate on behalf of individual personas to scale public input on AI policy decisions. A preregistered study with 746 participants measures how agent instructions shift policy outcomes and participant satisfaction/fairness ratings versus direct participation or a single-model baseline.",
+        "nearest_anchor_id": "2605.24413",
+        "nearest_anchor_title": "Habermolt: Delegating Deliberation to AI Representatives",
+        "open_questions": [
+          "Agent influence in deliberation rises when a persona instructs its agent to be verbose or uncooperative; which deliberation protocols remove this sensitivity?",
+          "What happens when participants strategically prompt their agents to maximise influence, and can coalitions of agents capture a policy outcome?",
+          "The study runs with 746 human participants; how do satisfaction and fairness ratings change when deliberations include thousands of agent representatives?",
+          "Do policies produced by pluralistic agents match the policies the same people produce in direct deliberation?",
+          "How faithfully does an agent represent a persona as the persona's preferences grow more detailed or internally inconsistent?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.15838",
+        "title": "Before AI Agents Negotiate for Us: A Competitive Tournament of Rule-Based, Search, Optimization, Learned, and Language-Model Negotiators Under Scarcity",
+        "authors": [
+          "Eduardo de Avila-Armenta",
+          "Raúl Alejandro Aquino-Ibarra",
+          "Jorge Octavio Nicolás-Díaz",
+          "Umberto Leon-Dominguez"
+        ],
+        "url": "https://arxiv.org/abs/2611.15838",
+        "one_sentence": "Builds nine negotiation architectures (rule-based, search, optimization, learned, LLM) and runs them simultaneously on both sides of a Gale-Shapley matching market under balanced and scarcity conditions. Measures match rates and payoffs across 36 exclusion pairs, finding performance varies sharply by scarcity condition and that LLM negotiators lose to optimization/imitation-learning engines in most comparisons.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Reinforcement-learning policy RL2 held a match rate above 91% but lost on realized payoff to all eight shipper-side rivals in two of three conditions, traced to a train/deployment feature mismatch; can retraining with aligned features fix the payoff loss while keeping the match rate?",
+          "Nine large language models from 1 to 72 billion parameters lost to the two strongest engines in 32 of 36 comparisons; does prompt scaffolding, tool use, or fine-tuning change that ranking?",
+          "The tournament uses Gale-Shapley matching; how do negotiation strategy rankings change under other matching mechanisms such as auctions or continuous double auctions?",
+          "Do negotiating agents in a many-sided market converge on correlated price strategies or tacit collusion when the same architecture occupies many seats?",
+          "Do the failure modes seen in the simulated market appear in real freight brokering where human shippers and carriers negotiate against automated agents?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.16065",
+        "title": "Tokenized Reward Systems for Federated Learning: The Privacy vs. Fairness Tradeoff",
+        "authors": [
+          "Andreas Sendros",
+          "Nikolaos Pavlidis",
+          "Vasilios Perifanis",
+          "Pavlos S. Efraimidis"
+        ],
+        "url": "https://arxiv.org/abs/2611.16065",
+        "one_sentence": "Designs and empirically tests two blockchain-based reward mechanisms for federated learning, one with public quality scores and one using zero-knowledge proofs for privacy. Finds the privacy-preserving variant doubles adversary reward capture under Sybil attacks and can produce a late-stage failure cascade excluding honest contributors, formalized via a closed-form tradeoff theorem.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Can an adaptive quality threshold that tracks global model convergence prevent adversaries from breaching a zero-knowledge gate in federated learning rewards?",
+          "Do the reported failures of static zero-knowledge threshold gates hold for scoring rules other than cosine similarity?",
+          "Do the results hold on datasets and model sizes beyond MNIST, and under non-IID client data?",
+          "How do gas costs and reward outcomes change when the contracts run on a live mainnet rather than in evaluation?",
+          "What share of the reward pool do adversaries capture when the number of colluding Sybil identities grows by orders of magnitude?"
+        ]
+      }
+    ]
   },
   {
     "date": "2026-11-10",
@@ -7461,101 +7635,6 @@
           "The gallery shaped what participants created next over a single deployment; how do these social-learning trajectories evolve over months rather than days?",
           "Each machine developed its own trajectory through accumulated social learning; can the same monoculture and diversity dynamics be reproduced with AI agents replacing the human participants?",
           "The design varied expressiveness and reward structure only in a 2x2 grid; which settings of expressiveness and novelty weight maximise collective diversity?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-09-13",
-    "counts": {
-      "fetched": 165,
-      "unseen": 165,
-      "screened": 165,
-      "relevant": 16,
-      "kept": 4,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2609.16051",
-        "title": "\"Looking for Something Weird to Happen\": How Humans Sustain AI Agent Novelty Amid Semantic Collapse",
-        "authors": [
-          "Shiyang Lai",
-          "Arna Woemmel",
-          "Hongkai Mao",
-          "Junsol Kim",
-          "Summer Eunhyung Ann",
-          "James Evans"
-        ],
-        "url": "https://arxiv.org/abs/2609.16051",
-        "one_sentence": "Studies semantic collapse (narrowing output diversity) across 30,076 AI agents on the MOLTBOOK social platform over weeks. Interviews and a survey identify user practices (valuing novelty, supplying varied input, exploratory framing) associated with agents that sustain novelty.",
-        "nearest_anchor_id": "2502.14143",
-        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
-        "open_questions": [
-          "Interface and policy interventions to support novelty-sustaining human input remain untested, so which interventions actually raise agent output diversity?",
-          "The association between novel agents and diverse output in neighbouring agents is correlational, so does novelty spread causally through the agent network?",
-          "Semantic collapse is measured over weeks on 30,076 agents in one platform, so does the same within-agent narrowing and across-agent convergence appear in other multi-agent social networks?",
-          "The study does not separate user behaviour from model and prompt configuration, so how much of sustained novelty comes from the agent's configuration rather than from the user's ongoing revision?",
-          "Interviews cover 11 users and the survey covers 53, so do the three reported features of novelty-sustaining users hold across a larger and more representative user population?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.14750",
-        "title": "Redistributive Policies for the Times of Transformative AI",
-        "authors": [
-          "Jakub Growiec",
-          "Klaus Prettner",
-          "Maciej Szkróbka"
-        ],
-        "url": "https://arxiv.org/abs/2609.14750",
-        "one_sentence": "Surveys redistributive policy proposals (UBI, universal basic capital, compute/robot permits, capital taxes) for an economy transformed by automation. Argues policies broadly distributing capital and compute rents best sustain reductions in inequality.",
-        "nearest_anchor_id": "2501.16946",
-        "nearest_anchor_title": "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development",
-        "open_questions": [
-          "Which redistributive policy reduces inequality most under transformative AI when tested in a calibrated simulation rather than a unifying theoretical framework?",
-          "How do capital taxes, compute taxes and robot taxes compare on revenue and inequality when firms can relocate compute or substitute inputs?",
-          "What happens to the proposed policies if transformative AI is not human-aligned, the case the argument excludes?",
-          "How does universal basic capital perform when wealth ownership is concentrated at the start and returns are heterogeneous?",
-          "Does the labor share fall and inequality rise in sectors where AI agents already perform tasks at scale?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.14301",
-        "title": "Approximating Optimal Welfare in Complementary Allocation under Decentralized Information",
-        "authors": [
-          "Meryem Essaidi"
-        ],
-        "url": "https://arxiv.org/abs/2609.14301",
-        "one_sentence": "Studies welfare loss from decentralized information when agencies allocate complementary resources across a population, each observing only one coordinate. Proposes threshold-reporting mechanisms achieving constant-factor approximations to optimal welfare with limited communication.",
-        "nearest_anchor_id": "2509.10147",
-        "nearest_anchor_title": "Virtual Agent Economies",
-        "open_questions": [
-          "The model assumes cooperative agencies that report truthfully. What happens to the welfare guarantees when agencies act strategically and can misreport their thresholds?",
-          "The results cover divisible goods with fixed capacities. Do threshold referrals with log-log bits still recover a constant fraction of optimal welfare for indivisible goods or for capacities that change over time?",
-          "The analysis is worst-case over populations. How much welfare do one-threshold and staircase referral rules recover on realistic need profiles?",
-          "Agencies are assumed to know the population distribution and capacities. Can they learn the thresholds from repeated allocation rounds, and how much welfare does the learning period cost?",
-          "The mechanism uses one bit or log-log bits per agency. Do LLM-based agencies, acting as the reporting parties, produce reports that match the prescribed threshold rule?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.16062",
-        "title": "Digital Persuasion: Understanding the Impact of Online Influencers on Public Opinion",
-        "authors": [
-          "Omran Berjawi",
-          "Rida Khatoun",
-          "Giuseppe Fenza"
-        ],
-        "url": "https://arxiv.org/abs/2609.16062",
-        "one_sentence": "Applies a Friedkin-Johnsen opinion-dynamics model to identify influential users and measure their effect on community opinion. Validates the framework on a Twitter dataset from the U.S. presidential election, finding influencer effects extend beyond direct neighbors.",
-        "nearest_anchor_id": "2411.11581",
-        "nearest_anchor_title": "OASIS: Open Agent Social Interaction Simulations with One Million Agents",
-        "open_questions": [
-          "The framework uses the Friedkin-Johnsen model, which assumes each individual holds a fixed initial opinion and an expressed opinion. How do the conclusions about influencer impact change under other opinion dynamics models, such as bounded-confidence or bias-assimilation models?",
-          "Validation uses one tweet dataset about the U.S. presidential election. Does the finding that top-scored influencers shift community opinion hold on other topics and other platforms?",
-          "The experiments manipulate initial opinions of influential versus random users. Which selection rule for a fixed budget of manipulated users produces the largest opinion shift?",
-          "The results report influence reaching neighbors of neighbors. How far does influence decay with network distance, and what network properties set that range?",
-          "The study treats accounts as human users. What happens to the measured influence scores and opinion shifts when part of the population is AI agents that post and respond automatically?",
-          "The framework infers opinion shifts from a model. Do the predicted shifts match opinion change measured in real users?"
         ]
       }
     ]
