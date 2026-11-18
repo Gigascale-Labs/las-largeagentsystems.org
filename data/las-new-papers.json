@@ -1,5 +1,185 @@
 [
   {
+    "date": "2026-11-17",
+    "counts": {
+      "fetched": 318,
+      "unseen": 318,
+      "screened": 200,
+      "relevant": 20,
+      "kept": 8,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2611.22632",
+        "title": "Groups of AI agents underuse resources despite shared evidence of increased capacity",
+        "authors": [
+          "Takahiro Ezaki",
+          "Naoto Imura",
+          "Katsuhiro Nishinari"
+        ],
+        "url": "https://arxiv.org/abs/2611.22632",
+        "one_sentence": "Language-model agents choose between two simulated servers with limited capacity, and groups fail to use recovered capacity despite shared evidence.Sharing a success record removes the gap for detection but agents still leave capacity unused; giving agents distinct unexplained numbers spreads demand and raises completions across five tested models.",
+        "nearest_anchor_id": "2604.10290",
+        "nearest_anchor_title": "AI Organizations are More Effective but Less Aligned than Individual Agents",
+        "open_questions": [
+          "Does the shortfall in resource use persist when a group faces more than two servers and more than five agents?",
+          "Which mechanisms, beyond giving agents distinct numbers, spread demand across available resources?",
+          "Why do distinct numbers increase job completions with some models and not others?",
+          "Do the same coordination failures appear in a live resource-sharing setting, such as agents routing requests to rate-limited public APIs?",
+          "How does the group's resource use change when status reports stay stale for many rounds instead of one capacity change?",
+          "Do mixed groups of human and AI agents show the same underuse of recovered capacity?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.22484",
+        "title": "Moral Inversion: Expressive Payoffs and the Reliability of Consensus",
+        "authors": [
+          "Ronen Gradwohl",
+          "Arye Hillman",
+          "Rok Spruk"
+        ],
+        "url": "https://arxiv.org/abs/2611.22484",
+        "one_sentence": "Builds a sequential social-learning model of how expressive payoffs for endorsing an account affect the reliability of public consensus.Shows under single-peaked beliefs larger payoffs raise the chance of incorrect consensus and lower its reliability, with reversals possible otherwise.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Does the single-peakedness condition on private beliefs hold in observed populations, and how often do real belief distributions violate it?",
+          "Do populations of LLM agents endorsing accounts in sequence reproduce the predicted link between larger expressive payoffs and lower consensus reliability?",
+          "How does the result change when endorsement happens on a network rather than in a fixed sequential order?",
+          "Which interventions reduce the probability of an incorrect consensus when expressive payoffs are high?",
+          "Can moral inversion be detected from the public record of endorsements alone, before the consensus settles?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.22793",
+        "title": "Does the AI Reviewer Alleviate or Aggravate the Maintenance Burden? Evidence from GitHub Copilot Reviewer",
+        "authors": [
+          "Feiyang",
+          "Xu",
+          "Poonacha K. Medappa",
+          "Murat M. Tunc"
+        ],
+        "url": "https://arxiv.org/abs/2611.22793",
+        "one_sentence": "Uses GitHub Copilot Reviewer's 2025 introduction as a natural experiment to measure effects on maintainer workload and contribution behavior.Finds PR submissions and review workload rise initially, human contributions decline over time while bot-generated PRs persist, and bot PRs take longer to merge despite overall efficiency gains.",
+        "nearest_anchor_id": "2605.13860",
+        "nearest_anchor_title": "The Moltbook Observatory Archive: an incremental dataset of agent-only social network activity",
+        "open_questions": [
+          "Does the decline in human contributions after AI reviewer adoption persist beyond the observed window, and do human contributors leave repositories entirely?",
+          "Why do bot-generated pull requests take longer to review and merge than human pull requests under an AI reviewer?",
+          "Which repository characteristics, such as size, maintainer count or governance rules, change whether an AI reviewer raises or lowers maintainer workload?",
+          "Does the increase in submissions after AI review adoption change the quality of merged code, measured by later bug fixes or reverts?",
+          "How do maintainers themselves describe the shift in their workload after the AI reviewer arrives?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.23201",
+        "title": "Governance Risks in Decentralized Autonomous Organizations (DAOs): Implications for Traditional Financial Institutions",
+        "authors": [
+          "Christian Plöschberger",
+          "Irene Buller",
+          "Mark Christopher Ballandies"
+        ],
+        "url": "https://arxiv.org/abs/2611.23201",
+        "one_sentence": "Compares DAO governance mechanisms against OECD, Basel, and FINMA frameworks to assess risks for regulated financial institutions.Identifies voting-power concentration, weak proposal controls, and unclear accountability as risks not captured by existing governance frameworks.",
+        "nearest_anchor_id": "2512.02682",
+        "nearest_anchor_title": "Beyond Single-Agent Safety: A Taxonomy of Risks in LLM-to-LLM Interactions",
+        "open_questions": [
+          "How concentrated is voting power across DAOs, and how does it change over time? The paper names voting-power concentration as a risk but assesses it only through selected cases.",
+          "Do weak proposal controls predict governance failures, such as passed proposals that drain treasuries or reverse earlier decisions?",
+          "Does the proposed assessment framework change risk decisions when regulated financial institutions apply it to DAO-governed dependencies?",
+          "What happens to DAO governance when token holders and delegates are autonomous agents rather than people?",
+          "How much of a DAO's decision record is actually traceable in practice, given off-chain forum deliberation and legal wrapper entities?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.22190",
+        "title": "Emergence and Collapse of Leader-Follower Flocks through Phantom Targets: Surprise Nullification in Bayesian and Inverse Bayesian Inference",
+        "authors": [
+          "Shuji Shinohara",
+          "Daiki Morita",
+          "Yoshihiro Nakajima",
+          "Takeshi Takano",
+          "Masakazu Higuchi",
+          "Ung-il Chung",
+          "Yukio-Pegio Gunji"
+        ],
+        "url": "https://arxiv.org/abs/2611.22190",
+        "one_sentence": "Three agents use Bayesian/inverse-Bayesian inference to predict and move toward each other's positions, forming and collapsing leader-follower flocks without alignment rules.Identifies 'link cuts' and 'phantom targets' as the mechanism behind flock formation, and shows variance-expansion dynamics explain both persistence and recovery.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "Does the phantom-target mechanism still produce leader-follower flocks when the population grows from three agents to hundreds or thousands?",
+          "Which leadership criteria agree when flocks contain many agents and several candidate leaders at once?",
+          "How do link cuts and flock lifetimes change across the likelihood-to-belief variance ratio and the reset threshold, which the simulations hold at single settings?",
+          "Do the flock formation and collapse patterns predicted by the model appear in observed animal or human movement traces?",
+          "Does surprise nullification produce the same cut-and-recover dynamics when agents predict each other with language models rather than Gaussian belief updates?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.22204",
+        "title": "Flocking Time and Graph Volume in Nonlinear Cucker-Smale Models with Dynamic Networks",
+        "authors": [
+          "Sooyeon Song",
+          "Jea-Hyun Park"
+        ],
+        "url": "https://arxiv.org/abs/2611.22204",
+        "one_sentence": "Extends the Cucker-Smale flocking model with a discrete p-Laplacian and dynamic networks, deriving bounds relating flocking time to graph volume.Trains a transformer-based PPO policy to select network structures over time, observing a threshold effect in connection counts under tight time constraints.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Does the relationship between flocking time and graph volume hold for the discrete p-Laplacian outside the range p in (1,2)?",
+          "How does the threshold effect in average number of connections scale with the number of agents?",
+          "Do learned network-selection policies other than a transformer-based PPO policy produce the same negative correlation between convergence time and average number of connections?",
+          "Does the model's prediction that time constraints mobilise connections appear in observed real-world networks that reach consensus under deadlines?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.22975",
+        "title": "Large Language Models Have Not Yet Transformed Science",
+        "authors": [
+          "Ron Bekkerman",
+          "Nichole Li",
+          "Bahareh Kargar",
+          "Mark Somers"
+        ],
+        "url": "https://arxiv.org/abs/2611.22975",
+        "one_sentence": "Analyzes 2.5 million papers across five disciplines from 2015-2025 for lexical, structural, and social trend shifts.Finds most pre-2023 trends continued after LLM emergence, with limited detectable breaks except in specific coauthorship and topic-diversity metrics.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Measured trends in 2.5 million papers from 2015 to 2025 show limited breaks after LLMs appear, but the analysis stops at lexical, structural, epistemological and social dimensions of text. Do citation networks and collaboration networks show breaks that text-level measures miss?",
+          "Growth in computer science coauthor team size accelerated in Asia after 2022. What drives this acceleration, and how much of it is attributable to LLM adoption rather than other regional factors?",
+          "Apparent declines in biomedical topic diversity largely reflect standardization in article formats. Which diversity measures stay robust to format standardization?",
+          "The study covers five disciplines through 2025. Do the same trends hold in disciplines outside the five, and do breaks appear in later years as LLM adoption deepens?",
+          "Text-level trend breaks are weak, so direct evidence of LLM use in papers remains indirect. Can author-level LLM adoption be identified and linked to changes in output volume and quality?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.22133",
+        "title": "ReMoE: An Interpretable Mixture-of-Experts Framework for Human Mobility Recovery Forecasting Across Disasters",
+        "authors": [
+          "Yilin Lyu",
+          "Kang Liu",
+          "Wei Wang",
+          "Qifan Zhang",
+          "Ling Yin",
+          "Yushi Bai"
+        ],
+        "url": "https://arxiv.org/abs/2611.22133",
+        "one_sentence": "Proposes ReMoE, a mixture-of-experts framework that forecasts post-disaster human mobility recovery across regions and hazard types.Evaluates on 18 disaster events, finding stronger performance on unseen events than event-specific black-box baselines.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Does a mixture-of-experts recovery forecaster transfer to hazard types outside hurricanes, floods, winter storms and wildfires, such as earthquakes or conflict-driven displacement?",
+          "Do the learned recovery types align with region-level socioeconomic or infrastructure variables rather than with hazard attributes alone?",
+          "How much of the reported cross-event gain survives when the input is coarse public mobility data instead of fine-grained device traces?",
+          "How does forecast error change when the hazard-condition forecasts used for residual correction are themselves wrong?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-16",
     "counts": {
       "fetched": 314,
@@ -7171,61 +7351,6 @@
           "The results are asymptotic, so how do the two-way clustered and sharper variance estimators perform in finite samples with few buyers or few sellers?",
           "How do two-sided randomization designs perform in a marketplace where one or both populations consist of autonomous AI agents that adapt to the treatment?",
           "Which covariates give efficiency gains under the recommended two-way analysis-of-variance representation in a real platform experiment?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-09-18",
-    "counts": {
-      "fetched": 205,
-      "unseen": 205,
-      "screened": 200,
-      "relevant": 4,
-      "kept": 2,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2609.21997",
-        "title": "Bayesian Belief Layer for Controllable Opinion Dynamics in LLM Agents",
-        "authors": [
-          "Hafsa Akbar",
-          "Daniel Platnick",
-          "Marjan Alirezaie",
-          "Hossein Rahnama"
-        ],
-        "url": "https://arxiv.org/abs/2609.21997",
-        "one_sentence": "Introduces a Bayesian belief layer separating LLM agents' internal stance from their utterances, using a stubbornness parameter to reproduce Friedkin-Johnsen opinion-dynamics regimes. Tests show the layer's fixed points match FJ closed-form solutions and recover prescribed stubbornness after language generation across four models.",
-        "nearest_anchor_id": "2506.12078",
-        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
-        "open_questions": [
-          "Does the Bayesian belief layer reproduce opinion dynamics in networks larger than the small groups tested, and on realistic social network topologies?",
-          "Which opinion regimes appear when agents hold many interdependent stances instead of a single scalar stance?",
-          "How do the per-model stance biases surfaced by the belief layer differ across model families and across topics?",
-          "Do the three regimes produced by sweeping the prior-strength parameter match opinion trajectories measured in real online discussions?",
-          "Can an external monitor infer the stubbornness parameter of agents it does not control, using only their utterances?",
-          "Does an explicit belief layer change downstream behaviour beyond stance, such as coalition formation or strategic misreporting?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.21325",
-        "title": "LEGIT: Credentialing Protocol for Trustworthy AI Agent Marketplaces",
-        "authors": [
-          "Steve Drew",
-          "Jiayu Zhou"
-        ],
-        "url": "https://arxiv.org/abs/2609.21325",
-        "one_sentence": "Presents LEGIT, a protocol binding certified performance and cost measurements to agent identity and evaluation budget for marketplace comparison. Analyzes reputation manipulation risk under a Sybil attack model and quantifies deposits and fees needed to deter it.",
-        "nearest_anchor_id": "2509.10147",
-        "nearest_anchor_title": "Virtual Agent Economies",
-        "open_questions": [
-          "Does the LEGIT credentialing protocol hold up when agents change their configuration after certification?",
-          "How reliable is buyer feedback in an agent marketplace, and what happens to reputation scores when feedback is noisy or strategic?",
-          "What deposit and fee levels defeat Sybil reputation manipulation under attack models other than the one stated?",
-          "Do credential records shift allocation and price outcomes across a whole marketplace of many agents and buyers?",
-          "How do certification results transfer across task domains and evaluation budgets not covered by the signed record?",
-          "Do human buyers actually use and trust credential records and visual profiles when selecting agents?"
         ]
       }
     ]
