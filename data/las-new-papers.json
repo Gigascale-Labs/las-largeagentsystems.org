@@ -1,5 +1,169 @@
 [
   {
+    "date": "2026-11-18",
+    "counts": {
+      "fetched": 297,
+      "unseen": 297,
+      "screened": 200,
+      "relevant": 18,
+      "kept": 7,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2611.24927",
+        "title": "Mapping the AI Supply Chain: Dependencies, Vulnerabilities, and Market Concentration in the AI Ecosystem",
+        "authors": [
+          "Sarah H. Cen",
+          "Lindsey A. Gailmard",
+          "Joohan Kim",
+          "Rishi Bommasani",
+          "Daniel E. Ho",
+          "Percy Liang"
+        ],
+        "url": "https://arxiv.org/abs/2611.24927",
+        "one_sentence": "Builds a multilayered dataset mapping organizations and relationships across the AI supply chain, covering models, data, compute, capital, and talent flows. Provides analyses of central actors, network concentration, and community structure to study chokepoints and fragmented accountability. Releases the dataset publicly with an interactive exploration tool.",
+        "nearest_anchor_id": "2512.16856",
+        "nearest_anchor_title": "Distributional AGI Safety",
+        "open_questions": [
+          "The dataset omits private deals and its coverage depends on search design, so how much does incomplete coverage bias measures of centrality and concentration?",
+          "Which chokepoints in the AI supply chain cause cascading failures when removed?",
+          "How does network concentration in the AI supply chain change over time, given that relationships carry dates?",
+          "Do the measured supply-chain dependencies predict observed outcomes such as market share, pricing, or model release behaviour?",
+          "Which supply-chain relationships stay invisible in public documents, and what would reveal them?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.24028",
+        "title": "Algorithmic Market Making Can Lead to Rough Volatility Through the Order Book",
+        "authors": [
+          "Sai Niranjan Ramachandran"
+        ],
+        "url": "https://arxiv.org/abs/2611.24028",
+        "one_sentence": "Models each market maker as a gradient-descent desk adjusting order distances toward oracle targets, with asynchronous updates across desks. Shows the continuum limit follows a Dean-Kawasaki equation whose fluctuations produce power-law memory and rough volatility in order flow. Confirms predictions in simulated agents and on about 790 million Binance orders.",
+        "nearest_anchor_id": "2509.01063",
+        "nearest_anchor_title": "An Economy of AI Agents",
+        "open_questions": [
+          "Does the mechanism hold in markets that are not dominated by market makers, such as equity or less liquid crypto order books?",
+          "Which part of the heterogeneity of desk lookback horizons produces the power-law memory in order flow?",
+          "Can an exchange rule or fee design suppress the near-instability in order flow that produces rough volatility?",
+          "Does the gradient rule describe the behaviour of real market making desks, or is it only an assumed model of them?",
+          "Do market makers driven by learned or language-model policies, rather than a first-order gradient rule, produce the same order book fluctuations?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.24517",
+        "title": "ABSClaw: From Invented Worlds to Reality-Grounded Social Simulation",
+        "authors": [
+          "Shaobin He",
+          "Yan Gao",
+          "Quan Zheng",
+          "Zhenyang Lin",
+          "Zhen Liu",
+          "Jiyan He",
+          "Shuxin Zheng"
+        ],
+        "url": "https://arxiv.org/abs/2611.24517",
+        "one_sentence": "Introduces ABSClaw, a zero-code agent that compiles natural-language requests into reality-grounded social simulations using census, survey, and network data. It defines 26 atomic operations for state transitions and benchmarks against ABSBench, a 193-task benchmark. Case studies run population-scale simulations with up to 25 million agents.",
+        "nearest_anchor_id": "2506.12078",
+        "nearest_anchor_title": "Modeling Earth-Scale Human-Like Societies with One Billion Agents",
+        "open_questions": [
+          "Does grounding personas, environments and interaction networks in survey, census and geospatial data improve agreement with observed outcomes beyond the three case studies reported?",
+          "How sensitive are reality-grounded simulation results to the backbone LLM, which the paper names as a weakness of free-form simulators but does not test across models for its own system?",
+          "Are 26 atomic operations sufficient to express state transitions for social simulation tasks outside the 193 tasks in ABSBench?",
+          "What aggregate failure modes, such as herding or monoculture, appear when population-scale runs reach 25 million agents?",
+          "How well do grounded simulations predict outcomes under policies or shocks absent from the training data they are sampled from?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.24830",
+        "title": "A Foundation Model to Measure and Predict Human Behaviour",
+        "authors": [
+          "Haoran Ye",
+          "Tianrui Huo",
+          "Hangzhen Li",
+          "Xin Zhang",
+          "Guojie Song"
+        ],
+        "url": "https://arxiv.org/abs/2611.24830",
+        "one_sentence": "Introduces Chiron, an LLM fine-tuned jointly to represent psychological constructs, predict individual behavior, and align simulated population response distributions with human statistics. Trained and evaluated on 288,307 person records across 36 behavioral domains and 78 social science experiments. Reports lower bias and up to 28.4% relative improvement in individual behavior prediction over frontier LLMs.",
+        "nearest_anchor_id": "2502.08691",
+        "nearest_anchor_title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "open_questions": [
+          "Chiron is trained and evaluated on 36 behavioural domains and 78 social science experiments; how well does it predict behaviour in domains and experiments outside that set?",
+          "Does a model that matches population response distributions also reproduce the dynamics of many agents interacting with each other, rather than isolated survey responses?",
+          "The paper reports fewer psychometric biases but does not say which subpopulations remain misrepresented; which demographic groups does the model still distort?",
+          "Does joint fine-tuning on psychometric and behavioural targets reduce the diversity of simulated populations and produce monoculture in agent responses?",
+          "How much of the accuracy gain comes from the population-distribution alignment objective versus the behaviour-prediction objective?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.24881",
+        "title": "Monoculture Robust Learning",
+        "authors": [
+          "Lee Cohen",
+          "Jon Kleinberg",
+          "Omer Reingold"
+        ],
+        "url": "https://arxiv.org/abs/2611.24881",
+        "one_sentence": "Defines monoculture robustness in PAC learning, asking whether a single dataset can yield k hypotheses with joint failure probability comparable to independent datasets. Connects replicability to monoculture robustness, showing ρ-replicable base learners yield exponentially shrinking individual conjunctive error. Proves a matching worst-case lower bound requiring a sample-size multiplier scaling with log(1/γ).",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Does running a replicable base learner k times on one dataset reduce correlated failures on real datasets, and at what accuracy cost?",
+          "How much extra data does monoculture robustness cost in practice, compared with the worst-case multiplier t = Omega(log(1/gamma))?",
+          "Does lowering the conjunctive error of k hypotheses change aggregate outcomes when many decision-makers screen the same population, such as rejection rates for applicants seen by all k models?",
+          "Do the guarantees extend from PAC classification to generative models and agents, where failures are not binary misclassifications?",
+          "Which replicable base learners meet the rho-replicability requirement at sample sizes used in current practice?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.24464",
+        "title": "Platform Recommendation and Competition in Search Markets",
+        "authors": [
+          "Sanxi Li",
+          "Jun Yu",
+          "Mingsheng Zhang"
+        ],
+        "url": "https://arxiv.org/abs/2611.24464",
+        "one_sentence": "Develops a framework for evaluating platform recommendation rules with heterogeneous sellers, endogenous pricing and advertising, and costly consumer search. Establishes equilibrium existence conditions for separable recommendation scores and analyzes three applications involving price and quality guidance. Shows that no finite optimum places positive weight on both quality and low prices even when the platform values consumer surplus.",
+        "nearest_anchor_id": "2509.10147",
+        "nearest_anchor_title": "Virtual Agent Economies",
+        "open_questions": [
+          "Does the static equilibrium prediction hold when sellers set prices and advertising through learning algorithms instead of one-shot best responses?",
+          "How do the three recommendation rules perform when consumers delegate search to autonomous agents with search costs near zero?",
+          "Do the predicted price and consumer-surplus effects of rewarding low prices appear in real marketplace ranking data?",
+          "What recommendation rules survive when several platforms compete for the same sellers and consumers?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.24892",
+        "title": "On Evaluating User Simulators for Interactive Agents",
+        "authors": [
+          "Hengguang Zhou",
+          "I-Hung Hsu",
+          "Li Chen",
+          "Priyanshi Shrivastava",
+          "Anastasios Angelopoulos",
+          "Wei-Lin Chiang",
+          "Ion Stoica",
+          "Cho-Jui Hsieh"
+        ],
+        "url": "https://arxiv.org/abs/2611.24892",
+        "one_sentence": "Meta-evaluates existing metrics for assessing user simulators, finding they detect only 5-6 of 10 induced failure types. Proposes a new evaluation suite combining utility and two fidelity measures: population-level and trace-level. Tests six simulators on 351 real multi-turn sessions across 348 users and 23 languages.",
+        "nearest_anchor_id": "2512.02682",
+        "nearest_anchor_title": "Beyond Single-Agent Safety: A Taxonomy of Risks in LLM-to-LLM Interactions",
+        "open_questions": [
+          "Prior user simulator evaluation methods detect only 5-6 of 10 injected perturbations, so which failure modes do they miss and why?",
+          "Population-level fidelity measures can miss a simulated user that pursues the wrong goal or ignores a constraint, so which aggregate statistics would make such individual deviations visible?",
+          "The evaluation covers 351 multi-turn sessions on artifact creation tasks, so does the suite transfer to other domains such as markets or multi-agent negotiation?",
+          "Do user simulators that score well on fidelity produce the same agent rankings as real users?",
+          "The six evaluated simulators cover 23 languages, so how does simulator fidelity vary across languages and user populations?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-17",
     "counts": {
       "fetched": 318,
@@ -7302,57 +7466,5 @@
       "anchors": 20
     },
     "papers": []
-  },
-  {
-    "date": "2026-09-19",
-    "counts": {
-      "fetched": 153,
-      "unseen": 153,
-      "screened": 153,
-      "relevant": 6,
-      "kept": 2,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2609.22757",
-        "title": "Algorithmic Collusion and the Complexity of Information-Value-Free Equilibria",
-        "authors": [
-          "Ioannis Anagnostides",
-          "Weiqiang Zheng"
-        ],
-        "url": "https://arxiv.org/abs/2609.22757",
-        "one_sentence": "Studies the computational complexity of information-value-free (correlated) equilibria, a concept proposed for detecting algorithmic collusion.  Proves PPAD-completeness for computing such equilibria in many-player or Bayesian games, and an exponential query lower bound.  Shows a weaker variant (IVFCCE) admits no-regret dynamics membership in CLS but is at least as hard as P-matrix linear complementarity problems.",
-        "nearest_anchor_id": "2502.14143",
-        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
-        "open_questions": [
-          "Do no-regret pricing algorithms in repeated market games converge to outcomes with low information value, and how large is the gap in practice?",
-          "Can a regulator detect a violation of the information-value-free condition from observed play alone, without access to the agents' algorithms?",
-          "Which refinements of correlated equilibrium other than information-value-free admit polynomial-time computation in succinct games?",
-          "Is computing an exponentially small approximation of an information-value-free coarse correlated equilibrium PPAD-hard or PLS-hard, closing the gap between the CLS membership and the P-matrix linear complementarity lower bound?",
-          "How does the intractability of information-value-free equilibria change the design of regulation on algorithmic collusion?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.22761",
-        "title": "Causal inference in two-sided randomization designs: factorial regression, two-way clustering, and covariate adjustment",
-        "authors": [
-          "Pengfei Tian",
-          "Jizhou Liu",
-          "Lei Shi",
-          "Peng Ding"
-        ],
-        "url": "https://arxiv.org/abs/2609.22761",
-        "one_sentence": "Develops estimators and inference procedures for randomized experiments in two-sided populations, such as buyers and sellers in a marketplace.  Under local interference, establishes that OLS with two-way cluster-robust variance estimation yields valid inference for spillover and interaction effects.  Proposes a sharper variance estimator and a covariate-adjustment method for efficiency gains.",
-        "nearest_anchor_id": "2409.10568",
-        "nearest_anchor_title": "On the limits of agency in agent-based models",
-        "open_questions": [
-          "The local interference assumption restricts spillovers to buyer-seller pairs, so how do the estimators behave when market-level equilibrium effects violate it?",
-          "The results are asymptotic, so how do the two-way clustered and sharper variance estimators perform in finite samples with few buyers or few sellers?",
-          "How do two-sided randomization designs perform in a marketplace where one or both populations consist of autonomous AI agents that adapt to the treatment?",
-          "Which covariates give efficiency gains under the recommended two-way analysis-of-variance representation in a real platform experiment?"
-        ]
-      }
-    ]
   }
 ]
