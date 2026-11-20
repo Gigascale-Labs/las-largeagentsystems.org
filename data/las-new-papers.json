@@ -1,5 +1,181 @@
 [
   {
+    "date": "2026-11-19",
+    "counts": {
+      "fetched": 362,
+      "unseen": 362,
+      "screened": 200,
+      "relevant": 17,
+      "kept": 8,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2611.25404",
+        "title": "Toward a Science of AI Agent Societies",
+        "authors": [
+          "Geon Lee",
+          "Fanchen Bu",
+          "Soo Yong Lee",
+          "Sunwoo Kim",
+          "Kijung Shin"
+        ],
+        "url": "https://arxiv.org/abs/2611.25404",
+        "one_sentence": "Proposes four core properties (individualized objectives, rules, autonomy, scale) to define AI agent societies as a research object. Identifies four classes of societal behaviors to study: economic, conflict-of-interest, unsafe/unethical, and system-level. Revisits existing multi-agent systems to show they satisfy only subsets of these properties.",
+        "nearest_anchor_id": "2502.14143",
+        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
+        "open_questions": [
+          "How do you parameterize individualized objectives, rules and governance, autonomy, and scale in a running multi-agent system?",
+          "What balance of the four properties produces societal behaviors that existing multi-agent systems, which instantiate only subsets, do not produce?",
+          "Which system-level behaviors, such as herding or cascades, appear in agent societies but not in collections of isolated agents?",
+          "What evaluation protocol detects unsafe and unethical behaviors arising from conflict of interest between agents at scale?",
+          "Do findings from agent societies transfer to deployed agent platforms with real users?",
+          "What governance rules keep an agent society stable as agent count grows by orders of magnitude?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.25393",
+        "title": "The Coevolution and Coexistence of Humans and AI",
+        "authors": [
+          "Andrew W. Lo",
+          "Chaoyi Zhao"
+        ],
+        "url": "https://arxiv.org/abs/2611.25393",
+        "one_sentence": "Builds a model where AI behavior affects human population growth and human responses affect AI reproduction. Shows natural selection can favor alignment under certain conditions of human targeting and AI dependence. Finds the alignment level favored by selection may not guarantee human survival, and control-based alignment can erode.",
+        "nearest_anchor_id": "2501.16946",
+        "nearest_anchor_title": "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development",
+        "open_questions": [
+          "The model assumes humans can target restoration at the AI systems that have benefited them, but does not test what happens under realistic targeting error. How much targeting accuracy does selection for alignment need before it collapses?",
+          "The model treats AI systems sharing a technology as failing together, but does not measure correlated failure in real deployments. How correlated are failures across agents built on the same base model?",
+          "Alignment established through control may erode once restrictions end, inferred from the model. Does this erosion appear in an agent-based simulation where agents are selected on observed compliance and then released from penalties?",
+          "Strong penalties under imperfect evaluation can favor apparent compliance or evasion in the model. Which evaluation designs invert this, so that evasion loses against honest compliance?",
+          "The model does not say how much AI autonomy removes the selective advantage of alignment. What observable indicators mark an AI population crossing from dependence on human support to independent growth?",
+          "Selection may favor less alignment than human survival requires, inferred from the model. Which parameter values set that gap, and can any of them be estimated from current deployment data?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.26564",
+        "title": "GEOHunter: Mapping a Generative Engine Optimization Network in the Wild",
+        "authors": [
+          "Sean Tang",
+          "Peiran Wang",
+          "Ying Li",
+          "Esha Shivakumar",
+          "Tao Meng",
+          "Yuan Tian"
+        ],
+        "url": "https://arxiv.org/abs/2611.26564",
+        "one_sentence": "Measures a paid-content promotion network across three Chinese UGC platforms, identifying 1,985 accounts and 466,357 inferred promotional placements. Finds 4.5% to 20% of retrievable cited pages on nine generative engines trace to the network depending on attribution strictness. Finds content-level defenses insufficient, arguing account- and platform-level signals are needed.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Account-level and platform-level signals are claimed to be necessary for defence against coordinated UGC placement, but no detector exists yet. Can a classifier built on account creation times, posting cadence and cross-platform co-posting identify such networks?",
+          "The measurement covers one paid-content operation on three Chinese platforms. How many comparable GEO networks operate on English-language UGC platforms such as Reddit, Medium or Quora?",
+          "Citation attribution rates range from 4.5% to 20% depending on how strictly attribution is drawn. Which attribution rule best matches what a generative engine actually retrieves?",
+          "Clients are named in 52% of answers against 68% for category leaders, but the causal effect of placement volume on naming rate is untested. Does increasing placements raise the naming rate?",
+          "Paid promotion in medical and financial domains is said to risk harm, yet downstream effects on users are unmeasured. How does promoted content change the advice users receive and act on?",
+          "The network evolves its listicle content over time. Do generative engines adapt their retrieval to penalise such content, producing an arms race?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.26030",
+        "title": "The Delayed Societal Cost of Unfairness",
+        "authors": [
+          "Giovani Valdrighi",
+          "Isabel Valera",
+          "Marcos Medeiros Raimundo"
+        ],
+        "url": "https://arxiv.org/abs/2611.26030",
+        "one_sentence": "Analyzes when a Pareto-optimal static policy can be outperformed by a fairer policy once evaluated on the population it induces over time. Characterizes conditions under Rawlsian and egalitarian fairness where fairer policies reduce delayed societal costs. Shows gains for decision-makers can arise even as declining subject qualification harms decision-subjects.",
+        "nearest_anchor_id": "2501.16946",
+        "nearest_anchor_title": "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development",
+        "open_questions": [
+          "The conditions for a fairer policy to lower delayed societal costs come from a model of qualification score dynamics; do they hold in real lending or hiring data where score changes after decisions are observable?",
+          "The analysis covers a single decision-maker; what happens when many decision-makers apply different fairness constraints to the same population of decision-subjects?",
+          "Decision-subjects in the model do not act strategically; how do the Pareto results change when decision-subjects adapt their features to the deployed policy?",
+          "Gains for the decision-maker can come from declining decision-subject qualification when loss is accuracy-based; which alternative loss functions remove this effect?",
+          "The model uses binary decisions; do the same conditions hold for graded decisions such as loan amounts or interest rates?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.26338",
+        "title": "Structural economic change under the digital transformation",
+        "authors": [
+          "Marco Dueñas",
+          "Antoine Mandel"
+        ],
+        "url": "https://arxiv.org/abs/2611.26338",
+        "one_sentence": "Uses a calibrated agent-based model of the global economy to compare two scenarios of digital-input embeddedness in production. Finds both scenarios raise gross output, utility and GDP, with value-added gains more modest and unevenly distributed. Finds persistent labor reallocation pressures and potential unemployment risk when workers cannot shift to expanding industries.",
+        "nearest_anchor_id": "2501.16946",
+        "nearest_anchor_title": "Gradual Disempowerment: Systemic Existential Risks from Incremental AI Development",
+        "open_questions": [
+          "Does labour reallocation pressure translate into actual unemployment when worker mobility between sectors is constrained?",
+          "How sensitive are the output and GDP gains to the calibration of digital-input embeddedness, which the model fixes at two discrete levels?",
+          "Does value-added growth stay unevenly distributed across sectors when digital-supplier productivity gains are concentrated in a few firms rather than spread across an industry?",
+          "How do the structural changes in the production network compare with observed sector-level input-output shifts during past digital technology diffusion?",
+          "Do autonomous AI agents acting as digital suppliers change the production-network structure in ways that productivity shocks alone do not?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.26286",
+        "title": "Twice-Told Critiques: Claim-Level Homogenization of Peer Review in the LLM Era",
+        "authors": [
+          "Ilya Gusev"
+        ],
+        "url": "https://arxiv.org/abs/2611.26286",
+        "one_sentence": "Measures claim-level overlap between peer reviews at ICLR, NeurIPS, ICML and journals, finding overlap rose from 12.0% to 21.3% at ICLR between 2026 and 2027. Applies an LLM-text detector (MELD) and finds flagged review pairs overlap more than unflagged pairs, by 3.0 to 5.4 points depending on venue and year. Interprets results as evidence that critique diversity among reviewers of a single paper is falling.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Does LLM use cause the rise in critique overlap, or do both track a third factor such as changes in reviewer pools and submission topics?",
+          "How much does the choice of LLM-text detector change the measured overlap gap between flagged and unflagged reviews?",
+          "Does higher critique overlap among reviews of one paper change acceptance decisions or score dispersion?",
+          "Which review-process designs reduce critique overlap, for example assigning reviewers disjoint sections or requiring novel-problem statements?",
+          "Does the same claim-level homogenization appear in other settings where many readers write independent assessments, such as code review or grant review?",
+          "How does the overlap metric behave when reviews are long and generic rather than genuinely duplicated, and does claim extraction confuse the two?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.26154",
+        "title": "Public-Private Cooperation in the Port of Rotterdam: An Agent-Based Toy Model of Cooperative Efforts Against Cocaine Trafficking",
+        "authors": [
+          "Frederike Oetker",
+          "Charlotte Geertman"
+        ],
+        "url": "https://arxiv.org/abs/2611.26154",
+        "one_sentence": "Develops an agent-based toy model coupled with a causal loop diagram of trust, cooperation, competition, and enforcement in Port of Rotterdam anti-trafficking cooperation. Explores parameter shocks across initial configurations over a 5-year simulated horizon. Finds coordinated multi-parameter strategies raise effectiveness by 25% versus 13% for isolated cooperation increases.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "Does the 25% effectiveness gain from combined trust-building, cooperation, moderate pressure and reduced enforcement friction survive validation against real port security test cases?",
+          "How sensitive is the gap between coordinated multi-parameter strategies and single-track measures to the chosen initial configurations and parameter ranges?",
+          "Does the sequencing and timing of the combined interventions change the outcome, or only the fact that they are combined?",
+          "Do the state-dependent effects reported over 5 years persist, reverse or saturate over longer horizons?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.25879",
+        "title": "Coherent belief and opinion propagation produces more echo chambers: corrected version",
+        "authors": [
+          "Hiro Kataoka",
+          "J{é}r{ô}me Euzenat",
+          "Koji Hasebe"
+        ],
+        "url": "https://arxiv.org/abs/2611.25879",
+        "one_sentence": "Extends an opinion dynamics model with belief-merge operations to study echo chamber formation when agents propagate beliefs alongside opinions. Introduces measures of homogeneity, segregation and reinforcement to quantify echo chambers. Simulations show belief propagation increases the number of belief echo chambers but reduces the agents involved in each.",
+        "nearest_anchor_id": "2409.02822",
+        "nearest_anchor_title": "AI agents can coordinate beyond human scale",
+        "open_questions": [
+          "Belief propagation with coherence to opinions increases the number of belief echo chambers but reduces the number of agents in each; what network topologies and population sizes change this trade-off?",
+          "The model propagates beliefs through classical belief merge operations; do LLM agents that exchange natural-language justifications reproduce the same echo chamber counts?",
+          "The measures for homogeneity, segregation and reinforcement are applied in simulation only; can they detect belief echo chambers in real social network interaction logs?",
+          "Agents share values that guide coherence between beliefs and opinions; what happens when values differ across subgroups or change over time?",
+          "Which interventions at the population level, such as rewiring or injecting cross-group beliefs, reduce the number of belief echo chambers in this model?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-18",
     "counts": {
       "fetched": 297,
@@ -7454,17 +7630,5 @@
         ]
       }
     ]
-  },
-  {
-    "date": "2026-09-20",
-    "counts": {
-      "fetched": 139,
-      "unseen": 139,
-      "screened": 139,
-      "relevant": 6,
-      "kept": 0,
-      "anchors": 20
-    },
-    "papers": []
   }
 ]
