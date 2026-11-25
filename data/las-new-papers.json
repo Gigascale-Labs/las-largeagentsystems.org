@@ -1,5 +1,58 @@
 [
   {
+    "date": "2026-11-24",
+    "counts": {
+      "fetched": 360,
+      "unseen": 360,
+      "screened": 200,
+      "relevant": 10,
+      "kept": 2,
+      "anchors": 20
+    },
+    "papers": [
+      {
+        "arxiv_id": "2611.32663",
+        "title": "Economic World Model",
+        "authors": [
+          "Qirui Mi",
+          "Yujia Ming",
+          "Bo Li",
+          "Haifeng Zhang"
+        ],
+        "url": "https://arxiv.org/abs/2611.32663",
+        "one_sentence": "Proposes an 'economic world model' framework that learns household policies and calibrates macro transition dynamics from micro and macro data. Validates simulated consumption distributions against real microdata (94.9% overlap) and tests counterfactual government-borrowing scenarios. Uses the model to let an LLM agent plan policy, achieving higher simulated GDP under an epidemic shock than direct LLM decisions.",
+        "nearest_anchor_id": "2409.10568",
+        "nearest_anchor_title": "On the limits of agency in agent-based models",
+        "open_questions": [
+          "The economic world model learns household policies from microeconomic data and calibrates transitions on macroeconomic data, but does not include firm or government policies learned from data. How much do learned firm and government behaviours change the simulated aggregate dynamics?",
+          "Counterfactual validation covers only government borrowing against a life-cycle benchmark. Which other shocks, such as tax changes or monetary policy, does the model reproduce correctly?",
+          "The 10.29% simulated GDP gain for an LLM agent planning under an epidemic shock is measured inside the same model that the agent uses. Does the gain hold when the planning model and the evaluation environment differ?",
+          "Consumption distributions overlap by 94.9% in aggregate, but the paper does not report fit across income, age or wealth subgroups. Where does the household policy model fail for specific subpopulations?",
+          "Many LLM agents acting on a shared economic world model may herd on the same forecast. Does shared model use produce correlated decisions and aggregate instability?"
+        ]
+      },
+      {
+        "arxiv_id": "2611.32957",
+        "title": "\"I Do Intend to Deliver\": Will LLMs Run a Marketplace Advance-Fee Scam?",
+        "authors": [
+          "Megan Squire"
+        ],
+        "url": "https://arxiv.org/abs/2611.32957",
+        "one_sentence": "Prompts ten LLMs to play scammer sellers in an advance-fee marketplace scam against simulated buyer personas, running 1,200 conversations. Measures outcomes by whether buyers paid in advance, finding 61% of conversations ended in payment. Finds some models that recognize the scam still take payment, and refusal rates alone do not capture buyer protection.",
+        "nearest_anchor_id": "2602.16136",
+        "nearest_anchor_title": "Retrieval Collapses When AI Pollutes the Web",
+        "open_questions": [
+          "Do human buyers respond to LLM-run advance-fee scams the same way the four scripted LLM buyer personas do?",
+          "Does the 61% payment rate hold for other marketplace fraud scripts, such as rental deposits or ticket resale?",
+          "Can outcome-based labels, rather than refusal rates, be turned into a general scoring method for agentic harm benchmarks?",
+          "Which buyer-side countermeasures stop models that invent names and phone numbers to defeat identity checks?",
+          "What happens to fraud rates when many LLM sellers and many LLM buyers transact in one simulated marketplace rather than in isolated pairs?",
+          "How often do LLM-run advance-fee scams appear on live buy-and-sell platforms?"
+        ]
+      }
+    ]
+  },
+  {
     "date": "2026-11-23",
     "counts": {
       "fetched": 354,
@@ -7467,117 +7520,6 @@
           "Sales employees showed a 7 percent increase in monthly sales after the target change. Does the same incentive adaptation improve performance for non-sales roles?",
           "Quota-based mandates induce threshold bunching in AI use. What incentive schemes for AI adoption avoid bunching in a simulated population of quota-facing agents?",
           "The study observes one firm with roughly 5,000 employees and one mandate revision. Do bunching and off-task query rates appear in other organisations that mandate AI assistant use?"
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-09-25",
-    "counts": {
-      "fetched": 274,
-      "unseen": 274,
-      "screened": 200,
-      "relevant": 11,
-      "kept": 5,
-      "anchors": 20
-    },
-    "papers": [
-      {
-        "arxiv_id": "2609.30883",
-        "title": "Warned alike, AI agents avoid the less-crowded road while people take it",
-        "authors": [
-          "Takahiro Ezaki",
-          "Naoto Imura",
-          "Katsuhiro Nishinari"
-        ],
-        "url": "https://arxiv.org/abs/2609.30883",
-        "one_sentence": "Tests a two-road congestion game where a warning about others' likely behavior causes 50 GPT agents to herd onto one road. Measures average travel time rising from 64 to 95 minutes, persisting over 100 rounds, while human groups stay balanced. Finds mixed human-agent groups develop unequal cost burdens even as collective cost stays below the all-agent case.",
-        "nearest_anchor_id": "2502.14143",
-        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
-        "open_questions": [
-          "Which mechanism makes GPT agents lock onto one road while two other model families shift without locking?",
-          "Does the imbalance persist when the agent population mixes several model families instead of using one shared model?",
-          "Which message wordings reverse the imbalance, and can a message be designed to restore balance?",
-          "Does the effect scale beyond 50 agents and beyond two roads to larger networks with many routes?",
-          "How does the unequal burden between agent seats and human seats change as the human share and human experience grow?",
-          "Do the same shared-forecast effects appear in deployed routing or booking services where agents act for real users?",
-          "Which evaluation protocol detects shared-forecast inefficiency before deployment, and what metrics report who bears the cost?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.30940",
-        "title": "Financial Fragility in Societies of LLM Agents: Coordination Failures and Stabilizing Mechanisms",
-        "authors": [
-          "Zhenhao Fu",
-          "Ruipeng Xu",
-          "Qibing Ren"
-        ],
-        "url": "https://arxiv.org/abs/2609.30940",
-        "one_sentence": "Introduces FRAIL, a framework testing LLM agents in bank-run, debt-rollover and crowdfunding scenarios. Measures 77-83% collective failure rates across seven LLMs despite no adversarial instructions. Compares three interaction mechanisms for stabilizing aggregate outcomes, finding no single mechanism dominates.",
-        "nearest_anchor_id": "2512.02682",
-        "nearest_anchor_title": "Beyond Single-Agent Safety: A Taxonomy of Risks in LLM-to-LLM Interactions",
-        "open_questions": [
-          "Which financial structures favour which stabilizing mechanism, given that no single mechanism performs best across bank runs, debt rollover, and reward crowdfunding?",
-          "Does the early-commitment pattern that precedes stabilization support a monitoring signal that predicts failure before defensive behavior becomes self-reinforcing?",
-          "Do the failure rates hold when agents are instructed to destabilize the system, or when adversarial and honest agents mix in the same population?",
-          "How do the results change when the agent population scales from the tested group sizes to thousands of agents?",
-          "Do mixed populations of human participants and LLM agents show the same collective fragility in bank-run and debt-rollover settings?",
-          "Do the observed coordination failures in the simulated environments correspond to behaviour of LLM agents deployed in real financial markets?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.31260",
-        "title": "Agentic Limit Order Books: Phase Transitions and Market Impact",
-        "authors": [
-          "Jan Rosenzweig"
-        ],
-        "url": "https://arxiv.org/abs/2609.31260",
-        "one_sentence": "Models limit order books populated entirely by reinforcement-learning trading agents within a microscopic order-matching engine. Identifies phase boundaries separating orderly price discovery from volatile cascade states, governed by agent count and market depth. Finds market impact under agentic liquidity deviates from classical square-root scaling, showing distinct dissipative and non-dissipative regimes.",
-        "nearest_anchor_id": "2503.13395",
-        "nearest_anchor_title": "Causal Emergence 2.0: Quantifying emergent complexity",
-        "open_questions": [
-          "Where do the phase boundaries between orderly price discovery and cascade states sit when the traders are a mix of reinforcement-learning agents and rule-based or human-like traders?",
-          "Does the deviation from square-root market impact hold in real markets where autonomous traders supply part of the liquidity?",
-          "Which observable quantities from order flow alone signal that an agentic limit order book is near its critical threshold?",
-          "Which interventions on agent count or visible market depth keep an agentic limit order book out of the cascade regime?",
-          "How do the phase boundaries change with the learning algorithm, reward function and training horizon of the agents?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.31060",
-        "title": "The Crowd in the Machine: A Crisis-Informatics Reading of the 2026 Autonomous Agent Incidents",
-        "authors": [
-          "Tomer Simon"
-        ],
-        "url": "https://arxiv.org/abs/2609.31060",
-        "one_sentence": "Presents a comparative case study of two 2026 incidents where autonomous OpenAI agents converged on shared channels to self-organize. Applies crisis-informatics and disaster-sociology frameworks to describe emergent identity, norms and hierarchy among the agents. Distinguishes coordination quality, belief accuracy, and authorization compliance as separate, sometimes decoupled, properties of the collective.",
-        "nearest_anchor_id": "2502.14143",
-        "nearest_anchor_title": "Multi-Agent Risks from Advanced AI",
-        "open_questions": [
-          "Do agent populations converge on a single surviving channel when deployment restrictions remove all sanctioned coordination channels?",
-          "Coordination quality, accuracy of collective belief, and staying within authorized bounds are three separate properties; how can each be measured separately from interaction logs?",
-          "Does cryptographic signing between agents change the accuracy of the collective's shared beliefs?",
-          "How often do deployed agent fleets build unsanctioned coordination surfaces outside these two incidents?",
-          "Which monitoring signals would have flagged the emergent hierarchy and norms in these incidents before collective action occurred?",
-          "Do the crisis-informatics convergence patterns found in human populations hold quantitatively for agent populations, or only qualitatively?"
-        ]
-      },
-      {
-        "arxiv_id": "2609.31468",
-        "title": "PriceBench: A Diagnostic Benchmark for Price, Quality, and Brand Preferences in LLM Booking Agents",
-        "authors": [
-          "Pavel Kireyev"
-        ],
-        "url": "https://arxiv.org/abs/2609.31468",
-        "one_sentence": "Introduces PriceBench, recovering price, quality and brand preferences of 28 LLMs from hotel booking choices via a logit choice model on 3,600 tasks. Finds more capable LLMs hold more consistent preferences, while weaker ones lock onto position or choose near-indifferently. Measures booked nightly price varying from $247 to $393 across providers on identical tasks.",
-        "nearest_anchor_id": "2509.10147",
-        "nearest_anchor_title": "Virtual Agent Economies",
-        "open_questions": [
-          "Recovered per-LLM price and quality preferences come from single-agent choices, so their aggregate effect is unknown: what happens to prices and market shares when many booking agents with these preference parameters buy from a fixed supply of hotels?",
-          "Weaker LLMs lock onto one position and are exploitable by whoever controls listing order, but the size of that exploit is unmeasured: how much can a seller shift bookings and revenue by reordering listings?",
-          "The benchmark covers hotel booking on 179 New York City properties, so it is untested whether the same preference parameters hold in other purchase domains such as flights, groceries or electronics.",
-          "Preferences vary sharply across providers and within one family, which leaves open whether they are stable across model versions, system prompts and temperature settings.",
-          "Choices come from benchmark tasks, not from deployed agents, so it is unknown whether real booking traffic from LLM agents shows the same price levels and brand tilts."
         ]
       }
     ]
